@@ -5,3 +5,6 @@
 [submodule "scripts"]
 	path = scripts
 	url = git@github.com:rajitbanerjee/scripts
+[submodule "vim_runtime"]
+	path = vim_runtime
+	url = git@github.com:amix/vimrc.git
