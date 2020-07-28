@@ -157,3 +157,8 @@ GIT_PS1_SHOWCOLORHINTS=1
 
 ## golang
 export PATH="/usr/local/go/bin:$PATH"
+
+## Bash Wakatime
+if [ -f /opt/bash-wakatime/bash-wakatime.sh ]; then
+    . /opt/bash-wakatime/bash-wakatime.sh
+fi
