@@ -57,9 +57,9 @@ if [ -n "$force_color_prompt" ]; then
 fi
 
 if [ "$color_prompt" = yes ]; then
-    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
+    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]$(__git_ps1 " (%s)")\$ '
 else
-    PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
+    PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w$(__git_ps1 " (%s)")\$ '
 fi
 unset color_prompt force_color_prompt
 
@@ -139,6 +139,21 @@ eval $(thefuck --alias)
 ## setup nice colors
 #alias ls='ls --color'
 #export PS1="$(tput setaf 1)\w\n\[$(tput bold)\]\[$(tput setaf 1)\][\[$(tput setaf 3)\]\u\[$(tput setaf 2)\]@\[$(tput setaf 4)\]\h\[$(tput setaf 5)\]\[$(tput setaf 1)\]]\[$(tput setaf 7)\]\\$\[$(tput sgr0)\] "
+
+## Git Prompt
+if [ -f ~/.git-prompt ]; then
+    . ~/.git-prompt
+fi
+## unstaged (*) and staged (+) changes
+GIT_PS1_SHOWDIRTYSTATE=1
+## If something is stashed, then a '$' will be shown
+GIT_PS1_SHOWSTASHSTATE=1
+## If there're untracked files, then a '%' will be shown
+GIT_PS1_SHOWUNTRACKEDFILES=1
+##  A "<" indicates you are behind, ">" indicates you are ahead, 
+# "<>" indicates you have diverged and "=" indicates that there is no difference
+GIT_PS1_SHOWUPSTREAM="auto"
+GIT_PS1_SHOWCOLORHINTS=1
 
 ## golang
 export PATH="/usr/local/go/bin:$PATH"
