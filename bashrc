@@ -142,6 +142,3 @@ eval $(thefuck --alias)
 
 ## golang
 export PATH="/usr/local/go/bin:$PATH"
-
-## add custom python/bash scripts to path
-export PATH="$HOME/bin:$PATH"
