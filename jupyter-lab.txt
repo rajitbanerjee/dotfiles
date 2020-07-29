@@ -1,0 +1,15 @@
+# Setting up Jupyter Lab in WSL
+1. `conda install -c conda-forge jupyterlab`
+2.  Edit ~/.bashrc: export BROWSER='/mnt/c/Program Files/Mozilla Firefox/firefox.exe'
+3.  Edit ~/.jupyter/jupyter_notebook_config.json:
+```
+{
+  "NotebookApp": {
+    "nbserver_extensions": {
+      "jupyter_http_over_ws": true
+    },
+    "use_redirect_file": false
+  }
+}
+```
+4. Now, `jupyter lab` works in WSL terminal and redirects URL to $BROWSER.

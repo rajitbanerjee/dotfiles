@@ -162,3 +162,6 @@ export PATH="/usr/local/go/bin:$PATH"
 if [ -f /opt/bash-wakatime/bash-wakatime.sh ]; then
     . /opt/bash-wakatime/bash-wakatime.sh
 fi
+
+## Browser (for Jupyter Lab)
+export BROWSER='/mnt/c/Program Files/Mozilla Firefox/firefox.exe'
