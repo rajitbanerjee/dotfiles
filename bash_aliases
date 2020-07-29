@@ -4,6 +4,7 @@ alias ex="explorer.exe ."
 alias sb="source ~/.bashrc"
 alias open="xdg-open"
 alias and="&&"
+alias cd..="cd .."
 
 # git
 alias ga="git add ."
