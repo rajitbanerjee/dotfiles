@@ -37,6 +37,8 @@ alias gs="git status"
 alias gp="git push"
 alias gd="git diff"
 alias gac="git add . && git commit -m"
+alias gh="xdg-open https://github.com/rajitbanerjee"
+alias ghr="xdg-open https://github.com/rajitbanerjee?tab=repositories"
 
 # conda
 alias cab="conda activate base"
