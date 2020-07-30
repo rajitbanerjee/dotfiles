@@ -17,7 +17,7 @@
     ~/.bash_prompt:
     ~/.git-prompt:
     ~/.gitconfig:
-    ~/bin: scripts # custom bash/python scripts   
+    ~/.local/bin: scripts # custom bash/python scripts   
 
 - shell:
   - [git submodule update --init --recursive, Installing submodules]
