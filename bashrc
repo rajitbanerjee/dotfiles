@@ -81,3 +81,7 @@ export PATH="/usr/local/go/bin:$PATH"
 if [ -f /opt/bash-wakatime/bash-wakatime.sh ]; then
     . /opt/bash-wakatime/bash-wakatime.sh
 fi
+
+## Set for Ack/Perl
+export LANG=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
