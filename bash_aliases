@@ -28,6 +28,7 @@ alias open="xdg-open"
 alias and="&&"
 alias cd..="cd .."
 alias sl="ls"
+alias cdd="cd ~/.dotfiles"
 
 # git
 alias ga="git add ."
