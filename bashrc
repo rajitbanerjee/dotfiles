@@ -45,6 +45,16 @@ if ! shopt -oq posix; then
 fi
 
 ###############################################################################
+# Bash prompt settings
+if [ -f ~/.bash_prompt ]; then
+    . ~/.bash_prompt
+fi
+
+# Alias definitions
+if [ -f ~/.bash_aliases ]; then
+    . ~/.bash_aliases
+fi
+
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
 __conda_setup="$('/opt/conda/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
@@ -59,21 +69,6 @@ else
 fi
 unset __conda_setup
 # <<< conda initialize <<<
-
-# Bash prompt settings
-if [ -f ~/.bash_prompt ]; then
-    . ~/.bash_prompt
-fi
-
-# Need this to add ~/bin to $PATH
-if [ -f ~/.profile ]; then
-    . ~/.profile
-fi
-
-# Alias definitions
-if [ -f ~/.bash_aliases ]; then
-    . ~/.bash_aliases
-fi
 
 ###############################################################################
 ## https://github.com/nvbn/thefuck
