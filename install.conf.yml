@@ -19,8 +19,5 @@
     ~/.gitconfig:
     ~/bin: scripts # custom bash/python scripts   
 
-- create:
-    - ~/github # my usual working directory
-
 - shell:
   - [git submodule update --init --recursive, Installing submodules]
