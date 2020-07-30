@@ -30,6 +30,7 @@ alias cd..="cd .."
 alias sl="ls"
 alias cdd="cd ~/.dotfiles"
 alias ins="sudo apt-get install"
+alias q="exit"
 
 # git
 alias ga="git add ."
