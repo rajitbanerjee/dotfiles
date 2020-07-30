@@ -29,6 +29,7 @@ alias and="&&"
 alias cd..="cd .."
 alias sl="ls"
 alias cdd="cd ~/.dotfiles"
+alias ins="sudo apt-get install"
 
 # git
 alias ga="git add ."
