@@ -13,9 +13,8 @@
     ~/.vimrc: 
     ~/.vim_runtime: 
     ~/.bashrc:
-    ~/.bash_aliases:
-    ~/.bash_prompt:
-    ~/.git-prompt:
+    ~/.bash:
+    ~/.shell:
     ~/.gitconfig:
     ~/.local/bin: scripts # custom bash/python scripts   
 

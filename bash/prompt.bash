@@ -40,13 +40,9 @@ xterm*|rxvt*)
     ;;
 esac
 
-## setup nice colors
-#alias ls='ls --color'
-#export PS1="$(tput setaf 1)\w\n\[$(tput bold)\]\[$(tput setaf 1)\][\[$(tput setaf 3)\]\u\[$(tput setaf 2)\]@\[$(tput setaf 4)\]\h\[$(tput setaf 5)\]\[$(tput setaf 1)\]]\[$(tput setaf 7)\]\\$\[$(tput sgr0)\] "
-
 ## Git Prompt
-if [ -f ~/.git-prompt ]; then
-    . ~/.git-prompt
+if [ -f ~/.shell/git-prompt.sh ]; then
+    . ~/.shell/git-prompt.sh
 fi
 ## unstaged (*) and staged (+) changes
 GIT_PS1_SHOWDIRTYSTATE=1
