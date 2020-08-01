@@ -11,7 +11,7 @@
 
 - link:
     ~/.vimrc: 
-    ~/.vim_runtime: 
+    ~/.vim:
     ~/.bashrc:
     ~/.bash:
     ~/.shell:
