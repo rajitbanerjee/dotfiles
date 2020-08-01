@@ -137,7 +137,10 @@ if $COLORTERM == 'gnome-terminal'
 endif
 
 set background=dark
-colorscheme gruvbox
+try
+    colorscheme gruvbox
+catch
+endtry
 
 " Set utf8 as standard encoding and en_US as the standard language
 set encoding=utf8
