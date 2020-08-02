@@ -1,0 +1,9 @@
+{
+  "NotebookApp": {
+    "nbserver_extensions": {
+      "jupyter_http_over_ws": true
+    },
+    "use_redirect_file": false,
+    "allow_origin": "https://colab.research.google.com"
+  }
+}

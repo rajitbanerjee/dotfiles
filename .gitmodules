@@ -5,3 +5,6 @@
 [submodule "scripts"]
 	path = scripts
 	url = https://github.com/rajitbanerjee/scripts
+[submodule "jupyter/nbextensions/jupyter-vim-binding"]
+	path = jupyter/nbextensions/jupyter-vim-binding
+	url = https://github.com/lambdalisue/jupyter-vim-binding

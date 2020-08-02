@@ -6,9 +6,9 @@ My custom configuration files:
 -   `shell/`: common configs for all types of shells
 -   `bash/`, `bashrc`: bash configurations
 -   `vim/`, `vimrc`: vim configurations, inspired by [amix/vimrc][amix]
+-   `jupyter/`: jupyter notebook configs (+ vim binding)
 -   `gitconfig`: username, email
 -   `vscode.txt`, `vscode-server.txt`: list of VSCode extensions
--   `jupyter-lab.txt`: jupyter lab setup info
 -   `./install`: prepare dotfiles with dotbot
 -   `install.conf.yaml`: config file for dotbot
 
