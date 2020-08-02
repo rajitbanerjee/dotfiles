@@ -28,7 +28,7 @@ Run the following scripts for setup:
 
 [MIT][license]
 
-[scripts]: [https://github.com/rajitbanerjee/scripts]
-[amix]: [https://github.com/amix/vimrc]
-[dotbot]: [https://github.com/anishathalye/dotbot]
-[license]: LICENSE.md
+[scripts]: https://github.com/rajitbanerjee/scripts
+[amix]: https://github.com/amix/vimrc
+[dotbot]: https://github.com/anishathalye/dotbot
+[license]: LICENSE
