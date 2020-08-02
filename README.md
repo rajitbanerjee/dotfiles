@@ -5,7 +5,7 @@ My custom configuration files:
 -   `scripts/`: [python/bash scripts](https://github.com/rajitbanerjee/scripts)
 -   `shell/`: common configs for all types of shells
 -   `bash/`, `bashrc`: bash configurations
--   `vim/`, `vimrc`: vim configurations
+-   `vim/`, `vimrc`: vim configurations, inspired by [amix/vimrc](https://github.com/amix/vimrc)
 -   `gitconfig`: username, email
 -   `vscode.txt`, `vscode-server.txt`: list of VSCode extensions
 -   `jupyter-lab.txt`: jupyter lab setup info
