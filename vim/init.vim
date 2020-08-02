@@ -231,6 +231,10 @@ nnoremap <Left> <C-w>h
 nnoremap <Up> <C-w>k
 nnoremap <Down> <C-w>j
 
+" Terminal
+map <C-t> :terminal<cr>
+tnoremap <C-t> <C-w>N
+
 " Close the current buffer
 map <leader>bd :Bclose<cr>:tabclose<cr>gT
 
