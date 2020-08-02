@@ -10,7 +10,7 @@ filetype off                  " required
 " `sudo dpkg -i bat_0.15.4_amd64.deb`
 "                   
 " 2. vim-prettier: `cd ~/.vim/bundle/vim-prettier && npm install`
-" 3. YouCompleteMe: `cd ~/.vim/bundle/YouCompleteMe && ./install.py`
+" 3. YouCompleteMe: `cd ~/.vim/bundle/YouCompleteMe && ./install.py --all`
 " 4. vim-wakatime: needs Python to be installed + API key in ~/.wakatime.cfg. 
 
 set rtp+=~/.vim/bundle/Vundle.vim
