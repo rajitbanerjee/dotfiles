@@ -23,7 +23,7 @@ Installation on new systems, and symlinking with `$HOME` (for existing systems) 
     ./scripts/setup-vundle
     ```
 
-2. Install the system requirements for the vim plugins, mentioned at the top of `vimrc`.
+2. Install the system dependencies for the vim plugins, mentioned at the top of `vimrc`.
 
 ## License
 
