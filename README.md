@@ -10,7 +10,6 @@ My custom configuration files:
 -   `vscode.txt`, `vscode-server.txt`: list of VSCode extensions
 -   `jupyter-lab.txt`: jupyter lab setup info
 -   `./install`: prepare dotfiles with dotbot
--   `./setup-vundle`: install Vundle and other plugins (or update existing plugins)
 -   `install.conf.yaml`: config file for dotbot
 
 ## Installation
@@ -21,7 +20,7 @@ Run the following scripts for setup:
 
 ```bash
 ./install
-./setup-vundle
+./scripts/setup-vundle
 ```
 
 ## License
