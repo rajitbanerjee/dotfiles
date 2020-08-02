@@ -1,4 +1,4 @@
-# Dotfiles
+# Dotfiles [[![Build Status](https://travis-ci.com/rajitbanerjee/dotfiles.svg?branch=master)](https://travis-ci.com/rajitbanerjee/dotfiles)]
 
 My custom configuration files:
 
