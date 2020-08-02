@@ -1,0 +1,12 @@
+#!/bin/bash
+# Additional settings to set up Vundle
+if [ -d ~/.vim/bundle/Vundle.vim ]; then
+    echo "Vundle is present!"
+    vim +PluginUpdate +qall
+    echo "Plugins updated."
+else
+    git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+    vim +PluginInstall +qall
+    echo "Vundle plugins installed!"
+fi
+
