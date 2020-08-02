@@ -42,6 +42,7 @@ alias gac="git add . && git commit -m"
 alias grs="git restore --staged"
 alias gh="xdg-open https://github.com/rajitbanerjee"
 alias ghr="xdg-open https://github.com/rajitbanerjee?tab=repositories"
+alias gsu="git submodule update --init --recursive"
 
 # conda
 alias cab="conda activate base"
