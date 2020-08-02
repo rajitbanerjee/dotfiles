@@ -1,8 +1,10 @@
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => fzf.vim
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:fzf_layout = { 'window': { 'width': 0.8, 'height': 0.8 } }
-let $FZF_DEFAULT_OPTS='--reverse'
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+if has('popupwin')
+     let g:fzf_layout = { 'window': { 'width': 0.8, 'height': 0.8 } }
+     let $FZF_DEFAULT_OPTS='--reverse'
+endif
 map <leader>f :FZF<cr>
 map <leader>g :Ag<cr>
 
