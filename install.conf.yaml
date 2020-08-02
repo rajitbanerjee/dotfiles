@@ -18,5 +18,8 @@
     ~/.gitconfig:
     ~/.local/bin: scripts # custom bash/python scripts   
 
+- create:
+  - ~/.vim/undodir/
+
 - shell:
   - [git submodule update --init --recursive, Installing submodules]
