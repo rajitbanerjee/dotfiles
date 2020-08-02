@@ -16,12 +16,14 @@ My custom configuration files:
 
 Installation on new systems, and symlinking with `$HOME` (for existing systems) managed by the excellent [Dotbot][dotbot].
 
-Run the following scripts for setup:
+1. Run the following scripts for setup:
 
-```bash
-./install
-./scripts/setup-vundle
-```
+    ```bash
+    ./install
+    ./scripts/setup-vundle
+    ```
+
+2. Install the system requirements for the vim plugins, mentioned at the top of `vimrc`.
 
 ## License
 
