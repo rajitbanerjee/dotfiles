@@ -11,7 +11,7 @@ if [ -x /usr/bin/dircolors ]; then
 fi
 
 # some more ls aliases
-alias ll='ls -alF'
+alias ll='ls -alFh'
 alias la='ls -A'
 alias l='ls -CF'
 
@@ -30,6 +30,8 @@ alias sl="ls"
 alias cdd="cd ~/.dotfiles"
 alias ins="sudo apt-get install"
 alias q="exit"
+alias mv="mv -i"
+alias v="vim"
 
 # git
 alias ga="git add ."
