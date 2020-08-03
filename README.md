@@ -8,7 +8,7 @@ My custom configuration files:
 -   `vim/`, `vimrc`: vim configurations, inspired by [amix/vimrc][amix]
 -   `jupyter/`: jupyter notebook configs (+ vim binding)
 -   `gitconfig`: username, email
--   `vscode.txt`, `vscode-server.txt`: list of VSCode extensions
+-   `vscode.txt`: link to VSCode Settings Sync gists
 -   `./install`: prepare dotfiles with dotbot
 -   `install.conf.yaml`: config file for dotbot
 
