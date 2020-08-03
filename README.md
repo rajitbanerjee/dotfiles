@@ -26,6 +26,7 @@ Installation on new systems, and symlinking with `$HOME` (for existing systems) 
 2. Install system dependencies (including the ones necessary for my vim plugins). Root privileges are required.
 
     ```bash
+    source ./scripts/install-conda
     ./scripts/system-setup
     ```
 
