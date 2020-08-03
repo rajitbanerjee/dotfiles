@@ -8,7 +8,7 @@ My custom configuration files:
 -   `vim/`, `vimrc`: vim configurations, inspired by [amix/vimrc][amix]
 -   `jupyter/`: jupyter notebook configs (+ vim binding)
 -   `gitconfig`: username, email
--   `vscode.txt`: link to VSCode Settings Sync gists
+-   `vscode.txt`: link to VSCode Settings Sync gist
 -   `./install`: prepare dotfiles with dotbot
 -   `install.conf.yaml`: config file for dotbot
 
@@ -23,7 +23,11 @@ Installation on new systems, and symlinking with `$HOME` (for existing systems) 
     ./scripts/setup-vundle
     ```
 
-2. Install the system dependencies for the vim plugins, mentioned at the top of `vimrc`.
+2. Install system dependencies (including the ones necessary for my vim plugins). Root privileges are required.
+
+    ```bash
+    ./scripts/system-setup
+    ```
 
 ## License
 
