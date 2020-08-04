@@ -7,6 +7,7 @@ My custom configuration files:
 -   `bash/`, `bashrc`: bash configurations
 -   `vim/`, `vimrc`: vim configurations, inspired by [amix/vimrc][amix]
 -   `jupyter/`: jupyter notebook configs (+ vim binding)
+-   `tmux.conf`: tmux configs, borrowed from [anishathalye/dotfiles/tmux.conf][anish] 
 -   `gitconfig`: username, email
 -   `vscode.txt`: link to VSCode Settings Sync gist
 -   `./install`: prepare dotfiles with dotbot
@@ -36,5 +37,6 @@ Installation on new systems, and symlinking with `$HOME` (for existing systems) 
 
 [scripts]: https://github.com/rajitbanerjee/scripts
 [amix]: https://github.com/amix/vimrc
+[anish]: https://github.com/anishathalye/dotfiles/blob/master/tmux.conf 
 [dotbot]: https://github.com/anishathalye/dotbot
 [license]: LICENSE
