@@ -27,7 +27,7 @@ Plugin 'maxbrunsfeld/vim-yankstack'
 Plugin 'mhinz/vim-signify' 
 Plugin 'morhetz/gruvbox' 
 Plugin 'preservim/nerdtree'
-Plugin 'prettier/vim-prettier'
+Plugin 'prettier/vim-prettier', { 'do': 'npm install' }
 Plugin 'sheerun/vim-polyglot'
 Plugin 'tpope/vim-commentary'
 Plugin 'tpope/vim-fugitive'

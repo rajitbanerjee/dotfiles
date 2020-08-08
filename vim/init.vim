@@ -296,7 +296,16 @@ map <leader>pp :setlocal paste!<cr>
 " Remap VIM 0 to first non-blank character
 map 0 ^
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Python settings
+let python_highlight_all = 1
+au FileType python syn keyword pythonDecorator True None False self
+
+au BufNewFile,BufRead *.jinja set syntax=htmljinja
+au BufNewFile,BufRead *.mako set ft=mako
+
+au FileType python map <buffer> F :set foldmethod=indent<cr>
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Helper functions
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Returns true if paste mode is enabled
