@@ -17,6 +17,7 @@
     ~/.shell:
     ~/.tmux.conf:
     ~/.gitconfig:
+    ~/.gnupg/gpg-agent.conf: gpg-agent.conf
     ~/.jupyter/jupyter_notebook_config.json: jupyter/jupyter_notebook_config.json
     ~/.jupyter/nbconfig/notebook.json: jupyter/notebook.json
     ~/.local/share/jupyter/nbextensions: jupyter/nbextensions
