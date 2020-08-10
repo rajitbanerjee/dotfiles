@@ -49,6 +49,7 @@ alias gl="git lg"
 alias gh="xdg-open https://github.com/rajitbanerjee"
 alias ghr="xdg-open https://github.com/rajitbanerjee?tab=repositories"
 alias gsu="git submodule update --init --recursive"
+alias gsur="git submodule update --remote"
 
 # conda
 alias cab="conda activate base"
