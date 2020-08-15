@@ -35,6 +35,8 @@ alias mv="mv -i"
 alias v="vim"
 alias env="env | less"
 alias drive="xdg-open https://drive.google.com/drive/my-drive"
+alias doc="cd /mnt/c/Users/rajitbanerjee/Documents"
+alias dp="cd /mnt/c/Users/rajitbanerjee/Desktop"
 
 # git
 alias ga="git add ."
