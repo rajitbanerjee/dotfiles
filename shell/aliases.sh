@@ -33,6 +33,7 @@ alias ins="sudo apt-get install"
 alias q="exit"
 alias mv="mv -i"
 alias v="vim"
+alias env="env | less"
 alias drive="xdg-open https://drive.google.com/drive/my-drive"
 
 # git
