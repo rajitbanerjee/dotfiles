@@ -1,6 +1,7 @@
 {
   "load_extensions": {
-    "jupyter-vim-binding/vim_binding": true
+    "jupyter-vim-binding/vim_binding": true,
+    "jupyter-js-widgets/extension": true
   },
   "CodeCell": {
     "cm_config": {
