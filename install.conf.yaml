@@ -10,18 +10,19 @@
 - clean: ['~']
 
 - link:
-    ~/.vimrc: 
-    ~/.vim:
-    ~/.bashrc:
+    ~/.base.yml:
     ~/.bash:
-    ~/.shell:
-    ~/.tmux.conf:
+    ~/.bashrc:
     ~/.gitconfig:
     ~/.gnupg/gpg-agent.conf: gpg-agent.conf
     ~/.jupyter/jupyter_notebook_config.json: jupyter/jupyter_notebook_config.json
     ~/.jupyter/nbconfig/notebook.json: jupyter/notebook.json
-    ~/.local/share/jupyter/nbextensions: jupyter/nbextensions
     ~/.local/bin: scripts # custom bash/python scripts   
+    ~/.local/share/jupyter/nbextensions: jupyter/nbextensions
+    ~/.shell:
+    ~/.tmux.conf:
+    ~/.vim:
+    ~/.vimrc: 
 
 - create:
   - ~/.vim/undodir/
