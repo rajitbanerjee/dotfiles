@@ -2,17 +2,18 @@
 
 My custom configuration files:
 
-- `scripts/`: [python/bash scripts][scripts]
-- `shell/`: common configs for all types of shells
+- `base.yml`: conda base environment packages
 - `bash/`, `bashrc`: bash configurations
-- `vim/`, `vimrc`: vim configurations, inspired by [amix/vimrc][amix]
-- `jupyter/`: jupyter notebook configs (+ vim binding)
-- `tmux.conf`: tmux configs, borrowed from [anishathalye/dotfiles/tmux.conf][anish]
-- `gpg-agent.conf`: GNU privacy guard agent configs
 - `gitconfig`: username, email, etc.
-- `vscode.txt`: link to VSCode Settings Sync gist
+- `gpg-agent.conf`: GNU privacy guard agent configs
 - `./install`: prepare dotfiles with dotbot
 - `install.conf.yaml`: config file for dotbot
+- `jupyter/`: jupyter notebook configs (+ vim binding)
+- `scripts/`: [python/bash scripts][scripts]
+- `shell/`: common configs for all types of shells
+- `tmux.conf`: tmux configs, borrowed from [anishathalye/dotfiles/tmux.conf][anish]
+- `vim/`, `vimrc`: vim configurations, inspired by [amix/vimrc][amix]
+- `vscode.txt`: link to VSCode Settings Sync gist
 
 ## Installation
 
