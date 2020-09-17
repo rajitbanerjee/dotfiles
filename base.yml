@@ -64,7 +64,6 @@ dependencies:
   - parso=0.7.0=py_0
   - pexpect=4.8.0=py38_0
   - pickleshare=0.7.5=py38_1000
-  - pip=20.0.2=py38_3
   - prometheus_client=0.8.0=pyh9f0ad1d_0
   - prompt-toolkit=3.0.5=py_0
   - ptyprocess=0.6.0=py38_0
@@ -106,12 +105,17 @@ dependencies:
   - zipp=3.1.0=py_0
   - zlib=1.2.11=h7b6447c_3
   - pip:
+    - beautifulsoup4==4.9.1
+    - bs4==0.0.1
     - cycler==0.10.0
     - kiwisolver==1.2.0
     - matplotlib==3.3.0
     - opencv-python==4.3.0.38
     - pillow==7.2.0
+    - pip==20.2.3
     - pytubex==0.1.2
+    - soupsieve==2.0.1
     - typing-extensions==3.7.4.2
     - wakatime==13.0.7
+    - xlrd==1.2.0
 prefix: /home/banerjee/.local/share/conda
