@@ -8,12 +8,12 @@ let g:auto_save = 1 " Enable on start-up
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""
 noremap <C-l> :Autoformat<cr>
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => fzf.vim
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 if has('popupwin')
-     let g:fzf_layout = { 'window': { 'width': 0.8, 'height': 0.8 } }
-     let $FZF_DEFAULT_OPTS='--reverse'
+    let g:fzf_layout = { 'window': { 'width': 0.8, 'height': 0.8 } }
+    let $FZF_DEFAULT_OPTS='--reverse'
 endif
 map <leader>f :FZF<cr>
 map <leader>g :Ag<cr>
@@ -64,25 +64,25 @@ autocmd VimEnter * if !argc() | NERDTree | endif
 " => lightline.vim
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:lightline = {
-      \ 'colorscheme': 'wombat',
-      \ 'active': {
-      \   'left': [ ['mode', 'paste'],
-      \             ['fugitive', 'readonly', 'filename', 'modified'] ],
-      \   'right': [ [ 'lineinfo' ], ['percent'] ]
-      \ },
-      \ 'component': {
-      \   'readonly': '%{&filetype=="help"?"":&readonly?"🔒":""}',
-      \   'modified': '%{&filetype=="help"?"":&modified?"+":&modifiable?"":"-"}',
-      \   'fugitive': '%{exists("*FugitiveHead")?FugitiveHead():""}'
-      \ },
-      \ 'component_visible_condition': {
-      \   'readonly': '(&filetype!="help"&& &readonly)',
-      \   'modified': '(&filetype!="help"&&(&modified||!&modifiable))',
-      \   'fugitive': '(exists("*FugitiveHead") && ""!=FugitiveHead())'
-      \ },
-      \ 'separator': { 'left': ' ', 'right': ' ' },
-      \ 'subseparator': { 'left': ' ', 'right': ' ' }
-      \ }
+            \ 'colorscheme': 'wombat',
+            \ 'active': {
+            \   'left': [ ['mode', 'paste'],
+            \             ['fugitive', 'readonly', 'filename', 'modified'] ],
+            \   'right': [ [ 'lineinfo' ], ['percent'] ]
+            \ },
+            \ 'component': {
+            \   'readonly': '%{&filetype=="help"?"":&readonly?"🔒":""}',
+            \   'modified': '%{&filetype=="help"?"":&modified?"+":&modifiable?"":"-"}',
+            \   'fugitive': '%{exists("*FugitiveHead")?FugitiveHead():""}'
+            \ },
+            \ 'component_visible_condition': {
+            \   'readonly': '(&filetype!="help"&& &readonly)',
+            \   'modified': '(&filetype!="help"&&(&modified||!&modifiable))',
+            \   'fugitive': '(exists("*FugitiveHead") && ""!=FugitiveHead())'
+            \ },
+            \ 'separator': { 'left': ' ', 'right': ' ' },
+            \ 'subseparator': { 'left': ' ', 'right': ' ' }
+            \ }
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
