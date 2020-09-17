@@ -33,6 +33,7 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-rhubarb'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'wakatime/vim-wakatime'
+Plugin '907th/vim-auto-save'
 call vundle#end()            " required
 
 " Brief help
