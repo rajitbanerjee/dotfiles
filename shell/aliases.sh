@@ -58,3 +58,4 @@ alias gu="git reset --soft HEAD~1"
 # conda
 alias cab="conda activate base"
 alias cda="conda deactivate"
+alias cad="conda activate ds"
