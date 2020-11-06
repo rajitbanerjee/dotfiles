@@ -1,7 +1,24 @@
 {
   "load_extensions": {
-    "jupyter-vim-binding/vim_binding": true,
-    "jupyter-js-widgets/extension": true
+    "jupyter-vim-binding/vim_binding": false,
+    "jupyter-js-widgets/extension": true,
+    "nbextensions_configurator/config_menu/main": true,
+    "contrib_nbextensions_help_item/main": true,
+    "zenmode/main": true,
+    "code_prettify/code_prettify": false,
+    "collapsible_headings/main": true,
+    "hinterland/hinterland": true,
+    "code_prettify/autopep8": true,
+    "scratchpad/main": true,
+    "table_beautifier/main": true,
+    "toc2/main": true,
+    "varInspector/main": true,
+    "highlight_selected_word/main": true,
+    "spellchecker/main": true,
+    "toggle_all_line_numbers/main": true,
+    "execute_time/ExecuteTime": true,
+    "splitcell/splitcell": false,
+    "rubberband/main": true
   },
   "CodeCell": {
     "cm_config": {
