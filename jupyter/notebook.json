@@ -7,7 +7,7 @@
     "zenmode/main": true,
     "code_prettify/code_prettify": false,
     "collapsible_headings/main": true,
-    "hinterland/hinterland": true,
+    "hinterland/hinterland": false,
     "code_prettify/autopep8": true,
     "scratchpad/main": true,
     "table_beautifier/main": true,
@@ -16,9 +16,10 @@
     "highlight_selected_word/main": true,
     "spellchecker/main": true,
     "toggle_all_line_numbers/main": true,
-    "execute_time/ExecuteTime": true,
+    "execute_time/ExecuteTime": false,
     "splitcell/splitcell": false,
-    "rubberband/main": true
+    "rubberband/main": true,
+    "printview/main": true
   },
   "CodeCell": {
     "cm_config": {
