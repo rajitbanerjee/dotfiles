@@ -7,5 +7,8 @@ if [ -f ~/.local/share/bash-wakatime/bash-wakatime.sh ]; then
     . ~/.local/share/bash-wakatime/bash-wakatime.sh
 fi
 
-## Java 8
+## Java 11
 export JAVA_HOME="/usr/lib/jvm/java-11-openjdk-amd64"
+
+## Go
+export PATH="$PATH:/usr/local/go/bin"
