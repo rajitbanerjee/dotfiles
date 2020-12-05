@@ -3,7 +3,7 @@ channels:
   - defaults
 dependencies:
   - conda
-  - python=3.6
+  - python=3.8
   - ipykernel
   - autopep8
   - jupyterlab
