@@ -18,6 +18,7 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'amix/vim-zenroom2' 
 Plugin 'amix/open_file_under_cursor.vim' 
 Plugin 'Chiel92/vim-autoformat'
+Plugin 'fatih/vim-go'
 Plugin 'itchyny/lightline.vim' 
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'junegunn/fzf', { 'do': { -> fzf#install() } } 
