@@ -19,11 +19,18 @@
     "execute_time/ExecuteTime": false,
     "splitcell/splitcell": false,
     "rubberband/main": true,
-    "printview/main": true
+    "printview/main": true,
+    "latex_envs/latex_envs": true,
+    "addbefore/main": true,
+    "hide_input_all/main": true,
+    "move_selected_cells/main": true
   },
   "CodeCell": {
     "cm_config": {
       "lineNumbers": true
     }
+  },
+  "latex_envs": {
+    "autoclose": true
   }
 }
