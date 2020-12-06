@@ -11,4 +11,5 @@ fi
 export JAVA_HOME="/usr/lib/jvm/java-11-openjdk-amd64"
 
 ## Go
-export PATH="$PATH:/usr/local/go/bin"
+export PATH="$PATH:/usr/local/go/bin" # $GOROOT
+export GOPATH="$HOME/.local/go"
