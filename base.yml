@@ -158,7 +158,7 @@ dependencies:
     - scipy==1.5.3
     - setuptools==50.3.2
     - typing-extensions==3.7.4.3
-    - wakatime==13.1.0
+    - wakatime==13.0.7
     - xlrd==1.2.0
     - zipp==3.3.1
 prefix: /home/banerjee/.local/share/conda
