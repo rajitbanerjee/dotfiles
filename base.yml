@@ -4,21 +4,22 @@ channels:
   - defaults
 dependencies:
   - _libgcc_mutex=0.1
+  - argon2-cffi=20.1.0
   - async_generator=1.10
-  - attrs=20.2.0
+  - attrs=20.3.0
   - autopep8=1.5.4
   - backcall=0.2.0
   - beautifulsoup4=4.9.3
   - blas=1.0
   - bleach=3.2.1
   - brotlipy=0.7.0
-  - ca-certificates=2020.10.14
+  - ca-certificates=2020.12.8
   - certifi=2020.12.5
   - cffi=1.14.4
   - chardet=3.0.4
   - conda=4.9.2
   - conda-package-handling=1.7.2
-  - cryptography=3.2.1
+  - cryptography=3.3.1
   - dbus=1.13.18
   - decorator=4.4.2
   - defusedxml=0.6.0
@@ -77,31 +78,31 @@ dependencies:
   - mkl_fft=1.2.0
   - mkl_random=1.1.1
   - nbclient=0.5.1
-  - nbconvert=5.5.0
+  - nbconvert=6.0.7
   - nbformat=5.0.8
   - ncurses=6.2
-  - nest-asyncio=1.4.1
-  - notebook=5.7.10
+  - nest-asyncio=1.4.3
+  - notebook=6.1.4
   - numpy=1.19.2
   - numpy-base=1.19.2
   - olefile=0.46
-  - openssl=1.1.1h
-  - packaging=20.4
+  - openssl=1.1.1i
+  - packaging=20.7
   - pandas=1.1.3
   - pandoc=2.11
   - pandocfilters=1.4.3
   - pcre=8.44
   - pexpect=4.8.0
   - pickleshare=0.7.5
-  - prometheus_client=0.8.0
+  - prometheus_client=0.9.0
   - prompt-toolkit=3.0.8
   - ptyprocess=0.6.0
   - pycodestyle=2.6.0
   - pycosat=0.6.3
   - pycparser=2.20
   - pyflakes=2.2.0
-  - pygments=2.7.1
-  - pyopenssl=19.1.0
+  - pygments=2.7.3
+  - pyopenssl=20.0.0
   - pyparsing=2.4.7
   - pyqt=5.9.2
   - pyrsistent=0.17.3
@@ -109,11 +110,11 @@ dependencies:
   - python=3.8.5
   - python-dateutil=2.8.1
   - python_abi=3.8
-  - pytz=2020.1
+  - pytz=2020.4
   - pyzmq=20.0.0
   - qt=5.9.7
   - readline=8.0
-  - requests=2.24.0
+  - requests=2.25.0
   - ruamel_yaml=0.15.87
   - seaborn=0.11.0
   - send2trash=1.5.0
@@ -126,12 +127,12 @@ dependencies:
   - tk=8.6.10
   - toml=0.10.1
   - tornado=6.1
-  - tqdm=4.50.2
+  - tqdm=4.54.1
   - traitlets=5.0.5
   - urllib3=1.25.11
   - wcwidth=0.2.5
   - webencodings=0.5.1
-  - wheel=0.35.1
+  - wheel=0.36.1
   - widgetsnbextension=3.5.1
   - xz=5.2.5
   - yaml=0.2.5
@@ -147,16 +148,20 @@ dependencies:
     - kiwisolver==1.2.0
     - lxml==4.6.1
     - mccabe==0.6.1
+    - mypy==0.790
+    - mypy-extensions==0.4.3
     - opencv-python==4.4.0.44
     - parso==0.7.1
     - pillow==8.0.0
     - pip==20.2.3
+    - pip-autoremove==0.9.1
     - pypdf2==1.26.0
     - pytubex==0.1.2
     - pyyaml==5.3.1
     - ruamel-yaml-clib==0.2.2
     - scipy==1.5.3
     - setuptools==50.3.2
+    - typed-ast==1.4.1
     - typing-extensions==3.7.4.3
     - wakatime==13.0.7
     - xlrd==1.2.0
