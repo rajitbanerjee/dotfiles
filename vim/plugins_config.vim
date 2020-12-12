@@ -1,7 +1,7 @@
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Ale (syntax checker and linter)
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:ale_linters = { 'python': ['flake8'], 'latex': ['chktex'] }
+let g:ale_linters = { 'python': ['flake8', 'mypy'], 'latex': ['chktex'] }
 
 nmap <silent> <C-k> <Plug>(ale_previous_wrap)
 nmap <silent> <C-j> <Plug>(ale_next_wrap)
@@ -27,8 +27,8 @@ noremap <C-l> :Autoformat<cr>
 " => fzf.vim
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 if has('popupwin')
-	let g:fzf_layout = { 'window': { 'width': 0.8, 'height': 0.8 } }
-	let $FZF_DEFAULT_OPTS='--reverse'
+    let g:fzf_layout = { 'window': { 'width': 0.8, 'height': 0.8 } }
+    let $FZF_DEFAULT_OPTS='--reverse'
 endif
 map <leader>f :FZF<cr>
 map <leader>g :Ag<cr>
@@ -79,25 +79,25 @@ autocmd VimEnter * if !argc() | NERDTree | endif
 " => lightline.vim
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:lightline = {
-			\ 'colorscheme': 'wombat',
-			\ 'active': {
-			\   'left': [ ['mode', 'paste'],
-			\             ['fugitive', 'readonly', 'filename', 'modified'] ],
-			\   'right': [ [ 'lineinfo' ], ['percent'] ]
-			\ },
-			\ 'component': {
-			\   'readonly': '%{&filetype=="help"?"":&readonly?"🔒":""}',
-			\   'modified': '%{&filetype=="help"?"":&modified?"+":&modifiable?"":"-"}',
-			\   'fugitive': '%{exists("*FugitiveHead")?FugitiveHead():""}'
-			\ },
-			\ 'component_visible_condition': {
-			\   'readonly': '(&filetype!="help"&& &readonly)',
-			\   'modified': '(&filetype!="help"&&(&modified||!&modifiable))',
-			\   'fugitive': '(exists("*FugitiveHead") && ""!=FugitiveHead())'
-			\ },
-			\ 'separator': { 'left': ' ', 'right': ' ' },
-			\ 'subseparator': { 'left': ' ', 'right': ' ' }
-			\ }
+            \ 'colorscheme': 'wombat',
+            \ 'active': {
+            \   'left': [ ['mode', 'paste'],
+            \             ['fugitive', 'readonly', 'filename', 'modified'] ],
+            \   'right': [ [ 'lineinfo' ], ['percent'] ]
+            \ },
+            \ 'component': {
+            \   'readonly': '%{&filetype=="help"?"":&readonly?"🔒":""}',
+            \   'modified': '%{&filetype=="help"?"":&modified?"+":&modifiable?"":"-"}',
+            \   'fugitive': '%{exists("*FugitiveHead")?FugitiveHead():""}'
+            \ },
+            \ 'component_visible_condition': {
+            \   'readonly': '(&filetype!="help"&& &readonly)',
+            \   'modified': '(&filetype!="help"&&(&modified||!&modifiable))',
+            \   'fugitive': '(exists("*FugitiveHead") && ""!=FugitiveHead())'
+            \ },
+            \ 'separator': { 'left': ' ', 'right': ' ' },
+            \ 'subseparator': { 'left': ' ', 'right': ' ' }
+            \ }
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
