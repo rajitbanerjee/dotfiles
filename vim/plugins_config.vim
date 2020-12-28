@@ -16,7 +16,7 @@ let g:ale_lint_on_enter = 0
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => vim-auto-save
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:auto_save = 1 " Enable on start-up
+" let g:auto_save = 1 " Enable on start-up
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => vim-autoformat
