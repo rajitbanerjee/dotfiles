@@ -309,6 +309,7 @@ au FileType python map <buffer> F :set foldmethod=indent<cr>
 
 " Ruler at 80
 au BufNewFile,BufRead *.py set colorcolumn=80
+au BufNewFile,BufRead *.go set colorcolumn=80
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Helper functions
