@@ -111,3 +111,6 @@ let g:lightline = {
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Jump to definition
 nnoremap <silent> <leader>jd :YcmCompleter GoTo<cr>
+
+" Disable preview window
+set completeopt-=preview
