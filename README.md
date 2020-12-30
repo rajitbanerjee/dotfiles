@@ -32,7 +32,7 @@ Installation on new systems, and symlinking with `$HOME` (for existing systems) 
     ./scripts/setup-vundle
     ```
 
-<img src='./screenshot.jpg'>
+<img src='./screenshot.png'>
 
 3.  Install system dependencies (including the ones necessary for vim plugins). Root privileges are required.
 
