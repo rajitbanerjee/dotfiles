@@ -9,7 +9,7 @@ My custom configuration files:
 -   [./install](./install): prepare dotfiles with dotbot
 -   [install.conf.yml](./install.conf.yml): config file for dotbot
 -   [jupyter/](./jupyter/): jupyter notebook configs 
--   [scripts/](./scripts/): [python/bash scripts][scripts]
+-   [scripts/][scripts]: python/bash scripts
 -   [shell/](./shell/): common configs for all types of shells
 -   [tmux.conf](./tmux.conf): tmux configs, borrowed from [anishathalye/dotfiles/tmux.conf][anish]
 -   [vim/](./vim/), [vimrc](./vimrc): vim configurations, inspired by [amix/vimrc][amix]
