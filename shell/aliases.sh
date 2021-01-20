@@ -38,6 +38,7 @@ alias drive="xdg-open https://drive.google.com/drive/my-drive"
 alias doc="cd /mnt/c/Users/rajitbanerjee/Documents"
 alias dp="cd /mnt/c/Users/rajitbanerjee/Desktop"
 alias jn="jupyter notebook"
+alias cls="export PS1=\"$ \""
 
 # git
 alias ga="git add ."
