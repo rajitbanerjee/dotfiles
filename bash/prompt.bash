@@ -47,7 +47,7 @@ case "$TERM" in
         ;;
 esac
 
-PROMPT_DIRTRIM=2
+PROMPT_DIRTRIM=1
 
 ## Git Prompt
 if [ -f ~/.shell/git-prompt.sh ]; then
