@@ -1,5 +1,8 @@
+## Default editor
+export EDITOR=vim
+
 ## Add custom python/bash scripts to path
-export PATH="~/.local/scripts:$PATH"
+export PATH=~/.local/scripts:"$PATH"
 
 ## Set for Ack/Perl
 export LANG=en_US.UTF-8
