@@ -41,7 +41,7 @@ alias jn="jupyter notebook"
 alias cls="export PS1=\"$ \""
 
 # git
-alias ga="git add ."
+alias ga="git add"
 alias gc="git commit -m"
 alias gs="git status"
 alias gp="git push"
