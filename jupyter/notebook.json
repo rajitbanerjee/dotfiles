@@ -32,5 +32,9 @@
   },
   "latex_envs": {
     "autoclose": true
+  },
+  "toc2": {
+    "number_sections": false,
+    "skip_h1_title": true
   }
 }
