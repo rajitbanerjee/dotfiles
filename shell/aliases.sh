@@ -62,3 +62,9 @@ alias cda="conda deactivate"
 alias cad="conda activate ds"
 alias can="conda activate net-analysis"
 alias exp="conda env export --no-builds"
+
+# functions (not aliases, but kinda)
+csv() {
+    # pretty print a csv file
+    column -t -s, "$1" | less -S
+}
