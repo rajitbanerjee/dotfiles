@@ -6,19 +6,13 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
 fi
 
 ## Oh My Zsh settings
-if [ -f ~/.zsh/settings.zsh ]; then
-    . ~/.zsh/settings.zsh
-fi
+[[ ! -f ~/.zsh/settings.zsh ]] || source ~/.zsh/settings.zsh
 
 ## Alias definitions
-if [ -f ~/.shell/aliases.sh ]; then
-    . ~/.shell/aliases.sh
-fi
+[[ ! -f ~/.shell/aliases.sh ]] || source ~/.shell/aliases.sh
 
 ## Exports and other external program settings
-if [ -f ~/.shell/external.sh ]; then
-    . ~/.shell/external.sh
-fi
+[[ ! -f ~/.shell/external.sh ]] || source ~/.shell/external.sh
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
