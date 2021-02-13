@@ -19,10 +19,13 @@
     ~/.jupyter/nbconfig/notebook.json: jupyter/notebook.json
     ~/.local/scripts: scripts # custom bash/python scripts   
     ~/.local/share/jupyter/nbextensions: jupyter/nbextensions
+    ~/.p10k.zsh: zsh/p10k.zsh
     ~/.shell:
     ~/.tmux.conf:
     ~/.vim:
     ~/.vimrc: 
+    ~/.zsh:
+    ~/.zshrc:
 
 - create:
   - ~/.vim/undodir/

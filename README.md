@@ -14,6 +14,7 @@ My custom configuration files:
 -   [tmux.conf](./tmux.conf): tmux configs, borrowed from [anishathalye/dotfiles/tmux.conf][anish]
 -   [vim/](./vim/), [vimrc](./vimrc): vim configurations, inspired by [amix/vimrc][amix]
 -   [vscode.txt](./vscode.txt): link to VSCode Settings Sync gist
+-   [zsh/](./zsh/), [zshrc](./zshrc): zsh configurations; plugin manager - [Oh My Zsh][ohmyzsh]
 
 ## Installation
 
@@ -52,5 +53,7 @@ Installation on new systems, and symlinking with `$HOME` (for existing systems) 
 [anish]: https://github.com/anishathalye/dotfiles/blob/master/tmux.conf
 
 [dotbot]: https://github.com/anishathalye/dotbot
+
+[ohmyzsh]: https://github.com/ohmyzsh/ohmyzsh
 
 [license]: LICENSE
