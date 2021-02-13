@@ -14,7 +14,7 @@ My custom configuration files:
 -   [tmux.conf](./tmux.conf): tmux configs, borrowed from [anishathalye/dotfiles/tmux.conf][anish]
 -   [vim/](./vim/), [vimrc](./vimrc): vim configurations, inspired by [amix/vimrc][amix]
 -   [vscode.txt](./vscode.txt): link to VSCode Settings Sync gist
--   [zsh/](./zsh/), [zshrc](./zshrc): zsh configurations; plugin manager - [Oh My Zsh][ohmyzsh]
+-   [zsh/](./zsh/), [zshrc](./zshrc): zsh configurations; plugins managed by [ohmyzsh][ohmyzsh]
 
 ## Installation
 
@@ -33,7 +33,7 @@ Installation on new systems, and symlinking with `$HOME` (for existing systems) 
     ./scripts/setup-vundle
     ```
 
-<img src='./screenshot.png'>
+<img src='./screenshot.jpg'>
 
 3.  Install system dependencies (including the ones necessary for vim plugins). Root privileges are required.
 
