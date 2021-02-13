@@ -4,7 +4,7 @@ export EDITOR=vim
 ## Add custom python/bash scripts to path
 export PATH=~/.local/scripts:"$PATH"
 
-## Set for Ack/Perl
+## Language
 export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 
@@ -22,3 +22,8 @@ export JAVA_HOME="/usr/lib/jvm/java-11-openjdk-amd64"
 ## Go
 export PATH="$PATH:/usr/local/go/bin" # $GOROOT
 export GOPATH="$HOME/.local/go"
+
+# NVM
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion

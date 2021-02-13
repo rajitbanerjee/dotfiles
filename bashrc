@@ -1,14 +1,19 @@
-# Bash prompt settings
+## Bash default settings
+if [ -f ~/.bash/settings.bash ]; then
+    . ~/.bash/settings.bash
+fi
+
+## Bash prompt
 if [ -f ~/.bash/prompt.bash ]; then
     . ~/.bash/prompt.bash
 fi
 
-# Alias definitions
+## Alias definitions
 if [ -f ~/.shell/aliases.sh ]; then
     . ~/.shell/aliases.sh
 fi
 
-# Exports and other external program settings
+## Exports and other external program settings
 if [ -f ~/.shell/external.sh ]; then
     . ~/.shell/external.sh
 fi
@@ -28,11 +33,5 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 
-
-# nodejs
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
-# broot
+# broot - directory tree navigation
 source /home/banerjee/.config/broot/launcher/bash/br

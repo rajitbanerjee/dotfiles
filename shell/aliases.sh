@@ -20,16 +20,15 @@ alias l='ls -alFh'
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
 
 # system
-alias rb="cd /mnt/c/Users/rajitbanerjee"
+alias rb="/mnt/c/Users/rajitbanerjee"
 alias ex="explorer.exe ."
 alias sb="source ~/.bashrc"
+alias sz="source ~/.zshrc"
 alias open="xdg-open"
-alias and="&&"
 alias cd..="cd .."
 alias ..="cd .."
 alias sl="ls"
 alias cdd="cd ~/.dotfiles"
-alias ins="sudo apt-get install"
 alias q="exit"
 alias mv="mv -i"
 alias v="vim ."
@@ -59,7 +58,6 @@ alias gu="git reset --soft HEAD~1"
 # conda
 alias cab="conda activate base"
 alias cda="conda deactivate"
-alias cad="conda activate ds"
 alias can="conda activate net-analysis"
 alias exp="conda env export --no-builds"
 
