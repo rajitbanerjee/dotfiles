@@ -13,10 +13,11 @@ dependencies:
   - blas=1.0
   - bleach=3.2.1
   - brotlipy=0.7.0
-  - ca-certificates=2020.12.8
+  - ca-certificates=2021.1.19
   - certifi=2020.12.5
   - cffi=1.14.4
   - chardet=3.0.4
+  - click=7.1.2
   - conda=4.9.2
   - conda-package-handling=1.7.2
   - cryptography=3.3.1
@@ -42,6 +43,7 @@ dependencies:
   - ipywidgets=7.5.1
   - jedi=0.17.2
   - jinja2=2.11.2
+  - joblib=1.0.0
   - jpeg=9b
   - json5=0.9.5
   - jsonschema=3.2.0
@@ -82,6 +84,7 @@ dependencies:
   - nbformat=5.0.8
   - ncurses=6.2
   - nest-asyncio=1.4.3
+  - nltk=3.5
   - notebook=6.1.4
   - numpy=1.19.2
   - numpy-base=1.19.2
@@ -114,6 +117,7 @@ dependencies:
   - pyzmq=20.0.0
   - qt=5.9.7
   - readline=8.0
+  - regex=2020.11.13
   - requests=2.25.0
   - ruamel_yaml=0.15.87
   - seaborn=0.11.0
@@ -140,8 +144,12 @@ dependencies:
   - zlib=1.2.11
   - zstd=1.4.5
   - pip:
+    - asttokens==2.0.4
     - bs4==0.0.1
+    - colorama==0.4.4
     - cycler==0.10.0
+    - executing==0.5.4
+    - icecream==2.0.0
     - jupyter-contrib-core==0.3.3
     - jupyter-http-over-ws==0.0.8
     - jupyterlab==2.2.8
