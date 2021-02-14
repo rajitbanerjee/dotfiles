@@ -1,8 +1,9 @@
 ## Default editor
 export EDITOR=vim
 
-## Add custom python/bash scripts to path
+## Add custom scripts + installed scripts to path
 export PATH=~/.local/scripts:"$PATH"
+export PATH=~/.local/bin:"$PATH"
 
 ## Language
 export LANG=en_US.UTF-8
