@@ -24,13 +24,6 @@ if [ -n "$force_color_prompt" ]; then
     fi
 fi
 
-# if [ "$color_prompt" = yes ]; then
-#     PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]$(__git_ps1 " (%s)")\$ '
-# else
-#     PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w$(__git_ps1 " (%s)")\$ '
-# fi
-# unset color_prompt force_color_prompt
-
 if [ "$color_prompt" = yes ]; then
     PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u:\[\033[01;34m\]\w\[\033[00m\]$(__git_ps1 " (%s)")\$ '
 else
@@ -50,8 +43,8 @@ esac
 PROMPT_DIRTRIM=1
 
 ## Git Prompt
-if [ -f "$HOME/.shell/git-prompt.sh" ]; then
-    . "$HOME/.shell/git-prompt.sh"
+if [ -f "$HOME/.bash/git-prompt.sh" ]; then
+    . "$HOME/.bash/git-prompt.sh"
 fi
 ## unstaged (*) and staged (+) changes
 GIT_PS1_SHOWDIRTYSTATE=1
