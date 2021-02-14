@@ -6,13 +6,13 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
 fi
 
 ## Oh My Zsh settings
-[[ ! -f ~/.zsh/settings.zsh ]] || source ~/.zsh/settings.zsh
+[[ ! -f "$HOME/.zsh/settings.zsh" ]] || source "$HOME/.zsh/settings.zsh"
 
 ## Alias definitions
-[[ ! -f ~/.shell/aliases.sh ]] || source ~/.shell/aliases.sh
+[[ ! -f "$HOME/.shell/aliases.sh" ]] || source "$HOME/.shell/aliases.sh"
 
 ## Exports and other external program settings
-[[ ! -f ~/.shell/external.sh ]] || source ~/.shell/external.sh
+[[ ! -f "$HOME/.shell/external.sh" ]] || source "$HOME/.shell/external.sh"
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
@@ -30,4 +30,4 @@ unset __conda_setup
 # <<< conda initialize <<<
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+[[ ! -f "$HOME/.p10k.zsh" ]] || source "$HOME/.p10k.zsh"

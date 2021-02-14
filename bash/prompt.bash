@@ -50,8 +50,8 @@ esac
 PROMPT_DIRTRIM=1
 
 ## Git Prompt
-if [ -f ~/.shell/git-prompt.sh ]; then
-    . ~/.shell/git-prompt.sh
+if [ -f "$HOME/.shell/git-prompt.sh" ]; then
+    . "$HOME/.shell/git-prompt.sh"
 fi
 ## unstaged (*) and staged (+) changes
 GIT_PS1_SHOWDIRTYSTATE=1

@@ -1,21 +1,21 @@
 ## Bash default settings
-if [ -f ~/.bash/settings.bash ]; then
-    . ~/.bash/settings.bash
+if [ -f "$HOME/.bash/settings.bash" ]; then
+    . "$HOME/.bash/settings.bash"
 fi
 
 ## Bash prompt
-if [ -f ~/.bash/prompt.bash ]; then
-    . ~/.bash/prompt.bash
+if [ -f "$HOME/.bash/prompt.bash" ]; then
+    . "$HOME/.bash/prompt.bash"
 fi
 
 ## Alias definitions
-if [ -f ~/.shell/aliases.sh ]; then
-    . ~/.shell/aliases.sh
+if [ -f "$HOME/.shell/aliases.sh" ]; then
+    . "$HOME/.shell/aliases.sh"
 fi
 
 ## Exports and other external program settings
-if [ -f ~/.shell/external.sh ]; then
-    . ~/.shell/external.sh
+if [ -f "$HOME/.shell/external.sh" ]; then
+    . "$HOME/.shell/external.sh"
 fi
 
 # >>> conda initialize >>>
@@ -34,4 +34,4 @@ unset __conda_setup
 # <<< conda initialize <<<
 
 # broot - directory tree navigation
-source /home/banerjee/.config/broot/launcher/bash/br
+source "$HOME/.config/broot/launcher/bash/br"

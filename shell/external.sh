@@ -2,16 +2,16 @@
 export EDITOR=vim
 
 ## Add custom scripts + installed scripts to path
-export PATH=~/.local/scripts:"$PATH"
-export PATH=~/.local/bin:"$PATH"
+export PATH="$HOME/.local/scripts:$PATH"
+export PATH="$HOME/.local/bin:$PATH"
 
 ## Language
 export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 
 ## Bash Wakatime
-if [ -f ~/.local/share/bash-wakatime/bash-wakatime.sh ]; then
-    . ~/.local/share/bash-wakatime/bash-wakatime.sh
+if [ -f "$HOME/.local/share/bash-wakatime/bash-wakatime.sh" ]; then
+    . "$HOME/.local/share/bash-wakatime/bash-wakatime.sh"
 fi
 
 ## Advent of Code session cookie to run personalised input downloader script

@@ -1,6 +1,6 @@
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
-    test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
+    test -r "$HOME/.dircolors" && eval "$(dircolors -b $HOME/.dircolors)" || eval "$(dircolors -b)"
     alias ls='ls --color=auto'
     #alias dir='dir --color=auto'
     #alias vdir='vdir --color=auto'
@@ -22,13 +22,13 @@ alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo
 # system
 alias rb="/mnt/c/Users/rajitbanerjee"
 alias ex="explorer.exe ."
-alias sb="source ~/.bashrc"
-alias sz="source ~/.zshrc"
+alias sb="source $HOME/.bashrc"
+alias sz="source $HOME/.zshrc"
 alias open="xdg-open"
 alias cd..="cd .."
 alias ..="cd .."
 alias sl="ls"
-alias cdd="cd ~/.dotfiles"
+alias cdd="cd $HOME/.dotfiles"
 alias q="exit"
 alias mv="mv -i"
 alias v="vim ."

@@ -12,7 +12,7 @@ filetype off                  " required
 " 2. YouCompleteMe: `cd ~/.vim/bundle/YouCompleteMe && ./install.py --all`
 " 3. vim-wakatime: needs Python to be installed + API key in ~/.wakatime.cfg. 
 
-set rtp+=~/.vim/bundle/Vundle.vim
+set rtp+=$HOME/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'VundleVim/Vundle.vim' 
 Plugin 'amix/vim-zenroom2' 
@@ -47,6 +47,6 @@ call vundle#end()            " required
 " :PluginSearch foo - searches for foo; append `!` to refresh local cache
 " :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
 
-source ~/.vim/init.vim
-source ~/.vim/plugins_config.vim
+source $HOME/.vim/init.vim
+source $HOME/.vim/plugins_config.vim
 

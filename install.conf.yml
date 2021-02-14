@@ -7,28 +7,28 @@
       create: true # new link, if non-existent
       relink: true
 
-- clean: ['~']
+- clean: ['$HOME']
 
 - link:
-    ~/.base.yml:
-    ~/.bash:
-    ~/.bashrc:
-    ~/.gitconfig:
-    ~/.gnupg/gpg-agent.conf: gpg-agent.conf
-    ~/.jupyter/jupyter_notebook_config.json: jupyter/jupyter_notebook_config.json
-    ~/.jupyter/nbconfig/notebook.json: jupyter/notebook.json
-    ~/.local/scripts: scripts # custom bash/python scripts   
-    ~/.local/share/jupyter/nbextensions: jupyter/nbextensions
-    ~/.p10k.zsh: zsh/p10k.zsh
-    ~/.shell:
-    ~/.tmux.conf:
-    ~/.vim:
-    ~/.vimrc: 
-    ~/.zsh:
-    ~/.zshrc:
+    $HOME/.base.yml:
+    $HOME/.bash:
+    $HOME/.bashrc:
+    $HOME/.gitconfig:
+    $HOME/.gnupg/gpg-agent.conf: gpg-agent.conf
+    $HOME/.jupyter/jupyter_notebook_config.json: jupyter/jupyter_notebook_config.json
+    $HOME/.jupyter/nbconfig/notebook.json: jupyter/notebook.json
+    $HOME/.local/scripts: scripts # custom bash/python scripts
+    $HOME/.local/share/jupyter/nbextensions: jupyter/nbextensions
+    $HOME/.p10k.zsh: zsh/p10k.zsh
+    $HOME/.shell:
+    $HOME/.tmux.conf:
+    $HOME/.vim:
+    $HOME/.vimrc:
+    $HOME/.zsh:
+    $HOME/.zshrc:
 
 - create:
-  - ~/.vim/undodir/
+  - $HOME/.vim/undodir/
 
 - shell:
   - [git submodule update --init --recursive, Installing submodules]
