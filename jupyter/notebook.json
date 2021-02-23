@@ -36,5 +36,10 @@
   "toc2": {
     "number_sections": false,
     "skip_h1_title": true
+  },
+  "Cell": {
+    "cm_config": {
+      "lineNumbers": true
+    }
   }
 }
