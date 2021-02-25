@@ -47,6 +47,6 @@ call vundle#end()            " required
 " :PluginSearch foo - searches for foo; append `!` to refresh local cache
 " :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
 
-source $HOME/.vim/init.vim
+source $HOME/.vim/basic.vim
 source $HOME/.vim/plugins_config.vim
 
