@@ -99,13 +99,9 @@ set statusline=\ %{HasPaste()}%F%m%r%h\ %w\ \ CWD:\ %r%{getcwd()}%h\ \ \ Line:\ 
 " Python settings
 let python_highlight_all = 1
 au FileType python syn keyword pythonDecorator True None False self
-
-au BufNewFile,BufRead *.jinja set syntax=htmljinja
-au BufNewFile,BufRead *.mako set ft=mako
-
 au FileType python map <buffer> F :set foldmethod=indent<cr>
 
-" Ruler
+" Character limit per line
 au BufNewFile,BufRead *.py set colorcolumn=80
 au BufNewFile,BufRead *.go set colorcolumn=100
 
