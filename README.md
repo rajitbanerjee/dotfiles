@@ -5,7 +5,6 @@ My custom configuration files:
 -   [base.yml](./base.yml): conda base environment packages
 -   [bash/](./bash/), [bashrc](./bashrc): bash configurations
 -   [gitconfig](./gitconfig): username, email, etc.
--   [gpg-agent.conf](./gpg-agent.conf): GNU privacy guard agent configs
 -   [./install](./install): prepare dotfiles with dotbot
 -   [install.conf.yml](./install.conf.yml): config file for dotbot
 -   [jupyter/](./jupyter/): jupyter notebook configs 
