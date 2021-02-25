@@ -15,6 +15,9 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Uncomment the following line to enable command auto-correction.
 ENABLE_CORRECTION="true"
 
+# Apt package suggestions
+source /etc/zsh_command_not_found
+
 # Would you like to use another custom folder than $ZSH/custom?
 ZSH_CUSTOM="$HOME/.zsh/custom"
 
