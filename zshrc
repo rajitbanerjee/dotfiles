@@ -11,6 +11,9 @@ fi
 ## Alias definitions
 [[ ! -f "$HOME/.shell/aliases.sh" ]] || source "$HOME/.shell/aliases.sh"
 
+## Custom functions
+[[ ! -f "$HOME/.shell/functions.sh" ]] || source "$HOME/.shell/functions.sh"
+
 ## Exports and other external program settings
 [[ ! -f "$HOME/.shell/external.sh" ]] || source "$HOME/.shell/external.sh"
 

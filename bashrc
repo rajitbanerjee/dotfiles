@@ -13,6 +13,11 @@ if [ -f "$HOME/.shell/aliases.sh" ]; then
     . "$HOME/.shell/aliases.sh"
 fi
 
+## Custom functions
+if [ -f "$HOME/.shell/functions.sh" ]; then
+    . "$HOME/.shell/functions.sh"
+fi
+
 ## Exports and other external program settings
 if [ -f "$HOME/.shell/external.sh" ]; then
     . "$HOME/.shell/external.sh"
