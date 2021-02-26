@@ -23,12 +23,17 @@ au FocusGained,BufEnter * checktime
 
 let mapleader = " "
 
+nmap <leader><leader> :
+
 map 0 ^
 map <leader>pp :setlocal paste!<cr>
 map <C-s> :w<cr>
 nmap <leader>w :wq<cr>
 nmap <leader>qq :q!<cr>
 nmap <leader>qa :qa<cr>
+
+" Faster ESC
+inoremap qq <ESC>
 
 set nobackup
 set nowb
