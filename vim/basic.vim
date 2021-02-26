@@ -17,8 +17,8 @@ set updatetime=50
 filetype plugin on
 filetype indent on
 
-set autochdir
-set autoread
+set autochdir " Change working dir on opening a file
+set autoread " Set to auto read when a file is changed from the outside 
 au FocusGained,BufEnter * checktime
 
 let mapleader = " "
@@ -52,11 +52,11 @@ set langmenu=en
 source $VIMRUNTIME/delmenu.vim
 source $VIMRUNTIME/menu.vim
 
-set so=7
+set so=7 " 7 lines for the cursor when moving up/down
 set wildmenu
-set ruler
+set ruler " show current position
 set cmdheight=1
-set hid
+set hid " Buffer is hidden when abandoned
 set number
 set relativenumber
 
@@ -65,27 +65,28 @@ set whichwrap+=<,>,h,l
 
 set ignorecase
 set smartcase
-set hlsearch
-set incsearch
-set lazyredraw
-set magic
+set hlsearch " Highlight results
+set incsearch " Incremental search
+set lazyredraw " Don't redraw when executing macros
+set magic " Simplify regex
 
+" Brackets
 set showmatch
 set mat=2
 
+" Avoid error sounds
 set noerrorbells
 set novisualbell
 set t_vb=
 set tm=500
 
+" Colours and fonts
 syntax enable
 set encoding=utf8
 set ffs=unix,dos,mac
-
 if $COLORTERM == 'gnome-terminal'
     set t_Co=256
 endif
-
 set background=dark
 try
     colorscheme gruvbox
