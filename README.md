@@ -7,7 +7,8 @@ My custom configuration files:
 -   [gitconfig](./gitconfig): username, email, etc.
 -   [./install](./install): prepare dotfiles with dotbot
 -   [install.conf.yml](./install.conf.yml): config file for dotbot
--   [jupyter/](./jupyter/): jupyter notebook configs 
+-   [jupyter/](./jupyter/): jupyter notebook configurations 
+-   [nvim/](./nvim/): neovim configurations
 -   [scripts/][scripts]: python/bash scripts
 -   [shell/](./shell/): common configs for all types of shells
 -   [tmux.conf](./tmux.conf): tmux configs, borrowed from [anishathalye/dotfiles/tmux.conf][anish]
@@ -33,12 +34,14 @@ Installation on new systems, and symlinking with `$HOME` (for existing systems) 
 
     ```bash
     $ ./install
+    
+    # Vim plugins
     $ ./scripts/setup-vundle
     ```
 
 <img src='./screenshot.jpg'>
 
-3.  Install system dependencies (including the ones necessary for vim plugins). Root privileges are required.
+3.  Install a range of preferred packages. Root privileges are required.
 
     ```bash
     $ ./scripts/system-setup
