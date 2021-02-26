@@ -22,7 +22,11 @@ Installation on new systems, and symlinking with `$HOME` (for existing systems) 
 1.  Clone repository and submodules:
 
     ```bash
+    # With SSH
     $ git clone --recurse-submodules git@github.com:rajitbanerjee/dotfiles $HOME/.dotfiles
+
+    # Or, with HTTPS
+    $ git clone --recurse-submodules https://github.com/rajitbanerjee/dotfiles.git $HOME/.dotfiles
     ```
 
 2.  Run the following scripts for setup:
