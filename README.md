@@ -18,7 +18,7 @@ My custom configuration files:
 
 ## Installation
 
-Installation on new systems, and symlinking with `$HOME` (for existing systems) managed by the excellent [Dotbot][dotbot].
+Symlinking with `$HOME` (for existing systems) is managed by the excellent [Dotbot][dotbot].
 
 1.  Clone repository and submodules:
 
@@ -33,6 +33,7 @@ Installation on new systems, and symlinking with `$HOME` (for existing systems) 
 2.  Run the following scripts for setup:
 
     ```bash
+    # Symlink dotfiles
     $ ./install
     
     # Vim plugins
