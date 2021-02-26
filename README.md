@@ -22,14 +22,14 @@ Installation on new systems, and symlinking with `$HOME` (for existing systems) 
 1.  Clone repository and submodules:
 
     ```bash
-    git clone --recurse-submodules git@github.com:rajitbanerjee/dotfiles $HOME/.dotfiles
+    $ git clone --recurse-submodules git@github.com:rajitbanerjee/dotfiles $HOME/.dotfiles
     ```
 
 2.  Run the following scripts for setup:
 
     ```bash
-    ./install
-    ./scripts/setup-vundle
+    $ ./install
+    $ ./scripts/setup-vundle
     ```
 
 <img src='./screenshot.jpg'>
@@ -37,8 +37,7 @@ Installation on new systems, and symlinking with `$HOME` (for existing systems) 
 3.  Install system dependencies (including the ones necessary for vim plugins). Root privileges are required.
 
     ```bash
-    source ./scripts/install-conda
-    ./scripts/system-setup
+    $ ./scripts/system-setup
     ```
 
 ## License
