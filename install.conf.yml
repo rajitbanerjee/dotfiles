@@ -18,6 +18,7 @@
     $HOME/.jupyter/nbconfig/notebook.json: jupyter/notebook.json
     $HOME/.local/scripts: scripts # custom bash/python scripts
     $HOME/.local/share/jupyter/nbextensions: jupyter/nbextensions
+    $HOME/.config/nvim: nvim
     $HOME/.p10k.zsh: zsh/p10k.zsh
     $HOME/.shell:
     $HOME/.tmux.conf:
