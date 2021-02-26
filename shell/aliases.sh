@@ -41,6 +41,7 @@ alias cls="export PS1=\"$ \""
 
 # git
 alias ga="git add"
+alias gaa="git add --all"
 alias gc="git commit -m"
 alias gs="git status"
 alias gp="git push"
