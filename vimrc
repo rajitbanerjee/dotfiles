@@ -1,16 +1,6 @@
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
-" Plugin system requirements
-" 1. Ag search for fzf.vim:     
-" `sudo apt-get install silversearcher-ag`
-" 
-" Syntax highlighting in search results:
-" `wget https://github.com/sharkdp/bat/releases/download/v0.15.4/bat_0.15.4_amd64.deb`
-" `sudo dpkg -i bat_0.15.4_amd64.deb`
-"                   
-" 2. YouCompleteMe: `cd ~/.vim/bundle/YouCompleteMe && ./install.py --all`
-" 3. vim-wakatime: needs Python to be installed + API key in ~/.wakatime.cfg. 
 
 set rtp+=$HOME/.vim/bundle/Vundle.vim
 call vundle#begin()
@@ -30,7 +20,6 @@ Plugin 'lervag/vimtex'
 Plugin 'maxbrunsfeld/vim-yankstack' 
 Plugin 'mhinz/vim-signify' 
 Plugin 'morhetz/gruvbox' 
-Plugin 'neoclide/coc.nvim'
 Plugin 'preservim/nerdtree'
 Plugin 'sheerun/vim-polyglot'
 Plugin 'tpope/vim-commentary'
@@ -38,7 +27,6 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-rhubarb'
 Plugin 'tpope/vim-surround'
 Plugin 'wakatime/vim-wakatime'
-Plugin '907th/vim-auto-save'
 call vundle#end()            " required
 
 " Brief help

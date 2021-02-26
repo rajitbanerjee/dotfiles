@@ -19,10 +19,6 @@ let g:ale_set_highlights = 0
 let g:ale_lint_on_text_changed = 'never'
 let g:ale_lint_on_enter = 0
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => vim-auto-save
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" let g:auto_save = 1 " Enable on start-up
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => vim-autoformat
@@ -105,12 +101,3 @@ let g:lightline = {
             \ 'subseparator': { 'left': ' ', 'right': ' ' }
             \ }
 
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => YouCompleteMe
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Jump to definition
-nnoremap <silent> <leader>jd :YcmCompleter GoTo<cr>
-
-" Disable preview window
-set completeopt-=preview
