@@ -31,6 +31,7 @@ plugins=(
     docker-compose
     fzf                         # CTRL+T to search files, CTRL+R to search zsh history
     safe-paste                  # prevent pasted code from running
+    wakatime                    # coding metrics
     zsh-autosuggestions         # Autocomplete
     zsh-syntax-highlighting     # Fish-shell like syntax highlighting
 )
