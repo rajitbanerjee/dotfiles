@@ -33,5 +33,3 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 
-# broot - directory tree navigation
-source "$HOME/.config/broot/launcher/bash/br"
