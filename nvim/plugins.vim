@@ -12,7 +12,8 @@ call plug#begin('~/.config/nvim/autoload/plugged')
 Plug 'amix/vim-zenroom2'                              " Markdown editing in zen mode 
 Plug 'itchyny/lightline.vim'                          " Status bar
 Plug 'jiangmiao/auto-pairs'                           " Bracket matching
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }   " Fuzzy finder
+Plug 'justinmk/vim-sneak'                             " Better search/motion specifying only 2 chars
+Plug 'junegunn/fzf', {'do': { -> fzf#install() }}     " Fuzzy finder
 Plug 'junegunn/fzf.vim'                               
 Plug 'junegunn/goyo.vim'                              " Zen mode
 Plug 'lervag/vimtex'                                  " LaTeX support
