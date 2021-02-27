@@ -1,3 +1,5 @@
 vim/undodir/
 vim/bundle/
 .netrwhist
+
+nvim/autoload/
