@@ -9,22 +9,24 @@ endif
 
 call plug#begin('~/.config/nvim/autoload/plugged')
 
-Plug 'amix/vim-zenroom2'
-Plug 'itchyny/lightline.vim' 
-Plug 'jiangmiao/auto-pairs'
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plug 'junegunn/fzf.vim'
-Plug 'junegunn/goyo.vim'
-Plug 'lervag/vimtex'
-Plug 'maxbrunsfeld/vim-yankstack' 
-Plug 'mhinz/vim-signify' 
-Plug 'morhetz/gruvbox' 
-Plug 'preservim/nerdtree'
-Plug 'sheerun/vim-polyglot'
-Plug 'tpope/vim-commentary'
-Plug 'tpope/vim-fugitive'
-Plug 'tpope/vim-surround'
-Plug 'wakatime/vim-wakatime'
+Plug 'amix/vim-zenroom2'                              " Markdown editing in zen mode 
+Plug 'itchyny/lightline.vim'                          " Status bar
+Plug 'jiangmiao/auto-pairs'                           " Bracket matching
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }   " Fuzzy finder
+Plug 'junegunn/fzf.vim'                               
+Plug 'junegunn/goyo.vim'                              " Zen mode
+Plug 'lervag/vimtex'                                  " LaTeX support
+Plug 'maxbrunsfeld/vim-yankstack'                     " Turns default register into a stack
+Plug 'mhinz/vim-signify'                              " Git changes shown in column
+Plug 'mhinz/vim-startify'                             " Start screen
+Plug 'morhetz/gruvbox'                                " Colour scheme
+Plug 'preservim/nerdtree'                             " File explorer
+Plug 'sheerun/vim-polyglot'                           " Syntax highlighting/language pack
+Plug 'tpope/vim-commentary'                           " Code commenting
+Plug 'tpope/vim-fugitive'                             " Git wrapper
+Plug 'tpope/vim-surround'                             " Delete, change, add surroundings
+Plug 'wakatime/vim-wakatime'                          " Coding metrics
+Plug 'yuttie/comfortable-motion.vim'                  " Smooth scrolling
 
 " TODO
 " ale
@@ -36,6 +38,8 @@ call plug#end()
 
 
 colorscheme gruvbox
+
+" TODO rename plugin settings and sort alphabetically
 
 """"""""""""""""""""""""""""""
 " => vim-go
@@ -64,6 +68,7 @@ colorscheme gruvbox
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " noremap <leader>ll :Autoformat<cr>
 
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => fzf.vim
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -74,6 +79,7 @@ endif
 map <leader>f :FZF<cr>
 map <leader>g :Ag<cr>
 
+
 """"""""""""""""""""""""""""""
 " => YankStack
 """"""""""""""""""""""""""""""
@@ -82,11 +88,13 @@ let g:yankstack_yank_keys = ['y', 'd']
 nmap <C-p> <Plug>yankstack_substitute_older_paste
 nmap <C-n> <Plug>yankstack_substitute_newer_paste
 
+
 """"""""""""""""""""""""""""""""""""""""""""""""""
 " => vim-fugitive
 """"""""""""""""""""""""""""""""""""""""""""""""""
 map <leader>d :Gdiffsplit<cr>
 map <leader>s :GFiles?<cr>
+
 
 """"""""""""""""""""""""""""""
 " => zenroom2, goyo.vim
@@ -112,8 +120,10 @@ map <leader>nb :NERDTreeFromBookmark<Space>
 map <leader>nf :NERDTreeFind<cr>
 map <leader>cd :NERDTreeCWD<cr>
 filetype plugin indent on
+
+" Note: doesn't work with vim-startify
 " Start NERDTree only when I start vim without file arguments
-autocmd VimEnter * if !argc() | NERDTree | endif
+" autocmd VimEnter * if !argc() | NERDTree | endif
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""

@@ -19,6 +19,7 @@ set hid " Buffer is hidden when abandoned
 set number
 set relativenumber
 set noshowcmd
+set mouse=a " Mouse support if ever needed
 
 syntax enable
 set ffs=unix,dos,mac
