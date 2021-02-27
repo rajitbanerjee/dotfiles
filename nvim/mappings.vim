@@ -38,7 +38,8 @@ map <leader>tn :tabnew<cr>
 map <leader>to :tabonly<cr>
 map <leader>tc :tabclose<cr>
 map <leader>tm :tabmove<cr>
-map <leader>t :tabnext<cr>
+nnoremap <silent> <TAB> :tabnext<CR>
+nnoremap <silent> <S-TAB> :tabprevious<CR>
 
 " Let 'tl' toggle between this and the last accessed tab
 let g:lasttab = 1
