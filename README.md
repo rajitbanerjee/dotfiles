@@ -30,15 +30,15 @@ Symlinking with `$HOME` (for existing systems) is managed by the excellent [Dotb
     $ git clone --recurse-submodules https://github.com/rajitbanerjee/dotfiles.git $HOME/.dotfiles
     ```
 
-2.  Run the following scripts for setup:
+2.  Run the following script for setup:
 
     ```bash
     # Symlink dotfiles
     $ ./install
-    
-    # Vim plugins
-    $ ./scripts/setup-vundle
     ```
+
+> # Alternatively, set up vim plugins
+> $ ./scripts/setup-vundle
 
 <img src='./screenshot.jpg'>
 

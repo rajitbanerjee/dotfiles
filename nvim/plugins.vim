@@ -21,12 +21,12 @@ Plug 'mhinz/vim-signify'                              " Git changes shown in col
 Plug 'mhinz/vim-startify'                             " Start screen
 Plug 'morhetz/gruvbox'                                " Colour scheme
 Plug 'preservim/nerdtree'                             " File explorer
+Plug 'ryanoasis/vim-devicons'                         " File type icons
 Plug 'sheerun/vim-polyglot'                           " Syntax highlighting/language pack
 Plug 'tpope/vim-commentary'                           " Code commenting
 Plug 'tpope/vim-fugitive'                             " Git wrapper
 Plug 'tpope/vim-surround'                             " Delete, change, add surroundings
 Plug 'wakatime/vim-wakatime'                          " Coding metrics
-Plug 'yuttie/comfortable-motion.vim'                  " Smooth scrolling
 
 " TODO
 " ale
