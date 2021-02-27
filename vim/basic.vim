@@ -8,7 +8,6 @@
 "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => General
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -182,12 +181,17 @@ au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g
 xnoremap K :move '<-2<cr>gv-gv
 xnoremap J :move '>+1<cr>gv-gv
 
+" Maintain visual selection after tab indentation
+vnoremap < <gv
+vnoremap > >gv
+
 " Visual mode pressing * or # searches for the current selection
 vnoremap <silent> * :<C-u>call VisualSelection('', '')<CR>/<C-R>=@/<CR><CR>
 vnoremap <silent> # :<C-u>call VisualSelection('', '')<CR>?<C-R>=@/<CR><CR>
 
 " Disable highlight when <leader><cr> is pressed
 map <silent> <leader><cr> :noh<cr>
+
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Helper functions
