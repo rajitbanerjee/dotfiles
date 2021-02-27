@@ -1,59 +1,27 @@
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" NeoVim Basic Settings
-"
-" Sections:
-"    -> General
-"    -> VIM user interface
-"    -> Text, tab and indent related
-"    -> Moving around, tabs, windows and buffers
-"    -> Helper functions
-"
+" NeoVim General Settings
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => General
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set history=500
 set updatetime=50
 set autochdir " Change working dir on opening a file
-
-let mapleader = " "
-
-nmap <leader><leader> :
-
-map 0 ^
-map <leader>pp :setlocal paste!<cr>
-map <C-s> :w<cr>
-nmap <leader>w :wq<cr>
-nmap <leader>qq :q!<cr>
-nmap <leader>qa :qa<cr>
-
-" Faster ESC
-inoremap qq <ESC>
-
 set nobackup
 set nowb
 set noswapfile
-
-" Remove the Windows ^M - when the encodings gets messed up
-noremap <Leader>m mmHmt:%s/<C-V><cr>//ge<cr>'tzt'm
-
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => VIM user interface
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let $LANG='en'
 set langmenu=en
+
+let $LANG='en'
+let mapleader = " "
 
 set so=7 " 7 lines for the cursor when moving up/down
 set cmdheight=1
 set hid " Buffer is hidden when abandoned
 set number
 set relativenumber
+set noshowcmd
 
 syntax enable
 set ffs=unix,dos,mac
-
 set whichwrap+=<,>,h,l
 
 set ignorecase
@@ -61,6 +29,7 @@ set smartcase
 set lazyredraw " Don't redraw when executing macros
 set magic " Simplify regex
 set inccommand=split " Live substition 
+
 
 " Brackets
 set showmatch
@@ -85,11 +54,6 @@ set statusline=\ %{HasPaste()}%F%m%r%h\ %w\ \ CWD:\ %r%{getcwd()}%h\ \ \ Line:\ 
 au BufNewFile,BufRead *.py set colorcolumn=80
 au BufNewFile,BufRead *.go set colorcolumn=100
 
-
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Text, tab and indent related
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Use spaces not tabs
 set expandtab
 set shiftwidth=4
@@ -103,44 +67,6 @@ set tw=500
 set si
 set wrap
 
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Moving around, tabs, windows and buffers
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-map <C-j> <C-W>j
-map <C-k> <C-W>k
-map <C-h> <C-W>h
-map <C-l> <C-W>l
-nnoremap <Right> <C-w>l
-nnoremap <Left> <C-w>h
-nnoremap <Up> <C-w>k
-nnoremap <Down> <C-w>j
-
-" Terminal
-map <C-t> :terminal<cr>
-tnoremap <C-t> <C-w>N
-
-" Buffers
-map <leader>bd :Bclose<cr>:tabclose<cr>gT
-map <leader>ba :bufdo bd<cr>
-map <leader>l :bnext<cr>
-map <leader>h :bprevious<cr>
-
-" Tabs
-map <leader>tn :tabnew<cr>
-map <leader>to :tabonly<cr>
-map <leader>tc :tabclose<cr>
-map <leader>tm :tabmove<cr>
-map <leader>t :tabnext<cr>
-
-" Let 'tl' toggle between this and the last accessed tab
-let g:lasttab = 1
-nmap <Leader>tl :exe "tabn ".g:lasttab<CR>
-au TabLeave * let g:lasttab = tabpagenr()
-
-" Opens a new tab with the current buffer's path
-map <leader>te :tabedit <C-r>=expand("%:p:h")<cr>/
-
 " Specify the behavior when switching between buffers
 try
     set switchbuf=useopen,usetab,newtab
@@ -150,21 +76,6 @@ endtry
 
 " Return to last edit position when opening files
 au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
-
-" Move selected lines up/down
-xnoremap K :move '<-2<cr>gv-gv
-xnoremap J :move '>+1<cr>gv-gv
-
-" Maintain visual selection after tab indentation
-vnoremap < <gv
-vnoremap > >gv
-
-" Visual mode pressing * or # searches for the current selection
-vnoremap <silent> * :<C-u>call VisualSelection('', '')<CR>/<C-R>=@/<CR><CR>
-vnoremap <silent> # :<C-u>call VisualSelection('', '')<CR>?<C-R>=@/<CR><CR>
-
-" Disable highlight when <leader><cr> is pressed
-map <silent> <leader><cr> :noh<cr>
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""

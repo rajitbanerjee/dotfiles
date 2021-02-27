@@ -32,7 +32,6 @@ Plug 'wakatime/vim-wakatime'
 " cheat.sh-vim
 " vim-go
 
-
 call plug#end()
 
 

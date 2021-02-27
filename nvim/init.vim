@@ -1,8 +1,6 @@
-" set runtimepath^=~/.vim runtimepath+=~/.vim/after
-" let &packpath = &runtimepath
-" source ~/.vimrc
+" NeoVim Configurations
 
-
-source $HOME/.config/nvim/basic.vim
+source $HOME/.config/nvim/general.vim
+source $HOME/.config/nvim/mappings.vim
 source $HOME/.config/nvim/plugins.vim
 
