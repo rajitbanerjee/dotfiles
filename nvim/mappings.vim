@@ -16,6 +16,9 @@ nmap <leader>qa :qa<cr>
 " Faster ESC
 inoremap qq <ESC>
 
+" s for search
+nnoremap s /
+
 
 " Moving around
 map 0 ^

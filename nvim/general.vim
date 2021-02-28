@@ -89,6 +89,12 @@ endtry
 " Return to last edit position when opening files
 au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 
+" Disable directory listing netrw
+augroup goodbye_netrw
+    au!
+    autocmd VimEnter * silent! au! FileExplorer *
+augroup END
+
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Helper functions
