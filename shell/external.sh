@@ -1,5 +1,5 @@
 ## Default editor
-export EDITOR=vim
+export EDITOR=nvim
 
 ## Add custom scripts + installed scripts to path
 export PATH="$HOME/.local/scripts:$PATH"
