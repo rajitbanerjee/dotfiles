@@ -2,10 +2,6 @@
 " => Key Mappings
 """""""""""""""""""
 
-" Easy command mode
-map ; :
-noremap ;; ;
-
 " Pasting, saving, quitting
 map <leader>pp :setlocal paste!<cr>
 map <C-s> :w<cr>
@@ -13,28 +9,25 @@ nmap <leader>w :wq<cr>
 nmap <leader>qq :q!<cr>
 nmap <leader>qa :qa<cr>
 
-" Faster ESC
-inoremap qq <ESC>
-
-" s for search
-nnoremap s /
-
-
 " Moving around
 map 0 ^
 map <C-j> <C-W>j
 map <C-k> <C-W>k
 map <C-h> <C-W>h
 map <C-l> <C-W>l
+map ; :
+noremap ;; ;
 nnoremap <Right> <C-w>l
 nnoremap <Left> <C-w>h
 nnoremap <Up> <C-w>k
 nnoremap <Down> <C-w>j
+nnoremap 5 % 
+nnoremap s /
+inoremap qq <ESC>
 
 " Buffers
 map <leader>bd :Bclose<cr>:tabclose<cr>gT
 map <leader>ba :bufdo bd<cr>
-map <leader>l :bnext<cr>
 map <leader>h :bprevious<cr>
 
 
@@ -47,7 +40,7 @@ nnoremap <silent> <TAB> :tabnext<CR>
 nnoremap <silent> <S-TAB> :tabprevious<CR>
 
 
-" Disable highlight when <leader><cr> is pressed
+" Disable highlights
 map <silent> <leader><cr> :noh<cr>
 
 " Remove the Windows ^M - when the encodings gets messed up
@@ -64,6 +57,7 @@ nnoremap <silent> <C-Right> :vertical resize +2<CR>
 nnoremap <C-t> :call TermToggle(12)<CR>
 inoremap <C-t> <Esc>:call TermToggle(12)<CR>
 tnoremap <C-t> <C-\><C-n>:call TermToggle(12)<CR>
+
 
 """"""""""""""""""""
 " => Terminal Mode

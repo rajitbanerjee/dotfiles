@@ -10,6 +10,8 @@ endif
 call plug#begin('~/.config/nvim/autoload/plugged')
 
 Plug 'amix/vim-zenroom2'                              " Markdown editing in zen mode 
+Plug 'dense-analysis/ale'                             " LSP, linting, formatting
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries'  }   " Go support
 Plug 'itchyny/lightline.vim'                          " Status bar
 Plug 'jiangmiao/auto-pairs'                           " Bracket matching
 Plug 'junegunn/fzf', {'do': { -> fzf#install() }}     " Fuzzy finder
@@ -28,31 +30,26 @@ Plug 'tpope/vim-fugitive'                             " Git wrapper
 Plug 'tpope/vim-surround'                             " Delete, change, add surroundings
 Plug 'wakatime/vim-wakatime'                          " Coding metrics
 
-" TODO
-" ale
-" autoformat
-" cheat.sh-vim
-" vim-go
-
 call plug#end()
 
 
 
-colorscheme gruvbox
 
 
 " TODO rename plugin settings and sort alphabetically
 
+colorscheme gruvbox
+
+
 """"""""""""""""""""""""""""""""
 " => neoclide/coc.nvim
 """""""""""""""""""""""""""""""" 
-nnoremap <silent><nowait> <C-e>  :<C-u>CocCommand explorer<cr>
-nnoremap <silent><nowait> <space>a  :<C-u>CocList diagnostics<cr>
-nnoremap <silent><nowait> <space>e  :<C-u>CocList extensions<cr>
-nnoremap <silent><nowait> <space>c  :<C-u>CocList commands<cr>
-nnoremap <silent><nowait> <space>o  :<C-u>CocList outline<cr>
-nnoremap <silent><nowait> <space>j  :<C-u>CocNext<CR>
-nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>
+nnoremap <silent><nowait> <leader>e  :<C-u>CocCommand explorer<cr>
+nnoremap <silent><nowait> <leader>a  :<C-u>CocList diagnostics<cr>
+nnoremap <silent><nowait> <leader>c  :<C-u>CocList commands<cr>
+nnoremap <silent><nowait> <leader>o  :<C-u>CocList outline<cr>
+nnoremap <silent><nowait> <leader>j  :<C-u>CocNext<CR>
+nnoremap <silent><nowait> <leader>k  :<C-u>CocPrev<CR>
 
 " Start explorer automatically
 autocmd User CocNvimInit :CocCommand explorer
@@ -65,25 +62,30 @@ autocmd User CocNvimInit :CocCommand explorer
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Ale (syntax checker and linter)
+" => dense-analysis/ale (syntax checker and linter)
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" let g:ale_linters = { 'python': ['flake8', 'mypy'], 'latex': ['chktex'] }
+let g:ale_linters = { 
+  \ 'python': ['flake8', 'mypy'], 
+  \ 'latex': ['chktex'], 
+  \ 'sh': ['shellcheck'] 
+  \ }
+let g:ale_fixers = { 
+  \ '*': ['prettier'],
+  \ 'python': ['autopep8', 'isort'], 
+  \ }
 
-" nmap <silent> <C-k> <Plug>(ale_previous_wrap)
-" nmap <silent> <C-j> <Plug>(ale_next_wrap)
+" Code formatting
+nnoremap <leader>l :ALEFix<cr>
 
-" " Disabling highlighting
-" let g:ale_set_highlights = 0
+nmap <silent> <C-k> <Plug>(ale_previous_wrap)
+nmap <silent> <C-j> <Plug>(ale_next_wrap)
 
-" " Only run linting when saving the file
-" let g:ale_lint_on_text_changed = 'never'
-" let g:ale_lint_on_enter = 0
+" Disabling highlighting
+let g:ale_set_highlights = 0
 
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => vim-autoformat
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" noremap <leader>ll :Autoformat<cr>
+" Only run linting when saving the file
+let g:ale_lint_on_text_changed = 'never'
+let g:ale_lint_on_enter = 0
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -96,6 +98,11 @@ endif
 map <leader>f :FZF<cr>
 map <leader>g :Ag<cr>
 
+" Required to esc fzf in nvim
+if has("nvim")
+  au TermOpen * tnoremap <Esc> <c-\><c-n>
+  au FileType fzf tunmap <Esc>
+endif
 
 """"""""""""""""""""""""""""""
 " => YankStack
