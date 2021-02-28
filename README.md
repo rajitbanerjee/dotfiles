@@ -30,15 +30,15 @@ Symlinking with `$HOME` (for existing systems) is managed by the excellent [Dotb
     $ git clone --recurse-submodules https://github.com/rajitbanerjee/dotfiles.git $HOME/.dotfiles
     ```
 
-2.  Run the following script for setup:
+2.  Run the following for setup:
 
     ```bash
-    # Symlink dotfiles
-    $ ./install
-    ```
+    # Remove existing bashrc
+    $ rm -rf ~/.bashrc
 
-<!-- # Alternatively, set up vim plugins -->
-<!-- $ ./scripts/setup-vundle -->
+    # Symlink dotfiles
+    $ cd ~/.dotfiles && ./install
+    ```
 
 <img src='./screenshot.jpg'>
 
@@ -47,8 +47,17 @@ Symlinking with `$HOME` (for existing systems) is managed by the excellent [Dotb
     ```bash
     $ ./scripts/system-setup
 
+
+    # Start NeoVim to trigger vim-plug installations (recommended)
+    $ nvim
+
     # Install coc.nvim extensions
+    $ npm cache verify
     $ ./scripts/setup-coc-nvim
+
+
+    # Alternatively, set up Vim and Vundle plugins
+    $ ./scripts/setup-vundle
     ```
 
 ## License
