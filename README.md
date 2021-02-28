@@ -48,10 +48,8 @@ Symlinking with `$HOME` (for existing systems) is managed by the excellent [Dotb
     $ ./scripts/system-setup
 
 
-    # Start NeoVim to trigger vim-plug installations (recommended)
+    # Set up NeoVim and trigger vim-plug installations (recommended)
     $ nvim
-
-    # Install coc.nvim extensions
     $ npm cache verify
     $ ./scripts/setup-coc-nvim
 
