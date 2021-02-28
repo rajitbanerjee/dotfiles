@@ -42,8 +42,7 @@ Symlinking with `$HOME` (for existing systems) is managed by the excellent [Dotb
 
 <img src='./screenshot.jpg'>
 
-3.  Install a range of preferred packages. Root privileges are required.
-    See [system-setup][ss], [setup-coc-nvim][scn], [setup-vundle][sv].
+3.  Install a range of preferred packages. See [system-setup][ss], [setup-coc-nvim][scn], [setup-vundle][sv].
 
     ```bash
     $ ./scripts/system-setup
