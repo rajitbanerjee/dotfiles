@@ -1,5 +1,7 @@
 {
+    // spell checker
     "cSpell.language": "en-GB",
+    "cSpell.enabled": false,
 
     // coc-explorer
     "explorer.icon.enableVimDevicons": true,
@@ -20,9 +22,7 @@
     "<cr>": ["wait", "expandable?", "cd", "open"],
     "e": "open",
     "s": "open:vsplit",
-    "E": "open:split",
     "t": "open:tab",
-    "<bs>": ["wait", "gotoParent"],
     "u": ["wait", "gotoParent"],
 
     "yp": "copyFilepath",
@@ -35,19 +35,18 @@
     "A": "addDirectory",
     "R": "rename",
 
-    "zh": "toggleHidden",
     "g<dot>": "toggleHidden",
     "r": "refresh",
-
-    "?": "help",
     "q": "quit",
     "<esc>": "esc",
-    "gd": "listDrive",
 
     "f": "search",
     "F": "searchRecursive",
 
     "<<": "gitStage",
     ">>": "gitUnstage"
-  }
+  },
+
+  // coc-html
+  "html.autoClosingTags": true
 }
