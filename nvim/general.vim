@@ -20,6 +20,8 @@ set number
 set relativenumber
 set noshowcmd
 set noshowmode
+set splitbelow
+set splitright
 set mouse=a " Mouse support if ever needed
 
 syntax enable

@@ -21,6 +21,7 @@ Plug 'maxbrunsfeld/vim-yankstack'                     " Turns default register i
 Plug 'mhinz/vim-signify'                              " Git changes shown in column
 Plug 'mhinz/vim-startify'                             " Start screen
 Plug 'morhetz/gruvbox'                                " Colour scheme
+Plug 'neoclide/coc.nvim', {'branch': 'release'}       " Code completion (WARN: Latest stable node version required)
 Plug 'preservim/nerdtree'                             " File explorer
 Plug 'ryanoasis/vim-devicons'                         " File type icons
 Plug 'sheerun/vim-polyglot'                           " Syntax highlighting/language pack
@@ -36,6 +37,7 @@ Plug 'wakatime/vim-wakatime'                          " Coding metrics
 " vim-go
 
 call plug#end()
+
 
 
 colorscheme gruvbox

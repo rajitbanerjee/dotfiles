@@ -1,0 +1,53 @@
+{
+    "cSpell.language": "en-GB",
+
+    // coc-explorer
+    "explorer.icon.enableVimDevicons": true,
+	"explorer.keyMappings.global": {
+    "i": false, // cancel default mapkey
+
+    "*": "toggleSelection",
+    "<tab>": false,
+    "m": "actionMenu",
+
+    "l": ["wait", "expandable?", "expand", "open"],
+    "<2-LeftMouse>": [
+      "expandable?",
+      ["expanded?", "collapse", "expand"],
+      "open"
+    ],
+    "o": ["wait", "expanded?", "collapse", "expand"],
+    "<cr>": ["wait", "expandable?", "cd", "open"],
+    "e": "open",
+    "s": "open:vsplit",
+    "E": "open:split",
+    "t": "open:tab",
+    "<bs>": ["wait", "gotoParent"],
+    "u": ["wait", "gotoParent"],
+
+    "yp": "copyFilepath",
+    "yn": "copyFilename",
+    "yy": "copyFile",
+    "dd": "cutFile",
+    "p": "pasteFile",
+    "df": "delete",
+
+    "A": "addDirectory",
+    "R": "rename",
+
+    "zh": "toggleHidden",
+    "g<dot>": "toggleHidden",
+    "r": "refresh",
+
+    "?": "help",
+    "q": "quit",
+    "<esc>": "esc",
+    "gd": "listDrive",
+
+    "f": "search",
+    "F": "searchRecursive",
+
+    "<<": "gitStage",
+    ">>": "gitUnstage"
+  }
+}
