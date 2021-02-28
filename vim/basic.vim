@@ -92,10 +92,7 @@ if $COLORTERM == 'gnome-terminal'
     set t_Co=256
 endif
 set background=dark
-try
-    colorscheme gruvbox
-catch
-endtry
+colorscheme zellner
 
 " Status line
 set laststatus=2
