@@ -37,8 +37,8 @@ Symlinking with `$HOME` (for existing systems) is managed by the excellent [Dotb
     $ ./install
     ```
 
-> # Alternatively, set up vim plugins
-> $ ./scripts/setup-vundle
+<!-- # Alternatively, set up vim plugins -->
+<!-- $ ./scripts/setup-vundle -->
 
 <img src='./screenshot.jpg'>
 
@@ -46,6 +46,9 @@ Symlinking with `$HOME` (for existing systems) is managed by the excellent [Dotb
 
     ```bash
     $ ./scripts/system-setup
+
+    # Install coc.nvim extensions
+    $ ./scripts/setup-coc-nvim
     ```
 
 ## License
