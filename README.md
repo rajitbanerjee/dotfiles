@@ -58,6 +58,8 @@ Symlinking with `$HOME` (for existing systems) is managed by the excellent [Dotb
     $ ./scripts/setup-vundle
     ```
 
+NeoVim:
+
 <img src='./nvim.jpg'>
 
 ## License
