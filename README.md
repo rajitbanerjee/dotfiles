@@ -34,10 +34,10 @@ Symlinking with `$HOME` (for existing systems) is managed by the excellent [Dotb
 
     ```bash
     # Remove existing bashrc
-    $ rm -rf ~/.bashrc
+    $ rm -rf $HOME/.bashrc
 
     # Symlink dotfiles
-    $ cd ~/.dotfiles && ./install
+    $ cd $HOME/.dotfiles && ./install
     ```
 
 <img src='./screenshot.jpg'>
@@ -57,6 +57,8 @@ Symlinking with `$HOME` (for existing systems) is managed by the excellent [Dotb
     # Alternatively, set up Vim and Vundle plugins
     $ ./scripts/setup-vundle
     ```
+
+<img src='./nvim.jpg'>
 
 ## License
 
