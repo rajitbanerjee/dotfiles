@@ -2,7 +2,9 @@
 " => Key Mappings
 """""""""""""""""""
 
-nmap <leader><leader> :
+" Easy command mode
+map ; :
+noremap ;; ;
 
 " Pasting, saving, quitting
 map <leader>pp :setlocal paste!<cr>
@@ -41,14 +43,6 @@ map <leader>tm :tabmove<cr>
 nnoremap <silent> <TAB> :tabnext<CR>
 nnoremap <silent> <S-TAB> :tabprevious<CR>
 
-" Let 'tl' toggle between this and the last accessed tab
-let g:lasttab = 1
-nmap <Leader>tl :exe "tabn ".g:lasttab<CR>
-au TabLeave * let g:lasttab = tabpagenr()
-
-" Opens a new tab with the current buffer's path
-map <leader>te :tabedit <C-r>=expand("%:p:h")<cr>/
-
 
 " Disable highlight when <leader><cr> is pressed
 map <silent> <leader><cr> :noh<cr>
@@ -63,21 +57,10 @@ nnoremap <silent> <C-Left>  :vertical resize -2<CR>
 nnoremap <silent> <C-Right> :vertical resize +2<CR>
 
 
-""""""""""""""""""""
-" => Visual Mode 
-"""""""""""""""""""" 
-
-" Move selected lines up/down
-xnoremap K :move '<-2<cr>gv-gv
-xnoremap J :move '>+1<cr>gv-gv
-
-" Maintain visual selection after tab indentation
-vnoremap < <gv
-vnoremap > >gv
-
-" Visual mode pressing * or # searches for the current selection
-vnoremap <silent> * :<C-u>call VisualSelection('', '')<CR>/<C-R>=@/<CR><CR>
-vnoremap <silent> # :<C-u>call VisualSelection('', '')<CR>?<C-R>=@/<CR><CR>
+" Toggle terminal on/off (neovim)
+nnoremap <C-t> :call TermToggle(12)<CR>
+inoremap <C-t> <Esc>:call TermToggle(12)<CR>
+tnoremap <C-t> <C-\><C-n>:call TermToggle(12)<CR>
 
 """"""""""""""""""""
 " => Terminal Mode
@@ -100,3 +83,19 @@ autocmd TermOpen * setlocal nonumber norelativenumber
 :nnoremap <A-k> <C-w>k
 :nnoremap <A-l> <C-w>l
 
+
+""""""""""""""""""""
+" => Visual Mode
+""""""""""""""""""""
+
+" Move selected lines up/down
+xnoremap K :move '<-2<cr>gv-gv
+xnoremap J :move '>+1<cr>gv-gv
+
+" Maintain visual selection after tab indentation
+vnoremap < <gv
+vnoremap > >gv
+
+" Visual mode pressing * or # searches for the current selection
+vnoremap <silent> * :<C-u>call VisualSelection('', '')<CR>/<C-R>=@/<CR><CR>
+vnoremap <silent> # :<C-u>call VisualSelection('', '')<CR>?<C-R>=@/<CR><CR>
