@@ -48,5 +48,8 @@
   },
 
   // coc-html
-  "html.autoClosingTags": true
+  "html.autoClosingTags": true,
+
+  // coc-pyright
+  "python.linting.enabled": false
 }
