@@ -21,7 +21,6 @@ nnoremap <Right> <C-w>l
 nnoremap <Left> <C-w>h
 nnoremap <Up> <C-w>k
 nnoremap <Down> <C-w>j
-nnoremap 5 % 
 nnoremap s /
 inoremap qq <ESC>
 
