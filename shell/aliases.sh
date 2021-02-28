@@ -38,6 +38,7 @@ alias rb="/mnt/c/Users/rajitbanerjee"
 alias sb="source $HOME/.bashrc"
 alias sl="ls"
 alias sz="source $HOME/.zshrc"
+alias v="nvim ."
 alias vim="nvim"
 
 # git
