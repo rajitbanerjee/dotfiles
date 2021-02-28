@@ -33,12 +33,7 @@ Plug 'wakatime/vim-wakatime'                          " Coding metrics
 call plug#end()
 
 
-
-
-
 " TODO rename plugin settings and sort alphabetically
-
-colorscheme gruvbox
 
 
 """"""""""""""""""""""""""""""""
@@ -56,9 +51,9 @@ autocmd User CocNvimInit :CocCommand explorer
 
 
 """"""""""""""""""""""""""""""
-" => vim-go
+" => fatih/vim-go
 """"""""""""""""""""""""""""""
-" let g:go_fmt_fail_silently = 1
+let g:go_fmt_fail_silently = 1
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
