@@ -56,6 +56,12 @@ map <silent> <leader><cr> :noh<cr>
 " Remove the Windows ^M - when the encodings gets messed up
 noremap <Leader>m mmHmt:%s/<C-V><cr>//ge<cr>'tzt'm
 
+" Resize splits
+nnoremap <silent> <C-Up>    :resize -2<CR>
+nnoremap <silent> <C-Down>  :resize +2<CR>
+nnoremap <silent> <C-Left>  :vertical resize -2<CR>
+nnoremap <silent> <C-Right> :vertical resize +2<CR>
+
 
 """"""""""""""""""""
 " => Visual Mode 
