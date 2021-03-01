@@ -1,4 +1,4 @@
-# Dotfiles \[[![Build Status](https://travis-ci.com/rajitbanerjee/dotfiles.svg?branch=master)](https://travis-ci.com/rajitbanerjee/dotfiles)]
+# Dotfiles \[[![Build Status][travis-badge]][travis]]
 
 My custom configuration files:
 
@@ -26,7 +26,7 @@ Symlinking with `$HOME` (for existing systems) is managed by the excellent [Dotb
     # With SSH
     $ git clone --recurse-submodules git@github.com:rajitbanerjee/dotfiles $HOME/.dotfiles
 
-    # Or, with HTTPS
+    # Alternatively, with HTTPS
     $ git clone --recurse-submodules https://github.com/rajitbanerjee/dotfiles.git $HOME/.dotfiles
     ```
 
@@ -42,7 +42,7 @@ Symlinking with `$HOME` (for existing systems) is managed by the excellent [Dotb
 
 <img src='./screenshot.jpg'>
 
-3.  Install a range of preferred packages. Root privileges are required.
+3.  Install a range of preferred packages. See [system-setup][ss], [setup-coc-nvim][scn], [setup-vundle][sv].
 
     ```bash
     $ ./scripts/system-setup
@@ -54,15 +54,21 @@ Symlinking with `$HOME` (for existing systems) is managed by the excellent [Dotb
     $ ./scripts/setup-coc-nvim
 
 
-    # Alternatively, set up Vim and Vundle plugins
+    # Optionally, set up Vim and Vundle plugins
     $ ./scripts/setup-vundle
     ```
+
+NeoVim:
 
 <img src='./nvim.jpg'>
 
 ## License
 
 [MIT][license]
+
+[travis-badge]: https://api.travis-ci.com/rajitbanerjee/dotfiles.svg?branch=main
+
+[travis]: https://travis-ci.com/rajitbanerjee/dotfiles
 
 [scripts]: https://github.com/rajitbanerjee/scripts
 
@@ -73,5 +79,11 @@ Symlinking with `$HOME` (for existing systems) is managed by the excellent [Dotb
 [dotbot]: https://github.com/anishathalye/dotbot
 
 [ohmyzsh]: https://github.com/ohmyzsh/ohmyzsh
+
+[ss]: https://github.com/rajitbanerjee/scripts/blob/master/system-setup
+
+[scn]: https://github.com/rajitbanerjee/scripts/blob/master/setup-coc-nvim
+
+[sv]: https://github.com/rajitbanerjee/scripts/blob/master/setup-vundle
 
 [license]: LICENSE
