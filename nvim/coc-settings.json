@@ -4,6 +4,7 @@
     "cSpell.enabled": false,
 
     // coc-explorer
+    "explorer.focus": false,
     "explorer.icon.enableVimDevicons": true,
 	"explorer.keyMappings.global": {
     "i": false, // cancel default mapkey
