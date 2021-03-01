@@ -53,9 +53,9 @@ nnoremap <silent> <C-Right> :vertical resize +2<CR>
 
 
 " Toggle terminal on/off (neovim)
-nnoremap <C-t> :call TermToggle(12)<CR>
-inoremap <C-t> <Esc>:call TermToggle(12)<CR>
-tnoremap <C-t> <C-\><C-n>:call TermToggle(12)<CR>
+nnoremap <A-t> :call TermToggle(12)<CR>
+inoremap <A-t> <Esc>:call TermToggle(12)<CR>
+tnoremap <A-t> <C-\><C-n>:call TermToggle(12)<CR>
 
 
 """"""""""""""""""""
