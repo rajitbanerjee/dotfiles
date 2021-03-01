@@ -11,24 +11,26 @@ nmap <leader>qa :qa<cr>
 
 " Moving around
 map 0 ^
-map <C-j> <C-W>j
-map <C-k> <C-W>k
-map <C-h> <C-W>h
-map <C-l> <C-W>l
-map ; :
-noremap ;; ;
+map <A-j> <C-W>j
+map <A-k> <C-W>k
+map <A-h> <C-W>h
+map <A-l> <C-W>l
 nnoremap <Right> <C-w>l
 nnoremap <Left> <C-w>h
 nnoremap <Up> <C-w>k
 nnoremap <Down> <C-w>j
+
+" Convenience
+map ; :
+noremap ;; ;
 nnoremap s /
 inoremap qq <ESC>
+inoremap <C-q> <ESC>
 
 " Buffers
 map <leader>bd :Bclose<cr>:tabclose<cr>gT
 map <leader>ba :bufdo bd<cr>
 map <leader>h :bprevious<cr>
-
 
 " Tabs
 map <leader>tn :tabnew<cr>
@@ -37,7 +39,6 @@ map <leader>tc :tabclose<cr>
 map <leader>tm :tabmove<cr>
 nnoremap <silent> <TAB> :tabnext<CR>
 nnoremap <silent> <S-TAB> :tabprevious<CR>
-
 
 " Disable highlights
 map <silent> <leader><cr> :noh<cr>
@@ -51,7 +52,6 @@ nnoremap <silent> <C-Down>  :resize +2<CR>
 nnoremap <silent> <C-Left>  :vertical resize -2<CR>
 nnoremap <silent> <C-Right> :vertical resize +2<CR>
 
-
 " Toggle terminal on/off (neovim)
 nnoremap <A-t> :call TermToggle(12)<CR>
 inoremap <A-t> <Esc>:call TermToggle(12)<CR>
@@ -62,7 +62,7 @@ tnoremap <A-t> <C-\><C-n>:call TermToggle(12)<CR>
 " => Terminal Mode
 """"""""""""""""""""
 
-:tnoremap <Esc> <C-\><C-n>
+:tnoremap <C-q> <C-\><C-n>
 autocmd TermOpen * setlocal nonumber norelativenumber
 
 " ALT+{h,j,k,l} to navigate windows from any mode

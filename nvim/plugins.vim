@@ -108,12 +108,6 @@ endif
 map <leader>f :FZF<cr>
 map <leader>g :Ag<cr>
 
-" Required to esc fzf in nvim
-if has("nvim")
-  au TermOpen * tnoremap <Esc> <c-\><c-n>
-  au FileType fzf tunmap <Esc>
-endif
-
 
 """""""""""""""""""""""""""""""""""""""""""""""""""
 " => junegunn/goyo.vim, amix/zenroom2
