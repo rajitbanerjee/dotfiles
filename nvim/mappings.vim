@@ -5,7 +5,7 @@
 let mapleader = " "
 
 " Pasting, saving, quitting
-map <leader>pp :setlocal paste!<cr>
+map <silent> <leader>pp :setlocal paste!<cr>
 map <C-s> :w<cr>
 nmap <leader>w :wq<cr>
 nmap <leader>qq :q!<cr>
@@ -37,7 +37,7 @@ nnoremap <silent> <C-Left>  :vertical resize -2<CR>
 nnoremap <silent> <C-Right> :vertical resize +2<CR>
 
 " Buffers
-map <leader>bc :Bclose<cr>
+map <silent> <leader>bc :Bclose<cr>
 nnoremap <silent> <TAB> :bnext<CR>
 nnoremap <silent> <S-TAB> :bprevious<CR>
 

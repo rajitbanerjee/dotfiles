@@ -30,6 +30,7 @@ Plug 'tpope/vim-commentary'                           " Code commenting
 Plug 'tpope/vim-fugitive'                             " Git wrapper
 Plug 'tpope/vim-surround'                             " Delete, change, add surroundings
 Plug 'wakatime/vim-wakatime'                          " Coding metrics
+Plug 'yuttie/comfortable-motion.vim'                  " Smooth scrolling
 
 call plug#end()
 
@@ -156,5 +157,13 @@ autocmd User CocNvimInit :CocCommand explorer
 """""""""""""""""""""""""""""""""""""""""""""""""""
 map <leader>d :Gdiffsplit<cr>
 map <leader>s :GFiles?<cr>
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""
+" => yuttie/comfortable-motion.vim
+"""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:comfortable_motion_no_default_key_mappings = 1
+nnoremap <silent> <leader>j :call comfortable_motion#flick(150)<CR>
+nnoremap <silent> <leader>k :call comfortable_motion#flick(-150)<CR>
 
 
