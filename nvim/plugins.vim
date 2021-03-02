@@ -106,7 +106,7 @@ if has('popupwin')
     let $FZF_DEFAULT_OPTS='--reverse'
 endif
 map <leader>f :FZF<cr>
-map <leader>g :Ag<cr>
+map <leader>g :Rg<cr>
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""
