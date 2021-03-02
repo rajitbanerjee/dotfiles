@@ -1,6 +1,6 @@
-"""""""""""""""""""
+""""""""""""""""""""""""""""""
 " => Key Mappings
-"""""""""""""""""""
+""""""""""""""""""""""""""""""
 
 let mapleader = " "
 
@@ -11,8 +11,16 @@ nmap <leader>w :wq<cr>
 nmap <leader>qq :q!<cr>
 nmap <leader>qa :qa<cr>
 
-" Moving around
+" Convenience
 map 0 ^
+map ; :
+noremap ;; ;
+nnoremap s /
+map <silent> <leader><cr> :noh<cr>
+inoremap qq <ESC>
+inoremap <C-q> <ESC>
+
+" Moving around
 map <A-j> <C-W>j
 map <A-k> <C-W>k
 map <A-h> <C-W>h
@@ -22,13 +30,11 @@ nnoremap <Left> <C-w>h
 nnoremap <Up> <C-w>k
 nnoremap <Down> <C-w>j
 
-" Convenience
-map ; :
-noremap ;; ;
-nnoremap s /
-map <silent> <leader><cr> :noh<cr>
-inoremap qq <ESC>
-inoremap <C-q> <ESC>
+" Resize splits
+nnoremap <silent> <C-Up>    :resize -2<CR>
+nnoremap <silent> <C-Down>  :resize +2<CR>
+nnoremap <silent> <C-Left>  :vertical resize -2<CR>
+nnoremap <silent> <C-Right> :vertical resize +2<CR>
 
 " Buffers
 map <leader>bc :Bclose<cr>
@@ -56,11 +62,27 @@ endfunction
 " Remove the Windows ^M - when the encodings gets messed up
 noremap <Leader>m mmHmt:%s/<C-V><cr>//ge<cr>'tzt'm
 
-" Resize splits
-nnoremap <silent> <C-Up>    :resize -2<CR>
-nnoremap <silent> <C-Down>  :resize +2<CR>
-nnoremap <silent> <C-Left>  :vertical resize -2<CR>
-nnoremap <silent> <C-Right> :vertical resize +2<CR>
+
+""""""""""""""""""""""""""""""
+" => Terminal
+""""""""""""""""""""""""""""""
+
+:tnoremap <C-q> <C-\><C-n>
+autocmd TermOpen * setlocal nonumber norelativenumber
+
+" ALT+{h,j,k,l} to navigate windows from any mode
+:tnoremap <A-h> <C-\><C-N><C-w>h
+:tnoremap <A-j> <C-\><C-N><C-w>j
+:tnoremap <A-k> <C-\><C-N><C-w>k
+:tnoremap <A-l> <C-\><C-N><C-w>l
+:inoremap <A-h> <C-\><C-N><C-w>h
+:inoremap <A-j> <C-\><C-N><C-w>j
+:inoremap <A-k> <C-\><C-N><C-w>k
+:inoremap <A-l> <C-\><C-N><C-w>l
+:nnoremap <A-h> <C-w>h
+:nnoremap <A-j> <C-w>j
+:nnoremap <A-k> <C-w>k
+:nnoremap <A-l> <C-w>l
 
 " Toggle terminal
 nnoremap <A-t> :call TermToggle(12)<CR>
@@ -89,31 +111,9 @@ function! TermToggle(height)
 endfunction
 
 
-""""""""""""""""""""
-" => Terminal Mode
-""""""""""""""""""""
-
-:tnoremap <C-q> <C-\><C-n>
-autocmd TermOpen * setlocal nonumber norelativenumber
-
-" ALT+{h,j,k,l} to navigate windows from any mode
-:tnoremap <A-h> <C-\><C-N><C-w>h
-:tnoremap <A-j> <C-\><C-N><C-w>j
-:tnoremap <A-k> <C-\><C-N><C-w>k
-:tnoremap <A-l> <C-\><C-N><C-w>l
-:inoremap <A-h> <C-\><C-N><C-w>h
-:inoremap <A-j> <C-\><C-N><C-w>j
-:inoremap <A-k> <C-\><C-N><C-w>k
-:inoremap <A-l> <C-\><C-N><C-w>l
-:nnoremap <A-h> <C-w>h
-:nnoremap <A-j> <C-w>j
-:nnoremap <A-k> <C-w>k
-:nnoremap <A-l> <C-w>l
-
-
-""""""""""""""""""""
+""""""""""""""""""""""""""""""
 " => Visual Mode
-""""""""""""""""""""
+""""""""""""""""""""""""""""""
 
 " Move selected lines up/down
 xnoremap K :move '<-2<cr>gv-gv
