@@ -19,6 +19,7 @@ Plug 'junegunn/fzf.vim'
 Plug 'junegunn/goyo.vim'                              " Zen mode
 Plug 'lervag/vimtex'                                  " LaTeX support
 Plug 'maxbrunsfeld/vim-yankstack'                     " Turns default register into a stack
+Plug 'mengelbrecht/lightline-bufferline'              " Buffers instead of tabs on top
 Plug 'mhinz/vim-signify'                              " Git changes shown in column
 Plug 'mhinz/vim-startify'                             " Start screen
 Plug 'morhetz/gruvbox'                                " Colour scheme
@@ -49,6 +50,7 @@ let g:ale_fixers = {
 " Code formatting
 nnoremap <leader>l :ALEFix<cr>
 
+" Find errors
 nmap <silent> <C-k> <Plug>(ale_previous_wrap)
 nmap <silent> <C-j> <Plug>(ale_next_wrap)
 
@@ -77,7 +79,7 @@ let g:go_fmt_fail_silently = 1
 " => itchyny/lightline.vim
 """""""""""""""""""""""""""""""""""""""""""""""""""
 let g:lightline = {
-            \ 'colorscheme': 'wombat',
+            \ 'colorscheme': 'jellybeans',
             \ 'active': {
             \   'left': [ ['mode', 'paste'],
             \             ['fugitive', 'readonly', 'filename', 'modified'] ],
@@ -88,13 +90,19 @@ let g:lightline = {
             \   'modified': '%{&filetype=="help"?"":&modified?"+":&modifiable?"":"-"}',
             \   'fugitive': '%{exists("*FugitiveHead")?FugitiveHead():""}'
             \ },
+            \ 'component_expand': { 'buffers': 'lightline#bufferline#buffers' },
+            \ 'component_type': { 'buffers': 'tabsel' },
             \ 'component_visible_condition': {
             \   'readonly': '(&filetype!="help"&& &readonly)',
             \   'modified': '(&filetype!="help"&&(&modified||!&modifiable))',
             \   'fugitive': '(exists("*FugitiveHead") && ""!=FugitiveHead())'
             \ },
             \ 'separator': { 'left': ' ', 'right': ' ' },
-            \ 'subseparator': { 'left': ' ', 'right': ' ' }
+            \ 'subseparator': { 'left': ' ', 'right': ' ' },
+            \ 'tabline': {
+            \   'left': [ ['buffers'] ],
+            \   'right': [ ['close'] ]
+            \ }
             \ }
 
 

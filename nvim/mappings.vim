@@ -28,17 +28,10 @@ inoremap qq <ESC>
 inoremap <C-q> <ESC>
 
 " Buffers
-map <leader>bd :Bclose<cr>:tabclose<cr>gT
+map <leader>bd :Bclose<cr>
 map <leader>ba :bufdo bd<cr>
-map <leader>h :bprevious<cr>
-
-" Tabs
-map <leader>tn :tabnew<cr>
-map <leader>to :tabonly<cr>
-map <leader>tc :tabclose<cr>
-map <leader>tm :tabmove<cr>
-nnoremap <silent> <TAB> :tabnext<CR>
-nnoremap <silent> <S-TAB> :tabprevious<CR>
+nnoremap <silent> <TAB> :bnext<CR>
+nnoremap <silent> <S-TAB> :bprevious<CR>
 
 " Disable highlights
 map <silent> <leader><cr> :noh<cr>
