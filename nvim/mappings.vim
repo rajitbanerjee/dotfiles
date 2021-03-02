@@ -28,9 +28,7 @@ inoremap qq <ESC>
 inoremap <C-q> <ESC>
 
 " Buffers
-map <leader>bd :Bclose<cr>
-map <leader>ba :bufdo bd<cr>
-nnoremap <silent> <TAB> :bnext<CR>
+map <leader>bc :Bclose<cr>
 nnoremap <silent> <S-TAB> :bprevious<CR>
 
 " Disable highlights
@@ -88,3 +86,24 @@ vnoremap > >gv
 " Visual mode pressing * or # searches for the current selection
 vnoremap <silent> * :<C-u>call VisualSelection('', '')<CR>/<C-R>=@/<CR><CR>
 vnoremap <silent> # :<C-u>call VisualSelection('', '')<CR>?<C-R>=@/<CR><CR>
+
+function! VisualSelection(direction, extra_filter) range
+    let l:saved_reg = @"
+    execute "normal! vgvy"
+
+    let l:pattern = escape(@", "\\/.*'$^~[]")
+    let l:pattern = substitute(l:pattern, "\n$", "", "")
+
+    if a:direction == 'gv'
+        call CmdLine("Ack '" . l:pattern . "' " )
+    elseif a:direction == 'replace'
+        call CmdLine("%s" . '/'. l:pattern . '/')
+    endif
+
+    let @/ = l:pattern
+    let @" = l:saved_reg
+endfunction
+
+function! CmdLine(str)
+    call feedkeys(":" . a:str)
+endfunction
