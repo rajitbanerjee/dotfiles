@@ -13,7 +13,8 @@ My custom configuration files:
 -   [shell/](./shell/): common configs for all types of shells
 -   [tmux.conf](./tmux.conf): tmux configs, borrowed from [anishathalye/dotfiles/tmux.conf][anish]
 -   [vim/](./vim/), [vimrc](./vimrc): vim configurations, inspired by [amix/vimrc][amix]
--   [vscode.txt](./vscode.txt): link to VSCode Settings Sync gist
+-   [vscode.txt](./vscode.txt): link to vscode settings sync gist
+-   [windows_terminal/](./windows_terminal/): windows terminal settings
 -   [zsh/](./zsh/), [zshrc](./zshrc): zsh configurations; plugins managed by [ohmyzsh][ohmyzsh]
 
 ## Installation
