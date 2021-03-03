@@ -94,7 +94,7 @@ autocmd TermOpen * setlocal nonumber norelativenumber
 " Toggle terminal
 nnoremap <A-t> :call TermToggle(12)<CR>
 inoremap <A-t> <Esc>:call TermToggle(12)<CR>
-tnoremap <A-t> <C-\><C-n>:call TermToggle(12)<CR>
+tnoremap <A-t> <C-\><C-n>:call TermToggle(12)<CR><C-w>l
 let g:term_buf = 0
 let g:term_win = 0
 function! TermToggle(height)
