@@ -22,6 +22,7 @@ set noshowmode
 set splitbelow
 set splitright
 set mouse=a " Mouse support if ever needed
+set termguicolors
 
 syntax enable
 set ffs=unix,dos,mac

@@ -17,7 +17,7 @@ My custom configuration files:
     -   [jupyter/](./jupyter/): jupyter notebook configurations 
     -   [scripts/][scripts]: python/bash scripts
     -   [gitconfig](./gitconfig): username, email, etc.
--   Dotfiles Setup
+-   Dotbot
     -   [install.conf.yml](./install.conf.yml): config file for dotbot
     -   [./install](./install): prepare dotfiles with dotbot
 
