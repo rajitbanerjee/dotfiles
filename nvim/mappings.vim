@@ -21,6 +21,12 @@ map <silent> <leader><cr> :noh<cr>
 inoremap qq <ESC>
 inoremap <C-q> <ESC>
 
+" Command mode
+cnoremap 4 $
+cnoremap <A-4> 4
+cnoremap 5 %
+cnoremap <A-5> 5
+
 " Moving around
 map <A-j> <C-W>j
 map <A-k> <C-W>k
