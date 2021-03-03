@@ -15,6 +15,7 @@ nmap <leader>qa :qa<cr>
 map 0 ^
 map ; :
 noremap ;; ;
+nnoremap r <C-r>
 nnoremap s /
 map <silent> <leader><cr> :noh<cr>
 inoremap qq <ESC>

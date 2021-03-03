@@ -23,7 +23,7 @@ alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo
 alias ..="cd .."
 alias cd..="cd .."
 alias cdd="cd $HOME/.dotfiles"
-alias cls="export PS1=\"$ \""
+alias cls="clear"
 alias doc="cd /mnt/c/Users/rajitbanerjee/Documents"
 alias dp="cd /mnt/c/Users/rajitbanerjee/Desktop"
 alias drive="xdg-open https://drive.google.com/drive/my-drive"
