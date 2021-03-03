@@ -2,20 +2,24 @@
 
 My custom configuration files:
 
--   [base.yml](./base.yml): conda base environment packages
--   [bash/](./bash/), [bashrc](./bashrc): bash configurations
--   [gitconfig](./gitconfig): username, email, etc.
--   [./install](./install): prepare dotfiles with dotbot
--   [install.conf.yml](./install.conf.yml): config file for dotbot
--   [jupyter/](./jupyter/): jupyter notebook configurations 
--   [nvim/](./nvim/): neovim configurations
--   [scripts/][scripts]: python/bash scripts
--   [shell/](./shell/): common configs for all types of shells
--   [tmux.conf](./tmux.conf): tmux configs, borrowed from [anishathalye/dotfiles/tmux.conf][anish]
--   [vim/](./vim/), [vimrc](./vimrc): vim configurations, inspired by [amix/vimrc][amix]
--   [vscode.txt](./vscode.txt): link to vscode settings sync gist
--   [windows_terminal/](./windows_terminal/): windows terminal settings
--   [zsh/](./zsh/), [zshrc](./zshrc): zsh configurations; plugins managed by [ohmyzsh][ohmyzsh]
+-   Shell/Terminal
+    -   [zsh/](./zsh/), [zshrc](./zshrc): zsh configurations; plugins managed by [ohmyzsh][ohmyzsh]
+    -   [shell/](./shell/): common configs for all types of shells
+    -   [windows_terminal/](./windows_terminal/): windows terminal settings
+    -   [tmux.conf](./tmux.conf): tmux configs, borrowed from [anishathalye/dotfiles/tmux.conf][anish]
+    -   [bash/](./bash/), [bashrc](./bashrc): bash configurations
+-   Editor
+    -   [nvim/](./nvim/): neovim configurations
+    -   [vscode.txt](./vscode.txt): link to vscode settings sync gist
+    -   [vim/](./vim/), [vimrc](./vimrc): vim configurations, inspired by [amix/vimrc][amix]
+-   Programming
+    -   [base.yml](./base.yml): conda base environment packages
+    -   [jupyter/](./jupyter/): jupyter notebook configurations 
+    -   [scripts/][scripts]: python/bash scripts
+    -   [gitconfig](./gitconfig): username, email, etc.
+-   Dotfiles Setup
+    -   [install.conf.yml](./install.conf.yml): config file for dotbot
+    -   [./install](./install): prepare dotfiles with dotbot
 
 ## Installation
 
