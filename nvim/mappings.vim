@@ -94,7 +94,8 @@ autocmd TermOpen * setlocal nonumber norelativenumber
 " Toggle terminal
 nnoremap <A-t> :call TermToggle(12)<CR>
 inoremap <A-t> <Esc>:call TermToggle(12)<CR>
-tnoremap <A-t> <C-\><C-n>:call TermToggle(12)<CR><C-w>l
+" Toggle off, clean empty buffers, and switch to split on the right (i.e. stop focussing on explorer)
+tnoremap <A-t> <C-\><C-n>:call TermToggle(12)<CR>:call CleanEmptyBuffers()<CR><C-w>l
 let g:term_buf = 0
 let g:term_win = 0
 function! TermToggle(height)
@@ -114,6 +115,14 @@ function! TermToggle(height)
         endtry
         startinsert!
         let g:term_win = win_getid()
+    endif
+endfunction
+
+" Close all empty buffers created by toggling terminal
+function! CleanEmptyBuffers()
+    let buffers = filter(range(1, bufnr('$')), 'buflisted(v:val) && empty(bufname(v:val)) && bufwinnr(v:val)<0 && !getbufvar(v:val, "&mod")')
+    if !empty(buffers)
+        exe 'bw ' . join(buffers, ' ')
     endif
 endfunction
 
