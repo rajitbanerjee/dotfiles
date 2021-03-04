@@ -65,7 +65,7 @@ Symlinking with `$HOME` (for existing systems) is managed by the excellent [Dotb
 
 NeoVim:
 
-<img src='./nvim.jpg'>
+<img src='./nvim.png'>
 
 ## License
 
