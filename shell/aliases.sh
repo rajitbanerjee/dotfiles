@@ -58,6 +58,13 @@ alias gsu="git submodule update --init --recursive"
 alias gsur="git submodule update --remote"
 alias gu="git reset --soft HEAD~1"
 
+# tmux
+alias tl="tmux ls"
+alias tn="tmux new -s"
+alias tks="tmux kill-session -t"
+alias ta="tmux attach-session -t"
+alias ts="tmux switch -t"
+
 # conda
 alias cab="conda activate base"
 alias cda="conda deactivate"
