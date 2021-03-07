@@ -8,7 +8,8 @@
   "profiles": {
     "defaults": {
       "fontFace": "FiraCode NF",
-      "fontSize": 11
+      "fontSize": 11,
+      "bellStyle": "none"
     },
     "list": [
       {
