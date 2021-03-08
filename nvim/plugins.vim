@@ -155,7 +155,7 @@ autocmd User CocNvimInit :CocCommand explorer
 """""""""""""""""""""""""""""""""""""""""""""""""""
 " => tpope/vim-fugitive
 """""""""""""""""""""""""""""""""""""""""""""""""""
-map <leader>d :Gdiffsplit<cr>
+map <leader>d :Gvdiffsplit<cr>
 map <leader>s :GFiles?<cr>
 
 
