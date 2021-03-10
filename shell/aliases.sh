@@ -57,6 +57,7 @@ alias ghr="xdg-open https://github.com/rajitbanerjee?tab=repositories"
 alias gsu="git submodule update --init --recursive"
 alias gsur="git submodule update --remote"
 alias gu="git reset --soft HEAD~1"
+alias gia="git status --porcelain | sed -n -e 's/^?? //p' >> .gitignore"
 
 # tmux
 alias tl="tmux ls"
