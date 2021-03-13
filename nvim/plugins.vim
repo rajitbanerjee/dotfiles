@@ -12,6 +12,10 @@ call plug#begin('~/.config/nvim/autoload/plugged')
 Plug 'amix/vim-zenroom2'                              " Markdown editing in zen mode 
 Plug 'dense-analysis/ale'                             " LSP, linting, formatting
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries'  }   " Go support
+Plug 'iamcco/markdown-preview.nvim', {
+  \ 'do': { -> mkdp#util#install()  },
+  \ 'for': ['markdown', 'vim-plug']
+  \ }                                                 " Markdown preview
 Plug 'itchyny/lightline.vim'                          " Status bar
 Plug 'jiangmiao/auto-pairs'                           " Bracket matching
 Plug 'junegunn/fzf', {'do': { -> fzf#install() }}     " Fuzzy finder
@@ -74,6 +78,11 @@ let g:ale_sign_style_warning = "•"
 " => fatih/vim-go
 """""""""""""""""""""""""""""""""""""""""""""""""""
 let g:go_fmt_fail_silently = 1
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""
+" => iamcco/markdown-preview.nvim
+"""""""""""""""""""""""""""""""""""""""""""""""""""
+nmap <leader>m <Plug>MarkdownPreviewToggle
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""
