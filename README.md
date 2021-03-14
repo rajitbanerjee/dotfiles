@@ -11,7 +11,7 @@ My custom configuration files:
 -   Editor
     -   [nvim/](./nvim/): neovim configurations
     -   [vscode.txt](./vscode.txt): link to vscode settings sync gist
-    -   [vim/](./vim/), [vimrc](./vimrc): vim configurations, inspired by [amix/vimrc][amix]
+    -   [vim/](./vim/), [vimrc](./vimrc): vim configurations, inspired by [amix/vimrc][amix] (not kept up to date, see [nvim](./nvim/) instead)
 -   Programming
     -   [base.yml](./base.yml): conda base environment packages
     -   [jupyter/](./jupyter/): jupyter notebook configurations 

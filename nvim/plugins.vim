@@ -10,6 +10,7 @@ endif
 call plug#begin('~/.config/nvim/autoload/plugged')
 
 Plug 'amix/vim-zenroom2'                              " Markdown editing in zen mode 
+Plug 'dbakker/vim-projectroot'                        " Allows FZF to search in project root
 Plug 'dense-analysis/ale'                             " LSP, linting, formatting
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries'  }   " Go support
 Plug 'iamcco/markdown-preview.nvim', {
@@ -123,8 +124,8 @@ if has('popupwin')
     let g:fzf_layout = { 'window': { 'width': 0.8, 'height': 0.8 } }
     let $FZF_DEFAULT_OPTS='--reverse'
 endif
-map <leader>f :FZF<cr>
-map <leader>g :Rg<cr>
+map <leader>f :ProjectRootExe FZF<cr>
+map <leader>g :ProjectRootExe Rg<cr>
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""

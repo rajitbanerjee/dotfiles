@@ -16,6 +16,7 @@ map 0 ^
 map ; :
 noremap ;; ;
 nnoremap r <C-r>
+nnoremap <C-r> :%s/
 nnoremap s /
 map <silent> <leader><cr> :noh<cr>
 inoremap qq <ESC>
