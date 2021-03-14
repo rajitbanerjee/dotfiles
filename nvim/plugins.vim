@@ -159,7 +159,7 @@ nnoremap <silent><nowait> <leader>j  :<C-u>CocNext<CR>
 nnoremap <silent><nowait> <leader>k  :<C-u>CocPrev<CR>
 
 " Start explorer automatically
-autocmd User CocNvimInit :CocCommand explorer
+" autocmd User CocNvimInit :CocCommand explorer
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""
