@@ -64,6 +64,7 @@ alias gia="git status --porcelain | sed -n -e 's/^?? //p' >> .gitignore"
 alias tl="tmux ls"
 alias tn="tmux new -s"
 alias tks="tmux kill-session -t"
+alias tka="tmux kill-session -a"
 alias ta="tmux attach-session -t"
 alias ts="tmux switch -t"
 
