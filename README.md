@@ -2,24 +2,24 @@
 
 My custom configuration files:
 
--   Shell/Terminal
-    -   [zsh/](./zsh/), [zshrc](./zshrc): zsh configurations; plugins managed by [ohmyzsh][ohmyzsh]
-    -   [shell/](./shell/): common configs for all types of shells
-    -   [windows_terminal/](./windows_terminal/): windows terminal settings
-    -   [tmux.conf](./tmux.conf): tmux configs, borrowed from [anishathalye/dotfiles/tmux.conf][anish]
-    -   [bash/](./bash/), [bashrc](./bashrc): bash configurations
--   Editor
-    -   [nvim/](./nvim/): neovim configurations
-    -   [vscode.txt](./vscode.txt): link to vscode settings sync gist
-    -   [vim/](./vim/), [vimrc](./vimrc): vim configurations, inspired by [amix/vimrc][amix] (not kept up to date, see [nvim](./nvim/) instead)
--   Programming
-    -   [base.yml](./base.yml): conda base environment packages
-    -   [jupyter/](./jupyter/): jupyter notebook configurations 
-    -   [scripts/][scripts]: python/bash scripts
-    -   [gitconfig](./gitconfig): username, email, etc.
--   Dotbot
-    -   [install.conf.yml](./install.conf.yml): config file for dotbot
-    -   [./install](./install): prepare dotfiles with dotbot
+- Shell/Terminal
+  - [zsh/](./zsh/), [zshrc](./zshrc): zsh configurations; plugins managed by [ohmyzsh][ohmyzsh]
+  - [shell/](./shell/): common configs for all types of shells
+  - [windows_terminal/](./windows_terminal/): windows terminal settings
+  - [tmux.conf](./tmux.conf): tmux configs, borrowed from [anishathalye/dotfiles/tmux.conf][anish]
+  - [bash/](./bash/), [bashrc](./bashrc): bash configurations
+- Editor
+  - [nvim/](./nvim/): neovim configurations
+  - [vscode.txt](./vscode.txt): link to vscode settings sync gist
+  - [vim/](./vim/), [vimrc](./vimrc): vim configurations, inspired by [amix/vimrc][amix] (not kept up to date, see [nvim](./nvim/) instead)
+- Programming
+  - [base.yml](./base.yml): conda base environment packages
+  - [jupyter/](./jupyter/): jupyter notebook configurations
+  - [scripts/][scripts]: python/bash scripts
+  - [gitconfig](./gitconfig): username, email, etc.
+- Dotbot
+  - [install.conf.yml](./install.conf.yml): config file for dotbot
+  - [./install](./install): prepare dotfiles with dotbot
 
 ## Installation
 
@@ -37,17 +37,39 @@ Symlinking with `$HOME` (for existing systems) is managed by the excellent [Dotb
 
 2.  Run the following for setup:
 
-    ```bash
-    # Remove existing bashrc
-    $ rm -rf $HOME/.bashrc
+    - macOS
 
-    # Symlink dotfiles
-    $ cd $HOME/.dotfiles && ./install
-    ```
+      ```zsh
+      # Symlink dotfiles
+      $ cd $HOME/.dotfiles && ./install-mac
+      ```
+
+    - Linux/WSL2:
+
+      ```bash
+      # Remove existing bashrc
+      $ rm -rf $HOME/.bashrc
+
+      # Symlink dotfiles
+      $ cd $HOME/.dotfiles && ./install
+      ```
 
 <img src='./screenshot.jpg'>
 
-3.  Install a range of preferred packages. See [system-setup][ss], [setup-coc-nvim][scn], [setup-vundle][sv].
+3.  Install a range of preferred packages. See [system-setup][ss], [system-setup-mac][ssm], [setup-coc-nvim][scn], [setup-vundle][sv].
+
+    - macOS:
+
+    ```zsh
+    $ ./scripts/system-setup-mac
+
+    # Set up NeoVim and trigger vim-plug installations
+    $ nvim
+    $ npm cache verify
+    $ ./scripts/setup-coc-nvim
+    ```
+
+    - Linux/WSL2:
 
     ```bash
     $ ./scripts/system-setup
@@ -72,23 +94,14 @@ NeoVim:
 [MIT][license]
 
 [travis-badge]: https://api.travis-ci.com/rajitbanerjee/dotfiles.svg?branch=main
-
 [travis]: https://travis-ci.com/rajitbanerjee/dotfiles
-
 [scripts]: https://github.com/rajitbanerjee/scripts
-
 [amix]: https://github.com/amix/vimrc
-
 [anish]: https://github.com/anishathalye/dotfiles/blob/master/tmux.conf
-
 [dotbot]: https://github.com/anishathalye/dotbot
-
 [ohmyzsh]: https://github.com/ohmyzsh/ohmyzsh
-
 [ss]: https://github.com/rajitbanerjee/scripts/blob/master/system-setup
-
+[ssm]: https://github.com/rajitbanerjee/scripts/blob/master/system-setup-mac
 [scn]: https://github.com/rajitbanerjee/scripts/blob/master/setup-coc-nvim
-
 [sv]: https://github.com/rajitbanerjee/scripts/blob/master/setup-vundle
-
 [license]: LICENSE
