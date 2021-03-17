@@ -33,7 +33,7 @@ alias q="exit"
 alias sb="source $HOME/.bashrc"
 alias sl="ls"
 alias vim="nvim"
-if [ "$(uname -s)" == "Linux" ]; then
+if [[ "$(uname -s)" == "Linux" ]]; then
     alias doc="cd /mnt/c/Users/rajitbanerjee/Documents"
     alias dp="cd /mnt/c/Users/rajitbanerjee/Desktop"
     alias drive="xdg-open https://drive.google.com/drive/my-drive"
@@ -60,7 +60,7 @@ alias gsu="git submodule update --init --recursive"
 alias gsur="git submodule update --remote"
 alias gu="git reset --soft HEAD~1"
 alias gia="git status --porcelain | sed -n -e 's/^?? //p' >> .gitignore"
-if [ "$(uname -s)" == "Linux" ]; then
+if [[ "$(uname -s)" == "Linux" ]]; then
     alias ghr="xdg-open https://github.com/rajitbanerjee?tab=repositories"
 fi
 

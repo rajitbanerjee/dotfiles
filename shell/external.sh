@@ -9,7 +9,7 @@ export PATH="$HOME/.local/bin:$PATH"
 export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 
-if [ "$(uname -s)" == "Linux" ]; then 
+if [[ "$(uname -s)" == "Linux" ]]; then 
     ## Bash Wakatime
     if [ -f "$HOME/.local/share/bash-wakatime/bash-wakatime.sh" ]; then
         . "$HOME/.local/share/bash-wakatime/bash-wakatime.sh"

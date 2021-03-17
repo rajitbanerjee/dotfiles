@@ -11,7 +11,6 @@
 
 - link:
     $HOME/.base.yml:
-    $HOME/.gitconfig:
     $HOME/.local/scripts: scripts # custom bash/python scripts
     $HOME/.config/nvim: nvim
     $HOME/.p10k.zsh: zsh/p10k.zsh
