@@ -6,7 +6,7 @@ export PATH="$HOME/.local/scripts:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
 
 if [[ "$(uname -s)" == "Darwin" ]]; then
-    export PATH="$HOME/Library/Python3.8/bin:$PATH"
+    export PATH="$HOME/Library/Python/3.8/bin:$PATH"
 fi
 
 ## Language
