@@ -24,15 +24,15 @@ inoremap <C-q> <ESC>
 
 " Command mode
 cnoremap 4 $
-cnoremap <A-4> 4
+cnoremap <M-4> 4
 cnoremap 5 %
-cnoremap <A-5> 5
+cnoremap <M-5> 5
 
 " Moving around
-map <A-j> <C-W>j
-map <A-k> <C-W>k
-map <A-h> <C-W>h
-map <A-l> <C-W>l
+map <M-j> <C-W>j
+map <M-k> <C-W>k
+map <M-h> <C-W>h
+map <M-l> <C-W>l
 nnoremap <Right> <C-w>l
 nnoremap <Left> <C-w>h
 nnoremap <Up> <C-w>k
@@ -79,24 +79,24 @@ noremap <Leader>m mmHmt:%s/<C-V><cr>//ge<cr>'tzt'm
 autocmd TermOpen * setlocal nonumber norelativenumber
 
 " ALT+{h,j,k,l} to navigate windows from any mode
-:tnoremap <A-h> <C-\><C-N><C-w>h
-:tnoremap <A-j> <C-\><C-N><C-w>j
-:tnoremap <A-k> <C-\><C-N><C-w>k
-:tnoremap <A-l> <C-\><C-N><C-w>l
-:inoremap <A-h> <C-\><C-N><C-w>h
-:inoremap <A-j> <C-\><C-N><C-w>j
-:inoremap <A-k> <C-\><C-N><C-w>k
-:inoremap <A-l> <C-\><C-N><C-w>l
-:nnoremap <A-h> <C-w>h
-:nnoremap <A-j> <C-w>j
-:nnoremap <A-k> <C-w>k
-:nnoremap <A-l> <C-w>l
+:tnoremap <M-h> <C-\><C-N><C-w>h
+:tnoremap <M-j> <C-\><C-N><C-w>j
+:tnoremap <M-k> <C-\><C-N><C-w>k
+:tnoremap <M-l> <C-\><C-N><C-w>l
+:inoremap <M-h> <C-\><C-N><C-w>h
+:inoremap <M-j> <C-\><C-N><C-w>j
+:inoremap <M-k> <C-\><C-N><C-w>k
+:inoremap <M-l> <C-\><C-N><C-w>l
+:nnoremap <M-h> <C-w>h
+:nnoremap <M-j> <C-w>j
+:nnoremap <M-k> <C-w>k
+:nnoremap <M-l> <C-w>l
 
 " Toggle terminal
-nnoremap <A-t> :call TermToggle(12)<CR>
-inoremap <A-t> <Esc>:call TermToggle(12)<CR>
+nnoremap <M-t> :call TermToggle(12)<CR>
+inoremap <M-t> <Esc>:call TermToggle(12)<CR>
 " Toggle off, clean empty buffers, and switch to split on the right (i.e. stop focussing on explorer)
-tnoremap <A-t> <C-\><C-n>:call TermToggle(12)<CR>:call CleanEmptyBuffers()<CR><C-w>l
+tnoremap <M-t> <C-\><C-n>:call TermToggle(12)<CR>:call CleanEmptyBuffers()<CR><C-w>l
 let g:term_buf = 0
 let g:term_win = 0
 function! TermToggle(height)
