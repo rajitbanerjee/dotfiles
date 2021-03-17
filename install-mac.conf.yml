@@ -1,0 +1,24 @@
+# Config file used by ./install script to link dotfiles from this 
+# repository to ~/. Useful in setting up a new system, or maintaining
+# current dotfiles with version control.
+
+- defaults:
+    link:
+      create: true # new link, if non-existent
+      relink: true
+
+- clean: ['$HOME']
+
+- link:
+    $HOME/.base.yml:
+    $HOME/.gitconfig:
+    $HOME/.local/scripts: scripts # custom bash/python scripts
+    $HOME/.config/nvim: nvim
+    $HOME/.p10k.zsh: zsh/p10k.zsh
+    $HOME/.shell:
+    $HOME/.tmux.conf:
+    $HOME/.zsh:
+    $HOME/.zshrc:
+
+- shell:
+  - [git submodule update --init --recursive, Installing submodules]

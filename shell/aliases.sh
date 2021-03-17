@@ -24,22 +24,24 @@ alias ..="cd .."
 alias cd..="cd .."
 alias cdd="cd $HOME/.dotfiles"
 alias cls="clear"
-alias doc="cd /mnt/c/Users/rajitbanerjee/Documents"
-alias dp="cd /mnt/c/Users/rajitbanerjee/Desktop"
-alias drive="xdg-open https://drive.google.com/drive/my-drive"
 alias env="env | sort | less"
-alias ex="explorer.exe ."
 alias findf="find -type f -name"
 alias jn="jupyter notebook"
 alias mv="mv -i"
 alias n="nvim ."
-alias open="xdg-open"
 alias q="exit"
-alias rb="/mnt/c/Users/rajitbanerjee"
 alias sb="source $HOME/.bashrc"
 alias sl="ls"
-alias sz="source $HOME/.zshrc"
 alias vim="nvim"
+if [ "$(uname -s)" == "Linux" ]; then
+    alias doc="cd /mnt/c/Users/rajitbanerjee/Documents"
+    alias dp="cd /mnt/c/Users/rajitbanerjee/Desktop"
+    alias drive="xdg-open https://drive.google.com/drive/my-drive"
+    alias ex="explorer.exe ."
+    alias open="xdg-open"
+    alias rb="/mnt/c/Users/rajitbanerjee"
+fi
+
 
 # git
 alias ga="git add"
@@ -54,11 +56,14 @@ alias gac="git add . && git commit -m"
 alias gr="git restore"
 alias grs="git restore --staged"
 alias gl="git lg"
-alias ghr="xdg-open https://github.com/rajitbanerjee?tab=repositories"
 alias gsu="git submodule update --init --recursive"
 alias gsur="git submodule update --remote"
 alias gu="git reset --soft HEAD~1"
 alias gia="git status --porcelain | sed -n -e 's/^?? //p' >> .gitignore"
+if [ "$(uname -s)" == "Linux" ]; then
+    alias ghr="xdg-open https://github.com/rajitbanerjee?tab=repositories"
+fi
+
 
 # tmux
 alias tl="tmux ls"
