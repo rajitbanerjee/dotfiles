@@ -32,6 +32,8 @@ ZSH_CUSTOM="$HOME/.zsh/custom"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
+    docker                      # Docker completion
+    docker-compose
     fzf                         # CTRL+T to search files, CTRL+R to search zsh history
     safe-paste                  # prevent pasted code from running
     wakatime                    # coding metrics
