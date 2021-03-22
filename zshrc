@@ -39,7 +39,3 @@ fi
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f "$HOME/.p10k.zsh" ]] || source "$HOME/.p10k.zsh"
 
-if [[ "$(uname -s)" == "Darwin" ]]; then
-    export PATH=$HOME/.toolbox/bin:$PATH
-    complete -C '/usr/local/bin/aws_completer' aws
-fi

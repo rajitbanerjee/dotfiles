@@ -1,6 +1,10 @@
 ## Default editor
 export EDITOR=nvim
 
+## Language
+export LANG=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
+
 ## Add custom scripts + installed scripts to path
 export PATH="$HOME/.local/scripts:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
@@ -15,13 +19,14 @@ if [[ "$(uname -s)" == "Darwin" ]]; then
     # Java 8
     export JAVA_8_HOME=$(/usr/libexec/java_home -v1.8)
     export JAVA_HOME=$JAVA_8_HOME
-fi
 
-## Language
-export LANG=en_US.UTF-8
-export LC_ALL=en_US.UTF-8
+    # Toolbox
+    export PATH=$HOME/.toolbox/bin:$PATH
 
-if [[ "$(uname -s)" == "Linux" ]]; then 
+    # AWS CLI completion
+    complete -C '/usr/local/bin/aws_completer' aws
+
+elif [[ "$(uname -s)" == "Linux" ]]; then
     ## Bash Wakatime
     if [ -f "$HOME/.local/share/bash-wakatime/bash-wakatime.sh" ]; then
         . "$HOME/.local/share/bash-wakatime/bash-wakatime.sh"
