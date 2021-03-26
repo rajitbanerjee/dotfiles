@@ -61,6 +61,9 @@ au BufNewFile,BufRead *.go set colorcolumn=100
 set expandtab
 set shiftwidth=4
 set tabstop=4
+" Reduce tab length for certain file types
+au BufNewFile,BufRead *.html,*.css,*.js,*.ts setlocal shiftwidth=2 tabstop=2
+
 
 " Linebreak on 500 characters
 set lbr
