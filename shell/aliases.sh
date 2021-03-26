@@ -40,6 +40,9 @@ if [[ "$(uname -s)" == "Linux" ]]; then
     alias ex="explorer.exe ."
     alias open="xdg-open"
     alias rb="/mnt/c/Users/rajitbanerjee"
+elif [[ "$(uname -s)" == "Darwin" ]]; then
+    alias doc="cd $HOME/Documents"
+    alias dp="cd $HOME/Desktop"
 fi
 
 
