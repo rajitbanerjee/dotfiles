@@ -5,11 +5,11 @@
 let mapleader = " "
 
 " Pasting, saving, quitting
-map <silent> <leader>pp :setlocal paste!<cr>
-map <C-s> :w<cr>
-nmap <leader>w :wq<cr>
-nmap <leader>qq :q!<cr>
-nmap <leader>qa :qa<cr>
+map <silent> <leader>pp :setlocal paste!<CR>
+map <C-s> :w<CR>
+nmap <leader>w :wq<CR>
+nmap <leader>qq :q!<CR>
+nmap <leader>qa :qa<CR>
 
 " Convenience
 map 0 ^
@@ -18,7 +18,7 @@ noremap ;; ;
 nnoremap r <C-r>
 nnoremap <C-r> :%s/
 nnoremap s /
-map <silent> <leader><cr> :noh<cr>
+map <silent> <leader><CR> :noh<CR>
 inoremap qq <ESC>
 inoremap <C-q> <ESC>
 
@@ -45,7 +45,7 @@ nnoremap <silent> <C-Left>  :vertical resize -2<CR>
 nnoremap <silent> <C-Right> :vertical resize +2<CR>
 
 " Buffers
-map <silent> <leader>bc :Bclose<cr>
+map <silent> <leader>bc :Bclose<CR>
 nnoremap <silent> <TAB> :bnext<CR>
 nnoremap <silent> <S-TAB> :bprevious<CR>
 
@@ -68,7 +68,7 @@ function! <SID>BufcloseCloseIt()
 endfunction
 
 " Remove the Windows ^M - when the encodings gets messed up
-noremap <Leader>m mmHmt:%s/<C-V><cr>//ge<cr>'tzt'm
+noremap <Leader>m mmHmt:%s/<C-V><CR>//ge<CR>'tzt'm
 
 
 """"""""""""""""""""""""""""""
@@ -133,8 +133,8 @@ endfunction
 """"""""""""""""""""""""""""""
 
 " Move selected lines up/down
-xnoremap K :move '<-2<cr>gv-gv
-xnoremap J :move '>+1<cr>gv-gv
+xnoremap K :move '<-2<CR>gv-gv
+xnoremap J :move '>+1<CR>gv-gv
 
 " Maintain visual selection after tab indentation
 vnoremap < <gv

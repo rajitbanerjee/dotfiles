@@ -54,7 +54,7 @@ let g:ale_fixers = {
   \ }
 
 " Code formatting
-nnoremap <leader>l :ALEFix<cr>
+nnoremap <leader>l :ALEFix<CR>
 
 " Find errors
 nmap <silent> <C-k> <Plug>(ale_previous_wrap)
@@ -124,8 +124,8 @@ if has('popupwin')
     let g:fzf_layout = { 'window': { 'width': 0.8, 'height': 0.8 } }
     let $FZF_DEFAULT_OPTS='--reverse'
 endif
-map <leader>f :ProjectRootExe FZF<cr>
-map <leader>g :ProjectRootExe Rg<cr>
+map <leader>f :ProjectRootExe FZF<CR>
+map <leader>g :ProjectRootExe Rg<CR>
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""
@@ -136,7 +136,7 @@ let g:user_zen_mode='a'
 let g:goyo_width=100
 let g:goyo_margin_top = 2
 let g:goyo_margin_bottom = 2
-nnoremap <silent> <leader>z :Goyo<cr>
+nnoremap <silent> <leader>z :Goyo<CR>
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""
@@ -151,10 +151,10 @@ nmap <C-n> <Plug>yankstack_substitute_newer_paste
 """""""""""""""""""""""""""""""""""""""""""""""""""
 " => neoclide/coc.nvim
 """""""""""""""""""""""""""""""""""""""""""""""""""
-nnoremap <silent><nowait> <leader>e  :<C-u>CocCommand explorer<cr>
-nnoremap <silent><nowait> <leader>a  :<C-u>CocList diagnostics<cr>
-nnoremap <silent><nowait> <leader>c  :<C-u>CocList commands<cr>
-nnoremap <silent><nowait> <leader>o  :<C-u>CocList outline<cr>
+nnoremap <silent><nowait> <leader>e  :<C-u>CocCommand explorer<CR>
+nnoremap <silent><nowait> <leader>a  :<C-u>CocList diagnostics<CR>
+nnoremap <silent><nowait> <leader>c  :<C-u>CocList commands<CR>
+nnoremap <silent><nowait> <leader>o  :<C-u>CocList outline<CR>
 nnoremap <silent><nowait> <leader>j  :<C-u>CocNext<CR>
 nnoremap <silent><nowait> <leader>k  :<C-u>CocPrev<CR>
 
@@ -165,8 +165,8 @@ nnoremap <silent><nowait> <leader>k  :<C-u>CocPrev<CR>
 """""""""""""""""""""""""""""""""""""""""""""""""""
 " => tpope/vim-fugitive
 """""""""""""""""""""""""""""""""""""""""""""""""""
-map <leader>d :Gvdiffsplit<cr>
-map <leader>s :GFiles?<cr>
+map <leader>d :Gvdiffsplit<CR>
+map <leader>s :GFiles?<CR>
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""
