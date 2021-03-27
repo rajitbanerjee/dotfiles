@@ -1,26 +1,26 @@
 ## Bash default settings
-if [ -f "$HOME/.bash/settings.bash" ]; then
-    . "$HOME/.bash/settings.bash"
+if [ -f ~/.bash/settings.bash ]; then
+    . ~/.bash/settings.bash
 fi
 
 ## Bash prompt
-if [ -f "$HOME/.bash/prompt.bash" ]; then
-    . "$HOME/.bash/prompt.bash"
+if [ -f ~/.bash/prompt.bash ]; then
+    . ~/.bash/prompt.bash
 fi
 
 ## Alias definitions
-if [ -f "$HOME/.shell/aliases.sh" ]; then
-    . "$HOME/.shell/aliases.sh"
+if [ -f ~/.shell/aliases.sh ]; then
+    . ~/.shell/aliases.sh
 fi
 
 ## Custom functions
-if [ -f "$HOME/.shell/functions.sh" ]; then
-    . "$HOME/.shell/functions.sh"
+if [ -f ~/.shell/functions.sh ]; then
+    . ~/.shell/functions.sh
 fi
 
 ## Exports and other external program settings
-if [ -f "$HOME/.shell/external.sh" ]; then
-    . "$HOME/.shell/external.sh"
+if [ -f ~/.shell/external.sh ]; then
+    . ~/.shell/external.sh
 fi
 
 # >>> conda initialize >>>

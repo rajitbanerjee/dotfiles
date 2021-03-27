@@ -6,11 +6,11 @@ export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 
 ## Add custom scripts + installed scripts to path
-export PATH="$HOME/.local/scripts:$PATH"
-export PATH="$HOME/.local/bin:$PATH"
+export PATH=~/.local/scripts:$PATH
+export PATH=~/.local/bin:$PATH
 
 if [[ "$(uname -s)" == "Darwin" ]]; then
-    export PATH="$HOME/Library/Python/3.8/bin:$PATH"
+    export PATH=~/Library/Python/3.8/bin:$PATH
 	HB_CNF_HANDLER="$(brew --repository)/Library/Taps/homebrew/homebrew-command-not-found/handler.sh"
 	if [ -f "$HB_CNF_HANDLER" ]; then
 		source "$HB_CNF_HANDLER";
@@ -21,15 +21,15 @@ if [[ "$(uname -s)" == "Darwin" ]]; then
     export JAVA_HOME=$JAVA_8_HOME
 
     # Toolbox
-    export PATH=$HOME/.toolbox/bin:$PATH
+    export PATH=~/.toolbox/bin:$PATH
 
     # AWS CLI completion
     complete -C '/usr/local/bin/aws_completer' aws
 
 elif [[ "$(uname -s)" == "Linux" ]]; then
     ## Bash Wakatime
-    if [ -f "$HOME/.local/share/bash-wakatime/bash-wakatime.sh" ]; then
-        . "$HOME/.local/share/bash-wakatime/bash-wakatime.sh"
+    if [ -f ~/.local/share/bash-wakatime/bash-wakatime.sh ]; then
+        . ~/.local/share/bash-wakatime/bash-wakatime.sh
     fi
 
     ## Advent of Code session cookie to run personalised input downloader script
@@ -40,10 +40,10 @@ elif [[ "$(uname -s)" == "Linux" ]]; then
 
     ## Go
     export PATH="$PATH:/usr/local/go/bin" # $GOROOT
-    export GOPATH="$HOME/.local/go"
+    export GOPATH=~/.local/go
 
     # NVM
-    export NVM_DIR="$HOME/.nvm"
+    export NVM_DIR=~/.nvm
     [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
     [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 fi

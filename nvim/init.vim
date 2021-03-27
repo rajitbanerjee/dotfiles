@@ -1,8 +1,8 @@
-" NeoVim Configurations
+" Neovim Configurations
 
-source $HOME/.config/nvim/general.vim
-source $HOME/.config/nvim/mappings.vim
-source $HOME/.config/nvim/plugins.vim
+source ~/.config/nvim/general.vim
+source ~/.config/nvim/mappings.vim
+source ~/.config/nvim/plugins.vim
 
 try
   colorscheme gruvbox

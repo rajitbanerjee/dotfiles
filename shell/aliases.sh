@@ -1,6 +1,6 @@
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
-    test -r "$HOME/.dircolors" && eval "$(dircolors -b $HOME/.dircolors)" || eval "$(dircolors -b)"
+    test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
     alias ls='ls --color=auto'
     #alias dir='dir --color=auto'
     #alias vdir='vdir --color=auto'
@@ -22,7 +22,7 @@ alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo
 # system
 alias ..="cd .."
 alias cd..="cd .."
-alias cdd="cd $HOME/.dotfiles"
+alias cdd="cd ~/.dotfiles"
 alias cls="clear"
 alias env="env | sort | less"
 alias findf="find -type f -name"
@@ -30,7 +30,7 @@ alias jn="jupyter notebook"
 alias mv="mv -i"
 alias n="nvim ."
 alias q="exit"
-alias sb="source $HOME/.bashrc"
+alias sb="source ~/.bashrc"
 alias sl="ls"
 alias vim="nvim"
 if [[ "$(uname -s)" == "Linux" ]]; then
@@ -41,8 +41,8 @@ if [[ "$(uname -s)" == "Linux" ]]; then
     alias open="xdg-open"
     alias rb="/mnt/c/Users/rajitbanerjee"
 elif [[ "$(uname -s)" == "Darwin" ]]; then
-    alias doc="cd $HOME/Documents"
-    alias dp="cd $HOME/Desktop"
+    alias doc="cd ~/Documents"
+    alias dp="cd ~/Desktop"
 fi
 
 

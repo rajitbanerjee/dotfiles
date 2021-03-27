@@ -63,7 +63,7 @@ Symlinking with `$HOME` (for existing systems) is managed by the excellent [Dotb
     ```zsh
     $ ./scripts/system-setup-mac
 
-    # Set up NeoVim and trigger vim-plug installations
+    # Set up Neovim and trigger vim-plug installations
     $ nvim
     $ npm cache verify
     $ ./scripts/setup-coc-nvim
@@ -75,7 +75,7 @@ Symlinking with `$HOME` (for existing systems) is managed by the excellent [Dotb
     $ ./scripts/system-setup
 
 
-    # Set up NeoVim and trigger vim-plug installations (recommended)
+    # Set up Neovim and trigger vim-plug installations (recommended)
     $ nvim
     $ npm cache verify
     $ ./scripts/setup-coc-nvim
@@ -85,7 +85,7 @@ Symlinking with `$HOME` (for existing systems) is managed by the excellent [Dotb
     $ ./scripts/setup-vundle
     ```
 
-NeoVim:
+Neovim:
 
 <img src='./nvim.png'>
 
