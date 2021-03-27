@@ -8,34 +8,17 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
 fi
 
 ## Oh My Zsh settings
-[[ ! -f "$HOME/.zsh/settings.zsh" ]] || source "$HOME/.zsh/settings.zsh"
+[[ ! -f ~/.zsh/settings.zsh ]] || source ~/.zsh/settings.zsh
 
 ## Alias definitions
-[[ ! -f "$HOME/.shell/aliases.sh" ]] || source "$HOME/.shell/aliases.sh"
+[[ ! -f ~/.shell/aliases.sh ]] || source ~/.shell/aliases.sh
 
 ## Custom functions
-[[ ! -f "$HOME/.shell/functions.sh" ]] || source "$HOME/.shell/functions.sh"
+[[ ! -f ~/.shell/functions.sh ]] || source ~/.shell/functions.sh
 
 ## Exports and other external program settings
-[[ ! -f "$HOME/.shell/external.sh" ]] || source "$HOME/.shell/external.sh"
-
-if [[ "$(uname -s)" == "Linux" ]]; then
-    # >>> conda initialize >>>
-    # !! Contents within this block are managed by 'conda init' !!
-    __conda_setup="$('/home/banerjee/.local/share/conda/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
-    if [ $? -eq 0 ]; then
-        eval "$__conda_setup"
-    else
-        if [ -f "/home/banerjee/.local/share/conda/etc/profile.d/conda.sh" ]; then
-            . "/home/banerjee/.local/share/conda/etc/profile.d/conda.sh"
-        else
-            export PATH="/home/banerjee/.local/share/conda/bin:$PATH"
-        fi
-    fi
-    unset __conda_setup
-    # <<< conda initialize <<<
-fi
+[[ ! -f ~/.shell/external.sh ]] || source ~/.shell/external.sh
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f "$HOME/.p10k.zsh" ]] || source "$HOME/.p10k.zsh"
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 

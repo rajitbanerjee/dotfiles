@@ -29,10 +29,10 @@ Symlinking with `$HOME` (for existing systems) is managed by the excellent [Dotb
 
     ```bash
     # With SSH
-    $ git clone --recurse-submodules git@github.com:rajitbanerjee/dotfiles $HOME/.dotfiles
+    $ git clone --recurse-submodules git@github.com:rajitbanerjee/dotfiles ~/.dotfiles
 
     # Alternatively, with HTTPS
-    $ git clone --recurse-submodules https://github.com/rajitbanerjee/dotfiles.git $HOME/.dotfiles
+    $ git clone --recurse-submodules https://github.com/rajitbanerjee/dotfiles.git ~/.dotfiles
     ```
 
 2.  Run the following for setup:
@@ -41,17 +41,17 @@ Symlinking with `$HOME` (for existing systems) is managed by the excellent [Dotb
 
       ```zsh
       # Symlink dotfiles
-      $ cd $HOME/.dotfiles && ./install-mac
+      $ cd ~/.dotfiles && ./install-mac
       ```
 
     - Linux/WSL2:
 
       ```bash
       # Remove existing bashrc
-      $ rm -rf $HOME/.bashrc
+      $ rm -rf ~/.bashrc
 
       # Symlink dotfiles
-      $ cd $HOME/.dotfiles && ./install
+      $ cd ~/.dotfiles && ./install
       ```
 
 <img src='./screenshot.jpg'>

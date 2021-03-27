@@ -2,7 +2,7 @@ set nocompatible              " be iMproved, required
 filetype off                  " required
 
 
-set rtp+=$HOME/.vim/bundle/Vundle.vim
+set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'VundleVim/Vundle.vim' 
 Plugin 'amix/vim-zenroom2' 
@@ -35,6 +35,6 @@ call vundle#end()            " required
 " :PluginSearch foo - searches for foo; append `!` to refresh local cache
 " :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
 
-source $HOME/.vim/basic.vim
-source $HOME/.vim/plugins_config.vim
+source ~/.vim/basic.vim
+source ~/.vim/plugins_config.vim
 
