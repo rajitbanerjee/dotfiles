@@ -22,6 +22,11 @@ map <silent> <leader><CR> :noh<CR>
 inoremap qq <ESC>
 inoremap <C-q> <ESC>
 
+" Cycle through popup suggestions with TAB; Enter to select and suppress new line
+inoremap <silent><expr> <TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
+inoremap <silent><expr> <S-TAB> pumvisible() ? "\<C-p>" : "\<S-TAB>"
+inoremap <expr> <CR> pumvisible() ? "\<C-Y>" : "\<CR>"
+
 " Command mode
 cnoremap 4 $
 cnoremap <C-4> 4
