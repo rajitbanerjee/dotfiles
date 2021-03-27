@@ -19,7 +19,7 @@ if [ -f ~/.shell/functions.sh ]; then
 fi
 
 ## Exports and other external program settings
-if [ -f ~/.shell/external.sh ]; then
-    . ~/.shell/external.sh
+if [ -f ~/.shell/common.sh ]; then
+    . ~/.shell/common.sh
 fi
 

@@ -17,7 +17,7 @@ fi
 [[ ! -f ~/.shell/functions.sh ]] || source ~/.shell/functions.sh
 
 ## Exports and other external program settings
-[[ ! -f ~/.shell/external.sh ]] || source ~/.shell/external.sh
+[[ ! -f ~/.shell/common.sh ]] || source ~/.shell/common.sh
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
