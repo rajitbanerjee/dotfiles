@@ -72,9 +72,6 @@ function! <SID>BufcloseCloseIt()
     endif
 endfunction
 
-" Remove the Windows ^M - when the encodings gets messed up
-noremap <Leader>m mmHmt:%s/<C-V><CR>//ge<CR>'tzt'm
-
 
 """"""""""""""""""""""""""""""
 " => Terminal
