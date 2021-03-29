@@ -126,6 +126,7 @@ if has('popupwin')
 endif
 map <leader>f :ProjectRootExe FZF<CR>
 map <leader>g :ProjectRootExe Rg<CR>
+map <leader>b :Buffers<CR>
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""
