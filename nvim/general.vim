@@ -43,6 +43,9 @@ if executable(s:clip)
     augroup END
 endif
 
+" macOS system clipboard
+set clipboard=unnamedplus
+
 " Brackets
 set showmatch
 set mat=2
