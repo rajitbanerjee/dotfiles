@@ -95,10 +95,10 @@ autocmd TermOpen * setlocal nonumber norelativenumber
 :nnoremap <C-l> <C-w>l
 
 " Toggle terminal
-nnoremap <C-t> :call TermToggle(12)<CR>
-inoremap <C-t> <Esc>:call TermToggle(12)<CR>
+nnoremap <C-t> :call TermToggle(24)<CR>
+inoremap <C-t> <Esc>:call TermToggle(24)<CR>
 " Toggle off, clean empty buffers, and switch to split on the right (i.e. stop focussing on explorer)
-tnoremap <C-t> <C-\><C-n>:call TermToggle(12)<CR>:call CleanEmptyBuffers()<CR><C-w>l
+tnoremap <C-t> <C-\><C-n>:call TermToggle(24)<CR>:call CleanEmptyBuffers()<CR><C-w>l
 let g:term_buf = 0
 let g:term_win = 0
 function! TermToggle(height)
