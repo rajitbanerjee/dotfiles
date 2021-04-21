@@ -21,6 +21,7 @@ plugins=(
     safe-paste                  # prevent pasted code from running
     wakatime                    # coding metrics
     zsh-autosuggestions         # Autocomplete
+    zsh-completions             # Additional completion definitions
     zsh-syntax-highlighting     # Fish-shell like syntax highlighting
 )
 

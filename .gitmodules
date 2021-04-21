@@ -17,3 +17,6 @@
 [submodule "zsh/custom/plugins/wakatime-zsh-plugin"]
 	path = zsh/custom/plugins/wakatime
 	url = https://github.com/sobolevn/wakatime-zsh-plugin.git
+[submodule "zsh/custom/plugins/zsh-completions"]
+	path = zsh/custom/plugins/zsh-completions
+	url = https://github.com/zsh-users/zsh-completions
