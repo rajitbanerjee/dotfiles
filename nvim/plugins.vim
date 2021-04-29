@@ -159,6 +159,13 @@ nnoremap <silent><nowait> <leader>o  :<C-u>CocList outline<CR>
 nnoremap <silent><nowait> <leader>j  :<C-u>CocNext<CR>
 nnoremap <silent><nowait> <leader>k  :<C-u>CocPrev<CR>
 
+" Remap keys for gotos
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+" nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
+
+
 " Start explorer automatically
 " autocmd User CocNvimInit :CocCommand explorer
 
