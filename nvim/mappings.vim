@@ -18,6 +18,7 @@ noremap ;; ;
 nnoremap r <C-r>
 nnoremap <C-r> :%s/
 nnoremap s /
+nnoremap <silent><leader>1 :source ~/.config/nvim/init.vim \| :PlugClean<CR> \| :PlugInstall<CR> \| :PlugUpdate<CR>
 map <silent> <leader><CR> :noh<CR>
 inoremap qq <ESC>
 inoremap <C-q> <ESC>
@@ -143,8 +144,8 @@ vnoremap < <gv
 vnoremap > >gv
 
 " Visual mode pressing * or # searches for the current selection
-vnoremap <silent> * :<C-u>call VisualSelection('', '')<CR>/<C-R>=@/<CR><CR>
-vnoremap <silent> # :<C-u>call VisualSelection('', '')<CR>?<C-R>=@/<CR><CR>
+" vnoremap <silent> * :<C-u>call VisualSelection('', '')<CR>/<C-R>=@/<CR><CR>
+" vnoremap <silent> # :<C-u>call VisualSelection('', '')<CR>?<C-R>=@/<CR><CR>
 
 function! VisualSelection(direction, extra_filter) range
     let l:saved_reg = @"
