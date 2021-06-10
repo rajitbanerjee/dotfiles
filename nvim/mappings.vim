@@ -51,7 +51,7 @@ nnoremap <silent> <C-Left>  :vertical resize -2<CR>
 nnoremap <silent> <C-Right> :vertical resize +2<CR>
 
 " Buffers
-map <silent> <leader>bc :Bclose<CR>
+map <leader>q :Bclose<CR>
 nnoremap <silent> <TAB> :bnext<CR>
 nnoremap <silent> <S-TAB> :bprevious<CR>
 
