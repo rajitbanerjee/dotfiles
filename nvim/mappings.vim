@@ -28,12 +28,6 @@ inoremap <silent><expr> <TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
 inoremap <silent><expr> <S-TAB> pumvisible() ? "\<C-p>" : "\<S-TAB>"
 inoremap <expr> <CR> pumvisible() ? "\<C-Y>" : "\<CR>"
 
-" Command mode
-cnoremap 4 $
-cnoremap <C-4> 4
-cnoremap 5 %
-cnoremap <C-5> 5
-
 " Moving around
 map <C-j> <C-W>j
 map <C-k> <C-W>k

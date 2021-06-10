@@ -22,16 +22,13 @@ Plug 'jiangmiao/auto-pairs'                           " Bracket matching
 Plug 'junegunn/fzf', {'do': { -> fzf#install() }}     " Fuzzy finder
 Plug 'junegunn/fzf.vim'                               
 Plug 'junegunn/goyo.vim'                              " Zen mode
-Plug 'leafgarland/typescript-vim'                     " Improved TypeScript syntax
 Plug 'lervag/vimtex'                                  " LaTeX support
 Plug 'maxbrunsfeld/vim-yankstack'                     " Turns default register into a stack
-Plug 'maxmellon/vim-jsx-pretty'                       " Improved JS and JSX syntax
 Plug 'mengelbrecht/lightline-bufferline'              " Buffers instead of tabs on top
 Plug 'mhinz/vim-signify'                              " Git changes shown in column
 Plug 'mhinz/vim-startify'                             " Start screen
 Plug 'morhetz/gruvbox'                                " Colour scheme
 Plug 'neoclide/coc.nvim', {'branch': 'release'}       " Code completion (WARN: Latest stable node version required)
-Plug 'pangloss/vim-javascript'                        " Improved JavaScript support
 Plug 'ryanoasis/vim-devicons'                         " File type icons
 Plug 'sheerun/vim-polyglot'                           " Syntax highlighting/language pack
 Plug 'tpope/vim-commentary'                           " Code commenting
