@@ -91,8 +91,7 @@ set ffs=unix,dos,mac
 if $COLORTERM == 'gnome-terminal'
     set t_Co=256
 endif
-set background=dark
-colorscheme zellner
+colorscheme zellner " Temporary, before gruvbox is installed
 
 " Status line
 set laststatus=2

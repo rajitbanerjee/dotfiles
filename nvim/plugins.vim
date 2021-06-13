@@ -29,6 +29,7 @@ Plug 'mhinz/vim-signify'                              " Git changes shown in col
 Plug 'mhinz/vim-startify'                             " Start screen
 Plug 'morhetz/gruvbox'                                " Colour scheme
 Plug 'neoclide/coc.nvim', {'branch': 'release'}       " Code completion (WARN: Latest stable node version required)
+Plug 'NLKNguyen/papercolor-theme'                     " Another colour scheme
 Plug 'ryanoasis/vim-devicons'                         " File type icons
 Plug 'sheerun/vim-polyglot'                           " Syntax highlighting/language pack
 Plug 'tpope/vim-commentary'                           " Code commenting
@@ -89,6 +90,8 @@ nmap <leader>m <Plug>MarkdownPreviewToggle
 """""""""""""""""""""""""""""""""""""""""""""""""""
 " => itchyny/lightline.vim
 """""""""""""""""""""""""""""""""""""""""""""""""""
+" For Gruvbox (dark), use: \ 'colorscheme': 'jellybeans',
+" For PaperColor, use: \ 'colorscheme': 'PaperColor'
 let g:lightline = {
             \ 'colorscheme': 'jellybeans',
             \ 'active': {
@@ -126,6 +129,29 @@ function! LightlineFilename()
     return path[len(root)+1:]
   endif
   return expand('%')
+endfunction
+
+" Remove background of status bar and buffer bar
+autocmd VimEnter * call SetupLightlineColors()
+function SetupLightlineColors() abort
+  " transparent background in statusbar
+  let l:palette = lightline#palette()
+
+  let l:palette.normal.middle = [ [ 'NONE', 'NONE', 'NONE', 'NONE' ] ]
+  let l:palette.inactive.middle = l:palette.normal.middle
+  let l:palette.tabline.middle = l:palette.normal.middle
+
+  call lightline#colorscheme()
+endfunction
+
+" Use `:call LightlineReload()`
+command! LightlineReload call LightlineReload()
+
+function! LightlineReload()
+  call lightline#palette()
+  call lightline#init()
+  call lightline#colorscheme()
+  call lightline#update()
 endfunction
 
 """""""""""""""""""""""""""""""""""""""""""""""""""

@@ -18,7 +18,7 @@ noremap ;; ;
 nnoremap r <C-r>
 nnoremap <C-r> :%s/
 nnoremap s /
-nnoremap <silent><leader>1 :source ~/.config/nvim/init.vim \| :PlugClean<CR> \| :PlugInstall<CR> \| :PlugUpdate<CR>
+nnoremap <silent><leader>1 :source ~/.config/nvim/init.vim \| :call LightlineReload()<CR> \| :PlugClean<CR> \| :PlugInstall<CR> \| :PlugUpdate<CR>
 map <silent> <leader><CR> :noh<CR>
 inoremap qq <ESC>
 inoremap <C-q> <ESC>
