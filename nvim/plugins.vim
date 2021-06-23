@@ -96,7 +96,7 @@ let g:lightline = {
             \ 'colorscheme': 'jellybeans',
             \ 'active': {
             \   'left': [ ['mode', 'paste'],
-            \             ['fugitive', 'readonly', 'filename', 'modified'] ],
+            \             ['fugitive', 'readonly', 'absolutepath', 'modified'] ],
             \   'right': [ [ 'lineinfo' ], ['percent'] ]
             \ },
             \ 'component_function': {
@@ -122,14 +122,14 @@ let g:lightline = {
             \ }
             \ }
 
-function! LightlineFilename()
-  let root = fnamemodify(get(b:, 'git_dir'), ':h')
-  let path = expand('%:p')
-  if path[:len(root)-1] ==# root
-    return path[len(root)+1:]
-  endif
-  return expand('%')
-endfunction
+" function! LightlineFilename()
+"   let root = fnamemodify(get(b:, 'git_dir'), ':h')
+"   let path = expand('%:p')
+"   if path[:len(root)-1] ==# root
+"     return path[len(root)+1:]
+"   endif
+"   return expand('%')
+" endfunction
 
 " Remove background of status bar and buffer bar
 autocmd VimEnter * call SetupLightlineColors()
