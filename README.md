@@ -2,15 +2,16 @@
 
 My custom configuration files:
 
-- Shell/Terminal
+- Shell
   - [zsh/](./zsh/), [zshrc](./zshrc): zsh configurations; plugins managed by [ohmyzsh][ohmyzsh]
   - [shell/](./shell/): common configs for all types of shells
-  - [windows_terminal/](./windows_terminal/): windows terminal settings
+  - [terminal/](./terminal/): terminal emulator settings
   - [tmux.conf](./tmux.conf): tmux configs, borrowed from [anishathalye/dotfiles/tmux.conf][anish]
   - [bash/](./bash/), [bashrc](./bashrc): bash configurations
 - Editor
   - [nvim/](./nvim/): neovim configurations
   - [vscode.txt](./vscode.txt): link to vscode settings sync gist
+  - [fonts/](./fonts/): preferred font files
 - Programming
   - [base.yml](./base.yml): conda base environment packages
   - [jupyter/](./jupyter/): jupyter notebook configurations
