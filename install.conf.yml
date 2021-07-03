@@ -1,4 +1,4 @@
-# Config file used by ./install script to link dotfiles from this 
+# Config file used by ./install script to link dotfiles from this
 # repository to ~/. Useful in setting up a new system, or maintaining
 # current dotfiles with version control.
 
@@ -7,28 +7,22 @@
       create: true # new link, if non-existent
       relink: true
 
-- clean: ['~']
+- clean: ["~"]
 
 - link:
-    ~/.base.yml:
     ~/.bash:
     ~/.bashrc:
-    ~/.gitconfig:
+    ~/.config/base.yml: base.yml
+    ~/.config/nvim: nvim
     ~/.jupyter/jupyter_notebook_config.json: jupyter/jupyter_notebook_config.json
     ~/.jupyter/nbconfig/notebook.json: jupyter/notebook.json
     ~/.local/scripts: scripts # custom bash/python scripts
     ~/.local/share/jupyter/nbextensions: jupyter/nbextensions
-    ~/.config/nvim: nvim
     ~/.p10k.zsh: zsh/p10k.zsh
     ~/.shell:
     ~/.tmux.conf:
-    ~/.vim:
-    ~/.vimrc:
     ~/.zsh:
     ~/.zshrc:
 
-- create:
-  - ~/.vim/undodir/
-
 - shell:
-  - [git submodule update --init --recursive, Installing submodules]
+    - [git submodule update --init --recursive, Installing submodules]

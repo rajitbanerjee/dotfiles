@@ -1,4 +1,4 @@
-# Config file used by ./install script to link dotfiles from this 
+# Config file used by ./install-mac script to link dotfiles from this 
 # repository to ~/. Useful in setting up a new system, or maintaining
 # current dotfiles with version control.
 
@@ -10,9 +10,9 @@
 - clean: ['~']
 
 - link:
-    ~/.base.yml:
-    ~/.local/scripts: scripts # custom bash/python scripts
+    ~/.config/base.yml: base.yml
     ~/.config/nvim: nvim
+    ~/.local/scripts: scripts # custom bash/python scripts
     ~/.p10k.zsh: zsh/p10k.zsh
     ~/.shell:
     ~/.tmux.conf:
