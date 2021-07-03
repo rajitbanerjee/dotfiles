@@ -11,15 +11,13 @@ My custom configuration files:
 - Editor
   - [nvim/](./nvim/): neovim configurations
   - [vscode.txt](./vscode.txt): link to vscode settings sync gist
-  - [vim/](./vim/), [vimrc](./vimrc): vim configurations, inspired by [amix/vimrc][amix] (not kept up to date, see [nvim](./nvim/) instead)
 - Programming
   - [base.yml](./base.yml): conda base environment packages
   - [jupyter/](./jupyter/): jupyter notebook configurations
   - [scripts/][scripts]: python/bash scripts
-  - [gitconfig](./gitconfig): username, email, etc.
 - Dotbot
-  - [install.conf.yml](./install.conf.yml): config file for dotbot
-  - [./install](./install): prepare dotfiles with dotbot
+  - [install.conf.yml](./install.conf.yml), [install-mac.conf.yml](./install-mac.conf.yml): config files for dotbot
+  - [./install](./install), [./install-mac](./install-mac): prepare dotfiles with dotbot
 
 ## Installation
 
@@ -27,7 +25,7 @@ Symlinking with `$HOME` (for existing systems) is managed by the excellent [Dotb
 
 1.  Clone repository and submodules:
 
-    ```bash
+    ```zsh
     # With SSH
     $ git clone --recurse-submodules git@github.com:rajitbanerjee/dotfiles ~/.dotfiles
 
