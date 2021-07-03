@@ -1,9 +1,11 @@
 {
+  /* coc-spell-checker */
   "cSpell": {
     "enabled": false,
     "language": "en-GB"
   },
 
+  /* coc-explorer */
   "explorer": {
     "buffer": {
       "root": { "template": "[icon & 1] OPEN EDITORS" }
@@ -71,6 +73,15 @@
     }
   },
 
+  /* coc-html */
   "html": { "autoClosingTags": true },
-  "python": { "linting": { "enabled": false } }
+
+  /* coc-pyright */
+  "python": { "linting": { "enabled": false } },
+
+  /* coc-tsserver */
+  "typescript": {
+    /* Watchman required for this to work */
+    "updateImportsOnFileMove": { "enable": true }
+  }
 }
