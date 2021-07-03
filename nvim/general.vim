@@ -1,7 +1,3 @@
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" NeoVim General Settings
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
 set history=500
 set updatetime=50
 set autochdir " Change working dir on opening a file
@@ -16,14 +12,22 @@ set so=7 " 7 lines for the cursor when moving up/down
 set cmdheight=1
 set hid " Buffer is hidden when abandoned
 set number
-" set relativenumber
-set cursorline
 set noshowcmd
 set noshowmode
 set splitbelow
 set splitright
 set mouse=a " Mouse support if ever needed
 set termguicolors
+
+set background=dark
+command! BackgroundToggle call <SID>BackgroundToggle()
+function! <SID>BackgroundToggle()
+    if &background == "dark"
+        set background=light
+    else
+        set background=dark
+    endif
+endfunction
 
 syntax enable
 set ffs=unix,dos,mac
@@ -92,5 +96,4 @@ augroup goodbye_netrw
     au!
     autocmd VimEnter * silent! au! FileExplorer *
 augroup END
-
 

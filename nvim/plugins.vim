@@ -1,5 +1,3 @@
-" Plugin Settings
-
 " auto install vim-plug and plugins
 if empty(glob('~/.config/nvim/autoload/plug.vim'))
   silent !curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs
@@ -12,29 +10,29 @@ call plug#begin('~/.config/nvim/autoload/plugged')
 Plug 'amix/vim-zenroom2'                              " Markdown editing in zen mode 
 Plug 'dbakker/vim-projectroot'                        " Allows FZF to search in project root
 Plug 'dense-analysis/ale'                             " LSP, linting, formatting
+Plug 'edkolev/tmuxline.vim'                           " Tmux status line generator using airline
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries'  }   " Go support
 Plug 'iamcco/markdown-preview.nvim', {
   \ 'do': { -> mkdp#util#install()  },
   \ 'for': ['markdown', 'vim-plug']
   \ }                                                 " Markdown preview
-Plug 'itchyny/lightline.vim'                          " Status bar
 Plug 'jiangmiao/auto-pairs'                           " Bracket matching
 Plug 'junegunn/fzf', {'do': { -> fzf#install() }}     " Fuzzy finder
 Plug 'junegunn/fzf.vim'                               
 Plug 'junegunn/goyo.vim'                              " Zen mode
 Plug 'lervag/vimtex'                                  " LaTeX support
 Plug 'maxbrunsfeld/vim-yankstack'                     " Turns default register into a stack
-Plug 'mengelbrecht/lightline-bufferline'              " Buffers instead of tabs on top
 Plug 'mhinz/vim-signify'                              " Git changes shown in column
 Plug 'mhinz/vim-startify'                             " Start screen
 Plug 'morhetz/gruvbox'                                " Colour scheme
 Plug 'neoclide/coc.nvim', {'branch': 'release'}       " Code completion (WARN: Latest stable node version required)
-Plug 'NLKNguyen/papercolor-theme'                     " Another colour scheme
-Plug 'ryanoasis/vim-devicons'                         " File type icons
+Plug 'ryanoasis/vim-devicons'                         " Coloured file type icons
 Plug 'sheerun/vim-polyglot'                           " Syntax highlighting/language pack
 Plug 'tpope/vim-commentary'                           " Code commenting
 Plug 'tpope/vim-fugitive'                             " Git wrapper
 Plug 'tpope/vim-surround'                             " Delete, change, add surroundings
+Plug 'vim-airline/vim-airline'                        " Status and tabline
+Plug 'vim-airline/vim-airline-themes'                 " Airline themes
 Plug 'wakatime/vim-wakatime'                          " Coding metrics
 Plug 'yuttie/comfortable-motion.vim'                  " Smooth scrolling
 
@@ -88,73 +86,6 @@ nmap <leader>m <Plug>MarkdownPreviewToggle
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""
-" => itchyny/lightline.vim
-"""""""""""""""""""""""""""""""""""""""""""""""""""
-" For Gruvbox (dark), use: \ 'colorscheme': 'jellybeans',
-" For PaperColor, use: \ 'colorscheme': 'PaperColor'
-let g:lightline = {
-            \ 'colorscheme': 'jellybeans',
-            \ 'active': {
-            \   'left': [ ['mode', 'paste'],
-            \             ['fugitive', 'readonly', 'absolutepath', 'modified'] ],
-            \   'right': [ [ 'lineinfo' ], ['percent'] ]
-            \ },
-            \ 'component_function': {
-            \   'filename': 'LightlineFilename'
-            \ },
-            \ 'component': {
-            \   'readonly': '%{&filetype=="help"?"":&readonly?"🔒":""}',
-            \   'modified': '%{&filetype=="help"?"":&modified?"+":&modifiable?"":"-"}',
-            \   'fugitive': '%{exists("*FugitiveHead")?FugitiveHead():""}'
-            \ },
-            \ 'component_expand': { 'buffers': 'lightline#bufferline#buffers' },
-            \ 'component_type': { 'buffers': 'tabsel' },
-            \ 'component_visible_condition': {
-            \   'readonly': '(&filetype!="help"&& &readonly)',
-            \   'modified': '(&filetype!="help"&&(&modified||!&modifiable))',
-            \   'fugitive': '(exists("*FugitiveHead") && ""!=FugitiveHead())'
-            \ },
-            \ 'separator': { 'left': ' ', 'right': ' ' },
-            \ 'subseparator': { 'left': ' ', 'right': ' ' },
-            \ 'tabline': {
-            \   'left': [ ['buffers'] ],
-            \   'right': [ ['close'] ]
-            \ }
-            \ }
-
-" function! LightlineFilename()
-"   let root = fnamemodify(get(b:, 'git_dir'), ':h')
-"   let path = expand('%:p')
-"   if path[:len(root)-1] ==# root
-"     return path[len(root)+1:]
-"   endif
-"   return expand('%')
-" endfunction
-
-" Remove background of status bar and buffer bar
-autocmd VimEnter * call SetupLightlineColors()
-function SetupLightlineColors() abort
-  " transparent background in statusbar
-  let l:palette = lightline#palette()
-
-  let l:palette.normal.middle = [ [ 'NONE', 'NONE', 'NONE', 'NONE' ] ]
-  let l:palette.inactive.middle = l:palette.normal.middle
-  let l:palette.tabline.middle = l:palette.normal.middle
-
-  call lightline#colorscheme()
-endfunction
-
-" Use `:call LightlineReload()`
-command! LightlineReload call LightlineReload()
-
-function! LightlineReload()
-  call lightline#palette()
-  call lightline#init()
-  call lightline#colorscheme()
-  call lightline#update()
-endfunction
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""
 " => junegunn/fzf.vim
 """""""""""""""""""""""""""""""""""""""""""""""""""
 if has('popupwin')
@@ -196,16 +127,15 @@ nnoremap <silent><nowait> <leader>o  :<C-u>CocList outline<CR>
 nnoremap <silent><nowait> <leader>j  :<C-u>CocNext<CR>
 nnoremap <silent><nowait> <leader>k  :<C-u>CocPrev<CR>
 
-nmap <silent> gd <Plug>(coc-definition)
-nmap <silent> gy <Plug>(coc-type-definition)
-" nmap <silent> gi <Plug>(coc-implementation)
-nmap <silent> gr <Plug>(coc-references)
+nmap <silent>gd <Plug>(coc-definition)
+nmap <silent>gy <Plug>(coc-type-definition)
+nmap <silent>gr <Plug>(coc-references)
 nmap <leader>ac  <Plug>(coc-codeaction)
 nmap <leader>qf  :<C-u>CocFix<CR>
 nmap <leader>r <Plug>(coc-rename)
 
 " Start explorer automatically
-" autocmd User CocNvimInit :CocCommand explorer
+autocmd User CocNvimInit :CocCommand explorer
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""
@@ -213,6 +143,20 @@ nmap <leader>r <Plug>(coc-rename)
 """""""""""""""""""""""""""""""""""""""""""""""""""
 map <leader>d :Gvdiffsplit<CR>
 map <leader>s :GFiles?<CR>
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""
+" => vim-airline/vim-airline,vim-airline-themes
+"""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#formatter = 'unique_tail'
+let g:airline#extensions#whitespace#enabled = 0
+let g:airline_powerline_fonts = 1
+let g:airline#extensions#tabline#left_sep = ' '
+let g:airline#extensions#tabline#left_alt_sep = ' '
+let g:airline#extensions#tabline#right_sep = ' '
+let g:airline#extensions#tabline#right_alt_sep = ' '
+let g:airline_theme='gruvbox'
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""

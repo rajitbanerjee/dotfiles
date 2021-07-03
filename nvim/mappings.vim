@@ -1,7 +1,6 @@
 """"""""""""""""""""""""""""""
 " => Key Mappings
 """"""""""""""""""""""""""""""
-
 let mapleader = " "
 
 " Pasting, saving, quitting
@@ -18,7 +17,7 @@ noremap ;; ;
 nnoremap r <C-r>
 nnoremap <C-r> :%s/
 nnoremap s /
-nnoremap <silent><leader>1 :source ~/.config/nvim/init.vim \| :call LightlineReload()<CR> \| :PlugClean<CR> \| :PlugInstall<CR> \| :PlugUpdate<CR>
+nnoremap <silent><leader>1 :source ~/.config/nvim/init.vim \| :PlugClean<CR> \| :PlugInstall<CR> \| :PlugUpdate<CR>
 map <silent> <leader><CR> :noh<CR>
 inoremap qq <ESC>
 inoremap <C-q> <ESC>
@@ -71,7 +70,6 @@ endfunction
 """"""""""""""""""""""""""""""
 " => Terminal
 """"""""""""""""""""""""""""""
-
 :tnoremap <C-q> <C-\><C-n>
 autocmd TermOpen * setlocal nonumber norelativenumber
 
@@ -128,7 +126,6 @@ endfunction
 """"""""""""""""""""""""""""""
 " => Visual Mode
 """"""""""""""""""""""""""""""
-
 " Move selected lines up/down
 xnoremap K :move '<-2<CR>gv-gv
 xnoremap J :move '>+1<CR>gv-gv
