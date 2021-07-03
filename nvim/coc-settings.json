@@ -1,56 +1,67 @@
 {
-  // spell checker
-  "cSpell.language": "en-GB",
-  "cSpell.enabled": false,
-
-  // coc-explorer
-  "explorer.focus": false,
-  "explorer.icon.enableVimDevicons": true,
-  "explorer.keyMappings.global": {
-    "i": false, // cancel default mapkey
-
-    "*": "toggleSelection",
-    "<tab>": false,
-    "m": "actionMenu",
-
-    "l": ["wait", "expandable?", "expand", "open"],
-    "<2-LeftMouse>": [
-      "expandable?",
-      ["expanded?", "collapse", "expand"],
-      "open"
-    ],
-    "o": ["wait", "expanded?", "collapse", "expand"],
-    "<cr>": ["wait", "expandable?", "cd", "open"],
-    "e": "open",
-    "s": "open:vsplit",
-    "t": "open:tab",
-    "u": ["wait", "gotoParent"],
-
-    "yp": "copyFilepath",
-    "yn": "copyFilename",
-    "yy": "copyFile",
-    "dd": "cutFile",
-    "p": "pasteFile",
-    "df": "delete",
-
-    "A": "addDirectory",
-    "R": "rename",
-
-    "g<dot>": "toggleHidden",
-    "r": "refresh",
-    "q": "quit",
-    "<esc>": "esc",
-
-    "f": "search",
-    "F": "searchRecursive",
-
-    "<<": "gitStage",
-    ">>": "gitUnstage"
+  "cSpell": {
+    "language": "en-GB",
+    "enabled": false
   },
 
-  // coc-html
-  "html.autoClosingTags": true,
+  "explorer": {
+    "buffer": {
+      "root": { "template": "[icon & 1] OPEN EDITORS" },
+      "tabOnly": true
+    },
+    "file": {
+      "root": { "template": "[icon & 1] PROJECT ([root])" },
+      "autoReveal": true
+    },
+    "focus": true,
+    "icon": {
+      "enableNerdfont": true
+    },
+    "mouseMode": "singleclick",
+    "keyMappings": {
+      "global": {
+        "i": false,
 
-  // coc-pyright
-  "python.linting.enabled": false
+        "*": "toggleSelection",
+        "<tab>": false,
+        "m": "actionMenu",
+
+        "l": ["wait", "expandable?", "expand", "open"],
+        "<2-LeftMouse>": [
+          "expandable?",
+          ["expanded?", "collapse", "expand"],
+          "open"
+        ],
+        "o": ["wait", "expanded?", "collapse", "expand"],
+        "<cr>": ["wait", "expandable?", "cd", "open"],
+        "e": "open",
+        "s": "open:vsplit",
+        "u": ["wait", "gotoParent"],
+
+        "yp": "copyFilepath",
+        "yn": "copyFilename",
+        "yy": "copyFile",
+        "dd": "cutFile",
+        "p": "pasteFile",
+        "df": "delete",
+
+        "A": "addDirectory",
+        "R": "rename",
+
+        "g<dot>": "toggleHidden",
+        "r": "refresh",
+        "q": "quit",
+        "<esc>": "esc",
+
+        "f": "search",
+        "F": "searchRecursive",
+
+        "<<": "gitStage",
+        ">>": "gitUnstage"
+      }
+    }
+  },
+
+  "html": { "autoClosingTags": true },
+  "python": { "linting": { "enabled": false } }
 }
