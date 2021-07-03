@@ -1,7 +1,5 @@
 # Dotfiles \[[![Build Status][travis-badge]][travis]]
 
-My custom configuration files:
-
 - Shell
   - [zsh/](./zsh/), [zshrc](./zshrc): zsh configurations; plugins managed by [ohmyzsh][ohmyzsh]
   - [shell/](./shell/): common configs for all types of shells
@@ -22,7 +20,7 @@ My custom configuration files:
 
 ## Installation
 
-Symlinking with `$HOME` (for existing systems) is managed by the excellent [Dotbot][dotbot].
+Symlinking repository to `~/` is managed by the excellent [Dotbot][dotbot]. Useful in setting up a new system, or maintaining current dotfiles with version control.
 
 1.  Clone repository and submodules:
 
