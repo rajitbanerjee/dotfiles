@@ -1,13 +1,12 @@
 {
   "cSpell": {
-    "language": "en-GB",
-    "enabled": false
+    "enabled": false,
+    "language": "en-GB"
   },
 
   "explorer": {
     "buffer": {
-      "root": { "template": "[icon & 1] OPEN EDITORS" },
-      "tabOnly": true
+      "root": { "template": "[icon & 1] OPEN EDITORS" }
     },
     "file": {
       "root": { "template": "[icon & 1] PROJECT ([root])" },
@@ -18,6 +17,16 @@
       "enableNerdfont": true
     },
     "mouseMode": "singleclick",
+    "sources": [
+      {
+        "name": "buffer",
+        "expand": true
+      },
+      {
+        "name": "file",
+        "expand": true
+      }
+    ],
     "keyMappings": {
       "global": {
         "i": false,

@@ -77,9 +77,11 @@ au BufNewFile,BufRead *.html,*.css,*.js,*.ts setlocal shiftwidth=2 tabstop=2
 set lbr
 set tw=500
 
-" Line indent and wrapping
+" Line indent, wpapping, folding
 set si
 set wrap
+set foldmethod=indent "
+set foldlevelstart=99
 
 " Specify the behaviour when switching between buffers
 try
