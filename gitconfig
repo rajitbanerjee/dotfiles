@@ -1,7 +1,0 @@
-[user]
-	name = Rajit Banerjee
-	email = rajit.banerjee@ucdconnect.ie
-[core]
-    editor = nvim
-[credential]
-	helper = cache --timeout=1000000
