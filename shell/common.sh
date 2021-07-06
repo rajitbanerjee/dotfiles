@@ -10,7 +10,10 @@ export PATH=~/.local/scripts:$PATH
 export PATH=~/.local/bin:$PATH
 
 if [[ "$(uname -s)" == "Darwin" ]]; then
-    echo ""
+    HB_CNF_HANDLER="$(brew --repository)/Library/Taps/homebrew/homebrew-command-not-found/handler.sh"
+    if [ -f "$HB_CNF_HANDLER" ]; then
+        source "$HB_CNF_HANDLER";
+    fi
     # TODO
 elif [[ "$(uname -s)" == "Linux" ]]; then
     ## Bash Wakatime
