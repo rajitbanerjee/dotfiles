@@ -14,7 +14,10 @@
     ~/.config/nvim: nvim
     ~/.local/scripts: scripts # custom bash/python scripts
     ~/.p10k.zsh: zsh/p10k.zsh
-    ~/.shell:
+    ~/.shell/aliases.sh:
+    ~/.shell/aws.sh:
+    ~/.shell/common.sh:
+    ~/.shell/functions.sh:
     ~/.tmux.conf:
     ~/.zsh:
     ~/.zshrc:
