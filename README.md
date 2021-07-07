@@ -34,52 +34,27 @@ Symlinking repository to `~/` is managed by the excellent [Dotbot][dotbot]. Usef
 
 2.  Run the following for setup:
 
-    - macOS
+    ```zsh
+    # Remove existing bashrc
+    $ rm -rf ~/.bashrc # Linux/WSL2
 
-      ```zsh
-      # Symlink dotfiles
-      $ cd ~/.dotfiles && ./install-mac
-      ```
-
-    - Linux/WSL2:
-
-      ```bash
-      # Remove existing bashrc
-      $ rm -rf ~/.bashrc
-
-      # Symlink dotfiles
-      $ cd ~/.dotfiles && ./install
-      ```
+    # Symlink dotfiles
+    $ cd ~/.dotfiles && ./install-mac # macOs
+    $ cd ~/.dotfiles && ./install     # Linux/WSL2
+    ```
 
 <img src='./screenshot.jpg'>
 
 3.  Install a range of preferred packages. See [system-setup][ss], [system-setup-mac][ssm], [setup-coc-nvim][scn], [setup-vundle][sv].
 
-    - macOS:
-
     ```zsh
-    $ ./scripts/system-setup-mac
+    $ ./scripts/system-setup-mac  # macOS
+    $ ./scripts/system-setup      # Linux/WSL2
 
     # Set up Neovim and trigger vim-plug installations
     $ nvim
     $ npm cache verify
     $ ./scripts/setup-coc-nvim
-    ```
-
-    - Linux/WSL2:
-
-    ```bash
-    $ ./scripts/system-setup
-
-
-    # Set up Neovim and trigger vim-plug installations (recommended)
-    $ nvim
-    $ npm cache verify
-    $ ./scripts/setup-coc-nvim
-
-
-    # Optionally, set up Vim and Vundle plugins
-    $ ./scripts/setup-vundle
     ```
 
 Neovim:
