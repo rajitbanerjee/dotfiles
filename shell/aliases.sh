@@ -15,10 +15,6 @@ alias ll='ls -alFh'
 alias la='ls -A'
 alias l='ls -alFh'
 
-# Add an "alert" alias for long running commands.  Use like so:
-#   sleep 10; alert
-alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
-
 # system
 alias ..="cd .."
 alias cd..="cd .."
@@ -82,6 +78,5 @@ alias ts="tmux switch -t"
 # conda
 alias cab="conda activate base"
 alias cda="conda deactivate"
-alias can="conda activate net-analysis"
 alias exp="conda env export --no-builds"
 
