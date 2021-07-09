@@ -39,11 +39,13 @@ Symlinking repository to `~/` is managed by the excellent [Dotbot][dotbot]. Usef
     $ rm -rf ~/.bashrc # Linux/WSL2
 
     # Symlink dotfiles
-    $ cd ~/.dotfiles && ./install-mac # macOs
+    $ cd ~/.dotfiles && ./install-mac # macOS
     $ cd ~/.dotfiles && ./install     # Linux/WSL2
     ```
 
-<img src='./screenshot.jpg'>
+<p align='center'>
+  <img src='./screenshot-dotbot.png' height='350'>
+</p>
 
 3.  Install a range of preferred packages. See [system-setup][ss], [system-setup-mac][ssm], [setup-coc-nvim][scn], [setup-vundle][sv].
 
@@ -59,7 +61,9 @@ Symlinking repository to `~/` is managed by the excellent [Dotbot][dotbot]. Usef
 
 Neovim:
 
-<img src='./nvim.png'>
+<p align='center'>
+  <img src='./screenshot-nvim.png'>
+</p>
 
 ## License
 
