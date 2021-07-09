@@ -7,34 +7,39 @@ endif
 
 call plug#begin('~/.config/nvim/autoload/plugged')
 
-Plug 'amix/vim-zenroom2'                              " Markdown editing in zen mode 
-Plug 'dbakker/vim-projectroot'                        " Allows FZF to search in project root
-Plug 'dense-analysis/ale'                             " LSP, linting, formatting
-Plug 'edkolev/tmuxline.vim'                           " Tmux status line generator using airline
-Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries'  }   " Go support
+Plug 'amix/vim-zenroom2'                                    " Markdown editing in zen mode 
+Plug 'dbakker/vim-projectroot'                              " Allows FZF to search in project root
+Plug 'dense-analysis/ale'                                   " LSP, linting, formatting
+Plug 'edkolev/tmuxline.vim'                                 " Tmux status line generator using airline
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries'  }         " Go support
 Plug 'iamcco/markdown-preview.nvim', {
   \ 'do': { -> mkdp#util#install()  },
   \ 'for': ['markdown', 'vim-plug']
-  \ }                                                 " Markdown preview
-Plug 'jiangmiao/auto-pairs'                           " Bracket matching
-Plug 'junegunn/fzf', {'do': { -> fzf#install() }}     " Fuzzy finder
+  \ }                                                       " Markdown preview
+Plug 'jiangmiao/auto-pairs'                                 " Bracket matching
+Plug 'junegunn/fzf', {'do': { -> fzf#install() }}           " Fuzzy finder
 Plug 'junegunn/fzf.vim'                               
-Plug 'junegunn/goyo.vim'                              " Zen mode
-Plug 'lervag/vimtex'                                  " LaTeX support
-Plug 'maxbrunsfeld/vim-yankstack'                     " Turns default register into a stack
-Plug 'mhinz/vim-signify'                              " Git changes shown in column
-Plug 'mhinz/vim-startify'                             " Start screen
-Plug 'morhetz/gruvbox'                                " Colour scheme
-Plug 'neoclide/coc.nvim', {'branch': 'release'}       " Code completion (WARN: Latest stable node version required)
-Plug 'ryanoasis/vim-devicons'                         " Coloured file type icons
-Plug 'sheerun/vim-polyglot'                           " Syntax highlighting/language pack
-Plug 'tpope/vim-commentary'                           " Code commenting
-Plug 'tpope/vim-fugitive'                             " Git wrapper
-Plug 'tpope/vim-surround'                             " Delete, change, add surroundings
-Plug 'vim-airline/vim-airline'                        " Status and tabline
-Plug 'vim-airline/vim-airline-themes'                 " Airline themes
-Plug 'wakatime/vim-wakatime'                          " Coding metrics
-Plug 'yuttie/comfortable-motion.vim'                  " Smooth scrolling
+Plug 'junegunn/goyo.vim'                                    " Zen mode
+Plug 'lervag/vimtex'                                        " LaTeX support
+Plug 'maxbrunsfeld/vim-yankstack'                           " Turns default register into a stack
+Plug 'mhinz/vim-signify'                                    " Git changes shown in column
+Plug 'mhinz/vim-startify'                                   " Start screen
+Plug 'morhetz/gruvbox'                                      " Colour scheme
+Plug 'neoclide/coc.nvim', {'branch': 'release'}             " Code completion (WARN: Latest stable node version required)
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'} " LSP
+Plug 'nvim-lua/popup.nvim'
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim'                        " Find, Filter, Preview, Pick
+Plug 'ryanoasis/vim-devicons'                               " Coloured file type icons
+Plug 'sheerun/vim-polyglot'                                 " Syntax highlighting/language pack
+Plug 'tpope/vim-commentary'                                 " Code commenting
+Plug 'tpope/vim-fugitive'                                   " Git wrapper
+Plug 'tpope/vim-surround'                                   " Delete, change, add surroundings
+Plug 'vim-airline/vim-airline'                              " Status and tabline
+Plug 'vim-airline/vim-airline-themes'                       " Airline themes
+Plug 'wakatime/vim-wakatime'                                " Coding metrics
+Plug 'wfxr/minimap.vim'                                     " Minimap
+Plug 'yuttie/comfortable-motion.vim'                        " Smooth scrolling
 
 call plug#end()
 
@@ -92,9 +97,9 @@ if has('popupwin')
     let g:fzf_layout = { 'window': { 'width': 0.8, 'height': 0.8 } }
     let $FZF_DEFAULT_OPTS='--reverse'
 endif
-map <leader>f :ProjectRootExe FZF<CR>
-map <leader>g :ProjectRootExe Rg<CR>
-map <leader>b :Buffers<CR>
+map <leader>ff :ProjectRootExe FZF<CR>
+map <leader>fg :ProjectRootExe Rg<CR>
+map <leader>fb :Buffers<CR>
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""
@@ -134,8 +139,14 @@ nmap <leader>ac  <Plug>(coc-codeaction)
 nmap <leader>qf  :<C-u>CocFix<CR>
 nmap <leader>r <Plug>(coc-rename)
 
-" Start explorer automatically
-autocmd User CocNvimInit :CocCommand explorer
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""
+" => nvim-telescope/telescope.nvim
+"""""""""""""""""""""""""""""""""""""""""""""""""""
+nnoremap <leader>t <cmd>Telescope <cr>
+nnoremap <leader>f <cmd>Telescope find_files<cr>
+nnoremap <leader>g <cmd>Telescope live_grep<cr>
+nnoremap <leader>b <cmd>Telescope buffers<cr>
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""
@@ -158,6 +169,15 @@ let g:airline#extensions#tabline#right_sep = ' '
 let g:airline#extensions#tabline#right_alt_sep = ' '
 let g:airline_section_y = ''
 let g:airline_theme='gruvbox'
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""
+" => wfxr/minimap.vim
+"""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:minimap_width = 2
+let g:minimap_git_colors = 1
+let g:minimap_auto_start = 1
+let g:minimap_auto_start_win_enter = 0
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""
