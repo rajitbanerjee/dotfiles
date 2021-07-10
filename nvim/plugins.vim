@@ -61,10 +61,6 @@ let g:ale_fixers = {
 " Code formatting
 nnoremap <leader>l :ALEFix<CR>
 
-" Find errors
-nmap <silent> <C-k> <Plug>(ale_previous_wrap)
-nmap <silent> <C-j> <Plug>(ale_next_wrap)
-
 " Disabling highlighting
 let g:ale_set_highlights = 0
 
