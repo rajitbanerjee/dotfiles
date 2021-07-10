@@ -47,24 +47,22 @@ fi
 # git
 alias ga="git add"
 alias gaa="git add --all"
+alias gac="git add . && git commit -m"
 alias gc="git commit -m"
-alias gs="git status"
+alias gcd="git checkout"
+alias gd="git diff --color-words"
+alias gds="git diff --staged --color-words"
+alias gia="git status --porcelain | sed -n -e 's/^?? //p' >> .gitignore"
+alias gl="git log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all"
 alias gp="git push"
 alias gpl="git pull"
 alias gpla="git-pull-all . -r"
-alias gd="git diff --color-words"
-alias gds="git diff --staged --color-words"
-alias gac="git add . && git commit -m"
 alias gr="git restore"
 alias grs="git restore --staged"
-alias gl="git log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all"
+alias gs="git status"
 alias gsu="git submodule update --init --recursive"
 alias gsur="git submodule update --remote"
 alias gu="git reset --soft HEAD~1"
-alias gia="git status --porcelain | sed -n -e 's/^?? //p' >> .gitignore"
-if [[ "$(uname -s)" == "Linux" ]]; then
-    alias ghr="xdg-open https://github.com/rajitbanerjee?tab=repositories"
-fi
 
 
 # tmux
