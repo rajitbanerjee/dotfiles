@@ -48,6 +48,7 @@ fi
 alias ga="git add"
 alias gaa="git add --all"
 alias gac="git add . && git commit -m"
+alias gap="git add --all -p"
 alias gc="git commit -m"
 alias gcd="git checkout"
 alias gd="git diff --color-words"
