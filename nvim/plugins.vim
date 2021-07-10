@@ -8,7 +8,7 @@ endif
 call plug#begin('~/.config/nvim/autoload/plugged')
 
 Plug 'amix/vim-zenroom2'                                    " Markdown editing in zen mode 
-Plug 'dbakker/vim-projectroot'                              " Allows FZF to search in project root
+Plug 'dbakker/vim-projectroot'                              " Dependency (fzf.vim)
 Plug 'dense-analysis/ale'                                   " LSP, linting, formatting
 Plug 'edkolev/tmuxline.vim'                                 " Tmux status line generator using airline
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries'  }         " Go support
@@ -17,18 +17,18 @@ Plug 'iamcco/markdown-preview.nvim', {
   \ 'for': ['markdown', 'vim-plug']
   \ }                                                       " Markdown preview
 Plug 'jiangmiao/auto-pairs'                                 " Bracket matching
-Plug 'junegunn/fzf', {'do': { -> fzf#install() }}           " Fuzzy finder
-Plug 'junegunn/fzf.vim'                               
+Plug 'junegunn/fzf', {'do': { -> fzf#install() }}           " Dependency (fzf.vim) 
+Plug 'junegunn/fzf.vim'                                     " Fuzzy finder
 Plug 'junegunn/goyo.vim'                                    " Zen mode
 Plug 'lervag/vimtex'                                        " LaTeX support
 Plug 'maxbrunsfeld/vim-yankstack'                           " Turns default register into a stack
 Plug 'mhinz/vim-signify'                                    " Git changes shown in column
 Plug 'mhinz/vim-startify'                                   " Start screen
 Plug 'morhetz/gruvbox'                                      " Colour scheme
-Plug 'neoclide/coc.nvim', {'branch': 'release'}             " Code completion (WARN: Latest stable node version required)
+Plug 'neoclide/coc.nvim', {'branch': 'release'}             " Code completion
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'} " LSP
-Plug 'nvim-lua/popup.nvim'
-Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-lua/popup.nvim'                                  " Dependency (telescope.nvim)
+Plug 'nvim-lua/plenary.nvim'                                " Dependency (telescope.nvim)
 Plug 'nvim-telescope/telescope.nvim'                        " Find, Filter, Preview, Pick
 Plug 'ryanoasis/vim-devicons'                               " Coloured file type icons
 Plug 'sheerun/vim-polyglot'                                 " Syntax highlighting/language pack
@@ -37,6 +37,7 @@ Plug 'tpope/vim-fugitive'                                   " Git wrapper
 Plug 'tpope/vim-surround'                                   " Delete, change, add surroundings
 Plug 'vim-airline/vim-airline'                              " Status and tabline
 Plug 'vim-airline/vim-airline-themes'                       " Airline themes
+Plug 'voldikss/vim-floaterm'                                " Floating terminal
 Plug 'wakatime/vim-wakatime'                                " Coding metrics
 Plug 'wfxr/minimap.vim'                                     " Minimap
 Plug 'yuttie/comfortable-motion.vim'                        " Smooth scrolling
@@ -169,6 +170,18 @@ let g:airline#extensions#tabline#right_sep = ' '
 let g:airline#extensions#tabline#right_alt_sep = ' '
 let g:airline_section_y = ''
 let g:airline_theme='gruvbox'
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""
+" => voldikss/vim-floaterm 
+"""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:floaterm_keymap_toggle = '<C-t>'
+let g:floaterm_title = "($1/$2)"
+
+let g:floaterm_gitcommit = 'floaterm'
+let g:floaterm_autoinsert = 1
+let g:floaterm_width = 0.9
+let g:floaterm_height = 0.9
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""
