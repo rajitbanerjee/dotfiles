@@ -94,13 +94,13 @@ nmap <leader>m <Plug>MarkdownPreviewToggle
 """""""""""""""""""""""""""""""""""""""""""""""""""
 " => junegunn/fzf.vim
 """""""""""""""""""""""""""""""""""""""""""""""""""
-if has('popupwin')
-    let g:fzf_layout = { 'window': { 'width': 0.8, 'height': 0.8 } }
-    let $FZF_DEFAULT_OPTS='--reverse'
-endif
-map <leader>ff :ProjectRootExe FZF<CR>
-map <leader>fg :ProjectRootExe Rg<CR>
+let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.9 } }
+let $FZF_DEFAULT_OPTS='--reverse'
+
+map <leader>f :ProjectRootExe FZF<CR>
+map <leader>g :ProjectRootExe Rg<CR>
 map <leader>fb :Buffers<CR>
+map <leader>b :BCommits <CR>
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""
@@ -111,6 +111,7 @@ let g:user_zen_mode='a'
 let g:goyo_width=100
 let g:goyo_margin_top = 2
 let g:goyo_margin_bottom = 2
+
 nnoremap <silent> <leader>z :Goyo<CR>
 
 
@@ -145,9 +146,8 @@ nmap <leader>r <Plug>(coc-rename)
 " => nvim-telescope/telescope.nvim
 """""""""""""""""""""""""""""""""""""""""""""""""""
 nnoremap <leader>t <cmd>Telescope <cr>
-nnoremap <leader>f <cmd>Telescope find_files<cr>
-nnoremap <leader>g <cmd>Telescope live_grep<cr>
-nnoremap <leader>b <cmd>Telescope buffers<cr>
+nnoremap <leader>ff <cmd>Telescope find_files<cr>
+nnoremap <leader>fg <cmd>Telescope live_grep<cr>
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""
@@ -192,11 +192,14 @@ let g:minimap_git_colors = 1
 let g:minimap_auto_start = 0
 let g:minimap_auto_start_win_enter = 1
 
+command! M execute ":MinimapToggle"
+
 
 """""""""""""""""""""""""""""""""""""""""""""""""""
 " => yuttie/comfortable-motion.vim
 """""""""""""""""""""""""""""""""""""""""""""""""""
 let g:comfortable_motion_no_default_key_mappings = 1
+
 nnoremap <silent> <leader>j :call comfortable_motion#flick(150)<CR>
 nnoremap <silent> <leader>k :call comfortable_motion#flick(-150)<CR>
 
