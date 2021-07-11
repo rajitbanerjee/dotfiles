@@ -12,9 +12,7 @@
     },
     "file": {
       "root": { "template": "[icon & 1] PROJECT ([root])" },
-      "reveal": {
-        "auto": true
-      }
+      "autoReveal": true
     },
     "focus": true,
     "icon": {

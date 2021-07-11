@@ -125,9 +125,9 @@ nmap <C-n> <Plug>yankstack_substitute_newer_paste
 " => neoclide/coc.nvim
 """""""""""""""""""""""""""""""""""""""""""""""""""
 nnoremap <silent><nowait> <leader>e  :<C-u>CocCommand explorer<CR>
+nnoremap <silent><nowait> <leader>o  :<C-u>CocCommand editor.action.organizeImport<CR>
+nnoremap <silent><nowait> <leader>cm  :<C-u>CocList commands<CR>
 nnoremap <silent><nowait> <leader>a  :<C-u>CocList diagnostics<CR>
-nnoremap <silent><nowait> <leader>c  :<C-u>CocList commands<CR>
-nnoremap <silent><nowait> <leader>o  :<C-u>CocList outline<CR>
 nnoremap <silent><nowait> <leader>j  :<C-u>CocNext<CR>
 nnoremap <silent><nowait> <leader>k  :<C-u>CocPrev<CR>
 
@@ -169,6 +169,7 @@ nnoremap <leader>t <cmd>Telescope <CR>
 nnoremap <leader>f <cmd>Telescope find_files<CR>
 nnoremap <leader>g <cmd>Telescope live_grep<CR>
 nnoremap <leader>gf <cmd>Telescope git_files<CR>
+nnoremap <leader>c <cmd>Telescope commands<CR>
 
 lua <<EOF
 require('telescope').setup({
