@@ -26,6 +26,7 @@ Plug 'mhinz/vim-signify'                                    " Git changes shown 
 Plug 'mhinz/vim-startify'                                   " Start screen
 Plug 'morhetz/gruvbox'                                      " Colour scheme
 Plug 'neoclide/coc.nvim', {'branch': 'release'}             " Code completion
+Plug 'nicwest/vim-http'                                     " REST client
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'} " LSP
 Plug 'nvim-lua/popup.nvim'                                  " Dependency (telescope.nvim)
 Plug 'nvim-lua/plenary.nvim'                                " Dependency (telescope.nvim)
@@ -136,6 +137,13 @@ nmap <silent>gr <Plug>(coc-references)
 nmap <leader>ac  <Plug>(coc-codeaction)
 nmap <leader>qf  :<C-u>CocFix<CR>
 nmap <leader>r <Plug>(coc-rename)
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""
+" => nicwest/vim-http
+"""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:vim_http_split_vertically = 1
+let g:vim_http_tempbuffer = 1
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""
