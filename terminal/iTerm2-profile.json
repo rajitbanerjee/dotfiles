@@ -11,7 +11,7 @@
     },
     "Ansi 1 Color": {
         "Alpha Component": 1,
-        "Blue Component": 0.09068439155817032,
+        "Blue Component": 0.09068439155817035,
         "Color Space": "Calibrated",
         "Green Component": 0.05879192054271698,
         "Red Component": 0.7452905178070068
@@ -60,7 +60,7 @@
     },
     "Ansi 2 Color": {
         "Alpha Component": 1,
-        "Blue Component": 0.08289474248886108,
+        "Blue Component": 0.08289474248886111,
         "Color Space": "Calibrated",
         "Green Component": 0.5306191444396973,
         "Red Component": 0.5259160399436951
@@ -361,9 +361,9 @@
     "Non Ascii Font": "Monaco 12",
     "Non-ASCII Anti Aliased": true,
     "Normal Font": "FiraCodeNerdFontComplete-Regular 16",
-    "Option Key Sends": 0,
+    "Option Key Sends": 2,
     "Prompt Before Closing 2": false,
-    "Right Option Key Sends": 0,
+    "Right Option Key Sends": 2,
     "Rows": 25,
     "Screen": -1,
     "Scrollback Lines": 1000,
@@ -387,7 +387,7 @@
     "Sync Title": false,
     "Tags": [],
     "Terminal Type": "xterm-256color",
-    "Transparency": 0.019898080583756347,
+    "Transparency": 0.019898080583756344,
     "Unlimited Scrollback": false,
     "Use Bold Font": true,
     "Use Bright Bold": true,
