@@ -1,6 +1,5 @@
 set history=500
 set updatetime=50
-set autochdir " Change working dir on opening a file
 set nobackup
 set nowb
 set noswapfile

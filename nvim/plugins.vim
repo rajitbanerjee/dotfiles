@@ -94,8 +94,8 @@ nmap <leader>m <Plug>MarkdownPreviewToggle
 let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.9 } }
 let $FZF_DEFAULT_OPTS='--reverse'
 
-map <leader>f :ProjectRootExe FZF<CR>
-map <leader>g :ProjectRootExe Rg<CR>
+map <leader>ff :ProjectRootExe FZF<CR>
+map <leader>fg :ProjectRootExe Rg<CR>
 map <leader>fb :Buffers<CR>
 map <leader>b :BCommits <CR>
 
@@ -149,9 +149,23 @@ let g:vim_http_tempbuffer = 1
 """""""""""""""""""""""""""""""""""""""""""""""""""
 " => nvim-telescope/telescope.nvim
 """""""""""""""""""""""""""""""""""""""""""""""""""
-nnoremap <leader>t <cmd>Telescope <cr>
-nnoremap <leader>ff <cmd>Telescope find_files<cr>
-nnoremap <leader>fg <cmd>Telescope live_grep<cr>
+nnoremap <leader>t <cmd>Telescope <CR>
+nnoremap <leader>f <cmd>Telescope find_files<CR>
+nnoremap <leader>g <cmd>Telescope live_grep<CR>
+nnoremap <leader>gf <cmd>Telescope git_files<CR>
+
+lua <<EOF
+require('telescope').setup({
+  defaults = {
+    layout_config = {
+      horizontal = { width = 0.9, preview_width = 0.7 }
+      -- other layout configuration here
+    },
+    -- other defaults configuration here
+  },
+  -- other configuration values here
+})
+EOF
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""
