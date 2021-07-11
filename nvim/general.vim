@@ -81,13 +81,6 @@ set si
 set wrap
 set foldlevelstart=99
 
-" Specify the behaviour when switching between buffers
-try
-    set switchbuf=useopen,usetab,newtab
-    set stal=2
-catch
-endtry
-
 " Return to last edit position when opening files
 au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 
