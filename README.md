@@ -47,7 +47,7 @@ Symlinking repository to `~/` is managed by the excellent [Dotbot][dotbot]. Usef
   <img src='./screenshot-dotbot.png' height='350'>
 </p>
 
-3.  Install a range of preferred packages. See [system-setup][ss], [system-setup-mac][ssm], [setup-coc-nvim][scn], [setup-vundle][sv].
+3.  Install a range of preferred packages. See [system-setup][ss], [system-setup-mac][ssm] and [setup-coc-nvim][scn].
 
     ```zsh
     $ ./scripts/system-setup-mac  # macOS
@@ -72,12 +72,10 @@ Neovim:
 [travis-badge]: https://api.travis-ci.com/rajitbanerjee/dotfiles.svg?branch=main
 [travis]: https://travis-ci.com/rajitbanerjee/dotfiles
 [scripts]: https://github.com/rajitbanerjee/scripts
-[amix]: https://github.com/amix/vimrc
 [anish]: https://github.com/anishathalye/dotfiles/blob/master/tmux.conf
 [dotbot]: https://github.com/anishathalye/dotbot
 [ohmyzsh]: https://github.com/ohmyzsh/ohmyzsh
 [ss]: https://github.com/rajitbanerjee/scripts/blob/master/system-setup
 [ssm]: https://github.com/rajitbanerjee/scripts/blob/master/system-setup-mac
 [scn]: https://github.com/rajitbanerjee/scripts/blob/master/setup-coc-nvim
-[sv]: https://github.com/rajitbanerjee/scripts/blob/master/setup-vundle
 [license]: LICENSE
