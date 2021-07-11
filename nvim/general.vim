@@ -60,9 +60,10 @@ set novisualbell
 set t_vb=
 set tm=500
 
-" Character limit per line
+" Filetype settings
 au BufNewFile,BufRead *.py set colorcolumn=80
 au BufNewFile,BufRead *.go set colorcolumn=100
+au BufNewFile,BufRead *.http set ft=rest
 
 " Use spaces not tabs
 set expandtab
@@ -76,17 +77,11 @@ au BufNewFile,BufRead *.html,*.css,*.js,*.ts setlocal shiftwidth=2 tabstop=2
 set lbr
 set tw=500
 
-" Line indent, wpapping, folding
+" Line indent, wrapping, folding
 set si
 set wrap
 set foldlevelstart=99
 
 " Return to last edit position when opening files
 au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
-
-" Disable directory listing netrw
-augroup goodbye_netrw
-    au!
-    autocmd VimEnter * silent! au! FileExplorer *
-augroup END
 
