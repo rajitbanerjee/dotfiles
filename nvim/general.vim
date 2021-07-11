@@ -79,7 +79,6 @@ set tw=500
 " Line indent, wpapping, folding
 set si
 set wrap
-set foldmethod=indent "
 set foldlevelstart=99
 
 " Specify the behaviour when switching between buffers
