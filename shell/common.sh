@@ -9,6 +9,10 @@ export LC_ALL=en_US.UTF-8
 export PATH=~/.local/scripts:$PATH
 export PATH=~/.local/bin:$PATH
 
+# man
+export MANPAGER='nvim +Man!'
+export MANWIDTH=999
+
 if [[ "$(uname -s)" == "Darwin" ]]; then
     export PATH=~/Library/Python/3.9/bin:$PATH
     HB_CNF_HANDLER="$(brew --repository)/Library/Taps/homebrew/homebrew-command-not-found/handler.sh"
@@ -20,10 +24,6 @@ if [[ "$(uname -s)" == "Darwin" ]]; then
     export JAVA_8_HOME=$(/usr/libexec/java_home -v1.8)
     export JAVA_HOME=$JAVA_8_HOME
 elif [[ "$(uname -s)" == "Linux" ]]; then
-    ## Bash Wakatime
-    if [ -f ~/.local/share/bash-wakatime/bash-wakatime.sh ]; then
-        . ~/.local/share/bash-wakatime/bash-wakatime.sh
-    fi
 
     ## Java 11
     export JAVA_HOME="/usr/lib/jvm/java-11-openjdk-amd64"
