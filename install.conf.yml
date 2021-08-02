@@ -10,8 +10,6 @@
 - clean: ["~"]
 
 - link:
-    ~/.bash:
-    ~/.bashrc:
     ~/.config/base.yml: base.yml
     ~/.config/nvim: nvim
     ~/.jupyter/jupyter_notebook_config.json: jupyter/jupyter_notebook_config.json
@@ -19,7 +17,9 @@
     ~/.local/scripts: scripts # custom bash/python scripts
     ~/.local/share/jupyter/nbextensions: jupyter/nbextensions
     ~/.p10k.zsh: zsh/p10k.zsh
-    ~/.shell:
+    ~/.shell/aliases.sh: shell/aliases.sh
+    ~/.shell/common.sh: shell/common.sh
+    ~/.shell/functions.sh: shell/functions.sh
     ~/.tmux.conf:
     ~/.zsh:
     ~/.zshrc:

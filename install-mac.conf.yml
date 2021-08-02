@@ -1,4 +1,4 @@
-# Config file used by ./install-mac script to link dotfiles from this 
+# Config file used by ./install-mac script to link dotfiles from this
 # repository to ~/. Useful in setting up a new system, or maintaining
 # current dotfiles with version control.
 
@@ -7,7 +7,7 @@
       create: true # new link, if non-existent
       relink: true
 
-- clean: ['~']
+- clean: ["~"]
 
 - link:
     ~/.config/base.yml: base.yml
@@ -23,4 +23,4 @@
     ~/.zshrc:
 
 - shell:
-  - [git submodule update --init --recursive, Installing submodules]
+    - [git submodule update --init --recursive, Installing submodules]

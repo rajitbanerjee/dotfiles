@@ -26,10 +26,10 @@ Plug 'mhinz/vim-signify'                                    " Git changes shown 
 Plug 'mhinz/vim-startify'                                   " Start screen
 Plug 'morhetz/gruvbox'                                      " Colour scheme
 Plug 'neoclide/coc.nvim', {'branch': 'release'}             " Code completion
-Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'} " LSP
-Plug 'nvim-lua/popup.nvim'                                  " Dependency (telescope.nvim)
 Plug 'nvim-lua/plenary.nvim'                                " Dependency (telescope.nvim)
+Plug 'nvim-lua/popup.nvim'                                  " Dependency (telescope.nvim)
 Plug 'nvim-telescope/telescope.nvim'                        " Find, Filter, Preview, Pick
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'} " LSP
 Plug 'ryanoasis/vim-devicons'                               " Coloured file type icons
 Plug 'sheerun/vim-polyglot'                                 " Syntax highlighting/language pack
 Plug 'tpope/vim-commentary'                                 " Code commenting

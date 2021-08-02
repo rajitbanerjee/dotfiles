@@ -5,7 +5,6 @@
   - [shell/](./shell/): common configs for all types of shells
   - [terminal/](./terminal/): terminal emulator settings
   - [tmux.conf](./tmux.conf): tmux configs, borrowed from [anishathalye/dotfiles/tmux.conf][anish]
-  - [bash/](./bash/), [bashrc](./bashrc): bash configurations
 - Editor
   - [nvim/](./nvim/): neovim configurations
   - [vscode.txt](./vscode.txt): link to vscode settings sync gist
