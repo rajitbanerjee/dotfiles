@@ -57,6 +57,7 @@ let g:ale_linters = {
 let g:ale_fixers = { 
   \ '*': ['prettier'],
   \ 'python': ['autopep8', 'isort'], 
+  \ 'tex': ['latexindent']
   \ }
 
 " Code formatting
