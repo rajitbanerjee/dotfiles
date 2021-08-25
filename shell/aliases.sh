@@ -40,7 +40,7 @@ if [[ "$(uname -s)" == "Linux" ]]; then
 elif [[ "$(uname -s)" == "Darwin" ]]; then
     alias doc="cd ~/Documents"
     alias dp="cd ~/Desktop"
-    alias pj="cd ~/Documents/projects"
+    alias pj="cd ~/Git/projects"
 fi
 
 
