@@ -40,7 +40,7 @@ Symlinking repository to `~/` is managed by the excellent [Dotbot][dotbot]. Usef
     ```
 
 <p align='center'>
-  <img src='./screenshots/dotbot.png' height='350'>
+  <img src='./screenshots/dotbot.png'>
 </p>
 
 3.  Install a range of preferred packages. See [system-setup][ss], [system-setup-mac][ssm] and [setup-coc-nvim][scn].
