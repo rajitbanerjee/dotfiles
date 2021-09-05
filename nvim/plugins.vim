@@ -34,6 +34,7 @@ Plug 'ryanoasis/vim-devicons'                               " Coloured file type
 Plug 'sheerun/vim-polyglot'                                 " Syntax highlighting/language pack
 Plug 'tpope/vim-commentary'                                 " Code commenting
 Plug 'tpope/vim-fugitive'                                   " Git wrapper
+Plug 'tpope/vim-obsession'                                  " Save session
 Plug 'tpope/vim-repeat'                                     " Enables . for plugins
 Plug 'tpope/vim-surround'                                   " Delete, change, add surroundings
 Plug 'vim-airline/vim-airline'                              " Status and tabline
