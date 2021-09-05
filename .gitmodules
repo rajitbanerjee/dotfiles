@@ -20,3 +20,6 @@
 [submodule "zsh/custom/plugins/zsh-completions"]
 	path = zsh/custom/plugins/zsh-completions
 	url = https://github.com/zsh-users/zsh-completions
+[submodule "tpm"]
+	path = tmux/tpm
+	url = https://github.com/tmux-plugins/tpm

@@ -1,4 +1,4 @@
-# Config file used by ./install script to link dotfiles from this
+# Config file used by ./install-mac script to link dotfiles from this
 # repository to ~/. Useful in setting up a new system, or maintaining
 # current dotfiles with version control.
 
@@ -10,19 +10,21 @@
 - clean: ["~"]
 
 - link:
-    ~/.config/base.yml: base.yml
+    ~/.config/base.yml: python/base.yml
     ~/.config/nvim: nvim
-    ~/.jupyter/jupyter_notebook_config.json: jupyter/jupyter_notebook_config.json
-    ~/.jupyter/nbconfig/notebook.json: jupyter/notebook.json
+    ~/.jupyter/jupyter_notebook_config.json: python/jupyter/jupyter_notebook_config.json
+    ~/.jupyter/nbconfig/notebook.json: python/jupyter/notebook.json
     ~/.local/scripts: scripts # custom bash/python scripts
-    ~/.local/share/jupyter/nbextensions: jupyter/nbextensions
+    ~/.local/share/jupyter/nbextensions: python/jupyter/nbextensions
     ~/.p10k.zsh: zsh/p10k.zsh
     ~/.shell/aliases.sh: shell/aliases.sh
+    ~/.shell/aws.sh: shell/aws.sh
     ~/.shell/common.sh: shell/common.sh
     ~/.shell/functions.sh: shell/functions.sh
-    ~/.tmux.conf:
+    ~/.tmux.conf: tmux/tmux.conf
+    ~/.tmux/plugins/tpm: tmux/tpm
     ~/.zsh:
-    ~/.zshrc:
+    ~/.zshrc: zsh/zshrc
 
 - shell:
     - [git submodule update --init --recursive, Installing submodules]
