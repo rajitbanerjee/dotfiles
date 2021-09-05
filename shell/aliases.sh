@@ -11,9 +11,7 @@ if [ -x /usr/bin/dircolors ]; then
 fi
 
 # some more ls aliases
-alias ll='ls -alFh'
-alias la='ls -A'
-alias l='ls -alFh'
+
 
 # system
 alias ..="cd .."
@@ -23,10 +21,12 @@ alias cls="clear"
 alias env="env | sort | less"
 alias findf="find -type f -name"
 alias jn="jupyter notebook"
+alias l='ls -alFh'
+alias la='ls -A'
+alias ll='ls -alFh'
 alias mv="mv -i"
 alias n="nvim ."
 alias q="exit"
-alias sb="source ~/.bashrc"
 alias sl="ls"
 alias vim="nvim"
 if [[ "$(uname -s)" == "Linux" ]]; then
@@ -42,7 +42,6 @@ elif [[ "$(uname -s)" == "Darwin" ]]; then
     alias dp="cd ~/Desktop"
     alias pj="cd ~/Git/projects"
 fi
-
 
 # git
 alias ga="git add"
@@ -65,7 +64,6 @@ alias gsu="git submodule update --init --recursive"
 alias gsur="git submodule update --remote"
 alias gu="git reset --soft HEAD~1"
 
-
 # tmux
 alias tl="tmux ls"
 alias tn="tmux new -s"
@@ -73,6 +71,10 @@ alias tks="tmux kill-session -t"
 alias tka="tmux kill-session -a"
 alias ta="tmux attach-session -t"
 alias ts="tmux switch -t"
+
+# code
+alias codex="code --list-extentions"
+alias codein="cat ~/.dotfiles/code/extensions.txt | xargs -L 1 echo code --install-extension"
 
 # conda
 alias cab="conda activate base"
