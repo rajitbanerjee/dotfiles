@@ -1,21 +1,19 @@
 # Dotfiles \[[![Build Status][travis-badge]][travis]]
 
 - Shell
-  - [zsh/](./zsh/), [zshrc](./zshrc): zsh configurations; plugins managed by [ohmyzsh][ohmyzsh]
+  - [zsh/](./zsh/): zsh configurations; plugins managed by [ohmyzsh][ohmyzsh]
   - [shell/](./shell/): common configs for all types of shells
   - [terminal/](./terminal/): terminal emulator settings
-  - [tmux.conf](./tmux.conf): tmux configs, borrowed from [anishathalye/dotfiles/tmux.conf][anish]
+  - [tmux/](./tmux/): tmux configs; `tmux.conf` adapted from [anishathalye/dotfiles/tmux.conf][anish]
 - Editor
   - [nvim/](./nvim/): neovim configurations
-  - [vscode.txt](./vscode.txt): link to vscode settings sync gist
+  - [code/](./code/): list of vscode extensions and link to vscode settings sync gist
   - [fonts/](./fonts/): preferred font files
 - Programming
-  - [base.yml](./base.yml): conda base environment packages
-  - [jupyter/](./jupyter/): jupyter notebook configurations
+  - [python/](./python/): conda base environment packages and jupyter notebook configurations
   - [scripts/][scripts]: python/bash scripts
 - Dotbot
-  - [install.conf.yml](./install.conf.yml), [install-mac.conf.yml](./install-mac.conf.yml): config files for dotbot
-  - [./install](./install), [./install-mac](./install-mac): prepare dotfiles with dotbot
+  - [install.conf.yml](./install.conf.yml), [./install](./install): config and installation for dotbot
 
 ## Installation
 
@@ -38,12 +36,11 @@ Symlinking repository to `~/` is managed by the excellent [Dotbot][dotbot]. Usef
     $ rm -rf ~/.bashrc # Linux/WSL2
 
     # Symlink dotfiles
-    $ cd ~/.dotfiles && ./install-mac # macOS
-    $ cd ~/.dotfiles && ./install     # Linux/WSL2
+    $ cd ~/.dotfiles && ./install
     ```
 
 <p align='center'>
-  <img src='./screenshot-dotbot.png' height='350'>
+  <img src='./screenshots/dotbot.png' height='350'>
 </p>
 
 3.  Install a range of preferred packages. See [system-setup][ss], [system-setup-mac][ssm] and [setup-coc-nvim][scn].
@@ -61,7 +58,7 @@ Symlinking repository to `~/` is managed by the excellent [Dotbot][dotbot]. Usef
 Neovim:
 
 <p align='center'>
-  <img src='./screenshot-nvim.png'>
+  <img src='./screenshots/nvim.png'>
 </p>
 
 ## License
