@@ -7,9 +7,6 @@
 
   /* coc-explorer */
   "explorer": {
-    "buffer": {
-      "root": { "template": "[icon & 1] OPEN EDITORS" }
-    },
     "file": {
       "root": { "template": "[icon & 1] PROJECT ([root])" },
       "reveal": {
@@ -22,10 +19,6 @@
     },
     "mouseMode": "singleclick",
     "sources": [
-      {
-        "name": "buffer",
-        "expand": true
-      },
       {
         "name": "file",
         "expand": true
