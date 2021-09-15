@@ -78,5 +78,10 @@
   "typescript": {
     /* Watchman required for this to work */
     "updateImportsOnFileMove": { "enable": true }
+  },
+
+  /* coc-java */
+  "java": {
+    "autobuild": { "enabled": false }
   }
 }
