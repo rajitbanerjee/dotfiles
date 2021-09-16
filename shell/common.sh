@@ -36,9 +36,15 @@ if [[ "$(uname -s)" == "Darwin" ]]; then
         source "$HB_CNF_HANDLER";
     fi
 
-    # Java 8
+    ## Java 8
     export JAVA_8_HOME=$(/usr/libexec/java_home -v1.8)
     export JAVA_HOME=$JAVA_8_HOME
+
+    ## Julia/FICO Xpress
+    export XPRESSDIR="/Applications/FICO\ Xpress/Xpress\ Workbench.app/Contents/Resources/xpressmp"
+    source /Applications/FICO\ Xpress/xpressmp/bin/xpvars.sh
+
+
 elif [[ "$(uname -s)" == "Linux" ]]; then
 
     ## Java 11
