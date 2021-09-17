@@ -21,6 +21,7 @@
     ~/.shell/aws.sh: shell/aws.sh
     ~/.shell/common.sh: shell/common.sh
     ~/.shell/functions.sh: shell/functions.sh
+    ~/.ssh/config: ssh/config
     ~/.tmux.conf: tmux/tmux.conf
     ~/.tmux/plugins/tpm: tmux/tpm
     ~/.zsh:

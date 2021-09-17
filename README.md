@@ -3,6 +3,7 @@
 - Shell
   - [zsh/](./zsh/): zsh configurations; plugins managed by [ohmyzsh][ohmyzsh]
   - [shell/](./shell/): common configs for all types of shells
+  - [ssh/](./ssh/): ssh config
   - [terminal/](./terminal/): terminal emulator settings
   - [tmux/](./tmux/): tmux configs; `tmux.conf` adapted from [anishathalye/dotfiles/tmux.conf][anish]
 - Editor
