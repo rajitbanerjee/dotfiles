@@ -7,3 +7,11 @@ csv() {
 sethost() {
     sudo scutil --set HostName "$1"
 }
+
+# convert markdown to pdf
+mkpdf() {
+    filename="$1"
+    base="${filename%.*}"
+    pandoc -o $base.pdf --pdf-engine=/Library/TeX/texbin/pdflatex $base.md
+    echo "File created: $base.pdf"
+}
