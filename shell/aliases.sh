@@ -70,6 +70,7 @@ alias tn="tmux new -s"
 alias tks="tmux kill-session -t"
 alias tka="tmux kill-session -a"
 alias ta="tmux attach-session -t"
+alias td="tmux detach-client -s"
 alias ts="tmux switch -t"
 
 # code
