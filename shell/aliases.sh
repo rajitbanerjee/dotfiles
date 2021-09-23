@@ -43,6 +43,14 @@ elif [[ "$(uname -s)" == "Darwin" ]]; then
     alias pj="cd ~/Git/projects"
 fi
 
+# ucd stage 4 autumn
+alias fyp="cd ~/Desktop/final-year-project"
+alias cc="cd ~/Desktop/cloud-computing"
+alias dm="cd ~/Desktop/data-mining"
+alias dist="cd ~/Desktop/distributed-systems"
+alias ml="cd ~/Desktop/machine-learning"
+alias opt="cd ~/Desktop/optimisation"
+
 # git
 alias ga="git add"
 alias gaa="git add --all"
