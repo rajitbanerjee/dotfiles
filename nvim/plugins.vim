@@ -63,6 +63,8 @@ let g:ale_fixers = {
 
 " Code formatting
 nnoremap <leader>l :ALEFix<CR>
+"" Custom java formatting script
+autocmd FileType java nnoremap <leader>l :silent !java-format %<CR>
 
 " Disabling highlighting
 let g:ale_set_highlights = 0

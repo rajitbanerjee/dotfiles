@@ -36,8 +36,9 @@ if [[ "$(uname -s)" == "Darwin" ]]; then
         source "$HB_CNF_HANDLER";
     fi
 
-    ## Java 8
+    ## Java
     export JAVA_8_HOME=$(/usr/libexec/java_home -v1.8)
+    export JAVA_11_HOME=$(/usr/libexec/java_home -v11)
     export JAVA_HOME=$JAVA_8_HOME
 
     ## Julia/FICO Xpress
