@@ -7,6 +7,7 @@ endif
 
 call plug#begin('~/.config/nvim/autoload/plugged')
 
+Plug 'alvan/vim-closetag'                                   " Autoclose tags (e.g. XML)
 Plug 'amix/vim-zenroom2'                                    " Markdown editing in zen mode 
 Plug 'dbakker/vim-projectroot'                              " Dependency (fzf.vim)
 Plug 'dense-analysis/ale'                                   " LSP, linting, formatting
@@ -45,6 +46,12 @@ Plug 'wfxr/minimap.vim'                                     " Minimap
 Plug 'yuttie/comfortable-motion.vim'                        " Smooth scrolling
 
 call plug#end()
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""
+" => alvan/vim-closetag
+"""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:closetag_filenames = '*.html,*.xhtml,*.phtml,*.xml'
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""
