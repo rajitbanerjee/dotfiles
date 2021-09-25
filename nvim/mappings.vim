@@ -14,8 +14,8 @@ nmap <leader>qa :qa<CR>
 map 0 ^
 map ; :
 noremap ;; ;
-nnoremap r <C-r>
-nnoremap <C-r> :%s/
+nnoremap u <C-r>
+nnoremap r :%s/
 nnoremap s /
 nnoremap <silent><leader>1 :source ~/.config/nvim/init.vim \| :PlugClean<CR> \| :PlugInstall<CR> \| :PlugUpdate<CR>
 map <silent> <leader><CR> :noh<CR>
