@@ -1,7 +1,7 @@
 {
   "load_extensions": {
     "jupyter-vim-binding/vim_binding": false,
-    "jupyter-js-widgets/extension": true,
+    "jupyter-js-widgets/extension": false,
     "nbextensions_configurator/config_menu/main": true,
     "contrib_nbextensions_help_item/main": true,
     "zenmode/main": true,
@@ -20,7 +20,7 @@
     "splitcell/splitcell": false,
     "rubberband/main": true,
     "printview/main": true,
-    "latex_envs/latex_envs": true,
+    "latex_envs/latex_envs": false,
     "addbefore/main": true,
     "hide_input_all/main": true,
     "move_selected_cells/main": true
