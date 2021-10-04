@@ -178,7 +178,7 @@
     "Green Component": 0.8298989534378052,
     "Red Component": 0.9006124138832092
   },
-  "Guid": "E73DBEFA-BBC0-4466-A6A8-64804B1FEFB6",
+  "Guid": "1BDCD32C-4A6C-44D0-A3DC-F8AE823F9A20",
   "Horizontal Spacing": 1,
   "Idle Code": 0,
   "Jobs to Ignore": ["rlogin", "ssh", "slogin", "telnet"],
@@ -352,7 +352,7 @@
     "Red Component": 0.7928692102432251
   },
   "Mouse Reporting": true,
-  "Name": "Default",
+  "Name": "iTerm2-profile",
   "Non Ascii Font": "Monaco 12",
   "Non-ASCII Anti Aliased": true,
   "Normal Font": "FiraCodeNerdFontComplete-Regular 14",
