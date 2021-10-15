@@ -79,6 +79,7 @@
 
   /* coc-java */
   "java": {
-    "autobuild": { "enabled": false }
+    "autobuild": { "enabled": false },
+      "jdt": {"ls": {"vmargs": "-javaagent:/Users/rajitbanerjee/.local/lib/lombok.jar"}}
   }
 }
