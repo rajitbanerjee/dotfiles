@@ -12,9 +12,12 @@ export PATH=~/.local/bin:$PATH
 ## Add Visual Studio Code (code)
 export PATH="$PATH:/Applications/VS Code.app/Contents/Resources/app/bin"
 
-# man
+## man
 export MANPAGER='nvim +Man!'
 export MANWIDTH=999
+
+## Fix SSL verification errors
+export SSL_CERT_FILE=/etc/ssl/cert.pem
 
 ## Conda setup
 __conda_setup="$(~/.local/share/conda/bin/conda shell.$0 hook 2> /dev/null)"
