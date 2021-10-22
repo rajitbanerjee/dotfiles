@@ -8,7 +8,7 @@
     "code_prettify/code_prettify": false,
     "collapsible_headings/main": true,
     "hinterland/hinterland": false,
-    "code_prettify/autopep8": false,
+    "code_prettify/autopep8": true,
     "scratchpad/main": true,
     "table_beautifier/main": true,
     "toc2/main": true,
@@ -40,6 +40,11 @@
   "Cell": {
     "cm_config": {
       "lineNumbers": true
+    }
+  },
+  "autopep8": {
+    "hotkeys": {
+      "process_all": "ctrl-meta-l"
     }
   }
 }
