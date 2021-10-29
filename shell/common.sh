@@ -48,6 +48,19 @@ if [[ "$(uname -s)" == "Darwin" ]]; then
     export XPRESSDIR="/Applications/FICO\ Xpress/Xpress\ Workbench.app/Contents/Resources/xpressmp"
     source /Applications/FICO\ Xpress/xpressmp/bin/xpvars.sh
 
+    ## Hadoop
+    export HADOOP_HOME="/usr/local/Cellar/hadoop/3.3.1/libexec"
+    export PATH=$PATH:$HADOOP_HOME/bin
+    export PATH=$PATH:$HADOOP_HOME/sbin
+    export HADOOP_CONF_DIR=$HADOOP_HOME/etc/hadoop
+    export HADOOP_MAPRED_HOME=$HADOOP_HOME
+    export HADOOP_COMMON_HOME=$HADOOP_HOME
+    export HADOOP_HDFS_HOME=$HADOOP_HOME
+    export YARN_HOME=$HADOOP_HOME
+    export HADOOP_COMMON_LIB_NATIVE_DIR=$HADOOP_HOME/lib/native
+    export HADOOP_OPTS="-Djava.library.path=$HADOOP_HOME/lib"
+    export HADOOP_CLASSPATH=${JAVA_HOME}/lib/tools.jar
+
 
 elif [[ "$(uname -s)" == "Linux" ]]; then
 
