@@ -9,9 +9,6 @@ export LC_ALL=en_US.UTF-8
 export PATH=~/.local/scripts:$PATH
 export PATH=~/.local/bin:$PATH
 
-## Add Visual Studio Code (code)
-export PATH="$PATH:/Applications/VS Code.app/Contents/Resources/app/bin"
-
 ## man
 export MANPAGER='nvim +Man!'
 export MANWIDTH=999
