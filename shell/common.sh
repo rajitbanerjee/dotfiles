@@ -58,7 +58,6 @@ if [[ "$(uname -s)" == "Darwin" ]]; then
     export HADOOP_OPTS="-Djava.library.path=$HADOOP_HOME/lib"
     export HADOOP_CLASSPATH=${JAVA_HOME}/lib/tools.jar
 
-
 elif [[ "$(uname -s)" == "Linux" ]]; then
 
     ## Java 11
