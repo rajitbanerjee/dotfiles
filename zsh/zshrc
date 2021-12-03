@@ -1,6 +1,6 @@
 #### FIG ENV VARIABLES ####
 # Please make sure this block is at the start of this file.
-[ -s ~/.fig/shell/pre.sh ] && source ~/.fig/shell/pre.sh
+[ -s ~/.fig/shell/pre.sh ] && source ~/.fig/shell/pre.sh && fig
 #### END FIG ENV VARIABLES ####
 
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
