@@ -17,6 +17,7 @@ fi
 alias ..="cd .."
 alias cd..="cd .."
 alias cdd="cd ~/.dotfiles"
+alias chx="chmod +x"
 alias cls="clear"
 alias env="env | sort | less"
 alias findf="find -type f -name"
