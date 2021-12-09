@@ -84,7 +84,7 @@ alias td="tmux detach-client -s"
 alias ts="tmux switch -t"
 
 # code
-alias codex="code --list-extentions"
+alias codex="code --list-extensions"
 alias codein="cat ~/.dotfiles/code/extensions.txt | xargs -L 1 echo code --install-extension"
 
 # conda

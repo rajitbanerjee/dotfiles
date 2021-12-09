@@ -1,5 +1,6 @@
 aaron-bond.better-comments
 christian-kohler.npm-intellisense
+christian-kohler.path-intellisense
 DavidAnson.vscode-markdownlint
 dbaeumer.vscode-eslint
 donjayamanne.githistory
@@ -10,6 +11,7 @@ esbenp.prettier-vscode
 eserozvataf.one-dark-pro-monokai-darker
 GabrielBB.vscode-lombok
 humao.rest-client
+James-Yu.latex-workshop
 jdinhlife.gruvbox
 mikestead.dotenv
 ms-azuretools.vscode-docker
@@ -31,8 +33,6 @@ redhat.vscode-yaml
 ritwickdey.LiveServer
 Shan.code-settings-sync
 streetsidesoftware.code-spell-checker
-TabNine.tabnine-vscode
-tomoki1207.pdf
 ue.alphabetical-sorter
 VisualStudioExptTeam.vscodeintellicode
 vscjava.vscode-java-debug
