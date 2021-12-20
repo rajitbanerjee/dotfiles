@@ -1,4 +1,4 @@
-# Config file used by ./install-mac script to link dotfiles from this
+# Config file used by ./install script to link dotfiles from this
 # repository to ~/. Useful in setting up a new system, or maintaining
 # current dotfiles with version control.
 
@@ -14,7 +14,7 @@
     ~/.config/nvim: nvim
     ~/.jupyter/jupyter_notebook_config.json: python/jupyter/jupyter_notebook_config.json
     ~/.jupyter/nbconfig/notebook.json: python/jupyter/notebook.json
-    ~/.local/scripts: scripts # custom bash/python scripts
+    ~/.local/scripts: scripts 
     ~/.local/share/jupyter/nbextensions: python/jupyter/nbextensions
     ~/.p10k.zsh: zsh/p10k.zsh
     ~/.shell/aliases.sh: shell/aliases.sh

@@ -47,8 +47,8 @@ Symlinking repository to `~/` is managed by the excellent [Dotbot][dotbot]. Usef
 3.  Install a range of preferred packages. See [system-setup][ss], [system-setup-mac][ssm] and [setup-coc-nvim][scn].
 
     ```zsh
-    $ ./scripts/system-setup-mac  # macOS
-    $ ./scripts/system-setup      # Linux/WSL2
+    $ ./scripts/system-setup-mac    # macOS
+    $ ./scripts/system-setup-linux  # Linux/WSL2
 
     # Set up Neovim and trigger vim-plug installations
     $ nvim
