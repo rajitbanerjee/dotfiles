@@ -1,0 +1,12 @@
+- Computer
+  - MacBook Air M1 (2020)
+  - HP Pavilion 14-bf120TU
+- Expansion Portable Drive
+  - Seagate SRD0NF1
+- Keyboard
+  - Keychron K6
+  - Switches: Gateron Brown, Hot-Swappable
+- Mouse
+  - .
+- Speaker
+  - Bang & Olufsen Beoplay A1

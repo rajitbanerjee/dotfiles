@@ -39,7 +39,6 @@ elif [[ "$(uname -s)" == "Darwin" ]]; then
     alias doc="cd ~/Documents"
     alias dp="cd ~/Desktop"
     alias pj="cd ~/Git/projects"
-    alias notes="cd ~/Git/notes"
 fi
 
 # ucd stage 4
