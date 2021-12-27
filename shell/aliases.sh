@@ -10,9 +10,6 @@ if [ -x /usr/bin/dircolors ]; then
     alias egrep='egrep --color=auto'
 fi
 
-# some more ls aliases
-
-
 # system
 alias ..="cd .."
 alias cd..="cd .."
@@ -45,13 +42,13 @@ elif [[ "$(uname -s)" == "Darwin" ]]; then
     alias notes="cd ~/Git/notes"
 fi
 
-# ucd stage 4 autumn
+# ucd stage 4
 alias fyp="cd ~/Desktop/final-year-project"
-alias cc="cd ~/Desktop/cloud-computing"
-alias dm="cd ~/Desktop/data-mining"
 alias dist="cd ~/Desktop/distributed-systems"
-alias ml="cd ~/Desktop/machine-learning"
-alias opt="cd ~/Desktop/optimisation"
+alias inf="cd ~/Desktop/inference-for-da"
+alias rec="cd ~/Desktop/rec-sys"
+alias perf="cd ~/Desktop/perf-comp-sys"
+alias swe="cd ~/Desktop/secure-swe"
 
 # git
 alias ga="git add"
