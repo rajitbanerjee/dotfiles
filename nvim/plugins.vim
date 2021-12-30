@@ -222,6 +222,11 @@ let g:floaterm_autoinsert = 1
 let g:floaterm_width = 0.9
 let g:floaterm_height = 0.9
 
+command! F execute ":FloatermNew"
+command! FN execute ":FloatermNext"
+command! FNF execute ":FloatermFirst"
+command! FNL execute ":FloatermLast"
+
 
 """""""""""""""""""""""""""""""""""""""""""""""""""
 " => wfxr/minimap.vim
