@@ -7,6 +7,7 @@ endif
 
 call plug#begin('~/.config/nvim/autoload/plugged')
 
+Plug 'airblade/vim-gitgutter'                               " Git changes shown in column
 Plug 'alvan/vim-closetag'                                   " Autoclose tags (e.g. XML)
 Plug 'amix/vim-zenroom2'                                    " Markdown editing in zen mode 
 Plug 'dbakker/vim-projectroot'                              " Dependency (fzf.vim)
@@ -23,7 +24,6 @@ Plug 'junegunn/fzf.vim'                                     " Fuzzy finder
 Plug 'junegunn/goyo.vim'                                    " Zen mode
 Plug 'lervag/vimtex'                                        " LaTeX support
 Plug 'maxbrunsfeld/vim-yankstack'                           " Turns default register into a stack
-Plug 'mhinz/vim-signify'                                    " Git changes shown in column
 Plug 'mhinz/vim-startify'                                   " Start screen
 Plug 'morhetz/gruvbox'                                      " Colour scheme
 Plug 'neoclide/coc.nvim', {'branch': 'release'}             " Code completion
