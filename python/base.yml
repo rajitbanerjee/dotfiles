@@ -1,177 +1,75 @@
 name: base
 channels:
   - conda-forge
-  - defaults
 dependencies:
-  - _libgcc_mutex=0.1
-  - argon2-cffi=20.1.0
-  - async_generator=1.10
-  - attrs=20.3.0
-  - autopep8=1.5.4
-  - backcall=0.2.0
-  - beautifulsoup4=4.9.3
-  - blas=1.0
-  - bleach=3.3.0
   - brotlipy=0.7.0
-  - ca-certificates=2021.1.19
-  - certifi=2020.12.5
-  - cffi=1.14.5
+  - bzip2=1.0.8
+  - c-ares=1.17.2
+  - ca-certificates=2021.10.8
+  - certifi=2021.10.8
+  - cffi=1.14.6
   - chardet=4.0.0
-  - click=7.1.2
-  - conda=4.9.2
-  - conda-package-handling=1.7.2
-  - cryptography=3.3.1
-  - dbus=1.13.18
-  - decorator=4.4.2
-  - defusedxml=0.6.0
-  - entrypoints=0.3
-  - expat=2.2.10
-  - flake8=3.8.4
-  - fontconfig=2.13.1
-  - freetype=2.10.4
-  - glib=2.67.4
-  - gst-plugins-base=1.14.0
-  - gstreamer=1.14.0
-  - icu=58.2
-  - idna=2.10
-  - importlib-metadata=2.0.0
-  - importlib_metadata=2.0.0
-  - intel-openmp=2020.2
-  - ipykernel=5.3.4
-  - ipython=7.20.0
-  - ipython_genutils=0.2.0
-  - ipywidgets=7.5.1
-  - jedi=0.17.0
-  - jinja2=2.11.3
-  - joblib=1.0.1
-  - jpeg=9b
-  - json5=0.9.5
-  - jsonschema=3.2.0
-  - jupyter_client=6.1.7
-  - jupyter_contrib_core=0.3.3
-  - jupyter_contrib_nbextensions=0.5.1
-  - jupyter_core=4.7.1
-  - jupyter_highlight_selected_word=0.2.0
-  - jupyter_latex_envs=1.4.6
-  - jupyter_nbextensions_configurator=0.4.1
-  - jupyterlab_pygments=0.1.2
-  - jupyterlab_server=1.2.0
-  - lcms2=2.11
-  - ld_impl_linux-64=2.33.1
+  - charset-normalizer=2.0.0
+  - colorama=0.4.4
+  - conda=4.10.3
+  - conda-package-handling=1.7.3
+  - cryptography=3.4.8
+  - icu=68.1
+  - idna=3.1
+  - krb5=1.19.2
+  - libarchive=3.5.2
+  - libcurl=7.79.1
+  - libcxx=12.0.1
   - libedit=3.1.20191231
-  - libffi=3.3
-  - libgcc-ng=9.1.0
-  - libgfortran-ng=7.3.0
-  - libpng=1.6.37
-  - libsodium=1.0.18
-  - libstdcxx-ng=9.1.0
-  - libtiff=4.1.0
-  - libuuid=1.0.3
-  - libxcb=1.14
-  - libxml2=2.9.10
-  - libxslt=1.1.34
+  - libev=4.33
+  - libffi=3.4.2
+  - libiconv=1.16
+  - libnghttp2=1.43.0
+  - libsolv=0.7.19
+  - libssh2=1.10.0
+  - libxml2=2.9.12
+  - libzlib=1.2.11
   - lz4-c=1.9.3
-  - markupsafe=1.1.1
-  - matplotlib=3.3.4
-  - matplotlib-base=3.3.4
-  - mistune=0.8.4
-  - mkl=2020.2
-  - mkl-service=2.3.0
-  - mkl_fft=1.3.0
-  - mkl_random=1.1.1
-  - nbclient=0.5.3
-  - nbconvert=6.0.7
-  - nbformat=5.1.2
+  - lzo=2.10
+  - mamba=0.16.0
   - ncurses=6.2
-  - nest-asyncio=1.5.1
-  - nltk=3.5
-  - notebook=6.2.0
-  - numpy=1.19.2
-  - numpy-base=1.19.2
-  - olefile=0.46
-  - openssl=1.1.1j
-  - packaging=20.9
-  - pandas=1.1.3
-  - pandoc=2.11
-  - pandocfilters=1.4.3
-  - pcre=8.44
-  - pexpect=4.8.0
-  - pickleshare=0.7.5
-  - prometheus_client=0.9.0
-  - prompt-toolkit=3.0.8
-  - ptyprocess=0.7.0
-  - pycodestyle=2.6.0
+  - openssl=1.1.1l
+  - pip=21.3
   - pycosat=0.6.3
   - pycparser=2.20
-  - pyflakes=2.2.0
-  - pygments=2.8.0
-  - pyopenssl=20.0.1
-  - pyparsing=2.4.7
-  - pyqt=5.9.2
-  - pyrsistent=0.17.3
+  - pyopenssl=21.0.0
   - pysocks=1.7.1
-  - python=3.8.5
-  - python-dateutil=2.8.1
-  - python_abi=3.8
-  - pytz=2021.1
-  - pyzmq=20.0.0
-  - qt=5.9.7
+  - python=3.9.7
+  - python_abi=3.9
   - readline=8.1
-  - regex=2020.11.13
-  - requests=2.25.1
-  - ruamel_yaml=0.15.87
-  - seaborn=0.11.0
-  - send2trash=1.5.0
-  - sip=4.19.13
-  - six=1.15.0
-  - soupsieve=2.2
-  - sqlite=3.33.0
-  - terminado=0.9.2
-  - testpath=0.4.4
-  - tk=8.6.10
-  - toml=0.10.1
-  - tornado=6.1
-  - tqdm=4.56.0
-  - traitlets=5.0.5
-  - urllib3=1.26.3
-  - wcwidth=0.2.5
-  - webencodings=0.5.1
-  - wheel=0.36.2
-  - widgetsnbextension=3.5.1
+  - reproc=14.2.3
+  - reproc-cpp=14.2.3
+  - requests=2.26.0
+  - ruamel_yaml=0.15.80
+  - setuptools=58.2.0
+  - six=1.16.0
+  - sqlite=3.36.0
+  - tk=8.6.11
+  - tqdm=4.62.3
+  - tzdata=2021c
+  - urllib3=1.26.7
+  - wheel=0.37.0
   - xz=5.2.5
   - yaml=0.2.5
-  - zeromq=4.3.3
   - zlib=1.2.11
-  - zstd=1.4.5
+  - zstd=1.5.0
   - pip:
-    - asttokens==2.0.4
-    - bs4==0.0.1
-    - colorama==0.4.4
-    - cycler==0.10.0
-    - executing==0.5.4
-    - icecream==2.0.0
-    - jupyter-contrib-core==0.3.3
-    - jupyter-http-over-ws==0.0.8
-    - jupyterlab==2.2.8
-    - kiwisolver==1.2.0
-    - lxml==4.6.1
+    - autopep8==1.5.7
+    - flake8==3.9.2
+    - greenlet==1.1.0
+    - isort==5.9.1
     - mccabe==0.6.1
-    - mypy==0.790
-    - mypy-extensions==0.4.3
-    - opencv-python==4.4.0.44
-    - parso==0.7.1
-    - pillow==8.0.0
-    - pip==20.2.3
-    - pip-autoremove==0.9.1
+    - msgpack==1.0.2
+    - protobuf==3.17.3
+    - pycodestyle==2.7.0
+    - pyflakes==2.3.1
+    - pynvim==0.4.3
     - pypdf2==1.26.0
-    - pytubex==0.1.2
-    - pyyaml==5.3.1
-    - ruamel-yaml-clib==0.2.2
-    - scipy==1.5.3
-    - setuptools==50.3.2
-    - typed-ast==1.4.1
-    - typing-extensions==3.7.4.3
+    - toml==0.10.2
     - wakatime==13.1.0
-    - xlrd==1.2.0
-    - zipp==3.3.1
-prefix: /home/banerjee/.local/share/conda
+prefix: /Users/rajitbanerjee/.local/share/conda
