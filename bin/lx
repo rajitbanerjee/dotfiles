@@ -13,7 +13,7 @@ if [[ "$(uname -s)" == "Darwin" ]]; then
     # clean up auxiliary files
     latexmk -c
     trash ${1%.*}.{bbl,run.xml}
-else
+elif [[ "$(uname -s)" == "Linux" ]]; then
     ~/.local/bin/latexindent/latexindent.pl $1 > $tempfile
 
     # convert to PDF

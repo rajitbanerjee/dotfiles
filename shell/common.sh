@@ -16,8 +16,8 @@ export MANWIDTH=999
 ## Fix SSL verification errors
 export SSL_CERT_FILE=/etc/ssl/cert.pem
 
-## Conda setup
-__conda_setup="$(~/.local/share/conda/bin/conda shell.$0 hook 2> /dev/null)"
+## Conda
+__conda_setup="$(~/.local/share/conda/bin/conda shell."$0" hook 2> /dev/null)"
 if [ $? -eq 0 ]; then
     eval "$__conda_setup"
 else
@@ -29,11 +29,14 @@ else
 fi
 unset __conda_setup
 
-if [[ "$(uname -s)" == "Darwin" ]]; then
+if [ "$(uname -s)" = "Darwin" ]; then
+    ## Python (macOS default)
     export PATH=~/Library/Python/3.9/bin:$PATH
+
+    ## command-not-found
     HB_CNF_HANDLER="$(brew --repository)/Library/Taps/homebrew/homebrew-command-not-found/handler.sh"
     if [ -f "$HB_CNF_HANDLER" ]; then
-        source "$HB_CNF_HANDLER";
+        . "$HB_CNF_HANDLER";
     fi
 
     ## Java
@@ -43,32 +46,9 @@ if [[ "$(uname -s)" == "Darwin" ]]; then
 
     ## Julia/FICO Xpress
     export XPRESSDIR="/Applications/FICO\ Xpress/Xpress\ Workbench.app/Contents/Resources/xpressmp"
-    source /Applications/FICO\ Xpress/xpressmp/bin/xpvars.sh
+    . /Applications/FICO\ Xpress/xpressmp/bin/xpvars.sh
 
-    ## Hadoop
-    export HADOOP_HOME="/usr/local/Cellar/hadoop/3.3.1/libexec"
-    export PATH=$PATH:$HADOOP_HOME/bin
-    export PATH=$PATH:$HADOOP_HOME/sbin
-    export HADOOP_CONF_DIR=$HADOOP_HOME/etc/hadoop
-    export HADOOP_MAPRED_HOME=$HADOOP_HOME
-    export HADOOP_COMMON_HOME=$HADOOP_HOME
-    export HADOOP_HDFS_HOME=$HADOOP_HOME
-    export YARN_HOME=$HADOOP_HOME
-    export HADOOP_COMMON_LIB_NATIVE_DIR=$HADOOP_HOME/lib/native
-    export HADOOP_OPTS="-Djava.library.path=$HADOOP_HOME/lib"
-    export HADOOP_CLASSPATH=${JAVA_HOME}/lib/tools.jar
-
-elif [[ "$(uname -s)" == "Linux" ]]; then
-
-    ## Java 11
+elif [ "$(uname -s)" = "Linux" ]; then
+    ## Java
     export JAVA_HOME="/usr/lib/jvm/java-11-openjdk-amd64"
-
-    ## Go
-    export PATH="$PATH:/usr/local/go/bin" # $GOROOT
-    export GOPATH=~/.local/go
-
-    # NVM
-    export NVM_DIR=~/.nvm
-    [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-    [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 fi

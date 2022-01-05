@@ -2,9 +2,6 @@
 if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
     alias ls='ls --color=auto'
-    #alias dir='dir --color=auto'
-    #alias vdir='vdir --color=auto'
-
     alias grep='grep --color=auto'
     alias fgrep='fgrep --color=auto'
     alias egrep='egrep --color=auto'
@@ -27,18 +24,13 @@ alias n="nvim"
 alias q="exit"
 alias sl="ls"
 alias vim="nvim"
-if [[ "$(uname -s)" == "Linux" ]]; then
-    alias doc="cd /mnt/c/Users/rajitbanerjee/Documents"
-    alias dp="cd /mnt/c/Users/rajitbanerjee/Desktop"
-    alias drive="xdg-open https://drive.google.com/drive/my-drive"
-    alias ex="explorer.exe ."
-    alias open="xdg-open"
-    alias rb="/mnt/c/Users/rajitbanerjee"
-    alias pj="cd ~/projects"
-elif [[ "$(uname -s)" == "Darwin" ]]; then
+if [ "$(uname -s)" = "Darwin" ]; then
     alias doc="cd ~/Documents"
     alias dp="cd ~/Desktop"
     alias pj="cd ~/Git/projects"
+elif [ "$(uname -s)" = "Linux" ]; then
+    alias open="xdg-open"
+    alias pj="cd ~/projects"
 fi
 
 # ucd stage 4
