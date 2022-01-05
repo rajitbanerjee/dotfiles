@@ -15,9 +15,7 @@
     },
     "width": 27,
     "focus": true,
-    "icon": {
-      "enableNerdfont": true
-    },
+    "icon": { "enableNerdfont": true },
     "mouseMode": "singleclick",
     "sources": [
       {
@@ -28,6 +26,7 @@
     "keyMappings": {
       "global": {
         "i": false,
+        "t": false,
 
         "*": "toggleSelection",
         "<tab>": false,
@@ -60,17 +59,13 @@
         "q": "quit",
         "<esc>": "esc",
 
-        "f": "search",
-        "F": "searchRecursive",
+        "f": "searchRecursive",
 
         "<<": "gitStage",
         ">>": "gitUnstage"
       }
     }
   },
-
-  /* coc-html */
-  "html": { "autoClosingTags": true },
 
   /* coc-tsserver */
   "typescript": {
@@ -81,6 +76,10 @@
   /* coc-java */
   "java": {
     "autobuild": { "enabled": false },
-      "jdt": {"ls": {"vmargs": "-javaagent:/Users/rajitbanerjee/.local/lib/lombok.jar"}}
+    "jdt": {
+      "ls": {
+        "vmargs": "-javaagent:/Users/rajitbanerjee/.local/lib/lombok.jar"
+      }
+    }
   }
 }
