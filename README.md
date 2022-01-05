@@ -44,7 +44,7 @@ Symlinking repository to `~/` is managed by the excellent [Dotbot][dotbot]. Usef
   <img src='./screenshots/dotbot.png'>
 </p>
 
-3.  Install a range of preferred packages. See [system-setup][ss], [system-setup-mac][ssm] and [setup-coc-nvim][scn].
+3.  Install a range of preferred packages. See [system-setup-mac][ssm], [system-setup-linux][ssl] and [setup-coc-nvim][scn].
 
     ```zsh
     $ ./bin/system-setup-mac    # macOS
@@ -71,7 +71,7 @@ Neovim:
 [anish]: https://github.com/anishathalye/dotfiles/blob/master/tmux.conf
 [dotbot]: https://github.com/anishathalye/dotbot
 [ohmyzsh]: https://github.com/ohmyzsh/ohmyzsh
-[ss]: https://github.com/rajitbanerjee/dotfiles/blob/main/bin/system-setup
 [ssm]: https://github.com/rajitbanerjee/dotfiles/blob/main/bin/system-setup-mac
+[ssl]: https://github.com/rajitbanerjee/dotfiles/blob/main/bin/system-setup-linux
 [scn]: https://github.com/rajitbanerjee/dotfiles/blob/main/bin/setup-coc-nvim
 [license]: LICENSE
