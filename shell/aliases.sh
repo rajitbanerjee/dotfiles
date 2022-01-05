@@ -43,7 +43,6 @@ fi
 
 # ucd stage 4
 alias fyp="cd ~/Desktop/final-year-project"
-alias dist="cd ~/Desktop/distributed-systems"
 alias inf="cd ~/Desktop/inference-for-da"
 alias rec="cd ~/Desktop/rec-sys"
 alias perf="cd ~/Desktop/perf-comp-sys"
