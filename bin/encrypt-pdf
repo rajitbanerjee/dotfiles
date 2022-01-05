@@ -1,0 +1,50 @@
+#!/usr/bin/env python3
+from getpass import getpass
+import subprocess
+import sys
+
+
+def print_help():
+    print("""
+Encrypt a given PDF file with a password.
+
+### Usage
+
+1. Ensure that you have `pip` installed.
+2. Run the script with the file to encrypted.
+```
+$ ./encrypt-pdf <name>.pdf
+```
+3. Enter password.
+3. The encrypted file is saved as `<name>_encrypted.pdf`.
+    """)
+
+
+print("Installing requirements...")
+subprocess.check_call([sys.executable, "-m", "pip", "install", "PyPDF2"])
+
+from PyPDF2 import PdfFileReader, PdfFileWriter
+
+try:
+    if len(sys.argv) < 2:
+        print_help()
+    else:
+        # PDF file to be encrypted
+        input_file = sys.argv[1]
+        # Enter password safely
+        password = getpass("\nEnter password: ")
+
+        reader = PdfFileReader(open(input_file, 'rb'))
+        writer = PdfFileWriter()
+        writer.appendPagesFromReader(reader)
+        writer.encrypt(password)
+
+        # Save encrypted PDF
+        name = input_file.split('.')[0]
+        writer.write(open(f"{name}_encrypted.pdf", 'wb'))
+        print(
+            f"\nPDF encryption complete! Saved as: {name}_encrypted.pdf\n")
+
+except Exception as e:
+    print(f"\nError: File could not be processed!\n{input_file}")
+    print(e)

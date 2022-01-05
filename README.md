@@ -12,7 +12,7 @@
   - [fonts/](./fonts/): preferred font files
 - Programming
   - [python/](./python/): conda base environment packages and jupyter notebook configurations
-  - [scripts/][scripts]: python/bash scripts
+  - [bin/](./bin/): python/bash scripts
 - Dotbot
   - [install.conf.yml](./install.conf.yml), [./install](./install): config and installation for dotbot
 
@@ -47,13 +47,13 @@ Symlinking repository to `~/` is managed by the excellent [Dotbot][dotbot]. Usef
 3.  Install a range of preferred packages. See [system-setup][ss], [system-setup-mac][ssm] and [setup-coc-nvim][scn].
 
     ```zsh
-    $ ./scripts/system-setup-mac    # macOS
-    $ ./scripts/system-setup-linux  # Linux/WSL2
+    $ ./bin/system-setup-mac    # macOS
+    $ ./bin/system-setup-linux  # Linux/WSL2
 
     # Set up Neovim and trigger vim-plug installations
     $ nvim
     $ npm cache verify
-    $ ./scripts/setup-coc-nvim
+    $ ./bin/setup-coc-nvim
     ```
 
 Neovim:
@@ -68,11 +68,10 @@ Neovim:
 
 [travis-badge]: https://api.travis-ci.com/rajitbanerjee/dotfiles.svg?branch=main
 [travis]: https://travis-ci.com/rajitbanerjee/dotfiles
-[scripts]: https://github.com/rajitbanerjee/scripts
 [anish]: https://github.com/anishathalye/dotfiles/blob/master/tmux.conf
 [dotbot]: https://github.com/anishathalye/dotbot
 [ohmyzsh]: https://github.com/ohmyzsh/ohmyzsh
-[ss]: https://github.com/rajitbanerjee/scripts/blob/master/system-setup
-[ssm]: https://github.com/rajitbanerjee/scripts/blob/master/system-setup-mac
-[scn]: https://github.com/rajitbanerjee/scripts/blob/master/setup-coc-nvim
+[ss]: https://github.com/rajitbanerjee/dotfiles/blob/main/bin/system-setup
+[ssm]: https://github.com/rajitbanerjee/dotfiles/blob/main/bin/system-setup-mac
+[scn]: https://github.com/rajitbanerjee/dotfiles/blob/main/bin/setup-coc-nvim
 [license]: LICENSE

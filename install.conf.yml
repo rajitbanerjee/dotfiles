@@ -14,7 +14,7 @@
     ~/.config/nvim: nvim
     ~/.jupyter/jupyter_notebook_config.json: python/jupyter/jupyter_notebook_config.json
     ~/.jupyter/nbconfig/notebook.json: python/jupyter/notebook.json
-    ~/.local/scripts: scripts 
+    ~/.local/scripts/bin: bin
     ~/.local/share/jupyter/nbextensions: python/jupyter/nbextensions
     ~/.p10k.zsh: zsh/p10k.zsh
     ~/.shell/aliases.sh: shell/aliases.sh

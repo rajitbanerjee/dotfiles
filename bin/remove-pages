@@ -1,0 +1,51 @@
+#!/usr/bin/env python3
+import subprocess
+import sys
+
+
+def print_help():
+    print("""
+Removes specified pages from a given PDF file.
+
+### Usage
+
+1. Ensure that you have `pip` installed.
+2. Run the script with the PDF file to be processed and the page numbers
+to be removed (comma separated, no spaces).
+```
+$ ./remove-pages doc.pdf 1,2,3
+```
+3. The modified file is saved as `new_doc.pdf`.
+    """)
+
+
+print("Installing requirements...")
+subprocess.check_call([sys.executable, "-m", "pip", "install", "PyPDF2"])
+
+from PyPDF2 import PdfFileWriter, PdfFileReader
+
+try:
+    if len(sys.argv) > 2:
+        # PDF file to be processed
+        file = sys.argv[1]
+        remove_pages = list(map(int, sys.argv[2].split(',')))
+        print(f"File to be processed:\t{file}")
+        print(f"Pages to be removed:\t{remove_pages}")
+
+        writer = PdfFileWriter()
+        # add selected pages to the PDF file writer
+        pdf = PdfFileReader(open(file, 'rb'))
+        for page in range(pdf.getNumPages()):
+            # Note: PyPDF2 pages start at 0, specified pages start at 1
+            if (page + 1) not in remove_pages:
+                writer.addPage(pdf.getPage(page))
+
+        # save modified PDF
+        writer.write(open("new_doc.pdf", 'wb'))
+        print("\nPage removal complete! Saved as: new_doc.pdf")
+    else:
+        print_help()
+
+except Exception as e:
+    print("\nError: File could not be processed!")
+    print(e)

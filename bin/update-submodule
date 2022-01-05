@@ -1,0 +1,20 @@
+#!/bin/bash
+
+print_help() {
+    echo """
+Update a specified submodule.
+
+Usage:
+    $ ./update-submodule <submodule_name>
+        """
+}
+
+if [[ $1 == "" ]]; then
+    print_help
+    exit 1
+fi
+
+git add $1
+git commit -m "Update submodule"
+git push
+

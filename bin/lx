@@ -1,0 +1,30 @@
+#!/bin/bash
+# Format LaTeX file, then convert it to PDF, and clean up auxiliary files.
+
+# format
+tempfile="./.tmp.tex"
+if [[ "$(uname -s)" == "Darwin" ]]; then
+    /usr/local/bin/latexindent $1 > $tempfile
+
+    # https://www.overleaf.com/learn/latex/Choosing_a_LaTeX_Compiler
+    # compiling documents with cross-references
+    latexmk -pdf $1
+
+    # clean up auxiliary files
+    latexmk -c
+    trash ${1%.*}.{bbl,run.xml}
+else
+    ~/.local/bin/latexindent/latexindent.pl $1 > $tempfile
+
+    # convert to PDF
+    pdflatex $1
+
+    # clean up auxiliary files
+    trash ${1%.*}.{aux,log,out}
+fi
+
+rm -rf $1
+mv $tempfile $1
+rm -rf $tempfile indent.log
+
+

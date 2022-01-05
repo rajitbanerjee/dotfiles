@@ -1,0 +1,21 @@
+#!/bin/bash
+<<DETAILS
+Open GitHub for current git repository. 
+Usage:
+    $ ./github
+(Run at the root of the git repository.)
+DETAILS
+
+remote="$(git config remote.origin.url)"
+if [ "$(cut -c-5 <<< $remote)" == "https" ]; then
+    # using https
+    repo="$(cut -d'/' -f4- <<< $remote)"
+else
+    # using ssh
+    repo="$(cut -d':' -f2 <<< $remote)"
+fi
+if [[ "$(uname -s)" == "Linux" ]]; then
+    xdg-open "https://github.com/$repo"
+else
+    open "https://github.com/$repo"
+fi
