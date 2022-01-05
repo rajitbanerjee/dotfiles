@@ -14,6 +14,8 @@ Plug 'dbakker/vim-projectroot'                              " Dependency (fzf.vi
 Plug 'dense-analysis/ale'                                   " LSP, linting, formatting
 Plug 'edkolev/tmuxline.vim'                                 " Tmux status line generator using airline
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries'  }         " Go support
+Plug 'flazz/vim-colorschemes'                               " More colours
+Plug 'gruvbox-community/gruvbox'                            " Primary colour scheme
 Plug 'iamcco/markdown-preview.nvim', {
   \ 'do': { -> mkdp#util#install()  },
   \ 'for': ['markdown', 'vim-plug']
@@ -25,7 +27,6 @@ Plug 'junegunn/goyo.vim'                                    " Zen mode
 Plug 'lervag/vimtex'                                        " LaTeX support
 Plug 'maxbrunsfeld/vim-yankstack'                           " Turns default register into a stack
 Plug 'mhinz/vim-startify'                                   " Start screen
-Plug 'morhetz/gruvbox'                                      " Colour scheme
 Plug 'neoclide/coc.nvim', {'branch': 'release'}             " Code completion
 Plug 'nvim-lua/plenary.nvim'                                " Dependency (telescope.nvim)
 Plug 'nvim-lua/popup.nvim'                                  " Dependency (telescope.nvim)
@@ -96,6 +97,13 @@ let g:ale_sign_style_warning = "•"
 " => fatih/vim-go
 """""""""""""""""""""""""""""""""""""""""""""""""""
 let g:go_fmt_fail_silently = 1
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""
+" => gruvbox-community/gruvbox
+"""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:gruvbox_contrast_dark = "hard"
+
 
 """""""""""""""""""""""""""""""""""""""""""""""""""
 " => iamcco/markdown-preview.nvim
