@@ -43,7 +43,7 @@ Plug 'vim-airline/vim-airline'                              " Status and tabline
 Plug 'vim-airline/vim-airline-themes'                       " Airline themes
 Plug 'voldikss/vim-floaterm'                                " Floating terminal
 Plug 'wakatime/vim-wakatime'                                " Coding metrics
-Plug 'wfxr/minimap.vim'                                     " Minimap
+Plug 'Yggdroot/indentline'                                  " Indent indicator
 Plug 'yuttie/comfortable-motion.vim'                        " Smooth scrolling
 
 call plug#end()
@@ -117,10 +117,10 @@ nmap <leader>m <Plug>MarkdownPreviewToggle
 let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.9 } }
 let $FZF_DEFAULT_OPTS='--reverse'
 
-map <leader>ff :ProjectRootExe FZF<CR>
-map <leader>fg :ProjectRootExe Rg<CR>
-map <leader>fb :Buffers<CR>
-map <leader>b :BCommits <CR>
+nnoremap <leader>ff :ProjectRootExe FZF<CR>
+nnoremap <leader>fg :ProjectRootExe Rg<CR>
+nnoremap <leader>fb :Buffers<CR>
+nnoremap <leader>b :BCommits <CR>
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""
@@ -151,15 +151,13 @@ nnoremap <silent><nowait> <leader>e  :<C-u>CocCommand explorer<CR>
 nnoremap <silent><nowait> <leader>o  :<C-u>CocCommand editor.action.organizeImport<CR>
 nnoremap <silent><nowait> <leader>cm  :<C-u>CocList commands<CR>
 nnoremap <silent><nowait> <leader>a  :<C-u>CocList diagnostics<CR>
-nnoremap <silent><nowait> <leader>j  :<C-u>CocNext<CR>
-nnoremap <silent><nowait> <leader>k  :<C-u>CocPrev<CR>
 
 nmap <silent>gd <Plug>(coc-definition)
 nmap <silent>gy <Plug>(coc-type-definition)
 nmap <silent>gr <Plug>(coc-references)
-nmap <leader>ac  <Plug>(coc-codeaction)
-nmap <leader>qf  :<C-u>CocFix<CR>
-nmap <leader>r <Plug>(coc-rename)
+nmap <leader>r  <Plug>(coc-rename)
+nmap <leader>ac <Plug>(coc-codeaction)
+nmap <leader>qf :<C-u>CocFix<CR>
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""
@@ -189,6 +187,7 @@ nnoremap <leader>gf <cmd>Telescope git_files<CR>
 nnoremap <leader>c <cmd>Telescope commands<CR>
 
 lua <<EOF
+local actions = require("telescope.actions")
 require('telescope').setup({
   defaults = {
     layout_config = {
@@ -196,6 +195,20 @@ require('telescope').setup({
       -- other layout configuration here
     },
     -- other defaults configuration here
+    mappings = {
+      -- https://github.com/nvim-telescope/telescope.nvim/blob/master/lua/telescope/mappings.lua
+      n = {
+        ["<C-t>"] = false, -- no tabs please, buffers only
+        ["<C-j>"] = actions.toggle_selection + actions.move_selection_worse,
+        ["<C-k>"] = actions.toggle_selection + actions.move_selection_better,
+        ["<Down>"] = actions.preview_scrolling_down,
+        ["<Up>"] = actions.preview_scrolling_up,
+      },
+      i = {
+        ["<Down>"] = actions.preview_scrolling_down,
+        ["<Up>"] = actions.preview_scrolling_up,
+      },
+    },
   },
   -- other configuration values here
 })
@@ -205,8 +218,8 @@ EOF
 """""""""""""""""""""""""""""""""""""""""""""""""""
 " => tpope/vim-fugitive
 """""""""""""""""""""""""""""""""""""""""""""""""""
-map <leader>d :Gvdiffsplit<CR>
-map <leader>s :GFiles?<CR>
+nnoremap <leader>d :Gvdiffsplit<CR>
+nnoremap <leader>s :GFiles?<CR>
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""
@@ -242,22 +255,9 @@ command! FNL execute ":FloatermLast"
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""
-" => wfxr/minimap.vim
-"""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:minimap_width = 2
-let g:minimap_git_colors = 1
-let g:minimap_auto_start = 0
-let g:minimap_auto_start_win_enter = 1
-
-command! M execute ":MinimapToggle"
-
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""
 " => yuttie/comfortable-motion.vim
 """""""""""""""""""""""""""""""""""""""""""""""""""
 let g:comfortable_motion_no_default_key_mappings = 1
 
 nnoremap <silent> <leader>j :call comfortable_motion#flick(150)<CR>
 nnoremap <silent> <leader>k :call comfortable_motion#flick(-150)<CR>
-
-

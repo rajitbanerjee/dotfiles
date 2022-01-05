@@ -4,23 +4,20 @@
 let mapleader = " "
 
 " Pasting, saving, quitting
-map <silent> <leader>pp :setlocal paste!<CR>
-map <C-s> :w<CR>
-nmap <leader>w :wq<CR>
-nmap <leader>qq :q!<CR>
-nmap <leader>qa :qa<CR>
+nnoremap <silent> <leader>pp :setlocal paste!<CR>
+nnoremap <leader>w :wq<CR>
+nnoremap <leader>qq :q!<CR>
+nnoremap <leader>qa :qa<CR>
 
 " Convenience
-map 0 ^
-map ; :
-noremap ;; ;
-nnoremap u <C-r>
-nnoremap r :%s/
-nnoremap s /
+nnoremap 0 ^
+nnoremap ; :
+nnoremap u :u<CR>
+nnoremap r <C-r>
+nnoremap s :%s/
 nnoremap <silent><leader>1 :source ~/.config/nvim/init.vim \| :PlugClean<CR> \| :PlugInstall<CR> \| :PlugUpdate<CR>
-map <silent> <leader><CR> :noh<CR>
+nnoremap <silent> <leader><CR> :noh<CR>
 inoremap qq <ESC>
-inoremap <C-q> <ESC>
 
 " Cycle through popup suggestions with TAB; Enter to select and suppress new line
 inoremap <silent><expr> <TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
@@ -28,10 +25,10 @@ inoremap <silent><expr> <S-TAB> pumvisible() ? "\<C-p>" : "\<S-TAB>"
 inoremap <expr> <CR> pumvisible() ? "\<C-Y>" : "\<CR>"
 
 " Moving around
-map <C-j> <C-W>j
-map <C-k> <C-W>k
-map <C-h> <C-W>h
-map <C-l> <C-W>l
+nnoremap <C-j> <C-W>j
+nnoremap <C-k> <C-W>k
+nnoremap <C-h> <C-W>h
+nnoremap <C-l> <C-W>l
 nnoremap <Right> <C-w>l
 nnoremap <Left> <C-w>h
 nnoremap <Up> <C-w>k
@@ -44,13 +41,13 @@ nnoremap <silent> <C-Left>  :vertical resize -2<CR>
 nnoremap <silent> <C-Right> :vertical resize +2<CR>
 
 " Buffers
-map <leader>q :Bclose<CR>
+nnoremap q :Bclose<CR>
 nnoremap <silent> <TAB> :bnext<CR>
 nnoremap <silent> <S-TAB> :bprevious<CR>
 
 " Delete buffer without closing window
 command! Bclose call <SID>BufcloseCloseIt()
-function! <SID>BufcloseCloseIt()
+fun! <SID>BufcloseCloseIt()
     let l:currentBufNum = bufnr("%")
     let l:alternateBufNum = bufnr("#")
     if buflisted(l:alternateBufNum)
@@ -64,7 +61,23 @@ function! <SID>BufcloseCloseIt()
     if buflisted(l:currentBufNum)
         execute("bdelete! ".l:currentBufNum)
     endif
-endfunction
+endfun
+
+" Quickfix
+nnoremap <C-k> :cnext<CR>
+nnoremap <C-j> :cprev<CR>
+nnoremap <C-q> :call ToggleQFList()<CR>
+
+let g:the_primeagen_qf_g = 0
+fun! ToggleQFList()
+    if g:the_primeagen_qf_g == 1
+        let g:the_primeagen_qf_g = 0
+        cclose
+    else
+        let g:the_primeagen_qf_g = 1
+        copen
+    end
+endfun
 
 
 """"""""""""""""""""""""""""""

@@ -2,10 +2,10 @@
 
 - Shell
   - [zsh/](./zsh/): zsh configurations; plugins managed by [ohmyzsh][ohmyzsh]
-  - [shell/](./shell/): common configs for all types of shells
+  - [shell/](./shell/): common configurations for all types of shells
   - [ssh/](./ssh/): ssh config
   - [terminal/](./terminal/): terminal emulator settings
-  - [tmux/](./tmux/): tmux configs; `tmux.conf` adapted from [anishathalye/dotfiles/tmux.conf][anish]
+  - [tmux/](./tmux/): tmux configurations; `tmux.conf` adapted from [anishathalye/dotfiles/tmux.conf][anish]
 - Editor
   - [nvim/](./nvim/): neovim configurations
   - [code/](./code/): list of vscode extensions and link to vscode settings sync gist
@@ -13,8 +13,9 @@
 - Programming
   - [python/](./python/): conda base environment packages and jupyter notebook configurations
   - [bin/](./bin/): python/bash scripts
-- Dotbot
+- General
   - [install.conf.yml](./install.conf.yml), [./install](./install): config and installation for dotbot
+  - [notes/](./notes/): misc. programming/tools setup notes
 
 ## Installation
 
@@ -60,6 +61,7 @@ Neovim:
 
 <p align='center'>
   <img src='./screenshots/nvim.png'>
+  <img src='./screenshots/floaterm.png'>
 </p>
 
 ## License
