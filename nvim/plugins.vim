@@ -51,7 +51,11 @@ call plug#end()
 """""""""""""""""""""""""""""""""""""""""""""""""""
 " => alvan/vim-closetag
 """""""""""""""""""""""""""""""""""""""""""""""""""
-let g:closetag_filenames = '*.html,*.xhtml,*.phtml,*.xml'
+let g:closetag_filenames = '*.html,*.xhtml,*.phtml,*.xml,*.jsx,*.tsx'
+let g:closetag_regions =  {
+\ 'typescript.tsx': 'jsxRegion,tsxRegion',
+\ 'javascript.jsx': 'jsxRegion',
+\ }
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""
