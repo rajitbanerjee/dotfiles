@@ -16,6 +16,9 @@ export MANWIDTH=999
 ## Fix SSL verification errors
 export SSL_CERT_FILE=/etc/ssl/cert.pem
 
+## nvim sessions (https://github.com/tpope/vim-obsession)
+export NVIM_SESSIONS="~/.cache/nvim/"
+
 ## Conda
 __conda_setup="$(~/.local/share/conda/bin/conda shell."$0" hook 2> /dev/null)"
 if [ $? -eq 0 ]; then

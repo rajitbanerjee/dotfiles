@@ -223,6 +223,12 @@ nnoremap <leader>s :GFiles?<CR>
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""
+" => tpope/vim-obsession
+"""""""""""""""""""""""""""""""""""""""""""""""""""
+command -nargs=1 Obs :Obsess $NVIM_SESSIONS/<args>.vim
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""
 " => vim-airline/vim-airline,vim-airline-themes
 """""""""""""""""""""""""""""""""""""""""""""""""""
 let g:airline#extensions#tabline#enabled = 1
