@@ -7,7 +7,7 @@ set langmenu=en
 
 let $LANG='en'
 
-set so=7 " 7 lines for the cursor when moving up/down
+set scrolloff=7 " 7 lines for the cursor when moving up/down
 set cmdheight=1
 set hid " Buffer is hidden when abandoned
 set number
