@@ -6,7 +6,7 @@ let mapleader = " "
 " Pasting, saving, quitting
 nnoremap <silent> <leader>pp :setlocal paste!<CR>
 nnoremap <leader>w :wq<CR>
-nnoremap <leader>qq :q!<CR>
+nnoremap <leader>q :q!<CR>
 nnoremap <leader>qa :qa<CR>
 
 " Convenience
@@ -15,13 +15,25 @@ nnoremap ; :
 nnoremap u :u<CR>
 nnoremap r <C-r>
 nnoremap s :%s/
-nnoremap <silent><leader>1 :source ~/.config/nvim/init.vim \| :PlugClean<CR> \| :PlugInstall<CR> \| :PlugUpdate<CR>
+nnoremap Y y$
+nnoremap <silent> <leader>1 :source ~/.config/nvim/init.vim \| :PlugClean<CR> \| :PlugInstall<CR> \| :PlugUpdate<CR>
 nnoremap <silent> <leader><CR> :noh<CR>
 inoremap qq <ESC>
 
+" Undo break points
+inoremap , ,<C-g>u
+inoremap . .<C-g>u
+inoremap ! !<C-g>u
+inoremap ? ?<C-g>u
+
+" Keeping it centered
+nnoremap J mzJ`z
+nnoremap n nzzzv
+nnoremap N Nzzzv
+
 " Cycle through popup suggestions with TAB; Enter to select and suppress new line
-inoremap <silent><expr> <TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
-inoremap <silent><expr> <S-TAB> pumvisible() ? "\<C-p>" : "\<S-TAB>"
+inoremap <silent> <expr> <TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
+inoremap <silent> <expr> <S-TAB> pumvisible() ? "\<C-p>" : "\<S-TAB>"
 inoremap <expr> <CR> pumvisible() ? "\<C-Y>" : "\<CR>"
 
 " Moving around
@@ -44,7 +56,6 @@ nnoremap <silent> <C-Right> :vertical resize +2<CR>
 nnoremap q :Bclose<CR>
 nnoremap <silent> <TAB> :bnext<CR>
 nnoremap <silent> <S-TAB> :bprevious<CR>
-
 " Delete buffer without closing window
 command! Bclose call <SID>BufcloseCloseIt()
 fun! <SID>BufcloseCloseIt()
@@ -67,7 +78,6 @@ endfun
 nnoremap <C-k> :cnext<CR>
 nnoremap <C-j> :cprev<CR>
 nnoremap <C-q> :call ToggleQFList()<CR>
-
 let g:the_primeagen_qf_g = 0
 fun! ToggleQFList()
     if g:the_primeagen_qf_g == 1

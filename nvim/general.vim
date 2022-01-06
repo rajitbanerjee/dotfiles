@@ -61,17 +61,15 @@ set t_vb=
 set tm=500
 
 " Filetype settings
+au BufNewFile,BufRead *.js,*.ts,*.jsx,*.tsx set colorcolumn=120
 au BufNewFile,BufRead *.py set colorcolumn=80
-au BufNewFile,BufRead *.go set colorcolumn=100
 au BufNewFile,BufRead *.http set ft=rest
-
 " Use spaces not tabs
 set expandtab
 set shiftwidth=4
 set tabstop=4
 " Reduce tab length for certain file types
-au BufNewFile,BufRead *.html,*.css,*.js,*.ts setlocal shiftwidth=2 tabstop=2
-
+au BufNewFile,BufRead *.html,*.css,*.js,*.ts,*.jsx,*.tsx setlocal shiftwidth=2 tabstop=2
 
 " Linebreak on 500 characters
 set lbr

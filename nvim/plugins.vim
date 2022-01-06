@@ -5,47 +5,45 @@ if empty(glob('~/.config/nvim/autoload/plug.vim'))
   autocmd VimEnter * PlugInstall | source $MYVIMRC
 endif
 
+" Don't need ALE to worry about LSP
+let g:ale_disable_lsp = 1
+
+
 call plug#begin('~/.config/nvim/autoload/plugged')
-
-Plug 'airblade/vim-gitgutter'                               " Git changes shown in column
-Plug 'alvan/vim-closetag'                                   " Autoclose tags (e.g. XML)
-Plug 'amix/vim-zenroom2'                                    " Markdown editing in zen mode 
-Plug 'dbakker/vim-projectroot'                              " Dependency (fzf.vim)
-Plug 'dense-analysis/ale'                                   " LSP, linting, formatting
-Plug 'edkolev/tmuxline.vim'                                 " Tmux status line generator using airline
-Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries'  }         " Go support
-Plug 'flazz/vim-colorschemes'                               " More colours
-Plug 'gruvbox-community/gruvbox'                            " Primary colour scheme
-Plug 'iamcco/markdown-preview.nvim', {
-  \ 'do': { -> mkdp#util#install()  },
-  \ 'for': ['markdown', 'vim-plug']
-  \ }                                                       " Markdown preview
-Plug 'jiangmiao/auto-pairs'                                 " Bracket matching
-Plug 'junegunn/fzf', {'do': { -> fzf#install() }}           " Dependency (fzf.vim) 
-Plug 'junegunn/fzf.vim'                                     " Fuzzy finder
-Plug 'junegunn/goyo.vim'                                    " Zen mode
-Plug 'lervag/vimtex'                                        " LaTeX support
-Plug 'maxbrunsfeld/vim-yankstack'                           " Turns default register into a stack
-Plug 'mhinz/vim-startify'                                   " Start screen
-Plug 'neoclide/coc.nvim', {'branch': 'release'}             " Code completion
-Plug 'nvim-lua/plenary.nvim'                                " Dependency (telescope.nvim)
-Plug 'nvim-lua/popup.nvim'                                  " Dependency (telescope.nvim)
-Plug 'nvim-telescope/telescope.nvim'                        " Find, Filter, Preview, Pick
-Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'} " LSP
-Plug 'ryanoasis/vim-devicons'                               " Coloured file type icons
-Plug 'sheerun/vim-polyglot'                                 " Syntax highlighting/language pack
-Plug 'tpope/vim-commentary'                                 " Code commenting
-Plug 'tpope/vim-fugitive'                                   " Git wrapper
-Plug 'tpope/vim-obsession'                                  " Save session
-Plug 'tpope/vim-repeat'                                     " Enables . for plugins
-Plug 'tpope/vim-surround'                                   " Delete, change, add surroundings
-Plug 'vim-airline/vim-airline'                              " Status and tabline
-Plug 'vim-airline/vim-airline-themes'                       " Airline themes
-Plug 'voldikss/vim-floaterm'                                " Floating terminal
-Plug 'wakatime/vim-wakatime'                                " Coding metrics
-Plug 'Yggdroot/indentline'                                  " Indent indicator
-Plug 'yuttie/comfortable-motion.vim'                        " Smooth scrolling
-
+  Plug 'airblade/vim-gitgutter'                               " Git changes shown in column
+  Plug 'alvan/vim-closetag'                                   " Autoclose tags (e.g. XML)
+  Plug 'dbakker/vim-projectroot'                              " Dependency (fzf.vim)
+  Plug 'dense-analysis/ale'                                   " LSP, linting, formatting
+  Plug 'edkolev/tmuxline.vim'                                 " Tmux status line generator using airline
+  Plug 'flazz/vim-colorschemes'                               " More colours
+  Plug 'gruvbox-community/gruvbox'                            " Primary colour scheme
+  Plug 'iamcco/markdown-preview.nvim', {
+    \ 'do': { -> mkdp#util#install()  },
+    \ 'for': ['markdown', 'vim-plug']
+    \ }                                                       " Markdown preview
+  Plug 'junegunn/fzf', {'do': { -> fzf#install() }}           " Dependency (fzf.vim) 
+  Plug 'junegunn/fzf.vim'                                     " Fuzzy finder
+  Plug 'junegunn/goyo.vim'                                    " Zen mode
+  Plug 'lervag/vimtex'                                        " LaTeX support
+  Plug 'maxbrunsfeld/vim-yankstack'                           " Turns default register into a stack
+  Plug 'mhinz/vim-startify'                                   " Start screen
+  Plug 'neoclide/coc.nvim', {'branch': 'release'}             " Code completion
+  Plug 'nvim-lua/plenary.nvim'                                " Dependency (telescope.nvim)
+  Plug 'nvim-lua/popup.nvim'                                  " Dependency (telescope.nvim)
+  Plug 'nvim-telescope/telescope.nvim'                        " Find, Filter, Preview, Pick
+  Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'} " LSP
+  Plug 'ryanoasis/vim-devicons'                               " Coloured file type icons
+  Plug 'tpope/vim-commentary'                                 " Code commenting
+  Plug 'tpope/vim-fugitive'                                   " Git wrapper
+  Plug 'tpope/vim-obsession'                                  " Save session
+  Plug 'tpope/vim-repeat'                                     " Enables . for plugins
+  Plug 'tpope/vim-surround'                                   " Delete, change, add surroundings
+  Plug 'vim-airline/vim-airline'                              " Status and tabline
+  Plug 'vim-airline/vim-airline-themes'                       " Airline themes
+  Plug 'voldikss/vim-floaterm'                                " Floating terminal
+  Plug 'wakatime/vim-wakatime'                                " Coding metrics
+  Plug 'Yggdroot/indentline'                                  " Indent indicator
+  Plug 'yuttie/comfortable-motion.vim'                        " Smooth scrolling
 call plug#end()
 
 
@@ -94,16 +92,13 @@ let g:ale_sign_style_warning = "•"
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""
-" => fatih/vim-go
-"""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:go_fmt_fail_silently = 1
-
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""
 " => gruvbox-community/gruvbox
 """""""""""""""""""""""""""""""""""""""""""""""""""
 let g:gruvbox_contrast_dark = "hard"
-
+try
+  colorscheme gruvbox
+catch
+endtry
 
 """""""""""""""""""""""""""""""""""""""""""""""""""
 " => iamcco/markdown-preview.nvim
@@ -115,7 +110,7 @@ nmap <leader>m <Plug>MarkdownPreviewToggle
 " => junegunn/fzf.vim
 """""""""""""""""""""""""""""""""""""""""""""""""""
 let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.9 } }
-let $FZF_DEFAULT_OPTS='--reverse'
+let $FZF_DEFAULT_OPTS = '--reverse'
 
 nnoremap <leader>ff :ProjectRootExe FZF<CR>
 nnoremap <leader>fg :ProjectRootExe Rg<CR>
@@ -124,14 +119,8 @@ nnoremap <leader>b :BCommits <CR>
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""
-" => junegunn/goyo.vim, amix/zenroom2
+" => junegunn/goyo.vim
 """""""""""""""""""""""""""""""""""""""""""""""""""
-" Enable all functions in all modes
-let g:user_zen_mode='a'
-let g:goyo_width=100
-let g:goyo_margin_top = 2
-let g:goyo_margin_bottom = 2
-
 nnoremap <silent> <leader>z :Goyo<CR>
 
 
@@ -147,14 +136,14 @@ nmap <C-n> <Plug>yankstack_substitute_newer_paste
 """""""""""""""""""""""""""""""""""""""""""""""""""
 " => neoclide/coc.nvim
 """""""""""""""""""""""""""""""""""""""""""""""""""
-nnoremap <silent><nowait> <leader>e  :<C-u>CocCommand explorer<CR>
-nnoremap <silent><nowait> <leader>o  :<C-u>CocCommand editor.action.organizeImport<CR>
-nnoremap <silent><nowait> <leader>cm  :<C-u>CocList commands<CR>
-nnoremap <silent><nowait> <leader>a  :<C-u>CocList diagnostics<CR>
+nnoremap <silent> <nowait> <leader>e  :<C-u>CocCommand explorer<CR>
+nnoremap <silent> <nowait> <leader>o  :<C-u>CocCommand editor.action.organizeImport<CR>
+nnoremap <silent> <nowait> <leader>cm  :<C-u>CocList commands<CR>
+nnoremap <silent> <nowait> <leader>a  :<C-u>CocList diagnostics<CR>
 
-nmap <silent>gd <Plug>(coc-definition)
-nmap <silent>gy <Plug>(coc-type-definition)
-nmap <silent>gr <Plug>(coc-references)
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gr <Plug>(coc-references)
 nmap <leader>r  <Plug>(coc-rename)
 nmap <leader>ac <Plug>(coc-codeaction)
 nmap <leader>qf :<C-u>CocFix<CR>
@@ -240,7 +229,7 @@ let g:airline#extensions#tabline#left_alt_sep = ' '
 let g:airline#extensions#tabline#right_sep = ' '
 let g:airline#extensions#tabline#right_alt_sep = ' '
 let g:airline_section_y = ''
-let g:airline_theme='gruvbox'
+let g:airline_theme = 'gruvbox'
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""
