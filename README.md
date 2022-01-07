@@ -1,4 +1,6 @@
 # Dotfiles \[[![Build Status][travis-badge]][travis]]
+ 
+ Always a WIP!
 
 - Shell
   - [zsh/](./zsh/): zsh configurations; plugins managed by [ohmyzsh][ohmyzsh]
@@ -10,51 +12,59 @@
   - [nvim/](./nvim/): neovim configurations
   - [code/](./code/): list of vscode extensions and link to vscode settings sync gist
   - [fonts/](./fonts/): preferred font files
-- Programming
-  - [python/](./python/): conda base environment packages and jupyter notebook configurations
-  - [bin/](./bin/): python/bash scripts
 - General
   - [install.conf.yml](./install.conf.yml), [./install](./install): config and installation for dotbot
+  - [bin/](./bin/): python/bash scripts
+  - [python/](./python/): conda base environment packages and jupyter notebook configurations
   - [notes/](./notes/): misc. programming/tools setup notes
 
 ## Installation
 
-Symlinking repository to `~/` is managed by the excellent [Dotbot][dotbot]. Useful in setting up a new system, or maintaining current dotfiles with version control.
+Symlinking to `$HOME` is managed by the excellent [Dotbot][dotbot]. Useful in setting up a new system, or maintaining current dotfiles with version control.
 
 1.  Clone repository and submodules:
 
-    ```zsh
-    # With SSH
-    $ git clone --recurse-submodules git@github.com:rajitbanerjee/dotfiles ~/.dotfiles
+    - With SSH:
 
-    # Alternatively, with HTTPS
-    $ git clone --recurse-submodules https://github.com/rajitbanerjee/dotfiles.git ~/.dotfiles
+    ```zsh
+    git clone --recurse-submodules git@github.com:rajitbanerjee/dotfiles ~/.dotfiles
     ```
 
-2.  Run the following for setup:
+    - With HTTPS:
 
     ```zsh
-    # Remove existing bashrc
-    $ rm -rf ~/.bashrc # Linux/WSL2
+    git clone --recurse-submodules https://github.com/rajitbanerjee/dotfiles.git ~/.dotfiles
+    ```
 
-    # Symlink dotfiles
-    $ cd ~/.dotfiles && ./install
+2.  Symlink dotfiles:
+    ```zsh
+    cd ~/.dotfiles && ./install
     ```
 
 <p align='center'>
   <img src='./screenshots/dotbot.png'>
 </p>
 
-3.  Install a range of preferred packages. See [system-setup-mac][ssm], [system-setup-linux][ssl] and [setup-coc-nvim][scn].
+3.  Install a range of packages. See [system-setup-mac][ssm], [system-setup-linux][ssl] and [setup-coc-nvim][scn].
+
+    - macOS:
 
     ```zsh
-    $ ./bin/system-setup-mac    # macOS
-    $ ./bin/system-setup-linux  # Linux/WSL2
+    ./bin/system-setup-mac
+    ```
 
-    # Set up Neovim and trigger vim-plug installations
-    $ nvim
-    $ npm cache verify
-    $ ./bin/setup-coc-nvim
+    - Linux/WSL2:
+
+    ```zsh
+    ./bin/system-setup-linux
+    ```
+
+    - Set up Neovim and trigger vim-plug installations:
+
+    ```zsh
+    nvim
+    npm cache verify
+    ./bin/setup-coc-nvim
     ```
 
 Neovim:
