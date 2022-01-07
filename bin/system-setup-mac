@@ -103,6 +103,10 @@ npm i -g live-server
 ###############
 # Misc./System
 ###############
+
+# exa (ls++)
+echo -e "\n\nexa:\n"
+brew install exa
  
 # tmux
 echo -e "\n\ntmux:\n"

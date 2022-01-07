@@ -100,6 +100,10 @@ npm i -g live-server
 # Misc./System
 ###############
 
+# exa (ls++)
+echo -e "\n\nexa:\n"
+sudo apt install exa
+
 # fzf fuzzy finder
 echo -e "\n\nFuzzy finder fzf:\n"
 git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
