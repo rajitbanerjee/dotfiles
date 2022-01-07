@@ -2,17 +2,22 @@
 
 ## Tools
 
-- [FiraCode Nerd Font](https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/FiraCode/Regular/complete) needs to be [installed](https://github.com/rajitbanerjee/dotfiles/tree/main/fonts) and set as font for Terminal for vim-devicons.
-- Homebrew [package manager]
-  - Installed using iTerm2 (Rosetta 2), hence all packages are in `/usr/local/Cellar/`.
-- Terminal
-  - iTerm2
-    - Using Rosetta 2 emulation for Apple Silicon.
-    - [Colour schemes](https://github.com/mbadolato/iTerm2-Color-Schemes)
-- Docker Desktop for Mac
-- Neovim
-- VSCode
+- [Notion](https://www.notion.so/product?fredir=1): Notes
+- [Bitwarden](https://bitwarden.com): Password manager
+- [CleanMyMac X](https://cleanmymac.com): Cleaner
 - [UnnaturalScrollWheels](https://github.com/ther0n/UnnaturalScrollWheels): Invert mouse/trackpad scroll direction.
+- [Wipr](https://apps.apple.com/us/app/wipr/id1320666476?mt=12): Ad blocker for Safari
+- Dev
+  - Terminal
+    - [iTerm2](https://iterm2.com)
+      - Using Rosetta 2 emulation for Apple Silicon.
+      - [Colour schemes](https://github.com/mbadolato/iTerm2-Color-Schemes)
+    - [FiraCode Nerd Font](https://github.com/rajitbanerjee/dotfiles/tree/main/fonts): Set as Terminal font for vim-devicons to work.
+  - [Homebrew](https://brew.sh): Package manager
+    - Installed using iTerm2 (Rosetta 2), hence all packages are in `/usr/local/Cellar/`.
+  - [Neovim](https://neovim.io): Primary editor
+  - [VS Code](https://code.visualstudio.com): Secondary editor
+  - [Docker Desktop](https://www.docker.com/products/docker-desktop): Containers
 
 ## Languages
 
@@ -71,7 +76,6 @@
 
 1. Installed using `conda install -c conda-forge julia` in env `comp30930`.
 2. Other package installations: https://github.com/Pheobe-Sun/Julia-for-optimisation.
-3. Added exports to `~/.shell/common.sh`.
 
 ## MySQL/PostgreSQL
 
