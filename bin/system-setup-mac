@@ -170,5 +170,9 @@ brew install git-delta
 echo -e "\n\nfx:\n"
 npm i -g fx
 
+# duf (Disk Usage/Free Utility)
+echo -e "\n\nduf:\n"
+brew install duf
+
 
 echo -e "\nSystem setup complete!\n"

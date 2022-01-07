@@ -11,7 +11,3 @@ fi
 export JAVA_8_HOME=$(/usr/libexec/java_home -v1.8)
 export JAVA_11_HOME=$(/usr/libexec/java_home -v11)
 export JAVA_HOME=$JAVA_8_HOME
-
-## Julia/FICO Xpress
-export XPRESSDIR="/Applications/FICO\ Xpress/Xpress\ Workbench.app/Contents/Resources/xpressmp"
-. /Applications/FICO\ Xpress/xpressmp/bin/xpvars.sh
