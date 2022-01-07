@@ -154,5 +154,9 @@ wget https://github.com/dandavison/delta/releases/download/0.11.3/git-delta_0.11
 sudo dpkg -i git-delta_0.11.3_amd64.deb
 rm -rf git-delta_0.11.3_amd64.deb
 
+# fx (JSON viewer)
+echo -e "\n\nfx:\n"
+npm i -g fx
+
 
 echo -e "\nSystem setup complete!\n"

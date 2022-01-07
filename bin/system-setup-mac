@@ -166,5 +166,9 @@ npm i -g git-pull-all
 echo -e "\n\ngit-delta:\n"
 brew install git-delta
 
+# fx (JSON viewer)
+echo -e "\n\nfx:\n"
+npm i -g fx
+
 
 echo -e "\nSystem setup complete!\n"
