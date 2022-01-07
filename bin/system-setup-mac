@@ -162,5 +162,9 @@ brew install dpkg
 echo -e "\n\ngit-pull-all:\n"
 npm i -g git-pull-all
 
+# git-delta
+echo -e "\n\ngit-delta:\n"
+brew install git-delta
+
 
 echo -e "\nSystem setup complete!\n"

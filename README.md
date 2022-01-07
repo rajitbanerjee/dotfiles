@@ -1,6 +1,6 @@
 # Dotfiles \[[![Build Status][travis-badge]][travis]]
- 
- Always a WIP!
+
+Always a WIP!
 
 - Shell
   - [zsh/](./zsh/): zsh configurations; plugins managed by [ohmyzsh][ohmyzsh]
@@ -45,7 +45,13 @@ Symlinking to `$HOME` is managed by the excellent [Dotbot][dotbot]. Useful in se
   <img src='./screenshots/dotbot.png'>
 </p>
 
-3.  Install a range of packages. See [system-setup-mac][ssm], [system-setup-linux][ssl] and [setup-coc-nvim][scn].
+3.  Set up `~/.gitconfig`:
+
+    ```zsh
+    echo "" > ~/.gitconfig && ./bin/gitconfig-global
+    ```
+
+4.  Install a range of packages. See [system-setup-mac][ssm], [system-setup-linux][ssl] and [setup-coc-nvim][scn].
 
     - macOS:
 

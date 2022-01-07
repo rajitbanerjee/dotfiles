@@ -15,3 +15,8 @@ mkpdf() {
     pandoc -o $base.pdf --pdf-engine=/Library/TeX/texbin/pdflatex $base.md
     echo "File created: $base.pdf"
 }
+
+# better diff
+diff() {
+    command diff -u "$1" "$2" | delta
+}
