@@ -9,7 +9,7 @@ ZSH_CUSTOM=~/.zsh/custom
 
 [[ ! -f ~/.zsh/optional.zsh ]] || source ~/.zsh/optional.zsh
 
-if [[ "$(uname -s)" == "Linux" ]]; then
+if [ "$(uname -s)" = "Linux" ]; then
     # Apt package suggestions
     source /etc/zsh_command_not_found
 fi

@@ -10,22 +10,26 @@
 - clean: ["~"]
 
 - link:
-    ~/.config/base.yml: python/base.yml
     ~/.config/nvim: nvim
+    ~/.ssh/config: ssh/config
+    ~/.tmux.conf: tmux/tmux.conf
+    ~/.tmux/plugins/tpm: tmux/tpm
+
+    ~/.config/base.yml: python/base.yml
     ~/.jupyter/jupyter_notebook_config.json: python/jupyter/jupyter_notebook_config.json
     ~/.jupyter/nbconfig/notebook.json: python/jupyter/notebook.json
-    ~/.local/scripts/bin: bin
     ~/.local/share/jupyter/nbextensions: python/jupyter/nbextensions
-    ~/.p10k.zsh: zsh/p10k.zsh
+
     ~/.shell/aliases.sh: shell/aliases.sh
     ~/.shell/aws.sh: shell/aws.sh
     ~/.shell/common.sh: shell/common.sh
     ~/.shell/functions.sh: shell/functions.sh
-    ~/.ssh/config: ssh/config
-    ~/.tmux.conf: tmux/tmux.conf
-    ~/.tmux/plugins/tpm: tmux/tpm
+    ~/.shell/os: shell/os
+
     ~/.zsh:
     ~/.zshrc: zsh/zshrc
+    ~/.p10k.zsh: zsh/p10k.zsh
+    ~/.local/scripts/bin: bin
 
 - shell:
     - [git submodule update --init --recursive, Installing submodules]

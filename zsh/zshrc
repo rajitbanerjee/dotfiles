@@ -17,6 +17,12 @@ fi
 ## Exports and other external program settings
 [[ ! -f ~/.shell/common.sh ]] || source ~/.shell/common.sh
 
+if [[ "$(uname -s)" == "Darwin" ]]; then
+    [[ ! -f ~/.shell/os/darwin.sh ]] || source ~/.shell/os/darwin.sh
+elif [[ "$(uname -s)" == "Linux" ]]; then
+    [[ ! -f ~/.shell/os/linux.sh ]] || source ~/.shell/os/linux.sh
+fi
+
 ## AWS work stuff
 [[ ! -f ~/.shell/aws.sh ]] || source ~/.shell/aws.sh
 

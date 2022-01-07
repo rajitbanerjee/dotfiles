@@ -3,7 +3,7 @@
 
 # format
 tempfile="./.tmp.tex"
-if [[ "$(uname -s)" == "Darwin" ]]; then
+if [ "$(uname -s)" = "Darwin" ]; then
     /usr/local/bin/latexindent $1 > $tempfile
 
     # https://www.overleaf.com/learn/latex/Choosing_a_LaTeX_Compiler
@@ -13,7 +13,7 @@ if [[ "$(uname -s)" == "Darwin" ]]; then
     # clean up auxiliary files
     latexmk -c
     trash ${1%.*}.{bbl,run.xml}
-elif [[ "$(uname -s)" == "Linux" ]]; then
+elif [ "$(uname -s)" = "Linux" ]; then
     ~/.local/bin/latexindent/latexindent.pl $1 > $tempfile
 
     # convert to PDF

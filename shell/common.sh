@@ -17,7 +17,7 @@ export MANWIDTH=999
 export SSL_CERT_FILE=/etc/ssl/cert.pem
 
 ## nvim sessions (https://github.com/tpope/vim-obsession)
-export NVIM_SESSIONS="~/.cache/nvim/"
+export NVIM_SESSIONS=~/.cache/nvim/
 
 ## Conda
 __conda_setup="$(~/.local/share/conda/bin/conda shell."$0" hook 2> /dev/null)"
@@ -32,26 +32,3 @@ else
 fi
 unset __conda_setup
 
-if [ "$(uname -s)" = "Darwin" ]; then
-    ## Python (macOS default)
-    export PATH=~/Library/Python/3.9/bin:$PATH
-
-    ## command-not-found
-    HB_CNF_HANDLER="$(brew --repository)/Library/Taps/homebrew/homebrew-command-not-found/handler.sh"
-    if [ -f "$HB_CNF_HANDLER" ]; then
-        . "$HB_CNF_HANDLER";
-    fi
-
-    ## Java
-    export JAVA_8_HOME=$(/usr/libexec/java_home -v1.8)
-    export JAVA_11_HOME=$(/usr/libexec/java_home -v11)
-    export JAVA_HOME=$JAVA_8_HOME
-
-    ## Julia/FICO Xpress
-    export XPRESSDIR="/Applications/FICO\ Xpress/Xpress\ Workbench.app/Contents/Resources/xpressmp"
-    . /Applications/FICO\ Xpress/xpressmp/bin/xpvars.sh
-
-elif [ "$(uname -s)" = "Linux" ]; then
-    ## Java
-    export JAVA_HOME="/usr/lib/jvm/java-11-openjdk-amd64"
-fi
