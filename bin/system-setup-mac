@@ -174,5 +174,9 @@ npm i -g fx
 echo -e "\n\nduf:\n"
 brew install duf
 
+# tokei (count lines of code)
+echo -e "\n\ntokei:\n"
+brew install tokei
+
 
 echo -e "\nSystem setup complete!\n"
