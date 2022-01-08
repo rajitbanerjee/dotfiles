@@ -1,32 +1,12 @@
-# enable color support of ls and also add handy aliases
-if [ -x /usr/bin/dircolors ]; then
-    test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
-    alias ls='ls --color=auto'
-    alias grep='grep --color=auto'
-    alias fgrep='fgrep --color=auto'
-    alias egrep='egrep --color=auto'
-fi
-
 # system
 alias ..="cd .."
 alias cd..="cd .."
 alias cdd="cd ~/.dotfiles"
 alias chx="chmod +x"
 alias cls="clear"
+alias cl="cls && l"
 alias env="env | sort | less"
-alias findf="find -type f -name"
-alias jn="jupyter notebook"
-alias l='exa -l --icons -h --git --no-user'
-alias la='l -a'
-alias ll='ls -lh'
-alias ls='exa'
-alias lt='exa -T -L'
-alias less="less -R"
-alias mv="mv -i"
-alias n="nvim"
 alias q="exit"
-alias sl="ls"
-alias vim="nvim"
 if [ "$(uname -s)" = "Darwin" ]; then
     alias doc="cd ~/Documents"
     alias dp="cd ~/Desktop"
@@ -35,6 +15,25 @@ elif [ "$(uname -s)" = "Linux" ]; then
     alias open="xdg-open"
     alias pj="cd ~/projects"
 fi
+
+# files
+alias cat="bat --theme=\"gruvbox-dark\" -p -P"
+alias findf="find -type f -name"
+alias less="less -R"
+alias mv="mv -i"
+
+# exa (a modern replacement for ls)
+alias l='exa -l --icons -h --git --no-user'
+alias la='l -a'
+alias ll='ls -lh'
+alias ls='exa'
+alias lt='exa -T -L'
+alias sl="ls"
+
+# dev
+alias n="nvim"
+alias vim="nvim"
+alias jn="jupyter notebook"
 
 # ucd stage 4
 alias fyp="cd ~/Desktop/final-year-project"
@@ -74,7 +73,7 @@ alias ta="tmux attach-session -t"
 alias td="tmux detach-client -s"
 alias ts="tmux switch -t"
 
-# code
+# vs code
 alias codex="code --list-extensions"
 alias codein="cat ~/.dotfiles/code/extensions.txt | xargs -L 1 echo code --install-extension"
 
