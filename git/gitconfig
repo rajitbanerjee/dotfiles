@@ -1,0 +1,34 @@
+[core]
+	editor = nvim
+	excludesfile = ~/.gitignore_global
+	filemode = false
+[pager]
+	diff = delta
+	log = delta
+	reflog = delta
+	show = delta
+[delta]
+	features = side-by-side line-numbers navigate decorations
+	whitespace-error-style = 22 reverse
+[delta "decorations"]
+	commit-decoration-style = bold yellow box ul
+	file-style = bold yellow ul
+	file-decoration-style = none
+[init]
+	defaultBranch = main
+[pull]
+	rebase = true
+[fetch]
+	prune = true
+[merge]
+	conflictstyle = diff3
+[interactive]
+	diffFilter = delta --color-only
+[diff]
+	colorMoved = default
+
+# IMP. ~/.gitconfig_local needs to be created separately with user.name, email, etc.
+# git config --global --includes user.name "..."
+# git config --global --includes user.email "..."
+[include]
+    path = ~/.gitconfig_local

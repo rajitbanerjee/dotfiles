@@ -8,6 +8,7 @@ Always a WIP!
   - [ssh/](./ssh/): ssh config
   - [terminal/](./terminal/): terminal emulator settings
   - [tmux/](./tmux/): tmux configurations; `tmux.conf` adapted from [anishathalye/dotfiles/tmux.conf][anish]
+  - [git/](./git/): git configurations
 - Editor
   - [nvim/](./nvim/): neovim configurations
   - [code/](./code/): list of vscode extensions and link to vscode settings sync gist
@@ -45,13 +46,7 @@ Symlinking to `$HOME` is managed by the excellent [Dotbot][dotbot]. Useful in se
   <img src='./screenshots/dotbot.png'>
 </p>
 
-3.  Set up `~/.gitconfig`:
-
-    ```zsh
-    echo "" > ~/.gitconfig && ./bin/gitconfig-global
-    ```
-
-4.  Install a range of packages. See [system-setup-mac][ssm], [system-setup-linux][ssl] and [setup-coc-nvim][scn].
+3.  Install a range of packages. See [system-setup-mac][ssm], [system-setup-linux][ssl] and [setup-coc-nvim][scn].
 
     - macOS:
 

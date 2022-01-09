@@ -20,6 +20,9 @@
     ~/.jupyter/nbconfig/notebook.json: python/jupyter/notebook.json
     ~/.local/share/jupyter/nbextensions: python/jupyter/nbextensions
 
+    ~/.gitconfig: git/gitconfig
+    ~/.gitignore_global: git/gitignore_global
+
     ~/.shell/aliases.sh: shell/aliases.sh
     ~/.shell/aws.sh: shell/aws.sh
     ~/.shell/common.sh: shell/common.sh
