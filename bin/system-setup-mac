@@ -53,10 +53,12 @@ npm i -g @swc/core @swc/helpers regenerator-runtime
 echo -e "\n\nJava and Maven:\n"
 brew install openjdk@8
 brew install openjdk@11
+brew install openjdk@17
 brew install maven
 # openjdk@8 and @11 are keg-only; we need to create symbolic links so that the macOS java wrapper can find it
 sudo ln -sfn $(brew --prefix)/opt/openjdk@8/libexec/openjdk.jdk /Library/Java/JavaVirtualMachines/openjdk-8.jdk  
 sudo ln -sfn $(brew --prefix)/opt/openjdk@11/libexec/openjdk.jdk /Library/Java/JavaVirtualMachines/openjdk-11.jdk
+sudo ln -sfn $(brew --prefix)/opt/openjdk@17/libexec/openjdk.jdk /Library/Java/JavaVirtualMachines/openjdk-17.jdk
 
 # LaTeX
 read -rep $'\n\nLaTeX [y/n]: ' opt_latex
