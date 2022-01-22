@@ -21,6 +21,7 @@ alias cat="bat --theme=\"gruvbox-dark\" -p -P"
 alias findf="find -type f -name"
 alias less="less -R"
 alias mv="mv -i"
+alias sizer="du -h * | sort -hr | less"
 
 # exa (a modern replacement for ls)
 alias l='exa -l --icons -h --git --no-user'
