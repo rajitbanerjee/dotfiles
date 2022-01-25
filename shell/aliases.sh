@@ -41,7 +41,7 @@ alias fyp="cd ~/Desktop/final-year-project"
 alias inf="cd ~/Desktop/inference-for-da"
 alias rec="cd ~/Desktop/rec-sys"
 alias perf="cd ~/Desktop/perf-comp-sys"
-alias swe="cd ~/Desktop/secure-swe"
+alias sse="cd ~/Desktop/secure-swe"
 
 # git
 alias ga="git add"
