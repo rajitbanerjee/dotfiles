@@ -83,3 +83,8 @@
 2. Start: `brew services start mysql/postgresql`.
 3. Log in to MySQL: `mysql -u root` (no password).
 4. Stop: `brew services stop mysql/postgresql`.
+
+# R
+
+1. Installation: `brew install r`
+2. Run with [RStudio](https://www.rstudio.com/products/rstudio/download/#download).
