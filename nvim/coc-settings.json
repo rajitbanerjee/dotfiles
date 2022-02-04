@@ -15,7 +15,7 @@
     },
     "width": 27,
     "focus": true,
-    "icon": { "enableNerdfont": true },
+    "icon": { "enableNerdfont": true, "icon": "glyph_palette.vim" },
     "mouseMode": "singleclick",
     "sources": [
       {

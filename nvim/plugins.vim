@@ -24,6 +24,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
   Plug 'junegunn/fzf', {'do': { -> fzf#install() }}           " Dependency (fzf.vim) 
   Plug 'junegunn/fzf.vim'                                     " Fuzzy finder
   Plug 'junegunn/goyo.vim'                                    " Zen mode
+  Plug 'lambdalisue/glyph-palette.vim'                        " Universal palette for Nerd Fonts
   Plug 'lervag/vimtex'                                        " LaTeX support
   Plug 'maxbrunsfeld/vim-yankstack'                           " Turns default register into a stack
   Plug 'mhinz/vim-startify'                                   " Start screen
@@ -100,6 +101,7 @@ try
 catch
 endtry
 
+
 """""""""""""""""""""""""""""""""""""""""""""""""""
 " => iamcco/markdown-preview.nvim
 """""""""""""""""""""""""""""""""""""""""""""""""""
@@ -140,6 +142,14 @@ function! s:goyo_leave()
   set scrolloff=7
 endfunction
 
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""
+" => lambdalisue/glyph-palette.vim
+"""""""""""""""""""""""""""""""""""""""""""""""""""
+augroup my-glyph-palette
+  autocmd! *
+  autocmd FileType startify call glyph_palette#apply()
+augroup END
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""
@@ -274,3 +284,4 @@ let g:comfortable_motion_no_default_key_mappings = 1
 
 nnoremap <silent> <leader>j :call comfortable_motion#flick(150)<CR>
 nnoremap <silent> <leader>k :call comfortable_motion#flick(-150)<CR>
+
