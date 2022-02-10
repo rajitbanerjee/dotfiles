@@ -82,3 +82,13 @@ alias cab="conda activate base"
 alias cda="conda deactivate"
 alias exp="conda env export --no-builds"
 
+# docker
+alias dc="docker-compose"
+alias dcb="docker-compose build"
+alias dcu="docker-compose up"
+alias dcd="docker-compose down"
+
+# maven
+alias mi="mvn install"
+alias mci="mvn clean install"
+
