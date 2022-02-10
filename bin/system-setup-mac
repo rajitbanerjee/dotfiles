@@ -49,7 +49,7 @@ npm i -g lodash @types/lodash
 ## https://typestrong.org/ts-node/docs/transpilers/#bundled-swc-integration
 npm i -g @swc/core @swc/helpers regenerator-runtime
 
-# JDK 8, 11 and Apache Maven
+# JDK and Apache Maven
 echo -e "\n\nJava and Maven:\n"
 brew install openjdk@8
 brew install openjdk@11
@@ -88,7 +88,7 @@ echo -e "\n\nALE linters/fixers:\n"
 python3 -m pip install --user isort
 python3 -m pip install --user autopep8
 python3 -m pip install --user flake8
-## html, css, js, md, etc.
+## html, css, js/ts, md, yml, etc.
 npm i -g prettier @prettier/plugin-xml
 ## shell
 brew install shellcheck

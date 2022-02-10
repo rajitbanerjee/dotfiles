@@ -2,6 +2,7 @@
 .vim/
 *.bak
 indent.log
+*.synctex.gz
 
 
 ### Eclipse ###

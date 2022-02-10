@@ -69,13 +69,14 @@ let g:ale_linters = {
 let g:ale_fixers = { 
   \ '*': ['prettier'],
   \ 'python': ['autopep8', 'isort'], 
-  \ 'tex': ['latexindent']
+  \ 'tex': ['latexindent'],
+  \ 'xml': ['xmllint']
   \ }
 
 " Code formatting
 nnoremap <leader>l :ALEFix<CR>
 "" Custom java formatting script
-autocmd FileType java nnoremap <leader>l :silent !java-format %<CR>
+" autocmd FileType java nnoremap <leader>l :silent !java-format %<CR>
 
 " Disabling highlighting
 let g:ale_set_highlights = 0

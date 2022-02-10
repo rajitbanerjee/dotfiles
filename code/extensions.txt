@@ -10,6 +10,7 @@ eamodio.gitlens
 eg2.vscode-npm-script
 esbenp.prettier-vscode
 eserozvataf.one-dark-pro-monokai-darker
+foxundermoon.shell-format
 GabrielBB.vscode-lombok
 GitHub.github-vscode-theme
 GraphQL.vscode-graphql
@@ -44,6 +45,7 @@ vscjava.vscode-java-dependency
 vscjava.vscode-java-pack
 vscjava.vscode-java-test
 vscjava.vscode-maven
+vscjava.vscode-spring-initializr
 vscode-icons-team.vscode-icons
 WakaTime.vscode-wakatime
 xabikos.JavaScriptSnippets
