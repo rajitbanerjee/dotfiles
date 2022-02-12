@@ -1,0 +1,24 @@
+#!/bin/sh
+# Run an HTTP request file using curl.
+# Usage: rest-client file.http
+# Currently supports only single curl header (e.g. Content-Type: application/json)
+# Inspired by: ConorHK
+
+file="$1"
+first_line="$(head -n 1 "$file")"
+data_requests=("POST" "PATCH" "PUT")
+
+request="$(echo "$first_line" | awk '{print $1;}')"
+header="$(sed '2q;d' "$file")"
+data="$(tail -n +4 $1 | tr '\n' ' ')"
+url="$(echo "$first_line" | awk '{print $2;}')"
+
+if printf '%s\n' "${data_requests[@]}" | grep -Fxq "$request" ; then
+    # POST, PATCH, PUT
+    curl_command="curl -s -X "$request" -H '"$header"' -d '"$data"' "$url""
+else
+    # GET, DELETE
+    curl_command="curl -s -X "$request" "$url""
+fi
+
+eval "$curl_command | jq"
