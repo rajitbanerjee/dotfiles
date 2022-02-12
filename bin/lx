@@ -1,5 +1,6 @@
 #!/bin/bash
 # Format LaTeX file, then convert it to PDF, and clean up auxiliary files.
+# Usage: lx file.tex
 
 # format
 tempfile="./.tmp.tex"

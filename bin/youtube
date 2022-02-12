@@ -1,6 +1,6 @@
 #!/bin/bash
 # Download a YouTube video (or audio only)
-# Usage: ./youtube
+# Usage: youtube
 
 print_help() {
     echo "

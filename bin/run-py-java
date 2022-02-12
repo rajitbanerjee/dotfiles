@@ -1,15 +1,11 @@
 #!/bin/bash
-<<DETAILS
-Run all python/java programs in a specified directory.
-Designed to be used in my leetcode repository (https://github.com/rajitbanerjee/leetcode).
-
-Usage examples:
-For Python (defualt without -java flag),
-$ ./run-py-java src/plusOne
-
-For Java, 
-$ ./run-py-java src/plusOne -java 
-DETAILS
+# Run all python/java programs in a specified directory.
+# Designed to be used in my leetcode repository (https://github.com/rajitbanerjee/leetcode).
+# Usage examples:
+# For Python (defualt without -java flag),
+# $ run-py-java src/plusOne
+# For Java, 
+# run-py-java src/plusOne -java 
 
 print_usage() {
     echo "Usage: ./run-py-java src/<dir_name> [-java]"

@@ -1,10 +1,7 @@
 #!/bin/bash
-<<DETAILS
-Open GitHub for current git repository. 
-Usage:
-    $ ./github
-(Run at the root of the git repository.)
-DETAILS
+# Open GitHub for current git repository. 
+# Usage: github
+# (Run at the root of the git repository.)
 
 remote="$(git config remote.origin.url)"
 if [ "$(cut -c-5 <<< $remote)" == "https" ]; then

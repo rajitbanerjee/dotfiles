@@ -1,8 +1,6 @@
 #!/bin/bash
-<<DETAILS
-Set up a new system with my preferred packages.
-Usage: ./system-setup
-DETAILS
+# Set up a new system with my preferred packages.
+# Usage: system-setup
 
 echo -e "Starting system setup...\n"
 
