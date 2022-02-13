@@ -169,6 +169,7 @@ nmap <C-n> <Plug>yankstack_substitute_newer_paste
 """""""""""""""""""""""""""""""""""""""""""""""""""
 let g:startify_change_to_dir = 0
 let g:startify_change_to_vcs_root = 1
+let g:startify_session_before_save = [ 'silent! CocCommand explorer<CR>' ]
 
 function! s:list_commits()
     let git = 'git'
