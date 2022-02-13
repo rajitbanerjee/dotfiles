@@ -17,10 +17,11 @@ export MANWIDTH=999
 export SSL_CERT_FILE=/etc/ssl/cert.pem
 
 ## nvim sessions (https://github.com/tpope/vim-obsession)
-export NVIM_SESSIONS=~/.cache/nvim/
+export NVIM_SESSIONS=~/.local/share/nvim/session/
+mkdir -p $NVIM_SESSIONS
 
 ## Conda
-__conda_setup="$(~/.local/share/conda/bin/conda shell."$0" hook 2> /dev/null)"
+__conda_setup="$(~/.local/share/conda/bin/conda shell."$0" hook 2>/dev/null)"
 if [ $? -eq 0 ]; then
     eval "$__conda_setup"
 else
@@ -31,4 +32,3 @@ else
     fi
 fi
 unset __conda_setup
-
