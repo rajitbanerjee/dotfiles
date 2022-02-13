@@ -64,7 +64,7 @@ dependencies:
     - isort==5.9.1
     - mccabe==0.6.1
     - msgpack==1.0.2
-    - protobuf==3.17.3
+    - protobuf==3.19.4
     - pycodestyle==2.7.0
     - pyflakes==2.3.1
     - pynvim==0.4.3
