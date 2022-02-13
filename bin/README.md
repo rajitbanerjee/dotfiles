@@ -32,6 +32,7 @@ Please refer to the individual scripts for detailed usage information.
 | ./google             | Google search in the command line.                                                 |
 | ./hamming            | 11-bit Hamming Code problem solver.                                                |
 | ./install-conda      | Installs conda on macOS or Linux.                                                  |
+| ./install-mac-apps   | Install macOS GUI apps.                                                            |
 | ./lx                 | Format LaTeX file, convert to PDF and trash auxiliary files.                       |
 | ./merge-json         | Merge all JSON files in the specified directory.                                   |
 | ./merge-pdf          | Merge mutliple PDF files into a single file.                                       |
