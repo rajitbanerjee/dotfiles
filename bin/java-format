@@ -1,8 +1,0 @@
-#!/bin/bash
-# Use google java code formatter to format Java source code.
-# Usage: java-format Hello.java
-
-formatter=~/.local/lib/google-java-format-1.11.0-all-deps.jar
-# java 11 is required to run the formatter jar
-# --aosp forces the Android Open Source Project guidelines instead of the standard google one (e.g. tab width 4 instead of 2).
-JAVA_HOME=$JAVA_11_HOME java -jar "$formatter" --aosp --replace "$1" >> /dev/null 2>&1

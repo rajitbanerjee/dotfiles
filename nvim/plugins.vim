@@ -64,19 +64,21 @@ let g:closetag_regions =  {
 let g:ale_linters = { 
   \ 'python': ['flake8', 'mypy'], 
   \ 'latex': ['chktex'], 
-  \ 'sh': ['shellcheck'] 
+  \ 'sh': ['shellcheck'],
   \ }
 let g:ale_fixers = { 
   \ '*': ['prettier'],
   \ 'python': ['autopep8', 'isort'], 
+  \ 'java': ['google_java_format'],
+  \ 'sh': ['shfmt'],
   \ 'tex': ['latexindent'],
-  \ 'xml': ['xmllint']
+  \ 'xml': ['xmllint'],
   \ }
 
 " Code formatting
 nnoremap <leader>l :ALEFix<CR>
-"" Custom java formatting script
-" autocmd FileType java nnoremap <leader>l :silent !java-format %<CR>
+let g:ale_java_google_java_format_options = '--aosp'
+let g:ale_fix_on_save = 1
 
 " Disabling highlighting
 let g:ale_set_highlights = 0
