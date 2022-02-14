@@ -78,7 +78,7 @@ let g:ale_fixers = {
 " Code formatting
 nnoremap <leader>l :ALEFix<CR>
 let g:ale_java_google_java_format_options = '--aosp'
-let g:ale_fix_on_save = 1
+let g:ale_fix_on_save = 0
 
 " Disabling highlighting
 let g:ale_set_highlights = 0
