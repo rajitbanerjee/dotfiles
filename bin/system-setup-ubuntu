@@ -1,6 +1,6 @@
 #!/bin/bash
-# Set up a new system with my preferred packages.
-# Usage: system-setup-linux
+# Set up a new ubuntu linux system with my preferred packages.
+# Usage: system-setup-ubuntu
 
 echo -e "Starting system setup...\n"
 
