@@ -15,8 +15,6 @@
     ~/.tmux.conf: tmux/tmux.conf
     ~/.tmux/plugins/tpm: tmux/tpm
 
-    ~/.config/base.yml: python/base.yml
-    ~/.config/pip-base-requirements.txt: python/pip-base-requirements.txt
     ~/.jupyter/jupyter_notebook_config.json: python/jupyter/jupyter_notebook_config.json
     ~/.jupyter/nbconfig/notebook.json: python/jupyter/notebook.json
     ~/.local/share/jupyter/nbextensions: python/jupyter/nbextensions

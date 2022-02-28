@@ -13,7 +13,7 @@ Always a WIP!
   - [nvim/](./nvim/): neovim configurations
   - [code/](./code/): list of vscode extensions and link to vscode settings sync gist
   - [fonts/](./fonts/): preferred font files
-- General
+- Misc.
   - [install.conf.yml](./install.conf.yml), [./install](./install): config and installation for dotbot
   - [bin/](./bin/): python/bash scripts
   - [python/](./python/): conda base environment packages and jupyter notebook configurations
@@ -43,7 +43,7 @@ Symlinking to `$HOME` is managed by the excellent [Dotbot][dotbot]. Useful in se
     ```
 
 <p align='center'>
-  <img src='./screenshots/dotbot.png'>
+  <img src='./screenshots/01-dotbot.png'>
 </p>
 
 3.  Install a range of packages. See [system-setup-mac][ssm], [system-setup-linux][ssl] and [setup-coc-nvim][scn].
@@ -71,9 +71,17 @@ Symlinking to `$HOME` is managed by the excellent [Dotbot][dotbot]. Useful in se
 Neovim:
 
 <p align='center'>
-  <img src='./screenshots/nvim.png'>
-  <img src='./screenshots/floaterm.png'>
+  <img src='./screenshots/02-nvim.png'>
+  <img src='./screenshots/03-floaterm.png'>
 </p>
+
+The following resources are not directly used/symlinked:
+
+- `code/`: Manually provide gist link to VS Code Settings Sync, and install whatever extensions are necessary.
+- `fonts/`: New fonts should be added to the system by the user.
+- `notes/`: No tools/scripts, just notes.
+- `python/{base.yml,pip*.txt}`: Perform `conda` or `pip` install when required.
+- `terminal/`: These settings can be used in the terminal app.
 
 ## License
 
