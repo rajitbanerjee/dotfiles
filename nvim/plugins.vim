@@ -10,17 +10,14 @@ let g:ale_disable_lsp = 1
 
 
 call plug#begin('~/.config/nvim/autoload/plugged')
+
   Plug 'airblade/vim-gitgutter'                               " Git changes shown in column
   Plug 'alvan/vim-closetag'                                   " Autoclose tags (e.g. XML)
   Plug 'dbakker/vim-projectroot'                              " Dependency (fzf.vim)
   Plug 'dense-analysis/ale'                                   " LSP, linting, formatting
   Plug 'edkolev/tmuxline.vim'                                 " Tmux status line generator using airline
-  Plug 'flazz/vim-colorschemes'                               " More colours
   Plug 'gruvbox-community/gruvbox'                            " Primary colour scheme
-  Plug 'iamcco/markdown-preview.nvim', {
-    \ 'do': { -> mkdp#util#install()  },
-    \ 'for': ['markdown', 'vim-plug']
-    \ }                                                       " Markdown preview
+  Plug 'iamcco/markdown-preview.nvim'                         " Markdown preview
   Plug 'junegunn/fzf', {'do': { -> fzf#install() }}           " Dependency (fzf.vim) 
   Plug 'junegunn/fzf.vim'                                     " Fuzzy finder
   Plug 'junegunn/goyo.vim'                                    " Zen mode
@@ -45,6 +42,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
   Plug 'wakatime/vim-wakatime'                                " Coding metrics
   Plug 'Yggdroot/indentline'                                  " Indent indicator
   Plug 'yuttie/comfortable-motion.vim'                        " Smooth scrolling
+
 call plug#end()
 
 
