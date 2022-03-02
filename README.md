@@ -23,40 +23,17 @@ Always a WIP!
 
 Symlinking to `$HOME` is managed by the excellent [Dotbot][dotbot]. Useful in setting up a new system, or maintaining current dotfiles with version control.
 
-1.  Clone repository and submodules:
-
-    - With SSH:
-
-    ```zsh
-    git clone --recurse-submodules git@github.com:rajitbanerjee/dotfiles ~/.dotfiles
-    ```
-
-    - With HTTPS:
-
-    ```zsh
-    git clone --recurse-submodules https://github.com/rajitbanerjee/dotfiles.git ~/.dotfiles
-    ```
-
-2.  Symlink dotfiles:
-    ```zsh
-    cd ~/.dotfiles && ./install
-    ```
-
-<p align='center'>
-  <img src='./screenshots/01-dotbot.png'>
-</p>
+```zsh
+git clone --recurse-submodules git@github.com:rajitbanerjee/dotfiles ~/.dotfiles
+cd ~/.dotfiles && ./install
+```
 
 3.  Install a range of packages. See [system-setup-mac][ssm], [system-setup-ubuntu][ssl] and [setup-coc-nvim][scn].
 
-    - macOS:
+    - macOS or Ubuntu (Linux/WSL2):
 
     ```zsh
     ./bin/system-setup-mac
-    ```
-
-    - Ubuntu (Linux/WSL2):
-
-    ```zsh
     ./bin/system-setup-ubuntu
     ```
 
@@ -71,8 +48,8 @@ Symlinking to `$HOME` is managed by the excellent [Dotbot][dotbot]. Useful in se
 Neovim:
 
 <p align='center'>
-  <img src='./screenshots/02-nvim.png'>
-  <img src='./screenshots/03-floaterm.png'>
+  <img src='./screenshots/nvim.png'>
+  <img src='./screenshots/floaterm.png'>
 </p>
 
 The following resources are not directly used/symlinked:
