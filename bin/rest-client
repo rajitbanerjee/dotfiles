@@ -4,21 +4,41 @@
 # Currently supports only single curl header (e.g. Content-Type: application/json)
 # Inspired by: ConorHK
 
+case "$1" in
+-a | --authenticated)
+    auth=true
+    shift
+    authentication_token="Authorization: Bearer $1"
+    shift
+    ;;
+*)
+    auth=false
+    authentication_token=""
+    ;;
+esac
+
 file="$1"
 first_line="$(head -n 1 "$file")"
 data_requests=("POST" "PATCH" "PUT")
 
 request="$(echo "$first_line" | awk '{print $1;}')"
-header="$(sed '2q;d' "$file")"
+[[ "${data_requests[*]}" =~ "${request}" ]] && is_data_request=true || is_data_request=false
+
+header="$(sed "2q;d" "$file")"
+if [ $auth == true ] && [ $is_data_request == true ]; then
+    header="$header
+$authentication_token"
+fi
+
 data="$(tail -n +4 "$file" | tr '\n' ' ')"
 url="$(echo "$first_line" | awk '{print $2;}')"
 
-if printf '%s\n' "${data_requests[@]}" | grep -Fxq "$request" ; then
+if [ $is_data_request == true ]; then
     # POST, PATCH, PUT
-    curl_command="curl -s -X "$request" -H '"$header"' -d '"$data"' "$url""
+    command="curl -s -X "$request" -H '"$header"' -d '"$data"' "$url""
 else
     # GET, DELETE
-    curl_command="curl -s -X "$request" "$url""
+    [ $auth == true ] && command="curl -s -X "$request" -H '"$authentication_token"' "$url"" || command="curl -s -X "$request" "$url""
 fi
 
-eval "$curl_command | jq"
+eval "$command | jq"
