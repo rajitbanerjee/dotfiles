@@ -6,6 +6,9 @@
 - [Bitwarden](https://bitwarden.com): Password manager
 - [CleanMyMac X](https://cleanmymac.com): Cleaner
 - [UnnaturalScrollWheels](https://github.com/ther0n/UnnaturalScrollWheels): Invert mouse/trackpad scroll direction.
+- Browser:
+  - Safari
+  - Firefox
 - [Wipr](https://apps.apple.com/us/app/wipr/id1320666476?mt=12): Ad blocker for Safari
 - Terminal
   - [iTerm2](https://iterm2.com)
