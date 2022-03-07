@@ -26,24 +26,15 @@ Symlinking to `$HOME` is managed by the excellent [Dotbot][dotbot]. Useful in se
 ```zsh
 git clone --recurse-submodules git@github.com:rajitbanerjee/dotfiles ~/.dotfiles
 cd ~/.dotfiles && ./install
+
+./bin/system-setup-mac # or
+./bin/system-setup-ubuntu
+
+# set up neovim and trigger vim-plug installations
+nvim
+npm cache verify
+./bin/setup-coc-nvim
 ```
-
-3.  Install a range of packages. See [system-setup-mac][ssm], [system-setup-ubuntu][ssl] and [setup-coc-nvim][scn].
-
-    - macOS or Ubuntu (Linux/WSL2):
-
-    ```zsh
-    ./bin/system-setup-mac
-    ./bin/system-setup-ubuntu
-    ```
-
-    - Set up Neovim and trigger vim-plug installations:
-
-    ```zsh
-    nvim
-    npm cache verify
-    ./bin/setup-coc-nvim
-    ```
 
 Neovim:
 
