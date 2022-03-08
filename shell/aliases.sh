@@ -33,7 +33,6 @@ alias sl="ls"
 
 # dev
 alias n="nvim"
-alias vim="nvim"
 alias jn="jupyter notebook"
 
 # ucd stage 4

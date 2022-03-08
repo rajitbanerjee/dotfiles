@@ -4,22 +4,18 @@
 
 echo -e "Starting system setup...\n"
 
-
 ##############
 # Programming
 ##############
 
-# Install python3 -m pip for default python3 on Linux
 echo -e "\n\nPython3 and pip:\n"
 sudo apt update
 sudo apt install python3-pip
 
-# Intall bash-wakatime
+# Wakatime
 echo -e "\n\nWakaTime coding metrics:\n"
 python3 -m pip install --user wakatime
-git clone https://github.com/gjsheep/bash-wakatime.git ~/.local/share/bash-wakatime
 
-# Wakatime config file
 if [ ! -f ~/.wakatime.cfg ]; then
     echo -e "\n\nWakaTime config file setup:\n"
     read -p "Enter WakaTime API Key: " key
@@ -32,129 +28,72 @@ ignore =
     MERGE_MSG$
     TAG_EDITMSG$
 api_key=$key
-""" > ~/.wakatime.cfg
+""" >~/.wakatime.cfg
 fi
 
-# Node.js
-echo -e "\n\nNode.js LTS:\n"
+# Node.js, TS
+echo -e "\n\nNode.js and TypeScript:\n"
 curl --fail -LSs https://install-node.now.sh/lts | sudo bash
 npm config set prefix '~/.local'
-
-# TypeScript
-echo -e "\n\nTypeScript:\n"
 npm i -g typescript ts-node @types/node
-npm i -g lodash @types/lodash 
-## ts-node speedup using swc - Rust based transpiler
-## https://typestrong.org/ts-node/docs/transpilers/#bundled-swc-integration
+npm i -g lodash @types/lodash
 npm i -g @swc/core @swc/helpers regenerator-runtime
 
-# Java (default v11)
-echo -e "\n\nDefault JDK installation:\n"
+# Java
+echo -e "\n\nJava:\n"
 sudo apt install default-jdk
 
-# LaTeX
+# LaTeX (optional)
 read -rep $'\n\nLaTeX [y/n]: ' opt_latex
 if [ "$opt_latex" == 'y' ]; then
     echo -e "\nInstalling..."
-    sudo apt-get install texlive texlive-pictures texlive-latex-extra texlive-xetex
+    sudo apt install texlive texlive-pictures texlive-latex-extra texlive-xetex
     sudo apt install chktex # linter used by ale for vim
 else
     echo -e "Skipping...\n"
 fi
 
-
 ##########
 # Neovim
 ##########
 
-echo -e "\n\nNeovim:\n"
+echo -e "\n\nNeovim and ALE linters/fixers:\n"
 sudo add-apt-repository ppa:neovim-ppa/stable
 sudo apt update
 sudo apt install neovim
-
-echo -e "\n\nPython3 provider for nvim:\n"
-python3 -m pip install --user --upgrade pynvim 
-
-# linting/formatting
-echo -e "\n\nALE linters/fixers:\n"
-## python
-python3 -m pip install --user isort
-python3 -m pip install --user autopep8
-python3 -m pip install --user flake8
-## html, css, js, md, etc.
+python3 -m pip install --user pynvim isort autopep8 flake8
 npm i -g prettier @prettier/plugin-xml
-## shell
 sudo apt install shellcheck
-## java
-java_format="google-java-format-1.11.0-all-deps.jar"
-wget https://github.com/google/google-java-format/releases/download/v1.11.0/"$java_format" -O ~/.local/lib/"$java_format"
+curl -sS https://webinstall.dev/shfmt | bash
 
-# HTML live server
-echo -e "\n\nHTML live server:\n"
-npm i -g live-server
+#################
+# Misc. utilities
+#################
 
+echo -e "\n\Misc. utilities:\n"
 
-###############
-# Misc./System
-###############
-
-# exa (ls++)
-echo -e "\n\nexa:\n"
 sudo apt install exa
-
-# fzf fuzzy finder
-echo -e "\n\nFuzzy finder fzf:\n"
-git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
-~/.fzf/install
-
-# Rigrep
-echo -e "\n\nRipgrep (rg):\n"
-sudo apt-get install ripgrep
-
-# zsh
-echo -e "\n\nzsh, oh-my-zsh:\n(Note: \"exit\" from oh-my-zsh to resume setup)\n"
-sudo apt install zsh
-# oh my zsh will start a sub-shell, just "exit" and the this setup script will continue
-sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-mv ~/.zshrc.pre-oh-my-zsh ~/.zshrc
-sudo apt install command-not-found
-
-# trash-cli (safer alternative to rm -rf)
-echo -e "\n\nTrash CLI:\n"
+sudo apt install fzf
+sudo apt install jq
+sudo apt install ripgrep
 sudo apt install trash-cli
-
-# tl;dr (man, but with examples)
-echo -e "\n\nTLDR:\n"
-sudo apt install tldr && tldr
-
-# https://github.com/chubin/cheat.sh
-echo -e "\n\nCheat sheat:\n"
-curl https://cht.sh/:cht.sh > ~/.local/bin/cht.sh
-chmod +x ~/.local/bin/cht.sh
-
-# zip (in case tar.gz won't do)
-echo -e "\n\nZip:\n"
+sudo apt install tldr
 sudo apt install zip
+npm i -g git-pull-all
 
-# bat (a cat clone, with syntax highlighting)
-echo -e "\n\nBat:\n"
 wget https://github.com/sharkdp/bat/releases/download/v0.15.4/bat_0.15.4_amd64.deb
 sudo dpkg -i bat_0.15.4_amd64.deb
 rm -rf bat_0.15.4_amd64.deb
 
-# git-pull-all
-echo -e "\n\ngit-pull-all:\n"
-npm i -g git-pull-all
-
-# git-delta
-echo -e "\n\ngit-delta:\n"
 wget https://github.com/dandavison/delta/releases/download/0.11.3/git-delta_0.11.3_amd64.deb
 sudo dpkg -i git-delta_0.11.3_amd64.deb
 rm -rf git-delta_0.11.3_amd64.deb
 
-# fx (JSON viewer)
-echo -e "\n\nfx:\n"
-npm i -g fx
-
+# zsh
+echo -e "\n\nzsh, oh-my-zsh:\n(Note: \"exit\" from oh-my-zsh to resume setup)\n"
+sudo apt install zsh
+sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+mv ~/.zshrc.pre-oh-my-zsh ~/.zshrc
+sudo apt install command-not-found
 
 echo -e "\nSystem setup complete!\n"
