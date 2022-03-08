@@ -11,7 +11,9 @@
 
 - link:
     ~/.config/nvim: nvim
-    ~/.ssh/config: ssh/config
+    ~/.ssh/config:
+      if: "[ `uname -s` = Darwin ]"
+      path: ssh/config
     ~/.tmux.conf: tmux/tmux.conf
     ~/.tmux/plugins/tpm: tmux/tpm
 
