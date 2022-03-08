@@ -4,6 +4,7 @@ Always a WIP!
 
 - Shell
   - [zsh/](./zsh/): zsh configurations; plugins managed by [ohmyzsh][ohmyzsh]
+  - [bash/](./bash/): bash configurations; when zsh is not an option
   - [shell/](./shell/): common configurations for all types of shells
   - [ssh/](./ssh/): ssh config
   - [terminal/](./terminal/): terminal emulator settings

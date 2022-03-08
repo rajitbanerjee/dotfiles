@@ -35,5 +35,8 @@
     ~/.p10k.zsh: zsh/p10k.zsh
     ~/.local/scripts/bin: bin
 
+    ~/.bash:
+    ~/.bashrc: bash/bashrc
+
 - shell:
     - [git submodule update --init --recursive, Installing submodules]
