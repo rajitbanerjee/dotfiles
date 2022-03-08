@@ -17,7 +17,7 @@ elif [ "$(uname -s)" = "Linux" ]; then
 fi
 
 # files
-alias cat="bat --theme=\"gruvbox-dark\" -p -P"
+alias bat="bat --theme=\"gruvbox-dark\" -p -P"
 alias findf="find -type f -name"
 alias less="less -R"
 alias mv="mv -i"
