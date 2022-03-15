@@ -30,19 +30,12 @@
     ~/.gitconfig: git/gitconfig
     ~/.gitignore_global: git/gitignore_global
 
-    ~/.shell/aliases.sh: shell/aliases.sh
-    ~/.shell/aws.sh: shell/aws.sh
-    ~/.shell/common.sh: shell/common.sh
-    ~/.shell/functions.sh: shell/functions.sh
-    ~/.shell/os: shell/os
-
-    ~/.zsh:
-    ~/.zshrc: zsh/zshrc
-    ~/.p10k.zsh: zsh/p10k.zsh
-    ~/.local/scripts/bin: bin
-
+    ~/.shell:
     ~/.bash:
     ~/.bashrc: bash/bashrc
+    ~/.zsh:
+    ~/.zshrc: zsh/zshrc
+    ~/.local/scripts/bin: bin
 
 - shell:
     - [git submodule update --init --recursive, Installing submodules]

@@ -1,15 +1,12 @@
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
-
 source ~/.zsh/settings.zsh
+source ~/.zsh/prompt.zsh
+
 unalias -a
 source ~/.shell/aliases.sh
 source ~/.shell/functions.sh
 source ~/.shell/common.sh
 source ~/.shell/os/"$(uname | tr '[:upper:]' '[:lower:]')".sh
 source ~/.shell/aws.sh
-source ~/.p10k.zsh
 
 typeset -U PATH # remove duplicates in $PATH
 autoload -U compinit && compinit

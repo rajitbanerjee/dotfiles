@@ -5,7 +5,7 @@ fi
 
 # set a fancy prompt (non-color, unless we know we "want" color)
 case "$TERM" in
-    xterm-color|*-256color) color_prompt=yes;;
+xterm-color | *-256color) color_prompt=yes ;;
 esac
 
 # uncomment for a colored prompt, if the terminal has the capability; turned
@@ -33,24 +33,25 @@ unset color_prompt force_color_prompt
 
 # If this is an xterm set the title to user@host:dir
 case "$TERM" in
-    xterm*|rxvt*)
-        PS1="\[\e]0;${debian_chroot:+($debian_chroot)}\u@\h: \w\a\]$PS1"
-        ;;
-    *)
-        ;;
+xterm* | rxvt*)
+    PS1="\[\e]0;${debian_chroot:+($debian_chroot)}\u@\h: \w\a\]$PS1"
+    ;;
+*) ;;
+
 esac
 
 PROMPT_DIRTRIM=1
 
 ## Git Prompt
-if [ -f ~/.bash/git-prompt.sh ]; then
-    . ~/.bash/git-prompt.sh
+if [ -f ~/.shell/git-prompt.sh ]; then
+    . ~/.shell/git-prompt.sh
 fi
-## unstaged (*) and staged (+) changes
+
+## unstaged (!) and staged (+) changes
 GIT_PS1_SHOWDIRTYSTATE=1
-## If something is stashed, then a '$' will be shown
+## If something is stashed, then a '*' will be shown
 GIT_PS1_SHOWSTASHSTATE=1
-## If there're untracked files, then a '%' will be shown
+## If there are untracked files, then a '%' will be shown
 GIT_PS1_SHOWUNTRACKEDFILES=1
 ##  A "<" indicates you are behind, ">" indicates you are ahead,
 # "<>" indicates you have diverged and "=" indicates that there is no difference

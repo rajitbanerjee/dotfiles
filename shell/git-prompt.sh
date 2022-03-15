@@ -36,14 +36,14 @@
 # The prompt status always includes the current branch name.
 #
 # In addition, if you set GIT_PS1_SHOWDIRTYSTATE to a nonempty value,
-# unstaged (*) and staged (+) changes will be shown next to the branch
+# unstaged (!) and staged (+) changes will be shown next to the branch
 # name.  You can configure this per-repository with the
 # bash.showDirtyState variable, which defaults to true once
 # GIT_PS1_SHOWDIRTYSTATE is enabled.
 #
 # You can also see if currently something is stashed, by setting
 # GIT_PS1_SHOWSTASHSTATE to a nonempty value. If something is stashed,
-# then a '$' will be shown next to the branch name.
+# then a '*' will be shown next to the branch name.
 #
 # If you would like to see if there're untracked files, then you can set
 # GIT_PS1_SHOWUNTRACKEDFILES to a nonempty value. If there're untracked
@@ -522,7 +522,7 @@ __git_ps1 ()
 		if [ -n "${GIT_PS1_SHOWDIRTYSTATE-}" ] &&
 		   [ "$(git config --bool bash.showDirtyState)" != "false" ]
 		then
-			git diff --no-ext-diff --quiet || w="*"
+			git diff --no-ext-diff --quiet || w="!"
 			git diff --no-ext-diff --cached --quiet || i="+"
 			if [ -z "$short_sha" ] && [ -z "$i" ]; then
 				i="#"
@@ -531,7 +531,7 @@ __git_ps1 ()
 		if [ -n "${GIT_PS1_SHOWSTASHSTATE-}" ] &&
 		   git rev-parse --verify --quiet refs/stash >/dev/null
 		then
-			s="$"
+			s="*"
 		fi
 
 		if [ -n "${GIT_PS1_SHOWUNTRACKEDFILES-}" ] &&

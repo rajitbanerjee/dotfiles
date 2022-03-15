@@ -1,7 +1,7 @@
+source ~/.bash/prompt.bash
+
 unalias -a
 source ~/.shell/aliases.sh
 source ~/.shell/functions.sh
 source ~/.shell/common.sh
 source ~/.shell/os/"$(uname | tr '[:upper:]' '[:lower:]')".sh
-source ~/.bash/settings.bash
-source ~/.bash/prompt.bash

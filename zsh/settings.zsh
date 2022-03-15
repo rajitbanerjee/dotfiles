@@ -3,7 +3,6 @@ export PATH=~/bin:/usr/local/bin:$PATH
 export ZSH=~/.oh-my-zsh
 
 ZSH_DISABLE_COMPFIX="true" # Skip verification of insecure directories (macOS error)
-ZSH_THEME="powerlevel10k/powerlevel10k"
 ENABLE_CORRECTION="true"
 ZSH_CUSTOM=~/.zsh/custom
 
