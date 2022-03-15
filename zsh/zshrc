@@ -11,4 +11,5 @@ source ~/.shell/os/"$(uname | tr '[:upper:]' '[:lower:]')".sh
 source ~/.shell/aws.sh
 source ~/.p10k.zsh
 
+typeset -U PATH # remove duplicates in $PATH
 autoload -U compinit && compinit

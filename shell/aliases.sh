@@ -6,6 +6,7 @@ alias chx="chmod +x"
 alias cls="clear"
 alias cl="cls && l"
 alias env="env | sort | less"
+alias path="tr ':' '\n' <<<"$PATH" | less"
 alias q="exit"
 case "$(uname)" in
 Darwin)

@@ -1,9 +1,0 @@
-#!/bin/bash
-set -euo pipefail
-IFS=$'\n\t'
-
-# Display the Linux PATH variable with entries separated by \n.
-# The usual "echo $PATH" is messy.
-# Usage: path
-
-tr ':' '\n' <<<"$PATH" | less
