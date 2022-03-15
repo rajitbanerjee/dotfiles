@@ -7,14 +7,17 @@ alias cls="clear"
 alias cl="cls && l"
 alias env="env | sort | less"
 alias q="exit"
-if [ "$(uname -s)" = "Darwin" ]; then
+case "$(uname)" in
+Darwin)
     alias doc="cd ~/Documents"
     alias dp="cd ~/Desktop"
     alias pj="cd ~/Git/projects"
-elif [ "$(uname -s)" = "Linux" ]; then
+    ;;
+Linux)
     alias open="xdg-open"
     alias pj="cd ~/projects"
-fi
+    ;;
+esac
 
 # files
 alias bat="bat --theme=\"gruvbox-dark\" -p -P"
@@ -93,4 +96,3 @@ alias dcd="docker-compose down"
 # maven
 alias mi="mvn install"
 alias mci="mvn clean install"
-

@@ -11,8 +11,12 @@ else
     # using ssh
     repo="$(cut -d':' -f2 <<<$remote)"
 fi
-if [ "$(uname -s)" = "Darwin" ]; then
+
+case "$(uname)" in
+Darwin)
     open "https://github.com/$repo"
-elif [ "$(uname -s)" = "Linux" ]; then
+    ;;
+Linux)
     xdg-open "https://github.com/$repo"
-fi
+    ;;
+esac
