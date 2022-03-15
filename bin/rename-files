@@ -1,4 +1,7 @@
 #!/bin/bash
+set -euo pipefail
+IFS=$'\n\t'
+
 print_help() {
     echo "
 Rename individual files, or all files in the specified directories, to 

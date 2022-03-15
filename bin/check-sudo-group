@@ -1,4 +1,7 @@
 #!/bin/bash
+set -euo pipefail
+IFS=$'\n\t'
+
 # Lists all the sudoers (with root privileges) on the system
 # Usage: check-sudo-group
 

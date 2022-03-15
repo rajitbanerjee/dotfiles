@@ -1,4 +1,7 @@
 #!/bin/bash
+set -euo pipefail
+IFS=$'\n\t'
+
 # Remove all file extensions in the specified directory.
 # Usage: remove-extensions <dir>
 

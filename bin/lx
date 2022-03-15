@@ -1,4 +1,7 @@
 #!/bin/bash
+set -euo pipefail
+IFS=$'\n\t'
+
 # Format LaTeX file, then convert it to PDF, and clean up auxiliary files.
 # Usage: lx file.tex
 

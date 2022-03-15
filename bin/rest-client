@@ -1,4 +1,7 @@
 #!/bin/bash
+set -euo pipefail
+IFS=$'\n\t'
+
 # Run an HTTP request file using curl.
 # Usage: rest-client file.http
 # Currently supports only single curl header (e.g. Content-Type: application/json)

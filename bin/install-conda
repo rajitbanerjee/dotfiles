@@ -1,4 +1,7 @@
 #!/bin/bash
+set -euo pipefail
+IFS=$'\n\t'
+
 # Install conda on your machine
 # Usage: source ./install-conda
 

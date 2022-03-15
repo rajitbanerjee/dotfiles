@@ -1,4 +1,6 @@
 #!/bin/bash
+set -euo pipefail
+IFS=$'\n\t'
 
 # Install coc.nvim extensions
 extpath=~/.config/coc/extensions
