@@ -6,4 +6,8 @@ GIT_PS1_SHOWUNTRACKEDFILES=1
 GIT_PS1_SHOWUPSTREAM="auto"
 GIT_PS1_SHOWCOLORHINTS=1
 
-setopt PROMPT_SUBST ; PS1='%c$(__git_ps1 " (%s)") \$ '
+# %B (%b): Start (stop) boldface
+# %F (%f): Start (stop) using a different foreground colour, if supported by the terminal
+# %(5~|%-1~/…/%3~|%4~): Prompt dir. trimming
+setopt PROMPT_SUBST ; PS1='%B%F{100}%(5~|%-1~/…/%3~|%4~)%f%b %F{66}$(__git_ps1 "(%s)") \$ '
+

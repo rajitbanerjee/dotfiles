@@ -13,10 +13,13 @@
     - [AdBlocker Ultimate](https://addons.mozilla.org/en-GB/firefox/addon/adblocker-ultimate/)
     - [uBlock Origin](https://addons.mozilla.org/en-GB/firefox/addon/ublock-origin/)
 - Terminal
+  - [WezTerm](https://wezfurlong.org/wezterm/index.html)
+    - Installed with `brew`, runs on Rosetta 2 by default.
+    - Uses `fonts/` and independent colour schemes.
   - [iTerm2](https://iterm2.com)
     - Using Rosetta 2 emulation for Apple Silicon.
     - [Colour schemes](https://github.com/mbadolato/iTerm2-Color-Schemes)
-  - [FiraCode Nerd Font](https://github.com/rajitbanerjee/dotfiles/tree/main/fonts): Set as Terminal font for vim-devicons to work.
+    - [FiraCode Nerd Font](https://github.com/rajitbanerjee/dotfiles/tree/main/fonts): Set as Terminal font for vim-devicons to work.
 - [Homebrew](https://brew.sh): Package manager
   - Installed using iTerm2 (Rosetta 2), hence all packages are in `/usr/local/Cellar/`.
 - [Neovim](https://neovim.io): Primary editor
