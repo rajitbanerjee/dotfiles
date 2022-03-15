@@ -28,7 +28,6 @@ call plug#begin('~/.config/nvim/autoload/plugged')
   Plug 'neoclide/coc.nvim', {'branch': 'release'}                   " Code completion
   Plug 'BurntSushi/ripgrep'                                         " Dependency (telescope.nvim)
   Plug 'nvim-lua/plenary.nvim'                                      " Dependency (telescope.nvim)
-  Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' } " Dependency (telescope.nvim)
   Plug 'nvim-telescope/telescope.nvim'                              " Find, Filter, Preview, Pick
   Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}       " LSP
   Plug 'ryanoasis/vim-devicons'                                     " Coloured file type icons
@@ -255,17 +254,7 @@ require('telescope').setup({
       theme = "dropdown",
     },
   },
-  -- https://github.com/nvim-telescope/telescope-fzf-native.nvim
-  extensions = {
-    fzf = {
-      fuzzy = true,
-      override_generic_sorter = true,
-      override_file_sorter = true,
-      case_mode = "respect_case",
-    },
-  },
 })
-require('telescope').load_extension('fzf')
 EOF
 
 
