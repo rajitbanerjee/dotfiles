@@ -1,87 +1,53 @@
 {
-  /* coc-spell-checker */
-  "cSpell": {
-    "enabled": false,
-    "language": "en-GB"
-  },
-
-  /* coc-explorer */
-  "explorer": {
-    "file": {
-      "root": { "template": "[icon & 1] PROJECT ([root])" },
-      "reveal": {
-        "auto": true
-      }
-    },
-    "width": 27,
-    "focus": true,
-    "icon": { "enableNerdfont": true, "icon": "glyph_palette.vim" },
-    "mouseMode": "singleclick",
-    "sources": [
-      {
-        "name": "file",
-        "expand": true
-      }
+  "cSpell.enabled": false,
+  "cSpell.language": "en-GB",
+  "explorer.file.reveal.auto": true,
+  "explorer.file.root.template": "[icon  & 1] PROJECT ([root])",
+  "explorer.focus": true,
+  "explorer.icon.enableNerdfont": true,
+  "explorer.icon.source": "vim-devicons",
+  "explorer.keyMappings.global": {
+    "*": "toggleSelection",
+    "<2-LeftMouse>": [
+      "expandable?",
+      ["expanded?", "collapse", "expand"],
+      "open"
     ],
-    "keyMappings": {
-      "global": {
-        "i": false,
-        "t": false,
-
-        "*": "toggleSelection",
-        "<tab>": false,
-        "m": "actionMenu",
-
-        "l": ["wait", "expandable?", "expand", "open"],
-        "<2-LeftMouse>": [
-          "expandable?",
-          ["expanded?", "collapse", "expand"],
-          "open"
-        ],
-        "o": ["wait", "expanded?", "collapse", "expand"],
-        "<cr>": ["wait", "expandable?", "cd", "open"],
-        "e": "open",
-        "s": "open:vsplit",
-        "u": ["wait", "gotoParent"],
-
-        "yp": "copyFilepath",
-        "yn": "copyFilename",
-        "yy": "copyFile",
-        "dd": "cutFile",
-        "p": "pasteFile",
-        "df": "delete",
-
-        "A": "addDirectory",
-        "R": "rename",
-
-        "g<dot>": "toggleHidden",
-        "r": "refresh",
-        "q": "quit",
-        "<esc>": "esc",
-
-        "f": "searchRecursive",
-
-        "<<": "gitStage",
-        ">>": "gitUnstage"
-      }
-    }
+    "<<": "gitStage",
+    "<cr>": ["wait", "expandable?", "cd", "open"],
+    "<esc>": "esc",
+    "<tab>": false,
+    ">>": "gitUnstage",
+    "A": "addDirectory",
+    "R": "rename",
+    "dd": "cutFile",
+    "df": "delete",
+    "e": "open",
+    "f": "searchRecursive",
+    "g<dot>": "toggleHidden",
+    "i": false,
+    "l": ["wait", "expandable?", "expand", "open"],
+    "m": "actionMenu",
+    "o": ["wait", "expanded?", "collapse", "expand"],
+    "p": "pasteFile",
+    "q": "quit",
+    "r": "refresh",
+    "s": "open:vsplit",
+    "t": false,
+    "u": ["wait", "gotoParent"],
+    "yn": "copyFilename",
+    "yp": "copyFilepath",
+    "yy": "copyFile"
   },
-
-  /* coc-tsserver */
-  "typescript": {
-    /* Watchman required for this to work */
-    "updateImportsOnFileMove": { "enable": true }
-  },
-
-  /* coc-java */
-  "java": {
-    "autobuild": { "enabled": false },
-    "jdt": {
-      "ls": {
-        "vmargs": "-javaagent:/Users/rajitbanerjee/.local/lib/lombok.jar"
-      }
+  "explorer.mouseMode": "singleclick",
+  "explorer.sources": [
+    {
+      "expand": true,
+      "name": "file"
     }
-  }
-
-  /* coc-restclient */
+  ],
+  "explorer.width": 27,
+  "java.autobuild.enabled": false,
+  "java.jdt.ls.vmargs": "-javaagent:/Users/rajitbanerjee/.local/lib/lombok.jar",
+  "typescript.updateImportsOnFileMove.enable": true
 }
