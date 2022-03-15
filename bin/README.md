@@ -42,7 +42,6 @@ Please refer to the individual scripts for detailed usage information.
 | ./remove-pages        | Remove specified pages from a given PDF file.                                             |
 | ./rename-files        | Rename files to replace spaces with underscores, and change to lower case.                |
 | ./rest-client         | Run HTTP request files with curl.                                                         |
-| ./run-py-java         | Run all python/java files in a specified directory.                                       |
 | ./setup-coc-nvim      | Install coc.nvim extensions                                                               |
 | ./sort-json           | Sort a JSON file (lexicographically) in-place (including any nested objects).             |
 | ./system-setup-ubuntu | Install system dependencies (+ vim plugins' dependencies) on a fresh Ubuntu Linux system. |
