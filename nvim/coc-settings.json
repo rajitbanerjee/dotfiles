@@ -2,7 +2,7 @@
   "cSpell.enabled": false,
   "cSpell.language": "en-GB",
   "explorer.file.reveal.auto": true,
-  "explorer.file.root.template": "[icon  & 1] PROJECT ([root])",
+  "explorer.file.root.template": "[icon] Project [hidden & 1][root]",
   "explorer.focus": true,
   "explorer.icon.enableNerdfont": true,
   "explorer.icon.source": "vim-devicons",
