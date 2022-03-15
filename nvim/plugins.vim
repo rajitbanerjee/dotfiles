@@ -235,13 +235,16 @@ require('telescope').setup({
     mappings = {
       -- https://github.com/nvim-telescope/telescope.nvim/blob/master/lua/telescope/mappings.lua
       n = {
-        ["<C-t>"] = false, -- no tabs, buffers only
         ["<C-j>"] = actions.toggle_selection + actions.move_selection_worse,
         ["<C-k>"] = actions.toggle_selection + actions.move_selection_better,
+        ["<C-t>"] = false, -- no tabs, buffers only
         ["<Down>"] = actions.preview_scrolling_down,
         ["<Up>"] = actions.preview_scrolling_up,
+        ["q"] = actions.delete_buffer,
       },
       i = {
+        ["<C-x>"] = actions.delete_buffer,
+        ["<C-t>"] = false, -- no tabs, buffers only
         ["<Down>"] = actions.preview_scrolling_down,
         ["<Up>"] = actions.preview_scrolling_up,
       },
