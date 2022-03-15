@@ -3,7 +3,7 @@
 Set up a new system, and maintain current configurations. Symlinking to `$HOME` is managed by [Dotbot][dotbot].
 
 ```bash
-git clone --recurse-submodules git@github.com:rajitbanerjee/dotfiles ~/.dotfiles
+git clone git@github.com:rajitbanerjee/dotfiles ~/.dotfiles
 cd ~/.dotfiles && ./install
 ```
 

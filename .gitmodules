@@ -8,9 +8,6 @@
 [submodule "zsh/custom/plugins/zsh-syntax-highlighting"]
 	path = zsh/custom/plugins/zsh-syntax-highlighting
 	url = https://github.com/zsh-users/zsh-syntax-highlighting.git
-[submodule "zsh/custom/themes/powerlevel10k"]
-	path = zsh/custom/themes/powerlevel10k
-	url = https://github.com/romkatv/powerlevel10k.git
 [submodule "zsh/custom/plugins/wakatime-zsh-plugin"]
 	path = zsh/custom/plugins/wakatime
 	url = https://github.com/sobolevn/wakatime-zsh-plugin.git
