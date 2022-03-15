@@ -3,7 +3,7 @@ set -euo pipefail
 IFS=$'\n\t'
 
 # Remove all file extensions in the specified directory.
-# Usage: remove-extensions <dir>
+# Usage: file-remove-ext <dir>
 
 for FILE in $1*; do
     if [[ -f $FILE ]]; then

@@ -13,7 +13,7 @@ Removes specified pages from a given PDF file.
 2. Run the script with the PDF file to be processed and the page numbers
 to be removed (comma separated, no spaces).
 ```
-$ ./remove-pages doc.pdf 1,2,3
+$ file-pdf-remove-pages doc.pdf 1,2,3
 ```
 3. The modified file is saved as `new_doc.pdf`.
     """)

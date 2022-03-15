@@ -13,7 +13,7 @@ Encrypt a given PDF file with a password.
 1. Ensure that you have `pip` installed.
 2. Run the script with the file to encrypted.
 ```
-$ ./encrypt-pdf <name>.pdf
+$ file-encrypt-pdf <name>.pdf
 ```
 3. Enter password.
 3. The encrypted file is saved as `<name>_encrypted.pdf`.

@@ -3,7 +3,7 @@ set -euo pipefail
 IFS=$'\n\t'
 
 # Set up a new macOS system with my preferred packages.
-# Usage: system-setup-mac
+# Usage: setup-system-mac
 
 echo -e "Starting macOS system setup...\n"
 

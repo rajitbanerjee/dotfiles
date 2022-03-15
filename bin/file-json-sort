@@ -12,13 +12,13 @@ Sorts a JSON file (lexicographically) in-place (including any nested objects).
 Single JSON file:
 
 ```
-$ ./sort-json path/to/file.json
+$ file-json-sort path/to/file.json
 ```
 
 Multiple JSON files:
 
 ```
-$ ./sort-json file1.json file2.json file3.json
+$ file-json-sort file1.json file2.json file3.json
 ```
     """)
 

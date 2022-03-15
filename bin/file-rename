@@ -9,11 +9,11 @@ replace spaces with underscores, and convert file name to lower case.
 
 Usage:
 1. Rename all files in current directory
-    $ ./rename-files ./
+    $ file-rename ./
 2. Rename all files in multiple directories
-    $ ./rename-files dir1/ dir2/ dir3/
+    $ file-rename dir1/ dir2/ dir3/
 3. Rename individual files
-    $ ./rename-files file1 file2 file3
+    $ file-rename file1 file2 file3
 "
 }
 

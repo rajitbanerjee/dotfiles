@@ -7,7 +7,7 @@ print_help() {
 Create a new file inside when path to file contains non-existing directories.
 
 Usage:
-    $ ./mkfile <non_existing_path/file>
+    $ file-mk <non_existing_path/file>
 "
 }
 

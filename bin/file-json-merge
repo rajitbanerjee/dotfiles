@@ -11,12 +11,12 @@ Merges all JSON files in the specified directory.
 ### Usage:
 
 ```
-$ ./merge-json <directory>
+$ file-json-merge <directory>
 ```
 
 E.g. Merge all JSON files in the current directory.
 ```
-$ ./merge-json .
+$ file-json-merge .
 ```
 
 The outfile JSON file is saved in the current working directory as `merged.json`.

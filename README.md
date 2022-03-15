@@ -1,7 +1,5 @@
 # Dotfiles \[[![Build Status][travis-badge]][travis]]
 
-Always a WIP!
-
 - Shell
   - [zsh/](./zsh/): zsh configurations; plugins managed by [ohmyzsh][ohmyzsh]
   - [bash/](./bash/): bash configurations; when zsh is not an option
@@ -28,8 +26,8 @@ Symlinking to `$HOME` is managed by the excellent [Dotbot][dotbot]. Useful in se
 git clone --recurse-submodules git@github.com:rajitbanerjee/dotfiles ~/.dotfiles
 cd ~/.dotfiles && ./install
 
-./bin/system-setup-mac # or
-./bin/system-setup-ubuntu
+./bin/setup-system-mac # or
+./bin/setup-system-ubuntu
 
 # set up neovim and trigger vim-plug installations
 nvim
@@ -61,7 +59,7 @@ The following resources are not directly used/symlinked:
 [anish]: https://github.com/anishathalye/dotfiles/blob/master/tmux.conf
 [dotbot]: https://github.com/anishathalye/dotbot
 [ohmyzsh]: https://github.com/ohmyzsh/ohmyzsh
-[ssm]: https://github.com/rajitbanerjee/dotfiles/blob/main/bin/system-setup-mac
-[ssl]: https://github.com/rajitbanerjee/dotfiles/blob/main/bin/system-setup-ubuntu
+[ssm]: https://github.com/rajitbanerjee/dotfiles/blob/main/bin/setup-system-mac
+[ssl]: https://github.com/rajitbanerjee/dotfiles/blob/main/bin/setup-system-ubuntu
 [scn]: https://github.com/rajitbanerjee/dotfiles/blob/main/bin/setup-coc-nvim
 [license]: LICENSE
