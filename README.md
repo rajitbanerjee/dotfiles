@@ -12,20 +12,12 @@ cd ~/.dotfiles && ./install
 setup-system-mac
 setup-coc-nvim
 nvim
+
+# install-mac-apps
 ```
 
-<p align='center'>
-  <img src='./assets/images/nvim.png'>
-  <img src='./assets/images/floaterm.png'>
-</p>
-
-The following resources are not directly used/symlinked:
-
-- `fonts/`: New fonts should be added to the system by the user.
-- `notes/`: No tools/scripts, just notes.
-- `python/{base.yml,pip*.txt}`: Perform `conda` or `pip` install when required.
-- `terminal/`: These settings can be used in the terminal app.
-- `vscode/`: Manually provide gist link to VS Code Settings Sync, and install whatever extensions are necessary.
+![nvim](./assets/images/nvim.png)
+![floaterm](./assets/images/floaterm.png)
 
 ## License
 

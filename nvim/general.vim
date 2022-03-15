@@ -69,7 +69,7 @@ set expandtab
 set shiftwidth=4
 set tabstop=4
 " Reduce tab length for certain file types
-au BufNewFile,BufRead *.html,*.css,*.js,*.ts,*.jsx,*.tsx setlocal shiftwidth=2 tabstop=2
+au BufNewFile,BufRead *.html,*.css,*.js,*.ts,*.jsx,*.tsx,*.lua setlocal shiftwidth=2 tabstop=2
 
 " Linebreak on 500 characters
 set lbr

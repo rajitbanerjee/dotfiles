@@ -2,8 +2,11 @@
 set -euo pipefail
 IFS=$'\n\t'
 
-# Install macOS GUI apps.
+# Install macOS GUI apps
 
+brew tap wez/wezterm
+
+brew install --cask wez/wezterm/wezterm
 brew install --cask notion
 brew install --cask firefox
 brew install --cask bitwarden

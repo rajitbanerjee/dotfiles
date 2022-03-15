@@ -11,6 +11,12 @@
 
 - link:
     ~/.config/nvim: nvim
+    ~/.config/wezterm/wezterm.lua:
+      if: "[ `uname` = Darwin ]"
+      path: terminal/wezterm.lua
+    ~/.config/wezterm/fonts:
+      if: "[ `uname` = Darwin ]"
+      path: fonts
     ~/.ssh/config:
       if: "[ `uname` = Darwin ]"
       path: ssh/config

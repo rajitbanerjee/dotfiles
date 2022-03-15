@@ -8,12 +8,29 @@
 	reflog = delta
 	show = delta
 [delta]
-	features = side-by-side line-numbers navigate decorations
-	whitespace-error-style = 22 reverse
-[delta "decorations"]
+	features = my-style
+[delta "my-style"]
 	commit-decoration-style = bold yellow box ul
-	file-style = bold yellow ul
 	file-decoration-style = none
+	file-style = bold yellow ul
+    dark = true
+    hunk-header-decoration-style = omit
+    line-numbers = true
+
+    minus-emph-style = bold red 52
+    minus-empty-line-marker-style = normal "#3f0001"
+    minus-non-emph-style = dim red
+    minus-style = bold red
+
+    plus-emph-style = bold green 22
+    plus-empty-line-marker-style = normal "#002800"
+    plus-non-emph-style = dim green
+    plus-style = bold green
+
+    side-by-side = true
+    syntax-theme = none
+    whitespace-error-style = reverse red
+    zero-style = dim syntax
 [init]
 	defaultBranch = main
 [pull]

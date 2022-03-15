@@ -148,7 +148,7 @@ endfunction
 """""""""""""""""""""""""""""""""""""""""""""""""""
 augroup my-glyph-palette
   autocmd! *
-  autocmd FileType startify call glyph_palette#apply()
+  autocmd FileType startify,coc-explorer call glyph_palette#apply()
 augroup END
 
 
