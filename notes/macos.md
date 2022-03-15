@@ -8,8 +8,10 @@
 - [UnnaturalScrollWheels](https://github.com/ther0n/UnnaturalScrollWheels): Invert mouse/trackpad scroll direction.
 - Browser:
   - Safari
+    - [Wipr](https://apps.apple.com/us/app/wipr/id1320666476?mt=12): Ad blocker for Safari
   - Firefox
-- [Wipr](https://apps.apple.com/us/app/wipr/id1320666476?mt=12): Ad blocker for Safari
+    - [AdBlocker Ultimate](https://addons.mozilla.org/en-GB/firefox/addon/adblocker-ultimate/)
+    - [uBlock Origin](https://addons.mozilla.org/en-GB/firefox/addon/ublock-origin/)
 - Terminal
   - [iTerm2](https://iterm2.com)
     - Using Rosetta 2 emulation for Apple Silicon.
