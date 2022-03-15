@@ -11,37 +11,38 @@ let g:ale_disable_lsp = 1
 
 call plug#begin('~/.config/nvim/autoload/plugged')
 
-  Plug 'airblade/vim-gitgutter'                               " Git changes shown in column
-  Plug 'alvan/vim-closetag'                                   " Autoclose tags (e.g. XML)
-  Plug 'dbakker/vim-projectroot'                              " Dependency (fzf.vim)
-  Plug 'dense-analysis/ale'                                   " LSP, linting, formatting
-  Plug 'edkolev/tmuxline.vim'                                 " Tmux status line generator using airline
-  Plug 'gruvbox-community/gruvbox'                            " Primary colour scheme
-  Plug 'iamcco/markdown-preview.nvim'                         " Markdown preview
-  Plug 'junegunn/fzf', {'do': { -> fzf#install() }}           " Dependency (fzf.vim) 
-  Plug 'junegunn/fzf.vim'                                     " Fuzzy finder
-  Plug 'junegunn/goyo.vim'                                    " Zen mode
-  Plug 'lambdalisue/glyph-palette.vim'                        " Universal palette for Nerd Fonts
-  Plug 'lervag/vimtex'                                        " LaTeX support
-  Plug 'maxbrunsfeld/vim-yankstack'                           " Turns default register into a stack
-  Plug 'mhinz/vim-startify'                                   " Start screen
-  Plug 'neoclide/coc.nvim', {'branch': 'release'}             " Code completion
-  Plug 'nvim-lua/plenary.nvim'                                " Dependency (telescope.nvim)
-  Plug 'nvim-lua/popup.nvim'                                  " Dependency (telescope.nvim)
-  Plug 'nvim-telescope/telescope.nvim'                        " Find, Filter, Preview, Pick
-  Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'} " LSP
-  Plug 'ryanoasis/vim-devicons'                               " Coloured file type icons
-  Plug 'tpope/vim-commentary'                                 " Code commenting
-  Plug 'tpope/vim-fugitive'                                   " Git wrapper
-  Plug 'tpope/vim-obsession'                                  " Save session
-  Plug 'tpope/vim-repeat'                                     " Enables . for plugins
-  Plug 'tpope/vim-surround'                                   " Delete, change, add surroundings
-  Plug 'vim-airline/vim-airline'                              " Status and tabline
-  Plug 'vim-airline/vim-airline-themes'                       " Airline themes
-  Plug 'voldikss/vim-floaterm'                                " Floating terminal
-  Plug 'wakatime/vim-wakatime'                                " Coding metrics
-  Plug 'Yggdroot/indentline'                                  " Indent indicator
-  Plug 'yuttie/comfortable-motion.vim'                        " Smooth scrolling
+  Plug 'airblade/vim-gitgutter'                                     " Git changes shown in column
+  Plug 'alvan/vim-closetag'                                         " Autoclose tags (e.g. XML)
+  Plug 'dense-analysis/ale'                                         " LSP, linting, formatting
+  Plug 'edkolev/tmuxline.vim'                                       " Tmux status line generator using airline
+  Plug 'gruvbox-community/gruvbox'                                  " Primary colour scheme
+  Plug 'iamcco/markdown-preview.nvim'                               " Markdown preview
+  Plug 'dbakker/vim-projectroot'                                    " Dependency (fzf.vim)
+  Plug 'junegunn/fzf', {'do': { -> fzf#install() }}                 " Dependency (fzf.vim) 
+  Plug 'junegunn/fzf.vim'                                           " Fuzzy finder
+  Plug 'junegunn/goyo.vim'                                          " Zen mode
+  Plug 'lambdalisue/glyph-palette.vim'                              " Universal palette for Nerd Fonts
+  Plug 'lervag/vimtex'                                              " LaTeX support
+  Plug 'maxbrunsfeld/vim-yankstack'                                 " Turns default register into a stack
+  Plug 'mhinz/vim-startify'                                         " Start screen
+  Plug 'neoclide/coc.nvim', {'branch': 'release'}                   " Code completion
+  Plug 'BurntSushi/ripgrep'                                         " Dependency (telescope.nvim)
+  Plug 'nvim-lua/plenary.nvim'                                      " Dependency (telescope.nvim)
+  Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' } " Dependency (telescope.nvim)
+  Plug 'nvim-telescope/telescope.nvim'                              " Find, Filter, Preview, Pick
+  Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}       " LSP
+  Plug 'ryanoasis/vim-devicons'                                     " Coloured file type icons
+  Plug 'tpope/vim-commentary'                                       " Code commenting
+  Plug 'tpope/vim-fugitive'                                         " Git wrapper
+  Plug 'tpope/vim-obsession'                                        " Save session
+  Plug 'tpope/vim-repeat'                                           " Enables . for plugins
+  Plug 'tpope/vim-surround'                                         " Delete, change, add surroundings
+  Plug 'vim-airline/vim-airline'                                    " Status and tabline
+  Plug 'vim-airline/vim-airline-themes'                             " Airline themes
+  Plug 'voldikss/vim-floaterm'                                      " Floating terminal
+  Plug 'wakatime/vim-wakatime'                                      " Coding metrics
+  Plug 'Yggdroot/indentline'                                        " Indent indicator
+  Plug 'yuttie/comfortable-motion.vim'                              " Smooth scrolling
 
 call plug#end()
 
@@ -117,8 +118,6 @@ let $FZF_DEFAULT_OPTS = '--reverse'
 
 nnoremap <leader>ff :ProjectRootExe FZF<CR>
 nnoremap <leader>fg :ProjectRootExe Rg<CR>
-nnoremap <leader>fb :Buffers<CR>
-nnoremap <leader>b :BCommits <CR>
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""
@@ -222,22 +221,21 @@ set foldexpr=nvim_treesitter#foldexpr()
 nnoremap <leader>t <cmd>Telescope <CR>
 nnoremap <leader>f <cmd>Telescope find_files<CR>
 nnoremap <leader>g <cmd>Telescope live_grep<CR>
-nnoremap <leader>gf <cmd>Telescope git_files<CR>
+nnoremap <leader>gc <cmd>Telescope git_commits<CR>
 nnoremap <leader>c <cmd>Telescope commands<CR>
+nnoremap <leader>b <cmd>Telescope buffers<CR>
 
 lua <<EOF
 local actions = require("telescope.actions")
 require('telescope').setup({
   defaults = {
     layout_config = {
-      horizontal = { width = 0.9, preview_width = 0.7 }
-      -- other layout configuration here
+      horizontal = { preview_width = 0.5 },
     },
-    -- other defaults configuration here
     mappings = {
       -- https://github.com/nvim-telescope/telescope.nvim/blob/master/lua/telescope/mappings.lua
       n = {
-        ["<C-t>"] = false, -- no tabs please, buffers only
+        ["<C-t>"] = false, -- no tabs, buffers only
         ["<C-j>"] = actions.toggle_selection + actions.move_selection_worse,
         ["<C-k>"] = actions.toggle_selection + actions.move_selection_better,
         ["<Down>"] = actions.preview_scrolling_down,
@@ -249,8 +247,22 @@ require('telescope').setup({
       },
     },
   },
-  -- other configuration values here
+  pickers = {
+    find_files = {
+      theme = "dropdown",
+    },
+  },
+  -- https://github.com/nvim-telescope/telescope-fzf-native.nvim
+  extensions = {
+    fzf = {
+      fuzzy = true,
+      override_generic_sorter = true,
+      override_file_sorter = true,
+      case_mode = "respect_case",
+    },
+  },
 })
+require('telescope').load_extension('fzf')
 EOF
 
 
@@ -270,7 +282,7 @@ command -nargs=1 Obs :Obsess $NVIM_SESSIONS/<args>.vim
 """""""""""""""""""""""""""""""""""""""""""""""""""
 " => vim-airline/vim-airline,vim-airline-themes
 """""""""""""""""""""""""""""""""""""""""""""""""""
-let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#enabled = 0
 let g:airline#extensions#tabline#formatter = 'unique_tail'
 let g:airline#extensions#whitespace#enabled = 0
 let g:airline_powerline_fonts = 1
