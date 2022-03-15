@@ -1,5 +1,5 @@
 #!/bin/bash
-print_help () {
+print_help() {
     echo "
 Rename individual files, or all files in the specified directories, to 
 replace spaces with underscores, and convert file name to lower case.
@@ -14,7 +14,7 @@ Usage:
 "
 }
 
-# Change Internal Field Separator to simplify file renaming process (for file names containing spaces) 
+# Change Internal Field Separator to simplify file renaming process (for file names containing spaces)
 IFS='
 '
 
@@ -23,12 +23,9 @@ if [[ $* == "" ]]; then
     exit 1
 fi
 
-for DIR in $*
-do
-    for FILE in $DIR*
-    do
-        if [[ -f $FILE ]]
-        then
+for DIR in $*; do
+    for FILE in $DIR*; do
+        if [[ -f $FILE ]]; then
             # Get parent directory
             PARENT="$(dirname $FILE)"
             # Change spaces to underscores and convert to lower case

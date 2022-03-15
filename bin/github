@@ -1,15 +1,15 @@
 #!/bin/bash
-# Open GitHub for current git repository. 
+# Open GitHub for current git repository.
 # Usage: github
 # (Run at the root of the git repository.)
 
 remote="$(git config remote.origin.url)"
-if [ "$(cut -c-5 <<< $remote)" == "https" ]; then
+if [ "$(cut -c-5 <<<$remote)" == "https" ]; then
     # using https
-    repo="$(cut -d'/' -f4- <<< $remote)"
+    repo="$(cut -d'/' -f4- <<<$remote)"
 else
     # using ssh
-    repo="$(cut -d':' -f2 <<< $remote)"
+    repo="$(cut -d':' -f2 <<<$remote)"
 fi
 if [ "$(uname -s)" = "Darwin" ]; then
     open "https://github.com/$repo"

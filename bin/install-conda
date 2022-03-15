@@ -12,5 +12,5 @@ else
 fi
 
 chmod +x ~/conda.sh
-~/conda.sh -b -p  ~/.local/share/conda
+~/conda.sh -b -p ~/.local/share/conda
 rm -rf ~/conda.sh

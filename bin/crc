@@ -1,6 +1,6 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
-from math import log, ceil
+from math import ceil, log
 
 
 def print_help():

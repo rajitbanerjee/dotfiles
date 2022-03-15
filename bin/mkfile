@@ -1,5 +1,5 @@
 #!/bin/bash
-print_help () {
+print_help() {
     echo "
 Create a new file inside when path to file contains non-existing directories.
 
@@ -8,7 +8,7 @@ Usage:
 "
 }
 
-# Change Internal Field Separator  
+# Change Internal Field Separator
 IFS='
 '
 if [[ $* == "" ]]; then

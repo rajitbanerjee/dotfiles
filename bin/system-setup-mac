@@ -72,7 +72,6 @@ npm i -g prettier @prettier/plugin-xml
 brew install shellcheck shfmt
 brew install google-java-format
 
-
 #################
 # Misc. utilities
 #################

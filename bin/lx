@@ -5,7 +5,7 @@
 # format
 tempfile="./.tmp.tex"
 if [ "$(uname -s)" = "Darwin" ]; then
-    /usr/local/bin/latexindent $1 > $tempfile
+    /usr/local/bin/latexindent $1 >$tempfile
 
     # https://www.overleaf.com/learn/latex/Choosing_a_LaTeX_Compiler
     # compiling documents with cross-references
@@ -15,7 +15,7 @@ if [ "$(uname -s)" = "Darwin" ]; then
     latexmk -c
     trash ${1%.*}.{bbl,run.xml}
 elif [ "$(uname -s)" = "Linux" ]; then
-    ~/.local/bin/latexindent/latexindent.pl $1 > $tempfile
+    ~/.local/bin/latexindent/latexindent.pl $1 >$tempfile
 
     # convert to PDF
     pdflatex $1
@@ -27,5 +27,3 @@ fi
 rm -rf $1
 mv $tempfile $1
 rm -rf $tempfile indent.log
-
-

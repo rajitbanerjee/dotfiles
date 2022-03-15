@@ -18,39 +18,39 @@ Usage:
 "
 }
 
-# Change Internal Field Separator to simplify file renaming process (for file names containing spaces)    
+# Change Internal Field Separator to simplify file renaming process (for file names containing spaces)
 IFS='
 '
 
-case $1 in 
-    "https://www.youtube.com/watch"*)
+case $1 in
+"https://www.youtube.com/watch"*)
 
-        pip install pytubeX
-        case $2 in
-            "-mp3")
-                pytube4 $1 -a
-                # Save file in mp3 format
-                NAME="$(ls -Art | tail -n 1)" 
-                mv $NAME "${NAME%.*}.mp3"
-                echo "Audio file saved as: ${NAME%.*}.mp3"
-                ;;
-            "-l")
-                pytube4 $1 -l
-                ;;
-            "-i")
-                pytube4 $1 --itag=$3  
-                ;; 
-            "")
-                pytube4 $1 --itag=18
-                ;;
-            *)
-                print_help
-                ;;
-        esac
-
+    pip install pytubeX
+    case $2 in
+    "-mp3")
+        pytube4 $1 -a
+        # Save file in mp3 format
+        NAME="$(ls -Art | tail -n 1)"
+        mv $NAME "${NAME%.*}.mp3"
+        echo "Audio file saved as: ${NAME%.*}.mp3"
         ;;
-
+    "-l")
+        pytube4 $1 -l
+        ;;
+    "-i")
+        pytube4 $1 --itag=$3
+        ;;
+    "")
+        pytube4 $1 --itag=18
+        ;;
     *)
         print_help
         ;;
+    esac
+
+    ;;
+
+*)
+    print_help
+    ;;
 esac

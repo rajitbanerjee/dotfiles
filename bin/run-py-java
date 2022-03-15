@@ -4,8 +4,8 @@
 # Usage examples:
 # For Python (defualt without -java flag),
 # $ run-py-java src/plusOne
-# For Java, 
-# run-py-java src/plusOne -java 
+# For Java,
+# run-py-java src/plusOne -java
 
 print_usage() {
     echo "Usage: ./run-py-java src/<dir_name> [-java]"
@@ -13,29 +13,23 @@ print_usage() {
     exit 1
 }
 
-if [[ $1 == "" ]]
-then
+if [[ $1 == "" ]]; then
     print_usage
 else
     DIR=$1
-    for FILE in $DIR*
-    do
-        if [[ $2 == "-java" ]]
-        then
-            if [[ ${FILE: -5} == ".java" ]]
-            then
+    for FILE in $DIR*; do
+        if [[ $2 == "-java" ]]; then
+            if [[ ${FILE: -5} == ".java" ]]; then
                 echo "Running: $FILE"
                 javac $FILE
                 java ${FILE##/*}
             fi
-        elif [[ $2 == "-py" ]] || [[ $2 == "-python" ]] || [[ $2 == "" ]]
-        then
-            if [[ ${FILE: -3} == ".py" ]]
-            then
+        elif [[ $2 == "-py" ]] || [[ $2 == "-python" ]] || [[ $2 == "" ]]; then
+            if [[ ${FILE: -3} == ".py" ]]; then
                 echo "Running: $FILE"
                 python $FILE
             fi
-        else 
+        else
             print_usage
         fi
     done

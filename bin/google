@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
-import webbrowser
 import sys
+import webbrowser
 
 
 def print_help():

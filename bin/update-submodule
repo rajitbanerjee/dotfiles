@@ -17,4 +17,3 @@ fi
 git add $1
 git commit -m "Update submodule"
 git push
-
