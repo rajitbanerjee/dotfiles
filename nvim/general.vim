@@ -38,15 +38,6 @@ set lazyredraw " Don't redraw when executing macros
 set magic " Simplify regex
 set inccommand=split " Live substition 
 
-" WSL yank to windows clipboard (yank from windows still not working)
-let s:clip = '/mnt/c/Windows/System32/clip.exe'
-if executable(s:clip)
-    augroup WSLYank
-        autocmd!
-        autocmd TextYankPost * if v:event.operator ==# 'y' | call system('cat |' . s:clip, @0) | endif
-    augroup END
-endif
-
 " macOS system clipboard
 set clipboard=unnamedplus
 
@@ -54,7 +45,7 @@ set clipboard=unnamedplus
 set showmatch
 set mat=2
 
-" Avoid error sounds
+" Disable error sounds
 set noerrorbells
 set novisualbell
 set t_vb=
