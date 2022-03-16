@@ -1,4 +1,5 @@
 {
+  "coc.preferences.messageLevel": "error",
   "cSpell.enabled": false,
   "cSpell.language": "en-GB",
   "explorer.file.reveal.auto": true,
@@ -40,6 +41,7 @@
     "yy": "copyFile"
   },
   "explorer.mouseMode": "singleclick",
+  "explorer.previewAction.onHover": "labeling",
   "explorer.sources": [
     {
       "expand": true,

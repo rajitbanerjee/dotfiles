@@ -196,6 +196,18 @@ nmap <leader>r  <Plug>(coc-rename)
 nmap <leader>ac <Plug>(coc-codeaction)
 nmap <leader>qf :<C-u>CocFix<CR>
 
+function! ShowDocIfNoDiagnostic(timer_id)
+  if (coc#float#has_float() == 0 && CocHasProvider('hover') == 1)
+    silent call CocActionAsync('doHover')
+  endif
+endfunction
+
+function! s:show_hover_doc()
+  silent call timer_start(1500, 'ShowDocIfNoDiagnostic')
+endfunction
+
+autocmd CursorHold * :call <SID>show_hover_doc()
+
 
 """""""""""""""""""""""""""""""""""""""""""""""""""
 " => nvim-treesitter/nvim-treesitter
