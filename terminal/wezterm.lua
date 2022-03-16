@@ -21,5 +21,10 @@ return {
   font_dirs = {"fonts"},
   font_locator = "ConfigDirsOnly",
   font_size = 14,
+  initial_cols = 120,
+  initial_rows = 35,
+  keys = {
+    {key="f", mods="SUPER", action="ToggleFullScreen"},
+  },
   window_decorations = "RESIZE",
 }
