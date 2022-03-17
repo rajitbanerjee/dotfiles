@@ -203,7 +203,7 @@ function! ShowDocIfNoDiagnostic(timer_id)
 endfunction
 
 function! s:show_hover_doc()
-  silent call timer_start(1500, 'ShowDocIfNoDiagnostic')
+  silent call timer_start(3000, 'ShowDocIfNoDiagnostic')
 endfunction
 
 autocmd CursorHold * :call <SID>show_hover_doc()

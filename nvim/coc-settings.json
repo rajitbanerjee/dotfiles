@@ -41,7 +41,6 @@
     "yy": "copyFile"
   },
   "explorer.mouseMode": "singleclick",
-  "explorer.previewAction.onHover": "labeling",
   "explorer.sources": [
     {
       "expand": true,
