@@ -44,4 +44,4 @@ else
     [ $auth == true ] && command="curl -s -X "$request" -H '"$authentication_token"' "$url"" || command="curl -s -X "$request" "$url""
 fi
 
-eval "$command | jq"
+eval "$command"
