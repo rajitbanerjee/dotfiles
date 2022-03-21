@@ -3,6 +3,7 @@
 *.bak
 indent.log
 *.synctex.gz
+.tmp.driveupload
 
 
 ### Eclipse ###
