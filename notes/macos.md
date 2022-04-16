@@ -7,11 +7,16 @@
 - [CleanMyMac X](https://cleanmymac.com): Cleaner
 - [UnnaturalScrollWheels](https://github.com/ther0n/UnnaturalScrollWheels): Invert mouse/trackpad scroll direction.
 - Browser:
-  - Safari
-    - [Wipr](https://apps.apple.com/us/app/wipr/id1320666476?mt=12): Ad blocker for Safari
   - Firefox
     - [AdBlocker Ultimate](https://addons.mozilla.org/en-GB/firefox/addon/adblocker-ultimate/)
     - [uBlock Origin](https://addons.mozilla.org/en-GB/firefox/addon/ublock-origin/)
+    - [Bitwarden](https://addons.mozilla.org/en-GB/firefox/addon/bitwarden-password-manager/)
+    - [Simple Tab Groups](https://addons.mozilla.org/en-GB/firefox/addon/simple-tab-groups/)
+    - `about:config`
+      - `layout.css.devPixelsPerPx = 1.9`
+  - Safari
+    - [Wipr](https://apps.apple.com/us/app/wipr/id1320666476?mt=12)
+    - Bitwarden
 - Terminal
   - [WezTerm](https://wezfurlong.org/wezterm/index.html)
     - Installed with `brew`, runs on Rosetta 2 by default.
@@ -19,7 +24,6 @@
   - [iTerm2](https://iterm2.com)
     - Using Rosetta 2 emulation for Apple Silicon.
     - [Colour schemes](https://github.com/mbadolato/iTerm2-Color-Schemes)
-    - [FiraCode Nerd Font](https://github.com/rajitbanerjee/dotfiles/tree/main/fonts): Set as Terminal font for vim-devicons to work.
 - [Homebrew](https://brew.sh): Package manager
   - Installed using iTerm2 (Rosetta 2), hence all packages are in `/usr/local/Cellar/`.
 - [Neovim](https://neovim.io): Primary editor
