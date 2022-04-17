@@ -66,6 +66,7 @@ alias gr="git restore"
 alias grs="git restore --staged"
 alias gs="git status"
 alias gst='git stash -- $(git diff --staged --name-only)'
+alias gsp="git stash pop"
 alias gsu="git submodule update --init --recursive"
 alias gsur="git submodule update --remote"
 alias gu="git reset --soft HEAD~1"
