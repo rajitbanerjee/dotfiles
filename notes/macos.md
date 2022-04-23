@@ -5,7 +5,7 @@
 - [Notion](https://www.notion.so/product?fredir=1): Notes
 - [Bitwarden](https://bitwarden.com): Password manager
 - [CleanMyMac X](https://cleanmymac.com): Cleaner
-- [UnnaturalScrollWheels](https://github.com/ther0n/UnnaturalScrollWheels): Invert mouse/trackpad scroll direction.
+- [Mos](https://mos.caldis.me/): Smooth and inverted scrolling for external mice.
 - Browser:
   - Firefox
     - [AdBlocker Ultimate](https://addons.mozilla.org/en-GB/firefox/addon/adblocker-ultimate/)
