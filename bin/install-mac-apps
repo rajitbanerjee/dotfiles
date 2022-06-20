@@ -11,4 +11,3 @@ brew install --cask notion
 brew install --cask firefox
 brew install --cask bitwarden
 brew install --cask visual-studio-code
-brew install --cask cleanmymac
