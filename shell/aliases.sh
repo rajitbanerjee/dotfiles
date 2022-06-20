@@ -39,13 +39,6 @@ alias sl="ls"
 alias n="nvim"
 alias jn="jupyter notebook"
 
-# ucd stage 4
-alias fyp="cd ~/Desktop/final-year-project"
-alias inf="cd ~/Desktop/inference-for-da"
-alias rec="cd ~/Desktop/rec-sys"
-alias perf="cd ~/Desktop/perf-comp-sys"
-alias sse="cd ~/Desktop/secure-swe"
-
 # git
 alias ga="git add"
 alias gaa="git add --all"
@@ -57,9 +50,7 @@ alias gcm="git commit -m"
 alias gcd="git checkout"
 alias gd="git diff"
 alias gds="git diff --staged"
-alias gia="git status --porcelain | sed -n -e 's/^?? //p' >> .gitignore"
 alias gl="git log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all"
-alias gm="git rm --cached"
 alias gpl="git pull"
 alias gpla="git-pull-all . -r"
 alias gr="git restore"
@@ -82,7 +73,7 @@ alias ts="tmux switch -t"
 
 # vs code
 alias codex="code --list-extensions"
-alias codein="cat ~/.dotfiles/code/extensions.txt | xargs -L 1 echo code --install-extension"
+alias codein="cat ~/.dotfiles/vscode/extensions.txt | xargs -L 1 echo code --install-extension"
 
 # conda
 alias cab="conda activate base"
