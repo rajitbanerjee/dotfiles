@@ -7,9 +7,6 @@ Host gitlab.com
   Port 443
   PreferredAuthentications publickey
   IdentityFile ~/.ssh/id_ed25519.pub
-Host dunnion
-  User rbanerjee
-  HostName dunnion.ucd.ie
 Host *
   AddKeysToAgent yes
   UseKeychain yes
