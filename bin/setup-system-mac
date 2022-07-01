@@ -52,6 +52,7 @@ JVMDIR=/Library/Java/JavaVirtualMachines
 sudo ln -sfn $(brew --prefix)/opt/openjdk@8/libexec/openjdk.jdk $JVMDIR/openjdk-8.jdk
 sudo ln -sfn $(brew --prefix)/opt/openjdk@11/libexec/openjdk.jdk $JVMDIR/openjdk-11.jdk
 sudo ln -sfn $(brew --prefix)/opt/openjdk/libexec/openjdk.jdk $JVMDIR/openjdk.jdk
+wget "https://projectlombok.org/downloads/lombok.jar" -O ~/.local/lib/lombok.jar
 
 # LaTeX (optional)
 read -rep $'\n\nLaTeX [y/n]: ' opt_latex
