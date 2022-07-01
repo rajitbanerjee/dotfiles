@@ -1,10 +1,21 @@
 # Mac OS Setup
 
+Current MacOS tools used regularly.
+
 ## Tools
 
 - [Notion](https://www.notion.so/product?fredir=1): Notes
 - [Bitwarden](https://bitwarden.com): Password manager
 - [Mos](https://mos.caldis.me/): Smooth and inverted scrolling for external mice.
+  - General Settings
+    - [x] Smooth Scrolling
+    - [x] Reverse Scroll
+    - [x] Launch on Login
+    - [x] Hide Status Bar Icon
+  - Advanced Settings
+    - Step: 21.12
+    - Speed: 6.69
+    - Duration: 3.90
 - Browser:
   - Firefox
     - [AdBlocker Ultimate](https://addons.mozilla.org/en-GB/firefox/addon/adblocker-ultimate/)
@@ -38,52 +49,7 @@
     - `/usr/local/Cellar/openjdk/17.0.1_1/`
 2.  Set `$JAVA_HOME` in `../shell/os/darwin.sh`.
 3.  Symlink set to `/Library/Java/JavaVirtualMachines/openjdk-{8,11}.jdk` since `brew` installations are keg-only.
-
-## LaTeX
-
-1.  Installed using `brew install --cask mactex`.
-2.  Compile (and format) using `lx file.tex`.
-3.  Spell check using `aspell --mode=tex -c file.tex`.
-4.  Convert Jupyter Notebook to LaTeX type PDF using `jupyter nbconvert --to pdf file.ipynb`
-5.  Pandoc: `brew install pandoc`. Convert Markdown to LaTeX PDF using `mkpdf file.md` (custom function). Specify document style settings at the top of .md file.
-
-    ```
-    ---
-    title: |
-      ![](../assets/ucd.png){height=1in}
-
-      \textbf{COMP00000 Practical X}
-    subtitle: Topic of Assignment
-    author: Rajit Banerjee, 18202817
-    geometry: a4paper, top=0.5in, bottom=0.75in, left=0.75in, right=0.75in
-    header-includes:
-     - \usepackage{fvextra}
-     - \DefineVerbatimEnvironment{Highlighting}{Verbatim}{breaklines,commandchars=\\\{\}}
-    output: pdf_document
-    ---
-    ```
-
-    ```
-    ---
-    title: COMPXXXXX Assignment X
-    subtitle: XXX
-    date: Spring 2022
-    author: Rajit Banerjee, 18202817
-    geometry: a4paper
-    header-includes:
-      - \usepackage{fvextra}
-      - \DefineVerbatimEnvironment{Highlighting}{Verbatim}{breaklines,commandchars=\\\{\}}
-    ---
-    ```
-
-6.  Formatter installed separately (since default one was not working): `brew install latexindent`.
-
-## Databases
-
-1. Installation: `brew install postgresql mysql`.
-2. Start: `brew services start $SERVICE`.
-3. Log in to MySQL: `mysql -u root` (no password).
-4. Stop: `brew services stop $SERVICE`.
+4.  When using nvim and Lombok, set `"java.jdt.ls.vmargs": "-javaagent:/Users/<USERNAME>/.local/lib/lombok.jar"` in `coc-settings.json`.
 
 ## NodeJS, TypeScript
 
@@ -97,12 +63,7 @@
 ## Python
 
 1.  Default macOS installation: `~/Library/Python/3.9/bin/`
-2.  `~/.local/share/conda/bin/` (Miniforge3 for M1 Mac)
+2.  `~/.local/share/conda/bin/` (Miniforge3 for Apple Silicon)
 3.  Create conda environments as required.
 4.  Remember to export environments with `conda env export --no-builds` or custom alias `exp`.
 5.  Jupyter: `pip install jupyterlab`. Also need to install and enable nbextensions: `pip install jupyter_contrib_nbextensions && jupyter contrib nbextension uninstall --user`.
-
-## R
-
-1. Installation: `brew install r`
-2. Run with [RStudio](https://www.rstudio.com/products/rstudio/download/#download).
