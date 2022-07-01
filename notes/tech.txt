@@ -1,5 +1,6 @@
 - Computer
-  - MacBook Air M1 (2020)
+  - Apple MacBook Pro (M1 Pro, 14", 2021)
+  - Apple MacBook Air (M1, 13", 2020)
 - Keyboard
   - Keychron K6
   - Switches: Gateron Brown, Hot-Swappable

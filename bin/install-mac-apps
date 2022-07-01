@@ -6,8 +6,9 @@ IFS=$'\n\t'
 
 brew tap wez/wezterm
 
-brew install --cask wez/wezterm/wezterm
-brew install --cask notion
-brew install --cask firefox
 brew install --cask bitwarden
+brew install --cask firefox
+brew install --cask mos
+brew install --cask notion
 brew install --cask visual-studio-code
+brew install --cask wez/wezterm/wezterm
