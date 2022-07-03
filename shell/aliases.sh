@@ -7,16 +7,15 @@ alias cls="clear"
 alias cl="cls && l"
 alias env="env | sort | less"
 alias path="tr ':' '\n' <<<"$PATH" | less"
+alias pj="cd ~/Git/projects"
 alias q="exit"
 case "$(uname)" in
 Darwin)
     alias doc="cd ~/Documents"
     alias dp="cd ~/Desktop"
-    alias pj="cd ~/Git/projects"
     ;;
 Linux)
     alias open="xdg-open"
-    alias pj="cd ~/projects"
     ;;
 esac
 
