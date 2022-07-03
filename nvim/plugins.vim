@@ -1,8 +1,8 @@
 " auto install vim-plug and plugins
 if empty(glob('~/.config/nvim/autoload/plug.vim'))
-  silent !curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs
-    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-  autocmd VimEnter * PlugInstall | source $MYVIMRC
+    silent !curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs
+                \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+    autocmd VimEnter * PlugInstall | source $MYVIMRC
 endif
 
 " Don't need ALE to worry about LSP
@@ -197,9 +197,9 @@ nmap <leader>ac <Plug>(coc-codeaction)
 nmap <leader>qf :<C-u>CocFix<CR>
 
 function! ShowDocIfNoDiagnostic(timer_id)
-  if (coc#float#has_float() == 0 && CocHasProvider('hover') == 1)
-    silent call CocActionAsync('doHover')
-  endif
+    if (coc#float#has_float() == 0 && CocHasProvider('hover') == 1)
+        silent call CocActionAsync('doHover')
+    endif
 endfunction
 
 function! s:show_hover_doc()
@@ -215,7 +215,7 @@ autocmd CursorHold * :call <SID>show_hover_doc()
 lua <<EOF
 require'nvim-treesitter.configs'.setup {
   -- A list of parser names, or "all"
-  ensure_installed = { "bash", "bibtex", "c", "cmake", "comment", "cpp", "dockerfile", "go", "graphql", "help", "html", "http", "java", "javascript", "json", "json5", "jsonc", "latex", "lua", "make", "markdown", "markdown_inline", "perl", "python", "r", "regex", "scss", "typescript", "vim", "yaml" },
+  ensure_installed = { "bash", "bibtex", "c", "cmake", "comment", "cpp", "dockerfile", "go", "graphql", "help", "html", "http", "java", "javascript", "json", "json5", "jsonc", "latex", "lua", "make", "perl", "python", "r", "regex", "scss", "typescript", "vim", "yaml" },
   highlight = {
     enable = true,              -- false will disable the whole extension
     disable = { "html" }, -- https://github.com/nvim-treesitter/nvim-treesitter/issues/1788
@@ -293,7 +293,9 @@ let g:airline_section_y = ''
 let g:airline_powerline_fonts = 1
 
 " airline symbols
-let g:airline_symbols = {}
+if !exists('g:airline_symbols')
+    let g:airline_symbols = {}
+endif
 let g:airline_left_sep = ''
 let g:airline_left_alt_sep = ''
 let g:airline_right_sep = ''
