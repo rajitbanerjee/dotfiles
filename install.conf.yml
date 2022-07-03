@@ -11,31 +11,40 @@
 
 - link:
     ~/.config/nvim: nvim
-    ~/.config/wezterm/wezterm.lua:
-      if: "[ `uname` = Darwin ]"
-      path: terminal/wezterm.lua
-    ~/.config/wezterm/fonts:
-      if: "[ `uname` = Darwin ]"
-      path: fonts
-    ~/.ssh/config:
-      if: "[ `uname` = Darwin ]"
-      path: ssh/config
-    ~/.tmux.conf: tmux/tmux.conf
-    ~/.tmux/plugins/tpm: tmux/tpm
-
-    ~/.jupyter/jupyter_notebook_config.json: python/jupyter/jupyter_notebook_config.json
-    ~/.jupyter/nbconfig/notebook.json: python/jupyter/notebook.json
-    ~/.local/share/jupyter/nbextensions: python/jupyter/nbextensions
-
-    ~/.gitconfig: git/gitconfig
-    ~/.gitignore_global: git/gitignore_global
-
     ~/.shell:
     ~/.bash:
     ~/.bashrc: bash/bashrc
     ~/.zsh:
     ~/.zshrc: zsh/zshrc
     ~/.local/scripts/bin: bin
+
+    # git
+    ~/.gitconfig: git/gitconfig
+    ~/.gitignore_global: git/gitignore_global
+
+    # terminal
+    ~/.config/wezterm/wezterm.lua:
+      if: "[ `uname` = Darwin ]"
+      path: terminal/wezterm.lua
+    ~/.config/wezterm/fonts:
+      if: "[ `uname` = Darwin ]"
+      path: fonts
+
+    # tmux
+    ~/.tmux.conf: tmux/tmux.conf
+    ~/.tmux/plugins/tpm: tmux/tpm
+
+    # ssh
+    ~/.ssh/config:
+      if: "[ `uname` = Darwin ]"
+      path: ssh/config
+
+    # jupyter
+    ~/.jupyter/jupyter_notebook_config.json: python/jupyter/jupyter_notebook_config.json
+    ~/.jupyter/nbconfig/notebook.json: python/jupyter/notebook.json
+    ~/.local/share/jupyter/nbextensions: python/jupyter/nbextensions
+
+
 
 - shell:
     - [git submodule update --init --recursive, Installing submodules]
