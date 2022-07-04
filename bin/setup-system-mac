@@ -11,6 +11,9 @@ echo -e "Starting macOS system setup...\n"
 # Programming
 ##############
 
+# Homebrew
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
 brew update
 brew upgrade
 sudo chown -R $(whoami) $(brew --prefix)/* # Allow /usr/local/
@@ -44,6 +47,10 @@ npm config set prefix '~/.local'
 npm i -g typescript ts-node @types/node
 npm i -g lodash @types/lodash
 npm i -g @swc/core @swc/helpers regenerator-runtime
+
+# Allow write access to required directories
+sudo chown -R $(whoami) /usr/local/bin /usr/local/include /usr/local/lib /usr/local/share /usr/local/share/doc /usr/local/share/man /usr/local/share/man/man1
+chmod u+w /usr/local/bin /usr/local/include /usr/local/lib /usr/local/share /usr/local/share/doc /usr/local/share/man /usr/local/share/man/man1
 
 # JDK and Apache Maven
 echo -e "\n\nJava and Maven:\n"
@@ -80,7 +87,7 @@ brew install google-java-format
 # Misc. utilities
 #################
 
-echo -e "\n\Misc. utilities:\n"
+echo -e "\n\nMisc. utilities:\n"
 brew install bat
 brew install dpkg
 brew install duf
