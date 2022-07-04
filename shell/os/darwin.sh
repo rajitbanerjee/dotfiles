@@ -1,5 +1,6 @@
 ## Python (macOS default)
-export PATH=~/Library/Python/3.9/bin:$PATH
+export PATH=~/Library/Python/3.8/bin:$PATH
+# export PATH=~/Library/Python/3.9/bin:$PATH
 
 ## command-not-found
 HB_CNF_HANDLER="$(brew --repository)/Library/Taps/homebrew/homebrew-command-not-found/handler.sh"

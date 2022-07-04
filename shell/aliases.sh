@@ -13,6 +13,7 @@ case "$(uname)" in
 Darwin)
     alias doc="cd ~/Documents"
     alias dp="cd ~/Desktop"
+    alias dow="cd ~/Downloads"
     ;;
 Linux)
     alias open="xdg-open"
@@ -72,7 +73,7 @@ alias ts="tmux switch -t"
 
 # vs code
 alias codex="code --list-extensions"
-alias codein="cat ~/.dotfiles/vscode/extensions.txt | xargs -L 1 echo code --install-extension"
+alias codein="cat ~/.dotfiles/vscode/extensions.txt | xargs -L 1 echo code --install-extension | bash"
 
 # conda
 alias cab="conda activate base"

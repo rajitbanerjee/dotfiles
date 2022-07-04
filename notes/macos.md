@@ -35,7 +35,7 @@ Current MacOS tools used regularly.
     - Using Rosetta 2 emulation for Apple Silicon.
     - [Colour schemes](https://github.com/mbadolato/iTerm2-Color-Schemes)
 - [Homebrew](https://brew.sh): Package manager
-  - Installed using iTerm2 (Rosetta 2), hence all packages are in `/usr/local/Cellar/`.
+  - Installed using Rosetta 2, hence all packages are in `/usr/local/Cellar/`.
 - [Neovim](https://neovim.io): Primary editor
 - [VS Code](https://code.visualstudio.com): Secondary editor
 - [Docker Desktop](https://www.docker.com/products/docker-desktop): Containers
