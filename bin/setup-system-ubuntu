@@ -20,9 +20,9 @@ echo -e "\n\nWakaTime coding metrics:\n"
 python3 -m pip install --user wakatime
 
 if [ ! -f ~/.wakatime.cfg ]; then
-    echo -e "\n\nWakaTime config file setup:\n"
-    read -p "Enter WakaTime API Key: " key
-    echo -e """[settings]
+	echo -e "\n\nWakaTime config file setup:\n"
+	read -p "Enter WakaTime API Key: " key
+	echo -e """[settings]
 debug = false
 hidefilenames = false
 ignore =
@@ -42,19 +42,9 @@ npm i -g typescript ts-node @types/node
 npm i -g lodash @types/lodash
 npm i -g @swc/core @swc/helpers regenerator-runtime
 
-# Java
-echo -e "\n\nJava:\n"
-sudo apt install default-jdk
-
-# LaTeX (optional)
-read -rep $'\n\nLaTeX [y/n]: ' opt_latex
-if [ "$opt_latex" == 'y' ]; then
-    echo -e "\nInstalling..."
-    sudo apt install texlive texlive-pictures texlive-latex-extra texlive-xetex
-    sudo apt install chktex # linter used by ale for vim
-else
-    echo -e "Skipping...\n"
-fi
+# JDK and Apache Maven
+echo -e "\n\nJava and Maven:\n"
+sudo apt install default-jdk maven
 
 ##########
 # Neovim
@@ -68,29 +58,27 @@ python3 -m pip install --user pynvim isort autopep8 flake8
 npm i -g prettier @prettier/plugin-xml
 sudo apt install shellcheck
 curl -sS https://webinstall.dev/shfmt | bash
+# TODO google-java-format
 
 #################
 # Misc. utilities
 #################
 
-echo -e "\n\Misc. utilities:\n"
-
+echo -e "\n\nMisc. utilities:\n"
+sudo apt install bat # >= Ubuntu 20.04
+sudo apt install duf
 sudo apt install exa
 sudo apt install fzf
 sudo apt install jq
 sudo apt install ripgrep
-sudo apt install trash-cli
 sudo apt install tldr
+sudo apt install trash-cli
 sudo apt install zip
 npm i -g git-pull-all
 
-wget https://github.com/sharkdp/bat/releases/download/v0.15.4/bat_0.15.4_amd64.deb
-sudo dpkg -i bat_0.15.4_amd64.deb
-rm -rf bat_0.15.4_amd64.deb
-
-wget https://github.com/dandavison/delta/releases/download/0.11.3/git-delta_0.11.3_amd64.deb
-sudo dpkg -i git-delta_0.11.3_amd64.deb
-rm -rf git-delta_0.11.3_amd64.deb
+wget https://github.com/dandavison/delta/releases/download/0.13.0/git-delta_0.13.0_amd64.deb -O git-delta.deb
+sudo dpkg -i git-delta.deb
+rm -rf git-delta.deb
 
 # zsh
 echo -e "\n\nzsh, oh-my-zsh:\n(Note: \"exit\" from oh-my-zsh to resume setup)\n"

@@ -26,9 +26,9 @@ echo -e "\n\nWakaTime coding metrics:\n"
 python3 -m pip install --user wakatime
 
 if [ ! -f ~/.wakatime.cfg ]; then
-    echo -e "\n\nWakaTime config file setup:\n"
-    read -p "Enter WakaTime API Key: " key
-    echo -e """[settings]
+	echo -e "\n\nWakaTime config file setup:\n"
+	read -p "Enter WakaTime API Key: " key
+	echo -e """[settings]
 debug = false
 hidefilenames = false
 ignore =
@@ -61,17 +61,6 @@ sudo ln -sfn $(brew --prefix)/opt/openjdk@11/libexec/openjdk.jdk $JVMDIR/openjdk
 sudo ln -sfn $(brew --prefix)/opt/openjdk/libexec/openjdk.jdk $JVMDIR/openjdk.jdk
 wget "https://projectlombok.org/downloads/lombok.jar" -O ~/.local/lib/lombok.jar
 
-# LaTeX (optional)
-read -rep $'\n\nLaTeX [y/n]: ' opt_latex
-if [ "$opt_latex" == 'y' ]; then
-    echo -e "\nInstalling..."
-    brew install --cask mactex
-    brew install pandoc
-    brew install latexindent
-else
-    echo -e "Skipping...\n"
-fi
-
 ##########
 # Neovim
 ##########
@@ -102,10 +91,10 @@ npm i -g git-pull-all
 
 read -rep $'\n\nWatchman [y/n]: ' opt_watchman
 if [ "$opt_watchman" == 'y' ]; then
-    echo -e "\nInstalling..."
-    brew install watchman
+	echo -e "\nInstalling..."
+	brew install watchman
 else
-    echo -e "Skipping...\n"
+	echo -e "Skipping...\n"
 fi
 
 echo -e "\n\noh-my-zsh:\n(Note: \"exit\" from oh-my-zsh to resume setup)\n"
