@@ -18,6 +18,7 @@ brew update
 brew upgrade
 sudo chown -R $(whoami) $(brew --prefix)/* # Allow /usr/local/
 
+brew install git
 brew install wget
 brew install tmux
 
