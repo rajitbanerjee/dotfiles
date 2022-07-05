@@ -1,5 +1,10 @@
 -- https://wezfurlong.org/wezterm/config/files.html
 local wezterm = require 'wezterm';
+
+wezterm.on("format-window-title", function()
+  return ""
+end)
+
 return {
   color_scheme = "Gruvbox Dark",
   enable_tab_bar = false,
@@ -26,5 +31,5 @@ return {
   keys = {
     {key="f", mods="SUPER", action="ToggleFullScreen"},
   },
-  window_decorations = "RESIZE",
+  -- window_decorations = "RESIZE",
 }
