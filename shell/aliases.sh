@@ -38,6 +38,7 @@ alias sl="ls"
 # dev
 alias n="nvim"
 alias jn="jupyter notebook"
+alias pip="pip3"
 
 # git
 alias ga="git add"

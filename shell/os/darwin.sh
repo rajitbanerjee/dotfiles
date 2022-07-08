@@ -1,7 +1,6 @@
-## Python (macOS default)
+## Python
 export PATH=~/Library/Python/3.8/bin:$PATH
-# export PATH=~/Library/Python/3.9/bin:$PATH
-# alias python="python3"
+eval "$(pyenv init --path)"
 
 ## command-not-found
 HB_CNF_HANDLER="$(brew --repository)/Library/Taps/homebrew/homebrew-command-not-found/handler.sh"
