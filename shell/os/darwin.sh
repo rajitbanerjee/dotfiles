@@ -1,5 +1,6 @@
 ## Python
 export PATH=~/Library/Python/3.8/bin:$PATH
+export PATH=~/Library/Python/3.9/bin:$PATH
 eval "$(pyenv init --path)"
 
 ## command-not-found

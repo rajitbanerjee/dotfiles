@@ -7,24 +7,42 @@ IFS=$'\n\t'
 
 echo -e "Starting macOS system setup...\n"
 
-##############
-# Programming
-##############
-
 # Homebrew
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-
 brew update
 brew upgrade
 sudo chown -R $(whoami) $(brew --prefix)/* # Allow /usr/local/
 
+# Misc. utilities
+echo -e "\n\nMisc. utilities:\n"
+brew install bat
+brew install dpkg
+brew install duf
+brew install exa
+brew install fzf
 brew install git
-brew install wget
+brew install git-delta
+brew install jq
+brew install ripgrep
+brew install tldr
 brew install tmux
-brew install pyenv
+brew install trash-cli
+brew install wget
+
+# Node.js
+echo -e "\n\nNode:\n"
+brew install nvm
+source $(brew --prefix nvm)/nvm.sh
+nvm install 14
+nvm alias default 14
+
+npm i -g git-pull-all
 
 # Python
+echo -e "\n\nPython:\n"
+brew install pyenv
 python3 -m pip install --upgrade pip
+pyenv install 2.7.17
 pyenv global 2.7.18
 
 # Wakatime
@@ -46,19 +64,11 @@ api_key=$key
 """ >~/.wakatime.cfg
 fi
 
-# Node.js
-echo -e "\n\nNode:\n"
-brew install nvm
-source $(brew --prefix nvm)/nvm.sh
-nvm install 14
-nvm alias default 14
-
+# JDK and Apache Maven
+echo -e "\n\nJDK and Maven:\n"
 # Allow write access to required directories
 sudo chown -R $(whoami) /usr/local/bin /usr/local/include /usr/local/lib /usr/local/share /usr/local/share/doc /usr/local/share/man /usr/local/share/man/man1
 chmod u+w /usr/local/bin /usr/local/include /usr/local/lib /usr/local/share /usr/local/share/doc /usr/local/share/man /usr/local/share/man/man1
-
-# JDK and Apache Maven
-echo -e "\n\nJava and Maven:\n"
 brew install maven openjdk@8 openjdk@11 openjdk
 JVMDIR=/Library/Java/JavaVirtualMachines
 sudo ln -sfn $(brew --prefix)/opt/openjdk@8/libexec/openjdk.jdk $JVMDIR/openjdk-8.jdk
@@ -66,33 +76,12 @@ sudo ln -sfn $(brew --prefix)/opt/openjdk@11/libexec/openjdk.jdk $JVMDIR/openjdk
 sudo ln -sfn $(brew --prefix)/opt/openjdk/libexec/openjdk.jdk $JVMDIR/openjdk.jdk
 wget "https://projectlombok.org/downloads/lombok.jar" -O ~/.local/lib/lombok.jar
 
-##########
-# Neovim
-##########
-
 echo -e "\n\nNeovim and ALE linters/fixers:\n"
 brew install neovim
 python3 -m pip install --user pynvim isort autopep8 flake8
 npm i -g prettier @prettier/plugin-xml
 brew install shellcheck shfmt
 brew install google-java-format
-
-#################
-# Misc. utilities
-#################
-
-echo -e "\n\nMisc. utilities:\n"
-brew install bat
-brew install dpkg
-brew install duf
-brew install exa
-brew install fzf
-brew install git-delta
-brew install jq
-brew install ripgrep
-brew install tldr
-brew install trash-cli
-npm i -g git-pull-all
 
 read -rep $'\n\nWatchman [y/n]: ' opt_watchman
 if [ "$opt_watchman" == 'y' ]; then

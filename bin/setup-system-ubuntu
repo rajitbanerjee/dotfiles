@@ -7,13 +7,41 @@ IFS=$'\n\t'
 
 echo -e "Starting system setup...\n"
 
-##############
-# Programming
-##############
-
-echo -e "\n\nPython3 and pip:\n"
 sudo apt update
+
+# Misc. utilities
+echo -e "\n\nMisc. utilities:\n"
+sudo apt install bat # >= Ubuntu 20.04
+sudo apt install duf
+sudo apt install exa
+sudo apt install fzf
+sudo apt install jq
+sudo apt install ripgrep
+sudo apt install tldr
+sudo apt install trash-cli
+sudo apt install zip
+npm i -g git-pull-all
+
+wget https://github.com/dandavison/delta/releases/download/0.13.0/git-delta_0.13.0_amd64.deb -O git-delta.deb
+sudo dpkg -i git-delta.deb
+rm -rf git-delta.deb
+
+# Node.js
+echo -e "\n\nNode:\n"
+sudo apt install nvm
+source ~/.nvm/nvm.sh
+nvm install 14
+nvm alias default 14
+
+npm i -g git-pull-all
+
+# Python
+echo -e "\n\nPython:\n"
 sudo apt install python3-pip
+python3 -m pip install --upgrade pip
+sudo apt install pyenv
+pyenv install 2.7.17
+pyenv global 2.7.18
 
 # Wakatime
 echo -e "\n\nWakaTime coding metrics:\n"
@@ -34,21 +62,9 @@ api_key=$key
 """ >~/.wakatime.cfg
 fi
 
-# Node.js
-echo -e "\n\nNode:\n"
-curl --fail -LSs https://install-node.now.sh/lts | sudo bash
-npm config set prefix '~/.local'
-# npm i -g typescript ts-node @types/node
-# npm i -g lodash @types/lodash
-# npm i -g @swc/core @swc/helpers regenerator-runtime
-
 # JDK and Apache Maven
 echo -e "\n\nJava and Maven:\n"
 sudo apt install default-jdk maven
-
-##########
-# Neovim
-##########
 
 echo -e "\n\nNeovim and ALE linters/fixers:\n"
 sudo add-apt-repository ppa:neovim-ppa/stable
@@ -60,25 +76,7 @@ sudo apt install shellcheck
 curl -sS https://webinstall.dev/shfmt | bash
 # TODO google-java-format
 
-#################
-# Misc. utilities
-#################
-
-echo -e "\n\nMisc. utilities:\n"
-sudo apt install bat # >= Ubuntu 20.04
-sudo apt install duf
-sudo apt install exa
-sudo apt install fzf
-sudo apt install jq
-sudo apt install ripgrep
-sudo apt install tldr
-sudo apt install trash-cli
-sudo apt install zip
-npm i -g git-pull-all
-
-wget https://github.com/dandavison/delta/releases/download/0.13.0/git-delta_0.13.0_amd64.deb -O git-delta.deb
-sudo dpkg -i git-delta.deb
-rm -rf git-delta.deb
+# TODO watchman
 
 # zsh
 echo -e "\n\nzsh, oh-my-zsh:\n(Note: \"exit\" from oh-my-zsh to resume setup)\n"
