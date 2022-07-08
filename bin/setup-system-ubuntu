@@ -34,13 +34,13 @@ api_key=$key
 """ >~/.wakatime.cfg
 fi
 
-# Node.js, TS
-echo -e "\n\nNode.js and TypeScript:\n"
+# Node.js
+echo -e "\n\nNode:\n"
 curl --fail -LSs https://install-node.now.sh/lts | sudo bash
 npm config set prefix '~/.local'
-npm i -g typescript ts-node @types/node
-npm i -g lodash @types/lodash
-npm i -g @swc/core @swc/helpers regenerator-runtime
+# npm i -g typescript ts-node @types/node
+# npm i -g lodash @types/lodash
+# npm i -g @swc/core @swc/helpers regenerator-runtime
 
 # JDK and Apache Maven
 echo -e "\n\nJava and Maven:\n"
