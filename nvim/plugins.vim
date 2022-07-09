@@ -193,6 +193,9 @@ let g:startify_lists = [
     \ { 'header': ['   Commits'],        'type': function('s:list_commits') },
     \ ]
 
+" Show startify when no other buffers exist
+autocmd BufDelete * if empty(filter(tabpagebuflist(), '!buflisted(v:val)')) | Startify | endif
+
 
 """""""""""""""""""""""""""""""""""""""""""""""""""
 " => neoclide/coc.nvim
