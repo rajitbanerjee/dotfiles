@@ -5,7 +5,7 @@ IFS=$'\n\t'
 print_help() {
     echo "
 Rename individual files, or all files in the specified directories, to 
-replace spaces with underscores, and convert file name to lower case.
+replace spaces with dashes, and convert filename to lowercase.
 
 Usage:
 1. Rename all files in current directory
@@ -31,8 +31,8 @@ for DIR in $*; do
         if [[ -f $FILE ]]; then
             # Get parent directory
             PARENT="$(dirname $FILE)"
-            # Change spaces to underscores and convert to lower case
-            NEW_NAME="$(echo $(basename $FILE) | tr '[:upper:]' '[:lower:]' | tr -s ' ' | tr ' ' '_')"
+            # Change spaces to dashes and convert to lowercase
+            NEW_NAME="$(echo $(basename $FILE) | tr '[:upper:]' '[:lower:]' | tr -s ' ' | tr ' ' '-')"
             # Rename file
             mv $FILE "$PARENT/$NEW_NAME"
         fi
