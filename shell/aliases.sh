@@ -21,7 +21,6 @@ Linux)
 esac
 
 # files
-alias bat="bat --theme=\"gruvbox-dark\" -p -P"
 alias findf="find -type f -name"
 alias less="less -R"
 alias mv="mv -i"

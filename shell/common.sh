@@ -13,6 +13,9 @@ export PATH=~/.local/bin:$PATH
 export MANPAGER='nvim +Man!'
 export MANWIDTH=999
 
+## bat
+export BAT_THEME="gruvbox-dark"
+
 ## Fix SSL verification errors
 export SSL_CERT_FILE=/etc/ssl/cert.pem
 

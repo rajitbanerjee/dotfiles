@@ -17,6 +17,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
   Plug 'edkolev/tmuxline.vim'                                       " Tmux status line generator using airline
   Plug 'gruvbox-community/gruvbox'                                  " Primary colour scheme
   Plug 'iamcco/markdown-preview.nvim'                               " Markdown preview
+  Plug 'BurntSushi/ripgrep'                                         " Dependency (fzf.vim)
   Plug 'dbakker/vim-projectroot'                                    " Dependency (fzf.vim)
   Plug 'junegunn/fzf', {'do': { -> fzf#install() }}                 " Dependency (fzf.vim) 
   Plug 'junegunn/fzf.vim'                                           " Fuzzy finder
@@ -26,9 +27,6 @@ call plug#begin('~/.config/nvim/autoload/plugged')
   Plug 'maxbrunsfeld/vim-yankstack'                                 " Turns default register into a stack
   Plug 'mhinz/vim-startify'                                         " Start screen
   Plug 'neoclide/coc.nvim', {'branch': 'release'}                   " Code completion
-  Plug 'BurntSushi/ripgrep'                                         " Dependency (telescope.nvim)
-  Plug 'nvim-lua/plenary.nvim'                                      " Dependency (telescope.nvim)
-  Plug 'nvim-telescope/telescope.nvim'                              " Find, Filter, Preview, Pick
   Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}       " LSP
   Plug 'ryanoasis/vim-devicons'                                     " Coloured file type icons
   Plug 'tpope/vim-commentary'                                       " Code commenting
@@ -113,10 +111,25 @@ nmap <leader>m <Plug>MarkdownPreviewToggle
 " => junegunn/fzf.vim
 """""""""""""""""""""""""""""""""""""""""""""""""""
 let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.9 } }
-let $FZF_DEFAULT_OPTS = '--reverse'
+let g:fzf_preview_window = ['right:75%']
+let $FZF_DEFAULT_OPTS = '--reverse --bind ctrl-a:select-all'
 
-nnoremap <leader>ff :ProjectRootExe FZF<CR>
-nnoremap <leader>fg :ProjectRootExe Rg<CR>
+nnoremap <leader>f :ProjectRootExe FZF<CR>
+nnoremap <leader>g :ProjectRootExe Rg<CR>
+nnoremap <leader>b :Buffers<CR>
+nnoremap <leader>c :Commits<CR>
+nnoremap <leader>bc :BCommits<CR>
+nnoremap <leader>s :GFiles?<CR>
+
+function! s:build_quickfix_list(lines)
+  call setqflist(map(copy(a:lines), '{ "filename": v:val }'))
+  copen
+  cc
+endfunction
+
+let g:fzf_action = {
+  \ 'ctrl-b': function('s:build_quickfix_list'),
+  \ 'ctrl-s': 'vsplit' }
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""
@@ -228,54 +241,9 @@ set foldexpr=nvim_treesitter#foldexpr()
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""
-" => nvim-telescope/telescope.nvim
-"""""""""""""""""""""""""""""""""""""""""""""""""""
-nnoremap <leader>t <cmd>Telescope <CR>
-nnoremap <leader>f <cmd>Telescope find_files<CR>
-nnoremap <leader>g <cmd>Telescope live_grep<CR>
-nnoremap <leader>gc <cmd>Telescope git_commits<CR>
-nnoremap <leader>c <cmd>Telescope commands<CR>
-nnoremap <leader>b <cmd>Telescope buffers<CR>
-
-lua <<EOF
-local actions = require("telescope.actions")
-require('telescope').setup({
-  defaults = {
-    layout_config = {
-      horizontal = { preview_width = 0.5 },
-    },
-    mappings = {
-      -- https://github.com/nvim-telescope/telescope.nvim/blob/master/lua/telescope/mappings.lua
-      n = {
-        ["<C-j>"] = actions.toggle_selection + actions.move_selection_worse,
-        ["<C-k>"] = actions.toggle_selection + actions.move_selection_better,
-        ["<C-t>"] = false, -- no tabs, buffers only
-        ["<Down>"] = actions.preview_scrolling_down,
-        ["<Up>"] = actions.preview_scrolling_up,
-        ["q"] = actions.delete_buffer,
-      },
-      i = {
-        ["<C-x>"] = actions.delete_buffer,
-        ["<C-t>"] = false, -- no tabs, buffers only
-        ["<Down>"] = actions.preview_scrolling_down,
-        ["<Up>"] = actions.preview_scrolling_up,
-      },
-    },
-  },
-  pickers = {
-    find_files = {
-      theme = "dropdown",
-    },
-  },
-})
-EOF
-
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""
 " => tpope/vim-fugitive
 """""""""""""""""""""""""""""""""""""""""""""""""""
 nnoremap <leader>d :Gvdiffsplit<CR>
-nnoremap <leader>s :GFiles?<CR>
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""
