@@ -11,35 +11,35 @@ let g:ale_disable_lsp = 1
 
 call plug#begin('~/.config/nvim/autoload/plugged')
 
-  Plug 'airblade/vim-gitgutter'                                     " Git changes shown in column
-  Plug 'alvan/vim-closetag'                                         " Autoclose tags (e.g. XML)
-  Plug 'dense-analysis/ale'                                         " LSP, linting, formatting
-  Plug 'edkolev/tmuxline.vim'                                       " Tmux status line generator using airline
-  Plug 'gruvbox-community/gruvbox'                                  " Primary colour scheme
-  Plug 'iamcco/markdown-preview.nvim'                               " Markdown preview
-  Plug 'BurntSushi/ripgrep'                                         " Dependency (fzf.vim)
-  Plug 'dbakker/vim-projectroot'                                    " Dependency (fzf.vim)
-  Plug 'junegunn/fzf', {'do': { -> fzf#install() }}                 " Dependency (fzf.vim) 
-  Plug 'junegunn/fzf.vim'                                           " Fuzzy finder
-  Plug 'junegunn/goyo.vim'                                          " Zen mode
-  Plug 'lambdalisue/glyph-palette.vim'                              " Universal palette for Nerd Fonts
-  Plug 'lervag/vimtex'                                              " LaTeX support
-  Plug 'maxbrunsfeld/vim-yankstack'                                 " Turns default register into a stack
-  Plug 'mhinz/vim-startify'                                         " Start screen
-  Plug 'neoclide/coc.nvim', {'branch': 'release'}                   " Code completion
-  Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}       " LSP
-  Plug 'ryanoasis/vim-devicons'                                     " Coloured file type icons
-  Plug 'tpope/vim-commentary'                                       " Code commenting
-  Plug 'tpope/vim-fugitive'                                         " Git wrapper
-  Plug 'tpope/vim-obsession'                                        " Save session
-  Plug 'tpope/vim-repeat'                                           " Enables . for plugins
-  Plug 'tpope/vim-surround'                                         " Delete, change, add surroundings
-  Plug 'vim-airline/vim-airline'                                    " Status and tabline
-  Plug 'vim-airline/vim-airline-themes'                             " Airline themes
-  Plug 'voldikss/vim-floaterm'                                      " Floating terminal
-  Plug 'wakatime/vim-wakatime'                                      " Coding metrics
-  Plug 'Yggdroot/indentline'                                        " Indent indicator
-  Plug 'yuttie/comfortable-motion.vim'                              " Smooth scrolling
+  Plug 'airblade/vim-gitgutter'                                             " Git changes shown in column
+  Plug 'alvan/vim-closetag'                                                 " Autoclose tags (e.g. XML)
+  Plug 'dense-analysis/ale'                                                 " LSP, linting, formatting
+  Plug 'edkolev/tmuxline.vim'                                               " Tmux status line using airline
+  Plug 'gruvbox-community/gruvbox'                                          " Primary colour scheme
+  Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && npm install' }    " Markdown preview
+  Plug 'BurntSushi/ripgrep'                                                 " Dependency (fzf.vim)
+  Plug 'dbakker/vim-projectroot'                                            " Dependency (fzf.vim)
+  Plug 'junegunn/fzf', {'do': { -> fzf#install() }}                         " Dependency (fzf.vim) 
+  Plug 'junegunn/fzf.vim'                                                   " Fuzzy finder
+  Plug 'junegunn/goyo.vim'                                                  " Zen mode
+  Plug 'lambdalisue/glyph-palette.vim'                                      " Universal palette for Nerd Fonts
+  Plug 'lervag/vimtex'                                                      " LaTeX support
+  Plug 'maxbrunsfeld/vim-yankstack'                                         " Turns default register into a stack
+  Plug 'mhinz/vim-startify'                                                 " Start screen
+  Plug 'neoclide/coc.nvim', {'branch': 'release'}                           " Code completion
+  Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}               " LSP
+  Plug 'ryanoasis/vim-devicons'                                             " Coloured file type icons
+  Plug 'tpope/vim-commentary'                                               " Code commenting
+  Plug 'tpope/vim-fugitive'                                                 " Git wrapper
+  Plug 'tpope/vim-obsession'                                                " Save session
+  Plug 'tpope/vim-repeat'                                                   " Enables . for plugins
+  Plug 'tpope/vim-surround'                                                 " Delete, change, add surroundings
+  Plug 'vim-airline/vim-airline'                                            " Status and tabline
+  Plug 'vim-airline/vim-airline-themes'                                     " Airline themes
+  Plug 'voldikss/vim-floaterm'                                              " Floating terminal
+  Plug 'wakatime/vim-wakatime'                                              " Coding metrics
+  Plug 'Yggdroot/indentline'                                                " Indent indicator
+  Plug 'yuttie/comfortable-motion.vim'                                      " Smooth scrolling
 
 call plug#end()
 
