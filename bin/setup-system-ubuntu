@@ -40,7 +40,7 @@ echo -e "\n\nPython:\n"
 sudo apt install python3-pip
 python3 -m pip install --upgrade pip
 sudo apt install pyenv
-pyenv install 2.7.17
+pyenv install 2.7.18
 pyenv global 2.7.18
 
 # Wakatime
