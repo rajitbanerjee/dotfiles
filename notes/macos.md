@@ -13,7 +13,7 @@ Current MacOS tools used regularly.
     - [x] Launch on Login
     - [x] Hide Status Bar Icon
   - Advanced Settings
-    - Step: 21.12
+    - Step: 10.00
     - Speed: 6.69
     - Duration: 3.90
 - Browser:
@@ -44,9 +44,9 @@ Current MacOS tools used regularly.
 ## Java
 
 1.  Installed with `brew` in:
-    - `/usr/local/Cellar/openjdk@8/1.8.0+312/`
-    - `/usr/local/Cellar/openjdk@11/11.0.12/`
-    - `/usr/local/Cellar/openjdk/17.0.1_1/`
+    - `/usr/local/Cellar/openjdk@8/`
+    - `/usr/local/Cellar/openjdk@11/`
+    - `/usr/local/Cellar/openjdk/`
 2.  Set `$JAVA_HOME` in `../shell/os/darwin.sh`.
 3.  Symlink set to `/Library/Java/JavaVirtualMachines/openjdk-{8,11}.jdk` since `brew` installations are keg-only.
 4.  When using nvim and Lombok, set `"java.jdt.ls.vmargs": "-javaagent:/Users/<USERNAME>/.local/lib/lombok.jar"` in `coc-settings.json`.
