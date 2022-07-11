@@ -9,6 +9,7 @@ alias env="env | sort | less"
 alias path="tr ':' '\n' <<<"$PATH" | less"
 alias pj="cd ~/Git/projects"
 alias q="exit"
+alias wp="cd ~/workplace"
 case "$(uname)" in
 Darwin)
     alias doc="cd ~/Documents"
