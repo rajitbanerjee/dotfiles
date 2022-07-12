@@ -39,12 +39,5 @@
       if: "[ `uname` = Darwin ]"
       path: ssh/config
 
-    # jupyter
-    ~/.jupyter/jupyter_notebook_config.json: python/jupyter/jupyter_notebook_config.json
-    ~/.jupyter/nbconfig/notebook.json: python/jupyter/notebook.json
-    ~/.local/share/jupyter/nbextensions: python/jupyter/nbextensions
-
-
-
 - shell:
     - [git submodule update --init --recursive, Installing submodules]
