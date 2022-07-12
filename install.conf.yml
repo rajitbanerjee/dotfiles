@@ -9,6 +9,9 @@
 
 - clean: ["~"]
 
+- create:
+    - ~/Git
+
 - link:
     ~/.config/nvim: nvim
     ~/.shell:
