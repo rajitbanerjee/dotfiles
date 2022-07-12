@@ -1,0 +1,89 @@
+#!/bin/bash
+set -euo pipefail
+IFS=$'\n\t'
+
+# Set up a new Amazon Linux 2 instance with my preferred packages.
+# Usage: setup-system-al2
+
+echo -e "Starting AL2 system setup...\n"
+
+# Linuxbrew (+dependencies)
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+sudo yum groupinstall 'Development Tools'
+sudo yum install procps-ng curl file git
+
+brew update
+brew upgrade
+
+# Misc. utilities
+echo -e "\n\nMisc. utilities:\n"
+brew install bat
+brew install dpkg
+brew install duf
+brew install exa
+brew install fzf
+brew install git
+brew install git-delta
+brew install jq
+brew install ripgrep
+brew install tldr
+brew install trash-cli
+
+# Node.js
+echo -e "\n\nNode:\n"
+brew install nvm
+source $(brew --prefix nvm)/nvm.sh
+nvm install 14
+nvm alias default 14
+
+# Python
+echo -e "\n\nPython:\n"
+python3 -m pip install --upgrade pip
+
+# Wakatime
+echo -e "\n\nWakaTime:\n"
+python3 -m pip install --user wakatime
+
+if [ ! -f ~/.wakatime.cfg ]; then
+	echo -e "\n\nWakaTime config file setup:\n"
+	read -p "Enter WakaTime API Key: " key
+	echo -e """[settings]
+debug = false
+hidefilenames = false
+ignore =
+    COMMIT_EDITMSG$
+    PULLREQ_EDITMSG$
+    MERGE_MSG$
+    TAG_EDITMSG$
+api_key=$key
+""" >~/.wakatime.cfg
+fi
+
+# JDK and Apache Maven
+echo -e "\n\nJDK and Maven:\n"
+brew install maven openjdk@11
+wget "https://projectlombok.org/downloads/lombok.jar" -O ~/.local/lib/lombok.jar
+
+# Neovim
+echo -e "\n\nNeovim and ALE linters/fixers:\n"
+brew install neovim
+python3 -m pip install --user pynvim isort autopep8 flake8
+npm i -g prettier @prettier/plugin-xml
+brew install shellcheck shfmt
+brew install google-java-format
+
+# AWS Dev Tools
+echo -e "\n\nAWS Dev Tools:\n"
+mwinit -s -o && kinit -f
+toolbox install brazilcli
+sudo mkdir -p -m 755 /workplace/${USER}
+sudo chown -R ${USER}:amazon /workplace/${USER}
+ln -s /workplace/${USER} ~/workplace
+
+brew install awscli
+toolbox install cr
+toolbox install rde
+rde env validate
+
+echo -e "\nSystem setup complete!\n"

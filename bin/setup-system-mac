@@ -46,7 +46,7 @@ pyenv install 2.7.18
 pyenv global 2.7.18
 
 # Wakatime
-echo -e "\n\nWakaTime coding metrics:\n"
+echo -e "\n\nWakaTime:\n"
 python3 -m pip install --user wakatime
 
 if [ ! -f ~/.wakatime.cfg ]; then
@@ -76,6 +76,7 @@ sudo ln -sfn $(brew --prefix)/opt/openjdk@11/libexec/openjdk.jdk $JVMDIR/openjdk
 sudo ln -sfn $(brew --prefix)/opt/openjdk/libexec/openjdk.jdk $JVMDIR/openjdk.jdk
 wget "https://projectlombok.org/downloads/lombok.jar" -O ~/.local/lib/lombok.jar
 
+# Neovim
 echo -e "\n\nNeovim and ALE linters/fixers:\n"
 brew install neovim
 python3 -m pip install --user pynvim isort autopep8 flake8

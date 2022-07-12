@@ -20,7 +20,6 @@ sudo apt install ripgrep
 sudo apt install tldr
 sudo apt install trash-cli
 sudo apt install zip
-npm i -g git-pull-all
 
 wget https://github.com/dandavison/delta/releases/download/0.13.0/git-delta_0.13.0_amd64.deb -O git-delta.deb
 sudo dpkg -i git-delta.deb
@@ -44,7 +43,7 @@ pyenv install 2.7.18
 pyenv global 2.7.18
 
 # Wakatime
-echo -e "\n\nWakaTime coding metrics:\n"
+echo -e "\n\nWakaTime:\n"
 python3 -m pip install --user wakatime
 
 if [ ! -f ~/.wakatime.cfg ]; then

@@ -16,9 +16,6 @@ export MANWIDTH=999
 ## bat
 export BAT_THEME="gruvbox-dark"
 
-## Fix SSL verification errors
-export SSL_CERT_FILE=/etc/ssl/cert.pem
-
 ## nvim sessions (https://github.com/tpope/vim-obsession)
 export NVIM_SESSIONS=~/.local/share/nvim/session/
 mkdir -p $NVIM_SESSIONS

@@ -5,3 +5,5 @@ source ~/.shell/aliases.sh
 source ~/.shell/functions.sh
 source ~/.shell/common.sh
 source ~/.shell/os/"$(uname | tr '[:upper:]' '[:lower:]')".sh
+source ~/.shell/aws.sh
+
