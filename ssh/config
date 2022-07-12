@@ -2,7 +2,11 @@
 Host git.amazon.com
   GSSAPIAuthentication yes
   GSSAPIDelegateCredentials yes
+Host clouddesk
+  Hostname dev-dsk-brajit-1b-a3b6daa9.eu-west-1.amazon.com
+  IdentityFile ~/.ssh/id_rsa
 
+# OSS
 Host github.com
   Hostname ssh.github.com
   Port 443
@@ -13,6 +17,8 @@ Host gitlab.com
   Port 443
   PreferredAuthentications publickey
   IdentityFile ~/.ssh/id_ed25519.pub
+
+# All others
 Host *
   AddKeysToAgent yes
   UseKeychain yes
