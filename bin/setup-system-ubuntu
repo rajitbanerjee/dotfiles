@@ -45,7 +45,6 @@ pyenv global 2.7.18
 # Wakatime
 echo -e "\n\nWakaTime:\n"
 python3 -m pip install --user wakatime
-
 if [ ! -f ~/.wakatime.cfg ]; then
 	echo -e "\n\nWakaTime config file setup:\n"
 	read -p "Enter WakaTime API Key: " key
@@ -65,6 +64,7 @@ fi
 echo -e "\n\nJava and Maven:\n"
 sudo apt install default-jdk maven
 
+# Neovim
 echo -e "\n\nNeovim and ALE linters/fixers:\n"
 sudo add-apt-repository ppa:neovim-ppa/stable
 sudo apt update

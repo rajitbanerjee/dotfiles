@@ -44,7 +44,6 @@ python3 -m pip install --upgrade pip
 # Wakatime
 echo -e "\n\nWakaTime:\n"
 python3 -m pip install --user wakatime
-
 if [ ! -f ~/.wakatime.cfg ]; then
 	echo -e "\n\nWakaTime config file setup:\n"
 	read -p "Enter WakaTime API Key: " key
