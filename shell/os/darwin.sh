@@ -1,4 +1,4 @@
-## Fix SSL verification errors
+# Fix SSL verification errors
 export SSL_CERT_FILE=/etc/ssl/cert.pem
 
 # Python

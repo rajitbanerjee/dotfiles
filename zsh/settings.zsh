@@ -1,4 +1,3 @@
-
 export PATH=~/bin:/usr/local/bin:$PATH
 export ZSH=~/.oh-my-zsh
 
@@ -7,11 +6,6 @@ ENABLE_CORRECTION="true"
 ZSH_CUSTOM=~/.zsh/custom
 
 [[ ! -f ~/.zsh/optional.zsh ]] || source ~/.zsh/optional.zsh
-
-if [ "$(uname)" = "Linux" ]; then
-    # Apt package suggestions
-    source /etc/zsh_command_not_found
-fi
 
 plugins=(
     docker                      # Docker completion
