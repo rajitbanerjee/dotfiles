@@ -2,8 +2,8 @@
 Host git.amazon.com
   GSSAPIAuthentication yes
   GSSAPIDelegateCredentials yes
-Host clouddesk
-  Hostname dev-dsk-brajit-1b-a3b6daa9.eu-west-1.amazon.com
+Host devdesk
+  Hostname dev-dsk-brajit-1b-106566dd.eu-west-1.amazon.com
   IdentityFile ~/.ssh/id_rsa
   ForwardAgent yes
   LocalForward 8000 localhost:8000
