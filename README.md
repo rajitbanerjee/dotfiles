@@ -7,7 +7,9 @@ git config --global user.name "Rajit Banerjee"
 git config --global user.email "rajit.banerjee@ucdconnect.ie"
 git clone git@github.com:rajitbanerjee/dotfiles ~/.dotfiles
 mv ~/.gitconfig ~/.gitconfig_local
+rm -rf ~/.bashrc ~/.zshrc
 cd ~/.dotfiles && ./install
+exec $SHELL -l
 ```
 
 ```bash
