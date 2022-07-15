@@ -1,26 +1,26 @@
-## Default editor
+# Default editor
 export EDITOR=nvim
 
-## Language
+# Language
 export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 
-## Add custom scripts + installed scripts to path
+# Add custom scripts + installed scripts to path
 export PATH=~/.local/scripts/bin:$PATH
 export PATH=~/.local/bin:$PATH
 
-## man
+# man
 export MANPAGER='nvim +Man!'
 export MANWIDTH=999
 
-## bat
+# bat
 export BAT_THEME="gruvbox-dark"
 
-## nvim sessions (https://github.com/tpope/vim-obsession)
+# nvim sessions (https://github.com/tpope/vim-obsession)
 export NVIM_SESSIONS=~/.local/share/nvim/session/
 mkdir -p $NVIM_SESSIONS
 
-## Conda
+# Conda
 __conda_setup="$(~/.local/share/conda/bin/conda shell."$0" hook 2>/dev/null)"
 if [ $? -eq 0 ]; then
 	eval "$__conda_setup"
@@ -33,7 +33,7 @@ else
 fi
 unset __conda_setup
 
-## NVM
+# NVM
 mkdir -p ~/.nvm
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"                   # This loads nvm

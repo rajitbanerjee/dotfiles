@@ -49,6 +49,6 @@
   ],
   "explorer.width": 27,
   "java.autobuild.enabled": false,
-  "java.jdt.ls.vmargs": "-javaagent:/Users/brajit/.local/lib/lombok.jar",
+  "java.jdt.ls.vmargs": "-javaagent:/home/brajit/.local/lib/lombok.jar",
   "typescript.updateImportsOnFileMove.enable": true
 }
