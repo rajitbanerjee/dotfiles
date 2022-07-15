@@ -15,7 +15,7 @@ set noshowcmd
 set noshowmode
 set splitbelow
 set splitright
-set mouse=a " Mouse support if ever needed
+set mouse=i
 set termguicolors
 
 set background=dark
