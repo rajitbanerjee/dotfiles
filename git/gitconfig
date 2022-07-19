@@ -33,8 +33,8 @@
     zero-style = dim syntax
 [init]
 	defaultBranch = main
-# [pull]
-#     rebase = true
+ [pull]
+    rebase = true
 [fetch]
 	prune = true
 [merge]
