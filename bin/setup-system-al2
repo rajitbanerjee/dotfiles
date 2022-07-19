@@ -38,6 +38,8 @@ source $(brew --prefix nvm)/nvm.sh
 nvm install 14
 nvm alias default 14
 
+npm i -g git-pull-all
+
 # Python
 echo -e "\n\nPython:\n"
 python3 -m pip install --upgrade pip
