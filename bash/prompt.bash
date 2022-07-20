@@ -2,7 +2,8 @@ if [ -n "$SSH_CLIENT" ]; then
     ssh_flag="(ssh) "
 fi
 
-PS1='\[\033[01;32m\]${ssh_flag}\u@\h:\[\033[01;34m\]\w\[\033[00m\]$(__git_ps1 " (%s)")\$ '
+NEWLINE=$'\n'
+PS1='\[\033[01;32m\]${ssh_flag}\u@\h:\[\033[01;34m\]\w\[\033[00m\]$(__git_ps1 " (%s)")${NEWLINE}\$ '
 
 PROMPT_DIRTRIM=3
 

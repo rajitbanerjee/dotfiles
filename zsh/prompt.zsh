@@ -15,5 +15,6 @@ fi
 # %n: Username
 # %m: Hostname
 # %(5~|%-1~/…/%3~|%4~): Prompt dir. trimming
-setopt PROMPT_SUBST ; PS1='%B%F{100}${ssh_flag}%n@%m:%f%F{66}%(5~|%-1~/…/%3~|%4~)%f%b $(__git_ps1 "(%s)")\$ '
+NEWLINE=$'\n'
+setopt PROMPT_SUBST ; PS1='%B%F{100}${ssh_flag}%n@%m:%f%F{66}%(5~|%-1~/…/%3~|%4~)%f%b $(__git_ps1 "(%s)")${NEWLINE}\$ '
 
