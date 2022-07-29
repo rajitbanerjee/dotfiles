@@ -7,9 +7,7 @@ alias cls="clear"
 alias cl="cls && l"
 alias env="env | sort | less"
 alias path="tr ':' '\n' <<<"$PATH" | less"
-alias pj="cd ~/Git"
 alias q="exit"
-alias wp="cd ~/workplace"
 case "$(uname)" in
 Darwin)
     alias doc="cd ~/Documents"
@@ -20,6 +18,10 @@ Linux)
     alias open="xdg-open"
     ;;
 esac
+
+# aws
+alias wp="cd /workplace/brajit"
+alias bb="brazil-build"
 
 # files
 alias findf="find -type f -name"
@@ -90,3 +92,4 @@ alias dcd="docker-compose down"
 # maven
 alias mi="mvn install"
 alias mci="mvn clean install"
+
