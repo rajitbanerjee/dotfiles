@@ -1,0 +1,20 @@
+#!/bin/bash
+
+vpncli=/opt/cisco/anyconnect/bin/vpn
+
+if [ "connect" = "$1" ]; then
+    pkill -x "Cisco AnyConnect Secure Mobility Client"
+	read -rep "PIN for $(whoami): " -s pin
+	read -rep $'\nPress the button on your YubiKey (you might have to hold it for about 3-5 seconds before your token produces a one-time password)...\n' -s otp
+
+	printf "\n\n$pin$otp" | $vpncli -s connect "Automatic Selection (Route53)"
+
+elif [ "disconnect" = "$1" ]; then
+	$vpncli -s disconnect
+else
+	if $vpncli -s state | grep -iq 'disconnect'; then
+		echo "Disconnected"
+	else
+		echo "Connected"
+	fi
+fi
