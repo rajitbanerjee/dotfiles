@@ -6,14 +6,15 @@ dbaeumer.vscode-eslint
 donjayamanne.githistory
 DotJoshJohnson.xml
 dsznajder.es7-react-js-snippets
-eamodio.gitlens
-eg2.vscode-npm-script
+ecmel.vscode-html-css
 esbenp.prettier-vscode
 eserozvataf.one-dark-pro-monokai-darker
 foxundermoon.shell-format
 GabrielBB.vscode-lombok
 GitHub.github-vscode-theme
 GraphQL.vscode-graphql
+GraphQL.vscode-graphql-syntax
+hediet.vscode-drawio
 humao.rest-client
 James-Yu.latex-workshop
 jbockle.jbockle-format-files
@@ -28,7 +29,6 @@ ms-toolsai.jupyter-renderers
 ms-vscode-remote.remote-containers
 ms-vscode-remote.remote-ssh
 ms-vscode-remote.remote-ssh-edit
-ms-vscode-remote.remote-wsl
 ms-vscode-remote.vscode-remote-extensionpack
 redhat.fabric8-analytics
 redhat.java
@@ -47,5 +47,7 @@ vscjava.vscode-java-test
 vscjava.vscode-maven
 vscjava.vscode-spring-initializr
 vscode-icons-team.vscode-icons
+waderyan.gitblame
 WakaTime.vscode-wakatime
 xabikos.JavaScriptSnippets
+yzhang.markdown-all-in-one
