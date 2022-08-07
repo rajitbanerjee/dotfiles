@@ -297,6 +297,12 @@ command! FNL execute ":FloatermLast"
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""
+" => Yggdroot/indentline
+"""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:indentLine_setConceal = 0
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""
 " => yuttie/comfortable-motion.vim
 """""""""""""""""""""""""""""""""""""""""""""""""""
 let g:comfortable_motion_no_default_key_mappings = 1
