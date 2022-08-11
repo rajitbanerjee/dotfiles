@@ -31,11 +31,6 @@ nnoremap J mzJ`z
 nnoremap n nzzzv
 nnoremap N Nzzzv
 
-" Cycle through popup suggestions with TAB; Enter to select and suppress new line
-inoremap <silent> <expr> <TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
-inoremap <silent> <expr> <S-TAB> pumvisible() ? "\<C-p>" : "\<S-TAB>"
-inoremap <expr> <CR> pumvisible() ? "\<C-Y>" : "\<CR>"
-
 " Moving around
 nnoremap <C-j> <C-W>j
 nnoremap <C-k> <C-W>k
