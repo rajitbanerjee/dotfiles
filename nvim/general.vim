@@ -1,7 +1,8 @@
 set history=500
 set updatetime=50
+set signcolumn=yes
 set nobackup
-set nowb
+set nowritebackup
 set noswapfile
 set langmenu=en
 

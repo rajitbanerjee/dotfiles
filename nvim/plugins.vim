@@ -19,6 +19,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
   Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && npm install' }    " Markdown preview
   Plug 'BurntSushi/ripgrep'                                                 " Dependency (fzf.vim)
   Plug 'dbakker/vim-projectroot'                                            " Dependency (fzf.vim)
+  Plug 'jiangmiao/auto-pairs'                                               " Pair brackets, quotes
   Plug 'junegunn/fzf', {'do': { -> fzf#install() }}                         " Dependency (fzf.vim) 
   Plug 'junegunn/fzf.vim'                                                   " Fuzzy finder
   Plug 'junegunn/goyo.vim'                                                  " Zen mode
@@ -205,15 +206,20 @@ nnoremap <silent> <nowait> <leader>o  :<C-u>CocCommand editor.action.organizeImp
 nnoremap <silent> <nowait> <leader>cm  :<C-u>CocList commands<CR>
 nnoremap <silent> <nowait> <leader>a  :<C-u>CocList diagnostics<CR>
 
-inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm() : "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
-inoremap <silent><expr> <C-x><C-z> coc#pum#visible() ? coc#pum#stop() : "\<C-x>\<C-z>"
-" Remap for complete to use tab and <cr>
+" Use tab for trigger completion with characters ahead and navigate
 inoremap <silent><expr> <TAB>
-    \ coc#pum#visible() ? coc#pum#next(1):
-    \ <SID>check_back_space() ? "\<Tab>" :
-    \ coc#refresh()
+      \ coc#pum#visible() ? coc#pum#next(1):
+      \ CheckBackspace() ? "\<Tab>" :
+      \ coc#refresh()
 inoremap <expr><S-TAB> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"
-inoremap <silent><expr> <c-space> coc#refresh()
+function! CheckBackspace() abort
+    let col = col('.') - 1
+    return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
+" Make <CR> to accept selected completion item or notify coc.nvim to format
+inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm() : "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+" Trigger autocomplete
+inoremap <silent><expr> <C-L> coc#refresh()
 
 hi CocSearch ctermfg=12 guifg=#18A3FF
 hi CocMenuSel ctermbg=109 guibg=#13354A
@@ -242,7 +248,7 @@ autocmd CursorHold * :call <SID>show_hover_doc()
 " => nvim-treesitter/nvim-treesitter
 """""""""""""""""""""""""""""""""""""""""""""""""""
 lua <<EOF
-require'nvim-treesitter.configs'.setup {
+require 'nvim-treesitter.configs'.setup {
   -- A list of parser names, or "all"
   ensure_installed = { "bash", "bibtex", "c", "cmake", "comment", "cpp", "dockerfile", "go", "graphql", "help", "html", "http", "java", "javascript", "json", "json5", "jsonc", "latex", "lua", "make", "perl", "python", "r", "regex", "scss", "typescript", "vim", "yaml" },
   highlight = {
