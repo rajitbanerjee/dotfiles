@@ -47,7 +47,7 @@
       "name": "file"
     }
   ],
-  "explorer.width": 27,
+  "explorer.width": 40,
   "java.autobuild.enabled": false,
   "java.jdt.ls.vmargs": "-javaagent:/home/brajit/.local/lib/lombok.jar",
   "typescript.updateImportsOnFileMove.enable": true
