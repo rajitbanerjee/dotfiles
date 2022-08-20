@@ -10,3 +10,4 @@ source ~/.shell/aws.sh
 
 typeset -U PATH # remove duplicates in $PATH
 autoload -U compinit && compinit
+
