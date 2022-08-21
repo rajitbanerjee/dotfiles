@@ -11,20 +11,19 @@ let g:ale_disable_lsp = 1
 
 call plug#begin('~/.config/nvim/autoload/plugged')
 
+  Plug 'BurntSushi/ripgrep'                                                 " Dependency (fzf.vim)
   Plug 'airblade/vim-gitgutter'                                             " Git changes shown in column
   Plug 'alvan/vim-closetag'                                                 " Autoclose tags (e.g. XML)
+  Plug 'dbakker/vim-projectroot'                                            " Dependency (fzf.vim)
   Plug 'dense-analysis/ale'                                                 " LSP, linting, formatting
   Plug 'edkolev/tmuxline.vim'                                               " Tmux status line using airline
   Plug 'gruvbox-community/gruvbox'                                          " Primary colour scheme
   Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && npm install' }    " Markdown preview
-  Plug 'BurntSushi/ripgrep'                                                 " Dependency (fzf.vim)
-  Plug 'dbakker/vim-projectroot'                                            " Dependency (fzf.vim)
   Plug 'jiangmiao/auto-pairs'                                               " Pair brackets, quotes
   Plug 'junegunn/fzf', {'do': { -> fzf#install() }}                         " Dependency (fzf.vim) 
   Plug 'junegunn/fzf.vim'                                                   " Fuzzy finder
   Plug 'junegunn/goyo.vim'                                                  " Zen mode
   Plug 'lambdalisue/glyph-palette.vim'                                      " Universal palette for Nerd Fonts
-  Plug 'lervag/vimtex'                                                      " LaTeX support
   Plug 'maxbrunsfeld/vim-yankstack'                                         " Turns default register into a stack
   Plug 'mhinz/vim-startify'                                                 " Start screen
   Plug 'neoclide/coc.nvim', {'branch': 'release'}                           " Code completion
@@ -32,14 +31,12 @@ call plug#begin('~/.config/nvim/autoload/plugged')
   Plug 'ryanoasis/vim-devicons'                                             " Coloured file type icons
   Plug 'tpope/vim-commentary'                                               " Code commenting
   Plug 'tpope/vim-fugitive'                                                 " Git wrapper
-  Plug 'tpope/vim-obsession'                                                " Save session
   Plug 'tpope/vim-repeat'                                                   " Enables . for plugins
   Plug 'tpope/vim-surround'                                                 " Delete, change, add surroundings
   Plug 'vim-airline/vim-airline'                                            " Status and tabline
   Plug 'vim-airline/vim-airline-themes'                                     " Airline themes
   Plug 'voldikss/vim-floaterm'                                              " Floating terminal
   Plug 'wakatime/vim-wakatime'                                              " Coding metrics
-  Plug 'Yggdroot/indentline'                                                " Indent indicator
   Plug 'yuttie/comfortable-motion.vim'                                      " Smooth scrolling
 
 call plug#end()
@@ -73,7 +70,17 @@ let g:ale_fixers = {
   \ }
 
 " Code formatting
-nnoremap <leader>l :ALEFix<CR>
+nnoremap <silent><leader>l :ALEFix<CR>
+function _AleVisualSelection()
+    normal! gvy
+    vs tmp
+    normal!p
+    ALEFix
+    normal! ggVG
+    sleep 300m
+endfunc
+vnoremap <silent><leader>l <Esc>:call _AleVisualSelection()<CR>y:q!<CR>gvp
+
 let g:ale_java_google_java_format_options = '--aosp'
 let g:ale_fix_on_save = 0
 
@@ -138,7 +145,7 @@ let g:fzf_action = {
 """""""""""""""""""""""""""""""""""""""""""""""""""
 nnoremap <silent> <leader>z :Goyo<CR>
 
-let g:goyo_width = "90%"
+let g:goyo_width = "60%"
 let g:goyo_height = "90%"
 
 autocmd! User GoyoEnter nested call <SID>goyo_enter()
@@ -194,9 +201,6 @@ let g:startify_lists = [
     \ { 'header': ['   Commits'],        'type': function('s:list_commits') },
     \ ]
 
-" Show startify when no other buffers exist
-autocmd BufDelete * if empty(filter(tabpagebuflist(), '!buflisted(v:val)')) | Startify | endif
-
 
 """""""""""""""""""""""""""""""""""""""""""""""""""
 " => neoclide/coc.nvim
@@ -205,6 +209,7 @@ nnoremap <silent> <nowait> <leader>e  :<C-u>CocCommand explorer<CR>
 nnoremap <silent> <nowait> <leader>o  :<C-u>CocCommand editor.action.organizeImport<CR>
 nnoremap <silent> <nowait> <leader>cm  :<C-u>CocList commands<CR>
 nnoremap <silent> <nowait> <leader>a  :<C-u>CocList diagnostics<CR>
+
 
 " Use tab for trigger completion with characters ahead and navigate
 inoremap <silent><expr> <TAB>
@@ -227,7 +232,9 @@ hi CocMenuSel ctermbg=109 guibg=#13354A
 nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gr <Plug>(coc-references)
-nmap <leader>r  <Plug>(coc-rename)
+nmap <silent> <leader>; <Plug>(coc-floatinput-command)
+nmap <silent> <leader>c; <Plug>(coc-floatinput-coc-command)
+nmap <silent> <leader>r <Plug>(coc-floatinput-rename)
 nmap <leader>ac <Plug>(coc-codeaction)
 nmap <leader>qf :<C-u>CocFix<CR>
 
@@ -269,12 +276,6 @@ nnoremap <leader>d :Gvdiffsplit<CR>
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""
-" => tpope/vim-obsession
-"""""""""""""""""""""""""""""""""""""""""""""""""""
-command -nargs=1 Obs :Obsess $NVIM_SESSIONS/<args>.vim
-
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""
 " => vim-airline/vim-airline,vim-airline-themes
 """""""""""""""""""""""""""""""""""""""""""""""""""
 let g:airline#extensions#whitespace#enabled = 0
@@ -282,7 +283,6 @@ let g:airline_theme = 'gruvbox'
 let g:airline_section_y = ''
 let g:airline_powerline_fonts = 1
 
-" airline symbols
 if !exists('g:airline_symbols')
     let g:airline_symbols = {}
 endif
@@ -313,12 +313,6 @@ command! F execute ":FloatermNew"
 command! FN execute ":FloatermNext"
 command! FNF execute ":FloatermFirst"
 command! FNL execute ":FloatermLast"
-
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Yggdroot/indentline
-"""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:indentLine_setConceal = 0
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""
