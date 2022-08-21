@@ -11,20 +11,20 @@ if [ ! -f package.json ]; then
 fi
 
 npm install \
-    coc-spell-checker \
-    coc-snippets \
+    coc-clangd \
+    coc-css \
     coc-explorer \
     coc-highlight \
-    coc-vimlsp \
+    coc-html \
     coc-java \
     coc-jedi \
-    coc-html \
-    coc-css \
-    coc-tsserver \
     coc-json \
-    coc-yaml \
+    coc-snippets \
+    coc-spell-checker \
     coc-sql \
-    coc-clangd \
+    coc-tsserver \
+    coc-vimlsp \
+    coc-yaml \
     --global-style --ignore-scripts --no-bin-links --no-package-lock --only=prod
 
 # https://github.com/neoclide/coc-java/issues/99#issuecomment-663856695

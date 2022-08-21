@@ -1,7 +1,7 @@
 {
   "coc.preferences.messageLevel": "error",
   "cSpell.enabled": false,
-  "cSpell.language": "en-GB",
+  "cSpell.language": "en-US",
   "explorer.file.reveal.auto": true,
   "explorer.file.root.template": "[icon] Project [hidden & 1][root]",
   "explorer.focus": true,
@@ -48,6 +48,7 @@
     }
   ],
   "explorer.width": 40,
+  "explorer.quitOnOpen": true,
   "java.autobuild.enabled": false,
   "java.jdt.ls.vmargs": "-javaagent:/home/brajit/.local/lib/lombok.jar",
   "typescript.updateImportsOnFileMove.enable": true
