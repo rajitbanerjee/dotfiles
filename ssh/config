@@ -5,6 +5,7 @@ Host git.amazon.com
 Host devdesk
   Hostname dev-dsk-brajit-1b-106566dd.eu-west-1.amazon.com
   IdentityFile ~/.ssh/id_rsa
+  LogLevel ERROR # https://unix.stackexchange.com/questions/210211/disable-ssh-tunnel-open-failed-messages
   ForwardAgent yes
   LocalForward 8000 localhost:8000
   LocalForward 8080 localhost:8080
