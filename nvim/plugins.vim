@@ -119,7 +119,7 @@ nmap <leader>m <Plug>MarkdownPreviewToggle
 " => junegunn/fzf.vim
 """""""""""""""""""""""""""""""""""""""""""""""""""
 let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.9 } }
-let g:fzf_preview_window = ['right:75%']
+let g:fzf_preview_window = ['right:50%']
 let $FZF_DEFAULT_OPTS = '--reverse --bind ctrl-a:select-all'
 
 nnoremap <leader>f :ProjectRootExe FZF<CR>
