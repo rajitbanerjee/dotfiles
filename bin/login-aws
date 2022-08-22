@@ -3,8 +3,8 @@
 if [[ $(uname -n) == dev-dsk* ]]; then
 	# Step 1. Generate Midway cookie and Kerberos ticket
 	echo "Generating Midway cookie and Kerberos ticket..."
-	mwinit -s -o
-	kinitmonday() { kinit -f -l 7d -r 30d; }
+	mwinit -s -o && kinit -R
+	kinitmonday() { kinit -f -r 7d; }
 	if ! klist -l; then kinitmonday; fi
 
 	# Step 2. Log in to CodeArtifact
