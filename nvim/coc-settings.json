@@ -47,7 +47,7 @@
       "name": "file"
     }
   ],
-  "explorer.width": 40,
+  "explorer.width": 50,
   "explorer.quitOnOpen": true,
   "java.autobuild.enabled": false,
   "java.jdt.ls.vmargs": "-javaagent:/home/brajit/.local/lib/lombok.jar",
