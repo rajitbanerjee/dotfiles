@@ -48,6 +48,7 @@ Host devdesk
   LocalForward 3020 localhost:3020
   LocalForward 3081 localhost:3081
   LocalForward 6501 localhost:6501
+  LocalForward 9999 localhost:9999
 
 # OSS
 Host github.com

@@ -16,7 +16,7 @@ set noshowcmd
 set noshowmode
 set splitbelow
 set splitright
-set mouse=i
+set mouse=a
 set termguicolors
 
 set background=dark

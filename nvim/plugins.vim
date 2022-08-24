@@ -113,6 +113,12 @@ endtry
 " => iamcco/markdown-preview.nvim
 """""""""""""""""""""""""""""""""""""""""""""""""""
 nmap <leader>m <Plug>MarkdownPreviewToggle
+let g:mkdp_open_ip = 'localhost'
+let g:mkdp_port = '9999'
+function! g:EchoUrl(url)
+    :echo "Markdown Preview:" a:url
+endfunction
+let g:mkdp_browserfunc = 'g:EchoUrl'
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""
