@@ -31,5 +31,11 @@ return {
   keys = {
     {key="f", mods="SUPER", action="ToggleFullScreen"},
   },
+  window_padding = {
+    left = 10,
+    right = 10,
+    top = 0,
+    bottom = 0,
+  },
   -- window_decorations = "RESIZE",
 }
