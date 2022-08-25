@@ -73,6 +73,8 @@ endfun
 nnoremap <C-k> :cnext<CR>
 nnoremap <C-j> :cprev<CR>
 nnoremap <C-q> :call ToggleQFList()<CR>
+command! ClearQFList cexpr []
+nnoremap <leader>cc :ClearQFList<CR> :cclose<CR>
 let g:the_primeagen_qf_g = 0
 fun! ToggleQFList()
     if g:the_primeagen_qf_g == 1
