@@ -19,6 +19,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'edkolev/tmuxline.vim'                                               " Tmux status line using airline
     Plug 'gruvbox-community/gruvbox'                                          " Primary colour scheme
     Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && npm install' }    " Markdown preview
+    Plug 'jesseleite/vim-agriculture'                                         " Raw Ag/Rg
     Plug 'jiangmiao/auto-pairs'                                               " Pair brackets, quotes
     Plug 'junegunn/fzf', {'do': { -> fzf#install() }}                         " Dependency (fzf.vim) 
     Plug 'junegunn/fzf.vim'                                                   " Fuzzy finder
@@ -135,6 +136,14 @@ function! g:EchoUrl(url)
 endfunction
 let g:mkdp_browserfunc = 'g:EchoUrl'
 
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""
+" => jesseleite/vim-agriculture
+"""""""""""""""""""""""""""""""""""""""""""""""""""
+nnoremap <leader>/ <Plug>RgRawSearch
+vnoremap / <Plug>RgRawVisualSelection<CR>
+nnoremap * <Plug>RgRawWordUnderCursor<CR>
+    
 
 """""""""""""""""""""""""""""""""""""""""""""""""""
 " => junegunn/fzf.vim
@@ -326,9 +335,8 @@ let g:airline_symbols.dirty=''
 """""""""""""""""""""""""""""""""""""""""""""""""""
 " => voldikss/vim-floaterm 
 """""""""""""""""""""""""""""""""""""""""""""""""""
-let g:floaterm_keymap_toggle = '<C-t>'
+let g:floaterm_keymap_toggle = '<leader>t'
 let g:floaterm_title = "($1/$2)"
-
 let g:floaterm_gitcommit = 'floaterm'
 let g:floaterm_autoinsert = 1
 let g:floaterm_width = 0.999
@@ -339,7 +347,6 @@ command! F execute ":FloatermNew"
 command! FN execute ":FloatermNext"
 command! FNF execute ":FloatermFirst"
 command! FNL execute ":FloatermLast"
-
 
 """""""""""""""""""""""""""""""""""""""""""""""""""
 " => Yggdroot/indentLine
