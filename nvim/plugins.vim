@@ -30,6 +30,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'neoclide/coc.nvim', {'branch': 'release'}                           " Code completion
     Plug 'nvim-lua/plenary.nvim'                                              " Dependency (diffview.vim)
     Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}               " LSP
+    Plug 'romgrk/barbar.nvim'
     Plug 'sindrets/diffview.nvim'                                             " Source control
     Plug 'kyazdani42/nvim-web-devicons'                                       " Coloured file type icons
     Plug 'tpope/vim-commentary'                                               " Code commenting
@@ -301,6 +302,16 @@ set foldexpr=nvim_treesitter#foldexpr()
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""
+" => romgrk/barbar.nvim
+"""""""""""""""""""""""""""""""""""""""""""""""""""
+let bufferline = get(g:, 'bufferline', {})
+let bufferline.animation = v:true
+let bufferline.auto_hide = v:true
+let bufferline.icon_separator_active = ''
+let bufferline.icon_separator_inactive = ''
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""
 " => sindrets/diffview.nvim
 """""""""""""""""""""""""""""""""""""""""""""""""""
 nnoremap <silent> <leader>d :DiffviewOpen<CR>
@@ -310,8 +321,6 @@ nnoremap <silent> <leader>d :DiffviewOpen<CR>
 " => vim-airline/vim-airline,vim-airline-themes
 """""""""""""""""""""""""""""""""""""""""""""""""""
 let g:airline#extensions#whitespace#enabled = 0
-let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tabline#show_tab_type = 0
 let g:airline_theme = 'gruvbox'
 let g:airline_section_c = ''
 let g:airline_section_y = ''
