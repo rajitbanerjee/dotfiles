@@ -11,34 +11,34 @@ let g:ale_disable_lsp = 1
 
 call plug#begin('~/.config/nvim/autoload/plugged')
 
-  Plug 'BurntSushi/ripgrep'                                                 " Dependency (fzf.vim)
-  Plug 'airblade/vim-gitgutter'                                             " Git changes shown in column
-  Plug 'alvan/vim-closetag'                                                 " Autoclose tags (e.g. XML)
-  Plug 'dbakker/vim-projectroot'                                            " Dependency (fzf.vim)
-  Plug 'dense-analysis/ale'                                                 " LSP, linting, formatting
-  Plug 'edkolev/tmuxline.vim'                                               " Tmux status line using airline
-  Plug 'gruvbox-community/gruvbox'                                          " Primary colour scheme
-  Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && npm install' }    " Markdown preview
-  Plug 'jiangmiao/auto-pairs'                                               " Pair brackets, quotes
-  Plug 'junegunn/fzf', {'do': { -> fzf#install() }}                         " Dependency (fzf.vim) 
-  Plug 'junegunn/fzf.vim'                                                   " Fuzzy finder
-  Plug 'junegunn/goyo.vim'                                                  " Zen mode
-  Plug 'lambdalisue/glyph-palette.vim'                                      " Universal palette for Nerd Fonts
-  Plug 'maxbrunsfeld/vim-yankstack'                                         " Turns default register into a stack
-  Plug 'mhinz/vim-startify'                                                 " Start screen
-  Plug 'neoclide/coc.nvim', {'branch': 'release'}                           " Code completion
-  Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}               " LSP
-  Plug 'ryanoasis/vim-devicons'                                             " Coloured file type icons
-  Plug 'tpope/vim-commentary'                                               " Code commenting
-  Plug 'tpope/vim-fugitive'                                                 " Git wrapper
-  Plug 'tpope/vim-repeat'                                                   " Enables . for plugins
-  Plug 'tpope/vim-surround'                                                 " Delete, change, add surroundings
-  Plug 'vim-airline/vim-airline'                                            " Status and tabline
-  Plug 'vim-airline/vim-airline-themes'                                     " Airline themes
-  Plug 'voldikss/vim-floaterm'                                              " Floating terminal
-  Plug 'wakatime/vim-wakatime'                                              " Coding metrics
-  Plug 'Yggdroot/indentLine'                                                " Indentation indicator
-  Plug 'yuttie/comfortable-motion.vim'                                      " Smooth scrolling
+    Plug 'airblade/vim-gitgutter'                                             " Git changes shown in column
+    Plug 'alvan/vim-closetag'                                                 " Autoclose tags (e.g. XML)
+    Plug 'BurntSushi/ripgrep'                                                 " Dependency (fzf.vim)
+    Plug 'dbakker/vim-projectroot'                                            " Dependency (fzf.vim)
+    Plug 'dense-analysis/ale'                                                 " LSP, linting, formatting
+    Plug 'edkolev/tmuxline.vim'                                               " Tmux status line using airline
+    Plug 'gruvbox-community/gruvbox'                                          " Primary colour scheme
+    Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && npm install' }    " Markdown preview
+    Plug 'jiangmiao/auto-pairs'                                               " Pair brackets, quotes
+    Plug 'junegunn/fzf', {'do': { -> fzf#install() }}                         " Dependency (fzf.vim) 
+    Plug 'junegunn/fzf.vim'                                                   " Fuzzy finder
+    Plug 'junegunn/goyo.vim'                                                  " Zen mode
+    Plug 'lambdalisue/glyph-palette.vim'                                      " Universal palette for Nerd Fonts
+    Plug 'maxbrunsfeld/vim-yankstack'                                         " Turns default register into a stack
+    Plug 'mhinz/vim-startify'                                                 " Start screen
+    Plug 'neoclide/coc.nvim', {'branch': 'release'}                           " Code completion
+    Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}               " LSP
+    Plug 'ryanoasis/vim-devicons'                                             " Coloured file type icons
+    Plug 'tpope/vim-commentary'                                               " Code commenting
+    Plug 'tpope/vim-fugitive'                                                 " Git wrapper
+    Plug 'tpope/vim-repeat'                                                   " Enables . for plugins
+    Plug 'tpope/vim-surround'                                                 " Delete, change, add surroundings
+    Plug 'vim-airline/vim-airline'                                            " Status and tabline
+    Plug 'vim-airline/vim-airline-themes'                                     " Airline themes
+    Plug 'voldikss/vim-floaterm'                                              " Floating terminal
+    Plug 'wakatime/vim-wakatime'                                              " Coding metrics
+    Plug 'Yggdroot/indentLine'                                                " Indentation indicator
+    Plug 'yuttie/comfortable-motion.vim'                                      " Smooth scrolling
 
 call plug#end()
 
@@ -98,6 +98,18 @@ let g:ale_sign_error = "•"
 let g:ale_sign_warning = "•"
 let g:ale_sign_style_error = "•"
 let g:ale_sign_style_warning = "•"
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""
+" => edkolev/tmuxline.vim
+"""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:tmuxline_powerline_separators = 0
+let g:tmuxline_separators = {
+    \ 'left' : '',
+    \ 'left_alt': '',
+    \ 'right' : '',
+    \ 'right_alt' : '',
+    \ 'space' : ' '}
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""
@@ -286,17 +298,20 @@ nnoremap <leader>d :Gvdiffsplit<CR>
 " => vim-airline/vim-airline,vim-airline-themes
 """""""""""""""""""""""""""""""""""""""""""""""""""
 let g:airline#extensions#whitespace#enabled = 0
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#show_tab_type = 0
 let g:airline_theme = 'gruvbox'
+let g:airline_section_c = ''
 let g:airline_section_y = ''
 let g:airline_powerline_fonts = 1
 
 if !exists('g:airline_symbols')
     let g:airline_symbols = {}
 endif
-let g:airline_left_sep = ''
-let g:airline_left_alt_sep = ''
-let g:airline_right_sep = ''
-let g:airline_right_alt_sep = ''
+let g:airline_left_sep = ' '
+let g:airline_left_alt_sep = ' '
+let g:airline_right_sep = ' '
+let g:airline_right_alt_sep = ' '
 let g:airline_symbols.branch = ''
 let g:airline_symbols.readonly = ''
 let g:airline_symbols.linenr = ' '
