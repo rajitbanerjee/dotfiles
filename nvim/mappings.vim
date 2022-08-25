@@ -48,7 +48,8 @@ nnoremap <silent> <C-Left>  :vertical resize -2<CR>
 nnoremap <silent> <C-Right> :vertical resize +2<CR>
 
 " Buffers
-nnoremap q :Bclose<CR>
+" Close buffer -> close tab -> suppress error 'Cannot close last tab page'
+nnoremap <silent> q :Bclose<CR> :silent! tabclose<CR> 
 nnoremap <silent> <TAB> :bnext<CR>
 nnoremap <silent> <S-TAB> :bprevious<CR>
 " Delete buffer without closing window

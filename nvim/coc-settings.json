@@ -6,7 +6,7 @@
   "explorer.file.root.template": "[icon] Project [hidden & 1][root]",
   "explorer.focus": true,
   "explorer.icon.enableNerdfont": true,
-  "explorer.icon.source": "vim-devicons",
+  "explorer.icon.source": "nvim-web-devicons",
   "explorer.keyMappings.global": {
     "*": "toggleSelection",
     "<2-LeftMouse>": [

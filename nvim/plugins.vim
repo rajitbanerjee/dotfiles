@@ -27,8 +27,10 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'maxbrunsfeld/vim-yankstack'                                         " Turns default register into a stack
     Plug 'mhinz/vim-startify'                                                 " Start screen
     Plug 'neoclide/coc.nvim', {'branch': 'release'}                           " Code completion
+    Plug 'nvim-lua/plenary.nvim'                                              " Dependency (diffview.vim)
     Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}               " LSP
-    Plug 'ryanoasis/vim-devicons'                                             " Coloured file type icons
+    Plug 'sindrets/diffview.nvim'                                             " Source control
+    Plug 'kyazdani42/nvim-web-devicons'                                       " Coloured file type icons
     Plug 'tpope/vim-commentary'                                               " Code commenting
     Plug 'tpope/vim-fugitive'                                                 " Git wrapper
     Plug 'tpope/vim-repeat'                                                   " Enables . for plugins
@@ -258,7 +260,8 @@ nmap <leader>ac <Plug>(coc-codeaction)
 nmap <leader>qf :<C-u>CocFix<CR>
 
 function! ShowDocIfNoDiagnostic(timer_id)
-    if (coc#float#has_float() == 0 && CocHasProvider('hover') == 1)
+    " buftype= (empty) is a normal buffer [e.g. don't check for hover on buftype=nowrite]
+    if (len(&buftype) == 0 && coc#float#has_float() == 0 && CocHasProvider('hover') == 1)
         silent call CocActionAsync('doHover')
     endif
 endfunction
@@ -289,9 +292,9 @@ set foldexpr=nvim_treesitter#foldexpr()
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""
-" => tpope/vim-fugitive
+" => sindrets/diffview.nvim
 """""""""""""""""""""""""""""""""""""""""""""""""""
-nnoremap <leader>d :Gvdiffsplit<CR>
+nnoremap <silent> <leader>d :DiffviewOpen<CR>
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""
