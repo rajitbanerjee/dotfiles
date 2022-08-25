@@ -4,6 +4,33 @@ Tools used in the past, documented in case needed again.
 
 ## MacOS
 
+### Java
+
+1.  Installed with `brew` in:
+    - `/usr/local/Cellar/openjdk@8/`
+    - `/usr/local/Cellar/openjdk@11/`
+    - `/usr/local/Cellar/openjdk/`
+2.  Set `$JAVA_HOME` in `../shell/os/darwin.sh`.
+3.  Symlink set to `/Library/Java/JavaVirtualMachines/openjdk-{8,11}.jdk` since `brew` installations are keg-only.
+4.  When using nvim and Lombok, set `"java.jdt.ls.vmargs": "-javaagent:/Users/<USERNAME>/.local/lib/lombok.jar"` in `coc-settings.json`.
+
+### NodeJS, TypeScript
+
+1. NodeJS installed with `install-node.now.sh` script.
+2. Global prefix for `npm` set to `~/.local/`.
+3. `npm install typesript ts-node`
+4. `npm init` to create a `package.json` template
+5. `npx tsc --init` to create a `tsconfig.json` template
+6. `npx ts-node` to run .ts scripts
+
+### Python
+
+1.  Default macOS installation: `~/Library/Python/3.9/bin/`
+2.  `~/.local/share/conda/bin/` (Miniforge3 for Apple Silicon)
+3.  Create conda environments as required.
+4.  Remember to export environments with `conda env export --no-builds` or custom alias `exp`.
+5.  Jupyter: `pip install jupyterlab`. Also need to install and enable nbextensions: `pip install jupyter_contrib_nbextensions && jupyter contrib nbextension uninstall --user`.
+
 ### LaTeX
 
 1.  Installed using `brew install --cask mactex`.
