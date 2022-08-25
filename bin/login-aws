@@ -13,25 +13,10 @@ if [[ $(uname -n) == dev-dsk* ]]; then
 	echo -e "\nLogging in to CodeArtifact..."
 	aws codeartifact login --profile fed-dev-admin --tool npm --domain amazon --repository federate --domain-owner 149122183214 --region us-west-2
 else
-	# Unfabric Bravehearts: No VPN! https://w.amazon.com/bin/view/WSSH/setup/macos
-
-	# # Step 1. Connect to VPN
-	# vpncli=/opt/cisco/anyconnect/bin/vpn
-	# if $vpncli -s state | grep -iq 'disconnect'; then
-	# 	pkill -x "Cisco AnyConnect Secure Mobility Client"
-	# 	echo "Connecting to VPN..."
-	# 	read -rep "PIN for $(whoami): " -s pin
-	# 	read -rep $'\nPress the button on your YubiKey (you might have to hold it for about 3-5 seconds before your token produces a one-time password)...\n' -s otp
-
-	# 	printf "\n\n$pin$otp" | $vpncli -s connect "Automatic Selection (Route53)"
-	# else
-	# 	echo "VPN Connected"
-	# fi
-
-	# Step 2. Midway
+	# Step 1. Midway
 	echo "Generating AEA Midway cookie..."
 	mwinit --aea
 
-	# Step 3. SSH into Cloud Desktop
+	# Step 2. SSH into Cloud Desktop
 	ssh devdesk
 fi
