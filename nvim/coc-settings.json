@@ -41,6 +41,16 @@
     "yy": "copyFile"
   },
   "explorer.mouseMode": "singleclick",
+  "explorer.root.customRules": {
+    "vcs": {
+      "patterns": [".git", ".hg", ".projections.json"]
+    },
+    "vcs-r": {
+      "patterns": [".git", ".hg", ".projections.json"],
+      "bottomUp": true
+    }
+  },
+  "explorer.root.strategies": ["workspace", "custom:vcs", "custom:vcs-r"],
   "explorer.sources": [
     {
       "expand": true,
@@ -48,7 +58,7 @@
     }
   ],
   "explorer.width": 50,
-  "explorer.quitOnOpen": true,
+  "explorer.quitOnOpen": false,
   "java.autobuild.enabled": false,
   "java.jdt.ls.vmargs": "-javaagent:/home/brajit/.local/lib/lombok.jar",
   "typescript.updateImportsOnFileMove.enable": true,
