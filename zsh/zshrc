@@ -11,3 +11,6 @@ source ~/.shell/aws.sh
 typeset -U PATH # remove duplicates in $PATH
 autoload -U compinit && compinit
 
+# Brazil CLI completion
+source ~/.brazil_completion/zsh_completion
+

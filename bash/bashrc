@@ -5,7 +5,6 @@ source ~/.shell/aliases.sh
 source ~/.shell/functions.sh
 source ~/.shell/common.sh
 source ~/.shell/os/"$(uname | tr '[:upper:]' '[:lower:]')".sh
-source ~/.shell/aws.sh
 
 if [[ $(uname -n) == dev-dsk* ]] && [[ -n "$PS1" ]]; then
     # ZSH default shell on AL2 Cloud Desktop

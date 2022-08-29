@@ -344,7 +344,7 @@ let g:airline_symbols.dirty=''
 """""""""""""""""""""""""""""""""""""""""""""""""""
 " => voldikss/vim-floaterm 
 """""""""""""""""""""""""""""""""""""""""""""""""""
-let g:floaterm_keymap_toggle = '<leader>t'
+let g:floaterm_keymap_toggle = '<C-t>'
 let g:floaterm_title = "($1/$2)"
 let g:floaterm_gitcommit = 'floaterm'
 let g:floaterm_autoinsert = 1
