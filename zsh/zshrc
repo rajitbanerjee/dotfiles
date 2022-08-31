@@ -11,6 +11,9 @@ source ~/.shell/aws.sh
 typeset -U PATH # remove duplicates in $PATH
 autoload -U compinit && compinit
 
-# Brazil CLI completion
-source ~/.brazil_completion/zsh_completion
+
+if [[ $(uname -n) == dev-dsk* ]]; then
+    # Brazil CLI completion
+    source ~/.brazil_completion/zsh_completion
+fi
 
