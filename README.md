@@ -13,7 +13,7 @@ exec $SHELL -l
 ```
 
 ```bash
-# setup-system-ubuntu, setup-system-al2
+# setup-system-al2, setup-system-ubuntu
 setup-system-mac
 setup-coc-nvim
 nvim
@@ -22,7 +22,6 @@ nvim
 ```
 
 ![nvim](./assets/images/nvim.png)
-![floaterm](./assets/images/floaterm.png)
 
 ## License
 
