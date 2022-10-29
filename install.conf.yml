@@ -25,14 +25,6 @@
     ~/.gitconfig: git/gitconfig
     ~/.gitignore_global: git/gitignore_global
 
-    # terminal
-    ~/.config/wezterm/wezterm.lua:
-      if: "[ `uname` = Darwin ]"
-      path: terminal/wezterm.lua
-    ~/.config/wezterm/fonts:
-      if: "[ `uname` = Darwin ]"
-      path: fonts
-
     # tmux
     ~/.tmux.conf: tmux/tmux.conf
     ~/.tmux/plugins/tpm: tmux/tpm
