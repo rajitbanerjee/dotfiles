@@ -1,0 +1,170 @@
+{
+    "[brazilPackageConfig]": {
+        "workbench.editor.languageDetection": false
+    },
+    "[dockercompose]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[dockerfile]": {
+        "editor.defaultFormatter": "foxundermoon.shell-format"
+    },
+    "[html]": {
+        "editor.defaultFormatter": "vscode.html-language-features"
+    },
+    "[java]": {
+        "editor.defaultFormatter": "redhat.java"
+    },
+    "[javascript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[json]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[jsonc]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[markdown]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[typescript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[typescriptreact]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[xml]": {
+        "editor.defaultFormatter": "DotJoshJohnson.xml"
+    },
+    "[yaml]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "cSpell.language": "en-US",
+    "diffEditor.ignoreTrimWhitespace": false,
+    "editor.accessibilitySupport": "off",
+    "editor.codeLensFontFamily": "JetBrainsMono Nerd Font",
+    "editor.detectIndentation": false,
+    "editor.find.cursorMoveOnType": false,
+    "editor.fontFamily": "JetBrainsMono Nerd Font",
+    "editor.fontLigatures": true,
+    "editor.insertSpaces": false,
+    "editor.linkedEditing": true,
+    "editor.minimap.enabled": false,
+    "editor.stickyScroll.enabled": true,
+    "editor.suggestSelection": "first",
+    "editor.tabSize": 4,
+    "editor.wordWrap": "wordWrapColumn",
+    "editor.wordWrapColumn": 500,
+    "eslint.enable": false,
+    "explorer.confirmDelete": false,
+    "explorer.confirmDragAndDrop": false,
+    "files.associations": {
+        "Config": "brazilPackageConfig"
+    },
+    "files.autoSave": "afterDelay",
+    "files.exclude": {
+        "**/*.aux": true,
+        "**/*.bcf": true,
+        "**/*.iml": true,
+        "**/*.run.xml": true,
+        "**/*.synctex.gz": true,
+        "**/.DS_Store": true,
+        "**/.classpath": true,
+        "**/.factorypath": true,
+        "**/.git": true,
+        "**/.hg": true,
+        "**/.idea": true,
+        "**/.project": true,
+        "**/.settings": true,
+        "**/.svn": true,
+        "**/CVS": true,
+        "**/Thumbs.db": true,
+        ".bemol": true,
+        ".viceroy": true,
+        "apollo-overrides": true,
+        "build": false,
+        "env": true,
+        "packageInfo*": true,
+        "release-info": true,
+        "src/*/build": false
+    },
+    "files.watcherExclude": {
+        "**/.git/objects/**": true,
+        "**/.git/subtree-cache/**": true,
+        "**/.hg/store/**": true,
+        "**/build/**": true,
+        "**/node_modules/*/**": true
+    },
+    "git-graph.maxDepthOfRepoSearch": 4,
+    "git.autofetch": true,
+    "git.closeDiffOnOperation": true,
+    "git.confirmSync": false,
+    "git.showActionButton": {
+        "commit": true,
+        "publish": false,
+        "sync": false
+    },
+    "java.autobuild.enabled": false,
+    "javascript.updateImportsOnFileMove.enabled": "always",
+    "python.languageServer": "Pylance",
+    "redhat.telemetry.enabled": false,
+    "remote.SSH.configFile": "/Users/brajit/.ssh/config",
+    "search.exclude": {
+        "**/*.code-search": true,
+        "**/bower_components": true,
+        "**/node_modules": true,
+        "build": true,
+        "env": true,
+        "src/*/build": true
+    },
+    "search.useGlobalIgnoreFiles": true,
+    "search.useParentIgnoreFiles": true,
+    "telemetry.telemetryLevel": "off",
+    "terminal.integrated.defaultProfile.osx": "zsh",
+    "terminal.integrated.fontFamily": "JetBrainsMono Nerd Font",
+    "terminal.integrated.inheritEnv": true,
+    "typescript.updateImportsOnFileMove.enabled": "always",
+    "viceroy.config.internal.lastUpdateTime": "2022-10-29T12:49:01.083Z",
+    "viceroy.config.lastVersion": "0.48.0",
+    "viceroy.doc.welcome.showAtStartup": false,
+    "vsicons.dontShowNewVersionMessage": true,
+	"vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+    "workbench.colorTheme": "Gruvbox Dark Hard",
+    "workbench.editor.enablePreview": false,
+    "workbench.iconTheme": "vscode-icons",
+    "yaml.customTags": [
+        "!And",
+        "!And sequence",
+        "!Base64",
+        "!If",
+        "!If sequence",
+        "!Not",
+        "!Not sequence",
+        "!Equals",
+        "!Equals sequence",
+        "!Or",
+        "!Or sequence",
+        "!FindInMap",
+        "!FindInMap sequence",
+        "!Base64",
+        "!Join",
+        "!Join sequence",
+        "!Cidr",
+        "!Ref",
+        "!Sub",
+        "!Sub sequence",
+        "!GetAtt",
+        "!GetAZs",
+        "!ImportValue",
+        "!ImportValue sequence",
+        "!Select",
+        "!Select sequence",
+        "!Split",
+        "!Split sequence"
+    ],
+    "yaml.schemas": {
+        "file:///local/home/brajit/.vscode-server/extensions/marklel.vscode-brazil-0.48.0/assets/languages/rde/schema.json": "**/definition.yaml"
+    },
+	"yaml.validate": true,
+	"telemetry.enableCrashReporter": false,
+	"telemetry.enableTelemetry": false
+}

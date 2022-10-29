@@ -34,5 +34,13 @@
       if: "[ `uname` = Darwin ]"
       path: ssh/config
 
+    # vscode
+    ~/Library/Application Support/Code/User/settings.json:
+      if: "[ `uname` = Darwin ]"
+      path: vscode/settings.json
+    ~/Library/Application Support/Code/User/keybindings.json:
+      if: "[ `uname` = Darwin ]"
+      path: vscode/keybindings.json
+
 - shell:
     - [git submodule update --init --recursive, Installing submodules]
