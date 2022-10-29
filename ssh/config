@@ -1,4 +1,3 @@
-
 # AWS
 Host github.audible.com
   ProxyCommand=wssh proxy %h --port=%p
@@ -12,6 +11,7 @@ Host devdesk
   Hostname dev-dsk-brajit-1b-106566dd.eu-west-1.amazon.com
   IdentityFile ~/.ssh/id_rsa
   LogLevel ERROR # https://unix.stackexchange.com/questions/210211/disable-ssh-tunnel-open-failed-messages
+  TCPKeepAlive yes
   
 # The following config is added by WSSH setup script to configure off-VPN dev-dsk access.
   ProxyCommand=wssh proxy %h
