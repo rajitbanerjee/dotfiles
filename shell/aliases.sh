@@ -22,6 +22,7 @@ esac
 # aws
 alias wp="cd /workplace/brajit"
 alias bb="brazil-build"
+alias bbb="brazil-recursive-cmd brazil-build --all"
 
 # files
 alias findf="find -type f -name"
