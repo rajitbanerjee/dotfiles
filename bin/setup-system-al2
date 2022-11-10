@@ -27,6 +27,7 @@ brew install fzf
 brew install git
 brew install git-delta
 brew install jq
+brew install pandoc
 brew install ripgrep
 brew install tldr
 brew install trash-cli
