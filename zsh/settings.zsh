@@ -15,7 +15,7 @@ plugins=(
     wakatime                    # coding metrics
     zsh-autosuggestions         # Autocomplete
     zsh-completions             # Additional completion definitions
-    zsh-syntax-highlighting     # Fish-shell like syntax highlighting
+    # zsh-syntax-highlighting     # Fish-shell like syntax highlighting
 )
 
 source $ZSH/oh-my-zsh.sh
