@@ -42,7 +42,7 @@
     "diffEditor.ignoreTrimWhitespace": false,
     "editor.accessibilitySupport": "off",
     "editor.codeLensFontFamily": "JetBrainsMono Nerd Font",
-    "editor.detectIndentation": false,
+    "editor.detectIndentation": true,
     "editor.find.cursorMoveOnType": false,
     "editor.fontFamily": "JetBrainsMono Nerd Font",
     "editor.fontLigatures": true,
@@ -118,7 +118,6 @@
     },
     "search.useGlobalIgnoreFiles": true,
     "search.useParentIgnoreFiles": true,
-    "telemetry.telemetryLevel": "off",
     "terminal.integrated.defaultProfile.osx": "zsh",
     "terminal.integrated.fontFamily": "JetBrainsMono Nerd Font",
     "terminal.integrated.inheritEnv": true,
@@ -127,7 +126,8 @@
     "viceroy.config.lastVersion": "0.48.0",
     "viceroy.doc.welcome.showAtStartup": false,
     "vsicons.dontShowNewVersionMessage": true,
-	"vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+    "window.zoomLevel": 2,
     "workbench.colorTheme": "Gruvbox Dark Hard",
     "workbench.editor.enablePreview": false,
     "workbench.iconTheme": "vscode-icons",
@@ -164,7 +164,5 @@
     "yaml.schemas": {
         "file:///local/home/brajit/.vscode-server/extensions/marklel.vscode-brazil-0.48.0/assets/languages/rde/schema.json": "**/definition.yaml"
     },
-	"yaml.validate": true,
-	"telemetry.enableCrashReporter": false,
-	"telemetry.enableTelemetry": false
+    "yaml.validate": true
 }
