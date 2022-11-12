@@ -31,6 +31,8 @@ Current MacOS tools used regularly.
     - [Wipr](https://apps.apple.com/us/app/wipr/id1320666476?mt=12)
     - Bitwarden
 - Terminal
+  - [Alacritty](https://github.com/alacritty/alacritty)
+    - Installed with `brew`, runs on Rosetta 2 by default.
   - [iTerm2](https://iterm2.com)
     - Using Rosetta 2 emulation for Apple Silicon.
     - [Colour schemes](https://github.com/mbadolato/iTerm2-Color-Schemes)

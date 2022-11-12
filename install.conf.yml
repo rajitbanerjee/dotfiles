@@ -13,6 +13,7 @@
     - ~/Git
 
 - link:
+    ~/.config/alacritty/alacritty.yml: terminal/alacritty/alacritty.yml
     ~/.config/nvim: nvim
     ~/.shell:
     ~/.bash:
