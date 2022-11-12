@@ -1,95 +1,104 @@
 {
-  "coc.preferences.messageLevel": "error",
-  "cSpell.enabled": false,
-  "cSpell.language": "en-US",
-  "explorer.file.reveal.auto": true,
-  "explorer.file.root.template": "[icon] Project [hidden & 1][root]",
-  "explorer.focus": true,
-  "explorer.icon.enableNerdfont": true,
-  "explorer.icon.source": "nvim-web-devicons",
-  "explorer.keyMappings.global": {
-    "*": "toggleSelection",
-    "<2-LeftMouse>": [
-      "expandable?",
-      ["expanded?", "collapse", "expand"],
-      "open"
-    ],
-    "<<": "gitStage",
-    "<cr>": ["wait", "expandable?", "cd", "open"],
-    "<esc>": "esc",
-    "<tab>": false,
-    ">>": "gitUnstage",
-    "A": "addDirectory",
-    "R": "rename",
-    "dd": "cutFile",
-    "df": "delete",
-    "e": "open",
-    "f": "searchRecursive",
-    "g<dot>": "toggleHidden",
-    "i": false,
-    "l": ["wait", "expandable?", "expand", "open"],
-    "m": "actionMenu",
-    "o": ["wait", "expanded?", "collapse", "expand"],
-    "p": "pasteFile",
-    "q": "quit",
-    "r": "refresh",
-    "s": "open:vsplit",
-    "t": false,
-    "u": ["wait", "gotoParent"],
-    "yn": "copyFilename",
-    "yp": "copyFilepath",
-    "yy": "copyFile"
-  },
-  "explorer.mouseMode": "singleclick",
-  "explorer.root.customRules": {
-    "vcs": {
-      "patterns": [".git", ".hg", ".projections.json"]
+    "[brazil-config]": {
+        "semanticTokens.enable": true
     },
-    "vcs-r": {
-      "patterns": [".git", ".hg", ".projections.json"],
-      "bottomUp": true
-    }
-  },
-  "explorer.root.strategies": ["workspace", "custom:vcs", "custom:vcs-r"],
-  "explorer.sources": [
-    {
-      "expand": true,
-      "name": "file"
-    }
-  ],
-  "explorer.width": 50,
-  "explorer.quitOnOpen": false,
-  "java.autobuild.enabled": false,
-  "java.jdt.ls.vmargs": "-javaagent:/home/brajit/.local/lib/lombok.jar",
-  "typescript.updateImportsOnFileMove.enable": true,
-  "yaml.customTags": [
-    "!And",
-    "!And sequence",
-    "!Base64",
-    "!If",
-    "!If sequence",
-    "!Not",
-    "!Not sequence",
-    "!Equals",
-    "!Equals sequence",
-    "!Or",
-    "!Or sequence",
-    "!FindInMap",
-    "!FindInMap sequence",
-    "!Base64",
-    "!Join",
-    "!Join sequence",
-    "!Cidr",
-    "!Ref",
-    "!Sub",
-    "!Sub sequence",
-    "!GetAtt",
-    "!GetAZs",
-    "!ImportValue",
-    "!ImportValue sequence",
-    "!Select",
-    "!Select sequence",
-    "!Split",
-    "!Split sequence"
-  ]
+    "cSpell.enabled": false,
+    "cSpell.language": "en-US",
+    "coc.preferences.messageLevel": "error",
+    "explorer.file.reveal.auto": true,
+    "explorer.file.root.template": "[icon] Project [hidden & 1][root]",
+    "explorer.focus": true,
+    "explorer.icon.enableNerdfont": true,
+    "explorer.icon.source": "nvim-web-devicons",
+    "explorer.keyMappings.global": {
+        "*": "toggleSelection",
+        "<2-LeftMouse>": [
+            "expandable?",
+            ["expanded?", "collapse", "expand"],
+            "open"
+        ],
+        "<<": "gitStage",
+        "<cr>": ["wait", "expandable?", "cd", "open"],
+        "<esc>": "esc",
+        "<tab>": false,
+        ">>": "gitUnstage",
+        "A": "addDirectory",
+        "R": "rename",
+        "dd": "cutFile",
+        "df": "delete",
+        "e": "open",
+        "f": "searchRecursive",
+        "g<dot>": "toggleHidden",
+        "i": false,
+        "l": ["wait", "expandable?", "expand", "open"],
+        "m": "actionMenu",
+        "o": ["wait", "expanded?", "collapse", "expand"],
+        "p": "pasteFile",
+        "q": "quit",
+        "r": "refresh",
+        "s": "open:vsplit",
+        "t": false,
+        "u": ["wait", "gotoParent"],
+        "yn": "copyFilename",
+        "yp": "copyFilepath",
+        "yy": "copyFile"
+    },
+    "explorer.mouseMode": "singleclick",
+    "explorer.quitOnOpen": false,
+    "explorer.root.customRules": {
+        "vcs": {
+            "patterns": [".git", ".hg", ".projections.json"]
+        },
+        "vcs-r": {
+            "bottomUp": true,
+            "patterns": [".git", ".hg", ".projections.json"]
+        }
+    },
+    "explorer.root.strategies": ["workspace", "custom:vcs", "custom:vcs-r"],
+    "explorer.sources": [
+        {
+            "expand": true,
+            "name": "file"
+        }
+    ],
+    "explorer.width": 50,
+    "java.autobuild.enabled": false,
+    "java.jdt.ls.vmargs": "-javaagent:/home/brajit/.local/lib/lombok.jar",
+    "languageserver": {
+        "brazil-config": {
+            "command": "barium",
+            "filetypes": ["brazil-config"]
+        }
+    },
+    "typescript.updateImportsOnFileMove.enable": true,
+    "yaml.customTags": [
+        "!And",
+        "!And sequence",
+        "!Base64",
+        "!If",
+        "!If sequence",
+        "!Not",
+        "!Not sequence",
+        "!Equals",
+        "!Equals sequence",
+        "!Or",
+        "!Or sequence",
+        "!FindInMap",
+        "!FindInMap sequence",
+        "!Base64",
+        "!Join",
+        "!Join sequence",
+        "!Cidr",
+        "!Ref",
+        "!Sub",
+        "!Sub sequence",
+        "!GetAtt",
+        "!GetAZs",
+        "!ImportValue",
+        "!ImportValue sequence",
+        "!Select",
+        "!Select sequence",
+        "!Split",
+        "!Split sequence"
+    ]
 }

@@ -31,6 +31,7 @@ brew install pandoc
 brew install ripgrep
 brew install tldr
 brew install trash-cli
+brew install watchman
 
 # Node.js
 echo -e "\n\nNode:\n"
@@ -78,13 +79,14 @@ brew install google-java-format
 
 # AWS Dev Tools
 echo -e "\n\nAWS Dev Tools:\n"
-mwinit -s -o && kinit -f
-toolbox install brazilcli
 sudo mkdir -p -m 755 /workplace/${USER}
 sudo chown -R ${USER}:amazon /workplace/${USER}
 ln -s /workplace/${USER} ~/workplace
+mwinit -s -o && kinit -f
 
 brew install awscli
+toolbox install brazilcli
+toolbox install barium
 toolbox install cr
 toolbox install rde
 rde env validate

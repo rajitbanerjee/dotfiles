@@ -55,3 +55,6 @@ function Copy()
   call chansend(v:stderr, s)
 endfunction
 autocmd TextYankPost * call Copy()
+
+" AWS
+au BufReadPost,BufNewFile Config setf brazil-config
