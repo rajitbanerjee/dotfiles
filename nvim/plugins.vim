@@ -30,7 +30,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'neoclide/coc.nvim', {'branch': 'release'}                           " Code completion
     Plug 'nvim-lua/plenary.nvim'                                              " Dependency (diffview.vim)
     Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}               " LSP
-    Plug 'romgrk/barbar.nvim'
+    Plug 'romgrk/barbar.nvim' 												  " Tabline
     Plug 'sindrets/diffview.nvim'                                             " Source control
     Plug 'kyazdani42/nvim-web-devicons'                                       " Coloured file type icons
     Plug 'tpope/vim-commentary'                                               " Code commenting
@@ -348,9 +348,9 @@ let g:floaterm_keymap_toggle = '<C-t>'
 let g:floaterm_title = "($1/$2)"
 let g:floaterm_gitcommit = 'floaterm'
 let g:floaterm_autoinsert = 1
-let g:floaterm_width = 0.999
+let g:floaterm_width = 0.9
 let g:floaterm_height = 0.9
-let g:floaterm_borderchars = ""
+let g:floaterm_borderchars = "─│─│┌┐┘└"
 
 command! F execute ":FloatermNew"
 command! FN execute ":FloatermNext"
