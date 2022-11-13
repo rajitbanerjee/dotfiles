@@ -16,11 +16,6 @@ mkpdf() {
 	echo "File created: $base.pdf"
 }
 
-# better diff
-diff() {
-	command diff -u "$1" "$2" | delta
-}
-
 # TCP ports in use
 ports() {
 	netstat -Watnlv | grep LISTEN | awk '{"ps -o comm= -p " $9 | getline procname;colred="\033[01;31m";colclr="\033[0m"; print colred "proto: " colclr $1 colred " | addr.port: " colclr $4 colred " | pid: " colclr $9 colred " | name: " colclr procname;  }' | column -t -s "|"
