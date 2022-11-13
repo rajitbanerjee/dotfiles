@@ -27,7 +27,7 @@ endfunction
 syntax enable
 set ffs=unix,dos,mac
 set whichwrap+=<,>,h,l
-set ignorecase smartcase
+set smartcase
 set lazyredraw " Don't redraw when executing macros
 set magic " Simplify regex
 set inccommand=split " Live substition 
