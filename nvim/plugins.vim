@@ -41,7 +41,6 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'vim-airline/vim-airline-themes'                                     " Airline themes
     Plug 'voldikss/vim-floaterm'                                              " Floating terminal
     Plug 'wakatime/vim-wakatime'                                              " Coding metrics
-    Plug 'Yggdroot/indentLine'                                                " Indentation indicator
     Plug 'yuttie/comfortable-motion.vim'                                      " Smooth scrolling
 
 call plug#end()
@@ -356,12 +355,6 @@ command! F execute ":FloatermNew"
 command! FN execute ":FloatermNext"
 command! FNF execute ":FloatermFirst"
 command! FNL execute ":FloatermLast"
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Yggdroot/indentLine
-"""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:indentLine_char = '│'
-let g:indentLine_setConceal = 0
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""
