@@ -13,12 +13,12 @@
     - ~/Git
 
 - link:
-    ~/.config/alacritty/alacritty.yml: terminal/alacritty/alacritty.yml
-    ~/.config/nvim: nvim
+    ~/.config/alacritty: config/alacritty
+    ~/.config/nvim: config/nvim
     ~/.local/scripts/bin: bin
 
     # shell
-    ~/.shell: shell/common
+    ~/.shell: shell/all
     ~/.bash: shell/bash
     ~/.bashrc: shell/bash/bashrc
     ~/.zsh: shell/zsh
@@ -40,10 +40,10 @@
     # vscode
     ~/Library/Application Support/Code/User/settings.json:
       if: "[ `uname` = Darwin ]"
-      path: vscode/settings.json
+      path: config/vscode/settings.json
     ~/Library/Application Support/Code/User/keybindings.json:
       if: "[ `uname` = Darwin ]"
-      path: vscode/keybindings.json
+      path: config/vscode/keybindings.json
 
 - shell:
     - [git submodule update --init --recursive, Installing submodules]
