@@ -6,8 +6,3 @@ source ~/.shell/functions.sh
 source ~/.shell/common.sh
 source ~/.shell/os/"$(uname | tr '[:upper:]' '[:lower:]')".sh
 
-if [[ $(uname -n) == dev-dsk* ]] && [[ -n "$PS1" ]]; then
-    # ZSH default shell on AL2 Cloud Desktop
-    # Warning: This breaks `bash`
-    exec /bin/zsh
-fi
