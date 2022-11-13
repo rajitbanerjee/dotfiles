@@ -15,12 +15,14 @@
 - link:
     ~/.config/alacritty/alacritty.yml: terminal/alacritty/alacritty.yml
     ~/.config/nvim: nvim
-    ~/.shell:
-    ~/.bash:
-    ~/.bashrc: bash/bashrc
-    ~/.zsh:
-    ~/.zshrc: zsh/zshrc
     ~/.local/scripts/bin: bin
+
+    # shell
+    ~/.shell: shell/common
+    ~/.bash: shell/bash
+    ~/.bashrc: shell/bash/bashrc
+    ~/.zsh: shell/zsh
+    ~/.zshrc: shell/zsh/zshrc
 
     # git
     ~/.gitconfig: git/gitconfig
