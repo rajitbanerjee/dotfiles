@@ -1,19 +1,9 @@
-source ~/.zsh/settings.zsh
-source ~/.zsh/prompt.zsh
-
 unalias -a
+source ~/.shell/os/"$(uname | tr '[:upper:]' '[:lower:]')".sh
+source ~/.zsh/settings.zsh # Most things should be loaded after this (oh-my-zsh needs to load first)
+source ~/.zsh/prompt.zsh
 source ~/.shell/aliases.sh
 source ~/.shell/functions.sh
 source ~/.shell/common.sh
-source ~/.shell/os/"$(uname | tr '[:upper:]' '[:lower:]')".sh
 source ~/.shell/aws.sh
-
-typeset -U PATH # remove duplicates in $PATH
-autoload -U compinit && compinit
-
-
-if [[ $(uname -n) == dev-dsk* ]]; then
-    # Brazil CLI completion
-    source ~/.brazil_completion/zsh_completion
-fi
 

@@ -4,4 +4,10 @@ export PATH=~/.toolbox/bin:$PATH
 # AWS CLI completion
 complete -C "$(brew --prefix)/bin/aws_completer" aws
 
-export AWS_CONFIG_FILE=~/workplace/NodeIsengard/src/NodeIsengard/profiles/isengardcli
+if [[ $(uname -n) == dev-dsk* ]]; then
+	# Brazil CLI completion
+	source ~/.brazil_completion/zsh_completion
+
+	# AWS profiles
+	export AWS_CONFIG_FILE=~/workplace/Federate/src/NodeIsengard/profiles/isengardcli
+fi
