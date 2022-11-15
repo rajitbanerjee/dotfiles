@@ -1,0 +1,10 @@
+
+
+# - feat: (Add new feature; possibly realted tests)
+# - <type>!: (Add breaking change which will affect other components)
+# - fix: (Bug fix)
+# - refactor: (Refactor production code, e.g. restructure functions, rename variables)
+# - docs: (Update documentation)
+# - test: (Add missing tests; refactoring tests)
+# - chore: (Perform grunt tasks; no production code change)
+# - style: (Format code; no functional change)
