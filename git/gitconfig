@@ -1,6 +1,6 @@
 [core]
 	editor = nvim
-	excludesfile = ~/.config/git/.gitignore_global
+	excludesfile = ~/.gitignore
 	filemode = false
 	hooksPath = ~/.config/git/global_hooks
 [pager]

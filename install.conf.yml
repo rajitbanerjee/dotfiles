@@ -27,7 +27,7 @@
     # git
     ~/.config/git/commit_message: git/commit_message
     ~/.config/git/global_hooks: git/global_hooks
-    ~/.config/git/gitignore_global: git/gitignore_global
+    ~/.gitignore: git/gitignore_global
     ~/.gitconfig: git/gitconfig
 
     # tmux
