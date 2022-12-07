@@ -1,9 +1,0 @@
-unalias -a
-source ~/.shell/os/"$(uname | tr '[:upper:]' '[:lower:]')".sh
-source ~/.zsh/settings.zsh # Most things should be loaded after this (oh-my-zsh needs to load first)
-source ~/.zsh/prompt.zsh
-source ~/.shell/aliases.sh
-source ~/.shell/functions.sh
-source ~/.shell/common.sh
-source ~/.shell/aws.sh
-

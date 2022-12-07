@@ -10,13 +10,13 @@ alias path="tr ':' '\n' <<<"$PATH" | less"
 alias q="exit"
 case "$(uname)" in
 Darwin)
-    alias doc="cd ~/Documents"
-    alias dp="cd ~/Desktop"
-    alias dow="cd ~/Downloads"
-    ;;
+	alias doc="cd ~/Documents"
+	alias dp="cd ~/Desktop"
+	alias dow="cd ~/Downloads"
+	;;
 Linux)
-    alias open="xdg-open"
-    ;;
+	alias open="xdg-open"
+	;;
 esac
 
 # aws
@@ -25,7 +25,6 @@ alias bb="brazil-build"
 alias bbb="brazil-recursive-cmd brazil-build --all"
 
 # files
-alias findf="find -type f -name"
 alias less="less -R"
 alias mv="mv -i"
 alias sizer="du -h * | sort -hr | less"
@@ -77,12 +76,7 @@ alias ts="tmux switch -t"
 
 # vs code
 alias codex="code --list-extensions"
-alias codein="cat ~/.dotfiles/vscode/extensions.txt | xargs -L 1 echo code --install-extension | bash"
-
-# conda
-alias cab="conda activate base"
-alias cda="conda deactivate"
-alias exp="conda env export --no-builds"
+alias codein="cat ~/.dotfiles/config/vscode/extensions.txt | xargs -L 1 echo code --install-extension | bash"
 
 # docker
 alias dc="docker-compose"
@@ -93,4 +87,3 @@ alias dcd="docker-compose down"
 # maven
 alias mi="mvn install"
 alias mci="mvn clean install"
-

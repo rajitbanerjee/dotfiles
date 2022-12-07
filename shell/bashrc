@@ -1,5 +1,7 @@
+### Prompt ###
+
 if [ -n "$SSH_CLIENT" ]; then
-    ssh_flag="(ssh) "
+	ssh_flag="(ssh) "
 fi
 
 NEWLINE=$'\n'
@@ -22,3 +24,7 @@ GIT_PS1_SHOWUNTRACKEDFILES=1
 # "<>" indicates you have diverged and "=" indicates that there is no difference
 GIT_PS1_SHOWUPSTREAM="auto"
 GIT_PS1_SHOWCOLORHINTS=1
+
+### Shared ###
+
+source ~/.shell/common.sh

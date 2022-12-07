@@ -10,4 +10,6 @@ if [[ $(uname -n) == dev-dsk* ]]; then
 
 	# AWS profiles
 	export AWS_CONFIG_FILE=~/workplace/Federate/src/NodeIsengard/profiles/isengardcli
+
+	export AWS_EC2_METADATA_DISABLED=true
 fi

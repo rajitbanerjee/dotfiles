@@ -18,11 +18,10 @@
     ~/.local/scripts/bin: bin
 
     # shell
-    ~/.shell: shell/all
-    ~/.bash: shell/bash
-    ~/.bashrc: shell/bash/bashrc
+    ~/.shell: shell/shared
+    ~/.bashrc: shell/bashrc
     ~/.zsh: shell/zsh
-    ~/.zshrc: shell/zsh/zshrc
+    ~/.zshrc: shell/zshrc
 
     # git
     ~/.config/git/commit_message: git/commit_message
