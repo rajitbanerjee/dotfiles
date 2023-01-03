@@ -9,7 +9,7 @@ echo -e "Starting AL2 system setup...\n"
 
 # Linuxbrew (+dependencies)
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-source ~/.shell/os/linux.sh
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
 sudo yum groupinstall 'Development Tools'
 sudo yum install procps-ng curl file git

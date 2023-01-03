@@ -7,8 +7,6 @@ ZSH_DISABLE_COMPFIX="true" # Skip verification of insecure directories (macOS er
 ENABLE_CORRECTION="true"
 ZSH_CUSTOM=~/.zsh/custom
 
-[[ ! -f ~/.zsh/optional.zsh ]] || source ~/.zsh/optional.zsh
-
 plugins=(
     docker                      # Docker completion
     docker-compose
