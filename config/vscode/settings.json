@@ -125,12 +125,11 @@
     "terminal.integrated.fontFamily": "JetBrainsMono Nerd Font",
     "terminal.integrated.inheritEnv": true,
     "typescript.updateImportsOnFileMove.enabled": "always",
-    "viceroy.config.internal.lastUpdateTime": "2022-11-15T14:17:57.588Z",
+    "viceroy.config.internal.lastUpdateTime": "2023-01-10T18:06:09.279Z",
     "viceroy.config.lastVersion": "0.48.0",
     "viceroy.doc.welcome.showAtStartup": false,
     "vsicons.dontShowNewVersionMessage": true,
     "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
-    "window.zoomLevel": 2,
     "workbench.colorTheme": "Gruvbox Dark Hard",
     "workbench.editor.enablePreview": false,
     "workbench.iconTheme": "vscode-icons",
@@ -167,5 +166,7 @@
     "yaml.schemas": {
         "file:///local/home/brajit/.vscode-server/extensions/marklel.vscode-brazil-0.48.0/assets/languages/rde/schema.json": "**/definition.yaml"
     },
-    "yaml.validate": true
+    "yaml.validate": true,
+    "viceroy.config.autoReloadWorkspaceFolders": false,
+    "window.zoomLevel": 1
 }
