@@ -59,6 +59,7 @@ alias gpla="git-pull-all . -r"
 alias gr="git restore"
 alias grs="git restore --staged"
 alias gs="git status"
+alias gsa="find . -name .git -type d -execdir pwd \; -execdir git status \; -execdir echo \; -execdir echo \;"
 alias gst='git stash -- $(git diff --staged --name-only)'
 alias gsp="git stash pop"
 alias gsu="git submodule update --init --recursive"

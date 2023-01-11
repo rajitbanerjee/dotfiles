@@ -48,3 +48,6 @@ setopt PROMPT_SUBST ; PS1='%B%F{100}${ssh_flag}%n@%m:%f%F{66}%(5~|%-1~/…/%3~|%
 
 source ~/.shell/common.sh
 
+# Added automatically (and periodically, if missing) on cloud desktop
+export AWS_EC2_METADATA_DISABLED=true
+
