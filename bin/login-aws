@@ -2,16 +2,16 @@
 
 if [[ $(uname -n) == dev-dsk* ]]; then
 	# Step 1. Generate Midway cookie and Kerberos ticket
-	echo "Generating Midway cookie and renewing Kerberos ticket (if possible)..."
-	mwinit -s -o && kinit -R
+	echo "Generating Midway cookie..."
+	mwinit -s -o
+
+	echo "Renewing Kerberos ticket (if possible)..."
+	kinit -R
 	kinitnew() { kinit -f -r 7d; }
 	if [[ ! $(klist | grep "ANT") ]] || [[ $(klist -l | grep "Expired") ]]; then
 		kinitnew
 	fi
-
-	# Step 2. Log in to CodeArtifact
-	echo -e "\nLogging in to CodeArtifact..."
-	aws codeartifact login --profile fed-dev-admin --tool npm --domain amazon --repository federate --domain-owner 149122183214 --region us-west-2
+	echo "Done!"
 else
 	# Step 1. Midway
 	echo "Generating AEA Midway cookie..."
