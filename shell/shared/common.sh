@@ -42,6 +42,3 @@ elif [ "$(uname)" = "Linux" ]; then
 
 fi
 
-unalias -a
-source ~/.shell/aliases.sh
-source ~/.shell/functions.sh

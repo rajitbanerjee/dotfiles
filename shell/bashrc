@@ -28,3 +28,10 @@ GIT_PS1_SHOWUNTRACKEDFILES=1
 # "<>" indicates you have diverged and "=" indicates that there is no difference
 GIT_PS1_SHOWUPSTREAM="auto"
 GIT_PS1_SHOWCOLORHINTS=1
+
+### Extras ###
+
+unalias -a
+source ~/.shell/aliases.sh
+source ~/.shell/functions.sh
+source ~/.shell/aws.sh

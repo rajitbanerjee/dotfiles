@@ -49,6 +49,9 @@ source $ZSH/oh-my-zsh.sh
 
 ### Extras ###
 
+unalias -a
+source ~/.shell/aliases.sh
+source ~/.shell/functions.sh
 source ~/.shell/aws.sh
 
 # Added automatically (and periodically, if missing) on cloud desktop
