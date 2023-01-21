@@ -125,7 +125,7 @@
     "terminal.integrated.fontFamily": "JetBrainsMono Nerd Font",
     "terminal.integrated.inheritEnv": true,
     "typescript.updateImportsOnFileMove.enabled": "always",
-    "viceroy.config.internal.lastUpdateTime": "2023-01-10T18:06:09.279Z",
+    "viceroy.config.internal.lastUpdateTime": "2023-01-19T10:28:56.077Z",
     "viceroy.config.lastVersion": "0.48.0",
     "viceroy.doc.welcome.showAtStartup": false,
     "vsicons.dontShowNewVersionMessage": true,
@@ -168,5 +168,9 @@
     },
     "yaml.validate": true,
     "viceroy.config.autoReloadWorkspaceFolders": false,
+    "cSpell.userWords": [
+        "certificatesmanager",
+        "integ"
+    ],
     "window.zoomLevel": 1
 }
