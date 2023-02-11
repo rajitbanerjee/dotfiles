@@ -13,7 +13,6 @@ Host devdesk
   LogLevel ERROR # https://unix.stackexchange.com/questions/210211/disable-ssh-tunnel-open-failed-messages
   TCPKeepAlive yes
   
-# The following config is added by WSSH setup script to configure off-VPN dev-dsk access.
   ProxyCommand=wssh proxy %h
   ServerAliveInterval 15
   ServerAliveCountMax 44
@@ -25,29 +24,6 @@ Host devdesk
   LocalForward 8082 localhost:8082
   LocalForward 8083 localhost:8083
   LocalForward 8443 localhost:8443
-  LocalForward 2000 localhost:2000
-  LocalForward 5005 localhost:5005
-  LocalForward 5006 localhost:5006
-  LocalForward 5007 localhost:5007
-  LocalForward 5008 localhost:5008
-  LocalForward 6000 localhost:6000
-  LocalForward 6001 localhost:6001
-  LocalForward 6002 localhost:6002
-  LocalForward 6003 localhost:6003
-  LocalForward 6379 localhost:6379
-  LocalForward 7000 localhost:7000
-  LocalForward 9229 localhost:9229
-  LocalForward 3000 localhost:3000
-  LocalForward 3001 localhost:3001
-  LocalForward 3002 localhost:3002
-  LocalForward 3003 localhost:3003
-  LocalForward 3004 localhost:3004
-  LocalForward 3005 localhost:3005
-  LocalForward 3006 localhost:3006
-  LocalForward 3010 localhost:3010
-  LocalForward 3020 localhost:3020
-  LocalForward 3081 localhost:3081
-  LocalForward 6501 localhost:6501
   LocalForward 9999 localhost:9999
 
 # OSS
