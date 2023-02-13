@@ -62,7 +62,7 @@
     "editor.suggestSelection": "first",
     "editor.tabSize": 4,
     "editor.wordWrap": "wordWrapColumn",
-    "editor.wordWrapColumn": 500,
+    "editor.wordWrapColumn": 200,
     "eslint.enable": false,
     "explorer.confirmDelete": false,
     "explorer.confirmDragAndDrop": false,
