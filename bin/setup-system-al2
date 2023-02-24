@@ -37,8 +37,8 @@ brew install watchman
 echo -e "\n\nNode:\n"
 brew install nvm
 source $(brew --prefix nvm)/nvm.sh
-nvm install 14
-nvm alias default 14
+nvm install 16
+nvm alias default 16
 
 npm i -g git-pull-all
 
