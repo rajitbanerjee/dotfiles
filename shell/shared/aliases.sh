@@ -23,6 +23,8 @@ esac
 alias wp="cd /workplace/brajit"
 alias bb="brazil-build"
 alias bbb="brazil-recursive-cmd brazil-build --all"
+alias bws="brazil ws"
+alias bwsm="brazil ws sync -md"
 
 # files
 alias less="less -R"
