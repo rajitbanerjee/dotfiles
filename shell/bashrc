@@ -1,7 +1,3 @@
-### Shared ###
-
-source ~/.shell/common.sh
-
 ### Prompt ###
 
 if [ -n "$SSH_CLIENT" ]; then
@@ -29,9 +25,3 @@ GIT_PS1_SHOWUNTRACKEDFILES=1
 GIT_PS1_SHOWUPSTREAM="auto"
 GIT_PS1_SHOWCOLORHINTS=1
 
-### Extras ###
-
-unalias -a
-source ~/.shell/aliases.sh
-source ~/.shell/functions.sh
-source ~/.shell/aws.sh
