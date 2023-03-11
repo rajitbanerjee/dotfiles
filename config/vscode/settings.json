@@ -48,16 +48,6 @@
         "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
     "cSpell.language": "en-US",
-    "cSpell.userWords": [
-        "Carnaval",
-        "certificatesmanager",
-        "customisation",
-        "fargate",
-        "integ",
-        "Isob",
-        "Kerberizer",
-        "Preprod"
-    ],
     "diffEditor.ignoreTrimWhitespace": true,
     "editor.accessibilitySupport": "off",
     "editor.codeLensFontFamily": "JetBrainsMono Nerd Font",
@@ -201,5 +191,7 @@
     "yaml.schemas": {
         "file:///local/home/brajit/.vscode-server/extensions/marklel.vscode-brazil-0.49.0/assets/languages/rde/schema.json": "**/definition.yaml"
     },
-    "yaml.validate": true
+    "yaml.validate": true,
+    "telemetry.enableCrashReporter": false,
+    "telemetry.enableTelemetry": false
 }
