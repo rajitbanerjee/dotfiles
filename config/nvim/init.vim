@@ -62,6 +62,16 @@ function Copy()
 endfunction
 autocmd TextYankPost * call Copy()
 
+" Persist undo after buffer close 
+if has('persistent_undo')
+	let target_path = expand('~/.config/vim-persisted-undo/') 
+	if !isdirectory(target_path)
+		call system('mkdir -p ' . target_path)
+	endif
+	let &undodir = target_path
+	set undofile
+endif
+
 " AWS
 au BufReadPost,BufNewFile Config setf brazil-config
 
