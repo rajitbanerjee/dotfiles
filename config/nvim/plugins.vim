@@ -118,7 +118,14 @@ let g:tmuxline_separators = {
 """""""""""""""""""""""""""""""""""""""""""""""""""
 " => gruvbox-community/gruvbox
 """""""""""""""""""""""""""""""""""""""""""""""""""
-let g:gruvbox_contrast_dark = "hard"
+" Custom background overrides ("grubvox black")
+let g:gruvbox_colors = {
+    \ 'bg0': '#000000',
+    \ 'bg1': '#1d1d1d',
+    \ 'bg2': '#333333',
+    \ 'bg3': '#4d4d4d',
+    \ 'bg4': '#666666',
+    \ }
 try
   colorscheme gruvbox
 catch
