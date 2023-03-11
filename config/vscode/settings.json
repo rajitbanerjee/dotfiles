@@ -144,7 +144,6 @@
     "workbench.colorTheme": "Gruvbox Dark Hard",
     "workbench.colorCustomizations": {
         "[Gruvbox Dark Hard]": {
-            // https://gist.github.com/dcts/5b2af4c8b6918e7d35c4121f11d49fb1
             "activityBar.background": "#000000",
             "editor.background": "#000000",
             "editorGroupHeader.tabsBackground": "#000000",
@@ -188,9 +187,6 @@
         "!Split",
         "!Split sequence"
     ],
-    "yaml.schemas": {
-        "file:///local/home/brajit/.vscode-server/extensions/marklel.vscode-brazil-0.49.0/assets/languages/rde/schema.json": "**/definition.yaml"
-    },
     "yaml.validate": true,
     "telemetry.enableCrashReporter": false,
     "telemetry.enableTelemetry": false

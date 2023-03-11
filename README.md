@@ -24,7 +24,16 @@ nvim
 
 ![nvim](./assets/images/nvim.png)
 
-## License
+### User-Specific Configurations
+
+The following configurations are specific to the user `brajit`, and should be modified if used by others:
+
+- [nvim/coc-settings.json](./config/nvim/coc-settings.json) (`"java.jdt.ls.vmargs": "-javaagent:/home/brajit/.local/lib/lombok.jar"`)
+- [vscode/settings.json](./config/vscode/settings.json) (`"remote.SSH.configFile": "/Users/brajit/.ssh/config"`)
+- [zshrc](./shell/zshrc) (`alias wp="cd /workplace/brajit"`)
+- [ssh/config](./ssh/config) (`Hostname`)
+
+### License
 
 [MIT][license]
 
