@@ -7,15 +7,51 @@ export LC_ALL=en_US.UTF-8
 export MANPAGER='nvim +Man!'
 export MANWIDTH=999
 
+### ZSH Settings ###
+
+export PATH=~/bin:/usr/local/bin:$PATH
+export ZSH=~/.oh-my-zsh
+
+ZSH_DISABLE_COMPFIX="true" # Skip verification of insecure directories (macOS error)
+ENABLE_CORRECTION="true"
+ZSH_CUSTOM=~/.zsh/custom
+
+# https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/
+plugins=(
+	copypath
+	docker
+    docker-compose
+    fzf
+	git-prompt
+	git-auto-fetch
+	nvm
+    safe-paste
+	tmux
+    wakatime
+    zsh-autosuggestions
+    zsh-completions
+    zsh-syntax-highlighting
+)
+
+source $ZSH/oh-my-zsh.sh
+
 ### Prompt ###
 
-source ~/.shell/git-prompt.sh
-
-GIT_PS1_SHOWDIRTYSTATE=1
-GIT_PS1_SHOWSTASHSTATE=1
-GIT_PS1_SHOWUNTRACKEDFILES=1
-GIT_PS1_SHOWUPSTREAM="auto"
-GIT_PS1_SHOWCOLORHINTS=1
+unset RPROMPT
+ZSH_THEME_GIT_PROMPT_PREFIX="("
+ZSH_THEME_GIT_PROMPT_SUFFIX=")"
+ZSH_THEME_GIT_PROMPT_SEPARATOR="|"
+ZSH_THEME_GIT_PROMPT_BRANCH="%{$fg[white]%}"
+ZSH_THEME_GIT_PROMPT_STAGED="%{$fg[white]%}%{●%G%}"
+ZSH_THEME_GIT_PROMPT_CONFLICTS="%{$fg[white]%}%{x%G%}"
+ZSH_THEME_GIT_PROMPT_CHANGED="%{$fg[white]%}%{+%G%}"
+ZSH_THEME_GIT_PROMPT_DELETED="%{$fg[white]%}%{-%G%}"
+ZSH_THEME_GIT_PROMPT_BEHIND=" %{$fg[white]%}%{↓%G%}"
+ZSH_THEME_GIT_PROMPT_AHEAD=" %{$fg[white]%}%{↑%G%}"
+ZSH_THEME_GIT_PROMPT_UNTRACKED="%{$fg[white]%}%{…%G%}"
+ZSH_THEME_GIT_PROMPT_STASHED="%{$fg[white]%}%{⚑%G%}"
+ZSH_THEME_GIT_PROMPT_CLEAN="%{$fg[white]%}%{✔%G%}"
+ZSH_THEME_GIT_PROMPT_UPSTREAM_SEPARATOR="->"
 
 if [ -n "$SSH_CLIENT" ]; then
     ssh_flag="(ssh) "
@@ -27,29 +63,7 @@ fi
 # %m: Hostname
 # %(5~|%-1~/…/%3~|%4~): Prompt dir. trimming
 NEWLINE=$'\n'
-setopt PROMPT_SUBST ; PS1='%B%F{100}${ssh_flag}%n@%m:%f%F{66}%(5~|%-1~/…/%3~|%4~)%f%b $(__git_ps1 "(%s)")${NEWLINE}\$ '
-
-### ZSH Settings ###
-
-export PATH=~/bin:/usr/local/bin:$PATH
-export ZSH=~/.oh-my-zsh
-
-ZSH_DISABLE_COMPFIX="true" # Skip verification of insecure directories (macOS error)
-ENABLE_CORRECTION="true"
-ZSH_CUSTOM=~/.zsh/custom
-
-plugins=(
-    docker                      # Docker completion
-    docker-compose
-    fzf                         # CTRL+T to search files, CTRL+R to search zsh history
-    safe-paste                  # prevent pasted code from running
-    wakatime                    # coding metrics
-    zsh-autosuggestions         # Autocomplete
-    zsh-completions             # Additional completion definitions: https://github.com/zsh-users/zsh-completions/tree/master/src
-    zsh-syntax-highlighting     # Fish-shell like syntax highlighting
-)
-
-source $ZSH/oh-my-zsh.sh
+setopt PROMPT_SUBST ; PS1='%B%F{100}${ssh_flag}%n@%m:%f%F{66}%(5~|%-1~/…/%3~|%4~)%f%b $(git_super_status "(%s)")${NEWLINE}\$ '
 
 ### Dev ###
 
@@ -57,29 +71,7 @@ source $ZSH/oh-my-zsh.sh
 export PATH=~/.local/scripts/bin:$PATH
 export PATH=~/.local/bin:$PATH
 
-# NVM
-mkdir -p ~/.nvm
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
-
-if [ "$(uname)" = "Darwin" ]; then
-
-	# Fix SSL verification errors
-	export SSL_CERT_FILE=/etc/ssl/cert.pem
-
-	# Python
-	export PATH=~/Library/Python/3.8/bin:$PATH
-	export PATH=~/Library/Python/3.9/bin:$PATH
-	eval "$(pyenv init --path)"
-
-	# Java
-	export JAVA_8_HOME=$(/usr/libexec/java_home -v1.8)
-	export JAVA_11_HOME=$(/usr/libexec/java_home -v11)
-	export JAVA_18_HOME=$(/usr/libexec/java_home -v18)
-	export JAVA_HOME=$JAVA_11_HOME
-
-elif [ "$(uname)" = "Linux" ]; then
-
+if [ "$(uname)" = "Linux" ]; then
 	# Linuxbrew
 	eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
@@ -87,12 +79,9 @@ elif [ "$(uname)" = "Linux" ]; then
 	export PATH="/usr/lib/jvm/java-11-amazon-corretto.x86_64/bin:$PATH"
 	export JAVA_11_AMAZON_CORRETO_HOME="/usr/lib/jvm/java-11-amazon-corretto.x86_64/"
 	export JAVA_HOME=$JAVA_11_AMAZON_CORRETO_HOME
-
 fi
 
 ### Aliases ###
-
-unalias -a
 
 # system
 alias ..="cd .."
@@ -164,15 +153,6 @@ alias gsp="git stash pop"
 alias gsu="git submodule update --init --recursive"
 alias gsur="git submodule update --remote"
 alias gu="git reset --soft HEAD~1"
-
-# tmux
-alias tl="tmux ls"
-alias tn="tmux new -s"
-alias tks="tmux kill-session -t"
-alias tka="tmux kill-session -a"
-alias ta="tmux attach-session -t"
-alias td="tmux detach-client -s"
-alias ts="tmux switch -t"
 
 # vs code
 alias codex="code --list-extensions"

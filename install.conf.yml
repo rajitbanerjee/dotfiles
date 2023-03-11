@@ -18,7 +18,6 @@
     ~/.local/scripts/bin: bin
 
     # shell
-    ~/.shell: shell/shared
     ~/.bashrc: shell/bashrc
     ~/.zsh: shell/zsh
     ~/.zshrc: shell/zshrc
