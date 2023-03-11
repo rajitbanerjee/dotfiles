@@ -12,15 +12,11 @@
     "explorer.icon.source": "nvim-web-devicons",
     "explorer.keyMappings.global": {
         "*": "toggleSelection",
-        "<2-LeftMouse>": [
-            "expandable?",
-            ["expanded?", "collapse", "expand"],
-            "open"
-        ],
+        "<2-LeftMouse>": ["expandable?", ["expanded?", "collapse", "expand"], "open"   ],   
         "<<": "gitStage",
         "<cr>": ["wait", "expandable?", "cd", "open"],
         "<esc>": "esc",
-        "<tab>": false,
+        "<tab>": "open:vsplit",
         ">>": "gitUnstage",
         "A": "addDirectory",
         "R": "rename",
@@ -34,7 +30,7 @@
         "m": "actionMenu",
         "o": ["wait", "expanded?", "collapse", "expand"],
         "p": "pasteFile",
-        "q": "quit",
+        "q": ["clearCopyOrCut", "quit"],
         "r": "refresh",
         "s": "open:vsplit",
         "t": false,
