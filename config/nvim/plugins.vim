@@ -121,10 +121,10 @@ let g:tmuxline_separators = {
 " Custom background overrides ("grubvox black")
 let g:gruvbox_colors = {
     \ 'bg0': '#000000',
-    \ 'bg1': '#1d1d1d',
-    \ 'bg2': '#333333',
-    \ 'bg3': '#4d4d4d',
-    \ 'bg4': '#666666',
+    \ 'bg1': '#111111',
+    \ 'bg2': '#222222',
+    \ 'bg3': '#333333',
+    \ 'bg4': '#444444',
     \ }
 try
   colorscheme gruvbox
@@ -258,10 +258,10 @@ function! CheckBackspace() abort
     let col = col('.') - 1
     return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
-" Make <CR> to accept selected completion item or notify coc.nvim to format
+" Enter to accept completion
 inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm() : "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
 " Trigger autocomplete
-inoremap <silent><expr> <C-L> coc#refresh()
+inoremap <silent><expr> <C-C> coc#refresh()
 
 hi CocSearch ctermfg=12 guifg=#18A3FF
 hi CocMenuSel ctermbg=109 guibg=#13354A
@@ -321,6 +321,7 @@ let bufferline.icon_separator_inactive = ''
 " => sindrets/diffview.nvim
 """""""""""""""""""""""""""""""""""""""""""""""""""
 nnoremap <silent> <leader>d :DiffviewOpen<CR>
+nnoremap <silent> <leader>df :DiffviewFileHistory<CR>
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""

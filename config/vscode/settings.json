@@ -152,6 +152,20 @@
     "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
     "window.zoomLevel": 1,
     "workbench.colorTheme": "Gruvbox Dark Hard",
+    "workbench.colorCustomizations": {
+        "[Gruvbox Dark Hard]": {
+            // https://gist.github.com/dcts/5b2af4c8b6918e7d35c4121f11d49fb1
+            "activityBar.background": "#000000",
+            "editor.background": "#000000",
+            "editorGroupHeader.tabsBackground": "#000000",
+            "sideBar.background": "#000000",
+            "statusBar.background": "#000000",
+            "tab.activeBackground": "#222222",
+            "tab.inactiveBackground": "#000000",
+            "terminal.background": "#000000",
+            "titleBar.activeBackground": "#000000"
+        }
+    },
     "workbench.editor.enablePreview": false,
     "workbench.iconTheme": "vscode-icons",
     "yaml.customTags": [
