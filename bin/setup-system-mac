@@ -44,6 +44,7 @@ npm i -g git-pull-all
 echo -e "\n\nPython:\n"
 brew install pyenv
 python3 -m pip install --upgrade pip
+python3 -m pip install rstfmt
 pyenv install 2.7.18
 pyenv global 2.7.18
 
