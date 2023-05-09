@@ -28,7 +28,6 @@ plugins=(
 	git-prompt
 	git-auto-fetch
 	safe-paste
-	tmux
 	wakatime
 	zsh-autosuggestions
 	zsh-completions
@@ -149,6 +148,15 @@ alias gsp="git stash pop"
 alias gsu="git submodule update --init --recursive"
 alias gsur="git submodule update --remote"
 alias gu="git reset --soft HEAD~1"
+
+# tmux
+alias tl="tmux ls"
+alias tn="tmux new -s"
+alias tks="tmux kill-session -t"
+alias tka="tmux kill-session -a"
+alias ta="tmux attach-session -t"
+alias td="tmux detach-client -s"
+alias ts="tmux switch -t"
 
 # vs code
 alias codex="code --list-extensions"
