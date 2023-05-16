@@ -89,6 +89,8 @@ brew install awscli
 toolbox install brazilcli
 toolbox install barium
 toolbox install cr
+toolbox registry add s3://buildertoolbox-registry-isengard-cli-us-west-2/tools.json
+toolbox install isengard-cli
 
 echo -e "\n\noh-my-zsh:\n(Note: \"exit\" from oh-my-zsh to resume setup)\n"
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"

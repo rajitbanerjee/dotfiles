@@ -73,37 +73,37 @@
     },
     "files.autoSave": "afterDelay",
     "files.exclude": {
+        ".viceroy": true,
+        "apollo-overrides": true,
+        "release-info": true,
+        "src/*/build": false,
+        "build": false,
+        "env": true,
+        "packageInfo*": true,
+        ".bemol": true,
+        "**/.git": true,
+        "**/.svn": true,
+        "**/.hg": true,
+        "**/CVS": true,
+        "**/.DS_Store": true,
+        "**/Thumbs.db": true,
         "**/*.aux": true,
         "**/*.bcf": true,
         "**/*.iml": true,
         "**/*.run.xml": true,
         "**/*.synctex.gz": true,
-        "**/.DS_Store": true,
         "**/.classpath": true,
         "**/.factorypath": true,
-        "**/.git": true,
-        "**/.hg": true,
         "**/.idea": true,
         "**/.project": true,
-        "**/.settings": true,
-        "**/.svn": true,
-        "**/CVS": true,
-        "**/Thumbs.db": true,
-        ".bemol": true,
-        ".viceroy": true,
-        "apollo-overrides": true,
-        "build": false,
-        "env": true,
-        "packageInfo*": true,
-        "release-info": true,
-        "src/*/build": false
+        "**/.settings": true
     },
     "files.watcherExclude": {
+        "**/build/**": true,
         "**/.git/objects/**": true,
         "**/.git/subtree-cache/**": true,
-        "**/.hg/store/**": true,
-        "**/build/**": true,
-        "**/node_modules/*/**": true
+        "**/node_modules/*/**": true,
+        "**/.hg/store/**": true
     },
     "git-graph.maxDepthOfRepoSearch": 4,
     "git.autofetch": true,
@@ -120,12 +120,12 @@
     "redhat.telemetry.enabled": false,
     "remote.SSH.configFile": "/Users/brajit/.ssh/config",
     "search.exclude": {
-        "**/*.code-search": true,
-        "**/bower_components": true,
-        "**/node_modules": true,
-        "build": true,
         "env": true,
-        "src/*/build": true
+        "src/*/build": true,
+        "build": true,
+        "**/node_modules": true,
+        "**/bower_components": true,
+        "**/*.code-search": true
     },
     "search.useGlobalIgnoreFiles": true,
     "search.useParentIgnoreFiles": true,
@@ -135,12 +135,11 @@
     "terminal.integrated.inheritEnv": true,
     "typescript.updateImportsOnFileMove.enabled": "always",
     "viceroy.config.autoReloadWorkspaceFolders": false,
-    "viceroy.config.internal.lastUpdateTime": "2023-03-06T12:03:33.519Z",
-    "viceroy.config.lastVersion": "0.49.0",
+    "viceroy.config.internal.lastUpdateTime": "2023-05-16T12:16:41.291Z",
+    "viceroy.config.lastVersion": "0.50.201398",
     "viceroy.doc.welcome.showAtStartup": false,
     "vsicons.dontShowNewVersionMessage": true,
     "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
-    "window.zoomLevel": 1,
     "workbench.colorTheme": "Gruvbox Dark Hard",
     "workbench.colorCustomizations": {
         "[Gruvbox Dark Hard]": {
@@ -189,5 +188,15 @@
     ],
     "yaml.validate": true,
     "telemetry.enableCrashReporter": false,
-    "telemetry.enableTelemetry": false
+    "telemetry.enableTelemetry": false,
+    "yaml.schemas": {
+        "file:///local/home/brajit/.vscode-server/extensions/marklel.vscode-brazil-0.50.201398/assets/languages/rde/schema.json": "**/definition.yaml"
+    },
+    "viceroy.workspaceSyncStrategy": "automatic",
+    "cSpell.userWords": [
+        "behaviour",
+        "normalised"
+    ],
+    "editor.unicodeHighlight.invisibleCharacters": false,
+    "window.zoomLevel": 1
 }

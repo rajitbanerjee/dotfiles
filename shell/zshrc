@@ -77,6 +77,8 @@ if [ "$(uname)" = "Linux" ]; then
 	export JAVA_HOME=$JAVA_11_AMAZON_CORRETO_HOME
 fi
 
+export PATH="$HOME/Library/Python/3.9/bin:$PATH"
+
 ### Aliases ###
 
 # system
