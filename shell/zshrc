@@ -105,9 +105,10 @@ esac
 # aws
 alias wp="cd /workplace/brajit"
 alias bb="brazil-build"
-alias bbb="brazil-recursive-cmd brazil-build --all"
+alias bbb="/apollo/env/envImprovement/bin/brazil-recursive-cmd-parallel --allPackages brazil-build"
 alias bws="brazil ws"
 alias bwsm="brazil ws sync -md"
+alias mcurl='/usr/bin/curl "$@" -L --cookie ~/.midway/cookie --cookie-jar ~/.midway/cookie'
 
 # files
 alias less="less -R"
