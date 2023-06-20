@@ -103,7 +103,14 @@ Linux)
 esac
 
 # aws
-alias wp="cd /workplace/brajit"
+case "$(uname)" in
+Darwin)
+	alias wp="cd /Volumes/workplace/"
+	;;
+Linux)
+	alias wp="cd /workplace/brajit/"
+	;;
+esac
 alias bb="brazil-build"
 alias bbb="/apollo/env/envImprovement/bin/brazil-recursive-cmd-parallel --allPackages brazil-build"
 alias bws="brazil ws"
@@ -213,9 +220,10 @@ if [[ $(uname -n) == dev-dsk* ]]; then
 	# Brazil CLI completion
 	source ~/.brazil_completion/zsh_completion
 
-	# AWS profiles
-	export AWS_CONFIG_FILE=~/workplace/NodeIsengard/src/NodeIsengard/profiles/isengardcli
 fi
+
+# AWS profiles
+export AWS_CONFIG_FILE=~/workplace/NodeIsengard/src/NodeIsengard/profiles/isengardcli
 
 # Added automatically (and periodically, if missing) on cloud desktop
 export AWS_EC2_METADATA_DISABLED=true
