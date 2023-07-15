@@ -1,4 +1,6 @@
 [
+    { "key": "ctrl+left",  "command": "workbench.action.navigateBack" },
+    { "key": "ctrl+right", "command": "workbench.action.navigateForward" },
     {
         "key": "cmd+l",
         "command": "-expandLineSelection",

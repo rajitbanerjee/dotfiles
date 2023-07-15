@@ -135,8 +135,8 @@
     "terminal.integrated.inheritEnv": true,
     "typescript.updateImportsOnFileMove.enabled": "always",
     "viceroy.config.autoReloadWorkspaceFolders": false,
-    "viceroy.config.internal.lastUpdateTime": "2023-05-16T12:16:41.291Z",
-    "viceroy.config.lastVersion": "0.50.201398",
+    "viceroy.config.internal.lastUpdateTime": "2023-07-14T14:33:08.057Z",
+    "viceroy.config.lastVersion": "0.51.201448",
     "viceroy.doc.welcome.showAtStartup": false,
     "vsicons.dontShowNewVersionMessage": true,
     "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
@@ -184,19 +184,31 @@
         "!Select",
         "!Select sequence",
         "!Split",
-        "!Split sequence"
+        "!Split sequence",
+        "!Condition",
+        "!Transform",
+        "!Transform sequence",
+        "!RefSequence",
+        "!SubSequence",
+        "!GetAZsSequence",
+        "!SelectSequence"
     ],
     "yaml.validate": true,
     "telemetry.enableCrashReporter": false,
     "telemetry.enableTelemetry": false,
     "yaml.schemas": {
-        "file:///local/home/brajit/.vscode-server/extensions/marklel.vscode-brazil-0.50.201398/assets/languages/rde/schema.json": "**/definition.yaml"
+        "file:///local/home/brajit/.vscode-server/extensions/marklel.vscode-brazil-0.51.201448/assets/languages/rde/schema.json": "**/definition.yaml"
     },
     "viceroy.workspaceSyncStrategy": "automatic",
     "cSpell.userWords": [
         "behaviour",
-        "normalised"
+        "IJSON",
+        "integ",
+        "isengard",
+        "kerberizer",
+        "normalised",
+        "partitional"
     ],
     "editor.unicodeHighlight.invisibleCharacters": false,
-    "window.zoomLevel": 1
+    "viceroy.config.beautyMode": false
 }
