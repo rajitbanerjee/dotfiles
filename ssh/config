@@ -1,46 +1,49 @@
 # AWS
 Host github.audible.com
-  ProxyCommand=wssh proxy %h --port=%p
+	ProxyCommand=wssh proxy %h --port=%p
 
 Host git.amazon.com
-  ProxyCommand=wssh proxy %h --port=%p
-  GSSAPIAuthentication yes
-  GSSAPIDelegateCredentials yes
+	Port 2222
+	IdentityFile ~/.ssh/id_rsa
+	IdentitiesOnly yes
+	GSSAPIAuthentication no
+	PubkeyAuthentication yes
+	ForwardX11 no
 
 Host devdesk
-  Hostname dev-dsk-brajit-1b-106566dd.eu-west-1.amazon.com
-  IdentityFile ~/.ssh/id_rsa
-  LogLevel ERROR # https://unix.stackexchange.com/questions/210211/disable-ssh-tunnel-open-failed-messages
-  TCPKeepAlive yes
-  
-  ProxyCommand=wssh proxy %h
-  ServerAliveInterval 15
-  ServerAliveCountMax 44
+	Hostname dev-dsk-brajit-1b-106566dd.eu-west-1.amazon.com
+	IdentityFile ~/.ssh/id_rsa
+	LogLevel ERROR # https://unix.stackexchange.com/questions/210211/disable-ssh-tunnel-open-failed-messages
+	TCPKeepAlive yes
 
-  ForwardAgent yes
-  LocalForward 7000 localhost:7000
-  LocalForward 8000 localhost:8000
-  LocalForward 8080 localhost:8080
-  LocalForward 8081 localhost:8081
-  LocalForward 8082 localhost:8082
-  LocalForward 8083 localhost:8083
-  LocalForward 8443 localhost:8443
-  LocalForward 9999 localhost:9999
+	ProxyCommand=wssh proxy %h
+	ServerAliveInterval 15
+	ServerAliveCountMax 44
+
+	ForwardAgent yes
+	LocalForward 7000 localhost:7000
+	LocalForward 8000 localhost:8000
+	LocalForward 8080 localhost:8080
+	LocalForward 8081 localhost:8081
+	LocalForward 8082 localhost:8082
+	LocalForward 8083 localhost:8083
+	LocalForward 8443 localhost:8443
+	LocalForward 9999 localhost:9999
 
 # OSS
 Host github.com
-  Hostname ssh.github.com
-  Port 443
-  IdentityFile ~/.ssh/id_ed25519.pub
+	Hostname ssh.github.com
+	Port 443
+	IdentityFile ~/.ssh/id_ed25519.pub
 Host gitlab.com
-  Hostname altssh.gitlab.com
-  User git
-  Port 443
-  PreferredAuthentications publickey
-  IdentityFile ~/.ssh/id_ed25519.pub
+	Hostname altssh.gitlab.com
+	User git
+	Port 443
+	PreferredAuthentications publickey
+	IdentityFile ~/.ssh/id_ed25519.pub
 
 # All others
 Host *
-  AddKeysToAgent yes
-  UseKeychain yes
-  IdentityFile ~/.ssh/id_ed25519
+	AddKeysToAgent yes
+	UseKeychain yes
+	IdentityFile ~/.ssh/id_ed25519
