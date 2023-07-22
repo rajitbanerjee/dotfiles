@@ -36,8 +36,6 @@
     zero-style = dim syntax
 [init]
 	defaultBranch = main
-[pull]
-    rebase = true
 [rebase]
 	autostash = true
 [fetch]
