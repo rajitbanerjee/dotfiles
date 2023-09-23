@@ -2,7 +2,6 @@
 	editor = nvim
 	excludesfile = ~/.gitignore
 	filemode = false
-	hooksPath = ~/.config/git/global_hooks
 [pager]
 	diff = delta
 	log = delta
