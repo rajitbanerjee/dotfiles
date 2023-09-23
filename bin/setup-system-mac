@@ -35,8 +35,8 @@ brew install wget
 echo -e "\n\nNode:\n"
 brew install nvm
 source $(brew --prefix nvm)/nvm.sh
-nvm install 16
-nvm alias default 16
+nvm install 18
+nvm alias default 18
 
 npm i -g git-pull-all
 

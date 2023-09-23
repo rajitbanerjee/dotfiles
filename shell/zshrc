@@ -65,17 +65,24 @@ setopt PROMPT_SUBST ; PS1='%B%F{100}[%*] ${ssh_flag}%n@%m:%f%F{66}%(5~|%-1~/…/
 
 ### Dev ###
 
-if [ "$(uname)" = "Linux" ]; then
+case "$(uname)" in
+Darwin)
 	# Node
 	mkdir -p ~/.nvm
 	export NVM_DIR="$HOME/.nvm"
 	[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+	;;
+Linux)
+	# Node
+	export NODE_PATH="$(dirname `rtx exec nodejs@18 -- which node`)"
+	export PATH=$NODE_PATH:$PATH	
 
 	# Java
 	export PATH="/usr/lib/jvm/java-11-amazon-corretto.x86_64/bin:$PATH"
 	export JAVA_11_AMAZON_CORRETO_HOME="/usr/lib/jvm/java-11-amazon-corretto.x86_64/"
 	export JAVA_HOME=$JAVA_11_AMAZON_CORRETO_HOME
-fi
+	;;
+esac
 
 export PATH="$HOME/Library/Python/3.9/bin:$PATH"
 
@@ -220,11 +227,18 @@ complete -C "$(brew --prefix)/bin/aws_completer" aws
 if [[ $(uname -n) == dev-dsk* ]]; then
 	# Brazil CLI completion
 	source ~/.brazil_completion/zsh_completion
-
 fi
 
 # AWS profiles
-export AWS_CONFIG_FILE=~/workplace/NodeIsengard/src/NodeIsengard/profiles/isengardcli
+export NODE_ISENGARD_PATH=~/workplace/NodeIsengard/src/NodeIsengard
+export AWS_CONFIG_FILE=$NODE_ISENGARD_PATH/profiles/isengardcli
+node-isengard-update() {
+	cd $NODE_ISENGARD_PATH
+	git pull
+	cd -
+	login-aws-codeartifact
+	npm i -g @amzn/node-isengard
+}
 
 # Added automatically (and periodically, if missing) on cloud desktop
 export AWS_EC2_METADATA_DISABLED=true

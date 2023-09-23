@@ -35,10 +35,10 @@ brew install watchman
 
 # Node.js
 echo -e "\n\nNode:\n"
-brew install nvm
-source $(brew --prefix nvm)/nvm.sh
-nvm install 16
-nvm alias default 16
+curl https://rtx.pub/rtx-latest-linux-x64 > ~/.local/bin/rtx
+chmod +x ~/.local/bin/rtx
+rtx plugin install nodejs ssh://git.amazon.com/pkg/RtxNode
+rtx install nodejs@18
 
 npm i -g git-pull-all
 
