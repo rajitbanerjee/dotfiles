@@ -115,6 +115,7 @@ alias bb="brazil-build"
 alias bbb="/apollo/env/envImprovement/bin/brazil-recursive-cmd-parallel --allPackages brazil-build"
 alias bws="brazil ws"
 alias bwsm="brazil ws sync -md"
+alias bwsa="brazil ws sync -md && brazil ws sync -src"
 alias mcurl='/usr/bin/curl "$@" -L --cookie ~/.midway/cookie --cookie-jar ~/.midway/cookie'
 
 # files
