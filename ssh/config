@@ -4,7 +4,7 @@ Host github.audible.com
 
 Host git.amazon.com
 	Port 2222
-	IdentityFile ~/.ssh/id_rsa
+	IdentityFile ~/.ssh/id_ecdsa
 	IdentitiesOnly yes
 	GSSAPIAuthentication no
 	PubkeyAuthentication yes
@@ -12,8 +12,8 @@ Host git.amazon.com
 
 Host devdesk
 	Hostname dev-dsk-brajit-1b-106566dd.eu-west-1.amazon.com
-	IdentityFile ~/.ssh/id_rsa
-	LogLevel ERROR # https://unix.stackexchange.com/questions/210211/disable-ssh-tunnel-open-failed-messages
+	IdentityFile ~/.ssh/id_ecdsa
+	LogLevel ERROR
 	TCPKeepAlive yes
 
 	ProxyCommand=wssh proxy %h
@@ -42,8 +42,7 @@ Host gitlab.com
 	PreferredAuthentications publickey
 	IdentityFile ~/.ssh/id_ed25519.pub
 
-# All others
+# Apply to all
 Host *
 	AddKeysToAgent yes
 	UseKeychain yes
-	IdentityFile ~/.ssh/id_ed25519
