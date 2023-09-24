@@ -24,7 +24,6 @@
 
     # git
     ~/.config/git/commit_message: git/commit_message
-    ~/.config/git/global_hooks: git/global_hooks
     ~/.gitignore: git/gitignore_global
     ~/.gitconfig: git/gitconfig
 

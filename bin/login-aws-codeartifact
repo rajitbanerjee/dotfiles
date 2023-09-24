@@ -1,4 +1,0 @@
-#!/bin/bash
-
-echo -e "Logging in to CodeArtifact..."
-aws codeartifact login --profile fed-dev-admin --tool npm --domain amazon --repository federate --domain-owner 149122183214 --region us-west-2

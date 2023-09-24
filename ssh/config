@@ -34,15 +34,10 @@ Host devdesk
 Host github.com
 	Hostname ssh.github.com
 	Port 443
-	IdentityFile ~/.ssh/id_ed25519.pub
-Host gitlab.com
-	Hostname altssh.gitlab.com
-	User git
-	Port 443
-	PreferredAuthentications publickey
-	IdentityFile ~/.ssh/id_ed25519.pub
+	IdentityFile ~/.ssh/id_ecdsa
 
 # Apply to all
 Host *
 	AddKeysToAgent yes
 	UseKeychain yes
+	PubkeyAcceptedAlgorithms +ssh-rsa-cert-v01@openssh.com

@@ -96,5 +96,6 @@
         "!Select sequence",
         "!Split",
         "!Split sequence"
-    ]
+    ],
+    "snippets.ultisnips.pythonPrompt": false
 }

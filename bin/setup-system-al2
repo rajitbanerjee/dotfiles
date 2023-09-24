@@ -68,6 +68,7 @@ fi
 # Java
 echo -e "\n\nJava 11:\n"
 sudo yum install java-11-amazon-corretto
+mkdir -p ~/.local/lib
 wget "https://projectlombok.org/downloads/lombok.jar" -O ~/.local/lib/lombok.jar
 
 # Neovim

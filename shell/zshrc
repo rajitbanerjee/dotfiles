@@ -11,7 +11,7 @@ export MANWIDTH=999
 
 [[ "$(uname)" = "Linux" ]] && eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 export PATH=~/.local/scripts/bin:$PATH # Custom scripts
-export PATH=~/.local/bin:$PATH # Installed scripts
+export PATH=~/.local/bin:$PATH         # Installed scripts
 export PATH=~/bin:/usr/local/bin:$PATH
 export ZSH=~/.oh-my-zsh
 
@@ -61,7 +61,8 @@ ZSH_THEME_GIT_PROMPT_UPSTREAM_SEPARATOR="->"
 # %(5~|%-1~/…/%3~|%4~): Prompt dir. trimming
 NEWLINE=$'\n'
 [[ -n "$SSH_CLIENT" ]] && ssh_flag="(ssh) "
-setopt PROMPT_SUBST ; PS1='%B%F{100}[%*] ${ssh_flag}%n@%m:%f%F{66}%(5~|%-1~/…/%3~|%4~)%f%b $(git_super_status "(%s)")${NEWLINE}\$ '
+setopt PROMPT_SUBST
+PS1='%B%F{100}[%*] ${ssh_flag}%n@%m:%f%F{66}%(5~|%-1~/…/%3~|%4~)%f%b $(git_super_status "(%s)")${NEWLINE}\$ '
 
 ### Dev ###
 
@@ -74,8 +75,8 @@ Darwin)
 	;;
 Linux)
 	# Node
-	export NODE_PATH="$(dirname `rtx exec nodejs@18 -- which node`)"
-	export PATH=$NODE_PATH:$PATH	
+	export NODE_PATH="$(dirname $(rtx exec nodejs@18 -- which node))"
+	export PATH=$NODE_PATH:$PATH
 
 	# Java
 	export PATH="/usr/lib/jvm/java-11-amazon-corretto.x86_64/bin:$PATH"
@@ -213,7 +214,7 @@ ports() {
 
 # git rebase
 grb() {
-    git rebase -i "HEAD~$1"
+	git rebase -i "HEAD~$1"
 }
 
 ### AWS ###
@@ -229,6 +230,18 @@ if [[ $(uname -n) == dev-dsk* ]]; then
 	source ~/.brazil_completion/zsh_completion
 fi
 
+# Access to amazon/federate CodeArtifact in ep+dev us-west-2
+login-aws-codeartifact() {
+	echo -e "Logging in to Federate CodeArtifact..."
+	aws codeartifact login \
+		--tool npm \
+		--domain amazon \
+		--repository federate \
+		--domain-owner 149122183214 \
+		--profile fed-ep-dev-admin \
+		--region us-west-2
+}
+
 # AWS profiles
 export NODE_ISENGARD_PATH=~/workplace/NodeIsengard/src/NodeIsengard
 export AWS_CONFIG_FILE=$NODE_ISENGARD_PATH/profiles/isengardcli
@@ -238,8 +251,9 @@ node-isengard-update() {
 	cd -
 	login-aws-codeartifact
 	npm i -g @amzn/node-isengard
+	node-isengard -v
+	node-isengard -h
 }
 
 # Added automatically (and periodically, if missing) on cloud desktop
 export AWS_EC2_METADATA_DISABLED=true
-
