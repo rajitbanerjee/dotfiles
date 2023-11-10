@@ -136,7 +136,7 @@
     "terminal.integrated.inheritEnv": true,
     "typescript.updateImportsOnFileMove.enabled": "always",
     "viceroy.config.autoReloadWorkspaceFolders": false,
-    "viceroy.config.internal.lastUpdateTime": "2023-10-03T17:27:30.429Z",
+    "viceroy.config.internal.lastUpdateTime": "2023-10-09T09:21:37.943Z",
     "viceroy.config.lastVersion": "0.51.201448",
     "viceroy.doc.welcome.showAtStartup": false,
     "vsicons.dontShowNewVersionMessage": true,
@@ -215,5 +215,7 @@
     "gitblame.inlineMessageEnabled": true,
     "gitblame.inlineMessageFormat": "${author.mail}: ${commit.summary} (${time.ago})",
     "gitblame.infoMessageFormat": "${commit.hash} ${commit.summary}",
-    "gitblame.statusBarMessageFormat": "${author.name}: ${commit.hash,6} ${commit.summary} (${time.ago})"
+    "gitblame.statusBarMessageFormat": "${author.name}: ${commit.hash,6} ${commit.summary} (${time.ago})",
+    "gitblame.inlineMessageNoCommit": "Not committed yet",
+    "window.zoomLevel": 1
 }
