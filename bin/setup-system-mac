@@ -67,8 +67,8 @@ api_key=$key
 """ >~/.wakatime.cfg
 fi
 
-# JDK and Apache Maven
-echo -e "\n\nJDK and Maven:\n"
+# Java
+echo -e "\n\nJava:\n"
 # Allow write access to required directories
 sudo chown -R $(whoami) /usr/local/bin /usr/local/include /usr/local/lib /usr/local/share /usr/local/share/doc /usr/local/share/man /usr/local/share/man/man1
 chmod u+w /usr/local/bin /usr/local/include /usr/local/lib /usr/local/share /usr/local/share/doc /usr/local/share/man /usr/local/share/man/man1

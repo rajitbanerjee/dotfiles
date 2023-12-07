@@ -16,7 +16,7 @@ export PATH=~/bin:/usr/local/bin:$PATH
 export ZSH=~/.oh-my-zsh
 
 ZSH_DISABLE_COMPFIX="true" # Skip verification of insecure directories (macOS error)
-ENABLE_CORRECTION="true"
+ENABLE_CORRECTION="false"
 ZSH_CUSTOM=~/.zsh/custom
 
 # https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/
@@ -85,7 +85,7 @@ Linux)
 	;;
 esac
 
-export PATH="$HOME/Library/Python/3.9/bin:$PATH"
+export PATH="$HOME/Library/Python/3.11/bin:$PATH"
 
 ### Aliases ###
 
@@ -142,6 +142,7 @@ alias sl="ls"
 # dev
 alias n="nvim"
 alias pip="pip3"
+alias python="python3"
 
 # git
 alias ga="git add"

@@ -216,6 +216,5 @@
     "gitblame.inlineMessageFormat": "${author.mail}: ${commit.summary} (${time.ago})",
     "gitblame.infoMessageFormat": "${commit.hash} ${commit.summary}",
     "gitblame.statusBarMessageFormat": "${author.name}: ${commit.hash,6} ${commit.summary} (${time.ago})",
-    "gitblame.inlineMessageNoCommit": "Not committed yet",
-    "window.zoomLevel": 1
+    "gitblame.inlineMessageNoCommit": "Not committed yet"
 }
