@@ -1,5 +1,7 @@
 ### General ###
 
+zmodload zsh/zprof
+
 export EDITOR=nvim
 export BAT_THEME="gruvbox-dark"
 export LANG=en_US.UTF-8
@@ -71,7 +73,9 @@ Darwin)
 	# Node
 	mkdir -p ~/.nvm
 	export NVM_DIR="$HOME/.nvm"
-	[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+	[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" --no-use
+	alias node='unalias node ; unalias npm ; nvm use default ; node $@'
+	alias npm='unalias node ; unalias npm ; nvm use default ; npm $@'
 	;;
 Linux)
 	# Node
