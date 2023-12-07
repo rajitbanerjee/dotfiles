@@ -18,7 +18,6 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'dense-analysis/ale'                                                 " LSP, linting, formatting
     Plug 'edkolev/tmuxline.vim'                                               " Tmux status line using airline
     Plug 'gruvbox-community/gruvbox'                                          " Primary colour scheme
-    Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && npm install' }    " Markdown preview
     Plug 'jesseleite/vim-agriculture'                                         " Raw Ag/Rg
     Plug 'jiangmiao/auto-pairs'                                               " Pair brackets, quotes
     Plug 'junegunn/fzf', {'do': { -> fzf#install() }}                         " Dependency (fzf.vim) 
@@ -31,7 +30,6 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'nvim-lua/plenary.nvim'                                              " Dependency (diffview.vim)
     Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}               " LSP
     Plug 'romgrk/barbar.nvim' 												  " Tabline
-    Plug 'sindrets/diffview.nvim'                                             " Source control
     Plug 'kyazdani42/nvim-web-devicons'                                       " Coloured file type icons
     Plug 'tpope/vim-commentary'                                               " Code commenting
     Plug 'tpope/vim-fugitive'                                                 " Git wrapper
@@ -39,7 +37,6 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'tpope/vim-surround'                                                 " Delete, change, add surroundings
     Plug 'vim-airline/vim-airline'                                            " Status and tabline
     Plug 'vim-airline/vim-airline-themes'                                     " Airline themes
-    Plug 'voldikss/vim-floaterm'                                              " Floating terminal
     Plug 'wakatime/vim-wakatime'                                              " Coding metrics
     Plug 'yuttie/comfortable-motion.vim'                                      " Smooth scrolling
 
@@ -130,18 +127,6 @@ try
   colorscheme gruvbox
 catch
 endtry
-
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""
-" => iamcco/markdown-preview.nvim
-"""""""""""""""""""""""""""""""""""""""""""""""""""
-nmap <leader>m <Plug>MarkdownPreviewToggle
-let g:mkdp_open_ip = 'localhost'
-let g:mkdp_port = '9999'
-function! g:EchoUrl(url)
-    :echo "Markdown Preview:" a:url
-endfunction
-let g:mkdp_browserfunc = 'g:EchoUrl'
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""
@@ -308,23 +293,6 @@ set foldexpr=nvim_treesitter#foldexpr()
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""
-" => romgrk/barbar.nvim
-"""""""""""""""""""""""""""""""""""""""""""""""""""
-let bufferline = get(g:, 'bufferline', {})
-let bufferline.animation = v:true
-let bufferline.auto_hide = v:true
-let bufferline.icon_separator_active = ''
-let bufferline.icon_separator_inactive = ''
-
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""
-" => sindrets/diffview.nvim
-"""""""""""""""""""""""""""""""""""""""""""""""""""
-nnoremap <silent> <leader>d :DiffviewOpen<CR>
-nnoremap <silent> <leader>df :DiffviewFileHistory<CR>
-
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""
 " => vim-airline/vim-airline,vim-airline-themes
 """""""""""""""""""""""""""""""""""""""""""""""""""
 let g:airline#extensions#whitespace#enabled = 0
@@ -346,23 +314,6 @@ let g:airline_symbols.linenr = ' '
 let g:airline_symbols.maxlinenr = ''
 let g:airline_symbols.colnr = ' '
 let g:airline_symbols.dirty=''
-
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""
-" => voldikss/vim-floaterm 
-"""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:floaterm_keymap_toggle = '<C-t>'
-let g:floaterm_title = "($1/$2)"
-let g:floaterm_gitcommit = 'floaterm'
-let g:floaterm_autoinsert = 1
-let g:floaterm_width = 0.9
-let g:floaterm_height = 0.9
-let g:floaterm_borderchars = "─│─│┌┐┘└"
-
-command! F execute ":FloatermNew"
-command! FN execute ":FloatermNext"
-command! FNF execute ":FloatermFirst"
-command! FNL execute ":FloatermLast"
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""
