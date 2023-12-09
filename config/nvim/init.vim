@@ -4,31 +4,19 @@
 " => General Settings
 """"""""""""""""""""""""""""""""""
 
+let $LANG='en'
+set langmenu=en
 set history=500 updatetime=50
 set signcolumn=yes
 set nobackup nowritebackup noswapfile
-set langmenu=en
-let $LANG='en'
 set scrolloff=7 " 7 lines for the cursor when moving up/down
 set cmdheight=1
 set hid " Buffer is hidden when abandoned
 set number 
-set noshowcmd 
-set noshowmode 
-set splitbelow 
-set splitright 
+set noshowcmd noshowmode 
+set splitbelow splitright 
+set termguicolors background=dark
 set mouse=a
-set termguicolors
-
-set background=dark
-command! BackgroundToggle call <SID>BackgroundToggle()
-function! <SID>BackgroundToggle()
-    if &background == "dark"
-        set background=light
-    else
-        set background=dark
-    endif
-endfunction
 
 syntax enable
 set ffs=unix,dos,mac
@@ -101,12 +89,6 @@ nnoremap Y y$
 nnoremap <silent> <leader>1 :source ~/.config/nvim/init.vim \| :PlugClean<CR> \| :PlugInstall<CR> \| :PlugUpdate<CR>
 nnoremap <silent> <leader><CR> :noh<CR>
 inoremap qq <ESC>
-
-" Undo break points
-inoremap , ,<C-g>u
-inoremap . .<C-g>u
-inoremap ! !<C-g>u
-inoremap ? ?<C-g>u
 
 " Keeping it centered
 nnoremap J mzJ`z
