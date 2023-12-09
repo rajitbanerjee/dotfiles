@@ -51,9 +51,9 @@ python3 -m pip install rstfmt
 echo -e "\n\nWakaTime:\n"
 python3 -m pip install --user wakatime
 if [ ! -f ~/.wakatime.cfg ]; then
-	echo -e "\n\nWakaTime config file setup:\n"
-	read -p "Enter WakaTime API Key: " key
-	echo -e """[settings]
+    echo -e "\n\nWakaTime config file setup:\n"
+    read -p "Enter WakaTime API Key: " key
+    echo -e """[settings]
 debug = false
 hidefilenames = false
 ignore =

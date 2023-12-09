@@ -23,17 +23,17 @@ ZSH_CUSTOM=~/.zsh/custom
 
 # https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/
 plugins=(
-	copypath
-	docker
-	docker-compose
-	fzf
-	git-prompt
-	git-auto-fetch
-	safe-paste
-	wakatime
-	zsh-autosuggestions
-	zsh-completions
-	zsh-syntax-highlighting
+    copypath
+    docker
+    docker-compose
+    fzf
+    git-prompt
+    git-auto-fetch
+    safe-paste
+    wakatime
+    zsh-autosuggestions
+    zsh-completions
+    zsh-syntax-highlighting
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -70,23 +70,23 @@ PS1='%B%F{100}[%*] ${ssh_flag}%n@%m:%f%F{66}%(5~|%-1~/…/%3~|%4~)%f%b $(git_sup
 
 case "$(uname)" in
 Darwin)
-	# Node
-	mkdir -p ~/.nvm
-	export NVM_DIR="$HOME/.nvm"
-	[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" --no-use
-	alias node='unalias node ; unalias npm ; nvm use default ; node $@'
-	alias npm='unalias node ; unalias npm ; nvm use default ; npm $@'
-	;;
+    # Node
+    mkdir -p ~/.nvm
+    export NVM_DIR="$HOME/.nvm"
+    [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" --no-use
+    alias node='unalias node ; unalias npm ; nvm use default ; node $@'
+    alias npm='unalias node ; unalias npm ; nvm use default ; npm $@'
+    ;;
 Linux)
-	# Node
-	export NODE_PATH="$(dirname $(rtx exec nodejs@18 -- which node))"
-	export PATH=$NODE_PATH:$PATH
+    # Node
+    export NODE_PATH="$(dirname $(rtx exec nodejs@18 -- which node))"
+    export PATH=$NODE_PATH:$PATH
 
-	# Java
-	export PATH="/usr/lib/jvm/java-11-amazon-corretto.x86_64/bin:$PATH"
-	export JAVA_11_AMAZON_CORRETO_HOME="/usr/lib/jvm/java-11-amazon-corretto.x86_64/"
-	export JAVA_HOME=$JAVA_11_AMAZON_CORRETO_HOME
-	;;
+    # Java
+    export PATH="/usr/lib/jvm/java-11-amazon-corretto.x86_64/bin:$PATH"
+    export JAVA_11_AMAZON_CORRETO_HOME="/usr/lib/jvm/java-11-amazon-corretto.x86_64/"
+    export JAVA_HOME=$JAVA_11_AMAZON_CORRETO_HOME
+    ;;
 esac
 
 export PATH="$HOME/Library/Python/3.11/bin:$PATH"
@@ -105,23 +105,23 @@ alias path="tr ':' '\n' <<<"$PATH" | less"
 alias q="exit"
 case "$(uname)" in
 Darwin)
-	alias doc="cd ~/Documents"
-	alias dp="cd ~/Desktop"
-	alias dow="cd ~/Downloads"
-	;;
+    alias doc="cd ~/Documents"
+    alias dp="cd ~/Desktop"
+    alias dow="cd ~/Downloads"
+    ;;
 Linux)
-	alias open="xdg-open"
-	;;
+    alias open="xdg-open"
+    ;;
 esac
 
 # aws
 case "$(uname)" in
 Darwin)
-	alias wp="cd /Volumes/workplace/"
-	;;
+    alias wp="cd /Volumes/workplace/"
+    ;;
 Linux)
-	alias wp="cd /workplace/brajit/"
-	;;
+    alias wp="cd /workplace/brajit/"
+    ;;
 esac
 alias bb="brazil-build"
 alias bbb="/apollo/env/envImprovement/bin/brazil-recursive-cmd-parallel --allPackages brazil-build"
@@ -196,30 +196,30 @@ alias dcd="docker-compose down"
 
 # pretty print a csv file
 csv() {
-	column -t -s, "$1" | less -S
+    column -t -s, "$1" | less -S
 }
 
 # force set hostname (to prevent network from setting it)
 sethost() {
-	sudo scutil --set HostName "$1"
+    sudo scutil --set HostName "$1"
 }
 
 # convert markdown to pdf
 mkpdf() {
-	filename="$1"
-	base="${filename%.*}"
-	pandoc -o $base.pdf --pdf-engine=/Library/TeX/texbin/pdflatex $base.md
-	echo "File created: $base.pdf"
+    filename="$1"
+    base="${filename%.*}"
+    pandoc -o $base.pdf --pdf-engine=/Library/TeX/texbin/pdflatex $base.md
+    echo "File created: $base.pdf"
 }
 
 # TCP ports in use
 ports() {
-	netstat -Watnlv | grep LISTEN | awk '{"ps -o comm= -p " $9 | getline procname;colred="\033[01;31m";colclr="\033[0m"; print colred "proto: " colclr $1 colred " | addr.port: " colclr $4 colred " | pid: " colclr $9 colred " | name: " colclr procname;  }' | column -t -s "|"
+    netstat -Watnlv | grep LISTEN | awk '{"ps -o comm= -p " $9 | getline procname;colred="\033[01;31m";colclr="\033[0m"; print colred "proto: " colclr $1 colred " | addr.port: " colclr $4 colred " | pid: " colclr $9 colred " | name: " colclr procname;  }' | column -t -s "|"
 }
 
 # git rebase
 grb() {
-	git rebase -i "HEAD~$1"
+    git rebase -i "HEAD~$1"
 }
 
 ### AWS ###
@@ -231,33 +231,33 @@ export PATH=~/.toolbox/bin:$PATH
 complete -C "$(brew --prefix)/bin/aws_completer" aws
 
 if [[ $(uname -n) == dev-dsk* ]]; then
-	# Brazil CLI completion
-	source ~/.brazil_completion/zsh_completion
+    # Brazil CLI completion
+    source ~/.brazil_completion/zsh_completion
 fi
 
 # Access to amazon/federate CodeArtifact in ep+dev us-west-2
 login-aws-codeartifact() {
-	echo -e "Logging in to Federate CodeArtifact..."
-	aws codeartifact login \
-		--tool npm \
-		--domain amazon \
-		--repository federate \
-		--domain-owner 149122183214 \
-		--profile fed-ep-dev-admin \
-		--region us-west-2
+    echo -e "Logging in to Federate CodeArtifact..."
+    aws codeartifact login \
+        --tool npm \
+        --domain amazon \
+        --repository federate \
+        --domain-owner 149122183214 \
+        --profile fed-ep-dev-admin \
+        --region us-west-2
 }
 
 # AWS profiles
 export NODE_ISENGARD_PATH=~/workplace/NodeIsengard/src/NodeIsengard
 export AWS_CONFIG_FILE=$NODE_ISENGARD_PATH/profiles/isengardcli
 node-isengard-update() {
-	cd $NODE_ISENGARD_PATH
-	git pull
-	cd -
-	login-aws-codeartifact
-	npm i -g @amzn/node-isengard
-	node-isengard -v
-	node-isengard -h
+    cd $NODE_ISENGARD_PATH
+    git pull
+    cd -
+    login-aws-codeartifact
+    npm i -g @amzn/node-isengard
+    node-isengard -v
+    node-isengard -h
 }
 
 # Added automatically (and periodically, if missing) on cloud desktop

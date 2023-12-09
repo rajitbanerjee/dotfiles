@@ -40,9 +40,13 @@ set inccommand=split " Live substition
 set clipboard=unnamedplus " MacOS system clipboard
 set showmatch mat=2
 set noerrorbells novisualbell t_vb= tm=500
-set autoindent noexpandtab tabstop=4 shiftwidth=4 " Use tabs (width 4) instead of spaces
-set lbr tw=500 " Line break at 500 characters
-set si wrap foldlevelstart=99
+set linebreak tw=500 " Line break at 500 characters
+set wrap foldlevelstart=99
+set autoindent smartindent
+set expandtab tabstop=4 shiftwidth=4 " Use spaces (width 4) instead of tab
+set list listchars=tab:»\ ,lead:·,trail:.
+
+filetype plugin indent on
 
 " Return to last edit position when opening files
 au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
@@ -64,12 +68,12 @@ autocmd TextYankPost * call Copy()
 
 " Persist undo after buffer close 
 if has('persistent_undo')
-	let target_path = expand('~/.config/vim-persisted-undo/') 
-	if !isdirectory(target_path)
-		call system('mkdir -p ' . target_path)
-	endif
-	let &undodir = target_path
-	set undofile
+    let target_path = expand('~/.config/vim-persisted-undo/') 
+    if !isdirectory(target_path)
+        call system('mkdir -p ' . target_path)
+    endif
+    let &undodir = target_path
+    set undofile
 endif
 
 " AWS

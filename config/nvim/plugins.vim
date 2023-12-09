@@ -29,7 +29,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'neoclide/coc.nvim', {'branch': 'release'}                           " Code completion
     Plug 'nvim-lua/plenary.nvim'                                              " Dependency (diffview.vim)
     Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}               " LSP
-    Plug 'romgrk/barbar.nvim' 												  " Tabline
+    Plug 'romgrk/barbar.nvim'                                                 " Tabline
     Plug 'kyazdani42/nvim-web-devicons'                                       " Coloured file type icons
     Plug 'tpope/vim-commentary'                                               " Code commenting
     Plug 'tpope/vim-fugitive'                                                 " Git wrapper
