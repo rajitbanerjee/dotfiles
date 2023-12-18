@@ -41,7 +41,6 @@
     },
     "explorer.mouseMode": "singleclick",
     "explorer.position": "floating",
-    "explorer.floating.width": -50,
     "explorer.quitOnOpen": false,
     "explorer.root.customRules": {
         "vcs": {
