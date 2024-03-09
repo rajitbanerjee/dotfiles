@@ -83,9 +83,10 @@ Linux)
     export PATH=$NODE_PATH:$PATH
 
     # Java
-    export PATH="/usr/lib/jvm/java-11-amazon-corretto.x86_64/bin:$PATH"
-    export JAVA_11_AMAZON_CORRETO_HOME="/usr/lib/jvm/java-11-amazon-corretto.x86_64/"
+    export JAVA_11_AMAZON_CORRETO_HOME="/usr/lib/jvm/java-11-amazon-corretto.x86_64"
+    export JAVA_17_AMAZON_CORRETO_HOME="/usr/lib/jvm/java-17-amazon-corretto.x86_64"
     export JAVA_HOME=$JAVA_11_AMAZON_CORRETO_HOME
+    export PATH="$JAVA_HOME/bin":$PATH
     ;;
 esac
 
@@ -162,7 +163,8 @@ alias gd="git diff"
 alias gds="git diff --staged"
 alias gl="git log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all"
 alias gpl="git fetch --all && git pull --rebase"
-alias gpla="git-pull-all . -r"
+# alias gpla="git-pull-all . -r"
+alias gpla=" find . -name .git -type d -execdir pwd \; -execdir git fetch --all \; -execdir git pull --rebase \;"
 alias gr="git restore"
 alias grs="git restore --staged"
 alias gs="git status"
