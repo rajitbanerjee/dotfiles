@@ -87,6 +87,9 @@ Linux)
     export JAVA_17_AMAZON_CORRETO_HOME="/usr/lib/jvm/java-17-amazon-corretto.x86_64"
     export JAVA_HOME=$JAVA_11_AMAZON_CORRETO_HOME
     export PATH="$JAVA_HOME/bin":$PATH
+
+    # Go
+    export PATH=$PATH:/usr/local/go/bin
     ;;
 esac
 
