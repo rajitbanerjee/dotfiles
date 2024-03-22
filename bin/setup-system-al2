@@ -42,10 +42,12 @@ rtx install nodejs@18
 
 npm i -g git-pull-all
 
-# Python
-echo -e "\n\nPython:\n"
-python3 -m pip install --upgrade pip
-python3 -m pip install rstfmt
+# Go
+echo -e "\n\nGo:\n"
+wget https://go.dev/dl/go1.22.1.linux-amd64.tar.gz
+rm -rf /usr/local/go && sudo tar -C /usr/local -xzf go1.22.1.linux-amd64.tar.gz
+rm -rf go1.22.1.linux-amd64.tar.gz
+brew install gopls
 
 # Wakatime
 echo -e "\n\nWakaTime:\n"
