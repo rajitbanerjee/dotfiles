@@ -252,7 +252,7 @@ login-aws-codeartifact() {
         --region us-west-2
 }
 
-# AWS profiles
+# Isengard AWS profiles
 export NODE_ISENGARD_PATH=~/workplace/NodeIsengard/src/NodeIsengard
 export AWS_CONFIG_FILE=$NODE_ISENGARD_PATH/profiles/isengardcli
 node-isengard-update() {
@@ -263,6 +263,29 @@ node-isengard-update() {
     npm i -g @amzn/node-isengard
     node-isengard -v
     node-isengard -h
+}
+
+# Conduit AWS profiles
+## Get all Conduit accounts the user has access to
+function conduit-accounts {
+   mcurl -s https://conduit.security.a2z.com/api/accounts\?partition\=aws\&maxResults\=500\&fetchFromDynamo\=true | jq '.conduitAccountList[]'
+}
+
+## Assume role in a Conduit AWS account
+function conduit {
+   ACCOUNT_ID=$(conduit-accounts | jq 'select(.name == "'$1'") | .identifier.accountId' -r)
+   ROLE=${2:-IibsAdminAccess-DO-NOT-DELETE}
+
+   echo "[$1] Assuming role $ROLE in account $ACCOUNT_ID"
+
+   unset AWS_ACCESS_KEY_ID AWS_SECRET_ACCESS_KEY AWS_SESSION_TOKEN
+   ada credentials update --account=$ACCOUNT_ID --role $ROLE --provider conduit --once
+   aws sts get-caller-identity | cat
+}
+
+## List all conduit account names
+function conduit-list {
+   conduit-accounts | jq '.name' -r
 }
 
 # Added automatically (and periodically, if missing) on cloud desktop
