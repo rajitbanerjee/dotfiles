@@ -7,6 +7,10 @@ IFS=$'\n\t'
 
 echo -e "Starting AL2 system setup...\n"
 
+# Login (AWS)
+kinit -f && mwinit -s -o
+ssh git.amazon.com
+
 # Linuxbrew (+dependencies)
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
@@ -22,7 +26,7 @@ echo -e "\n\nMisc. utilities:\n"
 brew install bat
 brew install dpkg
 brew install duf
-brew install exa
+brew install eza
 brew install fzf
 brew install git
 brew install git-delta
@@ -32,13 +36,17 @@ brew install ripgrep
 brew install tldr
 brew install trash-cli
 brew install watchman
+brew install tmux
 
-# Node.js
+# Docker
+curl -L "https://github.com/docker/compose/releases/latest/download/docker-compose-$(uname -s)-$(uname -m)" -o ~/.local/bin/docker-compose
+chmod +x ~/.local/bin/docker-compose
+
+# Node
 echo -e "\n\nNode:\n"
-curl https://rtx.pub/rtx-latest-linux-x64 > ~/.local/bin/rtx
-chmod +x ~/.local/bin/rtx
-rtx plugin install nodejs ssh://git.amazon.com/pkg/RtxNode
-rtx install nodejs@18
+curl https://mise.jdx.dev/install.sh | sh
+mise plugin install nodejs ssh://git.amazon.com/pkg/RtxNode
+mise install nodejs@18 && mise global nodejs@18
 
 npm i -g git-pull-all
 
@@ -51,7 +59,8 @@ brew install gopls
 
 # Wakatime
 echo -e "\n\nWakaTime:\n"
-python3 -m pip install --user wakatime
+# https://stackoverflow.com/questions/75608323/how-do-i-solve-error-externally-managed-environment-every-time-i-use-pip-3
+python3 -m pip install --user wakatime --break-system-packages
 if [ ! -f ~/.wakatime.cfg ]; then
     echo -e "\n\nWakaTime config file setup:\n"
     read -p "Enter WakaTime API Key: " key
@@ -68,15 +77,16 @@ api_key=$key
 fi
 
 # Java
-echo -e "\n\nJava 11:\n"
+echo -e "\n\nJava:\n"
 sudo yum install java-11-amazon-corretto
+sudo yum install java-17-amazon-corretto
 mkdir -p ~/.local/lib
 wget "https://projectlombok.org/downloads/lombok.jar" -O ~/.local/lib/lombok.jar
 
 # Neovim
 echo -e "\n\nNeovim and ALE linters/fixers:\n"
 brew install neovim
-python3 -m pip install --user pynvim isort autopep8 flake8
+python3 -m pip install --user pynvim isort autopep8 flake8 --break-system-packages 
 npm i -g prettier @prettier/plugin-xml
 brew install shellcheck shfmt
 brew install google-java-format
@@ -86,7 +96,6 @@ echo -e "\n\nAWS Dev Tools:\n"
 sudo mkdir -p -m 755 /workplace/${USER}
 sudo chown -R ${USER}:amazon /workplace/${USER}
 ln -s /workplace/${USER} ~/workplace
-mwinit -s -o && kinit -f
 
 brew install awscli
 toolbox install brazilcli
@@ -94,6 +103,9 @@ toolbox install barium
 toolbox install cr
 toolbox registry add s3://buildertoolbox-registry-isengard-cli-us-west-2/tools.json
 toolbox install isengard-cli
+
+# Large workspace watches setup
+echo fs.inotify.max_user_watches=524288 | sudo tee -a /etc/sysctl.conf && sudo sysctl -p
 
 echo -e "\n\noh-my-zsh:\n(Note: \"exit\" from oh-my-zsh to resume setup)\n"
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"

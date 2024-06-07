@@ -280,7 +280,7 @@ autocmd CursorHold * :call <SID>show_hover_doc()
 lua <<EOF
 require 'nvim-treesitter.configs'.setup {
   -- A list of parser names, or "all"
-  ensure_installed = { "bash", "bibtex", "c", "cmake", "comment", "cpp", "dockerfile", "go", "graphql", "help", "html", "http", "java", "javascript", "json", "json5", "jsonc", "latex", "lua", "make", "perl", "python", "r", "regex", "scss", "typescript", "vim", "yaml" },
+  ensure_installed = { "bash", "bibtex", "c", "cmake", "comment", "cpp", "dockerfile", "go", "graphql", "html", "http", "java", "javascript", "json", "json5", "jsonc", "latex", "lua", "make", "perl", "python", "r", "regex", "scss", "typescript", "vim", "yaml" },
   highlight = {
     enable = true,              -- false will disable the whole extension
     disable = { "html" }, -- https://github.com/nvim-treesitter/nvim-treesitter/issues/1788

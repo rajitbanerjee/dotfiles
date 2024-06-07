@@ -20,5 +20,5 @@ else
 	mwinit
 
 	# Step 2. SSH into Cloud Desktop
-	ssh devdesk
+	ssh devdesk2
 fi

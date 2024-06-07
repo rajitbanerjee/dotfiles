@@ -11,6 +11,8 @@
 
 - create:
     - ~/Git
+    - ~/.local/scripts/bin
+    - ~/.local/bin
 
 - link:
     ~/.config/alacritty: config/alacritty

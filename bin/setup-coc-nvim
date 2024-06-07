@@ -30,6 +30,7 @@ npm install \
 
 # https://github.com/neoclide/coc-java/issues/99#issuecomment-663856695
 coc_java_data="$extpath/coc-java-data/server"
+mkdir -p $coc_java_data
 rm -rf "${coc_java_data:?}/*"
 jdt_ls="jdt-language-server-0.57.0-202006172108.tar.gz"
 wget https://download.eclipse.org/jdtls/milestones/0.57.0/$jdt_ls

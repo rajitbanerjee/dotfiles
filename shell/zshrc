@@ -79,7 +79,7 @@ Darwin)
     ;;
 Linux)
     # Node
-    export NODE_PATH="$(dirname $(rtx exec nodejs@18 -- which node))"
+    export NODE_PATH="$(dirname $(mise exec nodejs@18 -- which node))"
     export PATH=$NODE_PATH:$PATH
 
     # Java
@@ -139,12 +139,12 @@ alias less="less -R"
 alias mv="mv -i"
 alias sizer="du -h * | sort -hr | less"
 
-# exa (a modern replacement for ls)
-alias l='exa -l --icons -h --git --no-user'
+# eza (a modern replacement for ls)
+alias l='eza -l --icons -h --git --no-user'
 alias la='l -a'
 alias ll='ls -lh'
-alias ls='exa'
-alias lt='exa -T -L'
+alias ls='eza'
+alias lt='eza -T -L'
 alias sl="ls"
 
 # dev
@@ -190,6 +190,7 @@ alias ts="tmux switch -t"
 # vs code
 alias codex="code --list-extensions"
 alias codein="cat ~/.dotfiles/config/vscode/extensions.txt | xargs -L 1 echo code --install-extension | bash"
+alias codeinssh="cat ~/.dotfiles/config/vscode/extensions-devdesk.txt | xargs -L 1 echo code --install-extension | bash"
 
 # docker
 alias dc="docker-compose"
@@ -234,11 +235,6 @@ export PATH=~/.toolbox/bin:$PATH
 
 # AWS CLI completion
 complete -C "$(brew --prefix)/bin/aws_completer" aws
-
-if [[ $(uname -n) == dev-dsk* ]]; then
-    # Brazil CLI completion
-    source ~/.brazil_completion/zsh_completion
-fi
 
 # Access to amazon/federate CodeArtifact in ep+dev us-west-2
 login-aws-codeartifact() {
