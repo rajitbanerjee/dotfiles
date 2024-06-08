@@ -8,6 +8,3 @@
   - Switches: Gateron Brown, Hot-Swappable
 - Mouse
   - Logitech MX Master 3S
-  - Lenovo 600 Bluetooth
-- Speaker
-  - Bang & Olufsen Beoplay A1
