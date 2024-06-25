@@ -2,6 +2,9 @@
     "[brazilPackageConfig]": {
         "workbench.editor.languageDetection": false
     },
+    "[css]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
     "[dockercompose]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
@@ -10,18 +13,18 @@
     },
     "[gradle]": {
         "editor.codeActionsOnSave": {
-            "source.fixAll.spotlessGradle": true
+            "source.fixAll.spotlessGradle": "explicit"
         },
         "editor.defaultFormatter": "richardwillis.vscode-spotless-gradle",
-        "files.trimTrailingWhitespace": false,
-        "spotlessGradle.diagnostics.enable": true,
-        "spotlessGradle.format.enable": true
+        "files.trimTrailingWhitespace": false
     },
     "[html]": {
         "editor.defaultFormatter": "vscode.html-language-features"
     },
     "[java]": {
-        "editor.defaultFormatter": "redhat.java"
+        "editor.defaultFormatter": "redhat.java",
+        "editor.detectIndentation": false,
+        "editor.indentSize": 4
     },
     "[javascript]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
@@ -48,24 +51,25 @@
         "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
     "cSpell.language": "en-US",
-    "diffEditor.ignoreTrimWhitespace": true,
+    "diffEditor.experimental.showMoves": true,
+    "diffEditor.hideUnchangedRegions.enabled": true,
+    "diffEditor.ignoreTrimWhitespace": false,
     "editor.accessibilitySupport": "off",
     "editor.codeLensFontFamily": "JetBrainsMono Nerd Font",
-    "editor.detectIndentation": true,
     "editor.find.cursorMoveOnType": false,
     "editor.fontFamily": "JetBrainsMono Nerd Font",
     "editor.fontLigatures": true,
-    "editor.insertSpaces": false,
     "editor.linkedEditing": true,
     "editor.minimap.enabled": false,
     "editor.stickyScroll.enabled": true,
     "editor.suggestSelection": "first",
-    "editor.tabSize": 4,
+    "editor.unicodeHighlight.invisibleCharacters": false,
     "editor.wordWrap": "wordWrapColumn",
     "editor.wordWrapColumn": 200,
     "eslint.enable": false,
     "explorer.confirmDelete": false,
     "explorer.confirmDragAndDrop": false,
+    "extensions.autoUpdate": false,
     "files.associations": {
         "*.gradle": "groovy",
         ".crux_dry_run_build": "plaintext",
@@ -73,37 +77,37 @@
     },
     "files.autoSave": "afterDelay",
     "files.exclude": {
-        ".viceroy": true,
-        "apollo-overrides": true,
-        "release-info": true,
-        "src/*/build": false,
-        "build": false,
-        "env": true,
-        "packageInfo*": true,
-        ".bemol": true,
-        "**/.git": true,
-        "**/.svn": true,
-        "**/.hg": true,
-        "**/CVS": true,
-        "**/.DS_Store": true,
-        "**/Thumbs.db": true,
         "**/*.aux": true,
         "**/*.bcf": true,
         "**/*.iml": true,
         "**/*.run.xml": true,
         "**/*.synctex.gz": true,
+        "**/.DS_Store": true,
         "**/.classpath": true,
         "**/.factorypath": true,
+        "**/.git": true,
+        "**/.hg": true,
         "**/.idea": true,
         "**/.project": true,
-        "**/.settings": true
+        "**/.settings": true,
+        "**/.svn": true,
+        "**/CVS": true,
+        "**/Thumbs.db": true,
+        ".bemol": true,
+        ".viceroy": true,
+        "apollo-overrides": true,
+        "build": false,
+        "env": true,
+        "packageInfo*": true,
+        "release-info": true,
+        "src/*/build": false
     },
     "files.watcherExclude": {
-        "**/build/**": true,
         "**/.git/objects/**": true,
         "**/.git/subtree-cache/**": true,
-        "**/node_modules/*/**": true,
-        "**/.hg/store/**": true
+        "**/.hg/store/**": true,
+        "**/build/**": true,
+        "**/node_modules/*/**": true
     },
     "git-graph.maxDepthOfRepoSearch": 4,
     "git.autofetch": true,
@@ -115,33 +119,49 @@
     },
     "git.supportCancellation": true,
     "gitblame.ignoreWhitespace": true,
+    "gitblame.infoMessageFormat": "${commit.hash} ${commit.summary}",
+    "gitblame.inlineMessageEnabled": true,
+    "gitblame.inlineMessageFormat": "${author.mail}: ${commit.summary} (${time.ago})",
+    "gitblame.inlineMessageNoCommit": "Not committed yet",
+    "gitblame.statusBarMessageFormat": "${author.name}: ${commit.hash,6} ${commit.summary} (${time.ago})",
     "java.autobuild.enabled": false,
+    "java.debug.settings.showHex": false,
+    "java.debug.settings.showQualifiedNames": true,
     "javascript.updateImportsOnFileMove.enabled": "always",
     "python.languageServer": "Pylance",
     "redhat.telemetry.enabled": false,
     "remote.SSH.configFile": "/Users/brajit/.ssh/config",
     "search.exclude": {
-        "env": true,
-        "src/*/build": true,
-        "build": true,
-        "**/node_modules": true,
+        "**/*.code-search": true,
         "**/bower_components": true,
-        "**/*.code-search": true
+        "**/node_modules": true,
+        "build": true,
+        "env": true,
+        "src/*/build": true
     },
     "search.useGlobalIgnoreFiles": true,
     "search.useParentIgnoreFiles": true,
+    "security.workspace.trust.untrustedFiles": "open",
+    "telemetry.enableCrashReporter": false,
+    "telemetry.enableTelemetry": false,
     "telemetry.telemetryLevel": "off",
     "terminal.integrated.defaultProfile.osx": "zsh",
+    "terminal.integrated.enableMultiLinePasteWarning": false,
     "terminal.integrated.fontFamily": "JetBrainsMono Nerd Font",
     "terminal.integrated.inheritEnv": true,
     "typescript.updateImportsOnFileMove.enabled": "always",
+    "update.mode": "none",
     "viceroy.config.autoReloadWorkspaceFolders": false,
-    "viceroy.config.internal.lastUpdateTime": "2023-10-09T09:21:37.943Z",
-    "viceroy.config.lastVersion": "0.51.201448",
+    "viceroy.config.beautyMode": false,
+    "viceroy.config.internal.lastUpdateTime": "2024-06-25T10:23:16.215Z",
+    "viceroy.config.lastVersion": "0.53.201701",
+    "viceroy.config.notifyGlibcIssue": false,
+    "viceroy.config.setUpCodeWhisperer": false,
+    "viceroy.config.setup.amazonQ": false,
     "viceroy.doc.welcome.showAtStartup": false,
+    "viceroy.workspaceSyncStrategy": "automatic",
     "vsicons.dontShowNewVersionMessage": true,
     "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
-    "workbench.colorTheme": "Gruvbox Dark Hard",
     "workbench.colorCustomizations": {
         "[Gruvbox Dark Hard]": {
             "activityBar.background": "#000000",
@@ -155,6 +175,7 @@
             "titleBar.activeBackground": "#000000"
         }
     },
+    "workbench.colorTheme": "Gruvbox Dark Hard",
     "workbench.editor.enablePreview": false,
     "workbench.iconTheme": "vscode-icons",
     "yaml.customTags": [
@@ -194,27 +215,8 @@
         "!GetAZsSequence",
         "!SelectSequence"
     ],
-    "yaml.validate": true,
-    "telemetry.enableCrashReporter": false,
-    "telemetry.enableTelemetry": false,
     "yaml.schemas": {
-        "file:///local/home/brajit/.vscode-server/extensions/marklel.vscode-brazil-0.51.201448/assets/languages/rde/schema.json": "**/definition.yaml"
+        "file:///local/home/brajit/.vscode-server/extensions/marklel.vscode-brazil-0.53.201701/assets/languages/rde/schema.json": "**/definition.yaml"
     },
-    "viceroy.workspaceSyncStrategy": "automatic",
-    "cSpell.userWords": [
-        "behaviour",
-        "IJSON",
-        "integ",
-        "isengard",
-        "kerberizer",
-        "normalised",
-        "partitional"
-    ],
-    "editor.unicodeHighlight.invisibleCharacters": false,
-    "viceroy.config.beautyMode": false,
-    "gitblame.inlineMessageEnabled": true,
-    "gitblame.inlineMessageFormat": "${author.mail}: ${commit.summary} (${time.ago})",
-    "gitblame.infoMessageFormat": "${commit.hash} ${commit.summary}",
-    "gitblame.statusBarMessageFormat": "${author.name}: ${commit.hash,6} ${commit.summary} (${time.ago})",
-    "gitblame.inlineMessageNoCommit": "Not committed yet"
+    "yaml.validate": true
 }
