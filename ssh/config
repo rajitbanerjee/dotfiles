@@ -11,7 +11,7 @@ Host git.amazon.com
 	ForwardX11 no
 
 Host devdesk
-	Hostname dev-dsk-brajit-1b-106566dd.eu-west-1.amazon.com
+	Hostname dev-dsk-brajit-1b-776a48fa.eu-west-1.amazon.com
 	IdentityFile ~/.ssh/id_ecdsa
 	LogLevel ERROR
 	TCPKeepAlive yes
