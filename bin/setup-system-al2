@@ -7,10 +7,6 @@ IFS=$'\n\t'
 
 echo -e "Starting AL2 system setup...\n"
 
-# Login (AWS)
-kinit -f && mwinit -s -o
-ssh git.amazon.com
-
 # Linuxbrew (+dependencies)
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
@@ -48,7 +44,7 @@ curl https://mise.jdx.dev/install.sh | sh
 mise plugin install nodejs ssh://git.amazon.com/pkg/RtxNode
 mise install nodejs@18 && mise global nodejs@18
 
-npm i -g git-pull-all
+# npm i -g git-pull-all
 
 # Go
 echo -e "\n\nGo:\n"
@@ -87,7 +83,7 @@ wget "https://projectlombok.org/downloads/lombok.jar" -O ~/.local/lib/lombok.jar
 echo -e "\n\nNeovim and ALE linters/fixers:\n"
 brew install neovim
 python3 -m pip install --user pynvim isort autopep8 flake8 --break-system-packages 
-npm i -g prettier @prettier/plugin-xml
+# npm i -g prettier @prettier/plugin-xml
 brew install shellcheck shfmt
 brew install google-java-format
 
