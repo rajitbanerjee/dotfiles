@@ -152,7 +152,7 @@
     "update.mode": "none",
     "viceroy.config.autoReloadWorkspaceFolders": false,
     "viceroy.config.beautyMode": false,
-    "viceroy.config.internal.lastUpdateTime": "2024-07-08T10:17:45.912Z",
+    "viceroy.config.internal.lastUpdateTime": "2024-07-29T15:38:46.789Z",
     "viceroy.config.lastVersion": "0.53.201719",
     "viceroy.config.notifyGlibcIssue": false,
     "viceroy.config.setUpCodeWhisperer": false,
@@ -219,5 +219,6 @@
     },
     "yaml.validate": true,
     "diffEditor.hideUnchangedRegions.enabled": true,
-    "viceroy.config.promptForWorkspaceMode": "alwaysMigrate"
+    "viceroy.config.promptForWorkspaceMode": "alwaysMigrate",
+    "java.import.gradle.enabled": false
 }
