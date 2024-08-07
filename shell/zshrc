@@ -83,9 +83,9 @@ Linux)
     export PATH=$NODE_PATH:$PATH
 
     # Java
-    export JAVA_11_AMAZON_CORRETO_HOME="/usr/lib/jvm/java-11-amazon-corretto.x86_64"
-    export JAVA_17_AMAZON_CORRETO_HOME="/usr/lib/jvm/java-17-amazon-corretto.x86_64"
-    export JAVA_HOME=$JAVA_11_AMAZON_CORRETO_HOME
+    export JAVA_11_AMAZON_CORRETTO_HOME="/usr/lib/jvm/java-11-amazon-corretto.x86_64"
+    export JAVA_17_AMAZON_CORRETTO_HOME="/usr/lib/jvm/java-17-amazon-corretto.x86_64"
+    export JAVA_HOME=$JAVA_17_AMAZON_CORRETTO_HOME
     export PATH="$JAVA_HOME/bin":$PATH
 
     # Go

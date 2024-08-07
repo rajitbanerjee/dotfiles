@@ -40,7 +40,7 @@
         "yy": "copyFile"
     },
     "explorer.mouseMode": "singleclick",
-    "explorer.position": "floating",
+    "explorer.position": "left",
     "explorer.quitOnOpen": false,
     "explorer.root.customRules": {
         "vcs": {
