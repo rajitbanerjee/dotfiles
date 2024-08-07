@@ -43,15 +43,14 @@ echo -e "\n\nNode:\n"
 curl https://mise.jdx.dev/install.sh | sh
 mise plugin install nodejs ssh://git.amazon.com/pkg/RtxNode
 mise install nodejs@18 && mise global nodejs@18
-
 # npm i -g git-pull-all
 
 # Go
 echo -e "\n\nGo:\n"
-wget https://go.dev/dl/go1.22.1.linux-amd64.tar.gz
-rm -rf /usr/local/go && sudo tar -C /usr/local -xzf go1.22.1.linux-amd64.tar.gz
-rm -rf go1.22.1.linux-amd64.tar.gz
+brew install go
 brew install gopls
+sudo ln -s /home/linuxbrew/.linuxbrew/bin/go /usr/bin/go
+go env -w GOPROXY=direct
 
 # Wakatime
 echo -e "\n\nWakaTime:\n"
