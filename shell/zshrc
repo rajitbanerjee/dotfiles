@@ -17,6 +17,7 @@ export PATH=~/.local/bin:$PATH         # Installed scripts
 export PATH=~/bin:/usr/local/bin:$PATH
 export ZSH=~/.oh-my-zsh
 
+HOMEBREW_NO_AUTO_UPDATE="true"
 ZSH_DISABLE_COMPFIX="true" # Skip verification of insecure directories (macOS error)
 ENABLE_CORRECTION="false"
 ZSH_CUSTOM=~/.zsh/custom
