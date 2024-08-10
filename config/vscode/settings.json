@@ -126,7 +126,7 @@
     "java.debug.settings.showHex": false,
     "java.debug.settings.showQualifiedNames": true,
     "javascript.updateImportsOnFileMove.enabled": "always",
-    "python.languageServer": "Pylance",
+    "python.languageServer": "Jedi",
     "redhat.telemetry.enabled": false,
     "remote.SSH.configFile": "/Users/brajit/.ssh/config",
     "search.exclude": {

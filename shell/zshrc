@@ -71,16 +71,8 @@ PS1='%B%F{100}[%*] ${ssh_flag}%n@%m:%f%F{66}%(5~|%-1~/…/%3~|%4~)%f%b $(git_sup
 
 case "$(uname)" in
 Darwin)
-    # Node
-    mkdir -p ~/.nvm
-    export NVM_DIR="$HOME/.nvm"
-    [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
     ;;
 Linux)
-    # Node
-    export NODE_PATH="$(dirname $(mise exec nodejs@18 -- which node))"
-    export PATH=$NODE_PATH:$PATH
-
     # Java
     export JAVA_11_AMAZON_CORRETTO_HOME="/usr/lib/jvm/java-11-amazon-corretto.x86_64"
     export JAVA_17_AMAZON_CORRETTO_HOME="/usr/lib/jvm/java-17-amazon-corretto.x86_64"
@@ -92,7 +84,12 @@ Linux)
     ;;
 esac
 
+# Node
+export NODE_PATH="$(dirname $(mise exec nodejs@18 -- which node))"
+export PATH=$NODE_PATH:$PATH
 export NODE_OPTIONS="--no-deprecation"
+
+# Python
 export PATH="$HOME/Library/Python/3.11/bin:$PATH"
 
 ### Aliases ###

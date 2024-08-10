@@ -33,12 +33,10 @@ brew install wget
 
 # Node.js
 echo -e "\n\nNode:\n"
-brew install nvm
-source $(brew --prefix nvm)/nvm.sh
-nvm install 18
-nvm alias default 18
-
-npm i -g git-pull-all
+curl https://mise.jdx.dev/install.sh | sh
+mise plugin install nodejs
+mise install nodejs@18 && mise global nodejs@18
+# npm i -g git-pull-all
 
 # Python
 echo -e "\n\nPython:\n"
@@ -72,10 +70,9 @@ echo -e "\n\nJava:\n"
 # Allow write access to required directories
 sudo chown -R $(whoami) /usr/local/bin /usr/local/include /usr/local/lib /usr/local/share /usr/local/share/doc /usr/local/share/man /usr/local/share/man/man1
 chmod u+w /usr/local/bin /usr/local/include /usr/local/lib /usr/local/share /usr/local/share/doc /usr/local/share/man /usr/local/share/man/man1
-brew install maven openjdk@8 openjdk@11 openjdk
+brew install openjdk@17 openjdk
 JVMDIR=/Library/Java/JavaVirtualMachines
-sudo ln -sfn $(brew --prefix)/opt/openjdk@8/libexec/openjdk.jdk $JVMDIR/openjdk-8.jdk
-sudo ln -sfn $(brew --prefix)/opt/openjdk@11/libexec/openjdk.jdk $JVMDIR/openjdk-11.jdk
+sudo ln -sfn $(brew --prefix)/opt/openjdk@17/libexec/openjdk.jdk $JVMDIR/openjdk-17.jdk
 sudo ln -sfn $(brew --prefix)/opt/openjdk/libexec/openjdk.jdk $JVMDIR/openjdk.jdk
 wget "https://projectlombok.org/downloads/lombok.jar" -O ~/.local/lib/lombok.jar
 
@@ -83,7 +80,7 @@ wget "https://projectlombok.org/downloads/lombok.jar" -O ~/.local/lib/lombok.jar
 echo -e "\n\nNeovim and ALE linters/fixers:\n"
 brew install neovim
 python3 -m pip install --user pynvim isort autopep8 flake8
-npm i -g prettier @prettier/plugin-xml
+# npm i -g prettier @prettier/plugin-xml
 brew install shellcheck shfmt
 brew install google-java-format
 
