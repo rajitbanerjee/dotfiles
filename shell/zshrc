@@ -234,7 +234,7 @@ export PATH=~/.toolbox/bin:$PATH
 complete -C "$(brew --prefix)/bin/aws_completer" aws
 
 # Access to amazon/federate CodeArtifact in ep+dev us-west-2
-login-aws-codeartifact() {
+codeartifact() {
     echo -e "Logging in to Federate CodeArtifact..."
     aws codeartifact login \
         --tool npm \
