@@ -39,7 +39,7 @@
         "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
     "[typescript]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
+        "editor.defaultFormatter": "vscode.typescript-language-features"
     },
     "[typescriptreact]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
@@ -64,8 +64,7 @@
     "editor.stickyScroll.enabled": true,
     "editor.suggestSelection": "first",
     "editor.unicodeHighlight.invisibleCharacters": false,
-    "editor.wordWrap": "off",
-    "editor.wordWrapColumn": 200,
+    "editor.wordWrapColumn": 150,
     "eslint.enable": false,
     "explorer.confirmDelete": false,
     "explorer.confirmDragAndDrop": false,
@@ -156,8 +155,8 @@
     "update.mode": "none",
     "viceroy.config.autoReloadWorkspaceFolders": false,
     "viceroy.config.beautyMode": false,
-    "viceroy.config.internal.lastUpdateTime": "2024-08-10T16:02:50.146Z",
-    "viceroy.config.lastVersion": "0.53.201751",
+    "viceroy.config.internal.lastUpdateTime": "2024-08-21T13:00:43.174Z",
+    "viceroy.config.lastVersion": "0.53.201754",
     "viceroy.config.notifyGlibcIssue": false,
     "viceroy.config.promptForWorkspaceMode": "alwaysMigrate",
     "viceroy.config.setUpCodeWhisperer": false,
@@ -220,7 +219,7 @@
         "!SelectSequence"
     ],
     "yaml.schemas": {
-        "file:///local/home/brajit/.vscode-server/extensions/marklel.vscode-brazil-0.53.201751/assets/languages/rde/schema.json": "**/definition.yaml"
+        "file:///local/home/brajit/.vscode-server/extensions/marklel.vscode-brazil-0.53.201754/assets/languages/rde/schema.json": "**/definition.yaml"
     },
     "yaml.validate": true
 }
