@@ -18,6 +18,9 @@
     ~/.config/alacritty: config/alacritty
     ~/.config/nvim: config/nvim
     ~/.local/scripts/bin: bin
+    /Volumes/workplace/Obsidian-brajit/.obsidian: 
+      if: "[ `uname` = Darwin ]"
+      path: config/obsidian
 
     # shell
     ~/.bashrc: shell/bashrc

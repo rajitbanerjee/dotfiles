@@ -1,0 +1,19 @@
+{
+  "attachmentFolderPath": "Resources/Attachments",
+  "showLineNumber": true,
+  "useTab": false,
+  "vimMode": false,
+  "livePreview": true,
+  "alwaysUpdateLinks": true,
+  "showInlineTitle": true,
+  "promptDelete": true,
+  "newFileLocation": "current",
+  "showUnsupportedFiles": true,
+  "readableLineLength": false,
+  "strictLineBreaks": false,
+  "showFrontmatter": false,
+  "showIndentGuide": false,
+  "defaultViewMode": "source",
+  "autoConvertHtml": false,
+  "useMarkdownLinks": true
+}
