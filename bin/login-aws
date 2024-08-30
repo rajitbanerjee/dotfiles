@@ -11,13 +11,13 @@ if [[ $(uname -n) == dev-dsk* ]]; then
 
 	# Step 2. Midway
 	echo "Generating Midway cookie..."
-	mwinit -s -o
+	mwinit -s -f
 
 	echo "Done!"
 else
 	# Step 1. Midway
 	echo "Generating AEA Midway cookie..."
-	mwinit
+	mwinit -f
 
 	# Step 2. SSH into Cloud Desktop
 	ssh devdesk
