@@ -26,7 +26,7 @@ npm install \
     coc-tsserver \
     coc-vimlsp \
     coc-yaml \
-    --global-style --ignore-scripts --no-bin-links --no-package-lock --only=prod
+    --install-strategy=shallow --ignore-scripts --no-bin-links --no-package-lock --omit=dev
 
 # https://github.com/neoclide/coc-java/issues/99#issuecomment-663856695
 coc_java_data="$extpath/coc-java-data/server"

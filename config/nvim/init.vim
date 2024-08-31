@@ -69,7 +69,7 @@ au BufReadPost,BufNewFile Config setf brazil-config
 
 
 """"""""""""""""""""""""""""""""""
-" => Key Mappings: Normal/Instert
+" => Key Mappings: Normal/Insert
 """"""""""""""""""""""""""""""""""
 let mapleader = " "
 

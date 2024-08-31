@@ -27,7 +27,6 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'maxbrunsfeld/vim-yankstack'                                         " Turns default register into a stack
     Plug 'mhinz/vim-startify'                                                 " Start screen
     Plug 'neoclide/coc.nvim', {'branch': 'release'}                           " Code completion
-    Plug 'nvim-lua/plenary.nvim'                                              " Dependency (diffview.vim)
     Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}               " LSP
     Plug 'romgrk/barbar.nvim'                                                 " Tabline
     Plug 'kyazdani42/nvim-web-devicons'                                       " Coloured file type icons
@@ -272,6 +271,24 @@ function! s:show_hover_doc()
 endfunction
 
 autocmd CursorHold * :call <SID>show_hover_doc()
+
+" Bemol (Amazon Java)
+au FileType java call SetWorkspaceFolders()
+
+function! SetWorkspaceFolders() abort
+    " Only set g:WorkspaceFolders if it is not already set
+    if exists("g:WorkspaceFolders") | return | endif
+
+    if executable("findup")
+        let l:ws_dir = trim(system("cd '" . expand("%:h") . "' && findup packageInfo"))
+        " Bemol conveniently generates a '$WS_DIR/.bemol/ws_root_folders' file, so let's leverage it
+        let l:folders_file = l:ws_dir . "/.bemol/ws_root_folders"
+        if filereadable(l:folders_file)
+            let l:ws_folders = readfile(l:folders_file)
+            let g:WorkspaceFolders = filter(l:ws_folders, "isdirectory(v:val)")
+        endif
+    endif
+endfunction
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""
