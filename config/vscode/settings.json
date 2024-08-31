@@ -15,7 +15,6 @@
         "editor.codeActionsOnSave": {
             "source.fixAll.spotlessGradle": "explicit"
         },
-        "editor.defaultFormatter": "richardwillis.vscode-spotless-gradle",
         "files.trimTrailingWhitespace": false
     },
     "[html]": {
@@ -50,6 +49,8 @@
     "[yaml]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
+    "breadcrumbs.enabled": false,
+    "breadcrumbs.filePath": "last",
     "cSpell.language": "en-US",
     "diffEditor.experimental.showMoves": true,
     "diffEditor.hideUnchangedRegions.enabled": true,
@@ -120,7 +121,6 @@
     "git.supportCancellation": true,
     "gitblame.ignoreWhitespace": true,
     "gitblame.infoMessageFormat": "${commit.hash} ${commit.summary}",
-    "gitblame.inlineMessageEnabled": true,
     "gitblame.inlineMessageFormat": "${author.mail}: ${commit.summary} (${time.ago})",
     "gitblame.inlineMessageNoCommit": "Not committed yet",
     "gitblame.statusBarMessageFormat": "${author.name}: ${commit.hash,6} ${commit.summary} (${time.ago})",
@@ -129,9 +129,13 @@
     "java.debug.settings.showQualifiedNames": true,
     "java.import.gradle.enabled": false,
     "javascript.updateImportsOnFileMove.enabled": "always",
+    "liveServer.settings.donotShowInfoMsg": true,
     "python.languageServer": "Jedi",
     "redhat.telemetry.enabled": false,
     "remote.SSH.configFile": "/Users/brajit/.ssh/config",
+    "scm.defaultViewMode": "tree",
+    "scm.diffDecorationsIgnoreTrimWhitespace": "true",
+    "scm.repositories.visible": 20,
     "search.exclude": {
         "**/*.code-search": true,
         "**/bower_components": true,
@@ -148,23 +152,28 @@
     "telemetry.enableTelemetry": false,
     "telemetry.telemetryLevel": "off",
     "terminal.integrated.defaultProfile.osx": "zsh",
-    "terminal.integrated.enableMultiLinePasteWarning": false,
+    "terminal.integrated.enableMultiLinePasteWarning": "never",
     "terminal.integrated.fontFamily": "JetBrainsMono Nerd Font",
     "terminal.integrated.inheritEnv": true,
     "typescript.updateImportsOnFileMove.enabled": "always",
     "update.mode": "none",
     "viceroy.config.autoReloadWorkspaceFolders": false,
     "viceroy.config.beautyMode": false,
-    "viceroy.config.internal.lastUpdateTime": "2024-08-21T13:00:43.174Z",
-    "viceroy.config.lastVersion": "0.53.201754",
+    "viceroy.config.internal.lastUpdateTime": "2024-09-01T22:40:40.250Z",
+    "viceroy.config.lastVersion": "0.53.201768",
     "viceroy.config.notifyGlibcIssue": false,
     "viceroy.config.promptForWorkspaceMode": "alwaysMigrate",
     "viceroy.config.setUpCodeWhisperer": false,
     "viceroy.config.setup.amazonQ": false,
     "viceroy.doc.welcome.showAtStartup": false,
     "viceroy.workspaceSyncStrategy": "automatic",
+    "vim.enableNeovim": true,
+    "vim.neovimUseConfigFile": true,
+    "vim.useSystemClipboard": true,
+    "vim.vimrc.path": "$HOME/.config/nvim/init.vim",
     "vsicons.dontShowNewVersionMessage": true,
     "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+    "window.title": "\u200b",
     "workbench.colorCustomizations": {
         "[Gruvbox Dark Hard]": {
             "activityBar.background": "#000000",
@@ -181,6 +190,7 @@
     "workbench.colorTheme": "Gruvbox Dark Hard",
     "workbench.editor.enablePreview": false,
     "workbench.iconTheme": "vscode-icons",
+    "workbench.layoutControl.enabled": false,
     "yaml.customTags": [
         "!And",
         "!And sequence",
@@ -219,7 +229,7 @@
         "!SelectSequence"
     ],
     "yaml.schemas": {
-        "file:///local/home/brajit/.vscode-server/extensions/marklel.vscode-brazil-0.53.201754/assets/languages/rde/schema.json": "**/definition.yaml"
+        "file:///local/home/brajit/.vscode-server/extensions/marklel.vscode-brazil-0.53.201768/assets/languages/rde/schema.json": "**/definition.yaml"
     },
     "yaml.validate": true
 }

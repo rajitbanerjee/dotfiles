@@ -1,197 +1,281 @@
 [
-    { "key": "ctrl+left",  "command": "workbench.action.navigateBack" },
-    { "key": "ctrl+right", "command": "workbench.action.navigateForward" },
     {
-        "key": "cmd+l",
+        "command": "workbench.action.navigateBack",
+        "key": "ctrl+left"
+    },
+    {
+        "command": "workbench.action.navigateForward",
+        "key": "ctrl+right"
+    },
+    {
         "command": "-expandLineSelection",
+        "key": "cmd+l",
         "when": "textInputFocus"
     },
     {
-        "key": "shift+cmd+l",
         "command": "editor.action.formatDocument",
+        "key": "shift+cmd+l",
         "when": "editorHasDocumentFormattingProvider && editorTextFocus && !editorReadonly && !inCompositeEditor"
     },
     {
-        "key": "shift+alt+f",
         "command": "-editor.action.formatDocument",
+        "key": "shift+alt+f",
         "when": "editorHasDocumentFormattingProvider && editorTextFocus && !editorReadonly && !inCompositeEditor"
     },
     {
-        "key": "cmd+t",
-        "command": "-workbench.action.showAllSymbols"
+        "command": "-workbench.action.showAllSymbols",
+        "key": "cmd+t"
     },
     {
-        "key": "ctrl+t",
         "command": "workbench.action.terminal.toggleTerminal",
+        "key": "ctrl+t",
         "when": "terminal.active"
     },
     {
-        "key": "ctrl+`",
         "command": "-workbench.action.terminal.toggleTerminal",
+        "key": "ctrl+`",
         "when": "terminal.active"
     },
     {
-        "key": "tab",
         "command": "-insertNextSuggestion",
+        "key": "tab",
         "when": "hasOtherSuggestions && textInputFocus && textInputFocus && !inSnippetMode && !suggestWidgetVisible && config.editor.tabCompletion == 'on'"
     },
     {
-        "key": "tab",
         "command": "-insertBestCompletion",
+        "key": "tab",
         "when": "atEndOfWord && textInputFocus && !hasOtherSuggestions && !inSnippetMode && !suggestWidgetVisible && config.editor.tabCompletion == 'on'"
     },
     {
-        "key": "tab",
         "command": "-insertSnippet",
+        "key": "tab",
         "when": "editorTextFocus && hasSnippetCompletions && !editorTabMovesFocus && !inSnippetMode"
     },
     {
-        "key": "tab",
         "command": "-editor.action.inlineSuggest.commit",
+        "key": "tab",
         "when": "inlineSuggestionVisible && !editorTabMovesFocus && !inlineSuggestionHasIndentation"
     },
     {
-        "key": "tab",
         "command": "-acceptSelectedSuggestion",
+        "key": "tab",
         "when": "suggestWidgetVisible && textInputFocus"
     },
     {
-        "key": "tab",
         "command": "selectNextSuggestion",
+        "key": "tab",
         "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus"
     },
     {
-        "key": "ctrl+n",
         "command": "-selectNextSuggestion",
+        "key": "ctrl+n",
         "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus"
     },
     {
-        "key": "shift+tab",
         "command": "selectPrevSuggestion",
+        "key": "shift+tab",
         "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus"
     },
     {
-        "key": "ctrl+p",
         "command": "-selectPrevSuggestion",
+        "key": "ctrl+p",
         "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus"
     },
     {
-        "key": "ctrl+t",
         "command": "-editor.action.transposeLetters",
+        "key": "ctrl+t",
         "when": "textInputFocus && !editorReadonly"
     },
     {
-        "key": "shift+cmd+l",
         "command": "editor.action.formatDocument.none",
+        "key": "shift+cmd+l",
         "when": "editorTextFocus && !editorHasDocumentFormattingProvider && !editorReadonly"
     },
     {
-        "key": "shift+alt+f",
         "command": "-editor.action.formatDocument.none",
+        "key": "shift+alt+f",
         "when": "editorTextFocus && !editorHasDocumentFormattingProvider && !editorReadonly"
     },
     {
-        "key": "cmd+o",
         "command": "-workbench.action.files.openFile",
+        "key": "cmd+o",
         "when": "false"
     },
     {
-        "key": "cmd+o",
         "command": "-workbench.action.files.openFileFolder",
+        "key": "cmd+o",
         "when": "isMacNative && openFolderWorkspaceSupport"
     },
     {
-        "key": "cmd+o",
         "command": "-workbench.action.files.openLocalFileFolder",
+        "key": "cmd+o",
         "when": "remoteFileDialogVisible"
     },
     {
-        "key": "cmd+o",
         "command": "editor.action.organizeImports",
+        "key": "cmd+o",
         "when": "editorTextFocus && !editorReadonly && supportedCodeAction =~ /(\\s|^)source\\.organizeImports\\b/"
     },
     {
-        "key": "shift+alt+o",
         "command": "-editor.action.organizeImports",
+        "key": "shift+alt+o",
         "when": "editorTextFocus && !editorReadonly && supportedCodeAction =~ /(\\s|^)source\\.organizeImports\\b/"
     },
     {
-        "key": "shift+cmd+l",
         "command": "-addCursorsAtSearchResults",
+        "key": "shift+cmd+l",
         "when": "fileMatchOrMatchFocus && searchViewletVisible"
     },
     {
-        "key": "shift+cmd+l",
         "command": "-editor.action.selectHighlights",
+        "key": "shift+cmd+l",
         "when": "editorFocus"
     },
     {
-        "key": "shift+cmd+l",
         "command": "-selectAllSearchEditorMatches",
+        "key": "shift+cmd+l",
         "when": "inSearchEditor"
     },
     {
-        "key": "cmd+l",
         "command": "editor.action.formatSelection",
+        "key": "cmd+l",
         "when": "editorHasDocumentSelectionFormattingProvider && editorTextFocus && !editorReadonly"
     },
     {
-        "key": "cmd+k cmd+f",
         "command": "-editor.action.formatSelection",
+        "key": "cmd+k cmd+f",
         "when": "editorHasDocumentSelectionFormattingProvider && editorTextFocus && !editorReadonly"
     },
     {
+        "command": "-editor.action.triggerSuggest",
         "key": "ctrl+space",
-        "command": "-editor.action.triggerSuggest",
         "when": "editorHasCompletionItemProvider && textInputFocus && !editorReadonly && !suggestWidgetVisible"
     },
     {
+        "command": "-editor.action.triggerSuggest",
         "key": "alt+escape",
-        "command": "-editor.action.triggerSuggest",
         "when": "editorHasCompletionItemProvider && textInputFocus && !editorReadonly && !suggestWidgetVisible"
     },
     {
+        "command": "-editor.action.triggerSuggest",
         "key": "cmd+i",
-        "command": "-editor.action.triggerSuggest",
         "when": "editorHasCompletionItemProvider && textInputFocus && !editorReadonly && !suggestWidgetVisible"
     },
     {
-        "key": "shift+cmd+space",
         "command": "-editor.action.triggerParameterHints",
+        "key": "shift+cmd+space",
         "when": "editorHasSignatureHelpProvider && editorTextFocus"
     },
     {
-        "key": "ctrl+tab",
-        "command": "editor.action.triggerSuggest"
+        "command": "editor.action.triggerSuggest",
+        "key": "ctrl+tab"
     },
     {
-        "key": "ctrl+tab",
         "command": "-workbench.action.quickOpenPreviousRecentlyUsedEditorInGroup",
+        "key": "ctrl+tab",
         "when": "!activeEditorGroupEmpty"
     },
     {
-        "key": "ctrl+tab",
         "command": "-workbench.action.quickOpenNavigateNextInEditorPicker",
+        "key": "ctrl+tab",
         "when": "inEditorsPicker && inQuickOpen"
     },
     {
-        "key": "cmd+b",
         "command": "-markdown.extension.editing.toggleBold",
+        "key": "cmd+b",
         "when": "editorTextFocus && !editorReadonly && editorLangId =~ /^markdown$|^rmd$|^quarto$/"
     },
     {
-        "key": "shift+cmd+b",
         "command": "-workbench.action.tasks.build",
+        "key": "shift+cmd+b",
         "when": "taskCommandsRegistered"
     },
     {
-        "key": "shift+cmd+b",
         "command": "bookmarks.toggle",
+        "key": "shift+cmd+b",
         "when": "editorTextFocus"
     },
     {
-        "key": "alt+cmd+k",
         "command": "-bookmarks.toggle",
+        "key": "alt+cmd+k",
         "when": "editorTextFocus"
+    },
+    {
+        "command": "workbench.action.toggleSidebarVisibility",
+        "key": "cmd+e"
+    },
+    {
+        "command": "-workbench.action.toggleSidebarVisibility",
+        "key": "cmd+b"
+    },
+    {
+        "command": "-editor.action.toggleScreenReaderAccessibilityMode",
+        "key": "cmd+e",
+        "when": "accessibilityHelpIsShown"
+    },
+    {
+        "command": "-actions.findWithSelection",
+        "key": "cmd+e"
+    },
+    {
+        "command": "keybindings.editor.searchKeybindings",
+        "key": "shift+cmd+f",
+        "when": "inKeybindings"
+    },
+    {
+        "command": "-keybindings.editor.searchKeybindings",
+        "key": "cmd+f",
+        "when": "inKeybindings"
+    },
+    {
+        "command": "workbench.files.action.focusFilesExplorer",
+        "key": "ctrl+h"
+    },
+    {
+        "command": "-deleteLeft",
+        "key": "ctrl+h",
+        "when": "textInputFocus"
+    },
+    {
+        "command": "-rest-client.history",
+        "key": "alt+cmd+h"
+    },
+    {
+        "command": "-workbench.action.chat.newChat",
+        "key": "ctrl+l",
+        "when": "chatIsEnabled && inChat"
+    },
+    {
+        "command": "-notebook.centerActiveCell",
+        "key": "ctrl+l",
+        "when": "notebookEditorFocused"
+    },
+    {
+        "command": "workbench.action.focusFirstEditorGroup",
+        "key": "ctrl+l"
+    },
+    {
+        "command": "-workbench.action.focusFirstEditorGroup",
+        "key": "cmd+1"
+    },
+    {
+        "command": "workbench.action.focusRightGroup",
+        "key": "alt+l"
+    },
+    {
+        "command": "-workbench.action.focusRightGroup",
+        "key": "cmd+k cmd+right"
+    },
+    {
+        "command": "-git.viewFileHistory",
+        "key": "alt+h"
+    },
+    {
+        "command": "workbench.action.focusLeftGroup",
+        "key": "alt+h"
+    },
+    {
+        "command": "-workbench.action.focusLeftGroup",
+        "key": "cmd+k cmd+left"
     }
 ]

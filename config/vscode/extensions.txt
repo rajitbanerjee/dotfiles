@@ -11,6 +11,7 @@ esbenp.prettier-vscode
 fabianlauer.vs-code-xml-format
 foxundermoon.shell-format
 golang.go
+graphql.vscode-graphql-syntax
 gruntfuggly.todo-tree
 hediet.vscode-drawio
 humao.rest-client
@@ -48,6 +49,7 @@ vscjava.vscode-java-test
 vscjava.vscode-lombok
 vscjava.vscode-maven
 vscode-icons-team.vscode-icons
+vscodevim.vim
 waderyan.gitblame
 wakatime.vscode-wakatime
 yzhang.markdown-all-in-one
