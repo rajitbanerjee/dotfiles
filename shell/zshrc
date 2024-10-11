@@ -137,9 +137,7 @@ alias mv="mv -i"
 alias sizer="du -h * | sort -hr | less"
 
 # eza (a modern replacement for ls)
-alias l='eza -l --icons -h --git --no-user'
-alias la='l -a'
-alias ll='ls -lh'
+alias l='eza -la --icons -h --git --no-user'
 alias ls='eza'
 alias lt='eza -T -L'
 alias sl="ls"
