@@ -81,6 +81,7 @@ Linux)
 
     # Go
     export PATH=$PATH:/usr/local/go/bin
+    export BGO_WORKSPACE_PKGS_ENABLED=1
     ;;
 esac
 
