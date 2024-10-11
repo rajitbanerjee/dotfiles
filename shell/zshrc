@@ -125,6 +125,7 @@ Linux)
     ;;
 esac
 alias bb="brazil-build"
+alias gobb="BGO_WORKSPACE_PKGS_ENABLED=1 brazil-build release"
 alias bbb="/apollo/env/envImprovement/bin/brazil-recursive-cmd-parallel --allPackages brazil-build"
 alias bws="brazil ws"
 alias bwsm="brazil ws sync -md"
