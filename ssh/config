@@ -6,7 +6,6 @@ Host git.amazon.com
 	Port 2222
 	IdentityFile ~/.ssh/id_ecdsa
 	IdentitiesOnly yes
-	GSSAPIAuthentication no
 	PubkeyAuthentication yes
 	ForwardX11 no
 
