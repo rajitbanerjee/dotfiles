@@ -38,7 +38,7 @@
         "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
     "[typescript]": {
-        "editor.defaultFormatter": "vscode.typescript-language-features"
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
     "[typescriptreact]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
@@ -49,12 +49,9 @@
     "[yaml]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
-    "breadcrumbs.enabled": false,
-    "breadcrumbs.filePath": "last",
     "cSpell.language": "en-US",
     "diffEditor.experimental.showMoves": true,
     "diffEditor.hideUnchangedRegions.enabled": true,
-    "diffEditor.ignoreTrimWhitespace": true,
     "editor.accessibilitySupport": "off",
     "editor.codeLensFontFamily": "JetBrainsMono Nerd Font",
     "editor.find.cursorMoveOnType": false,
@@ -77,37 +74,37 @@
     },
     "files.autoSave": "afterDelay",
     "files.exclude": {
+        ".viceroy": true,
+        "apollo-overrides": true,
+        "release-info": true,
+        "src/*/build": false,
+        "build": false,
+        "env": true,
+        "packageInfo*": true,
+        ".bemol": true,
+        "**/.git": true,
+        "**/.svn": true,
+        "**/.hg": true,
+        "**/CVS": true,
+        "**/.DS_Store": true,
+        "**/Thumbs.db": true,
         "**/*.aux": true,
         "**/*.bcf": true,
         "**/*.iml": true,
         "**/*.run.xml": true,
         "**/*.synctex.gz": true,
-        "**/.DS_Store": true,
         "**/.classpath": true,
         "**/.factorypath": true,
-        "**/.git": true,
-        "**/.hg": true,
         "**/.idea": true,
         "**/.project": true,
-        "**/.settings": true,
-        "**/.svn": true,
-        "**/CVS": true,
-        "**/Thumbs.db": true,
-        ".bemol": true,
-        ".viceroy": true,
-        "apollo-overrides": true,
-        "build": false,
-        "env": true,
-        "packageInfo*": true,
-        "release-info": true,
-        "src/*/build": false
+        "**/.settings": true
     },
     "files.watcherExclude": {
+        "**/build/**": true,
         "**/.git/objects/**": true,
         "**/.git/subtree-cache/**": true,
-        "**/.hg/store/**": true,
-        "**/build/**": true,
-        "**/node_modules/*/**": true
+        "**/node_modules/*/**": true,
+        "**/.hg/store/**": true
     },
     "git-graph.maxDepthOfRepoSearch": 4,
     "git.autofetch": true,
@@ -137,12 +134,12 @@
     "scm.diffDecorationsIgnoreTrimWhitespace": "true",
     "scm.repositories.visible": 20,
     "search.exclude": {
-        "**/*.code-search": true,
-        "**/bower_components": true,
-        "**/node_modules": true,
-        "build": true,
         "env": true,
-        "src/*/build": true
+        "src/*/build": true,
+        "build": true,
+        "**/node_modules": true,
+        "**/bower_components": true,
+        "**/*.code-search": true
     },
     "search.useGlobalIgnoreFiles": true,
     "search.useParentIgnoreFiles": true,
@@ -159,8 +156,8 @@
     "update.mode": "none",
     "viceroy.config.autoReloadWorkspaceFolders": false,
     "viceroy.config.beautyMode": false,
-    "viceroy.config.internal.lastUpdateTime": "2024-09-01T22:40:40.250Z",
-    "viceroy.config.lastVersion": "0.53.201768",
+    "viceroy.config.internal.lastUpdateTime": "2024-10-14T09:03:34.005Z",
+    "viceroy.config.lastVersion": "0.53.201780",
     "viceroy.config.notifyGlibcIssue": false,
     "viceroy.config.promptForWorkspaceMode": "alwaysMigrate",
     "viceroy.config.setUpCodeWhisperer": false,
@@ -173,7 +170,6 @@
     "vim.vimrc.path": "$HOME/.config/nvim/init.vim",
     "vsicons.dontShowNewVersionMessage": true,
     "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
-    "window.title": "\u200b",
     "workbench.colorCustomizations": {
         "[Gruvbox Dark Hard]": {
             "activityBar.background": "#000000",
@@ -229,7 +225,11 @@
         "!SelectSequence"
     ],
     "yaml.schemas": {
-        "file:///local/home/brajit/.vscode-server/extensions/marklel.vscode-brazil-0.53.201768/assets/languages/rde/schema.json": "**/definition.yaml"
+        "file:///local/home/brajit/.vscode-server/extensions/marklel.vscode-brazil-0.53.201780/assets/languages/rde/schema.json": "**/definition.yaml"
     },
-    "yaml.validate": true
+    "yaml.validate": true,
+    "amazonQ.suppressPrompts": {
+        "codeWhispererConnectionExpired": true
+    },
+    "diffEditor.ignoreTrimWhitespace": false
 }
