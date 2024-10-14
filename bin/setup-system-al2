@@ -73,7 +73,6 @@ fi
 
 # Java
 echo -e "\n\nJava:\n"
-sudo yum install java-11-amazon-corretto
 sudo yum install java-17-amazon-corretto
 mkdir -p ~/.local/lib
 wget "https://projectlombok.org/downloads/lombok.jar" -O ~/.local/lib/lombok.jar
@@ -93,9 +92,18 @@ sudo chown -R ${USER}:amazon /workplace/${USER}
 ln -s /workplace/${USER} ~/workplace
 
 brew install awscli
+toolbox install awscurl
 toolbox install brazilcli
 toolbox install barium
+toolbox install bemol
+toolbox install batscli
+toolbox install hydra
+toolbox install gordian-knot
 toolbox install cr
+toolbox install axe
+toolbox install create
+toolbox registry add s3://buildertoolbox-registry-hub-create-us-west-2/tools.json
+toolbox install hub-create
 toolbox registry add s3://buildertoolbox-registry-isengard-cli-us-west-2/tools.json
 toolbox install isengard-cli
 
