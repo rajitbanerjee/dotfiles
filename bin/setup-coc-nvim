@@ -15,6 +15,7 @@ npm install \
     coc-css \
     coc-explorer \
     coc-floatinput \
+    coc-go \
     coc-highlight \
     coc-html \
     coc-java \
