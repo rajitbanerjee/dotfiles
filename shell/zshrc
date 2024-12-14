@@ -79,7 +79,8 @@ Linux)
     export PATH="$JAVA_HOME/bin":$PATH
 
     # Go
-    export PATH=$PATH:/usr/local/go/bin
+    export GOPATH=$HOME/go
+    export PATH=$PATH:$GOPATH/bin
     export BGO_WORKSPACE_PKGS_ENABLED=1
     ;;
 esac
