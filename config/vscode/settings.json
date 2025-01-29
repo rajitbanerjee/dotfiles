@@ -51,7 +51,6 @@
     },
     "cSpell.language": "en-US",
     "diffEditor.experimental.showMoves": true,
-    "diffEditor.hideUnchangedRegions.enabled": true,
     "editor.accessibilitySupport": "off",
     "editor.codeLensFontFamily": "JetBrainsMono Nerd Font",
     "editor.find.cursorMoveOnType": false,
@@ -103,8 +102,8 @@
         "**/build/**": true,
         "**/.git/objects/**": true,
         "**/.git/subtree-cache/**": true,
-        "**/node_modules/*/**": true,
-        "**/.hg/store/**": true
+        "**/.hg/store/**": true,
+        "**/node_modules/*/**": true
     },
     "git-graph.maxDepthOfRepoSearch": 4,
     "git.autofetch": true,
@@ -156,8 +155,8 @@
     "update.mode": "none",
     "viceroy.config.autoReloadWorkspaceFolders": false,
     "viceroy.config.beautyMode": false,
-    "viceroy.config.internal.lastUpdateTime": "2024-10-14T09:03:34.005Z",
-    "viceroy.config.lastVersion": "0.53.201780",
+    "viceroy.config.internal.lastUpdateTime": "2025-01-29T15:32:54.473Z",
+    "viceroy.config.lastVersion": "0.53.201854",
     "viceroy.config.notifyGlibcIssue": false,
     "viceroy.config.promptForWorkspaceMode": "alwaysMigrate",
     "viceroy.config.setUpCodeWhisperer": false,
@@ -225,11 +224,18 @@
         "!SelectSequence"
     ],
     "yaml.schemas": {
-        "file:///local/home/brajit/.vscode-server/extensions/marklel.vscode-brazil-0.53.201780/assets/languages/rde/schema.json": "**/definition.yaml"
+        "file:///local/home/brajit/.vscode-server/extensions/marklel.vscode-brazil-0.53.201854/assets/languages/rde/schema.json": "**/definition.yaml"
     },
     "yaml.validate": true,
     "amazonQ.suppressPrompts": {
         "codeWhispererConnectionExpired": true
     },
-    "diffEditor.ignoreTrimWhitespace": false
+    "diffEditor.ignoreTrimWhitespace": false,
+    "workbench.settings.enableNaturalLanguageSearch": false,
+    "workbench.commandPalette.experimental.enableNaturalLanguageSearch": false,
+    "viceroy.__workspace__": {
+        
+    },
+    "diffEditor.hideUnchangedRegions.enabled": true,
+    "viceroy.config.notifyMarchAL2Incompatibility": false
 }

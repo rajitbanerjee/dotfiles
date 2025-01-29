@@ -252,7 +252,7 @@ node-isengard-update() {
     cd $NODE_ISENGARD_PATH
     git pull
     cd -
-    login-aws-codeartifact
+    codeartifact
     npm i -g @amzn/node-isengard
     node-isengard -v
     node-isengard -h
