@@ -2,10 +2,10 @@
   "dataview",
   "nldates-obsidian",
   "obsidian-checklist-plugin",
-  "obsidian-git",
   "obsidian-reminder-plugin",
   "cm-editor-syntax-highlight-obsidian",
   "templater-obsidian",
   "code-block-plugin",
-  "obsidian-plugin-prettier"
+  "obsidian-plugin-prettier",
+  "obsidian-excalidraw-plugin"
 ]
