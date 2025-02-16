@@ -11,6 +11,7 @@ let g:ale_disable_lsp = 1
 
 call plug#begin('~/.config/nvim/autoload/plugged')
 
+    Plug '907th/vim-auto-save'                                                " Auto file saving
     Plug 'airblade/vim-gitgutter'                                             " Git changes shown in column
     Plug 'alvan/vim-closetag'                                                 " Autoclose tags (e.g. XML)
     Plug 'BurntSushi/ripgrep'                                                 " Dependency (fzf.vim)
@@ -23,13 +24,13 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'junegunn/fzf', {'do': { -> fzf#install() }}                         " Dependency (fzf.vim) 
     Plug 'junegunn/fzf.vim'                                                   " Fuzzy finder
     Plug 'junegunn/goyo.vim'                                                  " Zen mode
-    Plug 'lambdalisue/glyph-palette.vim'                                      " Universal palette for Nerd Fonts
     Plug 'maxbrunsfeld/vim-yankstack'                                         " Turns default register into a stack
     Plug 'mhinz/vim-startify'                                                 " Start screen
     Plug 'neoclide/coc.nvim', {'branch': 'release'}                           " Code completion
     Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}               " LSP
     Plug 'romgrk/barbar.nvim'                                                 " Tabline
     Plug 'kyazdani42/nvim-web-devicons'                                       " Coloured file type icons
+    Plug 'sindrets/diffview.nvim'                                             " Git diff
     Plug 'tpope/vim-commentary'                                               " Code commenting
     Plug 'tpope/vim-fugitive'                                                 " Git wrapper
     Plug 'tpope/vim-repeat'                                                   " Enables . for plugins
@@ -41,25 +42,25 @@ call plug#begin('~/.config/nvim/autoload/plugged')
 
 call plug#end()
 
+""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => 907th/vim-auto-save
+""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:auto_save = 1
+let g:auto_save_silent = 1
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => alvan/vim-closetag
-"""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:closetag_filenames = '*.html,*.xhtml,*.phtml,*.xml,*.jsx,*.tsx'
 let g:closetag_regions =  {
 \ 'typescript.tsx': 'jsxRegion,tsxRegion',
 \ 'javascript.jsx': 'jsxRegion',
 \ }
 
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => dense-analysis/ale 
-"""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:ale_linters = { 
-  \ 'python': ['flake8', 'mypy'], 
-  \ 'latex': ['chktex'], 
-  \ 'sh': ['shellcheck'],
-  \ }
+""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:ale_fixers = { 
   \ '*': ['prettier'],
   \ 'python': ['autopep8', 'isort'], 
@@ -68,40 +69,15 @@ let g:ale_fixers = {
   \ 'tex': ['latexindent'],
   \ 'xml': ['xmllint'],
   \ }
-
-" Code formatting
-nnoremap <silent><leader>l :ALEFix<CR>
-function _AleVisualSelection()
-    normal! gvy
-    vs tmp
-    normal!p
-    ALEFix
-    normal! ggVG
-    sleep 300m
-endfunc
-vnoremap <silent><leader>l <Esc>:call _AleVisualSelection()<CR>y:q!<CR>gvp
-
 let g:ale_java_google_java_format_options = '--aosp'
 let g:ale_fix_on_save = 0
 
-" Disabling highlighting
-let g:ale_set_highlights = 0
-
-" Only run linting when saving the file
-let g:ale_lint_on_text_changed = 'never'
-let g:ale_lint_on_enter = 0
-
-" Arrows are too bold, use dots instead
-let g:ale_sign_info= "•"
-let g:ale_sign_error = "•"
-let g:ale_sign_warning = "•"
-let g:ale_sign_style_error = "•"
-let g:ale_sign_style_warning = "•"
+nnoremap <silent><leader>l :ALEFix<CR>
 
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => edkolev/tmuxline.vim
-"""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:tmuxline_powerline_separators = 0
 let g:tmuxline_separators = {
     \ 'left' : '',
@@ -111,9 +87,9 @@ let g:tmuxline_separators = {
     \ 'space' : ' '}
 
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => gruvbox-community/gruvbox
-"""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Custom background overrides ("grubvox black")
 let g:gruvbox_colors = {
     \ 'bg0': '#000000',
@@ -128,17 +104,17 @@ catch
 endtry
 
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => jesseleite/vim-agriculture
-"""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""
 nnoremap <leader>/ <Plug>RgRawSearch
 vnoremap / <Plug>RgRawVisualSelection<CR>
 nnoremap * <Plug>RgRawWordUnderCursor<CR>
     
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => junegunn/fzf.vim
-"""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.9 } }
 let g:fzf_preview_window = ['right:50%']
 let $FZF_DEFAULT_OPTS = '--reverse --bind ctrl-a:select-all'
@@ -161,9 +137,9 @@ let g:fzf_action = {
   \ 'ctrl-s': 'vsplit' }
 
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => junegunn/goyo.vim
-"""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""
 nnoremap <silent> <leader>z :Goyo<CR>
 
 let g:goyo_width = "60%"
@@ -184,27 +160,18 @@ function! s:goyo_leave()
 endfunction
 
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""
-" => lambdalisue/glyph-palette.vim
-"""""""""""""""""""""""""""""""""""""""""""""""""""
-augroup my-glyph-palette
-  autocmd! *
-  autocmd FileType startify,coc-explorer call glyph_palette#apply()
-augroup END
-
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => maxbrunsfeld/vim-yankstack
-"""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:yankstack_yank_keys = ['y', 'd']
 
 nmap <C-p> <Plug>yankstack_substitute_older_paste
 nmap <C-n> <Plug>yankstack_substitute_newer_paste
 
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => mhinz/vim-startify
-"""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:startify_change_to_dir = 0
 let g:startify_change_to_vcs_root = 1
 let g:startify_session_before_save = [ 'silent! CocCommand explorer<CR>' ]
@@ -223,9 +190,9 @@ let g:startify_lists = [
     \ ]
 
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => neoclide/coc.nvim
-"""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""
 nnoremap <silent> <nowait> <leader>e  :<C-u>CocCommand explorer<CR>
 nnoremap <silent> <nowait> <leader>o  :<C-u>CocCommand editor.action.organizeImport<CR>
 nnoremap <silent> <nowait> <leader>cm  :<C-u>CocList commands<CR>
@@ -253,11 +220,11 @@ hi CocMenuSel ctermbg=109 guibg=#13354A
 nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gr <Plug>(coc-references)
+nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> <leader>; <Plug>(coc-floatinput-command)
 nmap <silent> <leader>c; <Plug>(coc-floatinput-coc-command)
 nmap <silent> <leader>r <Plug>(coc-floatinput-rename)
 nmap <leader>ac <Plug>(coc-codeaction)
-nmap <leader>qf :<C-u>CocFix<CR>
 
 function! ShowDocIfNoDiagnostic(timer_id)
     " buftype= (empty) is a normal buffer [e.g. don't check for hover on buftype=nowrite]
@@ -291,9 +258,9 @@ function! SetWorkspaceFolders() abort
 endfunction
 
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => nvim-treesitter/nvim-treesitter
-"""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""
 lua <<EOF
 require 'nvim-treesitter.configs'.setup {
   -- A list of parser names, or "all"
@@ -309,9 +276,15 @@ set foldmethod=expr
 set foldexpr=nvim_treesitter#foldexpr()
 
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => sindrets/diffview.nvim
+""""""""""""""""""""""""""""""""""""""""""""""""""""
+nnoremap <leader>d :DiffviewOpen<CR>
+
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => vim-airline/vim-airline,vim-airline-themes
-"""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:airline#extensions#whitespace#enabled = 0
 let g:airline_theme = 'gruvbox'
 let g:airline_section_c = ''
@@ -333,9 +306,9 @@ let g:airline_symbols.colnr = ' '
 let g:airline_symbols.dirty=''
 
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => yuttie/comfortable-motion.vim
-"""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:comfortable_motion_no_default_key_mappings = 1
 
 nnoremap <silent> <leader>j :call comfortable_motion#flick(150)<CR>

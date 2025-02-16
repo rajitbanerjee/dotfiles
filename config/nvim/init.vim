@@ -21,7 +21,7 @@ set mouse=a
 syntax enable
 set ffs=unix,dos,mac
 set whichwrap+=<,>,h,l
-set smartcase
+set ignorecase
 set lazyredraw " Don't redraw when executing macros
 set magic " Simplify regex
 set inccommand=split " Live substition 
@@ -35,6 +35,9 @@ set expandtab tabstop=4 shiftwidth=4 " Use spaces (width 4) instead of tab
 set list listchars=tab:»\ ,lead:·,trail:.
 
 filetype plugin indent on
+
+" Set text as default filetype
+autocmd BufEnter * if &filetype == "" | setlocal ft=text | endif
 
 " Return to last edit position when opening files
 au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
@@ -63,9 +66,6 @@ if has('persistent_undo')
     let &undodir = target_path
     set undofile
 endif
-
-" AWS
-au BufReadPost,BufNewFile Config setf brazil-config
 
 
 """"""""""""""""""""""""""""""""""

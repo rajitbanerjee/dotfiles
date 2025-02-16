@@ -12,7 +12,7 @@
     "explorer.icon.source": "nvim-web-devicons",
     "explorer.keyMappings.global": {
         "*": "toggleSelection",
-        "<2-LeftMouse>": ["expandable?", ["expanded?", "collapse", "expand"], "open"   ],   
+        "<2-LeftMouse>": ["expandable?", ["expanded?", "collapse", "expand"], "open"],
         "<<": "gitStage",
         "<cr>": ["wait", "expandable?", "cd", "open"],
         "<esc>": "esc",
@@ -59,6 +59,10 @@
         }
     ],
     "explorer.width": 50,
+    "floatFactory.floatConfig": {
+        "border": true,
+        "rounded": true
+    },
     "java.autobuild.enabled": false,
     "java.jdt.ls.vmargs": "-javaagent:/home/brajit/.local/lib/lombok.jar",
     "languageserver": {
@@ -67,7 +71,7 @@
             "filetypes": ["brazil-config"]
         }
     },
-    "typescript.updateImportsOnFileMove.enable": true,
+    "typescript.updateImportsOnFileMove.enabled": "always",
     "yaml.customTags": [
         "!And",
         "!And sequence",
