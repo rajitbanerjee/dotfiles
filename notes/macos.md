@@ -4,9 +4,6 @@ Current MacOS tools used regularly.
 
 ## Tools
 
-- Notes
-    - [Obsidian](https://obsidian.md/)
-    - [Notion](https://www.notion.so/product?fredir=1)
 - [Bitwarden](https://bitwarden.com): Password manager
 - [Mos](https://mos.caldis.me/): Smooth and inverted scrolling for external mice.
   - General Settings
@@ -34,8 +31,6 @@ Current MacOS tools used regularly.
     - Bitwarden
 - Terminal
   - [Alacritty](https://github.com/alacritty/alacritty)
-  - [iTerm2](https://iterm2.com)
-    - [Colour schemes](https://github.com/mbadolato/iTerm2-Color-Schemes)
 - [Homebrew](https://brew.sh): Package manager
   - Installed using Rosetta 2, hence all packages are in `/usr/local/Cellar/`.
 - [VS Code](https://code.visualstudio.com): Primary editor
