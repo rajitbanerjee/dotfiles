@@ -49,8 +49,13 @@
     "[yaml]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
+    "amazonQ.suppressPrompts": {
+        "codeWhispererConnectionExpired": true
+    },
     "cSpell.language": "en-US",
     "diffEditor.experimental.showMoves": true,
+    "diffEditor.hideUnchangedRegions.enabled": true,
+    "diffEditor.ignoreTrimWhitespace": false,
     "editor.accessibilitySupport": "off",
     "editor.codeLensFontFamily": "JetBrainsMono Nerd Font",
     "editor.find.cursorMoveOnType": false,
@@ -73,36 +78,36 @@
     },
     "files.autoSave": "afterDelay",
     "files.exclude": {
-        ".viceroy": true,
-        "apollo-overrides": true,
-        "release-info": true,
-        "src/*/build": false,
-        "build": false,
-        "env": true,
-        "packageInfo*": true,
-        ".bemol": true,
-        "**/.git": true,
-        "**/.svn": true,
-        "**/.hg": true,
-        "**/CVS": true,
-        "**/.DS_Store": true,
-        "**/Thumbs.db": true,
         "**/*.aux": true,
         "**/*.bcf": true,
         "**/*.iml": true,
         "**/*.run.xml": true,
         "**/*.synctex.gz": true,
+        "**/.DS_Store": true,
         "**/.classpath": true,
         "**/.factorypath": true,
+        "**/.git": true,
+        "**/.hg": true,
         "**/.idea": true,
         "**/.project": true,
-        "**/.settings": true
+        "**/.settings": true,
+        "**/.svn": true,
+        "**/CVS": true,
+        "**/Thumbs.db": true,
+        ".bemol": true,
+        ".viceroy": true,
+        "apollo-overrides": true,
+        "build": false,
+        "env": true,
+        "packageInfo*": true,
+        "release-info": true,
+        "src/*/build": false
     },
     "files.watcherExclude": {
-        "**/build/**": true,
         "**/.git/objects/**": true,
         "**/.git/subtree-cache/**": true,
         "**/.hg/store/**": true,
+        "**/build/**": true,
         "**/node_modules/*/**": true
     },
     "git-graph.maxDepthOfRepoSearch": 4,
@@ -133,12 +138,12 @@
     "scm.diffDecorationsIgnoreTrimWhitespace": "true",
     "scm.repositories.visible": 20,
     "search.exclude": {
-        "env": true,
-        "src/*/build": true,
-        "build": true,
-        "**/node_modules": true,
+        "**/*.code-search": true,
         "**/bower_components": true,
-        "**/*.code-search": true
+        "**/node_modules": true,
+        "build": true,
+        "env": true,
+        "src/*/build": true
     },
     "search.useGlobalIgnoreFiles": true,
     "search.useParentIgnoreFiles": true,
@@ -153,11 +158,13 @@
     "terminal.integrated.inheritEnv": true,
     "typescript.updateImportsOnFileMove.enabled": "always",
     "update.mode": "none",
+    "viceroy.__workspace__": {},
     "viceroy.config.autoReloadWorkspaceFolders": false,
     "viceroy.config.beautyMode": false,
-    "viceroy.config.internal.lastUpdateTime": "2025-01-29T15:32:54.473Z",
-    "viceroy.config.lastVersion": "0.53.201854",
+    "viceroy.config.internal.lastUpdateTime": "2025-02-14T17:39:50.196Z",
+    "viceroy.config.lastVersion": "0.53.201856",
     "viceroy.config.notifyGlibcIssue": false,
+    "viceroy.config.notifyMarchAL2Incompatibility": false,
     "viceroy.config.promptForWorkspaceMode": "alwaysMigrate",
     "viceroy.config.setUpCodeWhisperer": false,
     "viceroy.config.setup.amazonQ": false,
@@ -183,9 +190,11 @@
         }
     },
     "workbench.colorTheme": "Gruvbox Dark Hard",
+    "workbench.commandPalette.experimental.enableNaturalLanguageSearch": false,
     "workbench.editor.enablePreview": false,
     "workbench.iconTheme": "vscode-icons",
     "workbench.layoutControl.enabled": false,
+    "workbench.settings.enableNaturalLanguageSearch": false,
     "yaml.customTags": [
         "!And",
         "!And sequence",
@@ -224,18 +233,7 @@
         "!SelectSequence"
     ],
     "yaml.schemas": {
-        "file:///local/home/brajit/.vscode-server/extensions/marklel.vscode-brazil-0.53.201854/assets/languages/rde/schema.json": "**/definition.yaml"
+        "file:///local/home/brajit/.vscode-server/extensions/marklel.vscode-brazil-0.53.201856/assets/languages/rde/schema.json": "**/definition.yaml"
     },
-    "yaml.validate": true,
-    "amazonQ.suppressPrompts": {
-        "codeWhispererConnectionExpired": true
-    },
-    "diffEditor.ignoreTrimWhitespace": false,
-    "workbench.settings.enableNaturalLanguageSearch": false,
-    "workbench.commandPalette.experimental.enableNaturalLanguageSearch": false,
-    "viceroy.__workspace__": {
-        
-    },
-    "diffEditor.hideUnchangedRegions.enabled": true,
-    "viceroy.config.notifyMarchAL2Incompatibility": false
+    "yaml.validate": true
 }

@@ -279,17 +279,17 @@
         "key": "cmd+k cmd+left"
     },
     {
-        "key": "alt",
-        "command": "workbench.action.toggleMultiCursorModifier"
+        "command": "workbench.action.toggleMultiCursorModifier",
+        "key": "alt"
     },
     {
-        "key": "alt+cmd+down",
         "command": "-extension.vim_cmd+alt+down",
+        "key": "alt+cmd+down",
         "when": "editorTextFocus && vim.active && !inDebugRepl"
     },
     {
-        "key": "alt+cmd+up",
         "command": "-extension.vim_cmd+alt+up",
+        "key": "alt+cmd+up",
         "when": "editorTextFocus && vim.active && !inDebugRepl"
     }
 ]
