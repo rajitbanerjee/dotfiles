@@ -1,24 +1,11 @@
 #!/bin/bash
 
 if [[ $(uname -n) == dev-dsk* ]]; then
-	# Step 1. Kerb
-	echo "Renewing Kerberos ticket (if possible)..."
-	kinit -R
-	kinitnew() { kinit -f -r 7d; }
-	if [[ ! $(klist | grep "ANT") ]] || [[ $(klist -l | grep "Expired") ]]; then
-		kinitnew
-	fi
-
-	# Step 2. Midway
 	echo "Generating Midway cookie..."
 	mwinit -s -o
-
 	echo "Done!"
 else
-	# Step 1. Midway
 	echo "Generating AEA Midway cookie..."
 	mwinit -f
-
-	# Step 2. SSH into Cloud Desktop
 	ssh devdesk
 fi
