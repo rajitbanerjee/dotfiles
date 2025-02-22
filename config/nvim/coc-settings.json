@@ -64,7 +64,7 @@
         "rounded": true
     },
     "java.autobuild.enabled": false,
-    "java.jdt.ls.vmargs": "-javaagent:/home/brajit/.local/lib/lombok.jar",
+    "java.jdt.ls.vmargs": "-javaagent:/home/brajit/.local/lib/lombok-1.18.36.jar",
     "languageserver": {
         "brazil-config": {
             "command": "barium",
