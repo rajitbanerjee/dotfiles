@@ -16,6 +16,6 @@ if [[ $1 == "" ]]; then
     exit 1
 fi
 
-git add $1
-git commit -m "Update submodule"
+git add "$1"
+git commit -m "chore: Update submodules"
 git push
