@@ -6,14 +6,14 @@
 	path = config/tmux/tpm
 	url = git@github.com:tmux-plugins/tpm
 [submodule "shell/zsh/custom/plugins/wakatime"]
-	path = shell/zsh/custom/plugins/wakatime
+	path = config/shell/zsh/custom/plugins/wakatime
 	url = git@github.com:sobolevn/wakatime-zsh-plugin
 [submodule "shell/zsh/custom/plugins/zsh-autosuggestions"]
-	path = shell/zsh/custom/plugins/zsh-autosuggestions
+	path = config/shell/zsh/custom/plugins/zsh-autosuggestions
 	url = git@github.com:zsh-users/zsh-autosuggestions
 [submodule "shell/zsh/custom/plugins/zsh-syntax-highlighting"]
-	path = shell/zsh/custom/plugins/zsh-syntax-highlighting
+	path = config/shell/zsh/custom/plugins/zsh-syntax-highlighting
 	url = git@github.com:zsh-users/zsh-syntax-highlighting
 [submodule "shell/zsh/custom/plugins/zsh-completions"]
-	path = shell/zsh/custom/plugins/zsh-completions
+	path = config/shell/zsh/custom/plugins/zsh-completions
 	url = git@github.com:zsh-users/zsh-completions

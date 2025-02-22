@@ -23,9 +23,9 @@
       path: config/obsidian
 
     # shell
-    ~/.bashrc: shell/bashrc
-    ~/.zsh: shell/zsh
-    ~/.zshrc: shell/zshrc
+    ~/.bashrc: config/shell/bashrc
+    ~/.zsh: config/shell/zsh
+    ~/.zshrc: config/shell/zshrc
 
     # git
     ~/.config/git/commit_message: git/commit_message
