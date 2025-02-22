@@ -9,6 +9,7 @@ git clone git@github.com:rajitbanerjee/dotfiles ~/.dotfiles
 mv ~/.gitconfig ~/.gitconfig_local
 rm -rf ~/.bashrc ~/.zshrc
 cd ~/.dotfiles && ./install
+git config user.email "rajitbanerjee15@gmail.com"
 exec $SHELL -l
 ```
 
