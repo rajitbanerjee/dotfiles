@@ -33,8 +33,8 @@
     ~/.gitconfig: git/gitconfig
 
     # tmux
-    ~/.tmux.conf: tmux/tmux.conf
-    ~/.tmux/plugins/tpm: tmux/tpm
+    ~/.tmux.conf: config/tmux/tmux.conf
+    ~/.tmux/plugins/tpm: config/tmux/tpm
 
     # ssh
     ~/.ssh/config:

@@ -3,7 +3,7 @@
 	url = git@github.com:anishathalye/dotbot
 	ignore = dirty
 [submodule "tpm"]
-	path = tmux/tpm
+	path = config/tmux/tpm
 	url = git@github.com:tmux-plugins/tpm
 [submodule "shell/zsh/custom/plugins/wakatime"]
 	path = shell/zsh/custom/plugins/wakatime
