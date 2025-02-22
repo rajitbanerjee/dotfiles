@@ -9,13 +9,11 @@ git clone git@github.com:rajitbanerjee/dotfiles ~/.dotfiles
 mv ~/.gitconfig ~/.gitconfig_local
 rm -rf ~/.bashrc ~/.zshrc
 cd ~/.dotfiles && ./install
-git config --global user.email "rajitbanerjee15@gmail.com"
 exec $SHELL -l
 ```
 
 ```shell
 setup-system-al2
-# setup-system-ubuntu
 # setup-system-mac
 setup-coc-nvim
 nvim
@@ -31,8 +29,8 @@ The following configurations are specific to the user `brajit`, and should be mo
 
 - [nvim/coc-settings.json](./config/nvim/coc-settings.json) (`"java.jdt.ls.vmargs": "-javaagent:/home/brajit/.local/lib/lombok.jar"`)
 - [vscode/settings.json](./config/vscode/settings.json) (`"remote.SSH.configFile": "/Users/brajit/.ssh/config"`)
-- [zshrc](./shell/zshrc) (`alias wp="cd /workplace/brajit"`)
-- [ssh/config](./ssh/config) (`Hostname`)
+- [zshrc](./config/shell/zshrc) (`alias wp="cd /workplace/brajit"`)
+- [ssh/config](./config/ssh/config) (`Hostname`)
 
 Create a new SSH key for GitHub access:
 

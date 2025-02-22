@@ -28,9 +28,9 @@
     ~/.zshrc: config/shell/zshrc
 
     # git
-    ~/.config/git/commit_message: git/commit_message
-    ~/.gitignore: git/gitignore_global
-    ~/.gitconfig: git/gitconfig
+    ~/.config/git/commit_message: config/git/commit_message
+    ~/.gitignore: config/git/gitignore_global
+    ~/.gitconfig: config/git/gitconfig
 
     # tmux
     ~/.tmux.conf: config/tmux/tmux.conf
@@ -39,7 +39,7 @@
     # ssh
     ~/.ssh/config:
       if: "[ `uname` = Darwin ]"
-      path: ssh/config
+      path: config/ssh/config
 
     # vscode
     ~/Library/Application Support/Code/User/settings.json:
