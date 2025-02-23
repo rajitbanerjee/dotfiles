@@ -23,7 +23,7 @@ return {
         "neoclide/coc.nvim",
         lazy = false,
         keys = {
-            { "<leader>e", ":<C-u>CocCommand explorer<CR>", noremap = true, silent = true, nowait = true },
+            -- { "<leader>e", ":<C-u>CocCommand explorer<CR>", noremap = true, silent = true, nowait = true },
             { "<leader>o", ":<C-u>CocCommand editor.action.organizeImport<CR>", noremap = true, silent = true, nowait = true },
             { "<leader>cm", ":<C-u>CocList commands<CR>", noremap = true, silent = true, nowait = true },
             { "<leader>a", ":<C-u>CocList diagnostics<CR>", noremap = true, silent = true, nowait = true },
