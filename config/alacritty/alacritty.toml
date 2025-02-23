@@ -32,5 +32,11 @@ size = 14.0
 family = "JetBrainsMono Nerd Font"
 
 [window]
-decorations = "full"
 startup_mode = "Maximized"
+decorations = "transparent"
+title = ""
+dynamic_title = false
+
+[window.padding]
+x = 10
+y = 30
