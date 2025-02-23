@@ -1,35 +1,52 @@
 return {
+    { "romgrk/barbar.nvim",      event = { "BufReadPre", "BufNewFile" } },
+    { "vimpostor/vim-tpipeline", lazy = false },
     {
-        "907th/vim-auto-save",
-        event = "BufReadPost",
+        "ellisonleao/gruvbox.nvim",
+        lazy = false,
+        priority = 1000,
         config = function()
-            vim.g.auto_save = 1
-            vim.g.auto_save_silent = 1
+            require("gruvbox").setup({
+                palette_overrides = {
+                    dark0 = "#000000",
+                    dark1 = "#111111",
+                    dark2 = "#222222",
+                    dark3 = "#333333",
+                    dark4 = "#444444",
+                }
+            })
+            vim.cmd.colorscheme "gruvbox"
         end,
     },
     {
-        "alvan/vim-closetag",
-        event = "BufReadPost",
+        "mhinz/vim-startify",
+        dependencies = { "tpope/vim-fugitive" },
         config = function()
-            vim.g.closetag_filenames = "*.html,*.xhtml,*.phtml,*.xml,*.jsx,*.tsx"
-            vim.g.closetag_regions = {
-                ["typescript.tsx"] = "jsxRegion,tsxRegion",
-                ["javascript.jsx"] = "jsxRegion",
+            vim.g.startify_change_to_dir = 0
+            vim.g.startify_change_to_vcs_root = 1
+
+            local function list_commits()
+                local git = 'git'
+                local handle = io.popen(git .. ' log --oneline | head -n10')
+                if not handle then return {} end
+                local result = handle:read('*a')
+                handle:close()
+
+                local commits = {}
+                for line in result:gmatch("(.-)\n") do
+                    local hash = line:match("^(%x+)")
+                    local msg = line:match("%s(.*)")
+                    if hash and msg then
+                        table.insert(commits, { line = msg, cmd = "G" .. git:sub(2) .. " show " .. hash })
+                    end
+                end
+                return commits
+            end
+
+            vim.g.startify_lists = {
+                { header = { "   MRU " .. vim.fn.getcwd() }, type = "dir" },
+                { header = { "   Commits" },                 type = list_commits }
             }
-        end,
-    },
-    {
-        "jiangmiao/auto-pairs",
-        event = "BufReadPost",
-    },
-    {
-        "maxbrunsfeld/vim-yankstack",
-        keys = {
-            { "<C-p>", "<Plug>yankstack_substitute_older_paste", silent = true },
-            { "<C-n>", "<Plug>yankstack_substitute_newer_paste", silent = true },
-        },
-        config = function()
-            vim.g.yankstack_yank_keys = { "y", "d" }
         end,
     },
     {
@@ -38,10 +55,13 @@ return {
         config = function()
             require("lualine").setup({
                 options = {
-                    theme = "gruvbox_dark",
+                    theme = "gruvbox-material",
                     component_separators = { left = "", right = "" },
                     section_separators = { left = "", right = "" },
-                }
+                },
+                sections = {
+                    lualine_c = {},
+                },
             })
         end,
     },
@@ -54,14 +74,12 @@ return {
             vim.g.loaded_netrwPlugin = 1
 
             local api = require("nvim-tree.api")
-
             vim.keymap.set("n", "<leader>e", api.tree.toggle, { noremap = true, silent = true })
 
             local function on_attach(bufnr)
                 local function opts(desc)
                     return { desc = "nvim-tree: " .. desc, buffer = bufnr, noremap = true, silent = true, nowait = true }
                 end
-
                 api.config.mappings.default_on_attach(bufnr)
 
                 -- Key mappings
@@ -83,44 +101,11 @@ return {
 
             require("nvim-tree").setup {
                 on_attach = on_attach,
-                view = { width = 50 },
+                view = { width = 30 },
                 renderer = { group_empty = true },
                 update_focused_file = { enable = true },
+                diagnostics = { enable = true },
             }
-        end,
-    },
-    {
-        "romgrk/barbar.nvim",
-        event = "BufReadPost",
-    },
-    {
-        "tpope/vim-commentary",
-        event = "BufReadPost",
-    },
-    {
-        "tpope/vim-repeat",
-        event = "BufReadPost",
-    },
-    {
-        "tpope/vim-surround",
-        event = "BufReadPost",
-    },
-    {
-        "vimpostor/vim-tpipeline",
-        lazy = false,
-    },
-    {
-        "wakatime/vim-wakatime",
-        event = "VeryLazy",
-    },
-    {
-        "yuttie/comfortable-motion.vim",
-        keys = {
-            { "<leader>j", ":call comfortable_motion#flick(150)<CR>", silent = true },
-            { "<leader>k", ":call comfortable_motion#flick(-150)<CR>", silent = true }, 
-        },
-        config = function()
-            vim.g.comfortable_motion_no_default_key_mappings = 1
         end,
     },
 }

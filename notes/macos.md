@@ -21,7 +21,6 @@ Current MacOS tools used regularly.
     - [uBlock Origin](https://addons.mozilla.org/en-GB/firefox/addon/ublock-origin/)
     - [Bitwarden](https://addons.mozilla.org/en-GB/firefox/addon/bitwarden-password-manager/)
     - [Sidebery](https://addons.mozilla.org/en-US/firefox/addon/sidebery/)
-      - Alternative to [Simple Tab Groups](https://addons.mozilla.org/en-GB/firefox/addon/simple-tab-groups/)
       - [Firefox Style Snippets](https://github.com/mbnuqw/sidebery/wiki/Firefox-Styles-Snippets-(via-userChrome.css))
     - [Dark Reader](https://addons.mozilla.org/en-US/firefox/addon/darkreader/)
     - `about:config`
@@ -32,8 +31,6 @@ Current MacOS tools used regularly.
 - Terminal
   - [Alacritty](https://github.com/alacritty/alacritty)
 - [Homebrew](https://brew.sh): Package manager
-  - Installed using Rosetta 2, hence all packages are in `/usr/local/Cellar/`.
 - [VS Code](https://code.visualstudio.com): Primary editor
 - [Neovim](https://neovim.io): Secondary editor
-- [Docker Desktop](https://www.docker.com/products/docker-desktop): Containers
 - For apps installation, see `./bin/install-mac-apps`

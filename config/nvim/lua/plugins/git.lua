@@ -1,16 +1,18 @@
 return {
-    {
-        "tpope/vim-fugitive",
-    },
-    {
-        "airblade/vim-gitgutter",
-        event = "BufReadPost",
-    },
+    { "tpope/vim-fugitive" },
+    { "airblade/vim-gitgutter", event = { "BufReadPost", "BufNewFile" } },
     {
         "sindrets/diffview.nvim",
-        event = "BufReadPost",
-        keys = {
-            { "<leader>d", ":DiffviewOpen<CR>", silent = true },
-        },
-    },
+        event = { "BufReadPost", "BufNewFile" },
+        cmd = { "DiffviewOpen", "DiffviewClose" },
+        init = function()
+            vim.keymap.set("n", "<leader>d", function()
+                if next(require("diffview.lib").views) == nil then
+                    vim.cmd "DiffviewOpen"
+                else
+                    vim.cmd "DiffviewClose"
+                end
+            end, { desc = "Diffview | Toggle Diffview", silent = true })
+        end,
+    }
 }

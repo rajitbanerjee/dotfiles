@@ -17,7 +17,7 @@ export PATH=~/.local/bin:$PATH         # Installed scripts
 export PATH=~/bin:/usr/local/bin:$PATH
 export ZSH=~/.oh-my-zsh
 
-HOMEBREW_NO_AUTO_UPDATE="true"
+export HOMEBREW_NO_AUTO_UPDATE=1
 ZSH_DISABLE_COMPFIX="true" # Skip verification of insecure directories (macOS error)
 ENABLE_CORRECTION="false"
 ZSH_CUSTOM=~/.zsh/custom
@@ -75,7 +75,8 @@ Darwin)
 Linux)
     # Java
     export JAVA_17_AMAZON_CORRETTO_HOME="/usr/lib/jvm/java-17-amazon-corretto.x86_64"
-    export JAVA_HOME=$JAVA_17_AMAZON_CORRETTO_HOME
+    export JAVA_21_AMAZON_CORRETTO_HOME="/usr/lib/jvm/java-21-amazon-corretto"
+    export JAVA_HOME=$JAVA_21_AMAZON_CORRETTO_HOME
     export PATH="$JAVA_HOME/bin":$PATH
 
     # Go

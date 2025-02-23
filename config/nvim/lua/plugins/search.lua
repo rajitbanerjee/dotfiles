@@ -1,16 +1,17 @@
-
 return {
     {
         "ibhagwan/fzf-lua",
-        dependencies = { "nvim-tree/nvim-web-devicons" },
+        dependencies = {
+            "nvim-tree/nvim-web-devicons",
+            "dbakker/vim-projectroot"
+        },
         keys = {
-            { "<leader>f", ":FzfLua files<CR>", silent = true },
-            { "<leader>g", ":FzfLua grep_project<CR>", silent = true },
-            { "*", ":FzfLua grep_cword<CR>", silent = true}
+            { "<leader>f", ":ProjectRootExe FzfLua files<CR>",        silent = true },
+            { "<leader>g", ":ProjectRootExe FzfLua grep_project<CR>", silent = true },
+            { "*",         ":FzfLua grep_cword<CR>",                  silent = true },
         },
         config = function()
             local act = require("fzf-lua").actions
-
             local function build_quickfix_list(lines)
                 local qf_list = {}
                 for _, line in ipairs(lines) do
@@ -21,7 +22,7 @@ return {
                 vim.cmd("cc")
             end
 
-            require("fzf-lua").setup{
+            require("fzf-lua").setup {
                 actions = {
                     files = {
                         ["enter"]  = act.file_edit_or_qf,

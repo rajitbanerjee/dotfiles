@@ -23,6 +23,7 @@ brew install fzf
 brew install git
 brew install git-delta
 brew install jq
+brew install neovim
 brew install pandoc
 brew install ripgrep
 brew install tldr
@@ -36,7 +37,6 @@ echo -e "\n\nNode:\n"
 curl https://mise.jdx.dev/install.sh | sh
 mise plugin install nodejs
 mise install nodejs@18 && mise global nodejs@18
-# npm i -g git-pull-all
 
 # Go
 echo -e "\n\nGo:\n"
@@ -47,9 +47,18 @@ brew install gopls
 echo -e "\n\nPython:\n"
 brew install pyenv
 python3 -m pip install --upgrade pip
-python3 -m pip install rstfmt
 pyenv install 2.7.18
 pyenv global 2.7.18
+
+# Java
+echo -e "\n\nJava:\n"
+# Allow write access to required directories
+sudo chown -R $(whoami) /usr/local/bin /usr/local/include /usr/local/lib /usr/local/share /usr/local/share/doc /usr/local/share/man /usr/local/share/man/man1
+chmod u+w /usr/local/bin /usr/local/include /usr/local/lib /usr/local/share /usr/local/share/doc /usr/local/share/man /usr/local/share/man/man1
+brew install openjdk@17 openjdk
+JVMDIR=/Library/Java/JavaVirtualMachines
+sudo ln -sfn $(brew --prefix)/opt/openjdk@17/libexec/openjdk.jdk $JVMDIR/openjdk-17.jdk
+sudo ln -sfn $(brew --prefix)/opt/openjdk/libexec/openjdk.jdk $JVMDIR/openjdk.jdk
 
 # Wakatime
 echo -e "\n\nWakaTime:\n"
@@ -69,25 +78,6 @@ ignore =
 api_key=$key
 """ >~/.wakatime.cfg
 fi
-
-# Java
-echo -e "\n\nJava:\n"
-# Allow write access to required directories
-sudo chown -R $(whoami) /usr/local/bin /usr/local/include /usr/local/lib /usr/local/share /usr/local/share/doc /usr/local/share/man /usr/local/share/man/man1
-chmod u+w /usr/local/bin /usr/local/include /usr/local/lib /usr/local/share /usr/local/share/doc /usr/local/share/man /usr/local/share/man/man1
-brew install openjdk@17 openjdk
-JVMDIR=/Library/Java/JavaVirtualMachines
-sudo ln -sfn $(brew --prefix)/opt/openjdk@17/libexec/openjdk.jdk $JVMDIR/openjdk-17.jdk
-sudo ln -sfn $(brew --prefix)/opt/openjdk/libexec/openjdk.jdk $JVMDIR/openjdk.jdk
-wget "https://projectlombok.org/downloads/lombok.jar" -O ~/.local/lib/lombok.jar
-
-# Neovim
-echo -e "\n\nNeovim and ALE linters/fixers:\n"
-brew install neovim
-python3 -m pip install --user pynvim isort autopep8 flake8
-# npm i -g prettier @prettier/plugin-xml
-brew install shellcheck shfmt
-brew install google-java-format
 
 echo -e "\n\noh-my-zsh:\n(Note: \"exit\" from oh-my-zsh to resume setup)\n"
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"

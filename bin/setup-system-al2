@@ -27,12 +27,13 @@ brew install fzf
 brew install git
 brew install git-delta
 brew install jq
+brew install neovim
 brew install pandoc
 brew install ripgrep
 brew install tldr
+brew install tmux
 brew install trash-cli
 brew install watchman
-brew install tmux
 
 # Docker
 curl -L "https://github.com/docker/compose/releases/latest/download/docker-compose-$(uname -s)-$(uname -m)" -o ~/.local/bin/docker-compose
@@ -43,7 +44,6 @@ echo -e "\n\nNode:\n"
 curl https://mise.jdx.dev/install.sh | sh
 mise plugin install nodejs ssh://git.amazon.com/pkg/RtxNode
 mise install nodejs@18 && mise global nodejs@18
-# npm i -g git-pull-all
 
 # Go
 echo -e "\n\nGo:\n"
@@ -51,6 +51,13 @@ brew install go
 brew install gopls
 sudo ln -s /home/linuxbrew/.linuxbrew/bin/go /usr/bin/go
 go env -w GOPROXY=direct
+
+# Java
+echo -e "\n\nJava:\n"
+sudo yum install java-17-amazon-corretto
+sudo rpm --import https://yum.corretto.aws/corretto.key # workaround to install Java 21 on AL2 
+sudo curl -L -o /etc/yum.repos.d/corretto.repo https://yum.corretto.aws/corretto.repo
+sudo yum install -y java-21-amazon-corretto-devel
 
 # Wakatime
 echo -e "\n\nWakaTime:\n"
@@ -70,20 +77,6 @@ ignore =
 api_key=$key
 """ >~/.wakatime.cfg
 fi
-
-# Java
-echo -e "\n\nJava:\n"
-sudo yum install java-17-amazon-corretto
-mkdir -p ~/.local/lib
-wget "https://projectlombok.org/downloads/lombok.jar" -O ~/.local/lib/lombok.jar
-
-# Neovim
-echo -e "\n\nNeovim and ALE linters/fixers:\n"
-brew install neovim
-python3 -m pip install --user pynvim isort autopep8 flake8 --break-system-packages 
-# npm i -g prettier @prettier/plugin-xml
-brew install shellcheck shfmt
-brew install google-java-format
 
 # AWS Dev Tools
 echo -e "\n\nAWS Dev Tools:\n"

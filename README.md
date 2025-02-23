@@ -16,7 +16,6 @@ exec $SHELL -l
 ```shell
 setup-system-al2
 # setup-system-mac
-setup-coc-nvim
 nvim
 
 # install-mac-apps
@@ -28,7 +27,6 @@ nvim
 
 The following configurations are specific to the user `brajit`, and should be modified if used by others:
 
-- [nvim/coc-settings.json](./config/nvim/coc-settings.json) (`"java.jdt.ls.vmargs": "-javaagent:/home/brajit/.local/lib/lombok.jar"`)
 - [vscode/settings.json](./config/vscode/settings.json) (`"remote.SSH.configFile": "/Users/brajit/.ssh/config"`)
 - [zshrc](./config/shell/zshrc) (`alias wp="cd /workplace/brajit"`)
 - [ssh/config](./config/ssh/config) (`Hostname`)
