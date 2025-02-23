@@ -23,44 +23,6 @@ return {
         event = "BufReadPost",
     },
     {
-        "junegunn/goyo.vim",
-        keys = {
-            { "<leader>z", ":Goyo<CR>", silent = true },
-        },
-        config = function()
-            vim.g.goyo_width = "60%"
-            vim.g.goyo_height = "90%"
-
-            vim.api.nvim_create_autocmd("User", {
-                pattern = "GoyoEnter",
-                callback = function()
-                    goyo_enter()
-                end,
-                group = vim.api.nvim_create_augroup("GoyoGroup", { clear = true }),
-            })
-
-            vim.api.nvim_create_autocmd("User", {
-                pattern = "GoyoLeave",
-                callback = function()
-                    goyo_leave()
-                end,
-                group = "GoyoGroup",
-            })
-
-            function goyo_enter()
-                vim.cmd("silent !tmux set status off")
-                vim.cmd("silent !tmux list-panes -F '\\#F' | grep -q Z || tmux resize-pane -Z")
-                vim.opt.scrolloff = 999
-            end
-
-            function goyo_leave()
-                vim.cmd("silent !tmux set status on")
-                vim.cmd("silent !tmux list-panes -F '\\#F' | grep -q Z && tmux resize-pane -Z")
-                vim.opt.scrolloff = 7
-            end
-        end,
-    },
-    {
         "maxbrunsfeld/vim-yankstack",
         keys = {
             { "<C-p>", "<Plug>yankstack_substitute_older_paste", silent = true },
@@ -68,6 +30,19 @@ return {
         },
         config = function()
             vim.g.yankstack_yank_keys = { "y", "d" }
+        end,
+    },
+    {
+        "nvim-lualine/lualine.nvim",
+        dependencies = { "nvim-tree/nvim-web-devicons" },
+        config = function()
+            require("lualine").setup({
+                options = {
+                    theme = "gruvbox_dark",
+                    component_separators = { left = "", right = "" },
+                    section_separators = { left = "", right = "" },
+                }
+            })
         end,
     },
     {
@@ -87,33 +62,8 @@ return {
         event = "BufReadPost",
     },
     {
-        "vim-airline/vim-airline",
+        "vimpostor/vim-tpipeline",
         lazy = false,
-        dependencies = {
-            {
-                "vim-airline/vim-airline-themes",
-                config = function()
-                    vim.g.airline_theme = "base16_gruvbox_dark_soft"
-                end,
-            },
-            {
-                "edkolev/tmuxline.vim",
-                config = function()
-                    vim.g.tmuxline_powerline_separators = 0
-                    vim.g.tmuxline_separators = {
-                        left = "",
-                        left_alt = "",
-                        right = "",
-                        right_alt = "",
-                        space = " ",
-                    }
-                end,
-            },
-        },
-        config = function()
-            vim.g.airline_section_c = ""
-            vim.g.airline_section_y = ""
-        end,
     },
     {
         "wakatime/vim-wakatime",
