@@ -2,10 +2,7 @@
 return {
     {
         "ibhagwan/fzf-lua",
-        event = "VeryLazy",
-        dependencies = { 
-            "nvim-tree/nvim-web-devicons",
-        },
+        dependencies = { "nvim-tree/nvim-web-devicons" },
         keys = {
             { "<leader>f", ":FzfLua files<CR>", silent = true },
             { "<leader>g", ":FzfLua grep_project<CR>", silent = true },

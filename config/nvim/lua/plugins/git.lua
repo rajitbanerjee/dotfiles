@@ -1,7 +1,6 @@
 return {
     {
         "tpope/vim-fugitive",
-        event = "BufReadPost",
     },
     {
         "airblade/vim-gitgutter",
