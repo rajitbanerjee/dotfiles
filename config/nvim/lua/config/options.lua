@@ -50,7 +50,7 @@ vim.opt.listchars = { -- Define how whitespace characters are displayed
     nbsp = "␣" -- Show non-breaking spaces explicitly
 }
 
-vim.cmd('filetype plugin indent on') -- Enable filetype-specific plugins and indentation
+vim.cmd("filetype plugin indent on") -- Enable filetype-specific plugins and indentation
 
 
 -- Set text as default filetype
