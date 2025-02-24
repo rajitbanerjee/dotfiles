@@ -20,18 +20,6 @@ nvim
 # install-mac-apps
 ```
 
-![nvim1](./assets/images/nvim1.png)
-
-![nvim2](./assets/images/nvim2.png)
-
-### User-Specific Configurations
-
-The following configurations are specific to the user `brajit`, and should be modified if used by others:
-
-- [vscode/settings.json](./config/vscode/settings.json) (`"remote.SSH.configFile": "/Users/brajit/.ssh/config"`)
-- [zshrc](./config/shell/zshrc) (`alias wp="cd /workplace/brajit"`)
-- [ssh/config](./config/ssh/config) (`Hostname`)
-
 Create a new SSH key for GitHub access:
 
 ```shell
@@ -43,7 +31,13 @@ cat ~/.ssh/id_ed25519.pub
 
 Paste the public key contents in a new SSH key under https://github.com/settings/keys.
 
-### License
+## Screenshots
+
+![nvim1](./assets/images/nvim1.png)
+![nvim2](./assets/images/nvim2.png)
+![nvim3](./assets/images/nvim3.png)
+
+## License
 
 [MIT][license]
 
