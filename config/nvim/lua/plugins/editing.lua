@@ -18,8 +18,8 @@ return {
     {
         "maxbrunsfeld/vim-yankstack",
         keys = {
-            { "<C-p>", "<Plug>yankstack_substitute_older_paste", silent = true },
-            { "<C-n>", "<Plug>yankstack_substitute_newer_paste", silent = true },
+            { "<C-p>", "<Plug>yankstack_substitute_older_paste", silent = true, desc = "Paste (Older)" },
+            { "<C-n>", "<Plug>yankstack_substitute_newer_paste", silent = true, desc = "Paste (Newer)" },
         },
         config = function()
             vim.g.yankstack_yank_keys = { "y", "d" }
@@ -28,8 +28,8 @@ return {
     {
         "yuttie/comfortable-motion.vim",
         keys = {
-            { "<leader>j", ":call comfortable_motion#flick(150)<CR>",  silent = true },
-            { "<leader>k", ":call comfortable_motion#flick(-150)<CR>", silent = true },
+            { "<leader>j", ":call comfortable_motion#flick(150)<CR>",  silent = true, "Scroll (Down)" },
+            { "<leader>k", ":call comfortable_motion#flick(-150)<CR>", silent = true, "Scroll (Up)" },
         },
         config = function()
             vim.g.comfortable_motion_no_default_key_mappings = 1

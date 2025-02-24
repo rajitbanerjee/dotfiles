@@ -89,7 +89,8 @@ return {
             vim.g.loaded_netrwPlugin = 1
 
             local api = require("nvim-tree.api")
-            vim.keymap.set("n", "<leader>e", api.tree.toggle, { noremap = true, silent = true })
+            vim.keymap.set("n", "<leader>e", api.tree.toggle,
+                { noremap = true, silent = true, desc = "nvim-tree: Toggle" })
 
             local function on_attach(bufnr)
                 local function opts(desc)

@@ -116,30 +116,32 @@ return {
             vim.api.nvim_create_autocmd('LspAttach', {
                 group = vim.api.nvim_create_augroup('UserLspConfig', {}),
                 callback = function(ev)
-                    local opts = { buffer = ev.buf }
+                    local function opts(desc)
+                        return { desc = "LSP: " .. desc, buffer = ev.buf, noremap = true, silent = true }
+                    end
 
                     vim.keymap.set("n", "<leader>l", function()
                         vim.lsp.buf.format { async = true }
-                    end, opts)
+                    end, opts("Format"))
 
                     vim.keymap.set("n", "<leader>o", function()
                         vim.lsp.buf.code_action({
                             apply = true,
                             context = { only = { "source.organizeImports" } }
                         })
-                    end, opts)
+                    end, opts("Organize Imports"))
 
                     local builtin = require("telescope.builtin")
 
-                    vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, opts)
-                    vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
-                    vim.keymap.set("n", "gD", vim.lsp.buf.declaration, opts)
-                    vim.keymap.set("n", "gd", builtin.lsp_definitions, opts)
-                    vim.keymap.set("n", "gi", builtin.lsp_implementations, opts)
-                    vim.keymap.set("n", "gr", builtin.lsp_references, opts)
-                    vim.keymap.set("n", "gs", vim.lsp.buf.signature_help, opts)
-                    vim.keymap.set("n", "gy", builtin.lsp_type_definitions, opts)
-                    vim.keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, opts)
+                    vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, opts("Rename"))
+                    vim.keymap.set("n", "K", vim.lsp.buf.hover, opts("Hover"))
+                    vim.keymap.set("n", "gD", vim.lsp.buf.declaration, opts("Go To Declaration"))
+                    vim.keymap.set("n", "gd", builtin.lsp_definitions, opts("Go To Definition"))
+                    vim.keymap.set("n", "gi", builtin.lsp_implementations, opts("Go To Implementations"))
+                    vim.keymap.set("n", "gr", builtin.lsp_references, opts("Find All References"))
+                    vim.keymap.set("n", "gs", vim.lsp.buf.signature_help, opts("Signature"))
+                    vim.keymap.set("n", "gy", builtin.lsp_type_definitions, opts("Go To Type Definition"))
+                    vim.keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, opts("Code Action"))
                 end,
             })
         end,

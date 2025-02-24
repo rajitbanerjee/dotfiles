@@ -12,7 +12,7 @@ return {
                 else
                     vim.cmd "DiffviewClose"
                 end
-            end, { desc = "Diffview | Toggle Diffview", silent = true })
+            end, { desc = "Diffview: Toggle", silent = true })
         end,
     }
 }
