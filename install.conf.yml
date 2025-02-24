@@ -10,39 +10,35 @@
 - clean: ["~"]
 
 - create:
-    - ~/Git
     - ~/.local/scripts
     - ~/.local/bin
 
 - link:
-    ~/.config/alacritty: config/alacritty
-    ~/.config/kitty: config/kitty
-    ~/.config/nvim: config/nvim
-    ~/.local/scripts/bin: bin
-    /Volumes/workplace/Obsidian-brajit/.obsidian: 
-      if: "[ `uname` = Darwin ]"
-      path: config/obsidian
-
     # shell
     ~/.bashrc: config/shell/bashrc
     ~/.zsh: config/shell/zsh
     ~/.zshrc: config/shell/zshrc
+    ~/.local/scripts/bin: bin
 
     # git
     ~/.config/git/commit_message: config/git/commit_message
     ~/.gitignore: config/git/gitignore_global
     ~/.gitconfig: config/git/gitconfig
 
-    # tmux
-    ~/.tmux.conf: config/tmux/tmux.conf
-    ~/.tmux/plugins/tpm: config/tmux/tpm
-
     # ssh
     ~/.ssh/config:
       if: "[ `uname` = Darwin ]"
       path: config/ssh/config
 
-    # vscode
+    # dev env (nvim)
+    ~/.config/kitty:
+      if: "[ `uname` = Darwin ]"
+      path: config/kitty
+    ~/.config/nvim: config/nvim
+    ~/.tmux.conf: config/tmux/tmux.conf
+    ~/.tmux/plugins/tpm: config/tmux/tpm
+
+    # dev env alt (vscode)
     ~/Library/Application Support/Code/User/settings.json:
       if: "[ `uname` = Darwin ]"
       path: config/vscode/settings.json

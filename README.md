@@ -5,9 +5,11 @@ Set up a new system, and maintain current configurations. Symlinking to `$HOME` 
 ```shell
 git config --global user.name "Rajit Banerjee"
 git config --global user.email "brajit@amazon.com"
-git clone git@github.com:rajitbanerjee/dotfiles ~/.dotfiles
 mv ~/.gitconfig ~/.gitconfig_local
-rm -rf ~/.bashrc ~/.zshrc
+git clone git@github.com:rajitbanerjee/dotfiles ~/.dotfiles
+```
+
+```shell
 cd ~/.dotfiles && ./install
 git config user.email "rajitbanerjee15@gmail.com"
 exec $SHELL -l

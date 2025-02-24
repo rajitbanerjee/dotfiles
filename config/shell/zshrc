@@ -91,9 +91,6 @@ export NODE_PATH="$(dirname $(mise exec nodejs@18 -- which node))"
 export PATH=$NODE_PATH:$PATH
 export NODE_OPTIONS="--no-deprecation"
 
-# Python
-export PATH="$HOME/Library/Python/3.11/bin:$PATH"
-
 ### Aliases ###
 
 # system
@@ -123,7 +120,7 @@ Darwin)
     alias wp="cd /Volumes/workplace/"
     ;;
 Linux)
-    alias wp="cd /workplace/brajit/"
+    alias wp="cd /workplace/$(whoami)/"
     ;;
 esac
 alias bb="brazil-build"
@@ -138,6 +135,7 @@ alias mcurl='/usr/bin/curl "$@" -L --cookie ~/.midway/cookie --cookie-jar ~/.mid
 alias less="less -R"
 alias mv="mv -i"
 alias sizer="du -h * | sort -hr | less"
+alias diskspace="df -H"
 
 # eza (a modern replacement for ls)
 alias l='eza -la --icons -h --git --no-user'
@@ -164,7 +162,6 @@ alias gd="git diff"
 alias gds="git diff --staged"
 alias gl="git log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all"
 alias gpl="git fetch --all && git pull --rebase"
-# alias gpla="git-pull-all . -r"
 alias gpla="find . -name .git -type d -execdir pwd \; -execdir git fetch --all \; -execdir git pull --rebase \;"
 alias gr="git restore"
 alias grs="git restore --staged"
@@ -177,6 +174,7 @@ alias gsur="git submodule update --remote"
 alias gu="git reset --soft HEAD~1"
 
 # tmux
+alias t="tmux"
 alias tl="tmux ls"
 alias tn="tmux new -s"
 alias tks="tmux kill-session -t"
@@ -219,6 +217,10 @@ mkpdf() {
 # TCP ports in use
 ports() {
     netstat -Watnlv | grep LISTEN | awk '{"ps -o comm= -p " $9 | getline procname;colred="\033[01;31m";colclr="\033[0m"; print colred "proto: " colclr $1 colred " | addr.port: " colclr $4 colred " | pid: " colclr $9 colred " | name: " colclr procname;  }' | column -t -s "|"
+}
+
+port() {
+   sudo ss -tanp | grep "$1"
 }
 
 # git rebase
