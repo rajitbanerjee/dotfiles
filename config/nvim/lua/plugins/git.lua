@@ -1,5 +1,5 @@
 return {
-    { "tpope/vim-fugitive" },
+    { "tpope/vim-fugitive",     event = { "BufReadPost", "BufNewFile" } },
     { "airblade/vim-gitgutter", event = { "BufReadPost", "BufNewFile" } },
     {
         "sindrets/diffview.nvim",

@@ -1,8 +1,8 @@
 return {
     { "jiangmiao/auto-pairs",  event = { "BufReadPost", "BufNewFile" } },
-    { "tpope/vim-commentary",  event = { "BufReadPre", "BufNewFile" } },
-    { "tpope/vim-repeat",      event = { "BufReadPre", "BufNewFile" } },
-    { "tpope/vim-surround",    event = { "BufReadPre", "BufNewFile" } },
+    { "tpope/vim-commentary",  event = { "BufReadPost", "BufNewFile" } },
+    { "tpope/vim-repeat",      event = { "BufReadPost", "BufNewFile" } },
+    { "tpope/vim-surround",    event = { "BufReadPost", "BufNewFile" } },
     { "wakatime/vim-wakatime", event = "VeryLazy" },
     {
         "907th/vim-auto-save",

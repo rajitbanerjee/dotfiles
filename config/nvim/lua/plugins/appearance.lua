@@ -1,5 +1,5 @@
 return {
-    { "romgrk/barbar.nvim",      event = { "BufReadPre", "BufNewFile" } },
+    { "romgrk/barbar.nvim",      event = { "BufReadPost", "BufNewFile" } },
     { "vimpostor/vim-tpipeline", lazy = false },
     {
         "ellisonleao/gruvbox.nvim",
@@ -19,34 +19,12 @@ return {
         end,
     },
     {
-        "mhinz/vim-startify",
-        dependencies = { "tpope/vim-fugitive" },
+        "goolord/alpha-nvim",
+        dependencies = { "nvim-tree/nvim-web-devicons" },
         config = function()
-            vim.g.startify_change_to_dir = 0
-            vim.g.startify_change_to_vcs_root = 1
-
-            local function list_commits()
-                local git = 'git'
-                local handle = io.popen(git .. ' log --oneline | head -n10')
-                if not handle then return {} end
-                local result = handle:read('*a')
-                handle:close()
-
-                local commits = {}
-                for line in result:gmatch("(.-)\n") do
-                    local hash = line:match("^(%x+)")
-                    local msg = line:match("%s(.*)")
-                    if hash and msg then
-                        table.insert(commits, { line = msg, cmd = "G" .. git:sub(2) .. " show " .. hash })
-                    end
-                end
-                return commits
-            end
-
-            vim.g.startify_lists = {
-                { header = { "   MRU " .. vim.fn.getcwd() }, type = "dir" },
-                { header = { "   Commits" },                 type = list_commits }
-            }
+            local startify = require("alpha.themes.startify")
+            startify.file_icons.provider = "devicons"
+            require("alpha").setup(startify.config)
         end,
     },
     {
