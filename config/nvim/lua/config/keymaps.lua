@@ -73,6 +73,7 @@ vim.keymap.set("n", "<leader>cc", ":ClearQFList<CR>:cclose<CR>", { noremap = tru
 vim.keymap.set('x', 'K', ":move '<-2<CR>gv-gv", { noremap = true, silent = true })
 vim.keymap.set('x', 'J', ":move '>+1<CR>gv-gv", { noremap = true, silent = true })
 
--- Maintain visual selection after tab indentation
+-- Indendation
 vim.keymap.set('v', '<', '<gv', { noremap = true, silent = true })
 vim.keymap.set('v', '>', '>gv', { noremap = true, silent = true })
+vim.keymap.set("i", "<S-TAB>", "<C-d>", { noremap = true, silent = true })
