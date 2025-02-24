@@ -1,36 +1,31 @@
 return {
     {
-        "ibhagwan/fzf-lua",
+        "nvim-telescope/telescope.nvim",
+        branch = "0.1.x",
         dependencies = {
-            "nvim-tree/nvim-web-devicons",
-            "dbakker/vim-projectroot"
-        },
-        keys = {
-            { "<leader>f", ":ProjectRootExe FzfLua files<CR>",        silent = true },
-            { "<leader>g", ":ProjectRootExe FzfLua grep_project<CR>", silent = true },
-            { "*",         ":FzfLua grep_cword<CR>",                  silent = true },
+            "nvim-lua/plenary.nvim",
+            "airblade/vim-rooter",
         },
         config = function()
-            local act = require("fzf-lua").actions
-            local function build_quickfix_list(lines)
-                local qf_list = {}
-                for _, line in ipairs(lines) do
-                    table.insert(qf_list, { filename = line })
-                end
-                vim.fn.setqflist(qf_list)
-                vim.cmd("copen")
-                vim.cmd("cc")
-            end
-
-            require("fzf-lua").setup {
-                actions = {
-                    files = {
-                        ["enter"]  = act.file_edit_or_qf,
-                        ["ctrl-b"] = function(selected) build_quickfix_list(selected) end,
-                        ["ctrl-s"] = act.file_vsplit,
-                    },
-                }
-            }
-        end,
+            require("telescope").setup({})
+            local builtin = require("telescope.builtin")
+            vim.g.rooter_patterns = { "*.code-workspace", "packageInfo" }
+            vim.keymap.set("n", "<leader>t", ":Telescope<CR>")
+            vim.keymap.set("n", "<leader>f", builtin.find_files)
+            vim.keymap.set("n", "<leader>g", builtin.live_grep)
+            vim.keymap.set("n", "*", function()
+                builtin.live_grep({
+                    default_text = vim.fn.expand('<cword>')
+                })
+            end)
+            vim.keymap.set("n", "<leader>/", function()
+                builtin.current_buffer_fuzzy_find(
+                    require('telescope.themes').get_dropdown({
+                        winblend = 10,
+                        previewer = false,
+                    })
+                )
+            end)
+        end
     },
 }

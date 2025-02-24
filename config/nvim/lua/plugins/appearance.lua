@@ -59,9 +59,7 @@ return {
                     component_separators = { left = "", right = "" },
                     section_separators = { left = "", right = "" },
                 },
-                sections = {
-                    lualine_c = {},
-                },
+                sections = { lualine_c = {} },
             })
         end,
     },
@@ -84,13 +82,13 @@ return {
 
                 -- Key mappings
                 vim.keymap.set("n", "*", api.marks.toggle, opts("Toggle Selection"))
-                vim.keymap.set("n", "<CR>", api.tree.change_root_to_node, opts("CD"))
                 vim.keymap.set("n", "<ESC>", api.tree.close, opts("Close"))
                 vim.keymap.set("n", "bm", api.marks.bulk.move, opts("Move Bookmarked"))
+                vim.keymap.set("n", "cd", api.tree.change_root_to_node, opts("CD"))
                 vim.keymap.set("n", "dd", api.fs.cut, opts("Cut File"))
                 vim.keymap.set("n", "df", api.fs.remove, opts("Delete File"))
                 vim.keymap.set("n", "g.", api.tree.toggle_hidden_filter, opts("Toggle Hidden"))
-                vim.keymap.set("n", "h", api.node.open.edit, opts("Collapse / Expand"))
+                vim.keymap.set("n", "h", api.node.navigate.parent_close, opts("Collapse / Expand"))
                 vim.keymap.set("n", "l", api.node.open.edit, opts("Expand / Open"))
                 vim.keymap.set("n", "s", api.node.open.vertical, opts("Open in vsplit"))
                 vim.keymap.set("n", "u", api.tree.change_root_to_parent, opts("Go to Parent"))
