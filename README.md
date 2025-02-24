@@ -17,7 +17,6 @@ exec $SHELL -l
 setup-system-al2
 # setup-system-mac
 nvim
-
 # install-mac-apps
 ```
 

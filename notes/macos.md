@@ -29,8 +29,8 @@ Current MacOS tools used regularly.
     - [Wipr](https://apps.apple.com/us/app/wipr/id1320666476?mt=12)
     - Bitwarden
 - Terminal
-  - [Alacritty](https://github.com/alacritty/alacritty)
+  - [Kitty](https://sw.kovidgoyal.net/kitty/)
 - [Homebrew](https://brew.sh): Package manager
-- [VS Code](https://code.visualstudio.com): Primary editor
-- [Neovim](https://neovim.io): Secondary editor
+- [Neovim](https://neovim.io): Primary editor
+- [VS Code](https://code.visualstudio.com): Secondary editor
 - For apps installation, see `./bin/install-mac-apps`

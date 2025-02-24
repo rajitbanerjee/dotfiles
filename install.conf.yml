@@ -16,6 +16,7 @@
 
 - link:
     ~/.config/alacritty: config/alacritty
+    ~/.config/kitty: config/kitty
     ~/.config/nvim: config/nvim
     ~/.local/scripts/bin: bin
     /Volumes/workplace/Obsidian-brajit/.obsidian: 
