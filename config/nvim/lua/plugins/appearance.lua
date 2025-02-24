@@ -19,6 +19,23 @@ return {
         end,
     },
     {
+        "catppuccin/nvim",
+        lazy = false,
+        name = "catppuccin",
+        priority = 1000,
+        config = function()
+            -- vim.cmd.colorscheme "catppuccin-latte"
+        end,
+    },
+    {
+        "folke/tokyonight.nvim",
+        lazy = false,
+        priority = 1000,
+        config = function()
+            -- vim.cmd.colorscheme "tokyonight-day"
+        end,
+    },
+    {
         "goolord/alpha-nvim",
         dependencies = { "nvim-tree/nvim-web-devicons" },
         config = function()
@@ -33,7 +50,7 @@ return {
         config = function()
             require("lualine").setup({
                 options = {
-                    theme = "gruvbox-material",
+                    theme = "auto",
                     component_separators = { left = "", right = "" },
                     section_separators = { left = "", right = "" },
                 },
