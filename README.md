@@ -21,7 +21,9 @@ nvim
 # install-mac-apps
 ```
 
-![nvim](./assets/images/nvim.png)
+![nvim1](./assets/images/nvim1.png)
+
+![nvim2](./assets/images/nvim2.png)
 
 ### User-Specific Configurations
 
