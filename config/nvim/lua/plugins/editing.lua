@@ -5,14 +5,6 @@ return {
     { "tpope/vim-surround",    event = { "BufReadPost", "BufNewFile" } },
     { "wakatime/vim-wakatime", event = "VeryLazy" },
     {
-        "907th/vim-auto-save",
-        event = { "BufReadPost", "BufNewFile" },
-        config = function()
-            vim.g.auto_save = 1
-            vim.g.auto_save_silent = 2
-        end,
-    },
-    {
         "alvan/vim-closetag",
         event = { "BufReadPost", "BufNewFile" },
         config = function()
@@ -42,5 +34,32 @@ return {
         config = function()
             vim.g.comfortable_motion_no_default_key_mappings = 1
         end,
+    },
+    {
+        "ThePrimeagen/harpoon",
+        branch = "harpoon2",
+        dependencies = { "nvim-lua/plenary.nvim" },
+        config = function()
+            local harpoon = require("harpoon")
+            harpoon:setup({})
+            harpoon:extend({
+                UI_CREATE = function(cx)
+                    vim.keymap.set("n", "l", function()
+                        harpoon.ui:select_menu_item()
+                    end, { buffer = cx.bufnr, desc = "Harpoon: Open" })
+                end,
+            })
+        end,
+        keys = function()
+            local harpoon = require("harpoon")
+            return {
+                { "<leader>hl", function() harpoon.ui:toggle_quick_menu(harpoon:list()) end, desc = "Harpoon: List" },
+                { "<leader>a",  function() harpoon:list():add() end,                         desc = "Harpoon: Add" },
+                { "<leader>1",  function() harpoon:list():select(1) end,                     desc = "Harpoon: Mark 1" },
+                { "<leader>2",  function() harpoon:list():select(2) end,                     desc = "Harpoon: Mark 2" },
+                { "<leader>3",  function() harpoon:list():select(3) end,                     desc = "Harpoon: Mark 3" },
+                { "<leader>4",  function() harpoon:list():select(4) end,                     desc = "Harpoon: Mark 4" },
+            }
+        end
     },
 }
