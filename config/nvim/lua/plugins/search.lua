@@ -30,7 +30,7 @@ return {
         end,
         opts = {
             defaults = {
-                file_ignore_patterns = { ".git", "node_modules", "build", "env" },
+                file_ignore_patterns = { ".git/", "node_modules/", "build/", "env/", "tmp/", "release-info/" },
                 vimgrep_arguments = {
                     "rg",
                     "--color=never",
