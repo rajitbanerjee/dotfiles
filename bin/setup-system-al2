@@ -48,7 +48,6 @@ mise install nodejs@18 && mise global nodejs@18
 # Go
 echo -e "\n\nGo:\n"
 brew install go
-brew install gopls
 sudo ln -s /home/linuxbrew/.linuxbrew/bin/go /usr/bin/go
 go env -w GOPROXY=direct
 

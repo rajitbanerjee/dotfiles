@@ -162,7 +162,7 @@
     "viceroy.config.autoReloadWorkspaceFolders": false,
     "viceroy.config.beautyMode": false,
     "viceroy.config.internal.lastUpdateTime": "2025-02-17T13:38:02.363Z",
-    "viceroy.config.lastVersion": "0.53.201856",
+    "viceroy.config.lastVersion": "0.53.201857",
     "viceroy.config.notifyGlibcIssue": false,
     "viceroy.config.notifyMarchAL2Incompatibility": false,
     "viceroy.config.promptForWorkspaceMode": "alwaysMigrate",
@@ -233,7 +233,7 @@
         "!SelectSequence"
     ],
     "yaml.schemas": {
-        "file:///local/home/brajit/.vscode-server/extensions/marklel.vscode-brazil-0.53.201856/assets/languages/rde/schema.json": "**/definition.yaml"
+        "file:///local/home/brajit/.vscode-server/extensions/marklel.vscode-brazil-0.53.201857/assets/languages/rde/schema.json": "**/definition.yaml"
     },
     "yaml.validate": true
 }

@@ -41,7 +41,7 @@ mise install nodejs@18 && mise global nodejs@18
 # Go
 echo -e "\n\nGo:\n"
 brew install go
-brew install gopls
+go env -w GOPROXY=direct
 
 # Python
 echo -e "\n\nPython:\n"
