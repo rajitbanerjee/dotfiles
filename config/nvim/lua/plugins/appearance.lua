@@ -126,7 +126,7 @@ return {
 
             require("nvim-tree").setup {
                 on_attach = on_attach,
-                view = { width = 30 },
+                view = { width = 50 },
                 renderer = {
                     group_empty = true,
                     root_folder_label = function(path)
