@@ -52,6 +52,7 @@ return {
                 { "t",         ":Telescope<CR>",     desc = "Telescope: List" },
                 { "f",         telescope.oldfiles,   desc = "Telescope: MRU" },
                 { "<leader>f", telescope.find_files, desc = "Telescope: Find" },
+                { "<leader>c", telescope.commands,   desc = "Telescope: Commands" },
                 {
                     "<leader>g",
                     function()

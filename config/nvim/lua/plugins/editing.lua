@@ -1,9 +1,10 @@
 return {
-    { "jiangmiao/auto-pairs",  event = { "BufReadPost", "BufNewFile" } },
-    { "tpope/vim-commentary",  event = { "BufReadPost", "BufNewFile" } },
-    { "tpope/vim-repeat",      event = { "BufReadPost", "BufNewFile" } },
-    { "tpope/vim-surround",    event = { "BufReadPost", "BufNewFile" } },
-    { "wakatime/vim-wakatime", event = "VeryLazy" },
+    { "jiangmiao/auto-pairs",    event = { "BufReadPost", "BufNewFile" } },
+    { "ibhagwan/smartyank.nvim", event = { "BufReadPost", "BufNewFile" } },
+    { "tpope/vim-commentary",    event = { "BufReadPost", "BufNewFile" } },
+    { "tpope/vim-repeat",        event = { "BufReadPost", "BufNewFile" } },
+    { "tpope/vim-surround",      event = { "BufReadPost", "BufNewFile" } },
+    { "wakatime/vim-wakatime",   event = "VeryLazy" },
     {
         "alvan/vim-closetag",
         event = { "BufReadPost", "BufNewFile" },
