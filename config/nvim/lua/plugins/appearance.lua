@@ -108,7 +108,6 @@ return {
                 end
                 api.config.mappings.default_on_attach(bufnr)
 
-                -- Key mappings
                 vim.keymap.set("n", "*", api.marks.toggle, opts("Toggle Selection"))
                 vim.keymap.set("n", "<ESC>", api.tree.close, opts("Close"))
                 vim.keymap.set("n", "bm", api.marks.bulk.move, opts("Move Bookmarked"))
@@ -128,7 +127,12 @@ return {
             require("nvim-tree").setup {
                 on_attach = on_attach,
                 view = { width = 30 },
-                renderer = { group_empty = true },
+                renderer = {
+                    group_empty = true,
+                    root_folder_label = function(path)
+                        return vim.fn.fnamemodify(path, ":t")
+                    end,
+                },
                 update_focused_file = { enable = true },
                 diagnostics = { enable = true },
             }
