@@ -21,10 +21,29 @@ return {
         dependencies = {
             "nvim-lua/plenary.nvim",
             "airblade/vim-rooter",
+            "nvim-telescope/telescope-live-grep-args.nvim",
         },
-        config = function()
-            require("telescope").setup({})
+        config = function(_, opts)
+            local telescope = require("telescope")
+            telescope.setup(opts)
+            telescope.load_extension("live_grep_args")
         end,
+        opts = {
+            defaults = {
+                file_ignore_patterns = { ".git", "node_modules", "build", "env" },
+                vimgrep_arguments = {
+                    "rg",
+                    "--color=never",
+                    "--no-heading",
+                    "--hidden",
+                    "--with-filename",
+                    "--line-number",
+                    "--column",
+                    "--smart-case",
+                    "--trim",
+                },
+            },
+        },
         keys = function()
             local telescope = require("telescope.builtin")
             vim.g.rooter_patterns = { "*.code-workspace", "packageInfo" }
@@ -33,7 +52,20 @@ return {
                 { "t",         ":Telescope<CR>",     desc = "Telescope: List" },
                 { "f",         telescope.oldfiles,   desc = "Telescope: MRU" },
                 { "<leader>f", telescope.find_files, desc = "Telescope: Find" },
-                { "<leader>g", telescope.live_grep,  desc = "Telescope: Grep" },
+                {
+                    "<leader>g",
+                    function()
+                        -- Uses ripgrep args (rg) for live_grep
+                        -- Command examples:
+                        -- -i "Data"  # case insensitive
+                        -- -g "!*.md" # ignore md files
+                        -- -w # whole word
+                        -- -e # regex
+                        -- see "man rg" for more
+                        require("telescope").extensions.live_grep_args.live_grep_args()
+                    end,
+                    desc = "Telescope: Grep",
+                },
                 {
                     "*",
                     function()
