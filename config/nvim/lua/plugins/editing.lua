@@ -27,4 +27,14 @@ return {
             vim.g.yankstack_yank_keys = { "y", "d" }
         end,
     },
+    {
+        "yuttie/comfortable-motion.vim",
+        keys = {
+            { "<leader>j", ":call comfortable_motion#flick(150)<CR>",  silent = true, "Scroll (Down)" },
+            { "<leader>k", ":call comfortable_motion#flick(-150)<CR>", silent = true, "Scroll (Up)" },
+        },
+        config = function()
+            vim.g.comfortable_motion_no_default_key_mappings = 1
+        end,
+    },
 }
