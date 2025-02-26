@@ -1,6 +1,18 @@
 return {
     {
+        "ahmedkhalf/project.nvim",
+        lazy = false,
+        dependencies = { "nvim-telescope/telescope.nvim" },
+        config = function()
+            require("project_nvim").setup({})
+        end,
+        keys = {
+            { "<leader>p", ":Telescope projects<CR>", silent = true, desc = "Telescope: Projects" },
+        },
+    },
+    {
         "goolord/alpha-nvim",
+        lazy = false,
         dependencies = { "nvim-tree/nvim-web-devicons" },
         config = function()
             local theta = require("alpha.themes.theta")
@@ -22,22 +34,25 @@ return {
         config = function()
             require("mini.files").setup({})
         end,
-        keys = {
-            {
-                "<leader>e",
-                function()
-                    local minifiles = require("mini.files")
-                    local buf_name = vim.api.nvim_buf_get_name(0)
-                    local path = vim.fn.filereadable(buf_name) == 1 and buf_name or vim.fn.getcwd()
-                    if not minifiles.close() then
-                        minifiles.open(path)
-                        minifiles.reveal_cwd()
-                    end
-                end,
-                silent = true,
-                desc = "MiniFiles: Toggle"
-            },
-        },
+        keys = function()
+            local minifiles = require("mini.files")
+            return {
+                {
+                    "<leader>e",
+                    function()
+                        local buf_name = vim.api.nvim_buf_get_name(0)
+                        local path = vim.fn.filereadable(buf_name) == 1 and buf_name or vim.fn.getcwd()
+                        if not minifiles.close() then
+                            minifiles.open(path)
+                            minifiles.reveal_cwd()
+                        end
+                    end,
+                    silent = true,
+                    desc = "MiniFiles: Toggle"
+                },
+                { "<ESC>", minifiles.close, silent = true, desc = "MiniFiles: Close" },
+            }
+        end,
     },
     {
         "ThePrimeagen/harpoon",

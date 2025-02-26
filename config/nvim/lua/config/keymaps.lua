@@ -1,7 +1,6 @@
 vim.g.mapleader = " "
 
 -- Pasting, saving, quitting
-vim.keymap.set("n", "<leader>pp", ":setlocal paste!<CR>", { noremap = true, silent = true, desc = "Set Local Paste" })
 vim.keymap.set("n", "<leader>w", ":wq<CR>", { noremap = true, desc = "Quit (Save)" })
 vim.keymap.set("n", "<leader>q", ":q!<CR>", { noremap = true, desc = "Quit (Don't Save)" })
 vim.keymap.set("n", "<leader>qa", ":qa<CR>", { noremap = true, desc = "Quit (All)" })
