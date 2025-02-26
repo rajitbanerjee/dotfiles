@@ -28,22 +28,69 @@ return {
             telescope.setup(opts)
             telescope.load_extension("live_grep_args")
         end,
-        opts = {
-            defaults = {
-                file_ignore_patterns = { ".git/", "node_modules/", "build/", "env/", "tmp/", "release-info/" },
-                vimgrep_arguments = {
-                    "rg",
-                    "--color=never",
-                    "--no-heading",
-                    "--hidden",
-                    "--with-filename",
-                    "--line-number",
-                    "--column",
-                    "--smart-case",
-                    "--trim",
+        opts = function()
+            -- show filename first across telescope
+            local function path_display(_, path)
+                local function normalize_path(p)
+                    return p:gsub("\\", "/")
+                end
+
+                local function normalize_cwd()
+                    return normalize_path(vim.loop.cwd()) .. "/"
+                end
+
+                local function is_subdirectory(cwd, p)
+                    return string.lower(p:sub(1, #cwd)) == string.lower(cwd)
+                end
+
+                local function split_filepath(p)
+                    local normalized_path = normalize_path(p)
+                    local normalized_cwd = normalize_cwd()
+                    local filename = normalized_path:match("[^/]+$")
+
+                    if is_subdirectory(normalized_cwd, normalized_path) then
+                        local stripped_path = normalized_path:sub(#normalized_cwd + 1, -(#filename + 1))
+                        return stripped_path, filename
+                    else
+                        local stripped_path = normalized_path:sub(1, -(#filename + 1))
+                        return stripped_path, filename
+                    end
+                end
+                local stripped_path, filename = split_filepath(path)
+                if filename == stripped_path or stripped_path == "" then
+                    return filename
+                end
+                return string.format("%s ~ %s", filename, stripped_path)
+            end
+
+            return {
+                defaults = {
+                    layout_strategy = "horizontal",
+                    layout_config = {
+                        horizontal = {
+                            prompt_position = "top",
+                            width = { padding = 0 },
+                            height = { padding = 0 },
+                            preview_width = 0.5,
+                        },
+                    },
+                    sorting_strategy = "ascending",
+                    file_ignore_patterns = { ".git/", "node_modules/", "build/", "env/", "tmp/", "release-info/" },
+                    vimgrep_arguments = {
+                        "rg",
+                        "--color=never",
+                        "--no-heading",
+                        "--hidden",
+                        "--with-filename",
+                        "--line-number",
+                        "--column",
+                        "--smart-case",
+                        "--trim",
+                    },
+                    path_display = path_display,
                 },
-            },
-        },
+            }
+        end,
         keys = function()
             local telescope = require("telescope.builtin")
             vim.g.rooter_patterns = { "*.code-workspace", "packageInfo" }
