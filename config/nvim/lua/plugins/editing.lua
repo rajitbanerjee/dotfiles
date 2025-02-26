@@ -1,6 +1,7 @@
 return {
     { "ibhagwan/smartyank.nvim", event = { "BufReadPost", "BufNewFile" } },
     { "jiangmiao/auto-pairs",    event = { "BufReadPost", "BufNewFile" } },
+    { "mg979/vim-visual-multi",  event = { "BufReadPost", "BufNewFile" } },
     { "tpope/vim-commentary",    event = { "BufReadPost", "BufNewFile" } },
     { "tpope/vim-repeat",        event = { "BufReadPost", "BufNewFile" } },
     { "tpope/vim-surround",      event = { "BufReadPost", "BufNewFile" } },
