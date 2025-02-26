@@ -32,7 +32,15 @@ return {
         version = false,
         lazy = false,
         config = function()
-            require("mini.files").setup({})
+            require("mini.files").setup({
+                options = {
+                    permanent_delete = false,
+                },
+                windows = {
+                    preview = true,
+                    width_preview = 100,
+                },
+            })
         end,
         keys = function()
             local minifiles = require("mini.files")

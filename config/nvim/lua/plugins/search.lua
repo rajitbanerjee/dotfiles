@@ -17,6 +17,7 @@ return {
     },
     {
         "nvim-telescope/telescope.nvim",
+        lazy = false,
         branch = "0.1.x",
         dependencies = {
             "nvim-lua/plenary.nvim",
@@ -65,6 +66,9 @@ return {
 
             return {
                 defaults = {
+                    preview = {
+                        treesitter = false,
+                    },
                     layout_strategy = "horizontal",
                     layout_config = {
                         horizontal = {
@@ -98,7 +102,7 @@ return {
             return {
                 { "t",         ":Telescope<CR>",     desc = "Telescope: List" },
                 { "f",         telescope.oldfiles,   desc = "Telescope: MRU" },
-                { "<leader>f", telescope.find_files, desc = "Telescope: Find" },
+                { "<leader>f", telescope.find_files, desc = "Telescope: Files" },
                 { "<leader>c", telescope.commands,   desc = "Telescope: Commands" },
                 {
                     "<leader>g",
@@ -125,7 +129,7 @@ return {
                     "<leader>/",
                     function()
                         telescope.current_buffer_fuzzy_find(
-                            require('telescope.themes').get_dropdown({ winblend = 10, previewer = false })
+                            require("telescope.themes").get_dropdown({ winblend = 10, previewer = false })
                         )
                     end,
                     desc = "Telescope: Find In Buffer"

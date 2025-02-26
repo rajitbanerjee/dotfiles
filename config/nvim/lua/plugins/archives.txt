@@ -68,3 +68,44 @@
             require("oil").setup({})
         end,
     },
+
+-- Removed in favour of telescope.nvim
+    {
+        "ibhagwan/fzf-lua",
+        dependencies = {
+            "nvim-tree/nvim-web-devicons",
+            "dbakker/vim-projectroot",
+        },
+        keys = {
+            { "f",         ":FzfLua oldfiles<CR>",                    silent = true, desc = "FZF: MRU" },
+            { "<leader>f", ":ProjectRootExe FzfLua files<CR>",        silent = true, desc = "FZF: Files" },
+            { "<leader>g", ":ProjectRootExe FzfLua grep_project<CR>", silent = true, desc = "FZF: Grep" },
+            { "*",         ":FzfLua grep_cword<CR>",                  silent = true, desc = "FZF: Grep Word" },
+        },
+        config = function()
+            local act = require("fzf-lua").actions
+            local function build_quickfix_list(lines)
+                local qf_list = {}
+                for _, line in ipairs(lines) do
+                    table.insert(qf_list, { filename = line })
+                end
+                vim.fn.setqflist(qf_list)
+                vim.cmd("copen")
+                vim.cmd("cc")
+            end
+
+            vim.g.rootmarkers = { "*.code-workspace", "packageInfo", ".git/" }
+
+
+            require("fzf-lua").setup {
+                actions = {
+                    files = {
+                        ["enter"]  = act.file_edit_or_qf,
+                        ["ctrl-b"] = function(selected) build_quickfix_list(selected) end,
+                        ["ctrl-s"] = act.file_vsplit,
+                    },
+                }
+            }
+        end,
+    },
+
