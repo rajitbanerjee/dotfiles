@@ -21,7 +21,8 @@ vim.keymap.set("n", "<C-k>", "<C-W>k", { noremap = true, desc = "Jump (Window Up
 vim.keymap.set("n", "<C-h>", "<C-W>h", { noremap = true, desc = "Jump (Window Left)" })
 vim.keymap.set("n", "<C-l>", "<C-W>l", { noremap = true, desc = "Jump (Window Right)" })
 
--- Resize splits
+-- Splits
+vim.keymap.set("n", "<leader>s", ":vsplit<CR>", { noremap = true, silent = true, desc = "Split Window" })
 vim.keymap.set("n", "<C-Up>", ":resize -2<CR>", { noremap = true, silent = true, desc = "Resize Window (Up)" })
 vim.keymap.set("n", "<C-Down>", ":resize +2<CR>", { noremap = true, silent = true, desc = "Resize Window (Down)" })
 vim.keymap.set("n", "<C-Left>", ":vertical resize -2<CR>",
