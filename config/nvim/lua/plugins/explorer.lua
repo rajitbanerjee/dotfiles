@@ -4,7 +4,10 @@ return {
         lazy = false,
         dependencies = { "nvim-telescope/telescope.nvim" },
         config = function()
-            require("project_nvim").setup({})
+            require("project_nvim").setup({
+                -- important: prevent project.nvim from chdir'ing and messing with telescope find & open file process
+                manual_mode = true,
+            })
         end,
         keys = {
             { "<leader>p", ":Telescope projects<CR>", silent = true, desc = "Telescope: Projects" },
