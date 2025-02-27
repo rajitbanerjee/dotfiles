@@ -97,7 +97,7 @@ return {
         end,
         keys = function()
             local telescope = require("telescope.builtin")
-            vim.g.rooter_patterns = { "*.code-workspace", "packageInfo" }
+            vim.g.rooter_patterns = { ".brazil/" }
 
             return {
                 { "t",         ":Telescope<CR>",     desc = "Telescope: List" },

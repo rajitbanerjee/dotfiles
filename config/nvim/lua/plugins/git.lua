@@ -38,7 +38,7 @@ return {
     },
     {
         "sindrets/diffview.nvim",
-        event = { "BufReadPost", "BufNewFile" },
+        event = "VeryLazy",
         cmd = { "DiffviewOpen", "DiffviewClose" },
         init = function()
             vim.keymap.set("n", "<leader>d", function()
