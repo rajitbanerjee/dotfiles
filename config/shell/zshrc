@@ -87,7 +87,7 @@ Linux)
 esac
 
 # Node
-export NODE_PATH="$(dirname $(mise exec nodejs@18 -- which node))"
+export NODE_PATH="$(dirname $(mise exec nodejs@20 -- which node))"
 export PATH=$NODE_PATH:$PATH
 export NODE_OPTIONS="--no-deprecation"
 

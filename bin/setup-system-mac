@@ -36,7 +36,7 @@ brew install wget
 echo -e "\n\nNode:\n"
 curl https://mise.jdx.dev/install.sh | sh
 mise plugin install nodejs
-mise install nodejs@18 && mise global nodejs@18
+mise install nodejs@20 && mise global nodejs@20
 
 # Go
 echo -e "\n\nGo:\n"
