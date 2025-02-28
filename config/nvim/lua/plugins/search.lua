@@ -64,6 +64,8 @@ return {
                 return string.format("%s ~ %s", filename, stripped_path)
             end
 
+            local actions = require("telescope.actions")
+
             return {
                 defaults = {
                     preview = {
@@ -92,18 +94,24 @@ return {
                         "--trim",
                     },
                     path_display = path_display,
+                    -- Override default mappings
+                    mappings = {
+                        i = {
+                            ["<C-q>"] = actions.smart_send_to_qflist + actions.open_qflist
+                        }
+                    }
                 },
             }
         end,
         keys = function()
-            local telescope = require("telescope.builtin")
+            local builtin = require("telescope.builtin")
             vim.g.rooter_patterns = { ".brazil/" }
 
             return {
-                { "t",         ":Telescope<CR>",     desc = "Telescope: List" },
-                { "f",         telescope.oldfiles,   desc = "Telescope: MRU" },
-                { "<leader>f", telescope.find_files, desc = "Telescope: Files" },
-                { "<leader>c", telescope.commands,   desc = "Telescope: Commands" },
+                { "t",         ":Telescope<CR>",   desc = "Telescope: List" },
+                { "f",         builtin.oldfiles,   desc = "Telescope: MRU" },
+                { "<leader>f", builtin.find_files, desc = "Telescope: Files" },
+                { "<leader>c", builtin.keymaps,    desc = "Telescope: Keymaps" },
                 {
                     "<leader>g",
                     function()
@@ -121,14 +129,14 @@ return {
                 {
                     "*",
                     function()
-                        telescope.live_grep({ default_text = vim.fn.expand("<cword>") })
+                        builtin.live_grep({ default_text = vim.fn.expand("<cword>") })
                     end,
                     desc = "Telescope: Grep Word"
                 },
                 {
                     "<leader>/",
                     function()
-                        telescope.current_buffer_fuzzy_find(
+                        builtin.current_buffer_fuzzy_find(
                             require("telescope.themes").get_dropdown({ winblend = 10, previewer = false })
                         )
                     end,

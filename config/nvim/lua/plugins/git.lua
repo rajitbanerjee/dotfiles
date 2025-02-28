@@ -43,9 +43,9 @@ return {
         init = function()
             vim.keymap.set("n", "<leader>d", function()
                 if next(require("diffview.lib").views) == nil then
-                    vim.cmd "DiffviewOpen"
+                    vim.cmd("DiffviewOpen")
                 else
-                    vim.cmd "DiffviewClose"
+                    vim.cmd("DiffviewClose")
                 end
             end, { desc = "Diffview: Toggle", silent = true })
         end,

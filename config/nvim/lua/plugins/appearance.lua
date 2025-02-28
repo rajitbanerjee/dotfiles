@@ -56,7 +56,7 @@ return {
                 if vim.env.TMUX ~= nil and name == "statusline" then
                     if scope and scope.window == vim.api.nvim_get_current_win() then
                         vim.g.tpipeline_statusline = val
-                        vim.cmd "silent! call tpipeline#update()"
+                        vim.cmd("silent! call tpipeline#update()")
                     end
                     return
                 end

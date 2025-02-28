@@ -1,5 +1,28 @@
 return {
     {
+        "folke/trouble.nvim",
+        event = { "BufReadPost", "BufNewFile" },
+        dependencies = { "nvim-tree/nvim-web-devicons" },
+        config = function()
+            require("trouble").setup({
+                auto_close = true,
+            })
+            vim.api.nvim_create_autocmd("BufRead", {
+                callback = function(ev)
+                    if vim.bo[ev.buf].buftype == "quickfix" then
+                        vim.schedule(function()
+                            vim.cmd("cclose")
+                            vim.cmd("Trouble qflist open")
+                        end)
+                    end
+                end
+            })
+        end,
+        keys = {
+            { "<leader>xx", ":Trouble diagnostics toggle<cr>", silent = true, desc = "Trouble: Diagnostics" },
+        },
+    },
+    {
         "nvim-treesitter/nvim-treesitter",
         event = { "BufReadPost", "BufNewFile" },
         build = ":TSUpdate",
