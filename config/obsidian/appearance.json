@@ -1,0 +1,13 @@
+{
+  "accentColor": "#fcba00",
+  "cssTheme": "Minimal",
+  "enabledCssSnippets": [],
+  "showViewHeader": false,
+  "translucency": true,
+  "theme": "system",
+  "interfaceFontFamily": "Amazon Ember",
+  "textFontFamily": "Amazon Ember",
+  "monospaceFontFamily": "Menlo",
+  "showRibbon": false,
+  "nativeMenus": true
+}

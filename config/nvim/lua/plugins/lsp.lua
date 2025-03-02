@@ -20,6 +20,8 @@ return {
                     "latex",
                     "lua",
                     "make",
+                    "markdown",
+                    "markdown_inline",
                     "perl",
                     "python",
                     "regex",
@@ -48,6 +50,7 @@ return {
             'WhoIsSethDaniel/mason-tool-installer.nvim',
             "mfussenegger/nvim-jdtls",
             "hrsh7th/cmp-nvim-lsp",
+            "stevearc/conform.nvim",
         },
         config = function()
             local lspconfig = require("lspconfig")
@@ -55,6 +58,7 @@ return {
             local mason_lspconfig = require("mason-lspconfig")
             local mason_tool_installer = require("mason-tool-installer")
             local cmp_nvim_lsp = require("cmp_nvim_lsp")
+            local conform = require("conform")
             local default_capabilities = vim.lsp.protocol.make_client_capabilities()
             default_capabilities = vim.tbl_deep_extend(
                 "force",
@@ -79,6 +83,7 @@ return {
                         },
                     },
                 },
+                marksman = {},
                 ts_ls = {},
                 yamlls = {},
             }
@@ -96,6 +101,12 @@ return {
             )
             mason_tool_installer.setup({
                 ensure_installed = mason_ensure_installed
+            })
+
+            conform.setup({
+                formatters_by_ft = {
+                    markdown = { "prettier" },
+                },
             })
 
             mason_lspconfig.setup({
@@ -121,7 +132,7 @@ return {
                     end
 
                     vim.keymap.set("n", "<leader>l", function()
-                        vim.lsp.buf.format { async = true }
+                        conform.format({ async = true, lsp_format = "fallback" })
                     end, opts("Format"))
 
                     vim.keymap.set("n", "<leader>o", function()

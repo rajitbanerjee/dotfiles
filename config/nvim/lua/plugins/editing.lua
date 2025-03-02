@@ -37,4 +37,19 @@ return {
             vim.g.comfortable_motion_no_default_key_mappings = 1
         end,
     },
+    {
+        "epwalsh/obsidian.nvim",
+        version = "*",
+        lazy = true,
+        ft = "markdown",
+        dependencies = { "nvim-lua/plenary.nvim" },
+        opts = {
+            workspaces = {
+                {
+                    name = "personal",
+                    path = "/Users/rajitbanerjee/Library/Mobile Documents/iCloud~md~obsidian/Documents/rajitbanerjee",
+                },
+            },
+        },
+    },
 }

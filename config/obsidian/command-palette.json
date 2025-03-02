@@ -1,0 +1,8 @@
+{
+  "pinned": [
+    "obsidian-kanban:toggle-kanban-view",
+    "editor:fold-all",
+    "editor:unfold-all",
+    "obsidian-git:push"
+  ]
+}

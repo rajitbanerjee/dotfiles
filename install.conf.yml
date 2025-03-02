@@ -46,5 +46,10 @@
       if: "[ `uname` = Darwin ]"
       path: config/vscode/keybindings.json
 
+    # notes
+    /Users/rajitbanerjee/Library/Mobile Documents/iCloud~md~obsidian/Documents/rajitbanerjee/.obsidian: 
+      if: "[ `uname -n` = RBs-MacBook ]"
+      path: config/obsidian
+
 - shell:
     - [git submodule update --init --recursive, Installing submodules]
