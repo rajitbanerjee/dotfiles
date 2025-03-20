@@ -40,7 +40,9 @@ return {
                     permanent_delete = false,
                 },
                 windows = {
+                    max_number = 2,
                     preview = true,
+                    width_focus = 30,
                     width_preview = 100,
                 },
             })
