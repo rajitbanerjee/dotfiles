@@ -42,7 +42,7 @@ return {
                 windows = {
                     max_number = 2,
                     preview = true,
-                    width_focus = 30,
+                    width_focus = 50,
                     width_preview = 100,
                 },
             })
