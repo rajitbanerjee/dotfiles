@@ -68,30 +68,16 @@ return {
         end,
     },
     {
-        "ThePrimeagen/harpoon",
-        branch = "harpoon2",
-        dependencies = { "nvim-lua/plenary.nvim" },
-        config = function()
-            local harpoon = require("harpoon")
-            harpoon:setup({})
-            harpoon:extend({
-                UI_CREATE = function(cx)
-                    vim.keymap.set("n", "l", function()
-                        harpoon.ui:select_menu_item()
-                    end, { buffer = cx.bufnr, desc = "Harpoon: Open" })
-                end,
-            })
-        end,
-        keys = function()
-            local harpoon = require("harpoon")
-            return {
-                { "<leader>hl", function() harpoon.ui:toggle_quick_menu(harpoon:list()) end, desc = "Harpoon: List" },
-                { "<leader>ha", function() harpoon:list():add() end,                         desc = "Harpoon: Add" },
-                { "<leader>1",  function() harpoon:list():select(1) end,                     desc = "Harpoon: Mark 1" },
-                { "<leader>2",  function() harpoon:list():select(2) end,                     desc = "Harpoon: Mark 2" },
-                { "<leader>3",  function() harpoon:list():select(3) end,                     desc = "Harpoon: Mark 3" },
-                { "<leader>4",  function() harpoon:list():select(4) end,                     desc = "Harpoon: Mark 4" },
-            }
-        end
+        "otavioschwanck/arrow.nvim",
+        dependencies = {
+            { "nvim-tree/nvim-web-devicons" },
+        },
+        opts = {
+            show_icons = true,
+            leader_key = "<leader>b", -- Bookmark files
+            buffer_leader_key = "m", -- Bookmark lines
+            always_show_path = true,
+            separate_by_branch = true,
+        }
     },
 }
