@@ -37,7 +37,10 @@ return {
     },
     {
         "nvim-lualine/lualine.nvim",
-        dependencies = { "nvim-tree/nvim-web-devicons" },
+        dependencies = {
+            "nvim-tree/nvim-web-devicons",
+            "dokwork/lualine-ex"
+        },
         config = function()
             require("lualine").setup({
                 options = {
@@ -45,7 +48,17 @@ return {
                     component_separators = { left = "", right = "" },
                     section_separators = { left = "", right = "" },
                 },
-                sections = { lualine_c = {} },
+                sections = {
+                    lualine_c = {
+                        {
+                            "ex.cwd",
+                            depth = 2,
+                            prefix = "…",
+                            max_length = 0.2
+                        }
+                    },
+                    lualine_x = { "encoding", "fileformat", "filetype", "lsp_status" },
+                },
             })
 
             -- Avoid duplicate lualine on changing colorscheme
