@@ -16,6 +16,14 @@ return {
         },
     },
     {
+        "MagicDuck/grug-far.nvim",
+        lazy = false,
+        keys = {
+            { "<leader>g", ":GrugFar<CR>",      mode = "n", silent = true, desc = "GrugFar: Find and Replace" },
+            { "<leader>g", ":'<,'>GrugFar<CR>", mode = "v", silent = true, desc = "GrugFar: Find and Replace (Selection)" },
+        },
+    },
+    {
         "nvim-telescope/telescope.nvim",
         lazy = false,
         branch = "0.1.x",
@@ -98,7 +106,11 @@ return {
                     mappings = {
                         i = {
                             ["<C-q>"] = actions.smart_send_to_qflist + actions.open_qflist
-                        }
+                        },
+                        n = {
+                            ["l"] = actions.cycle_history_next,
+                            ["h"] = actions.cycle_history_prev,
+                        },
                     }
                 },
             }
@@ -108,11 +120,12 @@ return {
 
             local telescope = require("telescope")
             local builtin = require("telescope.builtin")
+            local themes = require("telescope.themes")
 
             -- Allow telescope to remember search history
             local _last_picker = nil
             local _last_ctx = nil
-            local function telescope_middleware(func, ctxfunc)
+            local function history_middlware(func, ctxfunc)
                 local function inner()
                     local ctx
                     if ctxfunc == nil then
@@ -133,11 +146,11 @@ return {
 
             return {
                 { "t",         ":Telescope<CR>",                         desc = "Telescope: List" },
-                { "f",         telescope_middleware(builtin.oldfiles),   desc = "Telescope: MRU" },
-                { "<leader>f", telescope_middleware(builtin.find_files), desc = "Telescope: Files" },
-                { "<leader>c", telescope_middleware(builtin.keymaps),    desc = "Telescope: Keymaps" },
+                { "f",         history_middlware(builtin.oldfiles),   desc = "Telescope: MRU" },
+                { "<leader>f", history_middlware(builtin.find_files), desc = "Telescope: Files" },
+                { "<leader>c", history_middlware(builtin.keymaps),    desc = "Telescope: Keymaps" },
                 {
-                    "<leader>g",
+                    "<leader>tg",
                     function()
                         -- Uses ripgrep args (rg) for live_grep
                         -- Command examples:
@@ -146,7 +159,7 @@ return {
                         -- -w # whole word
                         -- -e # regex
                         -- see "man rg" for more
-                        telescope_middleware(telescope.extensions.live_grep_args.live_grep_args)()
+                        telescope.extensions.live_grep_args.live_grep_args()
                     end,
                     desc = "Telescope: Grep",
                 },
@@ -158,10 +171,10 @@ return {
                     desc = "Telescope: Grep Word"
                 },
                 {
-                    "<leader>/",
+                    "/",
                     function()
                         builtin.current_buffer_fuzzy_find(
-                            require("telescope.themes").get_dropdown({ winblend = 10, previewer = false })
+                            themes.get_dropdown({ winblend = 10, previewer = false })
                         )
                     end,
                     desc = "Telescope: Find In Buffer"

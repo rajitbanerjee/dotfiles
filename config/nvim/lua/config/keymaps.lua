@@ -1,4 +1,5 @@
 vim.g.mapleader = " "
+vim.g.maplocalleader = ","
 
 -- Pasting, saving, quitting
 vim.keymap.set("n", "<leader>w", ":wq<CR>", { noremap = true, desc = "Quit (Save)" })
