@@ -77,7 +77,7 @@ return {
             leader_key = "<leader>b", -- Bookmark files
             buffer_leader_key = "m", -- Bookmark lines
             always_show_path = true,
-            separate_by_branch = true,
+            global_bookmarks = true,
         }
     },
 }
