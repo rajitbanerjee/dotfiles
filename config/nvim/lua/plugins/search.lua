@@ -19,8 +19,8 @@ return {
         "MagicDuck/grug-far.nvim",
         lazy = false,
         keys = {
-            { "<leader>g", ":GrugFar<CR>",      mode = "n", silent = true, desc = "GrugFar: Find and Replace" },
-            { "<leader>g", ":'<,'>GrugFar<CR>", mode = "v", silent = true, desc = "GrugFar: Find and Replace (Selection)" },
+            { "<leader>gf", ":GrugFar<CR>",      mode = "n", silent = true, desc = "GrugFar: Find and Replace" },
+            { "<leader>gf", ":'<,'>GrugFar<CR>", mode = "v", silent = true, desc = "GrugFar: Find and Replace (Selection)" },
         },
     },
     {
@@ -125,7 +125,7 @@ return {
             -- Allow telescope to remember search history
             local _last_picker = nil
             local _last_ctx = nil
-            local function history_middlware(func, ctxfunc)
+            local function history_middleware(func, ctxfunc)
                 local function inner()
                     local ctx
                     if ctxfunc == nil then
@@ -145,12 +145,12 @@ return {
             end
 
             return {
-                { "t",         ":Telescope<CR>",                         desc = "Telescope: List" },
-                { "f",         history_middlware(builtin.oldfiles),   desc = "Telescope: MRU" },
-                { "<leader>f", history_middlware(builtin.find_files), desc = "Telescope: Files" },
-                { "<leader>c", history_middlware(builtin.keymaps),    desc = "Telescope: Keymaps" },
+                { "t",         ":Telescope<CR>",                      desc = "Telescope: List" },
+                { "f",         history_middleware(builtin.oldfiles),   desc = "Telescope: MRU" },
+                { "<leader>f", history_middleware(builtin.find_files), desc = "Telescope: Files" },
+                { "<leader>c", history_middleware(builtin.keymaps),    desc = "Telescope: Keymaps" },
                 {
-                    "<leader>tg",
+                    "<leader>g",
                     function()
                         -- Uses ripgrep args (rg) for live_grep
                         -- Command examples:
