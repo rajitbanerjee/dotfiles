@@ -111,7 +111,7 @@ return {
                             ["l"] = actions.cycle_history_next,
                             ["h"] = actions.cycle_history_prev,
                         },
-                    }
+                    },
                 },
             }
         end,
@@ -145,7 +145,7 @@ return {
             end
 
             return {
-                { "t",         ":Telescope<CR>",                      desc = "Telescope: List" },
+                { "t",         ":Telescope<CR>",                       desc = "Telescope: List" },
                 { "f",         history_middleware(builtin.oldfiles),   desc = "Telescope: MRU" },
                 { "<leader>f", history_middleware(builtin.find_files), desc = "Telescope: Files" },
                 { "<leader>c", history_middleware(builtin.keymaps),    desc = "Telescope: Keymaps" },
@@ -174,7 +174,14 @@ return {
                     "/",
                     function()
                         builtin.current_buffer_fuzzy_find(
-                            themes.get_dropdown({ winblend = 10, previewer = false })
+                            themes.get_dropdown({
+                                winblend = 10,
+                                previewer = false,
+                                layout_config = {
+                                    height = 0.8,
+                                    width = 0.6,
+                                },
+                            })
                         )
                     end,
                     desc = "Telescope: Find In Buffer"
