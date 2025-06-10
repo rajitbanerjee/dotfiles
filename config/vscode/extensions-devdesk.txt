@@ -1,4 +1,4 @@
-Extensions installed on SSH: devdesk:
+Extensions installed on SSH: devdesk-al2:
 amazonwebservices.amazon-q-vscode
 amazonwebservices.aws-toolkit-vscode
 avin.ion-format-support
@@ -10,6 +10,7 @@ donjayamanne.githistory
 dotjoshjohnson.xml
 ecmel.vscode-html-css
 esbenp.prettier-vscode
+fabianlauer.vs-code-xml-format
 foxundermoon.shell-format
 golang.go
 grapecity.gc-excelviewer
@@ -22,6 +23,7 @@ james-yu.latex-workshop
 jbockle.jbockle-format-files
 marklel.vscode-brazil
 mhutchie.git-graph
+mikeburgh.xml-format
 ms-azuretools.vscode-docker
 ms-python.debugpy
 ms-python.isort
@@ -58,4 +60,5 @@ vscjava.vscode-maven
 vscjava.vscode-spring-initializr
 waderyan.gitblame
 wakatime.vscode-wakatime
+yinfei.luahelper
 yzhang.markdown-all-in-one

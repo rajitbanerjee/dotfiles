@@ -25,3 +25,5 @@ GIT_PS1_SHOWUNTRACKEDFILES=1
 GIT_PS1_SHOWUPSTREAM="auto"
 GIT_PS1_SHOWCOLORHINTS=1
 
+# brazil setup completion
+source $HOME/.brazil_completion/bash_completion

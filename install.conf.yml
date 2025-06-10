@@ -31,9 +31,7 @@
       path: config/ssh/config
 
     # dev env (nvim)
-    ~/.config/kitty:
-      if: "[ `uname` = Darwin ]"
-      path: config/kitty
+    ~/.config/kitty: config/kitty
     ~/.config/nvim: config/nvim
     ~/.tmux.conf: config/tmux/tmux.conf
     ~/.tmux/plugins/tpm: config/tmux/tpm

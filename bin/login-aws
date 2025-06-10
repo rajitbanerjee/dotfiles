@@ -1,6 +1,6 @@
 #!/bin/bash
 
-if [[ $(uname -n) == dev-dsk* ]]; then
+if [[ $(uname -n) == dev-dsk* || $(uname -n) == ip-*  ]]; then
 	echo "Generating Midway cookie..."
 	mwinit -s -o
 	echo "Done!"

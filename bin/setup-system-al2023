@@ -2,19 +2,23 @@
 set -euo pipefail
 IFS=$'\n\t'
 
-# Set up a new Amazon Linux 2 instance with my preferred packages.
-# Usage: setup-system-al2
+# Set up a new Amazon Linux 2023 instance with my preferred packages.
+# Usage: setup-system-al2023
 
-echo -e "Starting AL2 system setup...\n"
+echo -e "Starting AL2023 system setup...\n"
 
 sudo timedatectl set-timezone Europe/Dublin
+
+# Run mwinit so we can use toolbox
+echo "Generating Midway cookie..."
+mwinit -s -o
 
 # Linuxbrew (+dependencies)
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
 sudo yum groupinstall 'Development Tools'
-sudo yum install procps-ng curl file
+sudo yum install procps-ng
 
 brew analytics off
 brew update
@@ -45,20 +49,17 @@ chmod +x ~/.local/bin/docker-compose
 # Node
 echo -e "\n\nNode:\n"
 curl https://mise.jdx.dev/install.sh | sh
-mise plugin install nodejs ssh://git.amazon.com/pkg/RtxNode
+mise plugin install nodejs ssh://git.amazon.com/pkg/RtxNode --force
 mise install nodejs@20 && mise global nodejs@20
+# alt: axe init builder-tools
 
 # Go
 echo -e "\n\nGo:\n"
-brew install go
-sudo ln -s /home/linuxbrew/.linuxbrew/bin/go /usr/bin/go
-go env -w GOPROXY=direct
+sudo yum install -y golang
 
 # Java
 echo -e "\n\nJava:\n"
-sudo yum install java-17-amazon-corretto
-sudo rpm --import https://yum.corretto.aws/corretto.key # workaround to install Java 21 on AL2
-sudo curl -L -o /etc/yum.repos.d/corretto.repo https://yum.corretto.aws/corretto.repo
+sudo yum install -y java-17-amazon-corretto
 sudo yum install -y java-21-amazon-corretto-devel
 
 # Wakatime
@@ -82,11 +83,13 @@ fi
 
 # AWS Dev Tools
 echo -e "\n\nAWS Dev Tools:\n"
+cd ~/
 sudo mkdir -p -m 755 /workplace/${USER}
-sudo chown -R ${USER}:amazon /workplace/${USER}
+sudo chown -R ${USER} /workplace/${USER}
 ln -s /workplace/${USER} ~/workplace
 
 brew install awscli
+brew install awscurl
 toolbox install ada
 toolbox install axe
 toolbox install barium
@@ -102,11 +105,16 @@ toolbox registry add s3://buildertoolbox-registry-hub-create-us-west-2/tools.jso
 toolbox registry add s3://buildertoolbox-registry-isengard-cli-us-west-2/tools.json && toolbox install isengard-cli
 toolbox registry add s3://prod-wasabi-vending-registry/tools.json && toolbox install wasabi
 
+brazil setup completion
+
 # Large workspace watches setup
 echo fs.inotify.max_user_watches=524288 | sudo tee -a /etc/sysctl.conf && sudo sysctl -p
 
 echo -e "\n\noh-my-zsh:\n(Note: \"exit\" from oh-my-zsh to resume setup)\n"
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 mv ~/.zshrc.pre-oh-my-zsh ~/.zshrc
+
+# Kitty (Optional)
+# sudo tic ~/.config/kitty/xterm-kitty.ti
 
 echo -e "\nSystem setup complete!\n"

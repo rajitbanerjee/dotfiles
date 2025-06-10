@@ -1,0 +1,17 @@
+#!/bin/bash
+set -euo pipefail
+IFS=$'\n\t'
+
+# Set up SSH keys
+# Usage: setup-ssh-keys
+
+# GitHub access
+ssh-keygen -t ed25519 -C "rajitbanerjee15@gmail.com"
+eval "$(ssh-agent -s)"
+ssh-add ~/.ssh/id_ed25519
+echo -e "~/.ssh/id_ed25519.pub"
+cat ~/.ssh/id_ed25519.pub
+
+# Midway access
+ssh-keygen -t ecdsa
+mwinit -o
