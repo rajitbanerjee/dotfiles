@@ -252,6 +252,48 @@ gsa() {
     $echoed || echo "tutto bene!"
 }
 
+gui() {
+    if [[ $# -lt 1 ]]; then
+        echo "Usage: gui [skip|unskip|list] <file1> [file2 ...]"
+        return 1
+    fi
+
+    local action=$1
+    shift
+
+    case "$action" in
+        skip)
+            if [[ $# -lt 1 ]]; then
+                echo "Usage: gui skip <file1> [file2 ...]"
+                return 1
+            fi
+            for file in "$@"; do
+                git update-index --skip-worktree "$file"
+                echo "Skipped tracking changes for $file"
+            done
+            ;;
+        unskip)
+            if [[ $# -lt 1 ]]; then
+                echo "Usage: gui unskip <file1> [file2 ...]"
+                return 1
+            fi
+            for file in "$@"; do
+                git update-index --no-skip-worktree "$file"
+                echo "Resumed tracking changes for $file"
+            done
+            ;;
+        list)
+            echo "Files with skip-worktree set:"
+            git ls-files -v | grep '^[S]'
+            ;;
+        *)
+            echo "Unknown action: $action"
+            echo "Usage: gui [skip|unskip|list] <file1> [file2 ...]"
+            return 1
+            ;;
+    esac
+}
+
 ### AWS ###
 
 # Toolbox
