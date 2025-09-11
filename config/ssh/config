@@ -9,11 +9,13 @@ Host git.amazon.com
   PubkeyAuthentication yes
   ForwardX11 no
 
-Host devdesk
+Host devdesk-al2023
   Hostname i-009715e3841c1d33e
   ProxyCommand axe connect --instance-id "%h" --tunnel
   ForwardAgent yes
   LocalForward 3000 localhost:3000
+  LocalForward 3001 localhost:3001
+  LocalForward 3002 localhost:3002
   LocalForward 7000 localhost:7000
   LocalForward 8000 localhost:8000
   LocalForward 8080 localhost:8080
@@ -23,7 +25,7 @@ Host devdesk
   LocalForward 8443 localhost:8443
   LocalForward 9999 localhost:9999
 
-Host devdesk-al2
+Host devdesk
   Hostname dev-dsk-brajit-1b-776a48fa.eu-west-1.amazon.com
   IdentityFile ~/.ssh/id_ecdsa
   LogLevel ERROR
