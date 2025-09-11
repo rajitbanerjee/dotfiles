@@ -5,6 +5,7 @@ Host github.audible.com
 Host git.amazon.com
   Port 2222
   IdentityFile ~/.ssh/id_ecdsa
+  ProxyCommand wssh proxy %h
   IdentitiesOnly yes
   PubkeyAuthentication yes
   ForwardX11 no
