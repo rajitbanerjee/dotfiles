@@ -1,3 +1,4 @@
 autoload/
 refresh-midway-cookie
 config/obsidian/workspace*
+config/obsidian/**/data.json
