@@ -94,6 +94,7 @@ esac
 export NODE_PATH="$(dirname $(mise exec nodejs@20 -- which node))"
 export PATH=$NODE_PATH:$PATH
 export NODE_OPTIONS="--no-deprecation"
+export AWS_SDK_JS_SUPPRESS_MAINTENANCE_MODE_MESSAGE=1
 
 ### Aliases ###
 
@@ -355,5 +356,9 @@ export AWS_EC2_METADATA_DISABLED=true
 
 # Amazon Q post block. Keep at the bottom of this file.
 [[ -f "${HOME}/.local/share/amazon-q/shell/zshrc.post.zsh" ]] && builtin source "${HOME}/.local/share/amazon-q/shell/zshrc.post.zsh"
+
 # brazil setup completion
 source $HOME/.brazil_completion/zsh_completion
+
+# Added by smithy-mcp
+export PATH="/home/brajit/.config/smithy-mcp/mcp-servers:$PATH"
