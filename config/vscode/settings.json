@@ -29,7 +29,7 @@
         "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
     "[json]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
+        "editor.defaultFormatter": "vscode.json-language-features"
     },
     "[jsonc]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
@@ -54,8 +54,6 @@
     },
     "cSpell.language": "en-US",
     "diffEditor.experimental.showMoves": true,
-    "diffEditor.hideUnchangedRegions.enabled": true,
-    "diffEditor.ignoreTrimWhitespace": false,
     "editor.accessibilitySupport": "off",
     "editor.codeLensFontFamily": "JetBrainsMono Nerd Font",
     "editor.find.cursorMoveOnType": false,
@@ -74,40 +72,41 @@
     "files.associations": {
         "*.gradle": "groovy",
         ".crux_dry_run_build": "plaintext",
-        "Config": "brazilPackageConfig"
+        "Config": "brazilPackageConfig",
+        "*.xwiki": "markdown"
     },
     "files.autoSave": "afterDelay",
     "files.exclude": {
+        ".viceroy": true,
+        "apollo-overrides": true,
+        "release-info": true,
+        "src/*/build": false,
+        "build": false,
+        "env": true,
+        "packageInfo*": true,
+        ".bemol": true,
+        "**/.git": true,
+        "**/.svn": true,
+        "**/.hg": true,
+        "**/.DS_Store": true,
+        "**/Thumbs.db": true,
+        "**/CVS": true,
         "**/*.aux": true,
         "**/*.bcf": true,
         "**/*.iml": true,
         "**/*.run.xml": true,
         "**/*.synctex.gz": true,
-        "**/.DS_Store": true,
         "**/.classpath": true,
         "**/.factorypath": true,
-        "**/.git": true,
-        "**/.hg": true,
         "**/.idea": true,
         "**/.project": true,
-        "**/.settings": true,
-        "**/.svn": true,
-        "**/CVS": true,
-        "**/Thumbs.db": true,
-        ".bemol": true,
-        ".viceroy": true,
-        "apollo-overrides": true,
-        "build": false,
-        "env": true,
-        "packageInfo*": true,
-        "release-info": true,
-        "src/*/build": false
+        "**/.settings": true
     },
     "files.watcherExclude": {
+        "**/build/**": true,
         "**/.git/objects/**": true,
         "**/.git/subtree-cache/**": true,
         "**/.hg/store/**": true,
-        "**/build/**": true,
         "**/node_modules/*/**": true
     },
     "git-graph.maxDepthOfRepoSearch": 4,
@@ -138,12 +137,12 @@
     "scm.diffDecorationsIgnoreTrimWhitespace": "true",
     "scm.repositories.visible": 20,
     "search.exclude": {
-        "**/*.code-search": true,
-        "**/bower_components": true,
-        "**/node_modules": true,
-        "build": true,
         "env": true,
-        "src/*/build": true
+        "src/*/build": true,
+        "build": true,
+        "**/node_modules": true,
+        "**/bower_components": true,
+        "**/*.code-search": true
     },
     "search.useGlobalIgnoreFiles": true,
     "search.useParentIgnoreFiles": true,
@@ -161,8 +160,8 @@
     "viceroy.__workspace__": {},
     "viceroy.config.autoReloadWorkspaceFolders": false,
     "viceroy.config.beautyMode": false,
-    "viceroy.config.internal.lastUpdateTime": "2025-02-17T13:38:02.363Z",
-    "viceroy.config.lastVersion": "0.53.201857",
+    "viceroy.config.internal.lastUpdateTime": "2025-12-08T16:06:47.530Z",
+    "viceroy.config.lastVersion": "0.53.202471",
     "viceroy.config.notifyGlibcIssue": false,
     "viceroy.config.notifyMarchAL2Incompatibility": false,
     "viceroy.config.promptForWorkspaceMode": "alwaysMigrate",
@@ -233,7 +232,33 @@
         "!SelectSequence"
     ],
     "yaml.schemas": {
-        "file:///local/home/brajit/.vscode-server/extensions/marklel.vscode-brazil-0.53.201857/assets/languages/rde/schema.json": "**/definition.yaml"
+        "file:///local/home/brajit/.vscode-server/extensions/marklel.vscode-brazil-0.53.202471/assets/languages/rde/schema.json": "**/definition.yaml"
     },
-    "yaml.validate": true
+    "yaml.validate": true,
+    "viceroy.config.notifyMarch25AL2Support": false,
+    "cSpell.userWords": [
+        "Debugf",
+        "Infof",
+        "Isengard",
+        "JWKS",
+        "JWKSURI",
+        "sswyn"
+    ],
+    "viceroy.config.notifyAmazonqBeta": false,
+    "viceroy.marketplace.extensionUpdateChannels": {
+        "amzn.amzn-pippin": "stable",
+        "mchpatr.datapath-vscode": "stable",
+        "mchpatr.datapath-language-server": "stable",
+        "asbx.amzn-cline": "stable",
+        "amazon.controls-dsl": "stable",
+        "amzn.AWSGuruQLinter": "stable",
+        "amzn.vscode-isengard-tooltip": "stable",
+        "kaze.vscode-plugin-contribution-model": "stable",
+        "marklel.vscode-brazil": "stable"
+    },
+    "diffEditor.maxComputationTime": 0,
+    "diffEditor.ignoreTrimWhitespace": true,
+    "chat.disableAIFeatures": true,
+    "python.defaultInterpreterPath": "/usr/bin/python3",
+    "diffEditor.hideUnchangedRegions.enabled": true
 }
