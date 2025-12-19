@@ -102,7 +102,6 @@ export AWS_SDK_JS_SUPPRESS_MAINTENANCE_MODE_MESSAGE=1
 alias ..="cd .."
 alias cd..="cd .."
 alias cdd="cd ~/.dotfiles"
-alias cdn="cd \"/Users/rajitbanerjee/Library/Mobile Documents/iCloud~md~obsidian/Documents/rajitbanerjee\""
 alias chx="chmod +x"
 alias cls="clear"
 alias cl="cls && l"

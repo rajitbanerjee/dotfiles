@@ -36,18 +36,13 @@
     ~/.tmux.conf: config/tmux/tmux.conf
     ~/.tmux/plugins/tpm: config/tmux/tpm
 
-    # dev env alt (vscode)
+    # dev env (vscode)
     ~/Library/Application Support/Code/User/settings.json:
       if: "[ `uname` = Darwin ]"
       path: config/vscode/settings.json
     ~/Library/Application Support/Code/User/keybindings.json:
       if: "[ `uname` = Darwin ]"
       path: config/vscode/keybindings.json
-
-    # notes
-    /Users/rajitbanerjee/Library/Mobile Documents/iCloud~md~obsidian/Documents/rajitbanerjee/.obsidian: 
-      if: "[ `uname -n` = RBs-MacBook ]"
-      path: config/obsidian
 
 - shell:
     - [git submodule update --init --recursive, Installing submodules]

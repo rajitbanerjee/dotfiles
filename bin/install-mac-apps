@@ -5,11 +5,9 @@ IFS=$'\n\t'
 # Install macOS GUI apps
 
 brew install --cask kitty
-brew install --cask obsidian
 brew install --cask bitwarden
 brew install --cask firefox
 brew install --cask keepingyouawake
 brew install --cask mos
-brew install --cask spotify
 brew install --cask visual-studio-code
 brew install --cask raycast
