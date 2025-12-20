@@ -17,7 +17,7 @@ exec $SHELL -l
 
 ```shell
 sudo yum install -y git
-setup-system-al2023
+setup-system-al2
 # setup-system-mac
 nvim
 # install-mac-apps

@@ -1,6 +1,3 @@
-# Amazon Q pre block. Keep at the top of this file.
-[[ -f "${HOME}/.local/share/amazon-q/shell/zshrc.pre.zsh" ]] && builtin source "${HOME}/.local/share/amazon-q/shell/zshrc.pre.zsh"
-
 ### General ###
 
 zmodload zsh/zprof
@@ -107,7 +104,7 @@ alias cls="clear"
 alias cl="cls && l"
 alias env="env | sort | less"
 alias path="tr ':' '\n' <<<"$PATH" | less"
-alias qq="exit"
+alias q="exit"
 case "$(uname)" in
 Darwin)
     alias doc="cd ~/Documents"
@@ -327,37 +324,11 @@ node-isengard-update() {
     node-isengard -h
 }
 
-# Conduit AWS profiles
-## Get all Conduit accounts the user has access to
-function conduit-accounts {
-   mcurl -s https://conduit.security.a2z.com/api/accounts\?partition\=aws\&maxResults\=500\&fetchFromDynamo\=true | jq '.conduitAccountList[]'
-}
-
-## Assume role in a Conduit AWS account
-function conduit {
-   ACCOUNT_ID=$(conduit-accounts | jq 'select(.name == "'$1'") | .identifier.accountId' -r)
-   ROLE=${2:-IibsAdminAccess-DO-NOT-DELETE}
-
-   echo "[$1] Assuming role $ROLE in account $ACCOUNT_ID"
-
-   unset AWS_ACCESS_KEY_ID AWS_SECRET_ACCESS_KEY AWS_SESSION_TOKEN
-   ada credentials update --account=$ACCOUNT_ID --role $ROLE --provider conduit --once
-   aws sts get-caller-identity | cat
-}
-
-## List all conduit account names
-function conduit-list {
-   conduit-accounts | jq '.name' -r
-}
-
 # Added automatically (and periodically, if missing) on cloud desktop
 export AWS_EC2_METADATA_DISABLED=true
 
-# Amazon Q post block. Keep at the bottom of this file.
-[[ -f "${HOME}/.local/share/amazon-q/shell/zshrc.post.zsh" ]] && builtin source "${HOME}/.local/share/amazon-q/shell/zshrc.post.zsh"
-
 # brazil setup completion
-source $HOME/.brazil_completion/zsh_completion
+[[ -f "$HOME/.brazil_completion/zsh_completion" ]] && source $HOME/.brazil_completion/zsh_completion
 
 # Added by smithy-mcp
 export PATH="/home/brajit/.config/smithy-mcp/mcp-servers:$PATH"
