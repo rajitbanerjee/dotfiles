@@ -53,6 +53,8 @@ return {
                     "vim",
                     "yaml",
                 },
+                modules = {},
+                ignore_install = {},
                 indent = { enable = true },
                 fold = { enable = true },
                 highlight = { enable = true },
@@ -64,6 +66,11 @@ return {
             vim.opt.foldenable = false -- Start with folds open
             vim.opt.foldlevel = 99     -- Open most folds by default
         end,
+    },
+    {
+        "folke/lazydev.nvim",
+        ft = "lua",
+        opts = {},
     },
     {
         "neovim/nvim-lspconfig",
@@ -99,10 +106,6 @@ return {
                         Lua = {
                             diagnostics = {
                                 globals = { "vim" },
-                                disable = { "missing-fields" }
-                            },
-                            completion = {
-                                callSnippet = "Replace",
                             },
                         },
                     },
@@ -162,7 +165,7 @@ return {
                     vim.keymap.set("n", "<leader>o", function()
                         vim.lsp.buf.code_action({
                             apply = true,
-                            context = { only = { "source.organizeImports" } }
+                            context = { only = { "source.organizeImports" }, diagnostics = {} },
                         })
                     end, opts("Organize Imports"))
 
