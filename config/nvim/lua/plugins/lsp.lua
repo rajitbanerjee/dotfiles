@@ -187,14 +187,18 @@ return {
                     local builtin = require("telescope.builtin")
 
                     vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, opts("Rename"))
-                    vim.keymap.set("n", "K", vim.lsp.buf.hover, opts("Hover"))
                     vim.keymap.set("n", "gD", vim.lsp.buf.declaration, opts("Go To Declaration"))
                     vim.keymap.set("n", "gd", builtin.lsp_definitions, opts("Go To Definition"))
                     vim.keymap.set("n", "gi", builtin.lsp_implementations, opts("Go To Implementations"))
                     vim.keymap.set("n", "gr", builtin.lsp_references, opts("Find All References"))
-                    vim.keymap.set("n", "gs", vim.lsp.buf.signature_help, opts("Signature"))
                     vim.keymap.set("n", "gy", builtin.lsp_type_definitions, opts("Go To Type Definition"))
                     vim.keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, opts("Code Action"))
+                    vim.keymap.set("n", "K", function()
+                        vim.lsp.buf.hover({ border = "rounded" })
+                    end, opts("Hover"))
+                    vim.keymap.set("n", "gs", function()
+                        vim.lsp.buf.signature_help({ border = "rounded" })
+                    end, opts("Signature"))
                 end,
             })
         end,
@@ -213,6 +217,14 @@ return {
             cmp.setup({
                 snippet = {
                     expand = function(args) luasnip.lsp_expand(args.body) end,
+                },
+                window = {
+                    completion = cmp.config.window.bordered({
+                        side_padding = 1,
+                    }),
+                    documentation = cmp.config.window.bordered({
+                        side_padding = 1,
+                    }),
                 },
                 mapping = cmp.mapping.preset.insert({
                     ["<S-TAB>"] = cmp.mapping.select_prev_item(),
