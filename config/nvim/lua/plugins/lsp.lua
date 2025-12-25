@@ -48,7 +48,9 @@ return {
                     "perl",
                     "python",
                     "regex",
+                    "rust",
                     "scss",
+                    "toml",
                     "typescript",
                     "vim",
                     "yaml",
@@ -111,6 +113,18 @@ return {
                     },
                 },
                 marksman = {},
+                rust_analyzer = {
+                    settings = {
+                        ["rust-analyzer"] = {
+                            cargo = {
+                                allFeatures = true,
+                            },
+                            checkOnSave = {
+                                command = "clippy",
+                            },
+                        },
+                    },
+                },
                 ts_ls = {},
                 yamlls = {},
             }
@@ -133,6 +147,7 @@ return {
             conform.setup({
                 formatters_by_ft = {
                     markdown = { "prettier" },
+                    rust = { "rustfmt" },
                 },
             })
 

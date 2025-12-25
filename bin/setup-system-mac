@@ -60,6 +60,10 @@ JVMDIR=/Library/Java/JavaVirtualMachines
 sudo ln -sfn $(brew --prefix)/opt/openjdk@17/libexec/openjdk.jdk $JVMDIR/openjdk-17.jdk
 sudo ln -sfn $(brew --prefix)/opt/openjdk/libexec/openjdk.jdk $JVMDIR/openjdk.jdk
 
+# Rust
+echo -e "\n\nRust:\n"
+curl --proto '=https' --tlsv1.2 https://sh.rustup.rs -sSf | sh
+
 # Wakatime
 echo -e "\n\nWakaTime:\n"
 python3 -m pip install --user wakatime

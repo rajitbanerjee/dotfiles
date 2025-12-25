@@ -62,6 +62,10 @@ echo -e "\n\nJava:\n"
 sudo yum install -y java-17-amazon-corretto
 sudo yum install -y java-21-amazon-corretto-devel
 
+# Rust
+echo -e "\n\nRust:\n"
+curl --proto '=https' --tlsv1.2 https://sh.rustup.rs -sSf | sh
+
 # Wakatime
 echo -e "\n\nWakaTime:\n"
 # https://stackoverflow.com/questions/75608323/how-do-i-solve-error-externally-managed-environment-every-time-i-use-pip-3
