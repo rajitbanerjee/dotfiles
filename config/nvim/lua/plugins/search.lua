@@ -122,33 +122,11 @@ return {
             local builtin = require("telescope.builtin")
             local themes = require("telescope.themes")
 
-            -- Allow telescope to remember search history
-            local _last_picker = nil
-            local _last_ctx = nil
-            local function history_middleware(func, ctxfunc)
-                local function inner()
-                    local ctx
-                    if ctxfunc == nil then
-                        ctx = nil
-                    else
-                        ctx = ctxfunc()
-                    end
-                    if func == _last_picker and vim.deep_equal(ctx, _last_ctx) then
-                        builtin.resume()
-                    else
-                        _last_picker = func
-                        _last_ctx = ctx
-                        func()
-                    end
-                end
-                return inner
-            end
-
             return {
-                { "t",         ":Telescope<CR>",                       desc = "Telescope: List" },
-                { "f",         history_middleware(builtin.oldfiles),   desc = "Telescope: MRU" },
-                { "<leader>f", history_middleware(builtin.find_files), desc = "Telescope: Files" },
-                { "<leader>c", history_middleware(builtin.keymaps),    desc = "Telescope: Keymaps" },
+                { "t",         ":Telescope<CR>",   desc = "Telescope: List" },
+                { "f",         builtin.oldfiles,   desc = "Telescope: MRU" },
+                { "<leader>f", builtin.find_files, desc = "Telescope: Files" },
+                { "<leader>c", builtin.keymaps,    desc = "Telescope: Keymaps" },
                 {
                     "<leader>g",
                     function()
@@ -169,22 +147,6 @@ return {
                         builtin.live_grep({ default_text = vim.fn.expand("<cword>") })
                     end,
                     desc = "Telescope: Grep Word"
-                },
-                {
-                    "/",
-                    function()
-                        builtin.current_buffer_fuzzy_find(
-                            themes.get_dropdown({
-                                winblend = 10,
-                                previewer = false,
-                                layout_config = {
-                                    height = 0.8,
-                                    width = 0.6,
-                                },
-                            })
-                        )
-                    end,
-                    desc = "Telescope: Find In Buffer"
                 },
             }
         end
