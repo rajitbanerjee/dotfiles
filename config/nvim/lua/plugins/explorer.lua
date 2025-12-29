@@ -61,9 +61,19 @@ return {
         opts = {
             show_icons = true,
             leader_key = "<leader>b", -- Bookmark files
-            buffer_leader_key = "m", -- Bookmark lines
+            buffer_leader_key = "m",  -- Bookmark lines
             always_show_path = true,
             global_bookmarks = true,
         }
     },
+    {
+        "yuttie/comfortable-motion.vim",
+        keys = {
+            { "<leader>j", ":call comfortable_motion#flick(150)<CR>",  silent = true, "Scroll (Down)" },
+            { "<leader>k", ":call comfortable_motion#flick(-150)<CR>", silent = true, "Scroll (Up)" },
+        },
+        config = function()
+            vim.g.comfortable_motion_no_default_key_mappings = 1
+        end,
+    }
 }

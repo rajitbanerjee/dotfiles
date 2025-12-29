@@ -1,3 +1,7 @@
+
+# Kiro CLI pre block. Keep at the top of this file.
+[[ -f "${HOME}/.local/share/kiro-cli/shell/zshrc.pre.zsh" ]] && builtin source "${HOME}/.local/share/kiro-cli/shell/zshrc.pre.zsh"
+
 ### General ###
 
 zmodload zsh/zprof
@@ -29,7 +33,7 @@ plugins=(
     docker
     docker-compose
     fzf
-    # git-prompt # useful but slows down the terminal
+    git-prompt
     git-auto-fetch
     safe-paste
     wakatime
@@ -66,8 +70,8 @@ ZSH_THEME_GIT_PROMPT_UPSTREAM_SEPARATOR="->"
 NEWLINE=$'\n'
 [[ -n "$SSH_CLIENT" ]] && ssh_flag="(ssh) "
 setopt PROMPT_SUBST
-# PS1='%B%F{100}[%*] ${ssh_flag}%n@%m:%f%F{66}%(5~|%-1~/…/%3~|%4~)%f%b $(git_super_status "(%s)")${NEWLINE}\$ ' # with git-prompt
-PS1='%B%F{100}[%*] ${ssh_flag}%n@%m:%f%F{66}%(5~|%-1~/…/%3~|%4~)%f%b${NEWLINE}\$ '
+PS1='%B%F{100}[%*] ${ssh_flag}%n@%m:%f%F{66}%(5~|%-1~/…/%3~|%4~)%f%b $(git_super_status "(%s)")${NEWLINE}\$ ' # with git-prompt
+# PS1='%B%F{100}[%*] ${ssh_flag}%n@%m:%f%F{66}%(5~|%-1~/…/%3~|%4~)%f%b${NEWLINE}\$ ' # without git-prompt
 
 ### Dev ###
 
@@ -340,3 +344,6 @@ export AWS_EC2_METADATA_DISABLED=true
 
 # Added by smithy-mcp
 export PATH="/home/brajit/.config/smithy-mcp/mcp-servers:$PATH"
+
+# Kiro CLI post block. Keep at the bottom of this file.
+[[ -f "${HOME}/.local/share/kiro-cli/shell/zshrc.post.zsh" ]] && builtin source "${HOME}/.local/share/kiro-cli/shell/zshrc.post.zsh"
