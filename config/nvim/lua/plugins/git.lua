@@ -3,9 +3,7 @@ return {
     {
         "lewis6991/gitsigns.nvim",
         event = { "BufReadPost", "BufNewFile" },
-        config = function()
-            require("gitsigns").setup({})
-        end,
+        opts = {},
         keys = function()
             local gitsigns = require("gitsigns")
             return {
@@ -38,7 +36,6 @@ return {
     },
     {
         "sindrets/diffview.nvim",
-        lazy = false,
         cmd = { "DiffviewOpen", "DiffviewClose" },
         init = function()
             vim.keymap.set("n", "<leader>d", function()

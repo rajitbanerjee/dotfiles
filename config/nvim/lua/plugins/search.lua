@@ -17,7 +17,6 @@ return {
     },
     {
         "MagicDuck/grug-far.nvim",
-        lazy = false,
         keys = {
             { "<leader>gf", ":GrugFar<CR>",      mode = "n", silent = true, desc = "GrugFar: Find and Replace" },
             { "<leader>gf", ":'<,'>GrugFar<CR>", mode = "v", silent = true, desc = "GrugFar: Find and Replace (Selection)" },
@@ -25,7 +24,6 @@ return {
     },
     {
         "nvim-telescope/telescope.nvim",
-        lazy = false,
         branch = "0.1.x",
         dependencies = {
             "nvim-lua/plenary.nvim",
@@ -118,14 +116,11 @@ return {
         keys = function()
             vim.g.rooter_patterns = { ".git" }
 
-            local telescope = require("telescope")
-            local builtin = require("telescope.builtin")
-
             return {
-                { "t",         ":Telescope<CR>",   desc = "Telescope: List" },
-                { "f",         builtin.oldfiles,   desc = "Telescope: MRU" },
-                { "<leader>f", builtin.find_files, desc = "Telescope: Files" },
-                { "<leader>c", builtin.keymaps,    desc = "Telescope: Keymaps" },
+                { "t",         "<cmd>Telescope<CR>",                                                    desc = "Telescope: List" },
+                { "f",         function() require("telescope.builtin").oldfiles() end,                  desc = "Telescope: MRU" },
+                { "<leader>f", function() require("telescope.builtin").find_files() end,                desc = "Telescope: Files" },
+                { "<leader>c", function() require("telescope.builtin").keymaps() end,                   desc = "Telescope: Keymaps" },
                 {
                     "<leader>g",
                     function()
@@ -136,14 +131,14 @@ return {
                         -- -w # whole word
                         -- -e # regex
                         -- see "man rg" for more
-                        telescope.extensions.live_grep_args.live_grep_args()
+                        require("telescope").extensions.live_grep_args.live_grep_args()
                     end,
                     desc = "Telescope: Grep",
                 },
                 {
                     "*",
                     function()
-                        builtin.live_grep({ default_text = vim.fn.expand("<cword>") })
+                        require("telescope.builtin").live_grep({ default_text = vim.fn.expand("<cword>") })
                     end,
                     desc = "Telescope: Grep Word"
                 },

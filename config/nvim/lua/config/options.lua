@@ -7,7 +7,7 @@ vim.o.cmdheight = 1 -- Set command line height to 1
 vim.o.errorbells = false -- Disable error sound
 vim.o.expandtab = true -- Use spaces instead of tabs
 vim.o.ffs = "unix,dos,mac" -- Set file format detection order
-vim.o.foldlevelstart = 99 -- Open files with all folds expanded
+-- Fold settings are in treesitter config (lsp.lua)
 vim.o.hidden = true -- Allow switching buffers without saving
 vim.o.history = 500 -- Store 500 commands in history
 vim.o.ignorecase = true -- Ignore case in search patterns
@@ -30,7 +30,7 @@ vim.o.swapfile = false -- Disable swap files
 vim.o.tabstop = 4 -- Set tab width to 4 spaces
 vim.o.termguicolors = true -- Enable 24-bit RGB colors
 vim.o.textwidth = 0 -- Set maximum text width to 0 for soft wrapping
-vim.o.tm = 500 -- Timeout for key mappings (in milliseconds)
+vim.o.timeoutlen = 500 -- Timeout for key mappings (in milliseconds)
 vim.o.updatetime = 50 -- Reduce update time for faster response
 vim.o.visualbell = false -- Disable visual bell
 vim.o.whichwrap = vim.o.whichwrap .. "<,>,h,l" -- Allow moving to next/previous line with arrow keys
@@ -44,8 +44,6 @@ vim.opt.listchars = { -- Define how whitespace characters are displayed
     precedes = "⟨", -- Show character for text before the window
     nbsp = "␣" -- Show non-breaking spaces explicitly
 }
-
-vim.cmd("filetype plugin indent on") -- Enable filetype-specific plugins and indentation
 
 
 -- Set text as default filetype

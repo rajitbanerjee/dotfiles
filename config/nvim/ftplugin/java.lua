@@ -12,21 +12,8 @@ end
 -- helper function for finding a filename in a directory which matches
 -- the specified pattern
 local function find_file(directory, pattern)
-    local filename_found = ''
-    local pfile = io.popen('ls "' .. directory .. '"')
-
-    if (pfile == nil) then
-        return ''
-    end
-
-    for filename in pfile:lines() do
-        if (string.find(filename, pattern) ~= nil) then
-            filename_found = filename
-            break
-        end
-    end
-
-    return filename_found
+    local files = vim.fn.glob(directory .. "/" .. pattern .. "*", false, true)
+    return files[1] and vim.fn.fnamemodify(files[1], ":t") or ""
 end
 
 -- gathers all of the bemol-generated files and adds them to the LSP workspace
