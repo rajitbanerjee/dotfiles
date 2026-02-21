@@ -116,11 +116,10 @@ return {
             }
         end,
         keys = function()
-            vim.g.rooter_patterns = { ".brazil/" }
+            vim.g.rooter_patterns = { ".git" }
 
             local telescope = require("telescope")
             local builtin = require("telescope.builtin")
-            local themes = require("telescope.themes")
 
             return {
                 { "t",         ":Telescope<CR>",   desc = "Telescope: List" },
