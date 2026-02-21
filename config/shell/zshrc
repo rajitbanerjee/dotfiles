@@ -207,6 +207,7 @@ alias dcd="docker-compose down"
 
 # ai
 alias g="gemini"
+alias k="kiro-cli"
 
 ### Functions ###
 
@@ -347,3 +348,6 @@ export PATH="/home/brajit/.config/smithy-mcp/mcp-servers:$PATH"
 
 # Kiro CLI post block. Keep at the bottom of this file.
 [[ -f "${HOME}/.local/share/kiro-cli/shell/zshrc.post.zsh" ]] && builtin source "${HOME}/.local/share/kiro-cli/shell/zshrc.post.zsh"
+
+# Added by AIM CLI
+export PATH="$HOME/.aim/mcp-servers:$PATH"

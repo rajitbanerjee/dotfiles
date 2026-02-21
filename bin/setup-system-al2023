@@ -1,122 +1,35 @@
 #!/bin/bash
-set -euo pipefail
-IFS=$'\n\t'
-
 # Set up a new Amazon Linux 2023 instance with my preferred packages.
 # Usage: setup-system-al2023
+
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+source "$SCRIPT_DIR/setup-system-common"
 
 echo -e "Starting AL2023 system setup...\n"
 
 sudo timedatectl set-timezone Europe/Dublin
 
-# Run mwinit so we can use toolbox
 echo "Generating Midway cookie..."
 mwinit -s -o
 
-# Linuxbrew (+dependencies)
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
-
-sudo yum groupinstall 'Development Tools'
+setup_linuxbrew
 sudo yum install procps-ng
 
-brew analytics off
-brew update
-brew upgrade
+brew_update
+install_brew_utilities
+install_docker_compose
+install_node_amazon --force  # alt: axe init builder-tools
+install_go_yum
+install_java_corretto
+install_rust
+install_wakatime --break-system-packages
 
-# Misc. utilities
-echo -e "\n\nMisc. utilities:\n"
-brew install bat
-brew install dpkg
-brew install duf
-brew install eza
-brew install fzf
-brew install git
-brew install git-delta
-brew install jq
-brew install neovim
-brew install pandoc
-brew install ripgrep
-brew install tldr
-brew install tmux
-brew install trash-cli
-brew install watchman
-
-# Docker
-curl -L "https://github.com/docker/compose/releases/latest/download/docker-compose-$(uname -s)-$(uname -m)" -o ~/.local/bin/docker-compose
-chmod +x ~/.local/bin/docker-compose
-
-# Node
-echo -e "\n\nNode:\n"
-curl https://mise.jdx.dev/install.sh | sh
-mise plugin install nodejs ssh://git.amazon.com/pkg/RtxNode --force
-mise install nodejs@20 && mise global nodejs@20
-# alt: axe init builder-tools
-
-# Go
-echo -e "\n\nGo:\n"
-sudo yum install -y golang
-
-# Java
-echo -e "\n\nJava:\n"
-sudo yum install -y java-17-amazon-corretto
-sudo yum install -y java-21-amazon-corretto-devel
-
-# Rust
-echo -e "\n\nRust:\n"
-curl --proto '=https' --tlsv1.2 https://sh.rustup.rs -sSf | sh
-
-# Wakatime
-echo -e "\n\nWakaTime:\n"
-# https://stackoverflow.com/questions/75608323/how-do-i-solve-error-externally-managed-environment-every-time-i-use-pip-3
-python3 -m pip install --user wakatime --break-system-packages
-if [ ! -f ~/.wakatime.cfg ]; then
-    echo -e "\n\nWakaTime config file setup:\n"
-    read -p "Enter WakaTime API Key: " key
-    echo -e """[settings]
-debug = false
-hidefilenames = false
-ignore =
-    COMMIT_EDITMSG$
-    PULLREQ_EDITMSG$
-    MERGE_MSG$
-    TAG_EDITMSG$
-api_key=$key
-""" >~/.wakatime.cfg
-fi
-
-# AWS Dev Tools
-echo -e "\n\nAWS Dev Tools:\n"
-cd ~/
-sudo mkdir -p -m 755 /workplace/${USER}
-sudo chown -R ${USER} /workplace/${USER}
-ln -s /workplace/${USER} ~/workplace
-
-brew install awscli
+install_aws_dev_tools
 brew install awscurl
-toolbox install ada
-toolbox install axe
-toolbox install barium
-toolbox install batscli
-toolbox install bemol
-toolbox install brazilcli
-toolbox install cr
-toolbox install create
-toolbox install gordian-knot
-toolbox install hydra
-toolbox install q
-toolbox registry add s3://buildertoolbox-registry-hub-create-us-west-2/tools.json && toolbox install hub-create
-toolbox registry add s3://buildertoolbox-registry-isengard-cli-us-west-2/tools.json && toolbox install isengard-cli
-toolbox registry add s3://prod-wasabi-vending-registry/tools.json && toolbox install wasabi
-
 brazil setup completion
 
-# Large workspace watches setup
-echo fs.inotify.max_user_watches=524288 | sudo tee -a /etc/sysctl.conf && sudo sysctl -p
-
-echo -e "\n\noh-my-zsh:\n(Note: \"exit\" from oh-my-zsh to resume setup)\n"
-sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-mv ~/.zshrc.pre-oh-my-zsh ~/.zshrc
+configure_inotify_watches
+install_ohmyzsh
 
 # Kitty (Optional)
 # sudo tic ~/.config/kitty/xterm-kitty.ti

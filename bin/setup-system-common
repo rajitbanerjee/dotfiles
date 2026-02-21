@@ -1,0 +1,175 @@
+#!/bin/bash
+# Common setup functions shared across OS-specific setup scripts.
+# Source this file, don't execute it directly.
+
+set -euo pipefail
+IFS=$'\n\t'
+
+# --- Universal functions ---
+
+install_homebrew() {
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+}
+
+brew_update() {
+    brew analytics off
+    brew update
+    brew upgrade
+}
+
+install_brew_utilities() {
+    echo -e "\n\nMisc. utilities:\n"
+    brew install bat
+    brew install dpkg
+    brew install duf
+    brew install eza
+    brew install fzf
+    brew install git
+    brew install git-delta
+    brew install jq
+    brew install neovim
+    brew install pandoc
+    brew install ripgrep
+    brew install tldr
+    brew install tmux
+    brew install trash-cli
+    brew install watchman
+}
+
+install_docker_compose() {
+    curl -L "https://github.com/docker/compose/releases/latest/download/docker-compose-$(uname -s)-$(uname -m)" -o ~/.local/bin/docker-compose
+    chmod +x ~/.local/bin/docker-compose
+}
+
+install_rust() {
+    echo -e "\n\nRust:\n"
+    curl --proto '=https' --tlsv1.2 https://sh.rustup.rs -sSf | sh
+}
+
+install_node_mac() {
+    echo -e "\n\nNode:\n"
+    curl https://mise.jdx.dev/install.sh | sh
+    mise plugin install nodejs
+    mise install nodejs@20 && mise global nodejs@20
+}
+
+install_go_brew() {
+    echo -e "\n\nGo:\n"
+    brew install go
+    go env -w GOPROXY=direct
+}
+
+install_java_mac() {
+    echo -e "\n\nJava:\n"
+    sudo chown -R $(whoami) /usr/local/bin /usr/local/include /usr/local/lib /usr/local/share /usr/local/share/doc /usr/local/share/man /usr/local/share/man/man1
+    chmod u+w /usr/local/bin /usr/local/include /usr/local/lib /usr/local/share /usr/local/share/doc /usr/local/share/man /usr/local/share/man/man1
+    brew install openjdk@17 openjdk
+    local jvmdir=/Library/Java/JavaVirtualMachines
+    sudo ln -sfn $(brew --prefix)/opt/openjdk@17/libexec/openjdk.jdk $jvmdir/openjdk-17.jdk
+    sudo ln -sfn $(brew --prefix)/opt/openjdk/libexec/openjdk.jdk $jvmdir/openjdk.jdk
+}
+
+install_python_mac() {
+    echo -e "\n\nPython:\n"
+    brew install pyenv
+    python3 -m pip install --upgrade pip
+    pyenv install 2.7.18
+    pyenv global 2.7.18
+}
+
+install_wakatime() {
+    echo -e "\n\nWakaTime:\n"
+    python3 -m pip install --user wakatime "${@}"
+    if [ ! -f ~/.wakatime.cfg ]; then
+        echo -e "\n\nWakaTime config file setup:\n"
+        read -p "Enter WakaTime API Key: " key
+        echo -e """[settings]
+debug = false
+hidefilenames = false
+ignore =
+    COMMIT_EDITMSG$
+    PULLREQ_EDITMSG$
+    MERGE_MSG$
+    TAG_EDITMSG$
+api_key=$key
+""" >~/.wakatime.cfg
+    fi
+}
+
+install_ohmyzsh() {
+    echo -e "\n\noh-my-zsh:\n(Note: \"exit\" from oh-my-zsh to resume setup)\n"
+    sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+    mv ~/.zshrc.pre-oh-my-zsh ~/.zshrc
+}
+
+# --- Linux-only (AL2 / AL2023) shared functions ---
+
+setup_linuxbrew() {
+    install_homebrew
+    eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+    sudo yum groupinstall 'Development Tools'
+}
+
+install_node_amazon() {
+    echo -e "\n\nNode:\n"
+    curl https://mise.jdx.dev/install.sh | sh
+    echo 'eval "$(mise activate zsh)"' >> ~/.zshrc
+    mise plugin install nodejs ssh://git.amazon.com/pkg/RtxNode "${@}"
+    mise install nodejs@20 && mise global nodejs@20
+}
+
+install_go_yum() {
+    echo -e "\n\nGo:\n"
+    sudo yum install -y golang
+}
+
+install_go_al2() {
+    install_go_brew
+    sudo ln -s /home/linuxbrew/.linuxbrew/bin/go /usr/bin/go
+}
+
+install_java_corretto() {
+    echo -e "\n\nJava:\n"
+    sudo yum install -y java-17-amazon-corretto
+    sudo yum install -y java-21-amazon-corretto-devel
+}
+
+install_java_al2() {
+    install_java_corretto
+    # AL2 needs corretto repo workaround for Java 21
+    sudo rpm --import https://yum.corretto.aws/corretto.key
+    sudo curl -L -o /etc/yum.repos.d/corretto.repo https://yum.corretto.aws/corretto.repo
+    sudo yum install -y java-21-amazon-corretto-devel
+}
+
+install_aws_dev_tools() {
+    local owner="${1:-${USER}}"
+    echo -e "\n\nAWS Dev Tools:\n"
+    sudo mkdir -p -m 755 /workplace/${USER}
+    sudo chown -R "$owner" /workplace/${USER}
+    ln -s /workplace/${USER} ~/workplace
+
+    brew install awscli
+    toolbox install ada
+    toolbox install axe
+    toolbox install barium
+    toolbox install batscli
+    toolbox install bemol
+    toolbox install brazilcli
+    toolbox install cr
+    toolbox install create
+    toolbox install gordian-knot
+    toolbox install hydra
+    toolbox install kiro-cli
+    toolbox install aim
+    toolbox registry add s3://buildertoolbox-registry-hub-create-us-west-2/tools.json && toolbox install hub-create
+    toolbox registry add s3://buildertoolbox-registry-isengard-cli-us-west-2/tools.json && toolbox install isengard-cli
+    toolbox registry add s3://prod-wasabi-vending-registry/tools.json && toolbox install wasabi
+
+    aim agents install AIPowerUserCapabilities
+    aim agents install Oh-my-kiro-cli
+}
+
+configure_inotify_watches() {
+    echo fs.inotify.max_user_watches=524288 | sudo tee -a /etc/sysctl.conf && sudo sysctl -p
+}

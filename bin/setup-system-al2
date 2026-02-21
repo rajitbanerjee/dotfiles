@@ -1,117 +1,27 @@
 #!/bin/bash
-set -euo pipefail
-IFS=$'\n\t'
-
 # Set up a new Amazon Linux 2 instance with my preferred packages.
 # Usage: setup-system-al2
+
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+source "$SCRIPT_DIR/setup-system-common"
 
 echo -e "Starting AL2 system setup...\n"
 
 sudo timedatectl set-timezone Europe/Dublin
 
-# Linuxbrew (+dependencies)
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
-
-sudo yum groupinstall 'Development Tools'
+setup_linuxbrew
 sudo yum install procps-ng curl file
 
-brew analytics off
-brew update
-brew upgrade
-
-# Misc. utilities
-echo -e "\n\nMisc. utilities:\n"
-brew install bat
-brew install dpkg
-brew install duf
-brew install eza
-brew install fzf
-brew install git
-brew install git-delta
-brew install jq
-brew install neovim
-brew install pandoc
-brew install ripgrep
-brew install tldr
-brew install tmux
-brew install trash-cli
-brew install watchman
-
-# Docker
-curl -L "https://github.com/docker/compose/releases/latest/download/docker-compose-$(uname -s)-$(uname -m)" -o ~/.local/bin/docker-compose
-chmod +x ~/.local/bin/docker-compose
-
-# Node
-echo -e "\n\nNode:\n"
-curl https://mise.jdx.dev/install.sh | sh
-echo 'eval "$(mise activate zsh)"' >> ~/.zshrc
-mise plugin install nodejs ssh://git.amazon.com/pkg/RtxNode
-mise install nodejs@20 && mise global nodejs@20
-
-# Go
-echo -e "\n\nGo:\n"
-brew install go
-sudo ln -s /home/linuxbrew/.linuxbrew/bin/go /usr/bin/go
-go env -w GOPROXY=direct
-
-# Java
-echo -e "\n\nJava:\n"
-sudo yum install java-17-amazon-corretto
-sudo rpm --import https://yum.corretto.aws/corretto.key # workaround to install Java 21 on AL2
-sudo curl -L -o /etc/yum.repos.d/corretto.repo https://yum.corretto.aws/corretto.repo
-sudo yum install -y java-21-amazon-corretto-devel
-
-# Rust
-echo -e "\n\nRust:\n"
-curl --proto '=https' --tlsv1.2 https://sh.rustup.rs -sSf | sh
-
-# Wakatime
-echo -e "\n\nWakaTime:\n"
-# https://stackoverflow.com/questions/75608323/how-do-i-solve-error-externally-managed-environment-every-time-i-use-pip-3
-python3 -m pip install --user wakatime --break-system-packages
-if [ ! -f ~/.wakatime.cfg ]; then
-    echo -e "\n\nWakaTime config file setup:\n"
-    read -p "Enter WakaTime API Key: " key
-    echo -e """[settings]
-debug = false
-hidefilenames = false
-ignore =
-    COMMIT_EDITMSG$
-    PULLREQ_EDITMSG$
-    MERGE_MSG$
-    TAG_EDITMSG$
-api_key=$key
-""" >~/.wakatime.cfg
-fi
-
-# AWS Dev Tools
-echo -e "\n\nAWS Dev Tools:\n"
-sudo mkdir -p -m 755 /workplace/${USER}
-sudo chown -R ${USER}:amazon /workplace/${USER}
-ln -s /workplace/${USER} ~/workplace
-
-brew install awscli
-toolbox install ada
-toolbox install axe
-toolbox install barium
-toolbox install batscli
-toolbox install bemol
-toolbox install brazilcli
-toolbox install cr
-toolbox install create
-toolbox install gordian-knot
-toolbox install hydra
-toolbox install q
-toolbox registry add s3://buildertoolbox-registry-hub-create-us-west-2/tools.json && toolbox install hub-create
-toolbox registry add s3://buildertoolbox-registry-isengard-cli-us-west-2/tools.json && toolbox install isengard-cli
-toolbox registry add s3://prod-wasabi-vending-registry/tools.json && toolbox install wasabi
-
-# Large workspace watches setup
-echo fs.inotify.max_user_watches=524288 | sudo tee -a /etc/sysctl.conf && sudo sysctl -p
-
-echo -e "\n\noh-my-zsh:\n(Note: \"exit\" from oh-my-zsh to resume setup)\n"
-sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-mv ~/.zshrc.pre-oh-my-zsh ~/.zshrc
+brew_update
+install_brew_utilities
+install_docker_compose
+install_node_amazon
+install_go_al2
+install_java_al2
+install_rust
+install_wakatime --break-system-packages
+install_aws_dev_tools "${USER}:amazon"
+configure_inotify_watches
+install_ohmyzsh
 
 echo -e "\nSystem setup complete!\n"

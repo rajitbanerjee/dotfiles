@@ -1,90 +1,25 @@
 #!/bin/bash
-set -euo pipefail
-IFS=$'\n\t'
-
 # Set up a new macOS system with my preferred packages.
 # Usage: setup-system-mac
 
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+source "$SCRIPT_DIR/setup-system-common"
+
 echo -e "Starting macOS system setup...\n"
 
-# Homebrew
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+install_homebrew
 brew update
 brew upgrade
-sudo chown -R $(whoami) $(brew --prefix)/* # Allow /usr/local/
+sudo chown -R $(whoami) $(brew --prefix)/*
 
-# Misc. utilities
-echo -e "\n\nMisc. utilities:\n"
-brew install bat
-brew install dpkg
-brew install duf
-brew install exa
-brew install fzf
-brew install git
-brew install git-delta
-brew install jq
-brew install neovim
-brew install pandoc
-brew install ripgrep
-brew install tldr
-brew install tmux
-brew install trash-cli
-brew install watchman
+install_brew_utilities
 brew install wget
-
-# Node
-echo -e "\n\nNode:\n"
-curl https://mise.jdx.dev/install.sh | sh
-mise plugin install nodejs
-mise install nodejs@20 && mise global nodejs@20
-
-# Go
-echo -e "\n\nGo:\n"
-brew install go
-go env -w GOPROXY=direct
-
-# Python
-echo -e "\n\nPython:\n"
-brew install pyenv
-python3 -m pip install --upgrade pip
-pyenv install 2.7.18
-pyenv global 2.7.18
-
-# Java
-echo -e "\n\nJava:\n"
-# Allow write access to required directories
-sudo chown -R $(whoami) /usr/local/bin /usr/local/include /usr/local/lib /usr/local/share /usr/local/share/doc /usr/local/share/man /usr/local/share/man/man1
-chmod u+w /usr/local/bin /usr/local/include /usr/local/lib /usr/local/share /usr/local/share/doc /usr/local/share/man /usr/local/share/man/man1
-brew install openjdk@17 openjdk
-JVMDIR=/Library/Java/JavaVirtualMachines
-sudo ln -sfn $(brew --prefix)/opt/openjdk@17/libexec/openjdk.jdk $JVMDIR/openjdk-17.jdk
-sudo ln -sfn $(brew --prefix)/opt/openjdk/libexec/openjdk.jdk $JVMDIR/openjdk.jdk
-
-# Rust
-echo -e "\n\nRust:\n"
-curl --proto '=https' --tlsv1.2 https://sh.rustup.rs -sSf | sh
-
-# Wakatime
-echo -e "\n\nWakaTime:\n"
-python3 -m pip install --user wakatime
-
-if [ ! -f ~/.wakatime.cfg ]; then
-	echo -e "\n\nWakaTime config file setup:\n"
-	read -p "Enter WakaTime API Key: " key
-	echo -e """[settings]
-debug = false
-hidefilenames = false
-ignore =
-    COMMIT_EDITMSG$
-    PULLREQ_EDITMSG$
-    MERGE_MSG$
-    TAG_EDITMSG$
-api_key=$key
-""" >~/.wakatime.cfg
-fi
-
-echo -e "\n\noh-my-zsh:\n(Note: \"exit\" from oh-my-zsh to resume setup)\n"
-sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-mv ~/.zshrc.pre-oh-my-zsh ~/.zshrc
+install_node_mac
+install_go_brew
+install_python_mac
+install_java_mac
+install_rust
+install_wakatime
+install_ohmyzsh
 
 echo -e "\nSystem setup complete!\n"
