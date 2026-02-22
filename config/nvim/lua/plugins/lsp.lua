@@ -64,7 +64,7 @@ return {
                 auto_install = true,
             })
             vim.opt.foldmethod = "expr"
-            vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
+            vim.opt.foldexpr = "v:lua.vim.treesitter.foldexpr()"
             vim.opt.foldenable = false -- Start with folds open
             vim.opt.foldlevel = 99
             vim.opt.foldlevelstart = 99
@@ -207,18 +207,11 @@ return {
     {
         "hrsh7th/nvim-cmp",
         dependencies = {
-            "L3MON4D3/LuaSnip",
-            "saadparwaiz1/cmp_luasnip",
             "hrsh7th/cmp-path",
         },
         config = function()
             local cmp = require("cmp")
-            local luasnip = require("luasnip")
-            luasnip.config.setup({})
             cmp.setup({
-                snippet = {
-                    expand = function(args) luasnip.lsp_expand(args.body) end,
-                },
                 window = {
                     completion = cmp.config.window.bordered({
                         side_padding = 1,
@@ -234,7 +227,6 @@ return {
                 }),
                 sources = cmp.config.sources({
                     { name = "nvim_lsp" },
-                    { name = "luasnip" },
                     { name = "path" },
                 }),
             })

@@ -346,8 +346,9 @@ export AWS_EC2_METADATA_DISABLED=true
 # Added by smithy-mcp
 export PATH="/home/brajit/.config/smithy-mcp/mcp-servers:$PATH"
 
+# Added by AIM CLI
+export PATH="$HOME/.aim/mcp-servers:$PATH"
+
 # Kiro CLI post block. Keep at the bottom of this file.
 [[ -f "${HOME}/.local/share/kiro-cli/shell/zshrc.post.zsh" ]] && builtin source "${HOME}/.local/share/kiro-cli/shell/zshrc.post.zsh"
 
-# Added by AIM CLI
-export PATH="$HOME/.aim/mcp-servers:$PATH"

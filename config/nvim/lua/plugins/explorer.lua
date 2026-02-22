@@ -19,7 +19,6 @@ return {
     {
         "echasnovski/mini.files",
         version = false,
-        lazy = false,
         config = function()
             require("mini.files").setup({
                 options = {
@@ -54,6 +53,16 @@ return {
         end,
     },
     {
+        "yuttie/comfortable-motion.vim",
+        keys = {
+            { "<leader>j", ":call comfortable_motion#flick(150)<CR>",  silent = true, "Scroll (Down)" },
+            { "<leader>k", ":call comfortable_motion#flick(-150)<CR>", silent = true, "Scroll (Up)" },
+        },
+        config = function()
+            vim.g.comfortable_motion_no_default_key_mappings = 1
+        end,
+    },
+    {
         "otavioschwanck/arrow.nvim",
         dependencies = {
             { "nvim-tree/nvim-web-devicons" },
@@ -66,14 +75,5 @@ return {
             global_bookmarks = true,
         }
     },
-    {
-        "yuttie/comfortable-motion.vim",
-        keys = {
-            { "<leader>j", ":call comfortable_motion#flick(150)<CR>",  silent = true, "Scroll (Down)" },
-            { "<leader>k", ":call comfortable_motion#flick(-150)<CR>", silent = true, "Scroll (Up)" },
-        },
-        config = function()
-            vim.g.comfortable_motion_no_default_key_mappings = 1
-        end,
-    }
+
 }

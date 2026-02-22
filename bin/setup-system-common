@@ -113,7 +113,6 @@ setup_linuxbrew() {
 install_node_amazon() {
     echo -e "\n\nNode:\n"
     curl https://mise.jdx.dev/install.sh | sh
-    echo 'eval "$(mise activate zsh)"' >> ~/.zshrc
     mise plugin install nodejs ssh://git.amazon.com/pkg/RtxNode "${@}"
     mise install nodejs@20 && mise global nodejs@20
 }
@@ -168,6 +167,7 @@ install_aws_dev_tools() {
 
     aim agents install AIPowerUserCapabilities
     aim agents install Oh-my-kiro-cli
+    aim skills install Oh-my-kiro-cli
 }
 
 configure_inotify_watches() {

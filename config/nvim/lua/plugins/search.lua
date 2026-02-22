@@ -31,6 +31,7 @@ return {
             "nvim-telescope/telescope-live-grep-args.nvim",
         },
         config = function(_, opts)
+            vim.g.rooter_patterns = { ".git" }
             local telescope = require("telescope")
             telescope.setup(opts)
             telescope.load_extension("live_grep_args")
@@ -74,9 +75,6 @@ return {
 
             return {
                 defaults = {
-                    preview = {
-                        treesitter = false,
-                    },
                     layout_strategy = "horizontal",
                     layout_config = {
                         horizontal = {
@@ -114,8 +112,6 @@ return {
             }
         end,
         keys = function()
-            vim.g.rooter_patterns = { ".git" }
-
             return {
                 { "t",         "<cmd>Telescope<CR>",                                                    desc = "Telescope: List" },
                 { "f",         function() require("telescope.builtin").oldfiles() end,                  desc = "Telescope: MRU" },

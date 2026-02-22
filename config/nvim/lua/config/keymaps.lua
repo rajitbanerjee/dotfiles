@@ -7,7 +7,7 @@ vim.keymap.set("n", "<leader>q", ":q!<CR>", { noremap = true, desc = "Quit (Don'
 vim.keymap.set("n", "<leader>qa", ":qa<CR>", { noremap = true, desc = "Quit (All)" })
 
 -- Convenience
-vim.keymap.set("n", "0", "^", { noremap = true, desc = "Jump (Line Start)" })
+vim.keymap.set("n", "H", "^", { noremap = true, desc = "Jump (Line Start)" })
 vim.keymap.set("n", ";", ":", { noremap = true, desc = "Command" })
 vim.keymap.set("n", "u", ":u<CR>", { noremap = true, desc = "Undo" })
 vim.keymap.set("n", "r", "<C-r>", { noremap = true, desc = "Redo" })

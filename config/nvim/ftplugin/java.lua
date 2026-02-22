@@ -56,13 +56,13 @@ local path_to_jar = path_to_plugins .. find_file(path_to_plugins, "org.eclipse.e
 
 local config = {
     cmd = {
-        "/usr/lib/jvm/java-21-amazon-corretto/bin/java", -- java >= 21 is necessary
+        (os.getenv("JAVA_HOME") or "/usr/lib/jvm/java-21-amazon-corretto") .. "/bin/java",
         "-Declipse.application=org.eclipse.jdt.ls.core.id1",
         "-Dosgi.bundles.defaultStartLevel=4",
         "-Declipse.product=org.eclipse.jdt.ls.core.product",
         "-Dlog.protocol=true",
         "-Dlog.level=ALL",
-        "-Xmx1g",
+        "-Xmx4g",
         "-javaagent:" .. path_to_lombok,
         "--add-modules=ALL-SYSTEM",
         "--add-opens",
