@@ -95,7 +95,16 @@ return {
 
             local function fetchDirtyStatus(dir, callback)
                 vim.system({ "git", "status", "--porcelain" }, { text = true, cwd = dir }, function(content)
-                    callback(content.code == 0 and content.stdout ~= "")
+                    local staged, unstaged = false, false
+                    if content.code == 0 then
+                        for line in content.stdout:gmatch("[^\r\n]+") do
+                            local idx, wt = line:sub(1, 1), line:sub(2, 2)
+                            if wt ~= " " and wt ~= "?" and wt ~= "!" then unstaged = true end
+                            if idx ~= " " and idx ~= "?" and idx ~= "!" then staged = true end
+                            if staged and unstaged then break end
+                        end
+                    end
+                    callback(staged, unstaged)
                 end)
             end
 
@@ -137,7 +146,8 @@ return {
                             local cached = pushPullCache[entry.path]
                             if cached and currentTime - cached.time < cacheTimeout then
                                 local virt = {}
-                                if cached.dirty then table.insert(virt, { "✹", "MiniDiffSignChange" }) end
+                                if cached.unstaged then table.insert(virt, { "•", "MiniDiffSignChange" }) end
+                                if cached.staged then table.insert(virt, { "✹", "MiniDiffSignChange" }) end
                                 if cached.ahead > 0 then table.insert(virt, { " ↑" .. cached.ahead, "MiniDiffSignAdd" }) end
                                 if cached.behind > 0 then table.insert(virt, { " ↓" .. cached.behind, "MiniDiffSignDelete" }) end
                                 if #virt > 0 then
@@ -147,7 +157,7 @@ return {
                                     })
                                 end
                             else
-                                pushPullCache[entry.path] = { time = currentTime, dirty = false, ahead = 0, behind = 0 }
+                                pushPullCache[entry.path] = { time = currentTime, staged = false, unstaged = false, ahead = 0, behind = 0 }
                                 local cache = pushPullCache[entry.path]
                                 local pending = 2
                                 local function tryRender()
@@ -155,7 +165,8 @@ return {
                                     if pending > 0 then return end
                                     vim.schedule(function()
                                         local virt = {}
-                                        if cache.dirty then table.insert(virt, { "✹", "MiniDiffSignChange" }) end
+                                        if cache.unstaged then table.insert(virt, { "•", "MiniDiffSignChange" }) end
+                                        if cache.staged then table.insert(virt, { "✹", "MiniDiffSignChange" }) end
                                         if cache.ahead > 0 then table.insert(virt, { " ↑" .. cache.ahead, "MiniDiffSignAdd" }) end
                                         if cache.behind > 0 then table.insert(virt, { " ↓" .. cache.behind, "MiniDiffSignDelete" }) end
                                         if #virt > 0 then
@@ -166,8 +177,9 @@ return {
                                         end
                                     end)
                                 end
-                                fetchDirtyStatus(entry.path, function(dirty)
-                                    cache.dirty = dirty
+                                fetchDirtyStatus(entry.path, function(staged, unstaged)
+                                    cache.staged = staged
+                                    cache.unstaged = unstaged
                                     tryRender()
                                 end)
                                 fetchPushPull(entry.path, function(behind, ahead)
