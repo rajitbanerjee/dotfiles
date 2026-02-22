@@ -20,7 +20,9 @@ return {
         "echasnovski/mini.files",
         version = false,
         config = function()
-            require("mini.files").setup({
+            local minifiles = require("mini.files")
+
+            minifiles.setup({
                 options = {
                     permanent_delete = false,
                 },
@@ -30,6 +32,57 @@ return {
                     width_focus = 50,
                     width_preview = 100,
                 },
+            })
+
+            local function is_single_child_dir(path)
+                local children = vim.fn.readdir(path)
+                return #children == 1 and vim.fn.isdirectory(path .. "/" .. children[1]) == 1
+            end
+
+            local function skip_single_child_in()
+                vim.schedule(function()
+                    local entry = minifiles.get_fs_entry()
+                    if not entry then return end
+                    -- We're looking at the only item in this directory — keep going if it's a dir
+                    local parent = vim.fn.fnamemodify(entry.path, ":h")
+                    if entry.fs_type == "directory" and is_single_child_dir(parent) then
+                        minifiles.go_in({})
+                        skip_single_child_in()
+                    end
+                end)
+            end
+
+            local function skip_single_child_out()
+                vim.schedule(function()
+                    local entry = minifiles.get_fs_entry()
+                    if not entry then return end
+                    local parent = vim.fn.fnamemodify(entry.path, ":h")
+                    if is_single_child_dir(parent) then
+                        minifiles.go_out()
+                        skip_single_child_out()
+                    end
+                end)
+            end
+
+            vim.api.nvim_create_autocmd("User", {
+                pattern = "MiniFilesBufferCreate",
+                callback = function(args)
+                    local buf_id = args.data.buf_id
+                    vim.keymap.set("n", "l", function()
+                        minifiles.go_in({})
+                        skip_single_child_in()
+                    end, { buffer = buf_id, desc = "MiniFiles: Go in (skip single-child dirs)" })
+                    vim.keymap.set("n", "h", function()
+                        minifiles.go_out()
+                        skip_single_child_out()
+                    end, { buffer = buf_id, desc = "MiniFiles: Go out (skip single-child dirs)" })
+                    vim.keymap.set("n", "L", function()
+                        minifiles.go_in({})
+                    end, { buffer = buf_id, desc = "MiniFiles: Go in (single level)" })
+                    vim.keymap.set("n", "H", function()
+                        minifiles.go_out()
+                    end, { buffer = buf_id, desc = "MiniFiles: Go out (single level)" })
+                end,
             })
         end,
         keys = function()
