@@ -168,6 +168,7 @@ install_aws_dev_tools() {
     aim agents install AIPowerUserCapabilities
     aim agents install Oh-my-kiro-cli
     aim skills install Oh-my-kiro-cli
+    aim agents install AlarmCopilot
 }
 
 configure_inotify_watches() {
