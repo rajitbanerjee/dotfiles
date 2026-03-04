@@ -140,8 +140,6 @@ alias bbb="/apollo/env/envImprovement/bin/brazil-recursive-cmd-parallel --allPac
 alias bws="brazil ws"
 alias bwsm="brazil ws sync -md"
 alias bwsa="brazil ws sync -md && brazil ws sync -src"
-alias mcurl='/usr/bin/curl "$@" -L --cookie ~/.midway/cookie --cookie-jar ~/.midway/cookie'
-
 # files
 alias less="less -R"
 alias mv="mv -i"
@@ -210,6 +208,16 @@ alias g="gemini"
 alias k="kiro-cli"
 
 ### Functions ###
+
+# midway-authenticated curl
+mcurl() {
+  local COOKIE_JAR="$HOME/.midway/cookie"
+  if command -v mcscli >/dev/null 2>&1; then
+    mcscli curl -c "$COOKIE_JAR" -b "$COOKIE_JAR" -L --anyauth "$@"
+  else
+    curl -c "$COOKIE_JAR" -b "$COOKIE_JAR" -L --anyauth "$@"
+  fi
+}
 
 # pretty print a csv file
 csv() {
