@@ -1,8 +1,10 @@
-Extensions installed on SSH: devdesk-al2:
+Extensions installed on SSH: devdesk:
 amazonwebservices.amazon-q-vscode
 amazonwebservices.aws-toolkit-vscode
+asbx.amzn-cline
 avin.ion-format-support
 aws-scripting-guy.cform
+bierner.markdown-mermaid
 christian-kohler.npm-intellisense
 christian-kohler.path-intellisense
 dbaeumer.vscode-eslint
@@ -10,8 +12,8 @@ donjayamanne.githistory
 dotjoshjohnson.xml
 ecmel.vscode-html-css
 esbenp.prettier-vscode
-fabianlauer.vs-code-xml-format
 foxundermoon.shell-format
+github.copilot-chat
 golang.go
 grapecity.gc-excelviewer
 graphql.vscode-graphql
@@ -23,12 +25,13 @@ james-yu.latex-workshop
 jbockle.jbockle-format-files
 marklel.vscode-brazil
 mhutchie.git-graph
-mikeburgh.xml-format
+ms-azuretools.vscode-containers
 ms-azuretools.vscode-docker
 ms-python.debugpy
 ms-python.isort
 ms-python.python
 ms-python.vscode-pylance
+ms-python.vscode-python-envs
 ms-toolsai.jupyter
 ms-toolsai.jupyter-keymap
 ms-toolsai.jupyter-renderers
@@ -48,8 +51,6 @@ shuworks.vscode-table-formatter
 streetsidesoftware.code-spell-checker
 trond-snekvik.simple-rst
 ue.alphabetical-sorter
-visualstudioexptteam.intellicode-api-usage-examples
-visualstudioexptteam.vscodeintellicode
 vscjava.vscode-gradle
 vscjava.vscode-java-debug
 vscjava.vscode-java-dependency
