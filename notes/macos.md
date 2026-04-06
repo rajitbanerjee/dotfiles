@@ -32,5 +32,6 @@ Current MacOS tools used regularly.
   - [Kitty](https://sw.kovidgoyal.net/kitty/)
 - [Homebrew](https://brew.sh): Package manager
 - [Neovim](https://neovim.io): Primary editor
-- [VS Code](https://code.visualstudio.com): Secondary editor
+- [Kiro](https://kiro.dev): Secondary editor
+- [VS Code](https://code.visualstudio.com): Tertiary editor
 - For apps installation, see `./bin/install-mac-apps`

@@ -1,7 +1,4 @@
 Extensions installed on SSH: devdesk:
-amazonwebservices.amazon-q-vscode
-amazonwebservices.aws-toolkit-vscode
-asbx.amzn-cline
 avin.ion-format-support
 aws-scripting-guy.cform
 bierner.markdown-mermaid
@@ -12,9 +9,7 @@ donjayamanne.githistory
 dotjoshjohnson.xml
 ecmel.vscode-html-css
 esbenp.prettier-vscode
-fabianlauer.vs-code-xml-format
 foxundermoon.shell-format
-github.copilot-chat
 golang.go
 grapecity.gc-excelviewer
 graphql.vscode-graphql
@@ -24,11 +19,8 @@ gruntfuggly.todo-tree
 humao.rest-client
 james-yu.latex-workshop
 jbockle.jbockle-format-files
-marklel.vscode-brazil
 mechatroner.rainbow-csv
 mhutchie.git-graph
-mikeburgh.xml-format
-ms-azuretools.vscode-containers
 ms-azuretools.vscode-docker
 ms-python.debugpy
 ms-python.isort

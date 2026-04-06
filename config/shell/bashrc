@@ -28,5 +28,7 @@ GIT_PS1_SHOWCOLORHINTS=1
 # brazil setup completion
 source $HOME/.brazil_completion/bash_completion
 
+[[ "$TERM_PROGRAM" == "kiro" ]] && . "$(kiro --locate-shell-integration-path bash)"
+
 # Added by AIM CLI
 export PATH="$HOME/.aim/mcp-servers:$PATH"
