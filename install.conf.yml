@@ -45,6 +45,7 @@
       path: config/vscode/keybindings.json
 
     # dev env (kiro)
+    ~/.kiro/steering: config/kiro/steering
     ~/Library/Application Support/Kiro/User/settings.json:
       if: "[ `uname` = Darwin ]"
       path: config/kiro/settings.json

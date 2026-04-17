@@ -32,3 +32,6 @@ source $HOME/.brazil_completion/bash_completion
 
 # Added by AIM CLI
 export PATH="$HOME/.aim/mcp-servers:$PATH"
+
+# Added by AIM CLI
+export PATH="/local/home/brajit/.aim/mcp-servers:$PATH"

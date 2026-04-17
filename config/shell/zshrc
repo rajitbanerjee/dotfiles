@@ -210,7 +210,7 @@ alias dcd="docker-compose down"
 
 # ai
 alias g="gemini"
-alias k="kiro-cli"
+alias k="kiro-cli --classic"
 
 ### Functions ###
 
@@ -366,3 +366,6 @@ export PATH="$HOME/.aim/mcp-servers:$PATH"
 [[ -f "${HOME}/.local/share/kiro-cli/shell/zshrc.post.zsh" ]] && builtin source "${HOME}/.local/share/kiro-cli/shell/zshrc.post.zsh"
 
 [[ "$TERM_PROGRAM" == "kiro" ]] && . "$(kiro --locate-shell-integration-path zsh)"
+
+# Added by AIM CLI
+export PATH="/local/home/brajit/.aim/mcp-servers:$PATH"
