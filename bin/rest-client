@@ -1,47 +1,112 @@
 #!/bin/bash
-set -euo pipefail
+set -eo pipefail
 IFS=$'\n\t'
 
-# Run an HTTP request file using curl.
-# Usage: rest-client file.http
-# Currently supports only single curl header (e.g. Content-Type: application/json)
-# Inspired by: ConorHK
+# Run HTTP requests from .http files or stdin using curl.
+# Supports multiple headers, request bodies, and ### separators.
+#
+# Usage:
+#   rest-client [-v] file.http
+#   rest-client [-v] <<< "GET https://example.com"
+#   echo "GET https://example.com" | rest-client [-v]
+#
+# File format:
+#   METHOD URL
+#   Header-Name: value
+#   Header-Name: value
+#
+#   {"request": "body"}
+#
+#   ###
+#
+#   METHOD URL
+#   ...
 
-case "$1" in
--a | --authenticated)
-    auth=true
-    shift
-    authentication_token="Authorization: Bearer $1"
-    shift
-    ;;
-*)
-    auth=false
-    authentication_token=""
-    ;;
-esac
+verbose=false
+[[ "${1:-}" == "-v" ]] && verbose=true && shift
 
-file="$1"
-first_line="$(head -n 1 "$file")"
-data_requests=("POST" "PATCH" "PUT")
-
-request="$(echo "$first_line" | awk '{print $1;}')"
-[[ "${data_requests[*]}" =~ "${request}" ]] && is_data_request=true || is_data_request=false
-
-header="$(sed "2q;d" "$file")"
-if [ $auth == true ] && [ $is_data_request == true ]; then
-    header="$header
-$authentication_token"
-fi
-
-data="$(tail -n +4 "$file" | tr '\n' ' ')"
-url="$(echo "$first_line" | awk '{print $2;}')"
-
-if [ $is_data_request == true ]; then
-    # POST, PATCH, PUT
-    command="curl -s -X "$request" -H '"$header"' -d '"$data"' "$url""
+if [[ -z "${1:-}" ]]; then
+    if [[ -t 0 ]]; then
+        echo "Usage: rest-client [-v] [file.http]"
+        echo "       rest-client [-v] <<< 'GET https://example.com'"
+        exit 1
+    fi
+    input="/dev/stdin"
 else
-    # GET, DELETE
-    [ $auth == true ] && command="curl -s -X "$request" -H '"$authentication_token"' "$url"" || command="curl -s -X "$request" "$url""
+    input="$1"
+    [[ ! -f "$input" ]] && echo "Error: $input not found" && exit 1
 fi
 
-eval "$command"
+run_request() {
+    local method="$1" url="$2"
+    shift 2
+    local -a headers=("$@")
+
+    local -a curl_args=(-s -S -X "$method")
+    $verbose && curl_args+=(-v)
+
+    for h in "${headers[@]}"; do
+        curl_args+=(-H "$h")
+    done
+
+    if [[ -n "$body" ]]; then
+        curl_args+=(-d "$body")
+    fi
+
+    curl_args+=("$url")
+
+    $verbose && echo -e ">>> $method $url\n"
+    curl "${curl_args[@]}"
+    echo
+}
+
+method="" url="" body=""
+headers=()
+in_body=false
+request_count=0
+
+while IFS= read -r line || [[ -n "$line" ]]; do
+    # Request separator
+    if [[ "$line" == "###"* ]]; then
+        if [[ -n "$method" ]]; then
+            run_request "$method" "$url" "${headers[@]}"
+            ((request_count++))
+        fi
+        method="" url="" body=""
+        headers=()
+        in_body=false
+        continue
+    fi
+
+    # Request line: METHOD URL
+    if [[ -z "$method" && "$line" =~ ^(GET|POST|PUT|PATCH|DELETE|HEAD|OPTIONS)[[:space:]] ]]; then
+        method="${BASH_REMATCH[1]}"
+        url="${line#* }"
+        continue
+    fi
+
+    # Blank line separates headers from body
+    if [[ -n "$method" && ! "$in_body" == true && -z "$line" ]]; then
+        in_body=true
+        continue
+    fi
+
+    # Headers
+    if [[ -n "$method" && "$in_body" == false && "$line" == *":"* ]]; then
+        headers+=("$line")
+        continue
+    fi
+
+    # Body
+    if [[ "$in_body" == true ]]; then
+        body+="$line"
+    fi
+done < "$input"
+
+# Run last request
+if [[ -n "$method" ]]; then
+    run_request "$method" "$url" "${headers[@]}"
+    ((request_count++))
+fi
+
+$verbose && echo -e "--- $request_count request(s) executed ---"
