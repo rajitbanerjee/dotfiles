@@ -39,7 +39,11 @@ plugins=(
     zsh-completions
     zsh-syntax-highlighting
 )
-(( $+commands[docker] )) && plugins+=(docker docker-compose)
+(( $+commands[docker] )) && plugins+=(docker docker-compose) 2>/dev/null
+
+# Remove stale completion references
+[[ ! -f /usr/local/share/zsh/site-functions/_alacritty ]] && \
+    fpath=(${fpath:#/usr/local/share/zsh/site-functions/_alacritty})
 
 source $ZSH/oh-my-zsh.sh
 
