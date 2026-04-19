@@ -1,36 +1,39 @@
 # Dotfiles
 
-Set up a new system, and maintain current configurations. Symlinking to `$HOME` is managed by [Dotbot][dotbot].
+System setup and configuration for macOS and Amazon Linux. Symlinking to `$HOME` is managed by [Dotbot][dotbot].
+
+## Setup
+
+### 1. Clone and install symlinks
 
 ```shell
 git config --global user.name "Rajit Banerjee"
 git config --global user.email "brajit@amazon.com"
 mv ~/.gitconfig ~/.gitconfig_local
 git clone git@github.com:rajitbanerjee/dotfiles ~/.dotfiles
-```
-
-```shell
 cd ~/.dotfiles && ./install
 git config user.email "rajitbanerjee15@gmail.com"
 exec $SHELL -l
 ```
 
+### 2. Install system packages
+
 ```shell
-sudo yum install -y git
-setup-system-al2023
-# setup-system-mac
-nvim
-# install-mac-apps
-# kiroinssh
+# Amazon Linux
+setup-system-al2023  # or setup-system-al2
+
+# macOS
+setup-system-mac
+install-mac-apps
 ```
 
-Create a new SSH key for GitHub access:
+### 3. SSH keys (for GitHub)
 
 ```shell
 setup-ssh-keys
 ```
 
-Paste the public key contents in a new SSH key under https://github.com/settings/keys.
+Add the public key at https://github.com/settings/keys.
 
 ## Screenshots
 
