@@ -1,0 +1,11 @@
+{
+    "mcpServers": {
+        "builder-mcp": {
+            "command": "/home/brajit/.toolbox/bin/builder-mcp",
+            "args": [],
+            "env": {},
+            "disabled": false,
+            "autoApprove": []
+        }
+    }
+}
