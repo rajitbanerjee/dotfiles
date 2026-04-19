@@ -4,7 +4,18 @@ System setup and configuration for macOS and Amazon Linux. Symlinking to `$HOME`
 
 ## Setup
 
-### 1. Clone and install symlinks
+### 1. SSH keys
+
+```shell
+ssh-keygen -t ed25519 -C "rajitbanerjee15@gmail.com"
+eval "$(ssh-agent -s)"
+ssh-add ~/.ssh/id_ed25519
+cat ~/.ssh/id_ed25519.pub
+```
+
+Copy the output and add it at https://github.com/settings/keys.
+
+### 2. Clone and install symlinks
 
 ```shell
 git config --global user.name "Rajit Banerjee"
@@ -16,7 +27,7 @@ git config user.email "rajitbanerjee15@gmail.com"
 exec $SHELL -l
 ```
 
-### 2. Install system packages
+### 3. Install system packages
 
 ```shell
 # Amazon Linux
@@ -26,14 +37,6 @@ setup-system-al2023  # or setup-system-al2
 setup-system-mac
 install-mac-apps
 ```
-
-### 3. SSH keys (for GitHub)
-
-```shell
-setup-ssh-keys
-```
-
-Add the public key at https://github.com/settings/keys.
 
 ## Screenshots
 
