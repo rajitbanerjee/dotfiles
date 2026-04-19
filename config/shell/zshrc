@@ -30,8 +30,6 @@ ZSH_CUSTOM=~/.zsh/custom
 # https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/
 plugins=(
     copypath
-    docker
-    docker-compose
     fzf
     git-prompt
     git-auto-fetch
@@ -41,6 +39,7 @@ plugins=(
     zsh-completions
     zsh-syntax-highlighting
 )
+(( $+commands[docker] )) && plugins+=(docker docker-compose)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -100,7 +99,7 @@ export NODE_OPTIONS="--no-deprecation"
 export AWS_SDK_JS_SUPPRESS_MAINTENANCE_MODE_MESSAGE=1
 
 # Rust
-. "$HOME/.cargo/env"
+[[ -f "$HOME/.cargo/env" ]] && . "$HOME/.cargo/env"
 
 ### Aliases ###
 

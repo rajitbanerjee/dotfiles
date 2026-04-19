@@ -24,7 +24,6 @@ install_brew_utilities() {
     brew install duf
     brew install eza
     brew install fzf
-    brew install git
     brew install git-delta
     brew install jq
     brew install neovim
@@ -41,40 +40,10 @@ install_docker_compose() {
     chmod +x ~/.local/bin/docker-compose
 }
 
-install_rust() {
-    echo -e "\n\nRust:\n"
-    curl --proto '=https' --tlsv1.2 https://sh.rustup.rs -sSf | sh
-}
-
-install_node_mac() {
-    echo -e "\n\nNode:\n"
-    curl https://mise.jdx.dev/install.sh | sh
-    mise plugin install nodejs
-    mise install nodejs@20 && mise global nodejs@20
-}
-
 install_go_brew() {
     echo -e "\n\nGo:\n"
     brew install go
     go env -w GOPROXY=direct
-}
-
-install_java_mac() {
-    echo -e "\n\nJava:\n"
-    sudo chown -R $(whoami) /usr/local/bin /usr/local/include /usr/local/lib /usr/local/share /usr/local/share/doc /usr/local/share/man /usr/local/share/man/man1
-    chmod u+w /usr/local/bin /usr/local/include /usr/local/lib /usr/local/share /usr/local/share/doc /usr/local/share/man /usr/local/share/man/man1
-    brew install openjdk@17 openjdk
-    local jvmdir=/Library/Java/JavaVirtualMachines
-    sudo ln -sfn $(brew --prefix)/opt/openjdk@17/libexec/openjdk.jdk $jvmdir/openjdk-17.jdk
-    sudo ln -sfn $(brew --prefix)/opt/openjdk/libexec/openjdk.jdk $jvmdir/openjdk.jdk
-}
-
-install_python_mac() {
-    echo -e "\n\nPython:\n"
-    brew install pyenv
-    python3 -m pip install --upgrade pip
-    pyenv install 2.7.18
-    pyenv global 2.7.18
 }
 
 install_wakatime() {
@@ -104,17 +73,17 @@ install_ohmyzsh() {
 
 # --- Linux-only (AL2 / AL2023) shared functions ---
 
-setup_linuxbrew() {
+setup_linux() {
+    sudo timedatectl set-timezone Europe/Dublin
+
+    echo "Generating Midway cookie..."
+    mwinit -s -o
+
     install_homebrew
     eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
     sudo yum groupinstall 'Development Tools'
-}
-
-install_node_amazon() {
-    echo -e "\n\nNode:\n"
-    curl https://mise.jdx.dev/install.sh | sh
-    mise plugin install nodejs ssh://git.amazon.com/pkg/RtxNode "${@}"
-    mise install nodejs@20 && mise global nodejs@20
+    sudo yum install -y procps-ng curl file
+    sudo tic ~/.config/kitty/xterm-kitty.ti
 }
 
 install_go_yum() {
@@ -127,48 +96,23 @@ install_go_al2() {
     sudo ln -s /home/linuxbrew/.linuxbrew/bin/go /usr/bin/go
 }
 
-install_java_corretto() {
-    echo -e "\n\nJava:\n"
-    sudo yum install -y java-17-amazon-corretto
-    sudo yum install -y java-21-amazon-corretto-devel
-}
-
-install_java_al2() {
-    install_java_corretto
-    # AL2 needs corretto repo workaround for Java 21
-    sudo rpm --import https://yum.corretto.aws/corretto.key
-    sudo curl -L -o /etc/yum.repos.d/corretto.repo https://yum.corretto.aws/corretto.repo
-    sudo yum install -y java-21-amazon-corretto-devel
-}
-
-install_aws_dev_tools() {
-    local owner="${1:-${USER}}"
-    echo -e "\n\nAWS Dev Tools:\n"
-    sudo mkdir -p -m 755 /workplace/${USER}
-    sudo chown -R "$owner" /workplace/${USER}
-    ln -s /workplace/${USER} ~/workplace
-
-    brew install awscli
-    toolbox install ada
+install_builder_tools() {
+    echo -e "\n\nBuilder tools:\n"
     toolbox install axe
-    toolbox install barium
-    toolbox install batscli
-    toolbox install bemol
-    toolbox install brazilcli
-    toolbox install cr
-    toolbox install create
-    toolbox install gordian-knot
-    toolbox install hydra
+    axe init builder-tools
+
     toolbox install kiro-cli
     toolbox install aim
     toolbox registry add s3://buildertoolbox-registry-hub-create-us-west-2/tools.json && toolbox install hub-create
-    toolbox registry add s3://buildertoolbox-registry-isengard-cli-us-west-2/tools.json && toolbox install isengard-cli
-    toolbox registry add s3://prod-wasabi-vending-registry/tools.json && toolbox install wasabi
 
     aim agents install AIPowerUserCapabilities
-    aim agents install Oh-my-kiro-cli
-    aim skills install Oh-my-kiro-cli
-    aim agents install AlarmCopilot
+}
+
+setup_workplace() {
+    local owner="${1:-${USER}}"
+    sudo mkdir -p -m 755 /workplace/${USER}
+    sudo chown -R "$owner" /workplace/${USER}
+    ln -s /workplace/${USER} ~/workplace
 }
 
 configure_inotify_watches() {

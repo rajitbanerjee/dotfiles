@@ -7,31 +7,16 @@ source "$SCRIPT_DIR/setup-system-common"
 
 echo -e "Starting AL2023 system setup...\n"
 
-sudo timedatectl set-timezone Europe/Dublin
-
-echo "Generating Midway cookie..."
-mwinit -s -o
-
-setup_linuxbrew
-sudo yum install procps-ng
+setup_linux
 
 brew_update
 install_brew_utilities
 install_docker_compose
-install_node_amazon --force  # alt: axe init builder-tools
 install_go_yum
-install_java_corretto
-install_rust
 install_wakatime --break-system-packages
-
-install_aws_dev_tools
-brew install awscurl
-brazil setup completion
-
+setup_workplace
+install_builder_tools
 configure_inotify_watches
 install_ohmyzsh
-
-# Kitty (Optional)
-# sudo tic ~/.config/kitty/xterm-kitty.ti
 
 echo -e "\nSystem setup complete!\n"

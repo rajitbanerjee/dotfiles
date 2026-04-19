@@ -7,20 +7,15 @@ source "$SCRIPT_DIR/setup-system-common"
 
 echo -e "Starting AL2 system setup...\n"
 
-sudo timedatectl set-timezone Europe/Dublin
-
-setup_linuxbrew
-sudo yum install procps-ng curl file
+setup_linux
 
 brew_update
 install_brew_utilities
 install_docker_compose
-install_node_amazon
 install_go_al2
-install_java_al2
-install_rust
 install_wakatime --break-system-packages
-install_aws_dev_tools "${USER}:amazon"
+setup_workplace "${USER}:amazon"
+install_builder_tools
 configure_inotify_watches
 install_ohmyzsh
 

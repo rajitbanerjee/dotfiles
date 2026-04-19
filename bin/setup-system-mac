@@ -7,18 +7,10 @@ source "$SCRIPT_DIR/setup-system-common"
 
 echo -e "Starting macOS system setup...\n"
 
-install_homebrew
-brew update
-brew upgrade
-sudo chown -R $(whoami) $(brew --prefix)/*
-
+brew_update
 install_brew_utilities
-brew install wget
-install_node_mac
 install_go_brew
-install_python_mac
-install_java_mac
-install_rust
+install_builder_tools
 install_wakatime
 install_ohmyzsh
 
