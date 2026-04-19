@@ -38,6 +38,15 @@ setup-system-mac
 install-mac-apps
 ```
 
+### 4. (Optional) Migrate zsh history
+
+From your Mac, copy `.zsh_history` between Cloud Desktops:
+
+```shell
+scp brajit@<old-host>:~/.zsh_history ~/Desktop/ZSH_HISTORY
+scp ~/Desktop/ZSH_HISTORY brajit@<new-host>:~/.zsh_history
+```
+
 ## Screenshots
 
 ![nvim1](./assets/images/nvim1.png)
