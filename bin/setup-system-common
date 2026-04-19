@@ -82,7 +82,7 @@ setup_linux() {
     install_homebrew
     eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
     sudo yum groupinstall 'Development Tools'
-    sudo yum install -y procps-ng curl file
+    sudo yum install -y procps-ng
     sudo tic ~/.config/kitty/xterm-kitty.ti
 }
 
@@ -103,7 +103,6 @@ install_builder_tools() {
 
     toolbox install kiro-cli
     toolbox install aim
-    toolbox registry add s3://buildertoolbox-registry-hub-create-us-west-2/tools.json && toolbox install hub-create
 
     aim agents install AIPowerUserCapabilities
 }

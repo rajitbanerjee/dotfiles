@@ -101,6 +101,10 @@ export NODE_PATH="$(dirname $(mise exec nodejs@20 -- which node))"
 export PATH=$NODE_PATH:$PATH
 export NODE_OPTIONS="--no-deprecation"
 export AWS_SDK_JS_SUPPRESS_MAINTENANCE_MODE_MESSAGE=1
+# Set up mise for runtime management
+eval "$(/home/brajit/.local/bin/mise activate zsh)"
+source ~/.local/share/mise/completions.zsh
+source /home/brajit/.brazil_completion/zsh_completion
 
 # Rust
 [[ -f "$HOME/.cargo/env" ]] && . "$HOME/.cargo/env"
@@ -374,3 +378,6 @@ export PATH="$HOME/.aim/mcp-servers:$PATH"
 
 # Added by AIM CLI
 export PATH="/local/home/brajit/.aim/mcp-servers:$PATH"
+
+autoload -Uz compinit && compinit
+
