@@ -1,0 +1,5 @@
+{
+  "mcp.loadedBefore": true,
+  "chat.defaultAgent": "gpu-dev",
+  "chat.enableTodoList": true
+}

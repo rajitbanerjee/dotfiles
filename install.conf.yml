@@ -46,6 +46,7 @@
 
     # dev env (kiro)
     ~/.kiro/steering: config/kiro/steering
+    ~/.kiro/settings/cli.json: config/kiro/settings/cli.json
     ~/Library/Application Support/Kiro/User/settings.json:
       if: "[ `uname` = Darwin ]"
       path: config/kiro/settings.json
