@@ -1,6 +1,6 @@
 return {
-    { "romgrk/barbar.nvim",      event = { "BufReadPost", "BufNewFile" } },
-    { "vimpostor/vim-tpipeline", lazy = false },
+    { "romgrk/barbar.nvim",      event = { "BufReadPost", "BufNewFile" } }, -- Tab-style buffer line
+    { "vimpostor/vim-tpipeline", lazy = false }, -- Pipe statusline to tmux (must load early)
     {
         "ellisonleao/gruvbox.nvim",
         lazy = false,
@@ -13,26 +13,13 @@ return {
                 },
             })
             vim.cmd.colorscheme "gruvbox"
+
+            -- Style native completion popup to match dark theme
+            vim.api.nvim_set_hl(0, "Pmenu", { bg = "#1d2021", fg = "#ebdbb2" })
+            vim.api.nvim_set_hl(0, "PmenuSel", { bg = "#504945", fg = "#ebdbb2", bold = true })
+            vim.api.nvim_set_hl(0, "PmenuBorder", { bg = "#1d2021", fg = "#504945" })
+            vim.api.nvim_set_hl(0, "PmenuShadow", { bg = "#000000" })
         end,
-    },
-    {
-        "catppuccin/nvim",
-        name = "catppuccin",
-        enabled = false,
-        -- lazy = false,
-        -- priority = 1000,
-        -- config = function()
-        --     vim.cmd.colorscheme "catppuccin-latte"
-        -- end,
-    },
-    {
-        "folke/tokyonight.nvim",
-        enabled = false,
-        -- lazy = false,
-        -- priority = 1000,
-        -- config = function()
-        --     vim.cmd.colorscheme "tokyonight-day"
-        -- end,
     },
     {
         "nvim-lualine/lualine.nvim",
@@ -60,7 +47,8 @@ return {
                 },
             })
 
-            -- Avoid duplicate lualine on changing colorscheme
+            -- Redirect lualine's statusline to tmux via tpipeline when inside tmux,
+            -- preventing duplicate statuslines (one in nvim, one in tmux).
             local lualine_nvim_opts = require "lualine.utils.nvim_opts"
             local base_set = lualine_nvim_opts.set
 

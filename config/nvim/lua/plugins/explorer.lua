@@ -34,11 +34,15 @@ return {
                 },
             })
 
-            local nsMiniFiles = vim.api.nvim_create_namespace("mini_files_git")
-            local nsPushPull = vim.api.nvim_create_namespace("mini_files_push_pull")
-            local gitStatusCache = {}
-            local pushPullCache = {}
-            local cacheTimeout = 2000
+            -- Git status integration for mini.files
+            -- Shows git status symbols (modified, added, deleted, etc.) next to files,
+            -- and push/pull/dirty indicators next to nested git repos.
+
+            local nsMiniFiles = vim.api.nvim_create_namespace("mini_files_git")   -- Namespace for file-level git status
+            local nsPushPull = vim.api.nvim_create_namespace("mini_files_push_pull") -- Namespace for repo-level push/pull indicators
+            local gitStatusCache = {}  -- Cache: git repo path -> { time, statusMap }
+            local pushPullCache = {}   -- Cache: directory path -> { time, staged, unstaged, ahead, behind }
+            local cacheTimeout = 2000  -- Cache TTL in milliseconds
             local uv = vim.uv or vim.loop
 
             local function isSymlink(path)
@@ -46,6 +50,7 @@ return {
                 return stat and stat.type == "link"
             end
 
+            -- Map git status codes to display symbols and highlight groups
             local function mapSymbols(status, is_symlink)
                 local statusMap = {
                     [" M"] = { symbol = "•", hlGroup = "MiniDiffSignChange" },
@@ -72,6 +77,7 @@ return {
                 return combinedSymbol, combinedHlGroup
             end
 
+            -- Async: run `git status` in a directory
             local function fetchGitStatus(cwd, callback)
                 local clean_cwd = cwd:gsub("^minifiles://%d+/", "")
                 local function on_exit(content)
@@ -82,6 +88,7 @@ return {
                 vim.system({ "git", "status", "--ignored", "--porcelain" }, { text = true, cwd = clean_cwd }, on_exit)
             end
 
+            -- Async: get ahead/behind counts relative to upstream
             local function fetchPushPull(dir, callback)
                 vim.system({ "git", "rev-list", "--count", "--left-right", "@{upstream}...HEAD" }, 
                     { text = true, cwd = dir }, 
@@ -93,6 +100,7 @@ return {
                     end)
             end
 
+            -- Async: check if a repo has staged or unstaged changes
             local function fetchDirtyStatus(dir, callback)
                 vim.system({ "git", "status", "--porcelain" }, { text = true, cwd = dir }, function(content)
                     local staged, unstaged = false, false
@@ -108,6 +116,8 @@ return {
                 end)
             end
 
+            -- Render git status signs and highlights on each line of a mini.files buffer.
+            -- For directories containing .git, also shows push/pull/dirty indicators.
             local function updateMiniWithGit(buf_id, gitStatusMap)
                 vim.schedule(function()
                     local nlines = vim.api.nvim_buf_line_count(buf_id)
@@ -193,6 +203,8 @@ return {
                 end)
             end
 
+            -- Parse `git status --porcelain` output into a map of relative path -> status code.
+            -- Propagates status to parent directories so folders show as modified too.
             local function parseGitStatus(content)
                 local gitStatusMap = {}
                 for line in content:gmatch("[^\r\n]+") do
@@ -220,6 +232,7 @@ return {
                 return gitStatusMap
             end
 
+            -- Entry point: fetch git status (cached) and render it on the buffer
             local function updateGitStatus(buf_id)
                 local cwd = vim.fs.root(buf_id, ".git")
                 if not cwd then
@@ -244,6 +257,8 @@ return {
                 pushPullCache = {}
             end
 
+            -- Skip through directories that contain only a single child directory.
+            -- E.g. navigating into src/com/amazon/ jumps straight to the deepest level.
             local function is_single_child_dir(path)
                 local children = vim.fn.readdir(path)
                 return #children == 1 and vim.fn.isdirectory(path .. "/" .. children[1]) == 1

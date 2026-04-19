@@ -1,6 +1,21 @@
 return {
-    { "windwp/nvim-autopairs",  event = "InsertEnter", opts = {} },
-    { "numToStr/Comment.nvim",  event = { "BufReadPost", "BufNewFile" }, opts = {} },
+    {
+        "windwp/nvim-autopairs",
+        event = "InsertEnter",
+        config = function()
+            require("nvim-autopairs").setup({})
+            -- Override CR: accept completion if popup visible, otherwise autopairs handles it
+            local autopairs = require("nvim-autopairs")
+            local original_cr = autopairs.autopairs_cr
+            vim.keymap.set("i", "<CR>", function()
+                if vim.fn.pumvisible() == 1 then
+                    return "<C-y>"
+                else
+                    return original_cr()
+                end
+            end, { expr = true, noremap = true })
+        end,
+    },
     { "kylechui/nvim-surround", event = { "BufReadPost", "BufNewFile" }, opts = {} },
     { "mg979/vim-visual-multi", event = { "BufReadPost", "BufNewFile" } },
     { "tpope/vim-repeat",       event = { "BufReadPost", "BufNewFile" } },

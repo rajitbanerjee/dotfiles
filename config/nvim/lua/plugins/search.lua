@@ -24,27 +24,26 @@ return {
     },
     {
         "nvim-telescope/telescope.nvim",
-        branch = "0.1.x",
         dependencies = {
             "nvim-lua/plenary.nvim",
             "airblade/vim-rooter",
             "nvim-telescope/telescope-live-grep-args.nvim",
         },
         config = function(_, opts)
-            vim.g.rooter_patterns = { ".git" }
+            vim.g.rooter_patterns = { ".git" } -- Auto-cd to project root on file open
             local telescope = require("telescope")
             telescope.setup(opts)
             telescope.load_extension("live_grep_args")
         end,
         opts = function()
-            -- show filename first across telescope
+            -- Show "filename ~ relative/path" instead of the full path
             local function path_display(_, path)
                 local function normalize_path(p)
                     return p:gsub("\\", "/")
                 end
 
                 local function normalize_cwd()
-                    return normalize_path(vim.loop.cwd()) .. "/"
+                    return normalize_path(vim.uv.cwd()) .. "/"
                 end
 
                 local function is_subdirectory(cwd, p)
@@ -98,14 +97,13 @@ return {
                         "--trim",
                     },
                     path_display = path_display,
-                    -- Override default mappings
                     mappings = {
                         i = {
-                            ["<C-q>"] = actions.smart_send_to_qflist + actions.open_qflist
+                            ["<C-q>"] = actions.smart_send_to_qflist + actions.open_qflist -- Send results to quickfix
                         },
                         n = {
-                            ["l"] = actions.cycle_history_next,
-                            ["h"] = actions.cycle_history_prev,
+                            ["l"] = actions.cycle_history_next,  -- Next search history
+                            ["h"] = actions.cycle_history_prev,  -- Previous search history
                         },
                     },
                 },

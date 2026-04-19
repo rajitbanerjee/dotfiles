@@ -13,7 +13,6 @@ vim.keymap.set("n", "u", ":u<CR>", { noremap = true, desc = "Undo" })
 vim.keymap.set("n", "r", "<C-r>", { noremap = true, desc = "Redo" })
 vim.keymap.set("n", "s", ":%s/", { noremap = true, desc = "Replace (In Buffer)" })
 vim.keymap.set("x", "s", "<Cmd>noautocmd normal! \"zy<CR>:%s/<C-r>z/", { noremap = true, desc = "Replace (Selection)" })
-vim.keymap.set("n", "Y", "y$", { noremap = true, desc = "Yank (End)" })
 vim.keymap.set("n", "<leader><CR>", ":noh<CR>", { noremap = true, silent = true, desc = "Highlight Off" })
 
 -- Moving around
@@ -53,17 +52,6 @@ vim.keymap.set("n", "<TAB>", ":bnext<CR>", { noremap = true, silent = true, desc
 vim.keymap.set("n", "<S-TAB>", ":bprevious<CR>", { noremap = true, silent = true, desc = "Buffer Previous" })
 
 -- Quickfix
-vim.g.the_primeagen_qf_g = 0
-function ToggleQFList()
-    if vim.g.the_primeagen_qf_g == 1 then
-        vim.g.the_primeagen_qf_g = 0
-        vim.cmd("cclose")
-    else
-        vim.g.the_primeagen_qf_g = 1
-        vim.cmd("copen")
-    end
-end
-
 vim.api.nvim_create_user_command("ClearQFList", "cexpr []", {})
 vim.keymap.set("n", "<leader>cc", ":ClearQFList<CR>:cclose<CR>", { noremap = true, desc = "Quickfix (Close)" })
 
@@ -71,7 +59,12 @@ vim.keymap.set("n", "<leader>cc", ":ClearQFList<CR>:cclose<CR>", { noremap = tru
 vim.keymap.set("x", "K", ":move '<-2<CR>gv-gv", { noremap = true, silent = true, desc = "Move Lines (Up)" })
 vim.keymap.set("x", "J", ":move '>+1<CR>gv-gv", { noremap = true, silent = true, desc = "Move Lines (Down)" })
 
+-- Diagnostics
+vim.keymap.set("n", "<leader>i", vim.diagnostic.open_float, { noremap = true, silent = true, desc = "Diagnostic (Line)" })
+
 -- Indentation
-vim.keymap.set("i", "<S-TAB>", "<C-d>", { noremap = true, silent = true, desc = "Indent (Left)" })
+vim.keymap.set("i", "<S-TAB>", function()
+    return vim.fn.pumvisible() == 1 and "<C-p>" or "<C-d>"
+end, { expr = true, noremap = true, silent = true, desc = "Indent (Left) / Completion Prev" })
 vim.keymap.set("v", "<", "<gv", { noremap = true, silent = true, desc = "Indent (Left)" })
 vim.keymap.set("v", ">", ">gv", { noremap = true, silent = true, desc = "Indent (Right)" })

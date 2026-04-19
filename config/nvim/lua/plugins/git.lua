@@ -1,7 +1,7 @@
 return {
-    { "tpope/vim-fugitive", event = { "BufReadPost", "BufNewFile" } },
+    { "tpope/vim-fugitive", event = { "BufReadPost", "BufNewFile" } }, -- Git commands (:Git, :Gblame, etc.)
     {
-        "lewis6991/gitsigns.nvim",
+        "lewis6991/gitsigns.nvim", -- Inline git change indicators and hunk staging
         event = { "BufReadPost", "BufNewFile" },
         opts = {},
         keys = function()
@@ -29,8 +29,8 @@ return {
                 },
                 { "<leader>hS", gitsigns.stage_buffer,                 silent = true, desc = "Git: Stage Buffer" },
                 { "<leader>hU", gitsigns.undo_stage_buffer,            silent = true, desc = "Git: Undo Stage Buffer" },
-                { "<leader>hd", gitsigns.diffthis,                     silent = true, desc = "Git: Diff This" },
-                { "<leader>hD", function() gitsigns.diffthis("~") end, silent = true, desc = "Git: Diff This" },
+                { "<leader>hd", gitsigns.diffthis,                     silent = true, desc = "Git: Diff This" }, -- Diff against index (staged)
+                { "<leader>hD", function() gitsigns.diffthis("~") end, silent = true, desc = "Git: Diff This ~" }, -- Diff against last commit
             }
         end,
     },

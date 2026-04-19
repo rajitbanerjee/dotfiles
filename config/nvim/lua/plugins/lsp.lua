@@ -7,6 +7,7 @@ return {
             require("trouble").setup({
                 auto_close = true,
             })
+            -- Redirect quickfix buffers to Trouble's UI automatically
             vim.api.nvim_create_autocmd("BufRead", {
                 callback = function(ev)
                     if vim.bo[ev.buf].buftype == "quickfix" then
@@ -23,213 +24,66 @@ return {
         },
     },
     {
+        -- Parser management only — highlighting/indent/folding are built-in in 0.12
         "nvim-treesitter/nvim-treesitter",
-        event = { "BufReadPost", "BufNewFile" },
         build = ":TSUpdate",
         config = function()
-            require("nvim-treesitter.configs").setup({
+            require("nvim-treesitter").setup({
                 ensure_installed = {
-                    "bash",
-                    "comment",
-                    "dockerfile",
-                    "go",
-                    "html",
-                    "http",
-                    "java",
-                    "javascript",
-                    "json",
-                    "json5",
-                    "jsonc",
-                    "latex",
-                    "lua",
-                    "make",
-                    "markdown",
-                    "markdown_inline",
-                    "perl",
-                    "python",
-                    "regex",
-                    "rust",
-                    "scss",
-                    "toml",
-                    "typescript",
-                    "vim",
-                    "yaml",
+                    "bash", "comment", "dockerfile", "go", "html", "http",
+                    "java", "javascript", "json", "json5", "jsonc", "latex",
+                    "lua", "make", "markdown", "markdown_inline", "perl",
+                    "python", "regex", "rust", "scss", "toml", "typescript",
+                    "vim", "yaml",
                 },
-                modules = {},
-                ignore_install = {},
-                indent = { enable = true },
-                fold = { enable = true },
-                highlight = { enable = true },
-                sync_install = false,
                 auto_install = true,
             })
-            vim.opt.foldmethod = "expr"
-            vim.opt.foldexpr = "v:lua.vim.treesitter.foldexpr()"
-            vim.opt.foldenable = false -- Start with folds open
-            vim.opt.foldlevel = 99
-            vim.opt.foldlevelstart = 99
         end,
     },
     {
-        "folke/lazydev.nvim",
+        "folke/lazydev.nvim", -- Configures lua_ls to understand Neovim's Lua API
         ft = "lua",
         opts = {},
     },
     {
-        "neovim/nvim-lspconfig",
+        -- Mason for installing LSP servers and tools (not for configuring them)
+        "williamboman/mason.nvim",
         dependencies = {
-            "williamboman/mason.nvim",
-            "williamboman/mason-lspconfig.nvim",
-            'WhoIsSethDaniel/mason-tool-installer.nvim',
-            "mfussenegger/nvim-jdtls",
-            "hrsh7th/cmp-nvim-lsp",
-            "stevearc/conform.nvim",
+            "WhoIsSethDaniel/mason-tool-installer.nvim",
         },
         config = function()
-            local lspconfig = require("lspconfig")
-            local mason = require("mason")
-            local mason_lspconfig = require("mason-lspconfig")
-            local mason_tool_installer = require("mason-tool-installer")
-            local cmp_nvim_lsp = require("cmp_nvim_lsp")
-            local conform = require("conform")
-            local default_capabilities = vim.lsp.protocol.make_client_capabilities()
-            default_capabilities = vim.tbl_deep_extend(
-                "force",
-                default_capabilities,
-                cmp_nvim_lsp.default_capabilities()
-            )
-
-            -- Configurable list of LSPs to install
-            local server_configs = {
-                bashls = {},
-                gopls = {},
-                jsonls = {},
-                lua_ls = {
-                    settings = {
-                        Lua = {
-                            diagnostics = {
-                                globals = { "vim" },
-                            },
-                        },
-                    },
-                },
-                marksman = {},
-                rust_analyzer = {
-                    settings = {
-                        ["rust-analyzer"] = {
-                            cargo = {
-                                allFeatures = true,
-                            },
-                            checkOnSave = {
-                                command = "clippy",
-                            },
-                        },
-                    },
-                },
-                ts_ls = {},
-                yamlls = {},
-            }
-            mason.setup({})
-            local mason_ensure_installed = vim.tbl_keys(server_configs or {})
-
-            -- Additional installations, but not configured directly with mason
-            vim.list_extend(
-                mason_ensure_installed,
-                {
+            require("mason").setup({})
+            require("mason-tool-installer").setup({
+                ensure_installed = {
+                    "bash-language-server",
+                    "gopls",
+                    "json-lsp",
+                    "lua-language-server",
+                    "marksman",
+                    "rust-analyzer",
+                    "typescript-language-server",
+                    "yaml-language-server",
                     "jdtls",
                     "prettier",
                     "google-java-format",
-                }
-            )
-            mason_tool_installer.setup({
-                ensure_installed = mason_ensure_installed
+                },
             })
-
-            conform.setup({
+        end,
+    },
+    {
+        -- Conform for formatting (no built-in equivalent)
+        "stevearc/conform.nvim",
+        config = function()
+            require("conform").setup({
                 formatters_by_ft = {
                     markdown = { "prettier" },
                     rust = { "rustfmt" },
                 },
             })
-
-            mason_lspconfig.setup({
-                handlers = {
-                    function(server_name)
-                        local server_config = server_configs[server_name] or {}
-                        server_config.capabilities = vim.tbl_deep_extend(
-                            "force",
-                            default_capabilities,
-                            server_config.capabilities or {}
-                        )
-                        lspconfig[server_name].setup(server_config)
-                    end,
-                    ['jdtls'] = function() end,
-                },
-            })
-
-            vim.api.nvim_create_autocmd("LspAttach", {
-                group = vim.api.nvim_create_augroup("UserLspConfig", {}),
-                callback = function(ev)
-                    local function opts(desc)
-                        return { desc = "LSP: " .. desc, buffer = ev.buf, noremap = true, silent = true }
-                    end
-
-                    vim.keymap.set("n", "<leader>l", function()
-                        conform.format({ async = true, lsp_format = "fallback" })
-                    end, opts("Format"))
-
-                    vim.keymap.set("n", "<leader>o", function()
-                        vim.lsp.buf.code_action({
-                            apply = true,
-                            context = { only = { "source.organizeImports" }, diagnostics = {} },
-                        })
-                    end, opts("Organize Imports"))
-
-                    local builtin = require("telescope.builtin")
-
-                    vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, opts("Rename"))
-                    vim.keymap.set("n", "gD", vim.lsp.buf.declaration, opts("Go To Declaration"))
-                    vim.keymap.set("n", "gd", builtin.lsp_definitions, opts("Go To Definition"))
-                    vim.keymap.set("n", "gi", builtin.lsp_implementations, opts("Go To Implementations"))
-                    vim.keymap.set("n", "gr", builtin.lsp_references, opts("Find All References"))
-                    vim.keymap.set("n", "gy", builtin.lsp_type_definitions, opts("Go To Type Definition"))
-                    vim.keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, opts("Code Action"))
-                    vim.keymap.set("n", "K", function()
-                        vim.lsp.buf.hover({ border = "rounded" })
-                    end, opts("Hover"))
-                    vim.keymap.set("n", "gs", function()
-                        vim.lsp.buf.signature_help({ border = "rounded" })
-                    end, opts("Signature"))
-                end,
-            })
         end,
     },
     {
-        "hrsh7th/nvim-cmp",
-        dependencies = {
-            "hrsh7th/cmp-path",
-        },
-        config = function()
-            local cmp = require("cmp")
-            cmp.setup({
-                window = {
-                    completion = cmp.config.window.bordered({
-                        side_padding = 1,
-                    }),
-                    documentation = cmp.config.window.bordered({
-                        side_padding = 1,
-                    }),
-                },
-                mapping = cmp.mapping.preset.insert({
-                    ["<S-TAB>"] = cmp.mapping.select_prev_item(),
-                    ["<TAB>"] = cmp.mapping.select_next_item(),
-                    ["<CR>"] = cmp.mapping.confirm({ select = true }),
-                }),
-                sources = cmp.config.sources({
-                    { name = "nvim_lsp" },
-                    { name = "path" },
-                }),
-            })
-        end
+        "mfussenegger/nvim-jdtls",
+        ft = "java",
     },
 }
