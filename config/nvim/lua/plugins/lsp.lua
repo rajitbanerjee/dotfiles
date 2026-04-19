@@ -65,6 +65,7 @@ return {
                     "yaml-language-server",
                     "jdtls",
                     "prettier",
+                    "shfmt",
                     "google-java-format",
                 },
             })
@@ -76,6 +77,7 @@ return {
         config = function()
             require("conform").setup({
                 formatters_by_ft = {
+                    sh = { "shfmt" },
                     markdown = { "prettier" },
                     rust = { "rustfmt" },
                 },
