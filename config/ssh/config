@@ -55,6 +55,7 @@ Host github.com
 
 # Apply to all
 Host *
+  IgnoreUnknown UseKeychain
   AddKeysToAgent yes
   UseKeychain yes
   PubkeyAcceptedAlgorithms +ssh-rsa-cert-v01@openssh.com

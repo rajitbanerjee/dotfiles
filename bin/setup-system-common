@@ -36,6 +36,7 @@ install_brew_utilities() {
 }
 
 install_docker_compose() {
+    mkdir -p ~/.local/bin
     curl -L "https://github.com/docker/compose/releases/latest/download/docker-compose-$(uname -s)-$(uname -m)" -o ~/.local/bin/docker-compose
     chmod +x ~/.local/bin/docker-compose
 }

@@ -1,2 +1,3 @@
 autoload/
 config/kiro/steering/amazon-*
+config/kiro/settings/amazon-*

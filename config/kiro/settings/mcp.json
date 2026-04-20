@@ -1,11 +1,15 @@
 {
-    "mcpServers": {
-        "builder-mcp": {
-            "command": "/home/brajit/.toolbox/bin/builder-mcp",
-            "args": [],
-            "env": {},
-            "disabled": false,
-            "autoApprove": []
-        }
+  "mcpServers" : {
+    "builder-mcp" : {
+      "command" : "/home/brajit/.toolbox/bin/builder-mcp",
+      "args" : [ ],
+      "env" : { },
+      "disabled" : false,
+      "autoApprove" : [ ]
+    },
+    "creds-agent" : {
+      "command" : "aim",
+      "args" : [ "mcp", "start-server", "local-creds-agent-mcp" ]
     }
+  }
 }
