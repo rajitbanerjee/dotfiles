@@ -39,7 +39,7 @@ plugins=(
     zsh-completions
     zsh-syntax-highlighting
 )
-(( $+commands[docker] )) && plugins+=(docker docker-compose) 2>/dev/null
+if command -v docker &>/dev/null && docker --version &>/dev/null; then plugins+=(docker docker-compose); fi
 
 # Remove stale completion references
 [[ ! -f /usr/local/share/zsh/site-functions/_alacritty ]] && \
@@ -102,9 +102,9 @@ export PATH=$NODE_PATH:$PATH
 export NODE_OPTIONS="--no-deprecation"
 export AWS_SDK_JS_SUPPRESS_MAINTENANCE_MODE_MESSAGE=1
 # Set up mise for runtime management
-eval "$(/home/brajit/.local/bin/mise activate zsh)"
-source ~/.local/share/mise/completions.zsh
-source /home/brajit/.brazil_completion/zsh_completion
+[[ -x "$HOME/.local/bin/mise" ]] && eval "$($HOME/.local/bin/mise activate zsh)"
+[[ -f "$HOME/.local/share/mise/completions.zsh" ]] && source "$HOME/.local/share/mise/completions.zsh"
+[[ -f "$HOME/.brazil_completion/zsh_completion" ]] && source "$HOME/.brazil_completion/zsh_completion"
 
 # Rust
 [[ -f "$HOME/.cargo/env" ]] && . "$HOME/.cargo/env"
