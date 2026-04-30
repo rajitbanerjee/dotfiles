@@ -10,7 +10,17 @@ inclusion: always
 
 ## Coding
 
-<!-- Language preferences, patterns, style rules -->
+### Java Imports
+
+Always use static imports or top-level imports — never use fully-qualified class names inline in method bodies (e.g., `org.mockito.ArgumentMatchers.eq(...)` is wrong, use `import static org.mockito.ArgumentMatchers.eq` and call `eq(...)` directly).
+
+### Code Reviews
+
+Never autonomously publish comments on code reviews (CRAddComment with publish=true, or cr CLI). Always share feedback in Kiro chat and wait for human to review and manually transfer if valid.
+
+### Git Commits
+
+Never autonomously run `git commit` or `git commit --amend`. Prepare the changes and stage files if asked, but wait for human to execute the commit.
 
 ## Reviewing
 
