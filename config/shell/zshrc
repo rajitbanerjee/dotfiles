@@ -31,14 +31,13 @@ ZSH_CUSTOM=~/.zsh/custom
 plugins=(
     copypath
     fzf
-    git-prompt
-    git-auto-fetch
     safe-paste
     wakatime
     zsh-autosuggestions
     zsh-completions
     zsh-syntax-highlighting
 )
+[[ "$(uname)" = "Linux" ]] && plugins+=(git-prompt git-auto-fetch)
 if command -v docker &>/dev/null && docker --version &>/dev/null; then plugins+=(docker docker-compose); fi
 
 source $ZSH/oh-my-zsh.sh
@@ -69,8 +68,11 @@ ZSH_THEME_GIT_PROMPT_UPSTREAM_SEPARATOR="->"
 NEWLINE=$'\n'
 [[ -n "$SSH_CLIENT" ]] && ssh_flag="(ssh) "
 setopt PROMPT_SUBST
-PS1='%B%F{100}[%*] ${ssh_flag}%n@%m:%f%F{66}%(5~|%-1~/…/%3~|%4~)%f%b $(git_super_status "(%s)")${NEWLINE}\$ ' # with git-prompt
-# PS1='%B%F{100}[%*] ${ssh_flag}%n@%m:%f%F{66}%(5~|%-1~/…/%3~|%4~)%f%b${NEWLINE}\$ ' # without git-prompt
+if [[ "$(uname)" = "Linux" ]]; then
+  PS1='%B%F{100}[%*] ${ssh_flag}%n@%m:%f%F{66}%(5~|%-1~/…/%3~|%4~)%f%b $(git_super_status "(%s)")${NEWLINE}\$ ' # with git-prompt
+else
+  PS1='%B%F{100}[%*] ${ssh_flag}%n@%m:%f%F{66}%(5~|%-1~/…/%3~|%4~)%f%b${NEWLINE}\$ ' # without git-prompt
+fi
 
 ### Dev ###
 
@@ -143,7 +145,7 @@ alias bbb="/apollo/env/envImprovement/bin/brazil-recursive-cmd-parallel --allPac
 alias bws="brazil ws"
 alias bwsm="brazil ws sync -md"
 alias bwsa="brazil ws sync -md && brazil ws sync -src"
-alias ssd="ssh devdesk"
+alias ssd="mosh-cdd devdesk"
 
 # files
 alias less="less -R"
