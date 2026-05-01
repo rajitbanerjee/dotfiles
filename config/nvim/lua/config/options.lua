@@ -1,7 +1,21 @@
 vim.env.LANG = "en" -- Set environment language to English
 vim.o.background = "dark" -- Set background to dark theme
+vim.o.termguicolors = true -- Enable 24-bit RGB true color
 vim.o.backup = false -- Disable backup files
 vim.o.clipboard = "unnamedplus"
+-- Use OSC 52 for clipboard writes only; disable reads to prevent
+-- "application is attempting to read from the clipboard" warnings
+vim.g.clipboard = {
+    name = "OSC 52",
+    copy = {
+        ["+"] = require("vim.ui.clipboard.osc52").copy("+"),
+        ["*"] = require("vim.ui.clipboard.osc52").copy("*"),
+    },
+    paste = {
+        ["+"] = function() return {} end,
+        ["*"] = function() return {} end,
+    },
+}
 vim.o.cmdheight = 1 -- Set command line height to 1
 vim.o.errorbells = false -- Disable error sound
 vim.o.expandtab = true -- Use spaces instead of tabs
