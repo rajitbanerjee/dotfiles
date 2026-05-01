@@ -31,7 +31,7 @@
       path: config/ssh/config
 
     # dev env (nvim)
-    ~/.config/kitty: config/kitty
+    ~/.config/ghostty: config/ghostty
     ~/.config/nvim: config/nvim
     ~/.tmux.conf: config/tmux/tmux.conf
     ~/.tmux/plugins/tpm: config/tmux/tpm

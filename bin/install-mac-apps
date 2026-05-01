@@ -7,7 +7,7 @@ IFS=$'\n\t'
 brew install --cask bitwarden
 brew install --cask firefox
 brew install --cask keepingyouawake
-brew install --cask kitty
+brew install --cask ghostty
 brew install --cask mos
 brew install --cask obsidian
 brew install --cask raycast

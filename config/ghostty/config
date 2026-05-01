@@ -1,0 +1,26 @@
+# theme
+background = 000000
+foreground = ebdbb2
+selection-foreground = 655b53
+selection-background = ebdbb2
+
+# gruvbox-dark palette
+palette = 0=#272727
+palette = 1=#cc231c
+palette = 2=#989719
+palette = 3=#d79920
+palette = 4=#448488
+palette = 5=#b16185
+palette = 6=#689d69
+palette = 7=#a89983
+palette = 8=#928373
+palette = 9=#fb4833
+palette = 10=#b8ba25
+palette = 11=#fabc2e
+palette = 12=#83a597
+palette = 13=#d3859a
+palette = 14=#8ec07b
+palette = 15=#ebdbb2
+
+# window
+maximize = true

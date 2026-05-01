@@ -29,7 +29,7 @@ Current MacOS tools used regularly.
     - [Wipr](https://apps.apple.com/us/app/wipr/id1320666476?mt=12)
     - Bitwarden
 - Terminal
-  - [Kitty](https://sw.kovidgoyal.net/kitty/)
+  - [Ghostty](https://ghostty.org/)
 - [Homebrew](https://brew.sh): Package manager
 - [Neovim](https://neovim.io): Primary editor
 - [Kiro](https://kiro.dev): Secondary editor

@@ -2,18 +2,6 @@ vim.env.LANG = "en" -- Set environment language to English
 vim.o.background = "dark" -- Set background to dark theme
 vim.o.backup = false -- Disable backup files
 vim.o.clipboard = "unnamedplus"
--- Use OSC 52 for clipboard over SSH/tmux (works with Kitty, no popup prompt)
-vim.g.clipboard = {
-    name = "OSC 52",
-    copy = {
-        ["+"] = require("vim.ui.clipboard.osc52").copy("+"),
-        ["*"] = require("vim.ui.clipboard.osc52").copy("*"),
-    },
-    paste = {
-        ["+"] = require("vim.ui.clipboard.osc52").paste("+"),
-        ["*"] = require("vim.ui.clipboard.osc52").paste("*"),
-    },
-}
 vim.o.cmdheight = 1 -- Set command line height to 1
 vim.o.errorbells = false -- Disable error sound
 vim.o.expandtab = true -- Use spaces instead of tabs

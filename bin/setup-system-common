@@ -84,7 +84,7 @@ setup_linux() {
     eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
     sudo yum groupinstall 'Development Tools'
     sudo yum install -y procps-ng
-    sudo tic ~/.config/kitty/xterm-kitty.ti
+    sudo tic ~/.config/ghostty/xterm-ghostty.ti
 }
 
 install_go_yum() {
