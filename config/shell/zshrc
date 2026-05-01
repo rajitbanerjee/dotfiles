@@ -145,7 +145,7 @@ alias bbb="/apollo/env/envImprovement/bin/brazil-recursive-cmd-parallel --allPac
 alias bws="brazil ws"
 alias bwsm="brazil ws sync -md"
 alias bwsa="brazil ws sync -md && brazil ws sync -src"
-alias ssd="mosh-cdd devdesk"
+alias ssd="ssh devdesk"
 
 # files
 alias less="less -R"
