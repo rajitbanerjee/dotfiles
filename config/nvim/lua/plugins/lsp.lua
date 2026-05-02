@@ -57,7 +57,6 @@ return {
                 ensure_installed = {
                     "bash-language-server",
                     "gopls",
-                    "json-lsp",
                     "lua-language-server",
                     "marksman",
                     "rust-analyzer",
