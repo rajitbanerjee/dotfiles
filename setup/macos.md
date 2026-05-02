@@ -1,7 +1,5 @@
 # Mac OS Setup
 
-Current MacOS tools used regularly.
-
 ## Tools
 
 - [Bitwarden](https://bitwarden.com): Password manager
