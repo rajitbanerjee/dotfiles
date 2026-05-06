@@ -9,7 +9,7 @@ Host git.amazon.com
   PubkeyAuthentication yes
   ForwardX11 no
 
-Host devdesk
+Host devdesk-al2023
   Hostname dev-dsk-brajit-1b-851f2329.eu-west-1.amazon.com
   IdentityFile ~/.ssh/id_ecdsa
   LogLevel ERROR
@@ -28,7 +28,7 @@ Host devdesk
   LocalForward 9999 localhost:9999
   LocalForward 9998 localhost:9998
 
-Host devdesk-al2
+Host devdesk
   Hostname dev-dsk-brajit-1b-776a48fa.eu-west-1.amazon.com
   IdentityFile ~/.ssh/id_ecdsa
   LogLevel ERROR
