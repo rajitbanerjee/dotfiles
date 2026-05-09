@@ -4,35 +4,65 @@ inclusion: always
 
 # Rajit's Global Kiro Steering
 
-## Writing
+## Epistemic Hygiene
 
-<!-- How Kiro should write prose, docs, and narratives -->
+Three output modes. Use the right one:
+
+* **Assertion:** Verified this session with tools. Cite source (file path, URL, tool output).
+* **Suggestion:** General knowledge applied to context. Frame as "consider" or "you might want to."
+* **Speculation:** Reasoning from incomplete information. Flag with "I suspect" or "this is unverified."
+
+Default mode is suggestion. Source code is ground truth -- documentation contradicts code, code wins.
+
+When challenged on an assertion, find evidence. Don't fold without checking. New evidence contradicts earlier claim: correct immediately. Empty search results are not evidence of absence.
+
+## Context Discipline
+
+Estimate result size before every tool invocation. Large output (build logs, API responses) goes to a file -- extract only what's needed into context.
+
+When editing files, list specific str_replace operations as a numbered plan before executing. Visible plan survives context interruptions.
 
 ## Coding
 
-### Java Imports
+### Imports
 
-Always use static imports or top-level imports — never use fully-qualified class names inline in method bodies (e.g., `org.mockito.ArgumentMatchers.eq(...)` is wrong, use `import static org.mockito.ArgumentMatchers.eq` and call `eq(...)` directly).
+Always use static imports or top-level imports -- never use fully-qualified class names inline in method bodies (e.g., `org.mockito.ArgumentMatchers.eq(...)` is wrong, use `import static org.mockito.ArgumentMatchers.eq` and call `eq(...)` directly).
 
-### Code Reviews
+### Readability
+
+Small, focused functions. Cannot describe without "and"? Split. Guard clauses at top, happy path at lowest indentation.
+
+Names must be specific. Not `data`, `result`, `temp`, `handle`, `process`, `manager`. Function name must describe all effects. Hidden side effects are bugs.
+
+Comments explain why, not what. Comment explaining control flow means code is too complex -- simplify. Stale comment worse than no comment.
+
+### Error Handling
+
+Classify by origin: dependency failure -> 500, bad input -> 400. Never conflate. Fail fast -- invalid state detected, stop immediately. Internal details in logs, callers get safe messages.
+
+### Tests
+
+Test the contract, not the implementation. Error paths first, then boundaries, then validation, then happy path. Assert on fields that matter, not entire output shape.
+
+### Structure
+
+Composition over inheritance. No speculative abstraction. Extract duplication after three occurrences, not on first repeat.
+
+### Observability
+
+Feature change missing observability (metrics, alarms, dashboards): flag it. Don't silently ship unmonitored code.
+
+## Code Reviews
 
 Never autonomously publish comments on code reviews (CRAddComment with publish=true, or cr CLI). Always share feedback in Kiro chat and wait for human to review and manually transfer if valid.
 
-### Git Commits
+## Git Commits
 
 Never autonomously run `git commit` or `git commit --amend`. Prepare the changes and stage files if asked, but wait for human to execute the commit.
 
-## Reviewing
-
-<!-- How Kiro should review code or docs -->
-
-## Communication
-
-<!-- Tone, format, verbosity preferences -->
-
 ## Environment
 
-<!-- Machine-specific defaults, paths, hosts -->
+When authentication fails (expired cookies, unauthenticated errors), stop and tell me. Never attempt re-authentication automatically.
 
 ## Skills
 
@@ -50,11 +80,3 @@ Defaults (override with user-provided values):
 - **Intermediate path**: `~/Desktop/`
 - **Source host**: `devdesk-al2`
 - **Destination host**: `devdesk`
-
-Example — transferring `~/.zsh_history`:
-
-```bash
-scp brajit@devdesk-al2:~/.zsh_history ~/Desktop/ZSH_HISTORY
-scp ~/Desktop/ZSH_HISTORY brajit@devdesk:~/.zsh_history
-rm ~/Desktop/ZSH_HISTORY
-```

@@ -1,5 +1,5 @@
 {
   "mcp.loadedBefore": true,
-  "chat.defaultAgent": "gpu-dev",
+  "chat.defaultAgent": "gpu-dev-memory",
   "chat.enableTodoList": true
 }

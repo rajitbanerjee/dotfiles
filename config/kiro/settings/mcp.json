@@ -7,12 +7,16 @@
       "disabled" : false,
       "autoApprove" : [ "WorkspaceSearch" ]
     },
-    "creds-agent" : {
-      "command" : "aim",
-      "args" : [ "mcp", "start-server", "local-creds-agent-mcp" ]
-    },
     "total-recall-mcp" : {
       "command" : "total-recall-mcp",
+      "args" : [ ]
+    },
+    "gates-mcp" : {
+      "command" : "gates-mcp",
+      "args" : [ ]
+    },
+    "nova-memory-mcp" : {
+      "command" : "nova-memory-mcp",
       "args" : [ ]
     }
   }
