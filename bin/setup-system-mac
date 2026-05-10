@@ -9,8 +9,7 @@ echo -e "Starting macOS system setup...\n"
 
 brew_update
 install_brew_utilities
-install_go_brew
-install_builder_tools
+# install_builder_tools
 install_wakatime
 install_ohmyzsh
 

@@ -6,6 +6,8 @@ System setup and configuration for macOS and Amazon Linux. Symlinking to `$HOME`
 
 ### 1. SSH keys
 
+ed25519:
+
 ```shell
 ssh-keygen -t ed25519 -C "rajitbanerjee15@gmail.com"
 eval "$(ssh-agent -s)"
@@ -14,6 +16,15 @@ cat ~/.ssh/id_ed25519.pub
 ```
 
 Copy the output and add it at https://github.com/settings/keys.
+
+ecdsa:
+
+```shell
+ssh-keygen -t ecdsa -C "brajit@amazon.com"
+eval "$(ssh-agent -s)"
+ssh-add ~/.ssh/id_ecdsa
+cat ~/.ssh/id_ecdsa.pub
+```
 
 ### 2. Clone and install symlinks
 

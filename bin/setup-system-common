@@ -28,6 +28,7 @@ install_brew_utilities() {
     brew install jq
     brew install neovim
     brew install pandoc
+    brew install pipx
     brew install ripgrep
     brew install tldr
     brew install tmux
@@ -49,7 +50,8 @@ install_go_brew() {
 
 install_wakatime() {
     echo -e "\n\nWakaTime:\n"
-    python3 -m pip install --user wakatime "${@}"
+    pipx ensureinstall
+    pipx install wakatime
     if [ ! -f ~/.wakatime.cfg ]; then
         echo -e "\n\nWakaTime config file setup:\n"
         read -p "Enter WakaTime API Key: " key

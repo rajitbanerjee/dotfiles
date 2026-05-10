@@ -45,12 +45,13 @@ Host devdesk
   LocalForward 8083 localhost:8083
   LocalForward 8443 localhost:8443
   LocalForward 9998 localhost:9998
+  LocalForward 9999 localhost:9999
 
 # OSS
 Host github.com
   Hostname ssh.github.com
   Port 443
-  IdentityFile ~/.ssh/id_ecdsa
+  IdentityFile ~/.ssh/id_ed25519
 
 # Apply to all
 Host *

@@ -1,35 +1,37 @@
-# Mac OS Setup
+# MacOS Setup
 
-## Tools
+- System Settings
+  - Keyboard: repeat Fast, delay Short, backlight off after 5s
+  - Trackpad: speed 8/10, tap to click ✓, click Light
+  - Dock: auto-hide ✓
+  - Menu Bar: clock seconds ✓, battery percent ✓
+  - Finder: path bar ✓, status bar ✓
 
-- [Bitwarden](https://bitwarden.com): Password manager
-- [Mos](https://mos.caldis.me/): Smooth and inverted scrolling for external mice.
-  - General Settings
-    - [x] Smooth Scrolling
-    - [x] Reverse Scroll
-    - [x] Launch on Login
-    - [x] Hide Status Bar Icon
-  - Advanced Settings
-    - Step: 10.00
-    - Speed: 6.69
-    - Duration: 3.90
-- Browser:
-  - Firefox
-    - [AdBlocker Ultimate](https://addons.mozilla.org/en-GB/firefox/addon/adblocker-ultimate/)
-    - [uBlock Origin](https://addons.mozilla.org/en-GB/firefox/addon/ublock-origin/)
-    - [Bitwarden](https://addons.mozilla.org/en-GB/firefox/addon/bitwarden-password-manager/)
-    - [Sidebery](https://addons.mozilla.org/en-US/firefox/addon/sidebery/)
-      - [Firefox Style Snippets](https://github.com/mbnuqw/sidebery/wiki/Firefox-Styles-Snippets-(via-userChrome.css))
-    - [Dark Reader](https://addons.mozilla.org/en-US/firefox/addon/darkreader/)
-    - `about:config`
-      - `layout.css.devPixelsPerPx = 1.7`
-  - Safari
-    - [Wipr](https://apps.apple.com/us/app/wipr/id1320666476?mt=12)
-    - Bitwarden
-- Terminal
-  - [Ghostty](https://ghostty.org/)
-- [Homebrew](https://brew.sh): Package manager
-- [Neovim](https://neovim.io): Primary editor
-- [Kiro](https://kiro.dev): Secondary editor
-- [VS Code](https://code.visualstudio.com): Tertiary editor
-- For apps installation, see `./bin/install-mac-apps`
+- Accounts & Devices
+  - Add Gmail accounts (Internet Accounts)
+  - Pair Bluetooth: AirPods, headphones, keyboard, mouse
+
+- Apps
+  - Browsers: [Firefox](https://www.mozilla.org/firefox/)
+    - Extensions:
+      - [Bitwarden](https://addons.mozilla.org/en-GB/firefox/addon/bitwarden-password-manager/)
+      - [AdBlocker Ultimate](https://addons.mozilla.org/en-GB/firefox/addon/adblocker-ultimate/)
+      - [uBlock Origin](https://addons.mozilla.org/en-GB/firefox/addon/ublock-origin/)
+    - Settings: vertical tabs ✓, expand sidebar on hover ✓
+
+  - Dev tools:
+    - Xcode
+    - [Homebrew](https://brew.sh/)
+    - [Ghostty](https://ghostty.org/)
+    - [Kiro](https://kiro.dev/)
+    - [VS Code](https://code.visualstudio.com/)
+
+  - Utilities:
+    - [Mos](https://mos.caldis.me/) — smooth & inverted scrolling
+      - Smooth scrolling ✓, reverse scroll ✓, launch on login ✓, hide status bar ✓
+      - Step 10.00, Speed 6.69, Duration 3.90
+    - Google Drive for Desktop — sync `Documents`
+
+  - Communication: WhatsApp
+  - Media: Apple Music
+
