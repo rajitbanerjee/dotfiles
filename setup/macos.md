@@ -14,10 +14,18 @@
 - Apps
   - Browsers: [Firefox](https://www.mozilla.org/firefox/)
     - Extensions:
-      - [Bitwarden](https://addons.mozilla.org/en-GB/firefox/addon/bitwarden-password-manager/)
-      - [AdBlocker Ultimate](https://addons.mozilla.org/en-GB/firefox/addon/adblocker-ultimate/)
-      - [uBlock Origin](https://addons.mozilla.org/en-GB/firefox/addon/ublock-origin/)
-    - Settings: vertical tabs ✓, expand sidebar on hover ✓
+      - [Bitwarden](https://addons.mozilla.org/en-US/firefox/addon/bitwarden-password-manager/)
+      - [AdBlocker Ultimate](https://addons.mozilla.org/en-US/firefox/addon/adblocker-ultimate/)
+      - [uBlock Origin](https://addons.mozilla.org/en-US/firefox/addon/ublock-origin/)
+      - [Sidebery](https://addons.mozilla.org/en-US/firefox/addon/sidebery/)
+        - about:config: toolkit.legacyUserProfileCustomizations.stylesheets = true
+        - In 'Profile Directory' (Menu > Help > Troubleshooting Information > Profile Directory) create folder chrome with file `userChrome.css`.
+
+          ```
+          #TabsToolbar {
+              display: none;
+          }
+          ```
 
   - Dev tools:
     - Xcode
@@ -34,4 +42,3 @@
 
   - Communication: WhatsApp
   - Media: Apple Music
-
