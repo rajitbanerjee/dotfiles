@@ -16,6 +16,12 @@ return {
             end, { expr = true, noremap = true })
         end,
     },
+    {
+        'MeanderingProgrammer/render-markdown.nvim',
+        ---@module 'render-markdown'
+        ---@type render.md.UserConfig
+        opts = {},
+    },
     { "kylechui/nvim-surround", event = { "BufReadPost", "BufNewFile" }, opts = {} },
     { "mg979/vim-visual-multi", event = { "BufReadPost", "BufNewFile" } },
     { "tpope/vim-repeat",       event = { "BufReadPost", "BufNewFile" } },
@@ -27,9 +33,9 @@ return {
         keys = {
             { "<C-p>", "<Plug>(YankyPreviousEntry)", desc = "Paste (Older)" },
             { "<C-n>", "<Plug>(YankyNextEntry)",     desc = "Paste (Newer)" },
-            { "y",     "<Plug>(YankyYank)",          mode = { "n", "x" },        desc = "Yank" },
-            { "p",     "<Plug>(YankyPutAfter)",      mode = { "n", "x" },        desc = "Put After" },
-            { "P",     "<Plug>(YankyPutBefore)",     mode = { "n", "x" },        desc = "Put Before" },
+            { "y",     "<Plug>(YankyYank)",          mode = { "n", "x" },   desc = "Yank" },
+            { "p",     "<Plug>(YankyPutAfter)",      mode = { "n", "x" },   desc = "Put After" },
+            { "P",     "<Plug>(YankyPutBefore)",     mode = { "n", "x" },   desc = "Put Before" },
         },
     },
 }
