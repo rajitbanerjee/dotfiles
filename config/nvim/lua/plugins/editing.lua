@@ -16,12 +16,7 @@ return {
             end, { expr = true, noremap = true })
         end,
     },
-    {
-        'MeanderingProgrammer/render-markdown.nvim',
-        ---@module 'render-markdown'
-        ---@type render.md.UserConfig
-        opts = {},
-    },
+    { "OXY2DEV/markview.nvim",  lazy = false },
     { "kylechui/nvim-surround", event = { "BufReadPost", "BufNewFile" }, opts = {} },
     { "mg979/vim-visual-multi", event = { "BufReadPost", "BufNewFile" } },
     { "tpope/vim-repeat",       event = { "BufReadPost", "BufNewFile" } },
