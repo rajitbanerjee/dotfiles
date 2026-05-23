@@ -78,6 +78,8 @@ return {
                 formatters_by_ft = {
                     sh = { "shfmt" },
                     markdown = { "prettier" },
+                    json = { "prettier" },
+                    jsonc = { "prettier" },
                     rust = { "rustfmt" },
                 },
             })
