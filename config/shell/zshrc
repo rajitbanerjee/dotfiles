@@ -217,7 +217,7 @@ alias dcd="docker-compose down"
 
 # ai
 alias g="gemini"
-alias k="kiro-cli"
+alias k="kiro-cli chat --trust-all-tools"
 
 ### Functions ###
 
