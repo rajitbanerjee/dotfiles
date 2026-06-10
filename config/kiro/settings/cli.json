@@ -1,9 +1,0 @@
-{
-  "mcp.loadedBefore": true,
-  "chat.defaultAgent": "gpu-dev-memory",
-  "chat.enableTodoList": true,
-  "chat.disableTrustAllConfirmation": true,
-  "toolSearch.enabled": true,
-  "toolSearch.minPct": 0,
-  "toolSearch.minTokens": 0
-}
