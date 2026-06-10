@@ -31,7 +31,7 @@
     - Xcode
     - [Homebrew](https://brew.sh/)
     - [Ghostty](https://ghostty.org/)
-    - [Kiro](https://kiro.dev/)
+    - [Claude Code](https://code.claude.com/docs/en/overview)
     - [VS Code](https://code.visualstudio.com/)
 
   - Utilities:

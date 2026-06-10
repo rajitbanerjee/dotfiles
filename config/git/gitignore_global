@@ -45,3 +45,5 @@ Temporary Items
 build
 target
 build-logs-todo-delete
+
+**/.claude/settings.local.json

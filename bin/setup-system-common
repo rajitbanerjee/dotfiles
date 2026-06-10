@@ -106,9 +106,11 @@ install_builder_tools() {
     mise install nodejs@20 && mise use --global nodejs@20
 
     toolbox install kiro-cli
+    toolbox install claude-code
     toolbox install aim
 
     aim agents install AIPowerUserCapabilities
+    aim plugins install AmazonBuilderCoreAIAgents
 }
 
 setup_workplace() {
