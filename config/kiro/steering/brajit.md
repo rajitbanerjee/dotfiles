@@ -52,6 +52,10 @@ Composition over inheritance. No speculative abstraction. Extract duplication af
 
 Feature change missing observability (metrics, alarms, dashboards): flag it. Don't silently ship unmonitored code.
 
+## Output Preferences
+
+When asked for writeups, descriptions, announcements, or any drafted text content (CR descriptions, ticket updates, comms, etc.), always write to a `/tmp/*.md` file. Never inline the content in chat.
+
 ## Code Reviews
 
 Never autonomously publish comments on code reviews (CRAddComment with publish=true, or cr CLI). Always share feedback in Kiro chat and wait for human to review and manually transfer if valid.
