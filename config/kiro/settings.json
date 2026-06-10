@@ -157,8 +157,8 @@
   "viceroy.__workspace__": {},
   "viceroy.config.autoReloadWorkspaceFolders": false,
   "viceroy.config.beautyMode": false,
-  "viceroy.config.internal.lastUpdateTime": "2026-04-19T14:23:33.677Z",
-  "viceroy.config.lastVersion": "0.53.202957",
+  "viceroy.config.internal.lastUpdateTime": "2026-06-09T09:24:11.572Z",
+  "viceroy.config.lastVersion": "0.53.203032",
   "viceroy.config.notifyGlibcIssue": false,
   "viceroy.config.notifyMarchAL2Incompatibility": false,
   "viceroy.config.promptForWorkspaceMode": "alwaysMigrate",
@@ -228,7 +228,7 @@
     "!SelectSequence"
   ],
   "yaml.schemas": {
-    "file:///local/home/brajit/.kiro-server/extensions/marklel.vscode-brazil-0.53.202957/assets/languages/rde/schema.json": "**/definition.yaml"
+    "file:///local/home/brajit/.kiro-server/extensions/marklel.vscode-brazil-0.53.203032/assets/languages/rde/schema.json": "**/definition.yaml"
   },
   "yaml.validate": true,
   "viceroy.config.notifyMarch25AL2Support": false,
@@ -269,9 +269,11 @@
   "kiroAgent.trustedCommands": [
     "diff config/vscode/settings.json config/kiro/settings.json",
     "diff config/vscode/keybindings.json config/kiro/keybindings.json",
-    "diff *"
+    "diff *",
+    "ls *"
   ],
   "remote.autoForwardPortsSource": "hybrid",
-  "diffEditor.hideUnchangedRegions.enabled": true,
-  "workbench.colorTheme": "Gruvbox Dark Hard"
+  "workbench.colorTheme": "Gruvbox Dark Hard",
+  "git.ignoreRebaseWarning": true,
+  "diffEditor.hideUnchangedRegions.enabled": true
 }
