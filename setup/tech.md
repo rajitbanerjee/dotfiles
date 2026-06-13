@@ -1,10 +1,14 @@
 - Computer
-  - Apple MacBook Pro (M1 Pro, 14", 2021)
-  - Apple MacBook Air (M1, 13", 2020)
+    - Apple MacBook Pro (M1 Pro, 14", 2021)
+    - Apple MacBook Air (M1, 13", 2020)
 - Monitor
-  - Dell S2722QC (27 4K UHD USB-C)
+    - Dell S2722QC (27 4K UHD USB-C)
 - Keyboard
-  - Keychron K6
-  - Switches: Gateron Brown, Hot-Swappable
+    - Primary
+        - NuPhy Air75 V3
+        - Switches: Blush nano
+    - Secondary
+        - Keychron K6
+        - Switches: Gateron Brown, Hot-Swappable
 - Mouse
   - Logitech MX Master 3S
