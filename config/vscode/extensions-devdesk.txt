@@ -1,6 +1,7 @@
 Extensions installed on SSH: devdesk:
 amazonwebservices.amazon-q-vscode
 amazonwebservices.aws-toolkit-vscode
+anthropic.claude-code
 asbx.amzn-cline
 avin.ion-format-support
 aws-scripting-guy.cform
