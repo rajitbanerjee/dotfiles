@@ -204,11 +204,6 @@ alias codex="code --list-extensions"
 alias codein="cat ~/.dotfiles/config/vscode/extensions.txt | xargs -L 1 echo code --install-extension | bash"
 alias codeinssh="cat ~/.dotfiles/config/vscode/extensions-devdesk.txt | xargs -L 1 echo code --install-extension | bash"
 
-# kiro
-alias kirox="kiro --list-extensions"
-alias kiroin="cat ~/.dotfiles/config/kiro/extensions.txt | xargs -L 1 echo kiro --install-extension | bash"
-alias kiroinssh="cat ~/.dotfiles/config/kiro/extensions-devdesk.txt | xargs -L 1 echo kiro --install-extension | bash"
-
 # docker
 alias dc="docker-compose"
 alias dcb="docker-compose build"

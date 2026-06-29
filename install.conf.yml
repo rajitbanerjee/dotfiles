@@ -44,14 +44,5 @@
       if: "[ `uname` = Darwin ]"
       path: config/vscode/keybindings.json
 
-    # dev env (kiro)
-    ~/.kiro/steering: config/kiro/steering
-    ~/Library/Application Support/Kiro/User/settings.json:
-      if: "[ `uname` = Darwin ]"
-      path: config/kiro/settings.json
-    ~/Library/Application Support/Kiro/User/keybindings.json:
-      if: "[ `uname` = Darwin ]"
-      path: config/kiro/keybindings.json
-
 - shell:
     - [git submodule update --init --recursive, Installing submodules]
