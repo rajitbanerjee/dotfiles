@@ -211,7 +211,7 @@ alias dcu="docker-compose up"
 alias dcd="docker-compose down"
 
 # ai
-alias cc="claude --dangerously-skip-permissions --effort max"
+alias cc="claude --dangerously-skip-permissions --effort high"
 alias g="gemini"
 alias k="kiro-cli chat --trust-all-tools"
 
@@ -341,7 +341,7 @@ codeartifact() {
 }
 
 # Isengard AWS profiles
-export NODE_ISENGARD_PATH=~/workplace/NodeIsengard/src/NodeIsengard
+export NODE_ISENGARD_PATH=~/workplace/Federate/NodeIsengard/src/NodeIsengard
 export AWS_CONFIG_FILE=$NODE_ISENGARD_PATH/profiles/ada
 node-isengard-update() {
     cd $NODE_ISENGARD_PATH
@@ -362,8 +362,14 @@ export AWS_EC2_METADATA_DISABLED=true
 # Added by smithy-mcp
 export PATH="/home/brajit/.config/smithy-mcp/mcp-servers:$PATH"
 
-# Added by AIM CLI
+# AIM CLI
 export PATH="$HOME/.aim/mcp-servers:$PATH"
+aim-update() {
+    aim mcp update
+    aim skills update
+    aim agents update
+    aim plugins update
+}
 
 # Kiro CLI post block. Keep at the bottom of this file.
 [[ -f "${HOME}/.local/share/kiro-cli/shell/zshrc.post.zsh" ]] && builtin source "${HOME}/.local/share/kiro-cli/shell/zshrc.post.zsh"
