@@ -217,6 +217,9 @@ alias k="kiro-cli chat --trust-all-tools"
 
 ### Functions ###
 
+# Copy stdin to local clipboard via OSC 52 (works over SSH)
+clip() { printf "\033]52;c;$(printf '%s' "$(cat)" | base64 | tr -d '\n')\a"; }
+
 # midway-authenticated curl
 mcurl() {
   local COOKIE_JAR="$HOME/.midway/cookie"
