@@ -11,6 +11,7 @@ setup_linux
 
 brew_update
 install_brew_utilities
+install_herdr
 install_docker_compose
 install_go_al2
 install_wakatime --break-system-packages

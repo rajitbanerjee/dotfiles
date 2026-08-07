@@ -36,6 +36,11 @@ install_brew_utilities() {
     brew install watchman
 }
 
+install_herdr() {
+    echo -e "\n\nherdr:\n"
+    curl -fsSL https://herdr.dev/install.sh | sh
+}
+
 install_docker_compose() {
     mkdir -p ~/.local/bin
     curl -L "https://github.com/docker/compose/releases/latest/download/docker-compose-$(uname -s)-$(uname -m)" -o ~/.local/bin/docker-compose

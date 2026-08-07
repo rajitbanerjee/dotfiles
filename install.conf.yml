@@ -33,6 +33,7 @@
     # dev env (nvim)
     ~/.config/ghostty: config/ghostty
     ~/.config/nvim: config/nvim
+    ~/.config/herdr/config.toml: config/herdr/config.toml
     ~/.tmux.conf: config/tmux/tmux.conf
     ~/.tmux/plugins/tpm: config/tmux/tpm
 

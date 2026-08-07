@@ -1,0 +1,32 @@
+onboarding = false
+# herdr configuration
+# Symlinked to ~/.config/herdr/config.toml by ./install
+
+[theme]
+# Built-in gruvbox theme, tuned to match the gruvbox dark hard palette used
+# in ghostty/nvim/bat (see config/ghostty/config).
+name = "gruvbox"
+
+auto_switch = false
+[theme.custom]
+# Match ghostty: pure-black background, gruvbox light0 foreground.
+panel_bg = "#000000"
+accent = "#fabc2e" # gruvbox bright yellow
+red = "#fb4833"
+green = "#b8ba25"
+
+[keys]
+# Match the tmux setup in config/tmux/tmux.conf: prefix is ctrl+a, not ctrl+b.
+prefix = "ctrl+a"
+
+# Overrides to match tmux muscle memory. Unset actions keep herdr defaults
+# (new_tab=prefix+c, next/prev tab=prefix+n/p, pane nav=prefix+h/j/k/l,
+#  close_pane=prefix+x, zoom=prefix+z all already match tmux).
+detach = "prefix+d"              # tmux default (herdr default is prefix+q)
+split_vertical = "prefix+%"      # tmux: side-by-side split (split-window -h)
+split_horizontal = "prefix+\""   # tmux: stacked split (split-window)
+rename_tab = "prefix+,"          # tmux: rename-window (herdr default prefix+shift+t)
+rename_workspace = "prefix+$"    # tmux: rename-session (herdr default prefix+shift+w)
+
+[ui]
+prompt_new_tab_name = false      # create tabs immediately with generated names

@@ -24,3 +24,4 @@ palette = 15=#ebdbb2
 
 # window
 maximize = true
+confirm-close-surface = false # don't prompt when closing a terminal/tab/window

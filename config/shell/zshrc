@@ -199,6 +199,14 @@ alias ta="tmux attach-session -t"
 alias td="tmux detach-client -s"
 alias ts="tmux switch -t"
 
+# herdr (one persistent session; spaces/tabs/panes managed in-app)
+alias h="herdr"
+alias hl="herdr session list"
+alias hs="herdr status"
+alias hks="herdr server stop"        # in-app detach (keep session running) is prefix+d
+alias hdd="ssh -t devdesk herdr"     # run the server on devdesk, not locally
+alias hr="herdr server reload-config"
+
 # vs code
 alias codex="code --list-extensions"
 alias codein="cat ~/.dotfiles/config/vscode/extensions.txt | xargs -L 1 echo code --install-extension | bash"
