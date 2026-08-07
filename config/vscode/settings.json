@@ -104,6 +104,12 @@
     },
     "files.watcherExclude": {
         "**/build/**": true,
+        ".git/objects/**": true,
+        ".git/subtree-cache/**": true,
+        ".hg/store/**": true,
+        "*/.git/objects/**": true,
+        "*/.git/subtree-cache/**": true,
+        "*/.hg/store/**": true,
         "**/.git/objects/**": true,
         "**/.git/subtree-cache/**": true,
         "**/.hg/store/**": true,
@@ -160,8 +166,8 @@
     "viceroy.__workspace__": {},
     "viceroy.config.autoReloadWorkspaceFolders": false,
     "viceroy.config.beautyMode": false,
-    "viceroy.config.internal.lastUpdateTime": "2026-06-10T01:00:14.054Z",
-    "viceroy.config.lastVersion": "0.53.202947",
+    "viceroy.config.internal.lastUpdateTime": "2026-06-14T22:22:39.681Z",
+    "viceroy.config.lastVersion": "0.53.203032",
     "viceroy.config.notifyGlibcIssue": false,
     "viceroy.config.notifyMarchAL2Incompatibility": false,
     "viceroy.config.promptForWorkspaceMode": "alwaysMigrate",
@@ -232,7 +238,7 @@
         "!SelectSequence"
     ],
     "yaml.schemas": {
-        "file:///local/home/brajit/.vscode-server/extensions/marklel.vscode-brazil-0.53.202947/assets/languages/rde/schema.json": "**/definition.yaml"
+        "file:///local/home/brajit/.vscode-server/extensions/marklel.vscode-brazil-0.53.203032/assets/languages/rde/schema.json": "**/definition.yaml"
     },
     "yaml.validate": true,
     "viceroy.config.notifyMarch25AL2Support": false,
@@ -265,5 +271,6 @@
     },
     "explorer.confirmPasteNative": false,
     "editor.copyWithSyntaxHighlighting": false,
-    "diffEditor.hideUnchangedRegions.enabled": true
+    "diffEditor.hideUnchangedRegions.enabled": true,
+    "claudeCode.preferredLocation": "panel"
 }
