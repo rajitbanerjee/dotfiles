@@ -30,3 +30,6 @@ rename_workspace = "prefix+$"    # tmux: rename-session (herdr default prefix+sh
 
 [ui]
 prompt_new_tab_name = false      # create tabs immediately with generated names
+
+[ui.sound]
+enabled = false

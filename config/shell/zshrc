@@ -145,7 +145,7 @@ alias bbb="/apollo/env/envImprovement/bin/brazil-recursive-cmd-parallel --allPac
 alias bws="brazil ws"
 alias bwsm="brazil ws sync -md"
 alias bwsa="brazil ws sync -md && brazil ws sync -src"
-alias ssd="ssh devdesk"
+alias ssd="ssh devdesk; stty sane 2>/dev/null; tput reset 2>/dev/null"
 
 # files
 alias less="less -R"
@@ -204,7 +204,6 @@ alias h="herdr"
 alias hl="herdr session list"
 alias hs="herdr status"
 alias hks="herdr server stop"        # in-app detach (keep session running) is prefix+d
-alias hdd="ssh -t devdesk herdr"     # run the server on devdesk, not locally
 alias hr="herdr server reload-config"
 
 # vs code
