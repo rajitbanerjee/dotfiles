@@ -291,5 +291,10 @@
         "command": "-extension.vim_cmd+alt+up",
         "key": "alt+cmd+up",
         "when": "editorTextFocus && vim.active && !inDebugRepl"
+    },
+    {
+        "command": "copyFilePath",
+        "key": "cmd+c",
+        "when": "filesExplorerFocus && !inputFocus"
     }
 ]

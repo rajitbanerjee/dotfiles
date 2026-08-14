@@ -45,5 +45,13 @@
       if: "[ `uname` = Darwin ]"
       path: config/vscode/keybindings.json
 
+    # unison
+    ~/.unison/brajitdocs.prf:
+      if: "[ `uname` = Darwin ]"
+      path: config/unison/brajitdocs.prf
+    ~/Library/LaunchAgents/local.unison-brajitdocs.plist:
+      if: "[ `uname` = Darwin ]"
+      path: config/unison/local.unison-brajitdocs.plist
+
 - shell:
     - [git submodule update --init --recursive, Installing submodules]

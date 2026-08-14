@@ -1,0 +1,12 @@
+root = /Volumes/workplace/BrajitDocs
+root = ssh://devdesk//workplace/brajit/BrajitDocs
+batch = true
+prefer = newer
+repeat = watch
+retry = 3
+fastcheck = true
+ignore = Path .git
+ignore = Path tmp
+ignore = Name .DS_Store
+ignore = Name .obsidian/workspace.json
+ignore = Name .obsidian/graph.json
