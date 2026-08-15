@@ -218,7 +218,6 @@ alias dcd="docker-compose down"
 
 # ai
 alias cc="claude --dangerously-skip-permissions --effort high"
-alias g="gemini"
 alias k="kiro-cli chat --trust-all-tools"
 
 ### Functions ###
