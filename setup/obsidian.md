@@ -1,74 +1,57 @@
 # Obsidian Setup
 
-Vault: `~/Documents/Obsidian/`
+Personal vault: `~/Documents/Obsidian/`
 
 ## Settings
 
-- Editor
-    - Display
-        - Readable line length: off
-        - Line numbers: on
-    - Behavior
-        - Indent using tabs: off
-- Appearance
-    - Accent color: HEX `#d79921`
-    - Theme: [Minimal](https://github.com/kepano/obsidian-minimal)
-- Interface
-    - Inline title: off
+- Theme: default Obsidian, light mode
+- Accent color: `#d79921` (warm amber)
+- Base font size: 15px
+- Line numbers: on
+- Readable line length: on
+- Inline title: off
+- Indent using tabs: off
+- Properties in document: hidden
+- Strict line breaks: on
+- Always update links: on
+- Ribbon: hidden
+
+## Hotkeys
+
+- `Cmd+E`: toggle left sidebar (unbound from toggle source/live preview)
 
 ## Community Plugins
 
-- Importer
-- Minimal Theme Settings
-    - Dark mode color scheme: Gruvbox
-    - Dark mode background contrast: True black
+- Excalidraw
+- Tasks
 
-## Sync Setup
+## Sync (Syncthing)
 
 ### macOS
 
-Install dependencies using Homebrew:
-
 ```bash
 brew install syncthing
-```
-
-Start Syncthing:
-
-```bash
 syncthing
 ```
 
-This opens the Syncthing UI at:
-
-```text
-http://127.0.0.1:8384
-```
+Opens the Syncthing UI at `http://127.0.0.1:8384`.
 
 ### Vault Configuration
 
-Add the vault folder to Syncthing with:
+Add the vault folder to Syncthing with folder ID: `obsidian-vault`
 
-```text
-Folder ID: obsidian-vault
-```
+### iPhone
 
-### iPhone Setup
-
-Apps:
-
-- Obsidian
-- VaultSync for Obsidian
+Apps: Obsidian, VaultSync for Obsidian
 
 Workflow:
-
 1. Open VaultSync
 2. Let sync complete
 3. Open Obsidian
 
 ### Ignore Patterns
 
-Recommended ignores to reduce desktop/mobile conflicts:
+Reduce desktop/mobile conflicts:
 
 ```text
 .obsidian/workspace.json
@@ -78,6 +61,6 @@ Recommended ignores to reduce desktop/mobile conflicts:
 
 ## Notes
 
-- Laptop is the primary/source-of-truth device
+- Laptop is the source-of-truth device
 - Avoid editing the same note simultaneously across devices
-- iOS background sync is limited; open VaultSync periodically to ensure sync completes
+- iOS background sync is limited; open VaultSync periodically
