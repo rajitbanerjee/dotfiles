@@ -17,7 +17,7 @@ Host devdesk-al2023
   TCPKeepAlive yes
   ProxyCommand wssh proxy %h
   ServerAliveInterval 15
-  ServerAliveCountMax 44
+  ServerAliveCountMax 3
   ForwardAgent yes
   LocalForward 7000 localhost:7000
   LocalForward 8000 localhost:8000
@@ -36,7 +36,7 @@ Host devdesk
   TCPKeepAlive yes
   ProxyCommand wssh proxy %h
   ServerAliveInterval 15
-  ServerAliveCountMax 44
+  ServerAliveCountMax 3
   ForwardAgent yes
   LocalForward 7000 localhost:7000
   LocalForward 8000 localhost:8000

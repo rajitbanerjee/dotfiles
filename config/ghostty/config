@@ -25,3 +25,6 @@ palette = 15=#ebdbb2
 # window
 maximize = true
 confirm-close-surface = false
+
+# keybinds
+keybind = super+shift+r=text:\x1bc

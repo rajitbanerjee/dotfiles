@@ -145,7 +145,6 @@ alias bbb="/apollo/env/envImprovement/bin/brazil-recursive-cmd-parallel --allPac
 alias bws="brazil ws"
 alias bwsm="brazil ws sync -md"
 alias bwsa="brazil ws sync -md && brazil ws sync -src"
-alias ssd="ssh devdesk"
 
 # files
 alias less="less -R"
@@ -223,6 +222,15 @@ alias g="gemini"
 alias k="kiro-cli chat --trust-all-tools"
 
 ### Functions ###
+
+# Reset terminal after SSH to devdesk exits (prevents raw-mode corruption)
+ssd() {
+  ssh devdesk "$@"
+  local rc=$?
+  printf '\033c'; stty sane
+  (( rc != 0 )) && echo "ssh failed (exit $rc)" >&2
+  return $rc
+}
 
 # Copy stdin to local clipboard via OSC 52 (works over SSH)
 clip() { printf "\033]52;c;$(printf '%s' "$(cat)" | base64 | tr -d '\n')\a"; }

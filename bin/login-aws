@@ -8,4 +8,8 @@ else
 	echo "Generating AEA Midway cookie..."
 	mwinit -f
 	ssh devdesk
+	rc=$?
+	printf '\033c'; stty sane
+	(( rc != 0 )) && echo "ssh failed (exit $rc)" >&2
+	exit $rc
 fi
