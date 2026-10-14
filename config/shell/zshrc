@@ -106,7 +106,6 @@ export AWS_SDK_JS_SUPPRESS_MAINTENANCE_MODE_MESSAGE=1
 
 # Rust
 [[ -f "$HOME/.cargo/env" ]] && . "$HOME/.cargo/env"
-
 ### Aliases ###
 
 # system
@@ -217,7 +216,7 @@ alias dcu="docker-compose up"
 alias dcd="docker-compose down"
 
 # ai
-alias cc="claude --dangerously-skip-permissions --effort high"
+alias cc="claude --dangerously-skip-permissions"
 alias k="kiro-cli chat --trust-all-tools"
 
 ### Functions ###
