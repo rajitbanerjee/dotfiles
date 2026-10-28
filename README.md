@@ -4,7 +4,18 @@ System setup and configuration for macOS and Amazon Linux. Symlinking to `$HOME`
 
 ## Setup
 
-### 1. SSH keys
+### 1. Homebrew (macOS only)
+
+macOS has no `git` until the Xcode Command Line Tools are installed. The [Homebrew](https://brew.sh) installer installs them, so run it first:
+
+```shell
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> ~/.zprofile
+eval "$(/opt/homebrew/bin/brew shellenv)"
+git --version
+```
+
+### 2. SSH keys
 
 ed25519:
 
@@ -26,7 +37,7 @@ ssh-add ~/.ssh/id_ecdsa
 cat ~/.ssh/id_ecdsa.pub
 ```
 
-### 2. Clone and install symlinks
+### 3. Clone and install symlinks
 
 ```shell
 git config --global user.name "Rajit Banerjee"
@@ -38,7 +49,7 @@ git config user.email "rajitbanerjee15@gmail.com"
 exec $SHELL -l
 ```
 
-### 3. Install system packages
+### 4. Install system packages
 
 ```shell
 # Amazon Linux
@@ -49,7 +60,7 @@ setup-system-mac
 install-mac-apps
 ```
 
-### 4. (Optional) Migrate zsh history
+### 5. (Optional) Migrate zsh history
 
 From your Mac, copy `.zsh_history` between Cloud Desktops:
 

@@ -30,7 +30,6 @@ install_brew_utilities() {
     brew install pandoc
     brew install pipx
     brew install ripgrep
-    brew install tldr
     brew install tmux
     brew install trash-cli
     brew install watchman
@@ -55,7 +54,7 @@ install_go_brew() {
 
 install_wakatime() {
     echo -e "\n\nWakaTime:\n"
-    pipx ensureinstall
+    pipx ensurepath
     pipx install wakatime
     if [ ! -f ~/.wakatime.cfg ]; then
         echo -e "\n\nWakaTime config file setup:\n"
