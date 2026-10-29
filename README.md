@@ -17,7 +17,9 @@ git --version
 
 ### 2. SSH keys
 
-ed25519:
+Press Enter at each `ssh-keygen` prompt to accept the defaults.
+
+ed25519 (GitHub):
 
 ```shell
 ssh-keygen -t ed25519 -C "rajitbanerjee15@gmail.com"
@@ -28,37 +30,46 @@ cat ~/.ssh/id_ed25519.pub
 
 Copy the output and add it at https://github.com/settings/keys.
 
-ecdsa:
+ecdsa (Amazon hosts; `mwinit` signs this key, so there is nothing to paste):
 
 ```shell
 ssh-keygen -t ecdsa -C "brajit@amazon.com"
 eval "$(ssh-agent -s)"
 ssh-add ~/.ssh/id_ecdsa
-cat ~/.ssh/id_ecdsa.pub
 ```
 
 ### 3. Clone and install symlinks
 
+Type `yes` if the clone asks to trust GitHub's host key.
+
 ```shell
+# Work identity goes in ~/.gitconfig_local, which the dotfiles gitconfig includes
 git config --global user.name "Rajit Banerjee"
 git config --global user.email "brajit@amazon.com"
 mv ~/.gitconfig ~/.gitconfig_local
+
 git clone git@github.com:rajitbanerjee/dotfiles ~/.dotfiles
 cd ~/.dotfiles && ./install
-git config user.email "rajitbanerjee15@gmail.com"
+git config user.email "rajitbanerjee15@gmail.com"  # personal email for this repo only
 exec $SHELL -l
 ```
+
+`./install` is safe to rerun. Rerun it if an app (for example Ghostty) has written its own config over a linked file.
 
 ### 4. Install system packages
 
 ```shell
+export WAKATIME_API_KEY=<key>  # optional: creates ~/.wakatime.cfg
+
 # Amazon Linux
 setup-system-al2023  # or setup-system-al2
 
-# macOS
+# macOS (needs Homebrew from step 1)
 setup-system-mac
 install-mac-apps
 ```
+
+The scripts continue past a failed step and list every failure at the end. Fix those, then rerun the script. Expect prompts for `sudo`, `mwinit`, and (on Amazon Linux) switching the default shell to zsh.
 
 ### 5. (Optional) Migrate zsh history
 

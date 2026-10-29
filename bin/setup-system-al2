@@ -13,11 +13,10 @@ brew_update
 install_brew_utilities
 install_herdr
 install_docker_compose
-install_go_al2
 install_wakatime --break-system-packages
 setup_workplace "${USER}:amazon"
 install_builder_tools
 configure_inotify_watches
 install_ohmyzsh
 
-echo -e "\nSystem setup complete!\n"
+finish

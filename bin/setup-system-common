@@ -2,63 +2,83 @@
 # Common setup functions shared across OS-specific setup scripts.
 # Source this file, don't execute it directly.
 
-set -euo pipefail
+set -uo pipefail
 IFS=$'\n\t'
+
+# Skip y/n prompts from Homebrew and mise.
+export NONINTERACTIVE=1
+export MISE_YES=1
+
+FAILED=""
+
+# Run a command; on failure, record it and keep going.
+step() {
+    "$@" && return
+    local IFS=' '
+    FAILED+="  $*"$'\n'
+    echo "!! Failed: $*" >&2
+}
+
+# Print the failed steps, if any, and exit non-zero.
+finish() {
+    if [ -n "$FAILED" ]; then
+        echo -e "\nSetup finished with failures:\n"
+        printf '%s' "$FAILED"
+        exit 1
+    fi
+    echo -e "\nSystem setup complete!\n"
+}
+
+brew_install() {
+    for pkg in "$@"; do
+        step brew install "$pkg"
+    done
+}
+
+brew_install_cask() {
+    for pkg in "$@"; do
+        step brew install --cask "$pkg"
+    done
+}
 
 # --- Universal functions ---
 
 install_homebrew() {
-    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+    step /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 }
 
 brew_update() {
-    brew analytics off
-    brew update
-    brew upgrade
+    step brew analytics off
+    step brew update
+    step brew upgrade
 }
 
 install_brew_utilities() {
     echo -e "\n\nMisc. utilities:\n"
-    brew install bat
-    brew install dpkg
-    brew install duf
-    brew install eza
-    brew install fzf
-    brew install git-delta
-    brew install jq
-    brew install neovim
-    brew install pandoc
-    brew install pipx
-    brew install ripgrep
-    brew install tmux
-    brew install trash-cli
-    brew install watchman
+    brew_install duf eza fzf git-delta jq neovim pandoc pipx ripgrep tmux trash-cli watchman
 }
 
 install_herdr() {
     echo -e "\n\nherdr:\n"
-    curl -fsSL https://herdr.dev/install.sh | sh
+    step sh -c 'curl -fsSL https://herdr.dev/install.sh | sh'
 }
 
 install_docker_compose() {
-    mkdir -p ~/.local/bin
-    curl -L "https://github.com/docker/compose/releases/latest/download/docker-compose-$(uname -s)-$(uname -m)" -o ~/.local/bin/docker-compose
-    chmod +x ~/.local/bin/docker-compose
-}
-
-install_go_brew() {
-    echo -e "\n\nGo:\n"
-    brew install go
-    go env -w GOPROXY=direct
+    step mkdir -p ~/.local/bin
+    step curl -fL "https://github.com/docker/compose/releases/latest/download/docker-compose-$(uname -s)-$(uname -m)" -o ~/.local/bin/docker-compose
+    step chmod +x ~/.local/bin/docker-compose
 }
 
 install_wakatime() {
     echo -e "\n\nWakaTime:\n"
-    pipx ensurepath
-    pipx install wakatime
+    step pipx ensurepath
+    step pipx install wakatime
     if [ ! -f ~/.wakatime.cfg ]; then
-        echo -e "\n\nWakaTime config file setup:\n"
-        read -p "Enter WakaTime API Key: " key
+        if [ -z "${WAKATIME_API_KEY:-}" ]; then
+            echo "Skipping ~/.wakatime.cfg: set WAKATIME_API_KEY and rerun to create it."
+            return
+        fi
+        local key="$WAKATIME_API_KEY"
         echo -e """[settings]
 debug = false
 hidefilenames = false
@@ -73,57 +93,47 @@ api_key=$key
 }
 
 install_ohmyzsh() {
-    echo -e "\n\noh-my-zsh:\n(Note: \"exit\" from oh-my-zsh to resume setup)\n"
-    sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-    mv ~/.zshrc.pre-oh-my-zsh ~/.zshrc
+    echo -e "\n\noh-my-zsh:\n"
+    RUNZSH=no KEEP_ZSHRC=yes step sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 }
 
 # --- Linux-only (AL2 / AL2023) shared functions ---
 
 setup_linux() {
-    sudo timedatectl set-timezone Europe/Dublin
+    step sudo timedatectl set-timezone Europe/Dublin
 
     echo "Generating Midway cookie..."
-    mwinit -s -o
+    step mwinit -s -o
 
     install_homebrew
     eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
-    sudo yum groupinstall 'Development Tools'
-    sudo yum install -y procps-ng
-    sudo tic ~/.config/ghostty/xterm-ghostty.ti
-}
-
-install_go_yum() {
-    echo -e "\n\nGo:\n"
-    sudo yum install -y golang
-}
-
-install_go_al2() {
-    install_go_brew
-    sudo ln -s /home/linuxbrew/.linuxbrew/bin/go /usr/bin/go
+    step sudo yum groupinstall -y 'Development Tools'
+    step sudo yum install -y procps-ng
+    step sudo tic ~/.config/ghostty/xterm-ghostty.ti
 }
 
 install_builder_tools() {
     echo -e "\n\nBuilder tools:\n"
-    toolbox install axe
-    axe init builder-tools
-    mise install nodejs@20 && mise use --global nodejs@20
+    step toolbox install axe
+    step axe init builder-tools
+    step mise install nodejs@20
+    step mise use --global nodejs@20
 
-    toolbox install kiro-cli
-    toolbox install claude-code
-    toolbox install aim
+    step toolbox install kiro-cli
+    step toolbox install claude-code
+    step toolbox install aim
 
-    aim agents install AIPowerUserCapabilities
-    aim plugins install AmazonBuilderCoreAIAgents
+    step aim agents install AIPowerUserCapabilities
+    step aim plugins install AmazonBuilderCoreAIAgents
 }
 
 setup_workplace() {
     local owner="${1:-${USER}}"
-    sudo mkdir -p -m 755 /workplace/${USER}
-    sudo chown -R "$owner" /workplace/${USER}
-    ln -s /workplace/${USER} ~/workplace
+    step sudo mkdir -p -m 755 /workplace/${USER}
+    step sudo chown -R "$owner" /workplace/${USER}
+    [ -e ~/workplace ] || step ln -s /workplace/${USER} ~/workplace
 }
 
 configure_inotify_watches() {
-    echo fs.inotify.max_user_watches=524288 | sudo tee -a /etc/sysctl.conf && sudo sysctl -p
+    step sh -c 'echo fs.inotify.max_user_watches=524288 | sudo tee -a /etc/sysctl.conf && sudo sysctl -p'
 }

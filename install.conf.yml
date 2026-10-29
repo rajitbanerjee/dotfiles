@@ -32,6 +32,10 @@
 
     # dev env (nvim)
     ~/.config/ghostty: config/ghostty
+    ~/Library/Application Support/com.mitchellh.ghostty/config.ghostty:
+      if: "[ `uname` = Darwin ]"
+      path: config/ghostty/config
+      force: true
     ~/.config/nvim: config/nvim
     ~/.config/herdr/config.toml: config/herdr/config.toml
     ~/.tmux.conf: config/tmux/tmux.conf
@@ -41,9 +45,11 @@
     ~/Library/Application Support/Code/User/settings.json:
       if: "[ `uname` = Darwin ]"
       path: config/vscode/settings.json
+      force: true
     ~/Library/Application Support/Code/User/keybindings.json:
       if: "[ `uname` = Darwin ]"
       path: config/vscode/keybindings.json
+      force: true
 
     # unison
     ~/.unison/brajitdocs.prf:

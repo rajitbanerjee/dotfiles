@@ -1,16 +1,13 @@
 #!/bin/bash
 # Set up a new macOS system with my preferred packages.
 # Usage: setup-system-mac
+# Requires Homebrew, installed in README step 1 before cloning this repo.
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 source "$SCRIPT_DIR/setup-system-common"
 
 echo -e "Starting macOS system setup...\n"
 
-if ! command -v brew >/dev/null; then
-    install_homebrew
-    eval "$(/opt/homebrew/bin/brew shellenv)"
-fi
 brew_update
 install_brew_utilities
 install_herdr
@@ -18,4 +15,4 @@ install_builder_tools
 install_wakatime
 install_ohmyzsh
 
-echo -e "\nSystem setup complete!\n"
+finish

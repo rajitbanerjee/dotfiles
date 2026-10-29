@@ -1,12 +1,10 @@
 #!/bin/bash
-set -euo pipefail
-IFS=$'\n\t'
+# Install macOS GUI apps.
+# Usage: install-mac-apps
 
-# Install macOS GUI apps
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+source "$SCRIPT_DIR/setup-system-common"
 
-brew install --cask firefox
-brew install --cask keepingyouawake
-brew install --cask ghostty
-brew install --cask mos
-brew install --cask obsidian
-brew install --cask raycast
+brew_install_cask firefox keepingyouawake ghostty mos obsidian openlogi raycast
+
+finish
