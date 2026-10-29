@@ -9,11 +9,11 @@ return {
             local original_cr = autopairs.autopairs_cr
             vim.keymap.set("i", "<CR>", function()
                 if vim.fn.pumvisible() == 1 then
-                    return "<C-y>"
+                    return autopairs.esc("<C-y>")
                 else
                     return original_cr()
                 end
-            end, { expr = true, noremap = true })
+            end, { expr = true, noremap = true, replace_keycodes = false })
         end,
     },
     { "OXY2DEV/markview.nvim",  lazy = false },
